@@ -1,0 +1,22 @@
+;   2 STRINGS OPCODEs
+
+    opcode  ---NAME---, 0, SSJPo
+Sin, Sout, kp1, kgain, ich xin
+
+if      ich==ginchnls-1 goto next
+		---NAME--- Sin, Sout, kp1, kgain, ich+1
+
+next:
+
+
+;   INPUT
+ain		chnget sprintf("%s_%i", Sin, ich+1)
+ain     *= kgain
+
+;---INSTRUMENT---
+
+		chnmix aout, gSmouth[ich]
+
+    endop
+
+

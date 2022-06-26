@@ -1,0 +1,45 @@
+;   TIME DOMAIN WITH FT OPCODEs
+
+    opcode  ---NAME---, 0, SJJjPo
+Sinstr, ktime, kfb, ift, kgain, ich xin
+
+if      ich==ginchnls-1 goto next
+		---NAME--- Sinstr, ktime, kfb, ift, kgain, ich+1
+
+next:
+
+;   INIT
+if  ktime==-1 then
+        ktime = gkbeatms/12
+endif
+
+if  kfb==-1 then
+        kfb = .15
+endif
+
+if  ift==-1 then
+        ift = gihsine
+endif
+
+;   LIMIT
+ktime      abs ktime
+#ifdef opcode_kfb_limit
+    kfb        limit kfb, 0, .9995
+#end
+
+;	IF
+if	ktime==0 then
+		ktime = gizero
+endif
+
+;   INPUT
+ain		chnget sprintf("%s_%i", Sinstr, ich+1)
+ain     *= kgain
+
+;---INSTRUMENT---
+
+		chnmix aout, gSmouth[ich]
+
+    endop
+
+

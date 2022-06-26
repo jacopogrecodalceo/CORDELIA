@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#ASK QUESTIONS
+echo "Channels number: "
+read chns
+
+echo "ksmps (^2): "
+read ksmps
+
+#DECLARE PATHS
+NAME=`basename "$0" | cut -f 1 -d '.' | cut -c 3-`
+FOLDER="$(dirname "$0")"
+LISTENRAW="/Users/j/Google Drive/_listenraw/"
+DATE=`date +"%y%m%d"`
+
+cd "$FOLDER"
+
+parallel --verbose --joblog _job --bar --eta sh {} $chns $ksmps ::: ./**/*.sh

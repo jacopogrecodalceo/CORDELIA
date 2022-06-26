@@ -1,0 +1,34 @@
+;   FREQ DOMAIN OPCODEs
+
+    opcode  ---NAME---, 0, SJJPo
+Sinstr, kfreq, kq, kgain, ich xin
+
+if      ich==ginchnls-1 goto next
+                ---NAME--- Sinstr, kfreq, kq, kgain, ich+1
+
+next:
+
+;       INIT
+if      kfreq==-1 then
+                kfreq = ntof("3B")
+endif
+
+if  kq==-1 then
+        kq = .65
+endif
+
+;       LIMIT
+kfreq   limit kfreq, 10, 21$k
+kq      limit kq, 0, .95
+
+;       INPUT
+ain     chnget sprintf("%s_%i", Sinstr, ich+1)
+ain     *= kgain
+
+;---INSTRUMENT---
+
+        chnmix aout, gSmouth[ich]
+
+    endop
+
+

@@ -1,0 +1,133 @@
+#!/bin/bash
+
+#ASK QUESTIONS
+echo "Channels number: "
+read chns
+
+echo "ksmps (^2): "
+read ksmps
+
+#POWER OF 2 FOR KSMPS
+if [ $ksmps -gt 1 ] && [ $ksmps -le 13 ]; then
+	ksmps=$((2**$ksmps))
+else
+	ksmps=1
+fi
+
+#DECLARE PATHS
+NAME=`basename "$0" | cut -f 1 -d '.' | cut -c 3-`
+FOLDER="$(dirname "$0")"
+LISTENRAW="/Users/j/Google Drive/_listenraw/"
+DATE=`date +"%y%m%d"`
+
+cd "$FOLDER"
+
+SCO="*_i_score.sco"
+if test -f "$SCO"; then
+    rm "$SCO"
+fi
+
+FIRE="_🔥🔥🔥_"
+if test -f "$FIRE"; then
+    rm "$FIRE"
+fi
+
+#CSOUND
+csound "$NAME".csd  -b1024 -B4096 -D --nchnls=$chns --ksmps=$ksmps --midioutfile="$NAME".midi -+id_artist="jacopo greco d'alceo" -+id_title="$NAME" -o "$NAME".wav -W 2>&1 | tee *_log
+
+wait
+
+#SEND TO LISTEN_RAW
+ruby /Users/j/Documents/my_service/send-to_listenraw.rb "$NAME".wav
+
+#SPECTROGRAM - SOX
+TODAY=`date +"%d|%m|%y %T"`
+sox "$NAME".wav -n spectrogram -x 1296 -l -p 1 -c "" -t "jacopo greco d'alceo, "$NAME" - "$chns" chns | $TODAY" -o *_spectrum-sox.png
+
+wait
+
+: <<'END'
+
+#SPECTROGRAM - FFMPEG
+FFMPEGSPECTRUM="*_spectrum-ffmpeg"
+if test -f "$FFMPEGSPECTRUM".png; then
+    rm "$FFMPEGSPECTRUM".png
+fi
+ffmpeg -i "$NAME".wav -filter_complex "showspectrumpic=color=nebulae:mode=separate:legend=disabled:fscale=log:saturation=0.35" "$FFMPEGSPECTRUM".png
+convert "$FFMPEGSPECTRUM".png -negate "$FFMPEGSPECTRUM"-n.png
+
+wait
+
+#WAVEFORM
+FFMPEGWAVEFORM="*_waveform-ffmpeg-n"
+if test -f "$FFMPEGWAVEFORM".png; then
+    rm "$FFMPEGWAVEFORM".png
+fi
+ffmpeg -i "$NAME".wav -lavfi showwavespic=split_channels=1:colors=black:s=4096x2048:draw=full:filter=peak "$FFMPEGWAVEFORM".png
+
+wait
+
+#VIDEO FREQ
+FFMPEG_VFREQ="$NAME"__FREQ.command
+echo '#!/bin/bash' > "$FFMPEG_VFREQ"
+echo 'cd "$(dirname "$0")"' >> "$FFMPEG_VFREQ"
+echo "ffplay -f lavfi 'amovie="$NAME".wav, asplit [a][out1]; [a] showfreqs=s=ega:colors=white:cmode=separate [out0]'" >> "$FFMPEG_VFREQ"
+chmod 757 "$FFMPEG_VFREQ"
+
+#VIDEO SPAT
+FFMPEG_VSPAT="$NAME"__SPAT.command
+echo '#!/bin/bash' > "$FFMPEG_VSPAT"
+echo 'cd "$(dirname "$0")"' >> "$FFMPEG_VSPAT"
+echo "ffplay -f lavfi 'amovie="$NAME".wav, asplit [a][out1]; [a] showspatial=s=ega [out0]'" >> "$FFMPEG_VSPAT"
+chmod 757 "$FFMPEG_VSPAT"
+
+#VIDEO SPECTRUM
+FFMPEG_VSPECTRUM="$NAME"__SPECTRUM.command
+echo '#!/bin/bash' > "$FFMPEG_VSPECTRUM"
+echo 'cd "$(dirname "$0")"'>> "$FFMPEG_VSPECTRUM"
+echo "ffplay -f lavfi 'amovie="$NAME".wav, asplit [a][out1]; [a] showspectrum=s=ega:scale=log:color=nebulae:mode=separate:slide=scroll [out0]'" >> "$FFMPEG_VSPECTRUM"
+chmod 757 "$FFMPEG_VSPECTRUM"
+
+#VIDEO WAVES
+FFMPEG_VWAVES="$NAME"__WAVES.command
+echo '#!/bin/bash' > "$FFMPEG_VWAVES"
+echo 'cd "$(dirname "$0")"' >> "$FFMPEG_VWAVES"
+echo "ffplay -f lavfi 'amovie="$NAME".wav, asplit [a][out1]; [a] showwaves=s=ega:colors=floralwhite:mode=cline:split_channels=1 [out0]'" >> "$FFMPEG_VWAVES"
+chmod 757 "$FFMPEG_VWAVES"
+
+#VIDEO CQT
+FFMPEG_VCQT="$NAME"__CQT.command
+echo '#!/bin/bash' > "$FFMPEG_VCQT"
+echo 'cd "$(dirname "$0")"' >> "$FFMPEG_VCQT"
+echo "ffplay -f lavfi 'amovie="$NAME".wav, asplit [a][out1]; [a] showcqt=s=ega [out0]'" >> "$FFMPEG_VCQT"
+chmod 757 "$FFMPEG_VCQT"
+END
+
+#INFO
+INFO_NAME="*_info"
+
+if test -f $INFO_NAME; then
+	rm $INFO_NAME
+	echo Rendering ksmps of Csound: $ksmps >> $INFO_NAME
+	soxi "$NAME".wav >> $INFO_NAME
+else
+	echo Rendering ksmps of Csound: $ksmps >> $INFO_NAME
+	soxi "$NAME".wav >> $INFO_NAME
+fi
+
+#GET OUT OF RANGE
+tail -n 8 *_log | grep -o 'overall amps:.*' >> $INFO_NAME
+tail -n 8 *_log | grep -o 'overall samples.*' >> $INFO_NAME
+tail -n 8 *_log | grep -o '\d.errors.*' >> $INFO_NAME
+
+CLIP=$(tail -n 8 *_log | grep -o 'overall samples.*' | egrep -o '\d+')
+
+EACH_CLIP=( $CLIP )
+
+for i in "${!EACH_CLIP[@]}"
+do
+	if [ "${EACH_CLIP[$i]}" -gt 0 ]
+	then
+		echo > _🔥🔥🔥_
+	fi
+done

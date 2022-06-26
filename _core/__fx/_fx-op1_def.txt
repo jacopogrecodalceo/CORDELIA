@@ -1,0 +1,26 @@
+;   1 PARAM OPCODEs
+
+    opcode  ---NAME---, 0, SJPo
+Sinstr, kp1, kgain, ich xin
+
+if  ich==ginchnls-1 goto next
+		---NAME--- Sinstr, kp1, kgain, ich+1
+
+next:
+
+;   INIT
+if  kp1 ==-1 then
+        kp1 = .5
+endif
+
+;   INPUT
+ain	chnget sprintf("%s_%i", Sinstr, ich+1)
+ain     *= kgain
+
+;---INSTRUMENT---
+
+	chnmix aout, gSmouth[ich]
+
+    endop
+
+

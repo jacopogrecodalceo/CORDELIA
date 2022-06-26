@@ -1,0 +1,75 @@
+#!/bin/bash
+
+chns=2
+
+ksmps=5
+
+#POWER OF 2 FOR KSMPS
+if [ $ksmps -gt 1 ] && [ $ksmps -le 13 ]; then
+	ksmps=$((2**$ksmps))
+else
+	ksmps=1
+fi
+
+#DECLARE PATHS
+NAME=`basename "$0" | cut -f 1 -d '.' | cut -c 3- | rev | cut -c 7- | rev`
+FOLDER="$(dirname "$0")"
+LISTENRAW="/Users/j/Google Drive/_listenraw/"
+DATE=`date +"%y%m%d"`
+
+cd "$FOLDER"
+
+SCO="*_i_score.sco"
+if test -f "$SCO"; then
+    rm "$SCO"
+fi
+
+FIRE="_🔥🔥🔥_"
+if test -f "$FIRE"; then
+    rm "$FIRE"
+fi
+
+#CSOUND
+csound "$NAME".csd  -b1024 -B4096 -D --nchnls=$chns --ksmps=$ksmps --midioutfile="$NAME".midi -+id_artist="jacopo greco d'alceo" -+id_title="$NAME" -o "$NAME".wav -W 2>&1 | tee *_log
+
+wait
+
+#SEND TO LISTEN_RAW
+ruby /Users/j/Documents/my_service/send-to_listenraw.rb "$NAME".wav
+
+wait
+
+#SPECTROGRAM - SOX
+TODAY=`date +"%d|%m|%y %T"`
+sox "$NAME".wav -n spectrogram -x 1296 -l -p 1 -c "" -t "jacopo greco d'alceo, "$NAME" - "$chns" chns | $TODAY" -o *_spectrum-sox.png
+
+wait
+
+#INFO
+INFO_NAME="*_info"
+
+if test -f $INFO_NAME; then
+	rm $INFO_NAME
+	echo Rendering ksmps of Csound: $ksmps >> $INFO_NAME
+	soxi "$NAME".wav >> $INFO_NAME
+else
+	echo Rendering ksmps of Csound: $ksmps >> $INFO_NAME
+	soxi "$NAME".wav >> $INFO_NAME
+fi
+
+#GET OUT OF RANGE
+tail -n 8 *_log | grep -o 'overall amps:.*' >> $INFO_NAME
+tail -n 8 *_log | grep -o 'overall samples.*' >> $INFO_NAME
+tail -n 8 *_log | grep -o '\d.errors.*' >> $INFO_NAME
+
+CLIP=$(tail -n 8 *_log | grep -o 'overall samples.*' | egrep -o '\d+')
+
+EACH_CLIP=( $CLIP )
+
+for i in "${!EACH_CLIP[@]}"
+do
+	if [ "${EACH_CLIP[$i]}" -gt 0 ]
+	then
+		echo > _🔥🔥🔥_
+	fi
+done
