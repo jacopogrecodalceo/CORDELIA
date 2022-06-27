@@ -1,12 +1,12 @@
-gSquar2_01_file 	 init "../samples/quar2/quar2-01.wav"
+gSquar2_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//quar2/quar2-01.wav"
 giquar2_01_1		 ftgen 0, 0, 0, 1, gSquar2_01_file, 0, 0, 1
 giquar2_01_2		 ftgen 0, 0, 0, 1, gSquar2_01_file, 0, 0, 2
 ;---
-gSquar2_02_file 	 init "../samples/quar2/quar2-02.wav"
+gSquar2_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//quar2/quar2-02.wav"
 giquar2_02_1		 ftgen 0, 0, 0, 1, gSquar2_02_file, 0, 0, 1
 giquar2_02_2		 ftgen 0, 0, 0, 1, gSquar2_02_file, 0, 0, 2
 ;---
-gSquar2_05_file 	 init "../samples/quar2/quar2-05.wav"
+gSquar2_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//quar2/quar2-05.wav"
 giquar2_05_1		 ftgen 0, 0, 0, 1, gSquar2_05_file, 0, 0, 1
 giquar2_05_2		 ftgen 0, 0, 0, 1, gSquar2_05_file, 0, 0, 2
 ;---

@@ -1,4 +1,4 @@
-gSshaku_file	init "../samples/shaku.wav"
+gSshaku_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//shaku.wav"
 
 gishaku1	ftgen 0, 0, 0, 1, gSshaku_file, 0, 0, 1
 gishaku2	ftgen 0, 0, 0, 1, gSshaku_file, 0, 0, 2

@@ -1,28 +1,28 @@
-gScaillou_001_file 	 init "../samples/caillou/caillou-001.wav"
+gScaillou_001_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-001.wav"
 gicaillou_001_1		 ftgen 0, 0, 0, 1, gScaillou_001_file, 0, 0, 1
 gicaillou_001_2		 ftgen 0, 0, 0, 1, gScaillou_001_file, 0, 0, 2
 ;---
-gScaillou_002_file 	 init "../samples/caillou/caillou-002.wav"
+gScaillou_002_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-002.wav"
 gicaillou_002_1		 ftgen 0, 0, 0, 1, gScaillou_002_file, 0, 0, 1
 gicaillou_002_2		 ftgen 0, 0, 0, 1, gScaillou_002_file, 0, 0, 2
 ;---
-gScaillou_003_file 	 init "../samples/caillou/caillou-003.wav"
+gScaillou_003_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-003.wav"
 gicaillou_003_1		 ftgen 0, 0, 0, 1, gScaillou_003_file, 0, 0, 1
 gicaillou_003_2		 ftgen 0, 0, 0, 1, gScaillou_003_file, 0, 0, 2
 ;---
-gScaillou_004_file 	 init "../samples/caillou/caillou-004.wav"
+gScaillou_004_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-004.wav"
 gicaillou_004_1		 ftgen 0, 0, 0, 1, gScaillou_004_file, 0, 0, 1
 gicaillou_004_2		 ftgen 0, 0, 0, 1, gScaillou_004_file, 0, 0, 2
 ;---
-gScaillou_005_file 	 init "../samples/caillou/caillou-005.wav"
+gScaillou_005_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-005.wav"
 gicaillou_005_1		 ftgen 0, 0, 0, 1, gScaillou_005_file, 0, 0, 1
 gicaillou_005_2		 ftgen 0, 0, 0, 1, gScaillou_005_file, 0, 0, 2
 ;---
-gScaillou_006_file 	 init "../samples/caillou/caillou-006.wav"
+gScaillou_006_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-006.wav"
 gicaillou_006_1		 ftgen 0, 0, 0, 1, gScaillou_006_file, 0, 0, 1
 gicaillou_006_2		 ftgen 0, 0, 0, 1, gScaillou_006_file, 0, 0, 2
 ;---
-gScaillou_007_file 	 init "../samples/caillou/caillou-007.wav"
+gScaillou_007_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caillou/caillou-007.wav"
 gicaillou_007_1		 ftgen 0, 0, 0, 1, gScaillou_007_file, 0, 0, 1
 gicaillou_007_2		 ftgen 0, 0, 0, 1, gScaillou_007_file, 0, 0, 2
 ;---

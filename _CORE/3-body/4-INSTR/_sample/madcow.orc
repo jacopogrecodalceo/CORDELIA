@@ -1,4 +1,4 @@
-gSmadcow_file	init "../samples/madcow.wav"
+gSmadcow_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//madcow.wav"
 
 gimadcow1	ftgen 0, 0, 0, 1, gSmadcow_file, 0, 0, 1
 gimadcow2	ftgen 0, 0, 0, 1, gSmadcow_file, 0, 0, 2

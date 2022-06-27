@@ -1,4 +1,4 @@
-gSocean_file	init "../samples/ocean.wav"
+gSocean_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//ocean.wav"
 
 giocean1	ftgen 0, 0, 0, 1, gSocean_file, 0, 0, 1
 giocean2	ftgen 0, 0, 0, 1, gSocean_file, 0, 0, 2

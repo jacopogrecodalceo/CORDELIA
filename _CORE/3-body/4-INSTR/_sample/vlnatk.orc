@@ -1,28 +1,28 @@
-gSvlnatk_00_file 	 init "../samples/vlnatk/vlnatk-00.wav"
+gSvlnatk_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-00.wav"
 givlnatk_00_1		 ftgen 0, 0, 0, 1, gSvlnatk_00_file, 0, 0, 1
 givlnatk_00_2		 ftgen 0, 0, 0, 1, gSvlnatk_00_file, 0, 0, 2
 ;---
-gSvlnatk_01_file 	 init "../samples/vlnatk/vlnatk-01.wav"
+gSvlnatk_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-01.wav"
 givlnatk_01_1		 ftgen 0, 0, 0, 1, gSvlnatk_01_file, 0, 0, 1
 givlnatk_01_2		 ftgen 0, 0, 0, 1, gSvlnatk_01_file, 0, 0, 2
 ;---
-gSvlnatk_02_file 	 init "../samples/vlnatk/vlnatk-02.wav"
+gSvlnatk_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-02.wav"
 givlnatk_02_1		 ftgen 0, 0, 0, 1, gSvlnatk_02_file, 0, 0, 1
 givlnatk_02_2		 ftgen 0, 0, 0, 1, gSvlnatk_02_file, 0, 0, 2
 ;---
-gSvlnatk_03_file 	 init "../samples/vlnatk/vlnatk-03.wav"
+gSvlnatk_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-03.wav"
 givlnatk_03_1		 ftgen 0, 0, 0, 1, gSvlnatk_03_file, 0, 0, 1
 givlnatk_03_2		 ftgen 0, 0, 0, 1, gSvlnatk_03_file, 0, 0, 2
 ;---
-gSvlnatk_04_file 	 init "../samples/vlnatk/vlnatk-04.wav"
+gSvlnatk_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-04.wav"
 givlnatk_04_1		 ftgen 0, 0, 0, 1, gSvlnatk_04_file, 0, 0, 1
 givlnatk_04_2		 ftgen 0, 0, 0, 1, gSvlnatk_04_file, 0, 0, 2
 ;---
-gSvlnatk_05_file 	 init "../samples/vlnatk/vlnatk-05.wav"
+gSvlnatk_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-05.wav"
 givlnatk_05_1		 ftgen 0, 0, 0, 1, gSvlnatk_05_file, 0, 0, 1
 givlnatk_05_2		 ftgen 0, 0, 0, 1, gSvlnatk_05_file, 0, 0, 2
 ;---
-gSvlnatk_06_file 	 init "../samples/vlnatk/vlnatk-06.wav"
+gSvlnatk_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vlnatk/vlnatk-06.wav"
 givlnatk_06_1		 ftgen 0, 0, 0, 1, gSvlnatk_06_file, 0, 0, 1
 givlnatk_06_2		 ftgen 0, 0, 0, 1, gSvlnatk_06_file, 0, 0, 2
 ;---

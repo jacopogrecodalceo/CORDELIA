@@ -1,20 +1,20 @@
-gSfalga_01_file 	 init "../samples/falga/falga-01.wav"
+gSfalga_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//falga/falga-01.wav"
 gifalga_01_1		 ftgen 0, 0, 0, 1, gSfalga_01_file, 0, 0, 1
 gifalga_01_2		 ftgen 0, 0, 0, 1, gSfalga_01_file, 0, 0, 2
 ;---
-gSfalga_02_file 	 init "../samples/falga/falga-02.wav"
+gSfalga_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//falga/falga-02.wav"
 gifalga_02_1		 ftgen 0, 0, 0, 1, gSfalga_02_file, 0, 0, 1
 gifalga_02_2		 ftgen 0, 0, 0, 1, gSfalga_02_file, 0, 0, 2
 ;---
-gSfalga_03_file 	 init "../samples/falga/falga-03.wav"
+gSfalga_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//falga/falga-03.wav"
 gifalga_03_1		 ftgen 0, 0, 0, 1, gSfalga_03_file, 0, 0, 1
 gifalga_03_2		 ftgen 0, 0, 0, 1, gSfalga_03_file, 0, 0, 2
 ;---
-gSfalga_04_file 	 init "../samples/falga/falga-04.wav"
+gSfalga_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//falga/falga-04.wav"
 gifalga_04_1		 ftgen 0, 0, 0, 1, gSfalga_04_file, 0, 0, 1
 gifalga_04_2		 ftgen 0, 0, 0, 1, gSfalga_04_file, 0, 0, 2
 ;---
-gSfalga_05_file 	 init "../samples/falga/falga-05.wav"
+gSfalga_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//falga/falga-05.wav"
 gifalga_05_1		 ftgen 0, 0, 0, 1, gSfalga_05_file, 0, 0, 1
 gifalga_05_2		 ftgen 0, 0, 0, 1, gSfalga_05_file, 0, 0, 2
 ;---

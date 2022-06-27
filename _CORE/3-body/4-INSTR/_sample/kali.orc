@@ -1,44 +1,44 @@
-gSnote_1_file 	 init "../samples/kali/note_1.wav"
+gSnote_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_1.wav"
 ginote_1_1		 ftgen 0, 0, 0, 1, gSnote_1_file, 0, 0, 1
 ginote_1_2		 ftgen 0, 0, 0, 1, gSnote_1_file, 0, 0, 2
 ;---
-gSnote_10_file 	 init "../samples/kali/note_10.wav"
+gSnote_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_10.wav"
 ginote_10_1		 ftgen 0, 0, 0, 1, gSnote_10_file, 0, 0, 1
 ginote_10_2		 ftgen 0, 0, 0, 1, gSnote_10_file, 0, 0, 2
 ;---
-gSnote_11_file 	 init "../samples/kali/note_11.wav"
+gSnote_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_11.wav"
 ginote_11_1		 ftgen 0, 0, 0, 1, gSnote_11_file, 0, 0, 1
 ginote_11_2		 ftgen 0, 0, 0, 1, gSnote_11_file, 0, 0, 2
 ;---
-gSnote_2_file 	 init "../samples/kali/note_2.wav"
+gSnote_2_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_2.wav"
 ginote_2_1		 ftgen 0, 0, 0, 1, gSnote_2_file, 0, 0, 1
 ginote_2_2		 ftgen 0, 0, 0, 1, gSnote_2_file, 0, 0, 2
 ;---
-gSnote_3_file 	 init "../samples/kali/note_3.wav"
+gSnote_3_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_3.wav"
 ginote_3_1		 ftgen 0, 0, 0, 1, gSnote_3_file, 0, 0, 1
 ginote_3_2		 ftgen 0, 0, 0, 1, gSnote_3_file, 0, 0, 2
 ;---
-gSnote_4_file 	 init "../samples/kali/note_4.wav"
+gSnote_4_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_4.wav"
 ginote_4_1		 ftgen 0, 0, 0, 1, gSnote_4_file, 0, 0, 1
 ginote_4_2		 ftgen 0, 0, 0, 1, gSnote_4_file, 0, 0, 2
 ;---
-gSnote_5_file 	 init "../samples/kali/note_5.wav"
+gSnote_5_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_5.wav"
 ginote_5_1		 ftgen 0, 0, 0, 1, gSnote_5_file, 0, 0, 1
 ginote_5_2		 ftgen 0, 0, 0, 1, gSnote_5_file, 0, 0, 2
 ;---
-gSnote_6_file 	 init "../samples/kali/note_6.wav"
+gSnote_6_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_6.wav"
 ginote_6_1		 ftgen 0, 0, 0, 1, gSnote_6_file, 0, 0, 1
 ginote_6_2		 ftgen 0, 0, 0, 1, gSnote_6_file, 0, 0, 2
 ;---
-gSnote_7_file 	 init "../samples/kali/note_7.wav"
+gSnote_7_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_7.wav"
 ginote_7_1		 ftgen 0, 0, 0, 1, gSnote_7_file, 0, 0, 1
 ginote_7_2		 ftgen 0, 0, 0, 1, gSnote_7_file, 0, 0, 2
 ;---
-gSnote_8_file 	 init "../samples/kali/note_8.wav"
+gSnote_8_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_8.wav"
 ginote_8_1		 ftgen 0, 0, 0, 1, gSnote_8_file, 0, 0, 1
 ginote_8_2		 ftgen 0, 0, 0, 1, gSnote_8_file, 0, 0, 2
 ;---
-gSnote_9_file 	 init "../samples/kali/note_9.wav"
+gSnote_9_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//kali/note_9.wav"
 ginote_9_1		 ftgen 0, 0, 0, 1, gSnote_9_file, 0, 0, 1
 ginote_9_2		 ftgen 0, 0, 0, 1, gSnote_9_file, 0, 0, 2
 ;---

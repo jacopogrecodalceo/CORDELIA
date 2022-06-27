@@ -1,4 +1,4 @@
-gSreg_file	init "../samples/reg.wav"
+gSreg_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//reg.wav"
 
 gireg1	ftgen 0, 0, 0, 1, gSreg_file, 0, 0, 1
 gireg2	ftgen 0, 0, 0, 1, gSreg_file, 0, 0, 2

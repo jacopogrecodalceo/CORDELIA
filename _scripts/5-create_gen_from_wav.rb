@@ -1,5 +1,6 @@
-CORDELIA_dir = '/Users/j/Documents/PROJECTs/CORDELIA'
-my_dir        = CORDELIA_dir + '/_CORE/2-head/GEN'
+require_relative __dir__ + "/_path.rb"
+
+my_dir        = $cordelia_dir + '/_CORE/2-head/GEN'
 
 Dir.glob(my_dir + '/*').each do |each_dir|
     if File.directory?(each_dir)
@@ -8,8 +9,7 @@ Dir.glob(my_dir + '/*').each do |each_dir|
         wav_write = File.open(wav_file, "w")
 
         Dir.glob(each_dir + '/**/*.wav').each do |f|
-            p f
-
+            
             wav_path    = f.gsub("../", "")
             wav_name    = File.basename(f, '.wav')    
             wav_write   = File.open(wav_file, "a")

@@ -1,4 +1,4 @@
-gSmario1_file	init "../samples/mario1.wav"
+gSmario1_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//mario1.wav"
 
 gimario11	ftgen 0, 0, 0, 1, gSmario1_file, 0, 0, 1
 gimario12	ftgen 0, 0, 0, 1, gSmario1_file, 0, 0, 2

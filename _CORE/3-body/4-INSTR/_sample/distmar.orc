@@ -1,120 +1,120 @@
-gSdistmar_00_file 	 init "../samples/distmar/distmar_00.wav"
+gSdistmar_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_00.wav"
 gidistmar_00_1		 ftgen 0, 0, 0, 1, gSdistmar_00_file, 0, 0, 1
 gidistmar_00_2		 ftgen 0, 0, 0, 1, gSdistmar_00_file, 0, 0, 2
 ;---
-gSdistmar_01_file 	 init "../samples/distmar/distmar_01.wav"
+gSdistmar_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_01.wav"
 gidistmar_01_1		 ftgen 0, 0, 0, 1, gSdistmar_01_file, 0, 0, 1
 gidistmar_01_2		 ftgen 0, 0, 0, 1, gSdistmar_01_file, 0, 0, 2
 ;---
-gSdistmar_02_file 	 init "../samples/distmar/distmar_02.wav"
+gSdistmar_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_02.wav"
 gidistmar_02_1		 ftgen 0, 0, 0, 1, gSdistmar_02_file, 0, 0, 1
 gidistmar_02_2		 ftgen 0, 0, 0, 1, gSdistmar_02_file, 0, 0, 2
 ;---
-gSdistmar_03_file 	 init "../samples/distmar/distmar_03.wav"
+gSdistmar_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_03.wav"
 gidistmar_03_1		 ftgen 0, 0, 0, 1, gSdistmar_03_file, 0, 0, 1
 gidistmar_03_2		 ftgen 0, 0, 0, 1, gSdistmar_03_file, 0, 0, 2
 ;---
-gSdistmar_04_file 	 init "../samples/distmar/distmar_04.wav"
+gSdistmar_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_04.wav"
 gidistmar_04_1		 ftgen 0, 0, 0, 1, gSdistmar_04_file, 0, 0, 1
 gidistmar_04_2		 ftgen 0, 0, 0, 1, gSdistmar_04_file, 0, 0, 2
 ;---
-gSdistmar_05_file 	 init "../samples/distmar/distmar_05.wav"
+gSdistmar_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_05.wav"
 gidistmar_05_1		 ftgen 0, 0, 0, 1, gSdistmar_05_file, 0, 0, 1
 gidistmar_05_2		 ftgen 0, 0, 0, 1, gSdistmar_05_file, 0, 0, 2
 ;---
-gSdistmar_06_file 	 init "../samples/distmar/distmar_06.wav"
+gSdistmar_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_06.wav"
 gidistmar_06_1		 ftgen 0, 0, 0, 1, gSdistmar_06_file, 0, 0, 1
 gidistmar_06_2		 ftgen 0, 0, 0, 1, gSdistmar_06_file, 0, 0, 2
 ;---
-gSdistmar_07_file 	 init "../samples/distmar/distmar_07.wav"
+gSdistmar_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_07.wav"
 gidistmar_07_1		 ftgen 0, 0, 0, 1, gSdistmar_07_file, 0, 0, 1
 gidistmar_07_2		 ftgen 0, 0, 0, 1, gSdistmar_07_file, 0, 0, 2
 ;---
-gSdistmar_08_file 	 init "../samples/distmar/distmar_08.wav"
+gSdistmar_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_08.wav"
 gidistmar_08_1		 ftgen 0, 0, 0, 1, gSdistmar_08_file, 0, 0, 1
 gidistmar_08_2		 ftgen 0, 0, 0, 1, gSdistmar_08_file, 0, 0, 2
 ;---
-gSdistmar_09_file 	 init "../samples/distmar/distmar_09.wav"
+gSdistmar_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_09.wav"
 gidistmar_09_1		 ftgen 0, 0, 0, 1, gSdistmar_09_file, 0, 0, 1
 gidistmar_09_2		 ftgen 0, 0, 0, 1, gSdistmar_09_file, 0, 0, 2
 ;---
-gSdistmar_10_file 	 init "../samples/distmar/distmar_10.wav"
+gSdistmar_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_10.wav"
 gidistmar_10_1		 ftgen 0, 0, 0, 1, gSdistmar_10_file, 0, 0, 1
 gidistmar_10_2		 ftgen 0, 0, 0, 1, gSdistmar_10_file, 0, 0, 2
 ;---
-gSdistmar_11_file 	 init "../samples/distmar/distmar_11.wav"
+gSdistmar_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_11.wav"
 gidistmar_11_1		 ftgen 0, 0, 0, 1, gSdistmar_11_file, 0, 0, 1
 gidistmar_11_2		 ftgen 0, 0, 0, 1, gSdistmar_11_file, 0, 0, 2
 ;---
-gSdistmar_12_file 	 init "../samples/distmar/distmar_12.wav"
+gSdistmar_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_12.wav"
 gidistmar_12_1		 ftgen 0, 0, 0, 1, gSdistmar_12_file, 0, 0, 1
 gidistmar_12_2		 ftgen 0, 0, 0, 1, gSdistmar_12_file, 0, 0, 2
 ;---
-gSdistmar_13_file 	 init "../samples/distmar/distmar_13.wav"
+gSdistmar_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_13.wav"
 gidistmar_13_1		 ftgen 0, 0, 0, 1, gSdistmar_13_file, 0, 0, 1
 gidistmar_13_2		 ftgen 0, 0, 0, 1, gSdistmar_13_file, 0, 0, 2
 ;---
-gSdistmar_14_file 	 init "../samples/distmar/distmar_14.wav"
+gSdistmar_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_14.wav"
 gidistmar_14_1		 ftgen 0, 0, 0, 1, gSdistmar_14_file, 0, 0, 1
 gidistmar_14_2		 ftgen 0, 0, 0, 1, gSdistmar_14_file, 0, 0, 2
 ;---
-gSdistmar_15_file 	 init "../samples/distmar/distmar_15.wav"
+gSdistmar_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_15.wav"
 gidistmar_15_1		 ftgen 0, 0, 0, 1, gSdistmar_15_file, 0, 0, 1
 gidistmar_15_2		 ftgen 0, 0, 0, 1, gSdistmar_15_file, 0, 0, 2
 ;---
-gSdistmar_16_file 	 init "../samples/distmar/distmar_16.wav"
+gSdistmar_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_16.wav"
 gidistmar_16_1		 ftgen 0, 0, 0, 1, gSdistmar_16_file, 0, 0, 1
 gidistmar_16_2		 ftgen 0, 0, 0, 1, gSdistmar_16_file, 0, 0, 2
 ;---
-gSdistmar_17_file 	 init "../samples/distmar/distmar_17.wav"
+gSdistmar_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_17.wav"
 gidistmar_17_1		 ftgen 0, 0, 0, 1, gSdistmar_17_file, 0, 0, 1
 gidistmar_17_2		 ftgen 0, 0, 0, 1, gSdistmar_17_file, 0, 0, 2
 ;---
-gSdistmar_18_file 	 init "../samples/distmar/distmar_18.wav"
+gSdistmar_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_18.wav"
 gidistmar_18_1		 ftgen 0, 0, 0, 1, gSdistmar_18_file, 0, 0, 1
 gidistmar_18_2		 ftgen 0, 0, 0, 1, gSdistmar_18_file, 0, 0, 2
 ;---
-gSdistmar_19_file 	 init "../samples/distmar/distmar_19.wav"
+gSdistmar_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_19.wav"
 gidistmar_19_1		 ftgen 0, 0, 0, 1, gSdistmar_19_file, 0, 0, 1
 gidistmar_19_2		 ftgen 0, 0, 0, 1, gSdistmar_19_file, 0, 0, 2
 ;---
-gSdistmar_20_file 	 init "../samples/distmar/distmar_20.wav"
+gSdistmar_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_20.wav"
 gidistmar_20_1		 ftgen 0, 0, 0, 1, gSdistmar_20_file, 0, 0, 1
 gidistmar_20_2		 ftgen 0, 0, 0, 1, gSdistmar_20_file, 0, 0, 2
 ;---
-gSdistmar_21_file 	 init "../samples/distmar/distmar_21.wav"
+gSdistmar_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_21.wav"
 gidistmar_21_1		 ftgen 0, 0, 0, 1, gSdistmar_21_file, 0, 0, 1
 gidistmar_21_2		 ftgen 0, 0, 0, 1, gSdistmar_21_file, 0, 0, 2
 ;---
-gSdistmar_22_file 	 init "../samples/distmar/distmar_22.wav"
+gSdistmar_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_22.wav"
 gidistmar_22_1		 ftgen 0, 0, 0, 1, gSdistmar_22_file, 0, 0, 1
 gidistmar_22_2		 ftgen 0, 0, 0, 1, gSdistmar_22_file, 0, 0, 2
 ;---
-gSdistmar_23_file 	 init "../samples/distmar/distmar_23.wav"
+gSdistmar_23_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_23.wav"
 gidistmar_23_1		 ftgen 0, 0, 0, 1, gSdistmar_23_file, 0, 0, 1
 gidistmar_23_2		 ftgen 0, 0, 0, 1, gSdistmar_23_file, 0, 0, 2
 ;---
-gSdistmar_24_file 	 init "../samples/distmar/distmar_24.wav"
+gSdistmar_24_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_24.wav"
 gidistmar_24_1		 ftgen 0, 0, 0, 1, gSdistmar_24_file, 0, 0, 1
 gidistmar_24_2		 ftgen 0, 0, 0, 1, gSdistmar_24_file, 0, 0, 2
 ;---
-gSdistmar_25_file 	 init "../samples/distmar/distmar_25.wav"
+gSdistmar_25_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_25.wav"
 gidistmar_25_1		 ftgen 0, 0, 0, 1, gSdistmar_25_file, 0, 0, 1
 gidistmar_25_2		 ftgen 0, 0, 0, 1, gSdistmar_25_file, 0, 0, 2
 ;---
-gSdistmar_26_file 	 init "../samples/distmar/distmar_26.wav"
+gSdistmar_26_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_26.wav"
 gidistmar_26_1		 ftgen 0, 0, 0, 1, gSdistmar_26_file, 0, 0, 1
 gidistmar_26_2		 ftgen 0, 0, 0, 1, gSdistmar_26_file, 0, 0, 2
 ;---
-gSdistmar_27_file 	 init "../samples/distmar/distmar_27.wav"
+gSdistmar_27_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_27.wav"
 gidistmar_27_1		 ftgen 0, 0, 0, 1, gSdistmar_27_file, 0, 0, 1
 gidistmar_27_2		 ftgen 0, 0, 0, 1, gSdistmar_27_file, 0, 0, 2
 ;---
-gSdistmar_28_file 	 init "../samples/distmar/distmar_28.wav"
+gSdistmar_28_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_28.wav"
 gidistmar_28_1		 ftgen 0, 0, 0, 1, gSdistmar_28_file, 0, 0, 1
 gidistmar_28_2		 ftgen 0, 0, 0, 1, gSdistmar_28_file, 0, 0, 2
 ;---
-gSdistmar_29_file 	 init "../samples/distmar/distmar_29.wav"
+gSdistmar_29_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//distmar/distmar_29.wav"
 gidistmar_29_1		 ftgen 0, 0, 0, 1, gSdistmar_29_file, 0, 0, 1
 gidistmar_29_2		 ftgen 0, 0, 0, 1, gSdistmar_29_file, 0, 0, 2
 ;---

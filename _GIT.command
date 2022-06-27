@@ -10,4 +10,4 @@ git commit -m "$commit"
 
 git push
 
-exit
+sleep 3.5

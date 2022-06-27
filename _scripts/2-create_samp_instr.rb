@@ -1,8 +1,11 @@
-samp_sampdef_file      = File.open('../_CORE/3-body/5-INSTR/_sample/_sampleDEF.txt').read
-samp_dirdef_file       = File.open('../_CORE/3-body/5-INSTR/_sample/_dirDEF.txt').read
+require_relative __dir__ + "/_path.rb"
 
-samp_dir           = '../samples' 
-samp_orc_dir       = '../_CORE/3-body/5-INSTR/_sample'
+
+samp_sampdef_file      = File.open($cordelia_instr + '_sample/_sampleDEF.txt').read
+samp_dirdef_file       = File.open($cordelia_instr + '_sample/_dirDEF.txt').read
+
+samp_dir           = $cordelia_samp
+samp_orc_dir       = $cordelia_instr + '_sample'
 
 #DELETE ALL .ORC
 Dir[samp_orc_dir + '/*.orc'].each do |file|

@@ -1,52 +1,52 @@
-gSgameld_00_file 	 init "../samples/gameld/gameld_00.wav"
+gSgameld_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_00.wav"
 gigameld_00_1		 ftgen 0, 0, 0, 1, gSgameld_00_file, 0, 0, 1
 gigameld_00_2		 ftgen 0, 0, 0, 1, gSgameld_00_file, 0, 0, 2
 ;---
-gSgameld_01_file 	 init "../samples/gameld/gameld_01.wav"
+gSgameld_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_01.wav"
 gigameld_01_1		 ftgen 0, 0, 0, 1, gSgameld_01_file, 0, 0, 1
 gigameld_01_2		 ftgen 0, 0, 0, 1, gSgameld_01_file, 0, 0, 2
 ;---
-gSgameld_02_file 	 init "../samples/gameld/gameld_02.wav"
+gSgameld_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_02.wav"
 gigameld_02_1		 ftgen 0, 0, 0, 1, gSgameld_02_file, 0, 0, 1
 gigameld_02_2		 ftgen 0, 0, 0, 1, gSgameld_02_file, 0, 0, 2
 ;---
-gSgameld_03_file 	 init "../samples/gameld/gameld_03.wav"
+gSgameld_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_03.wav"
 gigameld_03_1		 ftgen 0, 0, 0, 1, gSgameld_03_file, 0, 0, 1
 gigameld_03_2		 ftgen 0, 0, 0, 1, gSgameld_03_file, 0, 0, 2
 ;---
-gSgameld_04_file 	 init "../samples/gameld/gameld_04.wav"
+gSgameld_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_04.wav"
 gigameld_04_1		 ftgen 0, 0, 0, 1, gSgameld_04_file, 0, 0, 1
 gigameld_04_2		 ftgen 0, 0, 0, 1, gSgameld_04_file, 0, 0, 2
 ;---
-gSgameld_05_file 	 init "../samples/gameld/gameld_05.wav"
+gSgameld_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_05.wav"
 gigameld_05_1		 ftgen 0, 0, 0, 1, gSgameld_05_file, 0, 0, 1
 gigameld_05_2		 ftgen 0, 0, 0, 1, gSgameld_05_file, 0, 0, 2
 ;---
-gSgameld_06_file 	 init "../samples/gameld/gameld_06.wav"
+gSgameld_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_06.wav"
 gigameld_06_1		 ftgen 0, 0, 0, 1, gSgameld_06_file, 0, 0, 1
 gigameld_06_2		 ftgen 0, 0, 0, 1, gSgameld_06_file, 0, 0, 2
 ;---
-gSgameld_07_file 	 init "../samples/gameld/gameld_07.wav"
+gSgameld_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_07.wav"
 gigameld_07_1		 ftgen 0, 0, 0, 1, gSgameld_07_file, 0, 0, 1
 gigameld_07_2		 ftgen 0, 0, 0, 1, gSgameld_07_file, 0, 0, 2
 ;---
-gSgameld_08_file 	 init "../samples/gameld/gameld_08.wav"
+gSgameld_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_08.wav"
 gigameld_08_1		 ftgen 0, 0, 0, 1, gSgameld_08_file, 0, 0, 1
 gigameld_08_2		 ftgen 0, 0, 0, 1, gSgameld_08_file, 0, 0, 2
 ;---
-gSgameld_09_file 	 init "../samples/gameld/gameld_09.wav"
+gSgameld_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_09.wav"
 gigameld_09_1		 ftgen 0, 0, 0, 1, gSgameld_09_file, 0, 0, 1
 gigameld_09_2		 ftgen 0, 0, 0, 1, gSgameld_09_file, 0, 0, 2
 ;---
-gSgameld_10_file 	 init "../samples/gameld/gameld_10.wav"
+gSgameld_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_10.wav"
 gigameld_10_1		 ftgen 0, 0, 0, 1, gSgameld_10_file, 0, 0, 1
 gigameld_10_2		 ftgen 0, 0, 0, 1, gSgameld_10_file, 0, 0, 2
 ;---
-gSgameld_11_file 	 init "../samples/gameld/gameld_11.wav"
+gSgameld_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_11.wav"
 gigameld_11_1		 ftgen 0, 0, 0, 1, gSgameld_11_file, 0, 0, 1
 gigameld_11_2		 ftgen 0, 0, 0, 1, gSgameld_11_file, 0, 0, 2
 ;---
-gSgameld_12_file 	 init "../samples/gameld/gameld_12.wav"
+gSgameld_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gameld/gameld_12.wav"
 gigameld_12_1		 ftgen 0, 0, 0, 1, gSgameld_12_file, 0, 0, 1
 gigameld_12_2		 ftgen 0, 0, 0, 1, gSgameld_12_file, 0, 0, 2
 ;---

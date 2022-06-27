@@ -1,32 +1,32 @@
-gScapr2x_001_file 	 init "../samples/capr2x/capr2x-001.wav"
+gScapr2x_001_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-001.wav"
 gicapr2x_001_1		 ftgen 0, 0, 0, 1, gScapr2x_001_file, 0, 0, 1
 gicapr2x_001_2		 ftgen 0, 0, 0, 1, gScapr2x_001_file, 0, 0, 2
 ;---
-gScapr2x_002_file 	 init "../samples/capr2x/capr2x-002.wav"
+gScapr2x_002_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-002.wav"
 gicapr2x_002_1		 ftgen 0, 0, 0, 1, gScapr2x_002_file, 0, 0, 1
 gicapr2x_002_2		 ftgen 0, 0, 0, 1, gScapr2x_002_file, 0, 0, 2
 ;---
-gScapr2x_003_file 	 init "../samples/capr2x/capr2x-003.wav"
+gScapr2x_003_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-003.wav"
 gicapr2x_003_1		 ftgen 0, 0, 0, 1, gScapr2x_003_file, 0, 0, 1
 gicapr2x_003_2		 ftgen 0, 0, 0, 1, gScapr2x_003_file, 0, 0, 2
 ;---
-gScapr2x_004_file 	 init "../samples/capr2x/capr2x-004.wav"
+gScapr2x_004_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-004.wav"
 gicapr2x_004_1		 ftgen 0, 0, 0, 1, gScapr2x_004_file, 0, 0, 1
 gicapr2x_004_2		 ftgen 0, 0, 0, 1, gScapr2x_004_file, 0, 0, 2
 ;---
-gScapr2x_005_file 	 init "../samples/capr2x/capr2x-005.wav"
+gScapr2x_005_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-005.wav"
 gicapr2x_005_1		 ftgen 0, 0, 0, 1, gScapr2x_005_file, 0, 0, 1
 gicapr2x_005_2		 ftgen 0, 0, 0, 1, gScapr2x_005_file, 0, 0, 2
 ;---
-gScapr2x_006_file 	 init "../samples/capr2x/capr2x-006.wav"
+gScapr2x_006_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-006.wav"
 gicapr2x_006_1		 ftgen 0, 0, 0, 1, gScapr2x_006_file, 0, 0, 1
 gicapr2x_006_2		 ftgen 0, 0, 0, 1, gScapr2x_006_file, 0, 0, 2
 ;---
-gScapr2x_007_file 	 init "../samples/capr2x/capr2x-007.wav"
+gScapr2x_007_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-007.wav"
 gicapr2x_007_1		 ftgen 0, 0, 0, 1, gScapr2x_007_file, 0, 0, 1
 gicapr2x_007_2		 ftgen 0, 0, 0, 1, gScapr2x_007_file, 0, 0, 2
 ;---
-gScapr2x_008_file 	 init "../samples/capr2x/capr2x-008.wav"
+gScapr2x_008_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capr2x/capr2x-008.wav"
 gicapr2x_008_1		 ftgen 0, 0, 0, 1, gScapr2x_008_file, 0, 0, 1
 gicapr2x_008_2		 ftgen 0, 0, 0, 1, gScapr2x_008_file, 0, 0, 2
 ;---

@@ -1,4 +1,4 @@
-gSsix_file	init "../samples/six.wav"
+gSsix_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//six.wav"
 
 gisix1	ftgen 0, 0, 0, 1, gSsix_file, 0, 0, 1
 gisix2	ftgen 0, 0, 0, 1, gSsix_file, 0, 0, 2

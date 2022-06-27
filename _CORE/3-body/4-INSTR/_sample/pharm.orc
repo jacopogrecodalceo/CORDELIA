@@ -1,60 +1,60 @@
-gSD3_2_1_file 	 init "../samples/pharm/D3_2_1.wav"
+gSD3_2_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D3_2_1.wav"
 giD3_2_1_1		 ftgen 0, 0, 0, 1, gSD3_2_1_file, 0, 0, 1
 giD3_2_1_2		 ftgen 0, 0, 0, 1, gSD3_2_1_file, 0, 0, 2
 ;---
-gSD3_3_1_file 	 init "../samples/pharm/D3_3_1.wav"
+gSD3_3_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D3_3_1.wav"
 giD3_3_1_1		 ftgen 0, 0, 0, 1, gSD3_3_1_file, 0, 0, 1
 giD3_3_1_2		 ftgen 0, 0, 0, 1, gSD3_3_1_file, 0, 0, 2
 ;---
-gSD3_4_1_file 	 init "../samples/pharm/D3_4_1.wav"
+gSD3_4_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D3_4_1.wav"
 giD3_4_1_1		 ftgen 0, 0, 0, 1, gSD3_4_1_file, 0, 0, 1
 giD3_4_1_2		 ftgen 0, 0, 0, 1, gSD3_4_1_file, 0, 0, 2
 ;---
-gSD3_5_1_file 	 init "../samples/pharm/D3_5_1.wav"
+gSD3_5_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D3_5_1.wav"
 giD3_5_1_1		 ftgen 0, 0, 0, 1, gSD3_5_1_file, 0, 0, 1
 giD3_5_1_2		 ftgen 0, 0, 0, 1, gSD3_5_1_file, 0, 0, 2
 ;---
-gSD3_7_2_file 	 init "../samples/pharm/D3_7_2.wav"
+gSD3_7_2_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D3_7_2.wav"
 giD3_7_2_1		 ftgen 0, 0, 0, 1, gSD3_7_2_file, 0, 0, 1
 giD3_7_2_2		 ftgen 0, 0, 0, 1, gSD3_7_2_file, 0, 0, 2
 ;---
-gSD4_2_1_file 	 init "../samples/pharm/D4_2_1.wav"
+gSD4_2_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D4_2_1.wav"
 giD4_2_1_1		 ftgen 0, 0, 0, 1, gSD4_2_1_file, 0, 0, 1
 giD4_2_1_2		 ftgen 0, 0, 0, 1, gSD4_2_1_file, 0, 0, 2
 ;---
-gSD4_3_1_file 	 init "../samples/pharm/D4_3_1.wav"
+gSD4_3_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D4_3_1.wav"
 giD4_3_1_1		 ftgen 0, 0, 0, 1, gSD4_3_1_file, 0, 0, 1
 giD4_3_1_2		 ftgen 0, 0, 0, 1, gSD4_3_1_file, 0, 0, 2
 ;---
-gSD4_4_1_file 	 init "../samples/pharm/D4_4_1.wav"
+gSD4_4_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/D4_4_1.wav"
 giD4_4_1_1		 ftgen 0, 0, 0, 1, gSD4_4_1_file, 0, 0, 1
 giD4_4_1_2		 ftgen 0, 0, 0, 1, gSD4_4_1_file, 0, 0, 2
 ;---
-gSF3_2_1_file 	 init "../samples/pharm/F3_2_1.wav"
+gSF3_2_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F3_2_1.wav"
 giF3_2_1_1		 ftgen 0, 0, 0, 1, gSF3_2_1_file, 0, 0, 1
 giF3_2_1_2		 ftgen 0, 0, 0, 1, gSF3_2_1_file, 0, 0, 2
 ;---
-gSF3_3_1_file 	 init "../samples/pharm/F3_3_1.wav"
+gSF3_3_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F3_3_1.wav"
 giF3_3_1_1		 ftgen 0, 0, 0, 1, gSF3_3_1_file, 0, 0, 1
 giF3_3_1_2		 ftgen 0, 0, 0, 1, gSF3_3_1_file, 0, 0, 2
 ;---
-gSF3_4_1_file 	 init "../samples/pharm/F3_4_1.wav"
+gSF3_4_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F3_4_1.wav"
 giF3_4_1_1		 ftgen 0, 0, 0, 1, gSF3_4_1_file, 0, 0, 1
 giF3_4_1_2		 ftgen 0, 0, 0, 1, gSF3_4_1_file, 0, 0, 2
 ;---
-gSF3_5_1_file 	 init "../samples/pharm/F3_5_1.wav"
+gSF3_5_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F3_5_1.wav"
 giF3_5_1_1		 ftgen 0, 0, 0, 1, gSF3_5_1_file, 0, 0, 1
 giF3_5_1_2		 ftgen 0, 0, 0, 1, gSF3_5_1_file, 0, 0, 2
 ;---
-gSF3_7_2_file 	 init "../samples/pharm/F3_7_2.wav"
+gSF3_7_2_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F3_7_2.wav"
 giF3_7_2_1		 ftgen 0, 0, 0, 1, gSF3_7_2_file, 0, 0, 1
 giF3_7_2_2		 ftgen 0, 0, 0, 1, gSF3_7_2_file, 0, 0, 2
 ;---
-gSF4_2_1_file 	 init "../samples/pharm/F4_2_1.wav"
+gSF4_2_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F4_2_1.wav"
 giF4_2_1_1		 ftgen 0, 0, 0, 1, gSF4_2_1_file, 0, 0, 1
 giF4_2_1_2		 ftgen 0, 0, 0, 1, gSF4_2_1_file, 0, 0, 2
 ;---
-gSF4_3_1_file 	 init "../samples/pharm/F4_3_1.wav"
+gSF4_3_1_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pharm/F4_3_1.wav"
 giF4_3_1_1		 ftgen 0, 0, 0, 1, gSF4_3_1_file, 0, 0, 1
 giF4_3_1_2		 ftgen 0, 0, 0, 1, gSF4_3_1_file, 0, 0, 2
 ;---

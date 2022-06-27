@@ -1,4 +1,4 @@
-gStricot_file	init "../samples/tricot.wav"
+gStricot_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tricot.wav"
 
 gitricot1	ftgen 0, 0, 0, 1, gStricot_file, 0, 0, 1
 gitricot2	ftgen 0, 0, 0, 1, gStricot_file, 0, 0, 2

@@ -1,80 +1,80 @@
-gSdisfigured_matter_split_sil002_file 	 init "../samples/dismatter/disfigured_matter_split_sil002.wav"
+gSdisfigured_matter_split_sil002_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil002.wav"
 gidisfigured_matter_split_sil002_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil002_file, 0, 0, 1
 gidisfigured_matter_split_sil002_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil002_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil003_file 	 init "../samples/dismatter/disfigured_matter_split_sil003.wav"
+gSdisfigured_matter_split_sil003_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil003.wav"
 gidisfigured_matter_split_sil003_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil003_file, 0, 0, 1
 gidisfigured_matter_split_sil003_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil003_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil004_file 	 init "../samples/dismatter/disfigured_matter_split_sil004.wav"
+gSdisfigured_matter_split_sil004_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil004.wav"
 gidisfigured_matter_split_sil004_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil004_file, 0, 0, 1
 gidisfigured_matter_split_sil004_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil004_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil005_file 	 init "../samples/dismatter/disfigured_matter_split_sil005.wav"
+gSdisfigured_matter_split_sil005_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil005.wav"
 gidisfigured_matter_split_sil005_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil005_file, 0, 0, 1
 gidisfigured_matter_split_sil005_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil005_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil006_file 	 init "../samples/dismatter/disfigured_matter_split_sil006.wav"
+gSdisfigured_matter_split_sil006_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil006.wav"
 gidisfigured_matter_split_sil006_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil006_file, 0, 0, 1
 gidisfigured_matter_split_sil006_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil006_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil007_file 	 init "../samples/dismatter/disfigured_matter_split_sil007.wav"
+gSdisfigured_matter_split_sil007_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil007.wav"
 gidisfigured_matter_split_sil007_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil007_file, 0, 0, 1
 gidisfigured_matter_split_sil007_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil007_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil008_file 	 init "../samples/dismatter/disfigured_matter_split_sil008.wav"
+gSdisfigured_matter_split_sil008_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil008.wav"
 gidisfigured_matter_split_sil008_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil008_file, 0, 0, 1
 gidisfigured_matter_split_sil008_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil008_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil009_file 	 init "../samples/dismatter/disfigured_matter_split_sil009.wav"
+gSdisfigured_matter_split_sil009_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil009.wav"
 gidisfigured_matter_split_sil009_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil009_file, 0, 0, 1
 gidisfigured_matter_split_sil009_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil009_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil010_file 	 init "../samples/dismatter/disfigured_matter_split_sil010.wav"
+gSdisfigured_matter_split_sil010_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil010.wav"
 gidisfigured_matter_split_sil010_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil010_file, 0, 0, 1
 gidisfigured_matter_split_sil010_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil010_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil011_file 	 init "../samples/dismatter/disfigured_matter_split_sil011.wav"
+gSdisfigured_matter_split_sil011_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil011.wav"
 gidisfigured_matter_split_sil011_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil011_file, 0, 0, 1
 gidisfigured_matter_split_sil011_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil011_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil012_file 	 init "../samples/dismatter/disfigured_matter_split_sil012.wav"
+gSdisfigured_matter_split_sil012_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil012.wav"
 gidisfigured_matter_split_sil012_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil012_file, 0, 0, 1
 gidisfigured_matter_split_sil012_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil012_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil013_file 	 init "../samples/dismatter/disfigured_matter_split_sil013.wav"
+gSdisfigured_matter_split_sil013_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil013.wav"
 gidisfigured_matter_split_sil013_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil013_file, 0, 0, 1
 gidisfigured_matter_split_sil013_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil013_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil014_file 	 init "../samples/dismatter/disfigured_matter_split_sil014.wav"
+gSdisfigured_matter_split_sil014_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil014.wav"
 gidisfigured_matter_split_sil014_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil014_file, 0, 0, 1
 gidisfigured_matter_split_sil014_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil014_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil015_file 	 init "../samples/dismatter/disfigured_matter_split_sil015.wav"
+gSdisfigured_matter_split_sil015_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil015.wav"
 gidisfigured_matter_split_sil015_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil015_file, 0, 0, 1
 gidisfigured_matter_split_sil015_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil015_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil016_file 	 init "../samples/dismatter/disfigured_matter_split_sil016.wav"
+gSdisfigured_matter_split_sil016_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil016.wav"
 gidisfigured_matter_split_sil016_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil016_file, 0, 0, 1
 gidisfigured_matter_split_sil016_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil016_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil017_file 	 init "../samples/dismatter/disfigured_matter_split_sil017.wav"
+gSdisfigured_matter_split_sil017_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil017.wav"
 gidisfigured_matter_split_sil017_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil017_file, 0, 0, 1
 gidisfigured_matter_split_sil017_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil017_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil018_file 	 init "../samples/dismatter/disfigured_matter_split_sil018.wav"
+gSdisfigured_matter_split_sil018_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil018.wav"
 gidisfigured_matter_split_sil018_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil018_file, 0, 0, 1
 gidisfigured_matter_split_sil018_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil018_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil019_file 	 init "../samples/dismatter/disfigured_matter_split_sil019.wav"
+gSdisfigured_matter_split_sil019_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil019.wav"
 gidisfigured_matter_split_sil019_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil019_file, 0, 0, 1
 gidisfigured_matter_split_sil019_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil019_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil020_file 	 init "../samples/dismatter/disfigured_matter_split_sil020.wav"
+gSdisfigured_matter_split_sil020_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil020.wav"
 gidisfigured_matter_split_sil020_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil020_file, 0, 0, 1
 gidisfigured_matter_split_sil020_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil020_file, 0, 0, 2
 ;---
-gSdisfigured_matter_split_sil021_file 	 init "../samples/dismatter/disfigured_matter_split_sil021.wav"
+gSdisfigured_matter_split_sil021_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dismatter/disfigured_matter_split_sil021.wav"
 gidisfigured_matter_split_sil021_1		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil021_file, 0, 0, 1
 gidisfigured_matter_split_sil021_2		 ftgen 0, 0, 0, 1, gSdisfigured_matter_split_sil021_file, 0, 0, 2
 ;---

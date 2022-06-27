@@ -1,4 +1,4 @@
-gScapriccio2_file	init "../samples/capriccio2.wav"
+gScapriccio2_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//capriccio2.wav"
 
 gicapriccio21	ftgen 0, 0, 0, 1, gScapriccio2_file, 0, 0, 1
 gicapriccio22	ftgen 0, 0, 0, 1, gScapriccio2_file, 0, 0, 2

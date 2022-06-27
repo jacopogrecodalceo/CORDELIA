@@ -1,4 +1,4 @@
-giflingjm_ft	init gihsaw
+giflingjm_ft	init giasaw
 
 giringj7_arr[]	genarray 1, ginchnls
 

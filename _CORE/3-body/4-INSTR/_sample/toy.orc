@@ -1,36 +1,36 @@
-gStoy_00_file 	 init "../samples/toy/toy_00.wav"
+gStoy_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_00.wav"
 gitoy_00_1		 ftgen 0, 0, 0, 1, gStoy_00_file, 0, 0, 1
 gitoy_00_2		 ftgen 0, 0, 0, 1, gStoy_00_file, 0, 0, 2
 ;---
-gStoy_01_file 	 init "../samples/toy/toy_01.wav"
+gStoy_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_01.wav"
 gitoy_01_1		 ftgen 0, 0, 0, 1, gStoy_01_file, 0, 0, 1
 gitoy_01_2		 ftgen 0, 0, 0, 1, gStoy_01_file, 0, 0, 2
 ;---
-gStoy_02_file 	 init "../samples/toy/toy_02.wav"
+gStoy_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_02.wav"
 gitoy_02_1		 ftgen 0, 0, 0, 1, gStoy_02_file, 0, 0, 1
 gitoy_02_2		 ftgen 0, 0, 0, 1, gStoy_02_file, 0, 0, 2
 ;---
-gStoy_03_file 	 init "../samples/toy/toy_03.wav"
+gStoy_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_03.wav"
 gitoy_03_1		 ftgen 0, 0, 0, 1, gStoy_03_file, 0, 0, 1
 gitoy_03_2		 ftgen 0, 0, 0, 1, gStoy_03_file, 0, 0, 2
 ;---
-gStoy_04_file 	 init "../samples/toy/toy_04.wav"
+gStoy_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_04.wav"
 gitoy_04_1		 ftgen 0, 0, 0, 1, gStoy_04_file, 0, 0, 1
 gitoy_04_2		 ftgen 0, 0, 0, 1, gStoy_04_file, 0, 0, 2
 ;---
-gStoy_05_file 	 init "../samples/toy/toy_05.wav"
+gStoy_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_05.wav"
 gitoy_05_1		 ftgen 0, 0, 0, 1, gStoy_05_file, 0, 0, 1
 gitoy_05_2		 ftgen 0, 0, 0, 1, gStoy_05_file, 0, 0, 2
 ;---
-gStoy_06_file 	 init "../samples/toy/toy_06.wav"
+gStoy_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_06.wav"
 gitoy_06_1		 ftgen 0, 0, 0, 1, gStoy_06_file, 0, 0, 1
 gitoy_06_2		 ftgen 0, 0, 0, 1, gStoy_06_file, 0, 0, 2
 ;---
-gStoy_07_file 	 init "../samples/toy/toy_07.wav"
+gStoy_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_07.wav"
 gitoy_07_1		 ftgen 0, 0, 0, 1, gStoy_07_file, 0, 0, 1
 gitoy_07_2		 ftgen 0, 0, 0, 1, gStoy_07_file, 0, 0, 2
 ;---
-gStoy_08_file 	 init "../samples/toy/toy_08.wav"
+gStoy_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//toy/toy_08.wav"
 gitoy_08_1		 ftgen 0, 0, 0, 1, gStoy_08_file, 0, 0, 1
 gitoy_08_2		 ftgen 0, 0, 0, 1, gStoy_08_file, 0, 0, 2
 ;---

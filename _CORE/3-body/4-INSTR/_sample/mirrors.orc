@@ -1,4 +1,4 @@
-gSmirrors_file	init "../samples/mirrors.wav"
+gSmirrors_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//mirrors.wav"
 
 gimirrors1	ftgen 0, 0, 0, 1, gSmirrors_file, 0, 0, 1
 gimirrors2	ftgen 0, 0, 0, 1, gSmirrors_file, 0, 0, 2

@@ -16,6 +16,7 @@ beboo
 bebor
 becapr
 bee
+bee
 begad
 begaf
 beme
@@ -53,6 +54,7 @@ dmitrif
 drum
 drumhigh
 etag
+etag2
 euarm
 euarm2
 fairest

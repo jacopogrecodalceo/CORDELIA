@@ -1,68 +1,68 @@
-gStape_00_file 	 init "../samples/tape/tape-00.wav"
+gStape_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-00.wav"
 gitape_00_1		 ftgen 0, 0, 0, 1, gStape_00_file, 0, 0, 1
 gitape_00_2		 ftgen 0, 0, 0, 1, gStape_00_file, 0, 0, 2
 ;---
-gStape_01_file 	 init "../samples/tape/tape-01.wav"
+gStape_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-01.wav"
 gitape_01_1		 ftgen 0, 0, 0, 1, gStape_01_file, 0, 0, 1
 gitape_01_2		 ftgen 0, 0, 0, 1, gStape_01_file, 0, 0, 2
 ;---
-gStape_02_file 	 init "../samples/tape/tape-02.wav"
+gStape_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-02.wav"
 gitape_02_1		 ftgen 0, 0, 0, 1, gStape_02_file, 0, 0, 1
 gitape_02_2		 ftgen 0, 0, 0, 1, gStape_02_file, 0, 0, 2
 ;---
-gStape_03_file 	 init "../samples/tape/tape-03.wav"
+gStape_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-03.wav"
 gitape_03_1		 ftgen 0, 0, 0, 1, gStape_03_file, 0, 0, 1
 gitape_03_2		 ftgen 0, 0, 0, 1, gStape_03_file, 0, 0, 2
 ;---
-gStape_04_file 	 init "../samples/tape/tape-04.wav"
+gStape_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-04.wav"
 gitape_04_1		 ftgen 0, 0, 0, 1, gStape_04_file, 0, 0, 1
 gitape_04_2		 ftgen 0, 0, 0, 1, gStape_04_file, 0, 0, 2
 ;---
-gStape_05_file 	 init "../samples/tape/tape-05.wav"
+gStape_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-05.wav"
 gitape_05_1		 ftgen 0, 0, 0, 1, gStape_05_file, 0, 0, 1
 gitape_05_2		 ftgen 0, 0, 0, 1, gStape_05_file, 0, 0, 2
 ;---
-gStape_06_file 	 init "../samples/tape/tape-06.wav"
+gStape_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-06.wav"
 gitape_06_1		 ftgen 0, 0, 0, 1, gStape_06_file, 0, 0, 1
 gitape_06_2		 ftgen 0, 0, 0, 1, gStape_06_file, 0, 0, 2
 ;---
-gStape_07_file 	 init "../samples/tape/tape-07.wav"
+gStape_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-07.wav"
 gitape_07_1		 ftgen 0, 0, 0, 1, gStape_07_file, 0, 0, 1
 gitape_07_2		 ftgen 0, 0, 0, 1, gStape_07_file, 0, 0, 2
 ;---
-gStape_08_file 	 init "../samples/tape/tape-08.wav"
+gStape_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-08.wav"
 gitape_08_1		 ftgen 0, 0, 0, 1, gStape_08_file, 0, 0, 1
 gitape_08_2		 ftgen 0, 0, 0, 1, gStape_08_file, 0, 0, 2
 ;---
-gStape_09_file 	 init "../samples/tape/tape-09.wav"
+gStape_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-09.wav"
 gitape_09_1		 ftgen 0, 0, 0, 1, gStape_09_file, 0, 0, 1
 gitape_09_2		 ftgen 0, 0, 0, 1, gStape_09_file, 0, 0, 2
 ;---
-gStape_10_file 	 init "../samples/tape/tape-10.wav"
+gStape_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-10.wav"
 gitape_10_1		 ftgen 0, 0, 0, 1, gStape_10_file, 0, 0, 1
 gitape_10_2		 ftgen 0, 0, 0, 1, gStape_10_file, 0, 0, 2
 ;---
-gStape_11_file 	 init "../samples/tape/tape-11.wav"
+gStape_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-11.wav"
 gitape_11_1		 ftgen 0, 0, 0, 1, gStape_11_file, 0, 0, 1
 gitape_11_2		 ftgen 0, 0, 0, 1, gStape_11_file, 0, 0, 2
 ;---
-gStape_12_file 	 init "../samples/tape/tape-12.wav"
+gStape_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-12.wav"
 gitape_12_1		 ftgen 0, 0, 0, 1, gStape_12_file, 0, 0, 1
 gitape_12_2		 ftgen 0, 0, 0, 1, gStape_12_file, 0, 0, 2
 ;---
-gStape_13_file 	 init "../samples/tape/tape-13.wav"
+gStape_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-13.wav"
 gitape_13_1		 ftgen 0, 0, 0, 1, gStape_13_file, 0, 0, 1
 gitape_13_2		 ftgen 0, 0, 0, 1, gStape_13_file, 0, 0, 2
 ;---
-gStape_14_file 	 init "../samples/tape/tape-14.wav"
+gStape_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-14.wav"
 gitape_14_1		 ftgen 0, 0, 0, 1, gStape_14_file, 0, 0, 1
 gitape_14_2		 ftgen 0, 0, 0, 1, gStape_14_file, 0, 0, 2
 ;---
-gStape_15_file 	 init "../samples/tape/tape-15.wav"
+gStape_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-15.wav"
 gitape_15_1		 ftgen 0, 0, 0, 1, gStape_15_file, 0, 0, 1
 gitape_15_2		 ftgen 0, 0, 0, 1, gStape_15_file, 0, 0, 2
 ;---
-gStape_16_file 	 init "../samples/tape/tape-16.wav"
+gStape_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tape/tape-16.wav"
 gitape_16_1		 ftgen 0, 0, 0, 1, gStape_16_file, 0, 0, 1
 gitape_16_2		 ftgen 0, 0, 0, 1, gStape_16_file, 0, 0, 2
 ;---

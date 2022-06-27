@@ -1,4 +1,4 @@
-gSvalle_file	init "../samples/valle.wav"
+gSvalle_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//valle.wav"
 
 givalle1	ftgen 0, 0, 0, 1, gSvalle_file, 0, 0, 1
 givalle2	ftgen 0, 0, 0, 1, gSvalle_file, 0, 0, 2

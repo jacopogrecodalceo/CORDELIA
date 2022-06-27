@@ -1,4 +1,4 @@
-gSamor_file	init "../samples/amor.wav"
+gSamor_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//amor.wav"
 
 giamor1	ftgen 0, 0, 0, 1, gSamor_file, 0, 0, 1
 giamor2	ftgen 0, 0, 0, 1, gSamor_file, 0, 0, 2

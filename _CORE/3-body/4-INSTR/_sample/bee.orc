@@ -1,12 +1,12 @@
-gSbee01_file 	 init "../samples/bee/bee01.wav"
+gSbee01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//bee/bee01.wav"
 gibee01_1		 ftgen 0, 0, 0, 1, gSbee01_file, 0, 0, 1
 gibee01_2		 ftgen 0, 0, 0, 1, gSbee01_file, 0, 0, 2
 ;---
-gSbee02_file 	 init "../samples/bee/bee02.wav"
+gSbee02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//bee/bee02.wav"
 gibee02_1		 ftgen 0, 0, 0, 1, gSbee02_file, 0, 0, 1
 gibee02_2		 ftgen 0, 0, 0, 1, gSbee02_file, 0, 0, 2
 ;---
-gSbee02_complete_file 	 init "../samples/bee/bee02_complete.wav"
+gSbee02_complete_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//bee/bee02_complete.wav"
 gibee02_complete_1		 ftgen 0, 0, 0, 1, gSbee02_complete_file, 0, 0, 1
 gibee02_complete_2		 ftgen 0, 0, 0, 1, gSbee02_complete_file, 0, 0, 2
 ;---

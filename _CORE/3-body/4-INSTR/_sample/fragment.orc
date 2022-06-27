@@ -1,4 +1,4 @@
-gSfragment_file	init "../samples/fragment.wav"
+gSfragment_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//fragment.wav"
 
 gifragment1	ftgen 0, 0, 0, 1, gSfragment_file, 0, 0, 1
 gifragment2	ftgen 0, 0, 0, 1, gSfragment_file, 0, 0, 2

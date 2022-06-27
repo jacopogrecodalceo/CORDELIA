@@ -1,10 +1,10 @@
+require_relative File.dirname(File.expand_path(__dir__)) + "/_path.rb"
 
-dir      = '../../../_core/'
 answer    = ARGV[0]
 
 all_files = []
 
-Dir.glob(dir + '**/*') do |f|
+Dir.glob($cordelia_core + '**/*') do |f|
     if not File.directory?(f)
         if File.extname(f) == ".orc" || File.extname(f) == ".csd"
             File.open(f).read.each_line do |line|

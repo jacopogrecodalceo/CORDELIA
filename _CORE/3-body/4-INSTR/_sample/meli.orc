@@ -1,68 +1,68 @@
-gSmeli_001_file 	 init "../samples/meli/meli-001.wav"
+gSmeli_001_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-001.wav"
 gimeli_001_1		 ftgen 0, 0, 0, 1, gSmeli_001_file, 0, 0, 1
 gimeli_001_2		 ftgen 0, 0, 0, 1, gSmeli_001_file, 0, 0, 2
 ;---
-gSmeli_002_file 	 init "../samples/meli/meli-002.wav"
+gSmeli_002_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-002.wav"
 gimeli_002_1		 ftgen 0, 0, 0, 1, gSmeli_002_file, 0, 0, 1
 gimeli_002_2		 ftgen 0, 0, 0, 1, gSmeli_002_file, 0, 0, 2
 ;---
-gSmeli_003_file 	 init "../samples/meli/meli-003.wav"
+gSmeli_003_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-003.wav"
 gimeli_003_1		 ftgen 0, 0, 0, 1, gSmeli_003_file, 0, 0, 1
 gimeli_003_2		 ftgen 0, 0, 0, 1, gSmeli_003_file, 0, 0, 2
 ;---
-gSmeli_004_file 	 init "../samples/meli/meli-004.wav"
+gSmeli_004_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-004.wav"
 gimeli_004_1		 ftgen 0, 0, 0, 1, gSmeli_004_file, 0, 0, 1
 gimeli_004_2		 ftgen 0, 0, 0, 1, gSmeli_004_file, 0, 0, 2
 ;---
-gSmeli_005_file 	 init "../samples/meli/meli-005.wav"
+gSmeli_005_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-005.wav"
 gimeli_005_1		 ftgen 0, 0, 0, 1, gSmeli_005_file, 0, 0, 1
 gimeli_005_2		 ftgen 0, 0, 0, 1, gSmeli_005_file, 0, 0, 2
 ;---
-gSmeli_006_file 	 init "../samples/meli/meli-006.wav"
+gSmeli_006_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-006.wav"
 gimeli_006_1		 ftgen 0, 0, 0, 1, gSmeli_006_file, 0, 0, 1
 gimeli_006_2		 ftgen 0, 0, 0, 1, gSmeli_006_file, 0, 0, 2
 ;---
-gSmeli_007_file 	 init "../samples/meli/meli-007.wav"
+gSmeli_007_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-007.wav"
 gimeli_007_1		 ftgen 0, 0, 0, 1, gSmeli_007_file, 0, 0, 1
 gimeli_007_2		 ftgen 0, 0, 0, 1, gSmeli_007_file, 0, 0, 2
 ;---
-gSmeli_008_file 	 init "../samples/meli/meli-008.wav"
+gSmeli_008_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-008.wav"
 gimeli_008_1		 ftgen 0, 0, 0, 1, gSmeli_008_file, 0, 0, 1
 gimeli_008_2		 ftgen 0, 0, 0, 1, gSmeli_008_file, 0, 0, 2
 ;---
-gSmeli_009_file 	 init "../samples/meli/meli-009.wav"
+gSmeli_009_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-009.wav"
 gimeli_009_1		 ftgen 0, 0, 0, 1, gSmeli_009_file, 0, 0, 1
 gimeli_009_2		 ftgen 0, 0, 0, 1, gSmeli_009_file, 0, 0, 2
 ;---
-gSmeli_010_file 	 init "../samples/meli/meli-010.wav"
+gSmeli_010_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-010.wav"
 gimeli_010_1		 ftgen 0, 0, 0, 1, gSmeli_010_file, 0, 0, 1
 gimeli_010_2		 ftgen 0, 0, 0, 1, gSmeli_010_file, 0, 0, 2
 ;---
-gSmeli_011_file 	 init "../samples/meli/meli-011.wav"
+gSmeli_011_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-011.wav"
 gimeli_011_1		 ftgen 0, 0, 0, 1, gSmeli_011_file, 0, 0, 1
 gimeli_011_2		 ftgen 0, 0, 0, 1, gSmeli_011_file, 0, 0, 2
 ;---
-gSmeli_012_file 	 init "../samples/meli/meli-012.wav"
+gSmeli_012_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-012.wav"
 gimeli_012_1		 ftgen 0, 0, 0, 1, gSmeli_012_file, 0, 0, 1
 gimeli_012_2		 ftgen 0, 0, 0, 1, gSmeli_012_file, 0, 0, 2
 ;---
-gSmeli_013_file 	 init "../samples/meli/meli-013.wav"
+gSmeli_013_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-013.wav"
 gimeli_013_1		 ftgen 0, 0, 0, 1, gSmeli_013_file, 0, 0, 1
 gimeli_013_2		 ftgen 0, 0, 0, 1, gSmeli_013_file, 0, 0, 2
 ;---
-gSmeli_014_file 	 init "../samples/meli/meli-014.wav"
+gSmeli_014_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-014.wav"
 gimeli_014_1		 ftgen 0, 0, 0, 1, gSmeli_014_file, 0, 0, 1
 gimeli_014_2		 ftgen 0, 0, 0, 1, gSmeli_014_file, 0, 0, 2
 ;---
-gSmeli_015_file 	 init "../samples/meli/meli-015.wav"
+gSmeli_015_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-015.wav"
 gimeli_015_1		 ftgen 0, 0, 0, 1, gSmeli_015_file, 0, 0, 1
 gimeli_015_2		 ftgen 0, 0, 0, 1, gSmeli_015_file, 0, 0, 2
 ;---
-gSmeli_016_file 	 init "../samples/meli/meli-016.wav"
+gSmeli_016_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-016.wav"
 gimeli_016_1		 ftgen 0, 0, 0, 1, gSmeli_016_file, 0, 0, 1
 gimeli_016_2		 ftgen 0, 0, 0, 1, gSmeli_016_file, 0, 0, 2
 ;---
-gSmeli_017_file 	 init "../samples/meli/meli-017.wav"
+gSmeli_017_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meli/meli-017.wav"
 gimeli_017_1		 ftgen 0, 0, 0, 1, gSmeli_017_file, 0, 0, 1
 gimeli_017_2		 ftgen 0, 0, 0, 1, gSmeli_017_file, 0, 0, 2
 ;---

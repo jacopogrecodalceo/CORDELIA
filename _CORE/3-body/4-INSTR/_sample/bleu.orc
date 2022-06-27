@@ -1,4 +1,4 @@
-gSbleu_file	init "../samples/bleu.wav"
+gSbleu_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//bleu.wav"
 
 gibleu1	ftgen 0, 0, 0, 1, gSbleu_file, 0, 0, 1
 gibleu2	ftgen 0, 0, 0, 1, gSbleu_file, 0, 0, 2

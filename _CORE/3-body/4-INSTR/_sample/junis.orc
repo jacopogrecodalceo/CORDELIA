@@ -1,4 +1,4 @@
-gSjunis_file	init "../samples/junis.wav"
+gSjunis_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//junis.wav"
 
 gijunis1	ftgen 0, 0, 0, 1, gSjunis_file, 0, 0, 1
 gijunis2	ftgen 0, 0, 0, 1, gSjunis_file, 0, 0, 2

@@ -1,4 +1,4 @@
-gSsophie1_file	init "../samples/sophie1.wav"
+gSsophie1_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sophie1.wav"
 
 gisophie11	ftgen 0, 0, 0, 1, gSsophie1_file, 0, 0, 1
 gisophie12	ftgen 0, 0, 0, 1, gSsophie1_file, 0, 0, 2

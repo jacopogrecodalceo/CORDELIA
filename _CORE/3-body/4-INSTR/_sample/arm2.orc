@@ -1,4 +1,4 @@
-gSarm2_file	init "../samples/arm2.wav"
+gSarm2_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//arm2.wav"
 
 giarm21	ftgen 0, 0, 0, 1, gSarm2_file, 0, 0, 1
 giarm22	ftgen 0, 0, 0, 1, gSarm2_file, 0, 0, 2

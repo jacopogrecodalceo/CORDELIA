@@ -1,4 +1,4 @@
-gSninfa_file	init "../samples/ninfa.wav"
+gSninfa_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//ninfa.wav"
 
 gininfa1	ftgen 0, 0, 0, 1, gSninfa_file, 0, 0, 1
 gininfa2	ftgen 0, 0, 0, 1, gSninfa_file, 0, 0, 2

@@ -18,7 +18,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT

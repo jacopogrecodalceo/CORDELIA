@@ -1,40 +1,40 @@
-gSmalon_00_file 	 init "../samples/malon/malon_00.wav"
+gSmalon_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_00.wav"
 gimalon_00_1		 ftgen 0, 0, 0, 1, gSmalon_00_file, 0, 0, 1
 gimalon_00_2		 ftgen 0, 0, 0, 1, gSmalon_00_file, 0, 0, 2
 ;---
-gSmalon_01_file 	 init "../samples/malon/malon_01.wav"
+gSmalon_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_01.wav"
 gimalon_01_1		 ftgen 0, 0, 0, 1, gSmalon_01_file, 0, 0, 1
 gimalon_01_2		 ftgen 0, 0, 0, 1, gSmalon_01_file, 0, 0, 2
 ;---
-gSmalon_02_file 	 init "../samples/malon/malon_02.wav"
+gSmalon_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_02.wav"
 gimalon_02_1		 ftgen 0, 0, 0, 1, gSmalon_02_file, 0, 0, 1
 gimalon_02_2		 ftgen 0, 0, 0, 1, gSmalon_02_file, 0, 0, 2
 ;---
-gSmalon_03_file 	 init "../samples/malon/malon_03.wav"
+gSmalon_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_03.wav"
 gimalon_03_1		 ftgen 0, 0, 0, 1, gSmalon_03_file, 0, 0, 1
 gimalon_03_2		 ftgen 0, 0, 0, 1, gSmalon_03_file, 0, 0, 2
 ;---
-gSmalon_04_file 	 init "../samples/malon/malon_04.wav"
+gSmalon_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_04.wav"
 gimalon_04_1		 ftgen 0, 0, 0, 1, gSmalon_04_file, 0, 0, 1
 gimalon_04_2		 ftgen 0, 0, 0, 1, gSmalon_04_file, 0, 0, 2
 ;---
-gSmalon_05_file 	 init "../samples/malon/malon_05.wav"
+gSmalon_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_05.wav"
 gimalon_05_1		 ftgen 0, 0, 0, 1, gSmalon_05_file, 0, 0, 1
 gimalon_05_2		 ftgen 0, 0, 0, 1, gSmalon_05_file, 0, 0, 2
 ;---
-gSmalon_06_file 	 init "../samples/malon/malon_06.wav"
+gSmalon_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_06.wav"
 gimalon_06_1		 ftgen 0, 0, 0, 1, gSmalon_06_file, 0, 0, 1
 gimalon_06_2		 ftgen 0, 0, 0, 1, gSmalon_06_file, 0, 0, 2
 ;---
-gSmalon_07_file 	 init "../samples/malon/malon_07.wav"
+gSmalon_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_07.wav"
 gimalon_07_1		 ftgen 0, 0, 0, 1, gSmalon_07_file, 0, 0, 1
 gimalon_07_2		 ftgen 0, 0, 0, 1, gSmalon_07_file, 0, 0, 2
 ;---
-gSmalon_08_file 	 init "../samples/malon/malon_08.wav"
+gSmalon_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_08.wav"
 gimalon_08_1		 ftgen 0, 0, 0, 1, gSmalon_08_file, 0, 0, 1
 gimalon_08_2		 ftgen 0, 0, 0, 1, gSmalon_08_file, 0, 0, 2
 ;---
-gSmalon_09_file 	 init "../samples/malon/malon_09.wav"
+gSmalon_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//malon/malon_09.wav"
 gimalon_09_1		 ftgen 0, 0, 0, 1, gSmalon_09_file, 0, 0, 1
 gimalon_09_2		 ftgen 0, 0, 0, 1, gSmalon_09_file, 0, 0, 2
 ;---

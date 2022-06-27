@@ -1,4 +1,4 @@
-gSnoneknows_file	init "../samples/noneknows.wav"
+gSnoneknows_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//noneknows.wav"
 
 ginoneknows1	ftgen 0, 0, 0, 1, gSnoneknows_file, 0, 0, 1
 ginoneknows2	ftgen 0, 0, 0, 1, gSnoneknows_file, 0, 0, 2

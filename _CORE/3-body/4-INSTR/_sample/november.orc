@@ -1,4 +1,4 @@
-gSnovember_file	init "../samples/november.wav"
+gSnovember_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//november.wav"
 
 ginovember1	ftgen 0, 0, 0, 1, gSnovember_file, 0, 0, 1
 ginovember2	ftgen 0, 0, 0, 1, gSnovember_file, 0, 0, 2

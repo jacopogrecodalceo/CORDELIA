@@ -1,4 +1,4 @@
-gStension_file	init "../samples/tension.wav"
+gStension_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tension.wav"
 
 gitension1	ftgen 0, 0, 0, 1, gStension_file, 0, 0, 1
 gitension2	ftgen 0, 0, 0, 1, gStension_file, 0, 0, 2

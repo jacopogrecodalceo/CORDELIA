@@ -1,4 +1,4 @@
-gShh_file	init "../samples/hh.wav"
+gShh_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//hh.wav"
 
 gihh1	ftgen 0, 0, 0, 1, gShh_file, 0, 0, 1
 gihh2	ftgen 0, 0, 0, 1, gShh_file, 0, 0, 2

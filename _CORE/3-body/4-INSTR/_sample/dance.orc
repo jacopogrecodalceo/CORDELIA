@@ -1,4 +1,4 @@
-gSdance_file	init "../samples/dance.wav"
+gSdance_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//dance.wav"
 
 gidance1	ftgen 0, 0, 0, 1, gSdance_file, 0, 0, 1
 gidance2	ftgen 0, 0, 0, 1, gSdance_file, 0, 0, 2

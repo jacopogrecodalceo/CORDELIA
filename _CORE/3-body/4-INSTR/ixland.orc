@@ -39,7 +39,7 @@ arev		reverb (ap_resum/4)+(ao_resum/8), irvt
 ivib[]		fillarray .5, 1, 2, 3
 ivibt		init ivib[int(random(0, lenarray(ivib)))]
 
-arev		*= 1-(oscil:k(1, gkbeatf*(ivibt+random:i(-.05, 05)), gilowasine)*cosseg(0, idur*.95, 1, idur*.05, 1))
+arev		*= 1-(oscil:k(1, gkbeatf*(ivibt+random:i(-.05, 05)), giasine)*cosseg(0, idur*.95, 1, idur*.05, 1))
 
 aout		sum ap, arev	
 

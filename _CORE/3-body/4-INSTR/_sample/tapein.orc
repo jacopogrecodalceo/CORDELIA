@@ -1,108 +1,108 @@
-gStapein_00_file 	 init "../samples/tapein/tapein-00.wav"
+gStapein_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-00.wav"
 gitapein_00_1		 ftgen 0, 0, 0, 1, gStapein_00_file, 0, 0, 1
 gitapein_00_2		 ftgen 0, 0, 0, 1, gStapein_00_file, 0, 0, 2
 ;---
-gStapein_01_file 	 init "../samples/tapein/tapein-01.wav"
+gStapein_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-01.wav"
 gitapein_01_1		 ftgen 0, 0, 0, 1, gStapein_01_file, 0, 0, 1
 gitapein_01_2		 ftgen 0, 0, 0, 1, gStapein_01_file, 0, 0, 2
 ;---
-gStapein_02_file 	 init "../samples/tapein/tapein-02.wav"
+gStapein_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-02.wav"
 gitapein_02_1		 ftgen 0, 0, 0, 1, gStapein_02_file, 0, 0, 1
 gitapein_02_2		 ftgen 0, 0, 0, 1, gStapein_02_file, 0, 0, 2
 ;---
-gStapein_03_file 	 init "../samples/tapein/tapein-03.wav"
+gStapein_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-03.wav"
 gitapein_03_1		 ftgen 0, 0, 0, 1, gStapein_03_file, 0, 0, 1
 gitapein_03_2		 ftgen 0, 0, 0, 1, gStapein_03_file, 0, 0, 2
 ;---
-gStapein_04_file 	 init "../samples/tapein/tapein-04.wav"
+gStapein_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-04.wav"
 gitapein_04_1		 ftgen 0, 0, 0, 1, gStapein_04_file, 0, 0, 1
 gitapein_04_2		 ftgen 0, 0, 0, 1, gStapein_04_file, 0, 0, 2
 ;---
-gStapein_05_file 	 init "../samples/tapein/tapein-05.wav"
+gStapein_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-05.wav"
 gitapein_05_1		 ftgen 0, 0, 0, 1, gStapein_05_file, 0, 0, 1
 gitapein_05_2		 ftgen 0, 0, 0, 1, gStapein_05_file, 0, 0, 2
 ;---
-gStapein_06_file 	 init "../samples/tapein/tapein-06.wav"
+gStapein_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-06.wav"
 gitapein_06_1		 ftgen 0, 0, 0, 1, gStapein_06_file, 0, 0, 1
 gitapein_06_2		 ftgen 0, 0, 0, 1, gStapein_06_file, 0, 0, 2
 ;---
-gStapein_07_file 	 init "../samples/tapein/tapein-07.wav"
+gStapein_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-07.wav"
 gitapein_07_1		 ftgen 0, 0, 0, 1, gStapein_07_file, 0, 0, 1
 gitapein_07_2		 ftgen 0, 0, 0, 1, gStapein_07_file, 0, 0, 2
 ;---
-gStapein_08_file 	 init "../samples/tapein/tapein-08.wav"
+gStapein_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-08.wav"
 gitapein_08_1		 ftgen 0, 0, 0, 1, gStapein_08_file, 0, 0, 1
 gitapein_08_2		 ftgen 0, 0, 0, 1, gStapein_08_file, 0, 0, 2
 ;---
-gStapein_09_file 	 init "../samples/tapein/tapein-09.wav"
+gStapein_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-09.wav"
 gitapein_09_1		 ftgen 0, 0, 0, 1, gStapein_09_file, 0, 0, 1
 gitapein_09_2		 ftgen 0, 0, 0, 1, gStapein_09_file, 0, 0, 2
 ;---
-gStapein_10_file 	 init "../samples/tapein/tapein-10.wav"
+gStapein_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-10.wav"
 gitapein_10_1		 ftgen 0, 0, 0, 1, gStapein_10_file, 0, 0, 1
 gitapein_10_2		 ftgen 0, 0, 0, 1, gStapein_10_file, 0, 0, 2
 ;---
-gStapein_11_file 	 init "../samples/tapein/tapein-11.wav"
+gStapein_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-11.wav"
 gitapein_11_1		 ftgen 0, 0, 0, 1, gStapein_11_file, 0, 0, 1
 gitapein_11_2		 ftgen 0, 0, 0, 1, gStapein_11_file, 0, 0, 2
 ;---
-gStapein_12_file 	 init "../samples/tapein/tapein-12.wav"
+gStapein_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-12.wav"
 gitapein_12_1		 ftgen 0, 0, 0, 1, gStapein_12_file, 0, 0, 1
 gitapein_12_2		 ftgen 0, 0, 0, 1, gStapein_12_file, 0, 0, 2
 ;---
-gStapein_13_file 	 init "../samples/tapein/tapein-13.wav"
+gStapein_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-13.wav"
 gitapein_13_1		 ftgen 0, 0, 0, 1, gStapein_13_file, 0, 0, 1
 gitapein_13_2		 ftgen 0, 0, 0, 1, gStapein_13_file, 0, 0, 2
 ;---
-gStapein_14_file 	 init "../samples/tapein/tapein-14.wav"
+gStapein_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-14.wav"
 gitapein_14_1		 ftgen 0, 0, 0, 1, gStapein_14_file, 0, 0, 1
 gitapein_14_2		 ftgen 0, 0, 0, 1, gStapein_14_file, 0, 0, 2
 ;---
-gStapein_15_file 	 init "../samples/tapein/tapein-15.wav"
+gStapein_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-15.wav"
 gitapein_15_1		 ftgen 0, 0, 0, 1, gStapein_15_file, 0, 0, 1
 gitapein_15_2		 ftgen 0, 0, 0, 1, gStapein_15_file, 0, 0, 2
 ;---
-gStapein_16_file 	 init "../samples/tapein/tapein-16.wav"
+gStapein_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-16.wav"
 gitapein_16_1		 ftgen 0, 0, 0, 1, gStapein_16_file, 0, 0, 1
 gitapein_16_2		 ftgen 0, 0, 0, 1, gStapein_16_file, 0, 0, 2
 ;---
-gStapein_17_file 	 init "../samples/tapein/tapein-17.wav"
+gStapein_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-17.wav"
 gitapein_17_1		 ftgen 0, 0, 0, 1, gStapein_17_file, 0, 0, 1
 gitapein_17_2		 ftgen 0, 0, 0, 1, gStapein_17_file, 0, 0, 2
 ;---
-gStapein_18_file 	 init "../samples/tapein/tapein-18.wav"
+gStapein_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-18.wav"
 gitapein_18_1		 ftgen 0, 0, 0, 1, gStapein_18_file, 0, 0, 1
 gitapein_18_2		 ftgen 0, 0, 0, 1, gStapein_18_file, 0, 0, 2
 ;---
-gStapein_19_file 	 init "../samples/tapein/tapein-19.wav"
+gStapein_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-19.wav"
 gitapein_19_1		 ftgen 0, 0, 0, 1, gStapein_19_file, 0, 0, 1
 gitapein_19_2		 ftgen 0, 0, 0, 1, gStapein_19_file, 0, 0, 2
 ;---
-gStapein_20_file 	 init "../samples/tapein/tapein-20.wav"
+gStapein_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-20.wav"
 gitapein_20_1		 ftgen 0, 0, 0, 1, gStapein_20_file, 0, 0, 1
 gitapein_20_2		 ftgen 0, 0, 0, 1, gStapein_20_file, 0, 0, 2
 ;---
-gStapein_21_file 	 init "../samples/tapein/tapein-21.wav"
+gStapein_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-21.wav"
 gitapein_21_1		 ftgen 0, 0, 0, 1, gStapein_21_file, 0, 0, 1
 gitapein_21_2		 ftgen 0, 0, 0, 1, gStapein_21_file, 0, 0, 2
 ;---
-gStapein_22_file 	 init "../samples/tapein/tapein-22.wav"
+gStapein_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-22.wav"
 gitapein_22_1		 ftgen 0, 0, 0, 1, gStapein_22_file, 0, 0, 1
 gitapein_22_2		 ftgen 0, 0, 0, 1, gStapein_22_file, 0, 0, 2
 ;---
-gStapein_23_file 	 init "../samples/tapein/tapein-23.wav"
+gStapein_23_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-23.wav"
 gitapein_23_1		 ftgen 0, 0, 0, 1, gStapein_23_file, 0, 0, 1
 gitapein_23_2		 ftgen 0, 0, 0, 1, gStapein_23_file, 0, 0, 2
 ;---
-gStapein_24_file 	 init "../samples/tapein/tapein-24.wav"
+gStapein_24_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-24.wav"
 gitapein_24_1		 ftgen 0, 0, 0, 1, gStapein_24_file, 0, 0, 1
 gitapein_24_2		 ftgen 0, 0, 0, 1, gStapein_24_file, 0, 0, 2
 ;---
-gStapein_25_file 	 init "../samples/tapein/tapein-25.wav"
+gStapein_25_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-25.wav"
 gitapein_25_1		 ftgen 0, 0, 0, 1, gStapein_25_file, 0, 0, 1
 gitapein_25_2		 ftgen 0, 0, 0, 1, gStapein_25_file, 0, 0, 2
 ;---
-gStapein_26_file 	 init "../samples/tapein/tapein-26.wav"
+gStapein_26_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//tapein/tapein-26.wav"
 gitapein_26_1		 ftgen 0, 0, 0, 1, gStapein_26_file, 0, 0, 1
 gitapein_26_2		 ftgen 0, 0, 0, 1, gStapein_26_file, 0, 0, 2
 ;---

@@ -69,7 +69,7 @@ fi
 if [[ $NCHNLS -eq 2 ]]
 then
 	NCHNLS_end=2
-	cd "$(dirname "$0")/_core" && csound _livecode.csd --nchnls="$NCHNLS_end" -o"$ODAC" -D --limiter
+	cd "$(dirname "$0")/_core" && csound cordelia.csd --nchnls="$NCHNLS_end" -o"$ODAC" -D --limiter
 else
-	cd "$(dirname "$0")/_core" && csound _livecode.csd -o"$ODAC" -D --limiter
+	cd "$(dirname "$0")/_core" && csound cordelia.csd -o"$ODAC" -D --limiter
 fi

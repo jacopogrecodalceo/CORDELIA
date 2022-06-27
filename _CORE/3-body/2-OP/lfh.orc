@@ -9,7 +9,7 @@ elseif	kdiv == 0 then
 endif
 
 if	ift == -1 then
-	ift init gilowasine
+	ift init giasine
 endif
 
 kphase	abs floor(kdiv)-kdiv
@@ -32,7 +32,7 @@ elseif	kdiv == 0 then
 endif
 
 if	ift == -1 then
-	ift init gilowasine
+	ift init giasine
 endif
 
 kphase	abs floor(kdiv)-kdiv

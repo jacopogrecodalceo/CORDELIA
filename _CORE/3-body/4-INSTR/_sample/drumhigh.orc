@@ -1,4 +1,4 @@
-gSdrumhigh_file	init "../samples/drumhigh.wav"
+gSdrumhigh_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//drumhigh.wav"
 
 gidrumhigh1	ftgen 0, 0, 0, 1, gSdrumhigh_file, 0, 0, 1
 gidrumhigh2	ftgen 0, 0, 0, 1, gSdrumhigh_file, 0, 0, 2

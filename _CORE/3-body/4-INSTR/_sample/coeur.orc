@@ -1,4 +1,4 @@
-gScoeur_file	init "../samples/coeur.wav"
+gScoeur_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//coeur.wav"
 
 gicoeur1	ftgen 0, 0, 0, 1, gScoeur_file, 0, 0, 1
 gicoeur2	ftgen 0, 0, 0, 1, gScoeur_file, 0, 0, 2

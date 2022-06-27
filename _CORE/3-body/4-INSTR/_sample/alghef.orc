@@ -1,48 +1,48 @@
-gSalghef_00_file 	 init "../samples/alghef/alghef-00.wav"
+gSalghef_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-00.wav"
 gialghef_00_1		 ftgen 0, 0, 0, 1, gSalghef_00_file, 0, 0, 1
 gialghef_00_2		 ftgen 0, 0, 0, 1, gSalghef_00_file, 0, 0, 2
 ;---
-gSalghef_01_file 	 init "../samples/alghef/alghef-01.wav"
+gSalghef_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-01.wav"
 gialghef_01_1		 ftgen 0, 0, 0, 1, gSalghef_01_file, 0, 0, 1
 gialghef_01_2		 ftgen 0, 0, 0, 1, gSalghef_01_file, 0, 0, 2
 ;---
-gSalghef_02_file 	 init "../samples/alghef/alghef-02.wav"
+gSalghef_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-02.wav"
 gialghef_02_1		 ftgen 0, 0, 0, 1, gSalghef_02_file, 0, 0, 1
 gialghef_02_2		 ftgen 0, 0, 0, 1, gSalghef_02_file, 0, 0, 2
 ;---
-gSalghef_03_file 	 init "../samples/alghef/alghef-03.wav"
+gSalghef_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-03.wav"
 gialghef_03_1		 ftgen 0, 0, 0, 1, gSalghef_03_file, 0, 0, 1
 gialghef_03_2		 ftgen 0, 0, 0, 1, gSalghef_03_file, 0, 0, 2
 ;---
-gSalghef_04_file 	 init "../samples/alghef/alghef-04.wav"
+gSalghef_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-04.wav"
 gialghef_04_1		 ftgen 0, 0, 0, 1, gSalghef_04_file, 0, 0, 1
 gialghef_04_2		 ftgen 0, 0, 0, 1, gSalghef_04_file, 0, 0, 2
 ;---
-gSalghef_05_file 	 init "../samples/alghef/alghef-05.wav"
+gSalghef_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-05.wav"
 gialghef_05_1		 ftgen 0, 0, 0, 1, gSalghef_05_file, 0, 0, 1
 gialghef_05_2		 ftgen 0, 0, 0, 1, gSalghef_05_file, 0, 0, 2
 ;---
-gSalghef_06_file 	 init "../samples/alghef/alghef-06.wav"
+gSalghef_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-06.wav"
 gialghef_06_1		 ftgen 0, 0, 0, 1, gSalghef_06_file, 0, 0, 1
 gialghef_06_2		 ftgen 0, 0, 0, 1, gSalghef_06_file, 0, 0, 2
 ;---
-gSalghef_07_file 	 init "../samples/alghef/alghef-07.wav"
+gSalghef_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-07.wav"
 gialghef_07_1		 ftgen 0, 0, 0, 1, gSalghef_07_file, 0, 0, 1
 gialghef_07_2		 ftgen 0, 0, 0, 1, gSalghef_07_file, 0, 0, 2
 ;---
-gSalghef_08_file 	 init "../samples/alghef/alghef-08.wav"
+gSalghef_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-08.wav"
 gialghef_08_1		 ftgen 0, 0, 0, 1, gSalghef_08_file, 0, 0, 1
 gialghef_08_2		 ftgen 0, 0, 0, 1, gSalghef_08_file, 0, 0, 2
 ;---
-gSalghef_09_file 	 init "../samples/alghef/alghef-09.wav"
+gSalghef_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-09.wav"
 gialghef_09_1		 ftgen 0, 0, 0, 1, gSalghef_09_file, 0, 0, 1
 gialghef_09_2		 ftgen 0, 0, 0, 1, gSalghef_09_file, 0, 0, 2
 ;---
-gSalghef_10_file 	 init "../samples/alghef/alghef-10.wav"
+gSalghef_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-10.wav"
 gialghef_10_1		 ftgen 0, 0, 0, 1, gSalghef_10_file, 0, 0, 1
 gialghef_10_2		 ftgen 0, 0, 0, 1, gSalghef_10_file, 0, 0, 2
 ;---
-gSalghef_11_file 	 init "../samples/alghef/alghef-11.wav"
+gSalghef_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//alghef/alghef-11.wav"
 gialghef_11_1		 ftgen 0, 0, 0, 1, gSalghef_11_file, 0, 0, 1
 gialghef_11_2		 ftgen 0, 0, 0, 1, gSalghef_11_file, 0, 0, 2
 ;---

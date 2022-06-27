@@ -1,4 +1,4 @@
-gSetag_file	init "../samples/etag.wav"
+gSetag_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//etag.wav"
 
 gietag1	ftgen 0, 0, 0, 1, gSetag_file, 0, 0, 1
 gietag2	ftgen 0, 0, 0, 1, gSetag_file, 0, 0, 2

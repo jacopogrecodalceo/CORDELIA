@@ -1,96 +1,96 @@
-gSive_heard_a_piano_00a_file 	 init "../samples/iveheard/ive-heard-a-piano_00a.wav"
+gSive_heard_a_piano_00a_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_00a.wav"
 giive_heard_a_piano_00a_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_00a_file, 0, 0, 1
 giive_heard_a_piano_00a_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_00a_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_00b_file 	 init "../samples/iveheard/ive-heard-a-piano_00b.wav"
+gSive_heard_a_piano_00b_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_00b.wav"
 giive_heard_a_piano_00b_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_00b_file, 0, 0, 1
 giive_heard_a_piano_00b_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_00b_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_01_file 	 init "../samples/iveheard/ive-heard-a-piano_01.wav"
+gSive_heard_a_piano_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_01.wav"
 giive_heard_a_piano_01_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_01_file, 0, 0, 1
 giive_heard_a_piano_01_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_01_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_02_file 	 init "../samples/iveheard/ive-heard-a-piano_02.wav"
+gSive_heard_a_piano_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_02.wav"
 giive_heard_a_piano_02_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_02_file, 0, 0, 1
 giive_heard_a_piano_02_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_02_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_03_file 	 init "../samples/iveheard/ive-heard-a-piano_03.wav"
+gSive_heard_a_piano_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_03.wav"
 giive_heard_a_piano_03_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_03_file, 0, 0, 1
 giive_heard_a_piano_03_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_03_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_04_file 	 init "../samples/iveheard/ive-heard-a-piano_04.wav"
+gSive_heard_a_piano_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_04.wav"
 giive_heard_a_piano_04_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_04_file, 0, 0, 1
 giive_heard_a_piano_04_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_04_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_05_file 	 init "../samples/iveheard/ive-heard-a-piano_05.wav"
+gSive_heard_a_piano_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_05.wav"
 giive_heard_a_piano_05_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_05_file, 0, 0, 1
 giive_heard_a_piano_05_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_05_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_06_file 	 init "../samples/iveheard/ive-heard-a-piano_06.wav"
+gSive_heard_a_piano_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_06.wav"
 giive_heard_a_piano_06_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_06_file, 0, 0, 1
 giive_heard_a_piano_06_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_06_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_07_file 	 init "../samples/iveheard/ive-heard-a-piano_07.wav"
+gSive_heard_a_piano_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_07.wav"
 giive_heard_a_piano_07_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_07_file, 0, 0, 1
 giive_heard_a_piano_07_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_07_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_08_file 	 init "../samples/iveheard/ive-heard-a-piano_08.wav"
+gSive_heard_a_piano_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_08.wav"
 giive_heard_a_piano_08_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_08_file, 0, 0, 1
 giive_heard_a_piano_08_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_08_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_09_file 	 init "../samples/iveheard/ive-heard-a-piano_09.wav"
+gSive_heard_a_piano_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_09.wav"
 giive_heard_a_piano_09_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_09_file, 0, 0, 1
 giive_heard_a_piano_09_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_09_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_10_file 	 init "../samples/iveheard/ive-heard-a-piano_10.wav"
+gSive_heard_a_piano_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_10.wav"
 giive_heard_a_piano_10_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_10_file, 0, 0, 1
 giive_heard_a_piano_10_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_10_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_11_file 	 init "../samples/iveheard/ive-heard-a-piano_11.wav"
+gSive_heard_a_piano_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_11.wav"
 giive_heard_a_piano_11_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_11_file, 0, 0, 1
 giive_heard_a_piano_11_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_11_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_12_file 	 init "../samples/iveheard/ive-heard-a-piano_12.wav"
+gSive_heard_a_piano_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_12.wav"
 giive_heard_a_piano_12_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_12_file, 0, 0, 1
 giive_heard_a_piano_12_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_12_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_13_file 	 init "../samples/iveheard/ive-heard-a-piano_13.wav"
+gSive_heard_a_piano_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_13.wav"
 giive_heard_a_piano_13_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_13_file, 0, 0, 1
 giive_heard_a_piano_13_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_13_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_14_file 	 init "../samples/iveheard/ive-heard-a-piano_14.wav"
+gSive_heard_a_piano_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_14.wav"
 giive_heard_a_piano_14_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_14_file, 0, 0, 1
 giive_heard_a_piano_14_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_14_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_15_file 	 init "../samples/iveheard/ive-heard-a-piano_15.wav"
+gSive_heard_a_piano_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_15.wav"
 giive_heard_a_piano_15_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_15_file, 0, 0, 1
 giive_heard_a_piano_15_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_15_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_16_file 	 init "../samples/iveheard/ive-heard-a-piano_16.wav"
+gSive_heard_a_piano_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_16.wav"
 giive_heard_a_piano_16_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_16_file, 0, 0, 1
 giive_heard_a_piano_16_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_16_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_17_file 	 init "../samples/iveheard/ive-heard-a-piano_17.wav"
+gSive_heard_a_piano_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_17.wav"
 giive_heard_a_piano_17_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_17_file, 0, 0, 1
 giive_heard_a_piano_17_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_17_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_18_file 	 init "../samples/iveheard/ive-heard-a-piano_18.wav"
+gSive_heard_a_piano_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_18.wav"
 giive_heard_a_piano_18_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_18_file, 0, 0, 1
 giive_heard_a_piano_18_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_18_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_19_file 	 init "../samples/iveheard/ive-heard-a-piano_19.wav"
+gSive_heard_a_piano_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_19.wav"
 giive_heard_a_piano_19_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_19_file, 0, 0, 1
 giive_heard_a_piano_19_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_19_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_20_file 	 init "../samples/iveheard/ive-heard-a-piano_20.wav"
+gSive_heard_a_piano_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_20.wav"
 giive_heard_a_piano_20_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_20_file, 0, 0, 1
 giive_heard_a_piano_20_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_20_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_21_file 	 init "../samples/iveheard/ive-heard-a-piano_21.wav"
+gSive_heard_a_piano_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_21.wav"
 giive_heard_a_piano_21_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_21_file, 0, 0, 1
 giive_heard_a_piano_21_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_21_file, 0, 0, 2
 ;---
-gSive_heard_a_piano_22_file 	 init "../samples/iveheard/ive-heard-a-piano_22.wav"
+gSive_heard_a_piano_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//iveheard/ive-heard-a-piano_22.wav"
 giive_heard_a_piano_22_1		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_22_file, 0, 0, 1
 giive_heard_a_piano_22_2		 ftgen 0, 0, 0, 1, gSive_heard_a_piano_22_file, 0, 0, 2
 ;---

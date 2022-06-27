@@ -1,16 +1,17 @@
+require_relative __dir__ + "/_path.rb"
+
 fx_array                 = Hash.new
 
-fx_array["ANAL"]         = File.open('../_CORE/3-body/3-FX/_def/anal_def.txt').read
-fx_array["FREQ"]         = File.open('../_CORE/3-body/3-FX/_def/freq_def.txt').read
-fx_array["OP1"]          = File.open('../_CORE/3-body/3-FX/_def/op1_def.txt').read
-fx_array["TIME"]         = File.open('../_CORE/3-body/3-FX/_def/time_def.txt').read
-fx_array["TIME_FT"]      = File.open('../_CORE/3-body/3-FX/_def/timeft_def.txt').read
-fx_array["2STRINGS"]      = File.open('../_CORE/3-body/3-FX/_def/2strings_def.txt').read
+fx_array["ANAL"]         = File.open($cordelia_fx + '_def/anal_def.txt').read
+fx_array["FREQ"]         = File.open($cordelia_fx + '_def/freq_def.txt').read
+fx_array["OP1"]          = File.open($cordelia_fx + '_def/op1_def.txt').read
+fx_array["TIME"]         = File.open($cordelia_fx + '_def/time_def.txt').read
+fx_array["TIME_FT"]      = File.open($cordelia_fx + '_def/timeft_def.txt').read
+fx_array["2STRINGS"]      = File.open($cordelia_fx + '_def/2strings_def.txt').read
 
-fx_init                  = File.open('../_CORE/3-body/3-FX/_FX-init.txt').read
+fx_init                  = File.open($cordelia_fx + '_FX-init.txt').read
 
-def_fx_dir      = '../_CORE/3-body/3-FX' 
-fx_full_file    = '../_CORE/3-body/3-FX/_FX-full.orc' 
+fx_full_file    = $cordelia_fx + '_FX-full.orc' 
 
 #DELETE OLD .ORC
 if  File.exist?(fx_full_file) then
@@ -32,7 +33,7 @@ fx_init.each_line do |line|
 end
 
 #GENERATE FROM DEF
-Dir[def_fx_dir + '/*.orc'].each do |each_fx_file|
+Dir[$cordelia_fx + '/*.orc'].each do |each_fx_file|
 
     each_fx_name = File.basename(each_fx_file, '.orc')
 

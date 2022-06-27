@@ -1,52 +1,52 @@
-gSgamelf_00_file 	 init "../samples/gamelf/gamelf_00.wav"
+gSgamelf_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_00.wav"
 gigamelf_00_1		 ftgen 0, 0, 0, 1, gSgamelf_00_file, 0, 0, 1
 gigamelf_00_2		 ftgen 0, 0, 0, 1, gSgamelf_00_file, 0, 0, 2
 ;---
-gSgamelf_01_file 	 init "../samples/gamelf/gamelf_01.wav"
+gSgamelf_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_01.wav"
 gigamelf_01_1		 ftgen 0, 0, 0, 1, gSgamelf_01_file, 0, 0, 1
 gigamelf_01_2		 ftgen 0, 0, 0, 1, gSgamelf_01_file, 0, 0, 2
 ;---
-gSgamelf_02_file 	 init "../samples/gamelf/gamelf_02.wav"
+gSgamelf_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_02.wav"
 gigamelf_02_1		 ftgen 0, 0, 0, 1, gSgamelf_02_file, 0, 0, 1
 gigamelf_02_2		 ftgen 0, 0, 0, 1, gSgamelf_02_file, 0, 0, 2
 ;---
-gSgamelf_03_file 	 init "../samples/gamelf/gamelf_03.wav"
+gSgamelf_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_03.wav"
 gigamelf_03_1		 ftgen 0, 0, 0, 1, gSgamelf_03_file, 0, 0, 1
 gigamelf_03_2		 ftgen 0, 0, 0, 1, gSgamelf_03_file, 0, 0, 2
 ;---
-gSgamelf_04_file 	 init "../samples/gamelf/gamelf_04.wav"
+gSgamelf_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_04.wav"
 gigamelf_04_1		 ftgen 0, 0, 0, 1, gSgamelf_04_file, 0, 0, 1
 gigamelf_04_2		 ftgen 0, 0, 0, 1, gSgamelf_04_file, 0, 0, 2
 ;---
-gSgamelf_05_file 	 init "../samples/gamelf/gamelf_05.wav"
+gSgamelf_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_05.wav"
 gigamelf_05_1		 ftgen 0, 0, 0, 1, gSgamelf_05_file, 0, 0, 1
 gigamelf_05_2		 ftgen 0, 0, 0, 1, gSgamelf_05_file, 0, 0, 2
 ;---
-gSgamelf_06_file 	 init "../samples/gamelf/gamelf_06.wav"
+gSgamelf_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_06.wav"
 gigamelf_06_1		 ftgen 0, 0, 0, 1, gSgamelf_06_file, 0, 0, 1
 gigamelf_06_2		 ftgen 0, 0, 0, 1, gSgamelf_06_file, 0, 0, 2
 ;---
-gSgamelf_07_file 	 init "../samples/gamelf/gamelf_07.wav"
+gSgamelf_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_07.wav"
 gigamelf_07_1		 ftgen 0, 0, 0, 1, gSgamelf_07_file, 0, 0, 1
 gigamelf_07_2		 ftgen 0, 0, 0, 1, gSgamelf_07_file, 0, 0, 2
 ;---
-gSgamelf_08_file 	 init "../samples/gamelf/gamelf_08.wav"
+gSgamelf_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_08.wav"
 gigamelf_08_1		 ftgen 0, 0, 0, 1, gSgamelf_08_file, 0, 0, 1
 gigamelf_08_2		 ftgen 0, 0, 0, 1, gSgamelf_08_file, 0, 0, 2
 ;---
-gSgamelf_09_file 	 init "../samples/gamelf/gamelf_09.wav"
+gSgamelf_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_09.wav"
 gigamelf_09_1		 ftgen 0, 0, 0, 1, gSgamelf_09_file, 0, 0, 1
 gigamelf_09_2		 ftgen 0, 0, 0, 1, gSgamelf_09_file, 0, 0, 2
 ;---
-gSgamelf_10_file 	 init "../samples/gamelf/gamelf_10.wav"
+gSgamelf_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_10.wav"
 gigamelf_10_1		 ftgen 0, 0, 0, 1, gSgamelf_10_file, 0, 0, 1
 gigamelf_10_2		 ftgen 0, 0, 0, 1, gSgamelf_10_file, 0, 0, 2
 ;---
-gSgamelf_11_file 	 init "../samples/gamelf/gamelf_11.wav"
+gSgamelf_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_11.wav"
 gigamelf_11_1		 ftgen 0, 0, 0, 1, gSgamelf_11_file, 0, 0, 1
 gigamelf_11_2		 ftgen 0, 0, 0, 1, gSgamelf_11_file, 0, 0, 2
 ;---
-gSgamelf_12_file 	 init "../samples/gamelf/gamelf_12.wav"
+gSgamelf_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gamelf/gamelf_12.wav"
 gigamelf_12_1		 ftgen 0, 0, 0, 1, gSgamelf_12_file, 0, 0, 1
 gigamelf_12_2		 ftgen 0, 0, 0, 1, gSgamelf_12_file, 0, 0, 2
 ;---

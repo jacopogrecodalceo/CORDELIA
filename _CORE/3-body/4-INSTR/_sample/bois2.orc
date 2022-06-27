@@ -1,4 +1,4 @@
-gSbois2_file	init "../samples/bois2.wav"
+gSbois2_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//bois2.wav"
 
 gibois21	ftgen 0, 0, 0, 1, gSbois2_file, 0, 0, 1
 gibois22	ftgen 0, 0, 0, 1, gSbois2_file, 0, 0, 2

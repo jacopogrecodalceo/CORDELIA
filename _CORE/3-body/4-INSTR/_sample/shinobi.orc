@@ -1,4 +1,4 @@
-gSshinobi_file	init "../samples/shinobi.wav"
+gSshinobi_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//shinobi.wav"
 
 gishinobi1	ftgen 0, 0, 0, 1, gSshinobi_file, 0, 0, 1
 gishinobi2	ftgen 0, 0, 0, 1, gSshinobi_file, 0, 0, 2

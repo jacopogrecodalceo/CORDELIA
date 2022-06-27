@@ -1,4 +1,4 @@
-gSdrum_file	init "../samples/drum.wav"
+gSdrum_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//drum.wav"
 
 gidrum1	ftgen 0, 0, 0, 1, gSdrum_file, 0, 0, 1
 gidrum2	ftgen 0, 0, 0, 1, gSdrum_file, 0, 0, 2

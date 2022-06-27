@@ -1,4 +1,4 @@
-gSalgo2_file	init "../samples/algo2.wav"
+gSalgo2_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//algo2.wav"
 
 gialgo21	ftgen 0, 0, 0, 1, gSalgo2_file, 0, 0, 1
 gialgo22	ftgen 0, 0, 0, 1, gSalgo2_file, 0, 0, 2

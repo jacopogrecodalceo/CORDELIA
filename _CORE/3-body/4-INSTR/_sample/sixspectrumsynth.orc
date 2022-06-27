@@ -1,4 +1,4 @@
-gSsixspectrumsynth_file	init "../samples/sixspectrumsynth.wav"
+gSsixspectrumsynth_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sixspectrumsynth.wav"
 
 gisixspectrumsynth1	ftgen 0, 0, 0, 1, gSsixspectrumsynth_file, 0, 0, 1
 gisixspectrumsynth2	ftgen 0, 0, 0, 1, gSsixspectrumsynth_file, 0, 0, 2

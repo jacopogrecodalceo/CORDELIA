@@ -1,4 +1,4 @@
-giflingjm_ft	init gihsaw
+giflingjm_ft	init giasaw
 
 giringj7_arr[]	genarray 1, ginchnls
 
@@ -6,7 +6,8 @@ gkringj6_port	init 0
 gkringj5_port	init 0
 gkringhj5_port	init 0
 
-;   1 PARAM OPCODEs
+gisigm1		ftgen	0, 0, 257, 9, .5, 1, 270
+gisigm2		ftgen	0, 0, 257, 9, .5, 1, 270, 1.5, .35, 90, 2.5, .215, 270, 3.5, .145, 90, 4.5, .115, 270;   1 PARAM OPCODEs
 
     opcode  abj, 0, SJPo
 Sinstr, kp1, kgain, ich xin
@@ -1634,7 +1635,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -1692,7 +1693,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -1754,7 +1755,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -1818,7 +1819,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -1880,7 +1881,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -1949,7 +1950,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2007,7 +2008,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2060,7 +2061,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2117,7 +2118,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2178,7 +2179,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2243,7 +2244,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT
@@ -2310,7 +2311,7 @@ if  kfb==-1 then
 endif
 
 if  ift==-1 then
-        ift = gihsine
+        ift = giasine
 endif
 
 ;   LIMIT

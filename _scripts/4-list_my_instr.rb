@@ -1,10 +1,10 @@
-instr_dir      = '/Users/j/Documents/PROJECTs/IDRA/_core/__instr/'
-samp_dir      = '/Users/j/Documents/PROJECTs/IDRA/samples/opcode/'
-output_dir  = '/Users/j/Documents/PROJECTs/IDRA'
-list       = '/Users/j/Documents/PROJECTs/IDRA/_core/__scripts/__others/list_instr/_list_instr.tex'
-list_txt = '/Users/j/Documents/PROJECTs/IDRA/_list_instr.txt'
+require_relative __dir__ + "/_path.rb"
+
+list = $cordelia_dir + 'cordelia_instr.tex'
+list_txt = $cordelia_dir + '_list_instr.txt'
 
 dest_tex = list
+
 
 
 tex_in    ='\documentclass[a4paper, landscape]{book}
@@ -47,7 +47,7 @@ file.write(tex_in)
 all_instr = []
 
 #INSTRs
-Dir.glob(instr_dir + '*.orc') do |f|
+Dir.glob($cordelia_instr + '*.orc') do |f|
     if not File.directory?(f)
         name = File.basename(f, '.orc')
         if not name.start_with?('_')
@@ -76,7 +76,7 @@ end
 #SAMPs
 all_instr = []
 
-Dir.glob(samp_dir + '*.wav') do |f|
+Dir.glob($cordelia_samp + '*.wav') do |f|
   if not File.directory?(f)
     name = File.basename(f, '.wav')
     if not name.start_with?('_')
@@ -103,7 +103,7 @@ end
 #DIRs
 all_instr = []
 
-Dir.glob(samp_dir + '*') do |f|
+Dir.glob($cordelia_samp + '*') do |f|
   if File.directory?(f)
       name = File.basename(f)
       if not name.start_with?('_')
@@ -132,7 +132,7 @@ end
     file.close unless file.nil?
   end
 
-system("/usr/local/texlive/2021/bin/universal-darwin/pdflatex -output-directory=#{output_dir} #{dest_tex} ")
+system("/usr/local/texlive/2021/bin/universal-darwin/pdflatex -output-directory=#{$cordelia_dir} #{dest_tex} ")
 
 #ALLs
 dir      = '/Users/j/Documents/PROJECTs/IDRA/_core/__instr/'
@@ -140,7 +140,7 @@ list     = '/Users/j/Documents/PROJECTs/IDRA/_list_instr.txt'
 
 all_instr = []
 
-Dir.glob(instr_dir + '**/*.orc') do |f|
+Dir.glob($cordelia_instr + '**/*.orc') do |f|
     if not File.directory?(f)
         name = File.basename(f, '.orc')
         if not name.start_with?('_')
@@ -161,3 +161,7 @@ end
   ensure
     file.close unless file.nil?
   end
+
+  File.delete($cordelia_dir + 'cordelia_instr.tex')
+  File.delete($cordelia_dir + 'cordelia_instr.log')
+  File.delete($cordelia_dir + 'cordelia_instr.aux')

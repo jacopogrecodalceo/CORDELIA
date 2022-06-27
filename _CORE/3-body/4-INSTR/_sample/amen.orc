@@ -1,4 +1,4 @@
-gSamen_file	init "../samples/amen.wav"
+gSamen_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//amen.wav"
 
 giamen1	ftgen 0, 0, 0, 1, gSamen_file, 0, 0, 1
 giamen2	ftgen 0, 0, 0, 1, gSamen_file, 0, 0, 2

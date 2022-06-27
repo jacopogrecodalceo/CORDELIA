@@ -1,4 +1,4 @@
-gSbreak_file	init "../samples/break.wav"
+gSbreak_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//break.wav"
 
 gibreak1	ftgen 0, 0, 0, 1, gSbreak_file, 0, 0, 1
 gibreak2	ftgen 0, 0, 0, 1, gSbreak_file, 0, 0, 2

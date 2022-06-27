@@ -63,7 +63,7 @@ kph	=	korgan * kfreq
 kph	+=	kphase
 kph	=	kph % 1
 
-kout	tab	kph, gilowasine, 1
+kout	tab	kph, giasine, 1
 
 	xout kout
 	endop
@@ -94,24 +94,6 @@ kph	=	int(kph * kpulses)
 
 	endop
 
-;	TEMPO modulator
-	opcode	rall, k, kk
-	kdiv, kper xin
-
-kphasor	= ((chnget:k("heart")*kdiv)%1)*16384
-krall	= tab(kphasor, girall)*kper
-
-	xout krall
-	endop
-
-	opcode	acc, k, kk
-	kdiv, kper xin
-
-kphasor	= ((chnget:k("heart")*kdiv)%1)*16384
-kacc	= tab(kphasor, giacc)*kper
-
-	xout kacc
-	endop
 
 	opcode	tempovar, k, kki
 	kdiv, kper, itab xin

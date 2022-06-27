@@ -1,4 +1,4 @@
-gSsyeq_file	init "../samples/syeq.wav"
+gSsyeq_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//syeq.wav"
 
 gisyeq1	ftgen 0, 0, 0, 1, gSsyeq_file, 0, 0, 1
 gisyeq2	ftgen 0, 0, 0, 1, gSsyeq_file, 0, 0, 2

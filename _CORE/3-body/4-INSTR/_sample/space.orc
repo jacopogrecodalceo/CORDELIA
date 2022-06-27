@@ -1,64 +1,64 @@
-gSspace_00_file 	 init "../samples/space/space-00.wav"
+gSspace_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-00.wav"
 gispace_00_1		 ftgen 0, 0, 0, 1, gSspace_00_file, 0, 0, 1
 gispace_00_2		 ftgen 0, 0, 0, 1, gSspace_00_file, 0, 0, 2
 ;---
-gSspace_01_file 	 init "../samples/space/space-01.wav"
+gSspace_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-01.wav"
 gispace_01_1		 ftgen 0, 0, 0, 1, gSspace_01_file, 0, 0, 1
 gispace_01_2		 ftgen 0, 0, 0, 1, gSspace_01_file, 0, 0, 2
 ;---
-gSspace_02_file 	 init "../samples/space/space-02.wav"
+gSspace_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-02.wav"
 gispace_02_1		 ftgen 0, 0, 0, 1, gSspace_02_file, 0, 0, 1
 gispace_02_2		 ftgen 0, 0, 0, 1, gSspace_02_file, 0, 0, 2
 ;---
-gSspace_03_file 	 init "../samples/space/space-03.wav"
+gSspace_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-03.wav"
 gispace_03_1		 ftgen 0, 0, 0, 1, gSspace_03_file, 0, 0, 1
 gispace_03_2		 ftgen 0, 0, 0, 1, gSspace_03_file, 0, 0, 2
 ;---
-gSspace_04_file 	 init "../samples/space/space-04.wav"
+gSspace_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-04.wav"
 gispace_04_1		 ftgen 0, 0, 0, 1, gSspace_04_file, 0, 0, 1
 gispace_04_2		 ftgen 0, 0, 0, 1, gSspace_04_file, 0, 0, 2
 ;---
-gSspace_05_file 	 init "../samples/space/space-05.wav"
+gSspace_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-05.wav"
 gispace_05_1		 ftgen 0, 0, 0, 1, gSspace_05_file, 0, 0, 1
 gispace_05_2		 ftgen 0, 0, 0, 1, gSspace_05_file, 0, 0, 2
 ;---
-gSspace_06_file 	 init "../samples/space/space-06.wav"
+gSspace_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-06.wav"
 gispace_06_1		 ftgen 0, 0, 0, 1, gSspace_06_file, 0, 0, 1
 gispace_06_2		 ftgen 0, 0, 0, 1, gSspace_06_file, 0, 0, 2
 ;---
-gSspace_07_file 	 init "../samples/space/space-07.wav"
+gSspace_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-07.wav"
 gispace_07_1		 ftgen 0, 0, 0, 1, gSspace_07_file, 0, 0, 1
 gispace_07_2		 ftgen 0, 0, 0, 1, gSspace_07_file, 0, 0, 2
 ;---
-gSspace_08_file 	 init "../samples/space/space-08.wav"
+gSspace_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-08.wav"
 gispace_08_1		 ftgen 0, 0, 0, 1, gSspace_08_file, 0, 0, 1
 gispace_08_2		 ftgen 0, 0, 0, 1, gSspace_08_file, 0, 0, 2
 ;---
-gSspace_09_file 	 init "../samples/space/space-09.wav"
+gSspace_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-09.wav"
 gispace_09_1		 ftgen 0, 0, 0, 1, gSspace_09_file, 0, 0, 1
 gispace_09_2		 ftgen 0, 0, 0, 1, gSspace_09_file, 0, 0, 2
 ;---
-gSspace_10_file 	 init "../samples/space/space-10.wav"
+gSspace_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-10.wav"
 gispace_10_1		 ftgen 0, 0, 0, 1, gSspace_10_file, 0, 0, 1
 gispace_10_2		 ftgen 0, 0, 0, 1, gSspace_10_file, 0, 0, 2
 ;---
-gSspace_11_file 	 init "../samples/space/space-11.wav"
+gSspace_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-11.wav"
 gispace_11_1		 ftgen 0, 0, 0, 1, gSspace_11_file, 0, 0, 1
 gispace_11_2		 ftgen 0, 0, 0, 1, gSspace_11_file, 0, 0, 2
 ;---
-gSspace_12_file 	 init "../samples/space/space-12.wav"
+gSspace_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-12.wav"
 gispace_12_1		 ftgen 0, 0, 0, 1, gSspace_12_file, 0, 0, 1
 gispace_12_2		 ftgen 0, 0, 0, 1, gSspace_12_file, 0, 0, 2
 ;---
-gSspace_13_file 	 init "../samples/space/space-13.wav"
+gSspace_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-13.wav"
 gispace_13_1		 ftgen 0, 0, 0, 1, gSspace_13_file, 0, 0, 1
 gispace_13_2		 ftgen 0, 0, 0, 1, gSspace_13_file, 0, 0, 2
 ;---
-gSspace_14_file 	 init "../samples/space/space-14.wav"
+gSspace_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-14.wav"
 gispace_14_1		 ftgen 0, 0, 0, 1, gSspace_14_file, 0, 0, 1
 gispace_14_2		 ftgen 0, 0, 0, 1, gSspace_14_file, 0, 0, 2
 ;---
-gSspace_15_file 	 init "../samples/space/space-15.wav"
+gSspace_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//space/space-15.wav"
 gispace_15_1		 ftgen 0, 0, 0, 1, gSspace_15_file, 0, 0, 1
 gispace_15_2		 ftgen 0, 0, 0, 1, gSspace_15_file, 0, 0, 2
 ;---

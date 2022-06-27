@@ -1,108 +1,108 @@
-gSsin_00_file 	 init "../samples/sin/sin-00.wav"
+gSsin_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-00.wav"
 gisin_00_1		 ftgen 0, 0, 0, 1, gSsin_00_file, 0, 0, 1
 gisin_00_2		 ftgen 0, 0, 0, 1, gSsin_00_file, 0, 0, 2
 ;---
-gSsin_01_file 	 init "../samples/sin/sin-01.wav"
+gSsin_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-01.wav"
 gisin_01_1		 ftgen 0, 0, 0, 1, gSsin_01_file, 0, 0, 1
 gisin_01_2		 ftgen 0, 0, 0, 1, gSsin_01_file, 0, 0, 2
 ;---
-gSsin_02_file 	 init "../samples/sin/sin-02.wav"
+gSsin_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-02.wav"
 gisin_02_1		 ftgen 0, 0, 0, 1, gSsin_02_file, 0, 0, 1
 gisin_02_2		 ftgen 0, 0, 0, 1, gSsin_02_file, 0, 0, 2
 ;---
-gSsin_03_file 	 init "../samples/sin/sin-03.wav"
+gSsin_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-03.wav"
 gisin_03_1		 ftgen 0, 0, 0, 1, gSsin_03_file, 0, 0, 1
 gisin_03_2		 ftgen 0, 0, 0, 1, gSsin_03_file, 0, 0, 2
 ;---
-gSsin_04_file 	 init "../samples/sin/sin-04.wav"
+gSsin_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-04.wav"
 gisin_04_1		 ftgen 0, 0, 0, 1, gSsin_04_file, 0, 0, 1
 gisin_04_2		 ftgen 0, 0, 0, 1, gSsin_04_file, 0, 0, 2
 ;---
-gSsin_05_file 	 init "../samples/sin/sin-05.wav"
+gSsin_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-05.wav"
 gisin_05_1		 ftgen 0, 0, 0, 1, gSsin_05_file, 0, 0, 1
 gisin_05_2		 ftgen 0, 0, 0, 1, gSsin_05_file, 0, 0, 2
 ;---
-gSsin_06_file 	 init "../samples/sin/sin-06.wav"
+gSsin_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-06.wav"
 gisin_06_1		 ftgen 0, 0, 0, 1, gSsin_06_file, 0, 0, 1
 gisin_06_2		 ftgen 0, 0, 0, 1, gSsin_06_file, 0, 0, 2
 ;---
-gSsin_07_file 	 init "../samples/sin/sin-07.wav"
+gSsin_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-07.wav"
 gisin_07_1		 ftgen 0, 0, 0, 1, gSsin_07_file, 0, 0, 1
 gisin_07_2		 ftgen 0, 0, 0, 1, gSsin_07_file, 0, 0, 2
 ;---
-gSsin_08_file 	 init "../samples/sin/sin-08.wav"
+gSsin_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-08.wav"
 gisin_08_1		 ftgen 0, 0, 0, 1, gSsin_08_file, 0, 0, 1
 gisin_08_2		 ftgen 0, 0, 0, 1, gSsin_08_file, 0, 0, 2
 ;---
-gSsin_09_file 	 init "../samples/sin/sin-09.wav"
+gSsin_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-09.wav"
 gisin_09_1		 ftgen 0, 0, 0, 1, gSsin_09_file, 0, 0, 1
 gisin_09_2		 ftgen 0, 0, 0, 1, gSsin_09_file, 0, 0, 2
 ;---
-gSsin_10_file 	 init "../samples/sin/sin-10.wav"
+gSsin_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-10.wav"
 gisin_10_1		 ftgen 0, 0, 0, 1, gSsin_10_file, 0, 0, 1
 gisin_10_2		 ftgen 0, 0, 0, 1, gSsin_10_file, 0, 0, 2
 ;---
-gSsin_11_file 	 init "../samples/sin/sin-11.wav"
+gSsin_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-11.wav"
 gisin_11_1		 ftgen 0, 0, 0, 1, gSsin_11_file, 0, 0, 1
 gisin_11_2		 ftgen 0, 0, 0, 1, gSsin_11_file, 0, 0, 2
 ;---
-gSsin_12_file 	 init "../samples/sin/sin-12.wav"
+gSsin_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-12.wav"
 gisin_12_1		 ftgen 0, 0, 0, 1, gSsin_12_file, 0, 0, 1
 gisin_12_2		 ftgen 0, 0, 0, 1, gSsin_12_file, 0, 0, 2
 ;---
-gSsin_13_file 	 init "../samples/sin/sin-13.wav"
+gSsin_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-13.wav"
 gisin_13_1		 ftgen 0, 0, 0, 1, gSsin_13_file, 0, 0, 1
 gisin_13_2		 ftgen 0, 0, 0, 1, gSsin_13_file, 0, 0, 2
 ;---
-gSsin_14_file 	 init "../samples/sin/sin-14.wav"
+gSsin_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-14.wav"
 gisin_14_1		 ftgen 0, 0, 0, 1, gSsin_14_file, 0, 0, 1
 gisin_14_2		 ftgen 0, 0, 0, 1, gSsin_14_file, 0, 0, 2
 ;---
-gSsin_15_file 	 init "../samples/sin/sin-15.wav"
+gSsin_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-15.wav"
 gisin_15_1		 ftgen 0, 0, 0, 1, gSsin_15_file, 0, 0, 1
 gisin_15_2		 ftgen 0, 0, 0, 1, gSsin_15_file, 0, 0, 2
 ;---
-gSsin_16_file 	 init "../samples/sin/sin-16.wav"
+gSsin_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-16.wav"
 gisin_16_1		 ftgen 0, 0, 0, 1, gSsin_16_file, 0, 0, 1
 gisin_16_2		 ftgen 0, 0, 0, 1, gSsin_16_file, 0, 0, 2
 ;---
-gSsin_17_file 	 init "../samples/sin/sin-17.wav"
+gSsin_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-17.wav"
 gisin_17_1		 ftgen 0, 0, 0, 1, gSsin_17_file, 0, 0, 1
 gisin_17_2		 ftgen 0, 0, 0, 1, gSsin_17_file, 0, 0, 2
 ;---
-gSsin_18_file 	 init "../samples/sin/sin-18.wav"
+gSsin_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-18.wav"
 gisin_18_1		 ftgen 0, 0, 0, 1, gSsin_18_file, 0, 0, 1
 gisin_18_2		 ftgen 0, 0, 0, 1, gSsin_18_file, 0, 0, 2
 ;---
-gSsin_19_file 	 init "../samples/sin/sin-19.wav"
+gSsin_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-19.wav"
 gisin_19_1		 ftgen 0, 0, 0, 1, gSsin_19_file, 0, 0, 1
 gisin_19_2		 ftgen 0, 0, 0, 1, gSsin_19_file, 0, 0, 2
 ;---
-gSsin_20_file 	 init "../samples/sin/sin-20.wav"
+gSsin_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-20.wav"
 gisin_20_1		 ftgen 0, 0, 0, 1, gSsin_20_file, 0, 0, 1
 gisin_20_2		 ftgen 0, 0, 0, 1, gSsin_20_file, 0, 0, 2
 ;---
-gSsin_21_file 	 init "../samples/sin/sin-21.wav"
+gSsin_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-21.wav"
 gisin_21_1		 ftgen 0, 0, 0, 1, gSsin_21_file, 0, 0, 1
 gisin_21_2		 ftgen 0, 0, 0, 1, gSsin_21_file, 0, 0, 2
 ;---
-gSsin_22_file 	 init "../samples/sin/sin-22.wav"
+gSsin_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-22.wav"
 gisin_22_1		 ftgen 0, 0, 0, 1, gSsin_22_file, 0, 0, 1
 gisin_22_2		 ftgen 0, 0, 0, 1, gSsin_22_file, 0, 0, 2
 ;---
-gSsin_23_file 	 init "../samples/sin/sin-23.wav"
+gSsin_23_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-23.wav"
 gisin_23_1		 ftgen 0, 0, 0, 1, gSsin_23_file, 0, 0, 1
 gisin_23_2		 ftgen 0, 0, 0, 1, gSsin_23_file, 0, 0, 2
 ;---
-gSsin_24_file 	 init "../samples/sin/sin-24.wav"
+gSsin_24_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-24.wav"
 gisin_24_1		 ftgen 0, 0, 0, 1, gSsin_24_file, 0, 0, 1
 gisin_24_2		 ftgen 0, 0, 0, 1, gSsin_24_file, 0, 0, 2
 ;---
-gSsin_25_file 	 init "../samples/sin/sin-25.wav"
+gSsin_25_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-25.wav"
 gisin_25_1		 ftgen 0, 0, 0, 1, gSsin_25_file, 0, 0, 1
 gisin_25_2		 ftgen 0, 0, 0, 1, gSsin_25_file, 0, 0, 2
 ;---
-gSsin_26_file 	 init "../samples/sin/sin-26.wav"
+gSsin_26_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//sin/sin-26.wav"
 gisin_26_1		 ftgen 0, 0, 0, 1, gSsin_26_file, 0, 0, 1
 gisin_26_2		 ftgen 0, 0, 0, 1, gSsin_26_file, 0, 0, 2
 ;---

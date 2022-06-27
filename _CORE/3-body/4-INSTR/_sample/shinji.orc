@@ -1,4 +1,4 @@
-gSshinji_file	init "../samples/shinji.wav"
+gSshinji_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//shinji.wav"
 
 gishinji1	ftgen 0, 0, 0, 1, gSshinji_file, 0, 0, 1
 gishinji2	ftgen 0, 0, 0, 1, gSshinji_file, 0, 0, 2

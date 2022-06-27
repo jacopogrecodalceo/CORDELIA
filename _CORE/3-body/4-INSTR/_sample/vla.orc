@@ -1,28 +1,28 @@
-gSvla_01_file 	 init "../samples/vla/vla-01.wav"
+gSvla_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-01.wav"
 givla_01_1		 ftgen 0, 0, 0, 1, gSvla_01_file, 0, 0, 1
 givla_01_2		 ftgen 0, 0, 0, 1, gSvla_01_file, 0, 0, 2
 ;---
-gSvla_02_file 	 init "../samples/vla/vla-02.wav"
+gSvla_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-02.wav"
 givla_02_1		 ftgen 0, 0, 0, 1, gSvla_02_file, 0, 0, 1
 givla_02_2		 ftgen 0, 0, 0, 1, gSvla_02_file, 0, 0, 2
 ;---
-gSvla_03_file 	 init "../samples/vla/vla-03.wav"
+gSvla_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-03.wav"
 givla_03_1		 ftgen 0, 0, 0, 1, gSvla_03_file, 0, 0, 1
 givla_03_2		 ftgen 0, 0, 0, 1, gSvla_03_file, 0, 0, 2
 ;---
-gSvla_04_file 	 init "../samples/vla/vla-04.wav"
+gSvla_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-04.wav"
 givla_04_1		 ftgen 0, 0, 0, 1, gSvla_04_file, 0, 0, 1
 givla_04_2		 ftgen 0, 0, 0, 1, gSvla_04_file, 0, 0, 2
 ;---
-gSvla_05_file 	 init "../samples/vla/vla-05.wav"
+gSvla_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-05.wav"
 givla_05_1		 ftgen 0, 0, 0, 1, gSvla_05_file, 0, 0, 1
 givla_05_2		 ftgen 0, 0, 0, 1, gSvla_05_file, 0, 0, 2
 ;---
-gSvla_06_file 	 init "../samples/vla/vla-06.wav"
+gSvla_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-06.wav"
 givla_06_1		 ftgen 0, 0, 0, 1, gSvla_06_file, 0, 0, 1
 givla_06_2		 ftgen 0, 0, 0, 1, gSvla_06_file, 0, 0, 2
 ;---
-gSvla_07_file 	 init "../samples/vla/vla-07.wav"
+gSvla_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vla/vla-07.wav"
 givla_07_1		 ftgen 0, 0, 0, 1, gSvla_07_file, 0, 0, 1
 givla_07_2		 ftgen 0, 0, 0, 1, gSvla_07_file, 0, 0, 2
 ;---

@@ -1,4 +1,4 @@
-gSmeer_file	init "../samples/meer.wav"
+gSmeer_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//meer.wav"
 
 gimeer1	ftgen 0, 0, 0, 1, gSmeer_file, 0, 0, 1
 gimeer2	ftgen 0, 0, 0, 1, gSmeer_file, 0, 0, 2

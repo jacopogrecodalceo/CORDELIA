@@ -1,4 +1,4 @@
-gSnoriff_file	init "../samples/noriff.wav"
+gSnoriff_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//noriff.wav"
 
 ginoriff1	ftgen 0, 0, 0, 1, gSnoriff_file, 0, 0, 1
 ginoriff2	ftgen 0, 0, 0, 1, gSnoriff_file, 0, 0, 2

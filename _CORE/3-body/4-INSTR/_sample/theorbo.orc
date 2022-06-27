@@ -1,20 +1,20 @@
-gStheorbo_05_file 	 init "../samples/theorbo/theorbo-05.wav"
+gStheorbo_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//theorbo/theorbo-05.wav"
 githeorbo_05_1		 ftgen 0, 0, 0, 1, gStheorbo_05_file, 0, 0, 1
 githeorbo_05_2		 ftgen 0, 0, 0, 1, gStheorbo_05_file, 0, 0, 2
 ;---
-gStheorbo_06_file 	 init "../samples/theorbo/theorbo-06.wav"
+gStheorbo_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//theorbo/theorbo-06.wav"
 githeorbo_06_1		 ftgen 0, 0, 0, 1, gStheorbo_06_file, 0, 0, 1
 githeorbo_06_2		 ftgen 0, 0, 0, 1, gStheorbo_06_file, 0, 0, 2
 ;---
-gStheorbo_07_file 	 init "../samples/theorbo/theorbo-07.wav"
+gStheorbo_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//theorbo/theorbo-07.wav"
 githeorbo_07_1		 ftgen 0, 0, 0, 1, gStheorbo_07_file, 0, 0, 1
 githeorbo_07_2		 ftgen 0, 0, 0, 1, gStheorbo_07_file, 0, 0, 2
 ;---
-gStheorbo_08_file 	 init "../samples/theorbo/theorbo-08.wav"
+gStheorbo_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//theorbo/theorbo-08.wav"
 githeorbo_08_1		 ftgen 0, 0, 0, 1, gStheorbo_08_file, 0, 0, 1
 githeorbo_08_2		 ftgen 0, 0, 0, 1, gStheorbo_08_file, 0, 0, 2
 ;---
-gStheorbo_09_file 	 init "../samples/theorbo/theorbo-09.wav"
+gStheorbo_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//theorbo/theorbo-09.wav"
 githeorbo_09_1		 ftgen 0, 0, 0, 1, gStheorbo_09_file, 0, 0, 1
 githeorbo_09_2		 ftgen 0, 0, 0, 1, gStheorbo_09_file, 0, 0, 2
 ;---

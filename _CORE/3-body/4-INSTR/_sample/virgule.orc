@@ -1,4 +1,4 @@
-gSvirgule_file	init "../samples/virgule.wav"
+gSvirgule_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//virgule.wav"
 
 givirgule1	ftgen 0, 0, 0, 1, gSvirgule_file, 0, 0, 1
 givirgule2	ftgen 0, 0, 0, 1, gSvirgule_file, 0, 0, 2

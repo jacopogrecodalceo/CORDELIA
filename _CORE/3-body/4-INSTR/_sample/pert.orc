@@ -1,120 +1,120 @@
-gSpert_00_file 	 init "../samples/pert/pert-00.wav"
+gSpert_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-00.wav"
 gipert_00_1		 ftgen 0, 0, 0, 1, gSpert_00_file, 0, 0, 1
 gipert_00_2		 ftgen 0, 0, 0, 1, gSpert_00_file, 0, 0, 2
 ;---
-gSpert_01_file 	 init "../samples/pert/pert-01.wav"
+gSpert_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-01.wav"
 gipert_01_1		 ftgen 0, 0, 0, 1, gSpert_01_file, 0, 0, 1
 gipert_01_2		 ftgen 0, 0, 0, 1, gSpert_01_file, 0, 0, 2
 ;---
-gSpert_02_file 	 init "../samples/pert/pert-02.wav"
+gSpert_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-02.wav"
 gipert_02_1		 ftgen 0, 0, 0, 1, gSpert_02_file, 0, 0, 1
 gipert_02_2		 ftgen 0, 0, 0, 1, gSpert_02_file, 0, 0, 2
 ;---
-gSpert_03_file 	 init "../samples/pert/pert-03.wav"
+gSpert_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-03.wav"
 gipert_03_1		 ftgen 0, 0, 0, 1, gSpert_03_file, 0, 0, 1
 gipert_03_2		 ftgen 0, 0, 0, 1, gSpert_03_file, 0, 0, 2
 ;---
-gSpert_04_file 	 init "../samples/pert/pert-04.wav"
+gSpert_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-04.wav"
 gipert_04_1		 ftgen 0, 0, 0, 1, gSpert_04_file, 0, 0, 1
 gipert_04_2		 ftgen 0, 0, 0, 1, gSpert_04_file, 0, 0, 2
 ;---
-gSpert_05_file 	 init "../samples/pert/pert-05.wav"
+gSpert_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-05.wav"
 gipert_05_1		 ftgen 0, 0, 0, 1, gSpert_05_file, 0, 0, 1
 gipert_05_2		 ftgen 0, 0, 0, 1, gSpert_05_file, 0, 0, 2
 ;---
-gSpert_06_file 	 init "../samples/pert/pert-06.wav"
+gSpert_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-06.wav"
 gipert_06_1		 ftgen 0, 0, 0, 1, gSpert_06_file, 0, 0, 1
 gipert_06_2		 ftgen 0, 0, 0, 1, gSpert_06_file, 0, 0, 2
 ;---
-gSpert_07_file 	 init "../samples/pert/pert-07.wav"
+gSpert_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-07.wav"
 gipert_07_1		 ftgen 0, 0, 0, 1, gSpert_07_file, 0, 0, 1
 gipert_07_2		 ftgen 0, 0, 0, 1, gSpert_07_file, 0, 0, 2
 ;---
-gSpert_08_file 	 init "../samples/pert/pert-08.wav"
+gSpert_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-08.wav"
 gipert_08_1		 ftgen 0, 0, 0, 1, gSpert_08_file, 0, 0, 1
 gipert_08_2		 ftgen 0, 0, 0, 1, gSpert_08_file, 0, 0, 2
 ;---
-gSpert_09_file 	 init "../samples/pert/pert-09.wav"
+gSpert_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-09.wav"
 gipert_09_1		 ftgen 0, 0, 0, 1, gSpert_09_file, 0, 0, 1
 gipert_09_2		 ftgen 0, 0, 0, 1, gSpert_09_file, 0, 0, 2
 ;---
-gSpert_10_file 	 init "../samples/pert/pert-10.wav"
+gSpert_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-10.wav"
 gipert_10_1		 ftgen 0, 0, 0, 1, gSpert_10_file, 0, 0, 1
 gipert_10_2		 ftgen 0, 0, 0, 1, gSpert_10_file, 0, 0, 2
 ;---
-gSpert_11_file 	 init "../samples/pert/pert-11.wav"
+gSpert_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-11.wav"
 gipert_11_1		 ftgen 0, 0, 0, 1, gSpert_11_file, 0, 0, 1
 gipert_11_2		 ftgen 0, 0, 0, 1, gSpert_11_file, 0, 0, 2
 ;---
-gSpert_12_file 	 init "../samples/pert/pert-12.wav"
+gSpert_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-12.wav"
 gipert_12_1		 ftgen 0, 0, 0, 1, gSpert_12_file, 0, 0, 1
 gipert_12_2		 ftgen 0, 0, 0, 1, gSpert_12_file, 0, 0, 2
 ;---
-gSpert_13_file 	 init "../samples/pert/pert-13.wav"
+gSpert_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-13.wav"
 gipert_13_1		 ftgen 0, 0, 0, 1, gSpert_13_file, 0, 0, 1
 gipert_13_2		 ftgen 0, 0, 0, 1, gSpert_13_file, 0, 0, 2
 ;---
-gSpert_14_file 	 init "../samples/pert/pert-14.wav"
+gSpert_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-14.wav"
 gipert_14_1		 ftgen 0, 0, 0, 1, gSpert_14_file, 0, 0, 1
 gipert_14_2		 ftgen 0, 0, 0, 1, gSpert_14_file, 0, 0, 2
 ;---
-gSpert_15_file 	 init "../samples/pert/pert-15.wav"
+gSpert_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-15.wav"
 gipert_15_1		 ftgen 0, 0, 0, 1, gSpert_15_file, 0, 0, 1
 gipert_15_2		 ftgen 0, 0, 0, 1, gSpert_15_file, 0, 0, 2
 ;---
-gSpert_16_file 	 init "../samples/pert/pert-16.wav"
+gSpert_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-16.wav"
 gipert_16_1		 ftgen 0, 0, 0, 1, gSpert_16_file, 0, 0, 1
 gipert_16_2		 ftgen 0, 0, 0, 1, gSpert_16_file, 0, 0, 2
 ;---
-gSpert_17_file 	 init "../samples/pert/pert-17.wav"
+gSpert_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-17.wav"
 gipert_17_1		 ftgen 0, 0, 0, 1, gSpert_17_file, 0, 0, 1
 gipert_17_2		 ftgen 0, 0, 0, 1, gSpert_17_file, 0, 0, 2
 ;---
-gSpert_18_file 	 init "../samples/pert/pert-18.wav"
+gSpert_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-18.wav"
 gipert_18_1		 ftgen 0, 0, 0, 1, gSpert_18_file, 0, 0, 1
 gipert_18_2		 ftgen 0, 0, 0, 1, gSpert_18_file, 0, 0, 2
 ;---
-gSpert_19_file 	 init "../samples/pert/pert-19.wav"
+gSpert_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-19.wav"
 gipert_19_1		 ftgen 0, 0, 0, 1, gSpert_19_file, 0, 0, 1
 gipert_19_2		 ftgen 0, 0, 0, 1, gSpert_19_file, 0, 0, 2
 ;---
-gSpert_20_file 	 init "../samples/pert/pert-20.wav"
+gSpert_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-20.wav"
 gipert_20_1		 ftgen 0, 0, 0, 1, gSpert_20_file, 0, 0, 1
 gipert_20_2		 ftgen 0, 0, 0, 1, gSpert_20_file, 0, 0, 2
 ;---
-gSpert_21_file 	 init "../samples/pert/pert-21.wav"
+gSpert_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-21.wav"
 gipert_21_1		 ftgen 0, 0, 0, 1, gSpert_21_file, 0, 0, 1
 gipert_21_2		 ftgen 0, 0, 0, 1, gSpert_21_file, 0, 0, 2
 ;---
-gSpert_22_file 	 init "../samples/pert/pert-22.wav"
+gSpert_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-22.wav"
 gipert_22_1		 ftgen 0, 0, 0, 1, gSpert_22_file, 0, 0, 1
 gipert_22_2		 ftgen 0, 0, 0, 1, gSpert_22_file, 0, 0, 2
 ;---
-gSpert_23_file 	 init "../samples/pert/pert-23.wav"
+gSpert_23_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-23.wav"
 gipert_23_1		 ftgen 0, 0, 0, 1, gSpert_23_file, 0, 0, 1
 gipert_23_2		 ftgen 0, 0, 0, 1, gSpert_23_file, 0, 0, 2
 ;---
-gSpert_24_file 	 init "../samples/pert/pert-24.wav"
+gSpert_24_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-24.wav"
 gipert_24_1		 ftgen 0, 0, 0, 1, gSpert_24_file, 0, 0, 1
 gipert_24_2		 ftgen 0, 0, 0, 1, gSpert_24_file, 0, 0, 2
 ;---
-gSpert_25_file 	 init "../samples/pert/pert-25.wav"
+gSpert_25_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-25.wav"
 gipert_25_1		 ftgen 0, 0, 0, 1, gSpert_25_file, 0, 0, 1
 gipert_25_2		 ftgen 0, 0, 0, 1, gSpert_25_file, 0, 0, 2
 ;---
-gSpert_26_file 	 init "../samples/pert/pert-26.wav"
+gSpert_26_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-26.wav"
 gipert_26_1		 ftgen 0, 0, 0, 1, gSpert_26_file, 0, 0, 1
 gipert_26_2		 ftgen 0, 0, 0, 1, gSpert_26_file, 0, 0, 2
 ;---
-gSpert_27_file 	 init "../samples/pert/pert-27.wav"
+gSpert_27_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-27.wav"
 gipert_27_1		 ftgen 0, 0, 0, 1, gSpert_27_file, 0, 0, 1
 gipert_27_2		 ftgen 0, 0, 0, 1, gSpert_27_file, 0, 0, 2
 ;---
-gSpert_28_file 	 init "../samples/pert/pert-28.wav"
+gSpert_28_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-28.wav"
 gipert_28_1		 ftgen 0, 0, 0, 1, gSpert_28_file, 0, 0, 1
 gipert_28_2		 ftgen 0, 0, 0, 1, gSpert_28_file, 0, 0, 2
 ;---
-gSpert_29_file 	 init "../samples/pert/pert-29.wav"
+gSpert_29_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//pert/pert-29.wav"
 gipert_29_1		 ftgen 0, 0, 0, 1, gSpert_29_file, 0, 0, 1
 gipert_29_2		 ftgen 0, 0, 0, 1, gSpert_29_file, 0, 0, 2
 ;---

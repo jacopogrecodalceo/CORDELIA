@@ -1,4 +1,4 @@
-gSplanche_file	init "../samples/planche.wav"
+gSplanche_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//planche.wav"
 
 giplanche1	ftgen 0, 0, 0, 1, gSplanche_file, 0, 0, 1
 giplanche2	ftgen 0, 0, 0, 1, gSplanche_file, 0, 0, 2

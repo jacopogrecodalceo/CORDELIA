@@ -1,4 +1,4 @@
-gSgesto2_file	init "../samples/gesto2.wav"
+gSgesto2_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//gesto2.wav"
 
 gigesto21	ftgen 0, 0, 0, 1, gSgesto2_file, 0, 0, 1
 gigesto22	ftgen 0, 0, 0, 1, gSgesto2_file, 0, 0, 2

@@ -1,4 +1,4 @@
-gSsearch_file	init "../samples/search.wav"
+gSsearch_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//search.wav"
 
 gisearch1	ftgen 0, 0, 0, 1, gSsearch_file, 0, 0, 1
 gisearch2	ftgen 0, 0, 0, 1, gSsearch_file, 0, 0, 2

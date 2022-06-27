@@ -1,4 +1,4 @@
-gScontempo_file	init "../samples/contempo.wav"
+gScontempo_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//contempo.wav"
 
 gicontempo1	ftgen 0, 0, 0, 1, gScontempo_file, 0, 0, 1
 gicontempo2	ftgen 0, 0, 0, 1, gScontempo_file, 0, 0, 2

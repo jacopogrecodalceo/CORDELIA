@@ -1,4 +1,4 @@
-gScaiu_file	init "../samples/caiu.wav"
+gScaiu_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//caiu.wav"
 
 gicaiu1	ftgen 0, 0, 0, 1, gScaiu_file, 0, 0, 1
 gicaiu2	ftgen 0, 0, 0, 1, gScaiu_file, 0, 0, 2

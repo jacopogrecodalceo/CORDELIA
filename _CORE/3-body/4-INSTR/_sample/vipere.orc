@@ -1,120 +1,120 @@
-gSvipere_00_file 	 init "../samples/vipere/vipere-00.wav"
+gSvipere_00_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-00.wav"
 givipere_00_1		 ftgen 0, 0, 0, 1, gSvipere_00_file, 0, 0, 1
 givipere_00_2		 ftgen 0, 0, 0, 1, gSvipere_00_file, 0, 0, 2
 ;---
-gSvipere_01_file 	 init "../samples/vipere/vipere-01.wav"
+gSvipere_01_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-01.wav"
 givipere_01_1		 ftgen 0, 0, 0, 1, gSvipere_01_file, 0, 0, 1
 givipere_01_2		 ftgen 0, 0, 0, 1, gSvipere_01_file, 0, 0, 2
 ;---
-gSvipere_02_file 	 init "../samples/vipere/vipere-02.wav"
+gSvipere_02_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-02.wav"
 givipere_02_1		 ftgen 0, 0, 0, 1, gSvipere_02_file, 0, 0, 1
 givipere_02_2		 ftgen 0, 0, 0, 1, gSvipere_02_file, 0, 0, 2
 ;---
-gSvipere_03_file 	 init "../samples/vipere/vipere-03.wav"
+gSvipere_03_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-03.wav"
 givipere_03_1		 ftgen 0, 0, 0, 1, gSvipere_03_file, 0, 0, 1
 givipere_03_2		 ftgen 0, 0, 0, 1, gSvipere_03_file, 0, 0, 2
 ;---
-gSvipere_04_file 	 init "../samples/vipere/vipere-04.wav"
+gSvipere_04_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-04.wav"
 givipere_04_1		 ftgen 0, 0, 0, 1, gSvipere_04_file, 0, 0, 1
 givipere_04_2		 ftgen 0, 0, 0, 1, gSvipere_04_file, 0, 0, 2
 ;---
-gSvipere_05_file 	 init "../samples/vipere/vipere-05.wav"
+gSvipere_05_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-05.wav"
 givipere_05_1		 ftgen 0, 0, 0, 1, gSvipere_05_file, 0, 0, 1
 givipere_05_2		 ftgen 0, 0, 0, 1, gSvipere_05_file, 0, 0, 2
 ;---
-gSvipere_06_file 	 init "../samples/vipere/vipere-06.wav"
+gSvipere_06_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-06.wav"
 givipere_06_1		 ftgen 0, 0, 0, 1, gSvipere_06_file, 0, 0, 1
 givipere_06_2		 ftgen 0, 0, 0, 1, gSvipere_06_file, 0, 0, 2
 ;---
-gSvipere_07_file 	 init "../samples/vipere/vipere-07.wav"
+gSvipere_07_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-07.wav"
 givipere_07_1		 ftgen 0, 0, 0, 1, gSvipere_07_file, 0, 0, 1
 givipere_07_2		 ftgen 0, 0, 0, 1, gSvipere_07_file, 0, 0, 2
 ;---
-gSvipere_08_file 	 init "../samples/vipere/vipere-08.wav"
+gSvipere_08_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-08.wav"
 givipere_08_1		 ftgen 0, 0, 0, 1, gSvipere_08_file, 0, 0, 1
 givipere_08_2		 ftgen 0, 0, 0, 1, gSvipere_08_file, 0, 0, 2
 ;---
-gSvipere_09_file 	 init "../samples/vipere/vipere-09.wav"
+gSvipere_09_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-09.wav"
 givipere_09_1		 ftgen 0, 0, 0, 1, gSvipere_09_file, 0, 0, 1
 givipere_09_2		 ftgen 0, 0, 0, 1, gSvipere_09_file, 0, 0, 2
 ;---
-gSvipere_10_file 	 init "../samples/vipere/vipere-10.wav"
+gSvipere_10_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-10.wav"
 givipere_10_1		 ftgen 0, 0, 0, 1, gSvipere_10_file, 0, 0, 1
 givipere_10_2		 ftgen 0, 0, 0, 1, gSvipere_10_file, 0, 0, 2
 ;---
-gSvipere_11_file 	 init "../samples/vipere/vipere-11.wav"
+gSvipere_11_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-11.wav"
 givipere_11_1		 ftgen 0, 0, 0, 1, gSvipere_11_file, 0, 0, 1
 givipere_11_2		 ftgen 0, 0, 0, 1, gSvipere_11_file, 0, 0, 2
 ;---
-gSvipere_12_file 	 init "../samples/vipere/vipere-12.wav"
+gSvipere_12_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-12.wav"
 givipere_12_1		 ftgen 0, 0, 0, 1, gSvipere_12_file, 0, 0, 1
 givipere_12_2		 ftgen 0, 0, 0, 1, gSvipere_12_file, 0, 0, 2
 ;---
-gSvipere_13_file 	 init "../samples/vipere/vipere-13.wav"
+gSvipere_13_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-13.wav"
 givipere_13_1		 ftgen 0, 0, 0, 1, gSvipere_13_file, 0, 0, 1
 givipere_13_2		 ftgen 0, 0, 0, 1, gSvipere_13_file, 0, 0, 2
 ;---
-gSvipere_14_file 	 init "../samples/vipere/vipere-14.wav"
+gSvipere_14_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-14.wav"
 givipere_14_1		 ftgen 0, 0, 0, 1, gSvipere_14_file, 0, 0, 1
 givipere_14_2		 ftgen 0, 0, 0, 1, gSvipere_14_file, 0, 0, 2
 ;---
-gSvipere_15_file 	 init "../samples/vipere/vipere-15.wav"
+gSvipere_15_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-15.wav"
 givipere_15_1		 ftgen 0, 0, 0, 1, gSvipere_15_file, 0, 0, 1
 givipere_15_2		 ftgen 0, 0, 0, 1, gSvipere_15_file, 0, 0, 2
 ;---
-gSvipere_16_file 	 init "../samples/vipere/vipere-16.wav"
+gSvipere_16_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-16.wav"
 givipere_16_1		 ftgen 0, 0, 0, 1, gSvipere_16_file, 0, 0, 1
 givipere_16_2		 ftgen 0, 0, 0, 1, gSvipere_16_file, 0, 0, 2
 ;---
-gSvipere_17_file 	 init "../samples/vipere/vipere-17.wav"
+gSvipere_17_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-17.wav"
 givipere_17_1		 ftgen 0, 0, 0, 1, gSvipere_17_file, 0, 0, 1
 givipere_17_2		 ftgen 0, 0, 0, 1, gSvipere_17_file, 0, 0, 2
 ;---
-gSvipere_18_file 	 init "../samples/vipere/vipere-18.wav"
+gSvipere_18_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-18.wav"
 givipere_18_1		 ftgen 0, 0, 0, 1, gSvipere_18_file, 0, 0, 1
 givipere_18_2		 ftgen 0, 0, 0, 1, gSvipere_18_file, 0, 0, 2
 ;---
-gSvipere_19_file 	 init "../samples/vipere/vipere-19.wav"
+gSvipere_19_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-19.wav"
 givipere_19_1		 ftgen 0, 0, 0, 1, gSvipere_19_file, 0, 0, 1
 givipere_19_2		 ftgen 0, 0, 0, 1, gSvipere_19_file, 0, 0, 2
 ;---
-gSvipere_20_file 	 init "../samples/vipere/vipere-20.wav"
+gSvipere_20_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-20.wav"
 givipere_20_1		 ftgen 0, 0, 0, 1, gSvipere_20_file, 0, 0, 1
 givipere_20_2		 ftgen 0, 0, 0, 1, gSvipere_20_file, 0, 0, 2
 ;---
-gSvipere_21_file 	 init "../samples/vipere/vipere-21.wav"
+gSvipere_21_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-21.wav"
 givipere_21_1		 ftgen 0, 0, 0, 1, gSvipere_21_file, 0, 0, 1
 givipere_21_2		 ftgen 0, 0, 0, 1, gSvipere_21_file, 0, 0, 2
 ;---
-gSvipere_22_file 	 init "../samples/vipere/vipere-22.wav"
+gSvipere_22_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-22.wav"
 givipere_22_1		 ftgen 0, 0, 0, 1, gSvipere_22_file, 0, 0, 1
 givipere_22_2		 ftgen 0, 0, 0, 1, gSvipere_22_file, 0, 0, 2
 ;---
-gSvipere_23_file 	 init "../samples/vipere/vipere-23.wav"
+gSvipere_23_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-23.wav"
 givipere_23_1		 ftgen 0, 0, 0, 1, gSvipere_23_file, 0, 0, 1
 givipere_23_2		 ftgen 0, 0, 0, 1, gSvipere_23_file, 0, 0, 2
 ;---
-gSvipere_24_file 	 init "../samples/vipere/vipere-24.wav"
+gSvipere_24_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-24.wav"
 givipere_24_1		 ftgen 0, 0, 0, 1, gSvipere_24_file, 0, 0, 1
 givipere_24_2		 ftgen 0, 0, 0, 1, gSvipere_24_file, 0, 0, 2
 ;---
-gSvipere_25_file 	 init "../samples/vipere/vipere-25.wav"
+gSvipere_25_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-25.wav"
 givipere_25_1		 ftgen 0, 0, 0, 1, gSvipere_25_file, 0, 0, 1
 givipere_25_2		 ftgen 0, 0, 0, 1, gSvipere_25_file, 0, 0, 2
 ;---
-gSvipere_26_file 	 init "../samples/vipere/vipere-26.wav"
+gSvipere_26_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-26.wav"
 givipere_26_1		 ftgen 0, 0, 0, 1, gSvipere_26_file, 0, 0, 1
 givipere_26_2		 ftgen 0, 0, 0, 1, gSvipere_26_file, 0, 0, 2
 ;---
-gSvipere_27_file 	 init "../samples/vipere/vipere-27.wav"
+gSvipere_27_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-27.wav"
 givipere_27_1		 ftgen 0, 0, 0, 1, gSvipere_27_file, 0, 0, 1
 givipere_27_2		 ftgen 0, 0, 0, 1, gSvipere_27_file, 0, 0, 2
 ;---
-gSvipere_28_file 	 init "../samples/vipere/vipere-28.wav"
+gSvipere_28_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-28.wav"
 givipere_28_1		 ftgen 0, 0, 0, 1, gSvipere_28_file, 0, 0, 1
 givipere_28_2		 ftgen 0, 0, 0, 1, gSvipere_28_file, 0, 0, 2
 ;---
-gSvipere_29_file 	 init "../samples/vipere/vipere-29.wav"
+gSvipere_29_file 	 init "/Users/j/Documents/PROJECTs/CORDELIA/samples//vipere/vipere-29.wav"
 givipere_29_1		 ftgen 0, 0, 0, 1, gSvipere_29_file, 0, 0, 1
 givipere_29_2		 ftgen 0, 0, 0, 1, gSvipere_29_file, 0, 0, 2
 ;---

@@ -1,4 +1,4 @@
-gSarmagain_file	init "../samples/armagain.wav"
+gSarmagain_file	init "/Users/j/Documents/PROJECTs/CORDELIA/samples//armagain.wav"
 
 giarmagain1	ftgen 0, 0, 0, 1, gSarmagain_file, 0, 0, 1
 giarmagain2	ftgen 0, 0, 0, 1, gSarmagain_file, 0, 0, 2

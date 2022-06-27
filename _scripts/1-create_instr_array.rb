@@ -1,4 +1,6 @@
-instr_dir_out     = '../_CORE/2-head/INSTR.orc'
+require_relative __dir__ + "/_path.rb"
+
+instr_dir_out     = $cordelia_head + 'INSTR.orc'
 instr_array         = []
 
 if  File.file?(instr_dir_out) then
@@ -8,7 +10,7 @@ else
     File.open(instr_dir_out, 'w')
 end
 
-Dir['../_CORE/3-body/5-INSTR/**/*.orc'].each do |path|
+Dir[$cordelia_instr + '**/*.orc'].each do |path|
     instr_name = File.basename(path, '.orc')
     if instr_name.start_with?('_') == false then
         instr_array.push(instr_name)
@@ -20,7 +22,7 @@ instr_array         = instr_array.sort
 begin
 
     orc     = File.open(instr_dir_out, "a")
-    orc.write("gSINSTRs[]\t\t\tfillarray\t") 
+    orc.write("gSinstrs[]\t\t\tfillarray\t") 
 
     instr_array.each do |i|
         if  instr_array.index(i)<instr_array.length-1 then
@@ -31,7 +33,7 @@ begin
     end
 
     orc.write("\n\n")
-    orc.write("gINSTRslen\t\t\tlenarray gSINSTRs")
+    orc.write("ginstrslen\t\t\tlenarray gSinstrs")
     orc.write("\n\n")
 
     instr_array.each do |i|
