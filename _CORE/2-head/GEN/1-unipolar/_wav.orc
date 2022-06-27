@@ -1,0 +1,11 @@
+gitimeless			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/timeless.wav", 0, 0, 1
+gicaes			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/caes.wav", 0, 0, 1
+gicatdiodio			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/catdiodio.wav", 0, 0, 1
+gicubcatdio			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/cubcatdio.wav", 0, 0, 1
+gicubdio			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/cubdio.wav", 0, 0, 1
+gicudio			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/cudio.wav", 0, 0, 1
+gidente			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/dente.wav", 0, 0, 1
+gidiocle			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/diocle.wav", 0, 0, 1
+gifruit			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/fruit.wav", 0, 0, 1
+gigrembo			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/grembo.wav", 0, 0, 1
+gired			ftgen 0, 0, 0, 1, "/Users/j/Documents/PROJECTs/CORDELIA/_CORE/2-head/GEN/unipolar/_wav/red.wav", 0, 0, 1

@@ -1,8 +1,0 @@
-giflingjm_ft	init gihsaw
-
-giringj7_arr[]	genarray 1, ginchnls
-
-gkringj6_port	init 0
-gkringj5_port	init 0
-gkringhj5_port	init 0
-
