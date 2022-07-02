@@ -7,14 +7,8 @@ until	indx == ginchnls do
 od
 	printarray gSmouth
 
-
-
 gkdiv	init 64 ;max division of main tempo for heart and lungs
 
-
-if gis_midi==1 then
-	schedule	"midwrite", 0, .25, 1, 1, 127, 1, "marker"
-endif
 
 ;	HEART
 ;	tempo for heart
@@ -22,7 +16,7 @@ gkpulse		init 120 ;tempo for heart in BPM
 
 	instr heart
 
-if gkpulse == 0 then
+if gkpulse <= 0 then
 	gkpulse = gizero
 endif
 
@@ -40,50 +34,13 @@ if (((kph*gkdiv)%1) < klast) then
 	gkbeatn += 1
 endif
 
-if (((kph*gkdiv)%4) < klast) then
-
-	if gis_midi==1 then
-		schedulek	"midwrite", 0, .25, 1, 1, 127, 1, "marker"
-	endif
-
-endif
-
 klast	= ((kph*gkdiv)%1)
 
 	chnset	kph, "heart"
 
-
 	endin
 ;	schedule("heart", .5, -1)
 	alwayson("heart")
-
-
-;	LUNGS
-;	tempo for lungs
-gkbreath	init 120
-
-	instr lungs
-
-gkblowf	= gkbreath / 60		;frequency for a quarter note in Hz
-gkblows	= 1 / (gkbreath / 60)	;time of a quarter note in sec
-
-kph		init 0
-kph		phasor (gkbreath / gkdiv) / 60
-
-gkblown	init 0			;number of beats from the beginning of session
-klast	init -1
-
-if (kph < klast) then
-	gkblown += 1
-endif
-
-klast	= kph
-
-	chnset	kph, "lungs"
-
-	endin
-;	schedule("lungs", .5, -1)
-	alwayson("lungs")
 
 
 
@@ -150,9 +107,3 @@ prints	"---------      %i♩      ---------\n", ifact
 	turnoff
 
 	endin
-
-
-
-
-
-

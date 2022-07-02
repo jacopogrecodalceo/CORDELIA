@@ -1,7 +1,7 @@
 require_relative __dir__ + "/_path.rb"
 
 list = $cordelia_dir + 'cordelia_instr.tex'
-list_txt = $cordelia_dir + '_list_instr.txt'
+list_txt = $cordelia_dir + '/_scripts/_cmd/_list_instr.txt'
 
 dest_tex = list
 

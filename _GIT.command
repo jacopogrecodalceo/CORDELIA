@@ -4,6 +4,8 @@ echo "What have you done?"
 
 read commit
 
+cd "$(dirname "$0")"
+
 git add .
 
 git commit -m "$commit"

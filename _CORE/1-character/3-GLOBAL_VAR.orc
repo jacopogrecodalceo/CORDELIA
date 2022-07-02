@@ -3,7 +3,7 @@ gkzero			init ksmps / sr		;k variable better than write zero? because it's betwe
 
 giexpzero		init .00015		;a zero value for expseg
 
-gkgain			init 1		;master gain for "mouth" instrument
+gkgain			init 1			;master gain for "mouth" instrument
 
 gkabstime		init 0
 
