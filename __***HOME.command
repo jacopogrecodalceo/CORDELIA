@@ -65,7 +65,6 @@ then
 
 fi
 
-
 if [[ $NCHNLS -eq 2 ]]
 then
 	NCHNLS_end=2
