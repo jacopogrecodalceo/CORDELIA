@@ -1,0 +1,10 @@
+giflingjm_ft	init giasaw
+
+giringj7_arr[]	genarray 1, ginchnls
+
+gkringj6_port	init 0
+gkringj5_port	init 0
+gkringhj5_port	init 0
+
+gisigm1		ftgen	0, 0, 257, 9, .5, 1, 270
+gisigm2		ftgen	0, 0, 257, 9, .5, 1, 270, 1.5, .35, 90, 2.5, .215, 270, 3.5, .145, 90, 4.5, .115, 270

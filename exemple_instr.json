@@ -1,0 +1,66 @@
+{"addendum": ["kv = .25 + abs:k(lfo:k(2, gkbeatf/64))",
+              "kp pump 3, fillarray(69,
+		68,
+		66)"
+	],
+ "instr": {"dur": "gkbeats*kv",
+           "dyn": "accent(3, $fff)*9",
+           "env": "gilikearevatk(5)",
+           "freq": ["cpstun($once(1,
+			2),
+			69+$once(0,
+			1), givitry)",
+                    "cpstun($once(1,
+			2), kp+$once(0,
+			1,
+			2), gi11_10ET)"
+		],
+           "name": "jesuss",
+           "opcode": {"params": ""1501",
+			8"
+		},
+           "space": "r3"
+	},
+ "route": {"name": ["getmeout", "flingj"
+		],
+           "params": ["123123", "123,
+			23,
+			122 sfaklsdj"
+		]
+	}
+}
+{"addendum": ["kv = .25 + abs:k(lfo:k(2, gkbeatf/64))",
+              "kp pump 3, fillarray(69,
+		68,
+		66)"
+	],
+ "instr": {"dur": "gkbeats*kv",
+           "dyn": "accent(3, $fff)*9",
+           "env": "gilikearevatk(5)",
+           "freq": ["cpstun($once(1,
+			2),
+			69+$once(0,
+			1), givitry)",
+                    "cpstun($once(1,
+			2), kp+$once(0,
+			1,
+			2), gi11_10ET)"
+		],
+           "name": "alterantive",
+           "opcode": {"params": ""1501",
+			8"
+		},
+           "space": "r3"
+	},
+ "route": {"name": ["getmeout", "flingj"
+		],
+           "params": ["123123", "123,
+			23,
+			122 sfaklsdj"
+		]
+	}
+}
+{"command": "lsat----------ad"
+}
+{"command": "nice and clean"
+}

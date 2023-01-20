@@ -1,0 +1,55 @@
+{
+	"macro": {
+		"list": [
+			"fff",
+			"ff",
+			"f",
+			"mf",
+			"mp",
+			"pp",
+			"ppp",
+			"pppp",
+			"once"
+		],
+		"wildcard": "$"
+	},
+	"givar": {
+		"list": [
+			"ibeats"
+		],
+		"wildcard": "g"
+	},
+	"gkvar": {
+		"list": [
+			"beats"
+		],
+		"wildcard": "gk"
+	},
+	"note": {
+		"list": [
+			"c",
+			"d",
+			"e",
+			"f",
+			"g",
+			"a",
+			"b",
+			"h"
+		],
+		"wildcard": ""
+	},
+	"scala": {
+		"list": [
+			"edo12",
+			"vitry"
+		],
+		"wildcard": "gi"
+	},
+	"gen": {
+		"list": [
+			"kazan",
+			"classic"
+		],
+		"wildcard": "gi"
+	}
+}

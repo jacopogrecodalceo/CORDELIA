@@ -1,0 +1,31 @@
+{
+  "bebor": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/instr/bebor.orc",
+    "global_var": [
+      "gibebor_imp"
+    ]
+  },
+  "click": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/instr/click.orc",
+    "global_var": [
+
+    ]
+  },
+  "fim": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/instr/fim.orc",
+    "global_var": [
+      "gkfim_detune",
+      "gkfim_var"
+    ]
+  },
+  "puck": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/instr/puck.orc",
+    "global_var": [
+
+    ]
+  }
+}

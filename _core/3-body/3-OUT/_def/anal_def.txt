@@ -1,0 +1,59 @@
+;   ANALYSIS DOMAIN OPCODEs
+
+    opcode  ---NAME---, 0, SJJjjPo
+Sinstr, kpitch, kfb, iwin, ift, kgain, ich xin
+
+if		ich==ginchnls-1 goto next
+		---NAME--- Sinstr, kpitch, kfb, iwin, ift, kgain, ich+1
+
+next:
+
+;   INIT
+if  kpitch==-1 then
+        kpitch = 1
+endif
+
+if  kfb==-1 then
+        kfb = .65
+endif
+
+if  iwin==-1 then
+        iwin init 11
+endif
+
+if  ift==-1 then
+        ift init gisine
+endif
+
+;   LIMIT
+#ifdef opcode_kfb_limit
+    kfb        limit kfb, 0, .95
+#end
+
+iwin    limit iwin, 0, 13
+iwin    = 2^iwin
+
+;   INPUT
+ain		chnget sprintf("%s_%i", Sinstr, ich+1)
+
+;---RELEASE_IN
+			xtratim gixtratim
+krel		init 0
+krel		release
+igain		i 1
+kgain_out       init 1
+if krel == 1 then
+	kgain *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
+        kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
+endif
+;---RELEASE_OUT
+
+ain             *= kgain
+
+;---INSTRUMENT---
+                aout *= kgain_out
+		chnmix aout, gSmouth[ich]
+
+    endop
+
+

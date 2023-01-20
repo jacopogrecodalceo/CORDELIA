@@ -1,0 +1,54 @@
+;   TIME DOMAIN OPCODEs
+
+    opcode  ---NAME---, 0, SJJPo
+Sinstr, ktime, kfb, kgain, ich xin
+
+if	ich==ginchnls-1 goto next
+		---NAME--- Sinstr, ktime, kfb, kgain, ich+1
+
+next:
+
+;   INIT
+if	ktime==-1 then
+		ktime = gkbeatms/12
+endif
+
+if	kfb==-1 then
+		kfb = .15
+endif
+
+;   LIMIT
+ktime      abs ktime
+#ifdef opcode_kfb_limit
+	kfb	limit kfb, 0, .9995
+#end
+
+;	IF
+if	ktime==0 then
+		ktime = gizero
+endif
+
+;   INPUT
+ain	chnget sprintf("%s_%i", Sinstr, ich+1)
+
+;---RELEASE_IN
+			xtratim gixtratim
+krel		init 0
+krel		release
+igain		i 1
+kgain_out       init 1
+if krel == 1 then
+	kgain *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
+        kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
+endif
+;---RELEASE_OUT
+
+ain     *= kgain
+
+;---INSTRUMENT---
+	aout *= kgain_out
+	chnmix aout, gSmouth[ich]
+
+    endop
+
+
