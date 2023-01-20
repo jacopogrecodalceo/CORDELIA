@@ -1,3 +1,4 @@
+import pprint
 
 #---receive a list of tokens
 #---return code formatted for csound
@@ -11,6 +12,8 @@ def parser(tokens):
 	commands = []
 	instrs =[]
 	routes = []
+
+	#pprint.pprint(tokens)
 
 	#for readble
 	tab_forfstring = chr(10) + chr(9)

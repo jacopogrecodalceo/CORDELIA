@@ -24,7 +24,7 @@ def query_devices(converter):
 		string = 'output'
 
 	#get a list of selected output
-	devices = re.findall(rf'{converter}.*\((.*)\)', devices_now, re.MULTILINE)
+	devices = re.findall(rf'{converter}.*\((.*)\)', devices_now, flags=re.MULTILINE)
 	res = []
 
 	#ADC

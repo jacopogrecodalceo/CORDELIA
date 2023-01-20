@@ -76,7 +76,7 @@ def main(code):
 	cscodes = cordelia.parser(ruled_tokens)
 	for cscode in cscodes:
 			#print('---')
-			print(cscode)
+			#print(cscode)
 			pass
 
 

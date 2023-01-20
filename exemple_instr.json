@@ -1,66 +1,53 @@
-{"addendum": ["kv = .25 + abs:k(lfo:k(2, gkbeatf/64))",
-              "kp pump 3, fillarray(69,
-		68,
-		66)"
-	],
- "instr": {"dur": "gkbeats*kv",
-           "dyn": "accent(3, $fff)*9",
-           "env": "gilikearevatk(5)",
-           "freq": ["cpstun($once(1,
-			2),
-			69+$once(0,
-			1), givitry)",
-                    "cpstun($once(1,
-			2), kp+$once(0,
-			1,
-			2), gi11_10ET)"
+{
+	"command": "gkpulse = 95"
+}
+{
+	"instr": {
+		"addendum_inside": [
+			"Snote = "3F""
 		],
-           "name": "jesuss",
-           "opcode": {"params": ""1501",
-			8"
+		"addendum_outside": "",
+		"dur": "gkbeats*32",
+		"dyn": "$f",
+		"env": "gikazan",
+		"freq": [
+			"cpstun(random:k(1, 2), ntom(Snote)+5, givitry)",
+			"cpstun(random:k(1, 2), ntom(Snote), givitry)"
+		],
+		"name": "flou",
+		"opcode": {
+			"name": "jex",
+			"params": ""10", 2"
 		},
-           "space": "r3"
+		"space": ""
 	},
- "route": {"name": ["getmeout", "flingj"
-		],
-           "params": ["123123", "123,
-			23,
-			122 sfaklsdj"
-		]
+	"route": {
+		"name": [],
+		"params": []
 	}
 }
-{"addendum": ["kv = .25 + abs:k(lfo:k(2, gkbeatf/64))",
-              "kp pump 3, fillarray(69,
-		68,
-		66)"
-	],
- "instr": {"dur": "gkbeats*kv",
-           "dyn": "accent(3, $fff)*9",
-           "env": "gilikearevatk(5)",
-           "freq": ["cpstun($once(1,
-			2),
-			69+$once(0,
-			1), givitry)",
-                    "cpstun($once(1,
-			2), kp+$once(0,
-			1,
-			2), gi11_10ET)"
+{
+	"instr": {
+		"addendum_inside": [
+			"Snote = "4G""
 		],
-           "name": "alterantive",
-           "opcode": {"params": ""1501",
-			8"
+		"addendum_outside": "",
+		"dur": "gkbeats*32",
+		"dyn": "$pp",
+		"env": "gikazan",
+		"freq": [
+			"cpstun(random:k(1, 2), ntom(Snote)+2, givitry)",
+			"cpstun(random:k(1, 2), ntom(Snote), givitry)"
+		],
+		"name": "orphans4",
+		"opcode": {
+			"name": "jex",
+			"params": ""10", 2"
 		},
-           "space": "r3"
+		"space": ""
 	},
- "route": {"name": ["getmeout", "flingj"
-		],
-           "params": ["123123", "123,
-			23,
-			122 sfaklsdj"
-		]
+	"route": {
+		"name": [],
+		"params": []
 	}
-}
-{"command": "lsat----------ad"
-}
-{"command": "nice and clean"
 }

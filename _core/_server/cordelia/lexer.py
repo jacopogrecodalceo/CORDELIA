@@ -31,7 +31,7 @@ def lexer(units):
 
 		#check if the first line is commented - quicker way to mute instrument
 		if not unit_lines[0].startswith(';'):
-			if not re.search(r'^\w+', unit_lines[0])[0] in opcode_names and len(unit_lines) == 1:
+			if re.search(r'^\w+', unit_lines[0])[0] not in opcode_names and len(unit_lines) == 1:
 				tokens.append({'command': unit_lines[0]})
 
 			elif re.search(r'^\w+', unit_lines[0])[0] in opcode_names and len(unit_lines) != 1:

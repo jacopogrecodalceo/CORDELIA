@@ -1,79 +1,131 @@
 import pprint
 
-command_last = []
-instr_names_last = []
+# mainly check if an instrument
 
-command_current = []
-instr_names_current = []
+# - check if already used
+# - check duplicates - normally done by dict?
 
-#mainly check if an instrument
-
-# - check with before - the past
-# 		- has the same name
-#		 		- has the same body >> do nothing
-# 				- has the same route name
-#						- if has not the same params >> kill before and then 
+# - check with before
+# 	- has the same instr name
+# 		- has the same body >> remove it
+# 		- has not the same body >> pass it
+# 	- has the same route name
+# 		- if has the same params >> remove it
+# 		- if has not the same params >> kill before with a no release and pass the other
 
 # - check with all the code
-# 		- has the same name
-#		 		- has the same body >> do nothing
-#a list of dict
-def ruler(tokens):
+# 	- has the same instr name
+# 		- has the same body >> remove it
+# 		- has not the same body >> pass it
+# 	- has the same route name
+# 		- if has the same params >> remove it
+# 		- if has not the same params >> kill before with a no release and pass the other
 
-	global command_last, instr_names_last
-	global command_current, instr_names_current
+commands_current = []
+commands_last = []
+
+#commands already check for dups cos is a dict - amazing !
+def check_commands(tokens):
+
+	global commands_current, commands_last
+	ruled_tokens = []
+	
+	for token in tokens:
+		if 'command' in token.keys():
+			# if it was not before
+			if token['command'] not in commands_last:
+				ruled_tokens.append(token)
+			# add the command to the last used
+			commands_current.append(token['command'])
+			# print(token['instr']['name'])
+
+		else:
+			ruled_tokens.append(token)
+
+	for each_command in commands_last:
+		if each_command not in commands_current:
+			print(f'**I WILL KILL U**{each_command}')
+			commands_last.remove(each_command)
+
+	commands_last = commands_current
+	commands_current = []
+
+	#for token in ruled_tokens:
+	#	if 'command' in token.keys():
+	#		pprint.pprint(token['command'])
+
+	return ruled_tokens
+
+instr_bodies_current = []
+instr_bodies_last = []
+
+instr_routes_current = []
+instr_routes_last = []
+
+def check_instrs(tokens):
+
+	global instr_bodies_current, instr_bodies_last
+	global instr_routes_current, instr_routes_last
 
 	ruled_tokens = []
 
-	#######################################
-	# CHECK IF SAME INSTRUMENT
-	#######################################
-
 	for token in tokens:
 
-		if 'command' in token.keys():
-			#if it was not before
-			if not token['command'] in command_last:
-				ruled_tokens.append(token)
-			#add the command to the last used
-			command_current.append(token['command'])
-			#print(token['instr']['name'])
+		string = 'instr'
+		if string in token.keys():
+			# check if body was not there:
+			if token[string] not in instr_bodies_last:
+				# SENDME
+				# if has not the same body >> OK
+				ruled_tokens.append({string: token[string]})
+			# add the instrument to the last used
+			instr_bodies_current.append(token[string])
 
-		if 'instr' in token.keys():
-			#if name was not used before
-			if not token['instr']['name'] in instr_names_last:
-				ruled_tokens.append(token)
-			else:
-				#if name was used before check if:
-				# - name was used before 
-				if token['instr'] in instr
+			string = 'route'
+			#check if route was not there
+			if token[string] not in instr_routes_last:
+				# SENDME
+				ruled_tokens.append({string: token[string]})
+			# add the instrument to the last used
+			instr_routes_current.append(token['route'])
+		else:
+			ruled_tokens.append(token)
 
-			#add the instrument to the last used
-			instr_names_current.append(token['instr']['name'])
-			#print(token['instr']['name'])
+	for each_instr in instr_bodies_last:
+		if each_instr not in instr_bodies_current:
+			name = each_instr['name']
+			print(f'**I WILL KILL U {name}**')
+			instr_bodies_last.remove(each_instr)
+	instr_bodies_last = instr_bodies_current
+	instr_bodies_current = []
 
-	#print(instr_names_current, instr_names_last)
-	#print(command_current, command_last)
+	for each_route in instr_routes_last:
+		if each_route not in instr_routes_current:
+			name = each_route['name']
+			print(f'**I WILL KILL U {name}**')
+			instr_routes_last.remove(each_route)
+	instr_routes_last = instr_routes_current
+	instr_routes_current = []
 
-	#######################################
-	# REPLACE LISTs
-	#######################################
-	for each_command in command_last:
-		if not each_command in command_current:
-			print(f'**I WILL KILL U**{each_command}')
-			command_last.remove(each_command)
+	return ruled_tokens
 
-	for each_instr in instr_names_last:
-		if not each_instr in instr_names_current:
-			print(f'**I WILL KILL U**{each_instr}', each_instr)
-			instr_names_last.remove(each_instr)
 
-	command_last = command_current
-	instr_names_last = instr_names_current
 
-	command_current = []
-	instr_names_current = []
+def ruler(tokens):
 
-	#pprint.pprint(ruled_tokens)
+	ruled_tokens = check_commands(tokens)	
+	ruled_tokens = check_instrs(ruled_tokens)	
+	
+	string = 'route'
+	#extract route
+	for token in tokens:
+		if string in token:
+			tokens.append({string: token[string]})
+			token.pop(string)
+
+	print(len(tokens))
+	pprint.pprint(tokens)
+	print(len(ruled_tokens))
+	pprint.pprint(ruled_tokens)
 
 	return ruled_tokens
