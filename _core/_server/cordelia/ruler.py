@@ -30,18 +30,19 @@ def check_commands(tokens):
 	global commands_current, commands_last
 	ruled_tokens = []
 	
-	for token in tokens:
-		if 'command' in token.keys():
+	for index, token in enumerate(tokens):
+		string = 'command'
+		update = {string: {'func': token[string], 'index': index}}
+		if string in token:
 			# if it was not before
-			if token['command'] not in commands_last:
-				ruled_tokens.append(token)
+			if token[string] not in commands_last:
+				ruled_tokens.append(update)
 			# add the command to the last used
-			commands_current.append(token['command'])
+			commands_current.append(token[string])
 			# print(token['instr']['name'])
-
 		else:
 			ruled_tokens.append(token)
-
+			
 	for each_command in commands_last:
 		if each_command not in commands_current:
 			print(f'**I WILL KILL U**{each_command}')
@@ -58,21 +59,14 @@ def check_commands(tokens):
 
 instr_bodies_current = []
 instr_bodies_last = []
-
-instr_routes_current = []
-instr_routes_last = []
-
 def check_instrs(tokens):
 
 	global instr_bodies_current, instr_bodies_last
-	global instr_routes_current, instr_routes_last
 
 	ruled_tokens = []
-
-	for token in tokens:
-
+	for index, token in enumerate(tokens):
 		string = 'instr'
-		if string in token.keys():
+		if string in token:
 			# check if body was not there:
 			if token[string] not in instr_bodies_last:
 				# SENDME
@@ -80,14 +74,7 @@ def check_instrs(tokens):
 				ruled_tokens.append({string: token[string]})
 			# add the instrument to the last used
 			instr_bodies_current.append(token[string])
-
-			string = 'route'
-			#check if route was not there
-			if token[string] not in instr_routes_last:
-				# SENDME
-				ruled_tokens.append({string: token[string]})
-			# add the instrument to the last used
-			instr_routes_current.append(token['route'])
+			token[string].update({'index': index})
 		else:
 			ruled_tokens.append(token)
 
@@ -99,10 +86,34 @@ def check_instrs(tokens):
 	instr_bodies_last = instr_bodies_current
 	instr_bodies_current = []
 
+	return ruled_tokens
+
+
+
+instr_routes_current = []
+instr_routes_last = []
+def check_routes(tokens):
+
+	global instr_routes_current, instr_routes_last
+
+	ruled_tokens = []
+	for index, token in enumerate(tokens):
+		string = 'route'
+		if string in token:
+			if token[string] not in instr_routes_last:
+				# SENDME
+				ruled_tokens.append({string: token[string]})
+			# add the instrument to the last used
+			instr_routes_current.append(token[string])
+			token[string].update({'index': index})
+		else:
+			ruled_tokens.append(token)
+
 	for each_route in instr_routes_last:
 		if each_route not in instr_routes_current:
-			name = each_route['name']
-			print(f'**I WILL KILL U {name}**')
+			name = each_route['instr']
+			for each in each_route['name']:
+				print(f'**I WILL KILL U {name}.{each}()**')
 			instr_routes_last.remove(each_route)
 	instr_routes_last = instr_routes_current
 	instr_routes_current = []
@@ -115,17 +126,10 @@ def ruler(tokens):
 
 	ruled_tokens = check_commands(tokens)	
 	ruled_tokens = check_instrs(ruled_tokens)	
-	
-	string = 'route'
-	#extract route
-	for token in tokens:
-		if string in token:
-			tokens.append({string: token[string]})
-			token.pop(string)
+	ruled_tokens = check_routes(ruled_tokens)	
 
-	print(len(tokens))
-	pprint.pprint(tokens)
-	print(len(ruled_tokens))
 	pprint.pprint(ruled_tokens)
 
 	return ruled_tokens
+
+

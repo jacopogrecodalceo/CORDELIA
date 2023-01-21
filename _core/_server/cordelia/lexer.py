@@ -1,3 +1,4 @@
+import pprint
 import re
 from os.path import dirname, basename, isfile, join
 import glob
@@ -76,8 +77,14 @@ def lexer(units):
 						each['instr'].update({'addendum_outside': addendum_lines_outside})
 					else:
 						each['instr'].update({'addendum_outside': ''})
-					
+
 					tokens.append(each)
+
+					#extract route
+					string = 'route'
+					if string in each:
+						tokens.append({string: each[string]})
+						each.pop(string)
 
 			else:
 				print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: this line {bcolors.WARNING}{unit_lines}{bcolors.ENDC} has a problem!')

@@ -49,9 +49,11 @@ def eu(list):
 		#separate each route
 		route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', list[1])
 		#list
+		dict['route']['instr'] = ''
 		dict['route']['name'] = []
 		dict['route']['params'] = []
 		for n in route:
+			dict['route']['instr'] = each_name
 			dict['route']['name'].append(re.search(r'^\w+', n)[0])
 			dict['route']['params'].append(re.search(r'^\w+\((.*)\)', n)[1])
 
