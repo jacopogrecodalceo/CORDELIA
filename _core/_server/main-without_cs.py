@@ -48,36 +48,34 @@ def main(code):
 	print('---UNIFIER')
 	units = cordelia.unifier(code)
 	#print(units)
-	for unit in units:
+	for preunit in units:
 		#print(unit)
-		pass
 
-	#generate dict (tokens)
-	#IMPORTANT HERE: 
-	# - comment detection
-	# - submodule opcodes
-	print('---LEXER')
-	#a list of dict
-	tokens = cordelia.lexer(units)
-	#print(tokens)
-	for token in tokens:
-		#print('---')
-		#pprint.pprint(token)
-		pass
+		print('---ANALYZER')
+		unit = cordelia.analyzer(preunit)
 
-	#update dict and creates rules
-	#IMPORTANT HERE:
-	# - filter the last used elements
-	print('---RULER')
-	ruled_tokens = cordelia.ruler(tokens)
-
-	#format to csound
-	print('---PARSER')
-	cscodes = cordelia.parser(ruled_tokens)
-	for cscode in cscodes:
+		#generate dict (tokens)
+		#IMPORTANT HERE: 
+		# - comment detection
+		# - submodule opcodes
+		print('---LEXER')
+		#a list of dict
+		tokens = cordelia.lexer(unit)
+		print(tokens)
+		for token in tokens:
 			#print('---')
-			#print(cscode)
+			#pprint.pprint(token)
 			pass
+
+			#update dict and creates rules
+			#IMPORTANT HERE:
+			# - filter the last used elements
+			print('---RULER')
+			#ruled_token = cordelia.ruler(token)
+
+			#format to csound
+			print('---PARSER')
+			#cscode = cordelia.parser(ruled_token)
 
 
 

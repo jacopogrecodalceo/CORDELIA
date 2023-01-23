@@ -1,89 +1,44 @@
 import re
+import cordelia
 
 #list of lines
-def eu(list):
+def eu(unit_lines):
 
-	#check if there's more instrs
-	#######################################
-	# NAME
-	#######################################
-	#list
-	instr_names = re.findall(r'@(\w+)', list[1])
+	instrument_lines = []
+	
+	#create a index line sensible list
+	for line in unit_lines:
+	
+		#ignoring comment
+		if not line.startswith(';'):
+			#parse for addendum
+			if line.startswith('+'):
+				line = re.sub(r'^\+', '', line)
+				instrument.add_in.append(line)
+			elif line.startswith('-'):
+				line = re.sub(r'^-', '', line)
+				instrument.add_out.append(line)						
+			else:
+				instrument_lines.append(line)
 
-	result = []
+	opcode_name = instrument_lines[0].split(':')[0]
+	opcode_params = instrument_lines[0].split(':')[1].strip()
 
-	for each_name in instr_names:
-		dict = {
-			'instr': {},
-			'route': {}
-		}
+	instrument = cordelia.Instrument([opcode_name, opcode_params])
 
-		#######################################
-		# OPCODE
-		#######################################
-		#string
-		dict['instr']['opcode'] = {}
-		dict['instr']['opcode']['name'] = list[0].split(':')[0]
-		dict['instr']['opcode']['params'] = list[0].split(':')[1].strip()
+	space = re.search(r'^(\w+?)@', instrument_lines[1])
+	if space:
+		instrument.space = space[1]
 
-		#######################################
-		# SPACE
-		#######################################
-		#string
-		#facultative
-		if re.search(r'^(\w+?)@', list[1]):
-			dict['instr']['space'] = re.search(r'^(\w+?)@', list[1])[1]
-		else:
-			dict['instr']['space'] = ''
+	instrument.name = re.findall(r'@(\w+)', instrument_lines[1])
+	instrument.dur = instrument_lines[2]
+	instrument.dyn = instrument_lines[3]
+	instrument.env = instrument_lines[4]
+	instrument.freq = instrument_lines[5:]
 
+	for r in re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', instrument_lines[1]):
+		route_name = re.search(r'^\w+', r)[0]
+		route_params = re.search(r'^\w+\((.*)\)', r)[1]
+		instrument.route.append([name, route_name, route_params])
 
-		#######################################
-		# NAME
-		#######################################
-		#list
-		dict['instr']['name'] = each_name
-
-		#######################################
-		# ROUTE
-		#######################################
-		#separate each route
-		route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', list[1])
-		#list
-		dict['route']['instr'] = ''
-		dict['route']['name'] = []
-		dict['route']['params'] = []
-		for n in route:
-			dict['route']['instr'] = each_name
-			dict['route']['name'].append(re.search(r'^\w+', n)[0])
-			dict['route']['params'].append(re.search(r'^\w+\((.*)\)', n)[1])
-
-		#######################################
-		# DURATION
-		#######################################
-		#string
-		dict['instr']['dur'] = list[2]
-
-		#######################################
-		# DYNAMIC
-		#######################################
-		#string
-		dict['instr']['dyn'] = list[3]
-
-		#######################################
-		# ENVELOPE
-		#######################################
-		#string
-		dict['instr']['env'] = list[4]
-
-		
-		#######################################
-		# FREQUENCY
-		#######################################
-		#list
-		dict['instr']['freq'] = []
-		for i in range(5, len(list)):
-			dict['instr']['freq'].append(list[i])
-
-		result.append(dict)
-
-	return result
+	return instrument
