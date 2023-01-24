@@ -21,10 +21,11 @@ def eu(unit_lines):
 			else:
 				instrument_lines.append(line)
 
+	instrument = cordelia.Instrument()
+
 	opcode_name = instrument_lines[0].split(':')[0]
 	opcode_params = instrument_lines[0].split(':')[1].strip()
-
-	instrument = cordelia.Instrument([opcode_name, opcode_params])
+	instrument.opcode = [opcode_name, opcode_params]
 
 	space = re.search(r'^(\w+?)@', instrument_lines[1])
 	if space:
@@ -36,9 +37,13 @@ def eu(unit_lines):
 	instrument.env = instrument_lines[4]
 	instrument.freq = instrument_lines[5:]
 
-	for r in re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', instrument_lines[1]):
-		route_name = re.search(r'^\w+', r)[0]
-		route_params = re.search(r'^\w+\((.*)\)', r)[1]
-		instrument.route.append([name, route_name, route_params])
+	route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', instrument_lines[1])
+	if route:
+		for r in route:
+			route_name = re.search(r'^\w+', r)[0]
+			route_params = re.search(r'^\w+\((.*)\)', r)[1]
+			instrument.route.append([route_name, route_params])
+	else:
+		instrument.route.append(['getmeout', '1'])
 
 	return instrument

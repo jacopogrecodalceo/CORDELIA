@@ -1,5 +1,9 @@
 gimorf		ftgen 0, 0, gienvdur, 10, 1
 gimorfsyn		ftgen 0, 0, gioscildur, 10, 1
+gisotrap_ramp		init sr * 15$ms
+gisotrap_seg		init gienvdur-(gisotrap_ramp*2)
+;-----------------------
+gisotrap		ftgen	0, 0, gienvdur, 7, 0, gisotrap_ramp, 1, gisotrap_seg, 1, gisotrap_ramp, 0
 
 	opcode envgen, a, ii
 	idur, iftenv	xin

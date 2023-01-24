@@ -1,21 +1,23 @@
 import pprint
 import re
 from os.path import dirname, basename, isfile, join
-import glob
+from glob import glob
 
 from utils.constants import *
+
+import cordelia
 import cordelia.opcodes
 
 #---receive a list of unity
 #---return a list of tokens for each unity
 #lexer = cordelia.Lexer()
 
-modules = glob.glob(join(dirname(__file__), 'opcodes', '*.py'))
+modules = glob(join(dirname(__file__), 'opcodes', '*.py'))
 opcode_names = [ basename(f)[:-3] for f in modules if isfile(f) and not f.endswith('__init__.py')]
 
-def lexer(unit) -> list():
 
-	tokens = []
+
+def lexer(unit) -> list():
 
 	#remove tabs
 	unit = re.sub(r'[\t]*', '', unit)
@@ -23,66 +25,16 @@ def lexer(unit) -> list():
 	#each line is separated in a list
 	unit_lines = unit.splitlines()
 
-	#create 2 list
-	params_lines = []
-	addendum_lines_inside = []
-	addendum_lines_outside = []
+	try:
+		if re.search(r'^\w+', unit_lines[0])[0] not in opcode_names and len(unit_lines) == 1:
+			pre_instrument = cordelia.Instrument([unit_lines[0]])
 
-	if re.search(r'^\w+', unit_lines[0])[0] not in opcode_names and len(unit_lines) == 1:
-		tokens.append({'command': unit_lines[0]})
+		elif re.search(r'^\w+', unit_lines[0])[0] in opcode_names and len(unit_lines) != 1:
+			opcode_function = getattr(cordelia.opcodes, unit_lines[0].split(':')[0])
+			pre_instrument = opcode_function(unit_lines)
 
-	elif re.search(r'^\w+', unit_lines[0])[0] in opcode_names and len(unit_lines) != 1:
-
-		#create a index line sensible list
-		for line in unit_lines:
-			
-			#######################################
-			# PARSE BY LINE
-			#######################################
-
-			#ignoring comment
-			if not line.startswith(';'):
-				#parse for addendum
-				if line.startswith('+'):
-					line = re.sub(r'^\+', '', line)
-					addendum_lines_inside.append(line)
-				elif line.startswith('-'):
-					line = re.sub(r'^-', '', line)
-					addendum_lines_outside.append(line)						
-				else:
-					params_lines.append(line)
-
-
-		pretokens = []
-		#opcode_func return a list - if there's 2named instrs
-		opcode_func = getattr(cordelia.opcodes, params_lines[0].split(':')[0])
-		pretokens = opcode_func(params_lines)
-
-		#######################################
-		# ADD ADDENDUM TO DICT
-		#######################################
-
-		for each in pretokens:
-			
-			if addendum_lines_inside:
-				each['instr'].update({'addendum_inside': addendum_lines_inside})
-			else:
-				each['instr'].update({'addendum_inside': ''})
-			
-			if addendum_lines_outside:
-				each['instr'].update({'addendum_outside': addendum_lines_outside})
-			else:
-				each['instr'].update({'addendum_outside': ''})
-
-			tokens.append(each)
-
-			#extract route
-			string = 'route'
-			if string in each:
-				tokens.append({string: each[string]})
-				each.pop(string)
-
-	else:
+		return pre_instrument
+	
+	except:
 		print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: this line {bcolors.WARNING}{unit_lines}{bcolors.ENDC} has a problem!')
-		
-	return tokens
+

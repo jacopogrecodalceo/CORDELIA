@@ -40,42 +40,40 @@ LAST_LINE
 
 def main(code):
 
-	#separate units and first parsing
-	#IMPORTANT HERE:
-	# - filter the last used elements
-	# - check if elements is in csound
-	# - unit separation 
 	print('---UNIFIER')
 	units = cordelia.unifier(code)
-	#print(units)
+
+	instruments = []
 	for preunit in units:
-		#print(unit)
 
 		print('---ANALYZER')
 		unit = cordelia.analyzer(preunit)
 
-		#generate dict (tokens)
-		#IMPORTANT HERE: 
-		# - comment detection
-		# - submodule opcodes
 		print('---LEXER')
-		#a list of dict
-		tokens = cordelia.lexer(unit)
-		print(tokens)
-		for token in tokens:
-			#print('---')
-			#pprint.pprint(token)
-			pass
+		pre_instrument = cordelia.lexer(unit)
 
-			#update dict and creates rules
-			#IMPORTANT HERE:
-			# - filter the last used elements
-			print('---RULER')
-			#ruled_token = cordelia.ruler(token)
+		print('---EXTRACTER')
+		instrument_e = cordelia.extracter(pre_instrument)
+		for i in instrument_e:
+			#print(i)
+			instruments.append(i)
 
-			#format to csound
-			print('---PARSER')
-			#cscode = cordelia.parser(ruled_token)
+	instruments_f = cordelia.filter(instruments)
+	for index, i in enumerate(instruments_f):
+		instruments_i = cordelia.wrapper(index, i)
+		print(instruments_i)
+
+
+
+	#update dict and creates rules
+	#IMPORTANT HERE:
+	# - filter the last used elements
+	print('---RULER')
+	#ruled_token = cordelia.ruler(token)
+
+	#format to csound
+	print('---PARSER')
+	#cscode = cordelia.parser(ruled_token)
 
 
 

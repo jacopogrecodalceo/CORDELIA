@@ -2,7 +2,7 @@ require 'json'
 
 cordelia_path = __dir__
 
-cordelia_json_instr = cordelia_path + '/instr.json'
+cordelia_json_instr = cordelia_path + '_list/instr.json'
 
 instruments = {}
 Dir.glob(cordelia_path + '/_core/instr' + '/*.orc') do |f|

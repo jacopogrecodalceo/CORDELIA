@@ -1,7 +1,5 @@
 import re
 
-from utils.constants import CORDELIA_SUBs, SCALA_HASPLAYED, GEN_HASPLAYED
-
 #---receive code
 #---return a list of each unity in the code
 #unifier =  cordelia.Unifier()

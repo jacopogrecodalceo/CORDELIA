@@ -3,7 +3,7 @@ import ctcsound
 from utils.constants import CORDELIA_DIR
 from csound.init_csound import *
 
-cs = ctcsound.Csound()
+csound_cordelia = ctcsound.Csound()
 
 #######################################
 # CSOUND OPTIONs
@@ -23,7 +23,7 @@ opt.extend(query_devices('dac'))
 
 #and then iterate it!
 for o in opt:
-	cs.setOption(o)
+	csound_cordelia.setOption(o)
 	print(o)
 
 #######################################
@@ -31,7 +31,10 @@ for o in opt:
 #######################################
 
 with open(f'{CORDELIA_DIR}/_core/setting.orc') as f:
-	cs.compileOrcAsync(f.read())
+	csound_cordelia.compileOrcAsync(f.read())
 
 with open(f'{CORDELIA_DIR}/_core/cordelia.orc') as f:
-	cs.compileOrcAsync(f.read())
+	csound_cordelia.compileOrcAsync(f.read())
+
+with open(f'{CORDELIA_DIR}/_core/include.orc') as f:
+	csound_cordelia.compileOrcAsync(f.read())
