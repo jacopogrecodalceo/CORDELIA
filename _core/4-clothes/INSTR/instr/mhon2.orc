@@ -47,7 +47,7 @@ ifact		init 16
 iamp_fact	init 8
 iq		init $ampvar
 
-amoog_freq	cosseg i(gkmhon_cps)*(ifact)*($ampvar*iamp_fact), idur/6, icps*ifact*($ampvar*iamp_fact)
+amoog_freq	cosseg i(gkmhon2_cps)*(ifact)*($ampvar*iamp_fact), idur/6, icps*ifact*($ampvar*iamp_fact)
 amoog_freq	limit amoog_freq, 25, 20$k
 
 aq		cosseg iq, idur, iq*2

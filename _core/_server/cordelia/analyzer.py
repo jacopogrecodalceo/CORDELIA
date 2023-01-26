@@ -49,8 +49,22 @@ def analyzer(unit) -> str():
 	
 		for name in CORDELIA_INSTR_json:
 			if re.search(rf'(\W){name}(\W)', unit, flags=re.MULTILINE):
-				path = CORDELIA_INSTR_json[name]['path']
-				csound_cordelia.compileOrc(f'#include "{path}"')
-				INSTR_HASPLAYED.append(name)
+				if name not in INSTR_HASPLAYED:
+					path = CORDELIA_INSTR_json[name]['path']
+					csound_cordelia.compileOrc(f'#include "{path}"')
+					INSTR_HASPLAYED.append(name)
+					#and create an array
+					instr_setting = f'''
+					gS{name}[] init ginchnls
+
+					indx	init 0
+					until	indx == ginchnls do
+						gS{name}[indx] sprintf	"{name}_%i", indx+1
+						schedule 950+((indx+1)/1000)+({len(INSTR_HASPLAYED)-1}/10000), 0, -1, sprintf("{name}_%i", indx+1)
+						indx += 1
+					od
+					'''
+					csound_cordelia.compileOrc(instr_setting)
+					print(instr_setting)
 
 	return unit

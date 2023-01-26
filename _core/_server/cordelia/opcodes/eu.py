@@ -5,10 +5,12 @@ import cordelia
 def eu(unit_lines):
 
 	instrument_lines = []
-	
+
+	instrument = cordelia.Instrument()
+
 	#create a index line sensible list
 	for line in unit_lines:
-	
+
 		#ignoring comment
 		if not line.startswith(';'):
 			#parse for addendum
@@ -17,11 +19,9 @@ def eu(unit_lines):
 				instrument.add_in.append(line)
 			elif line.startswith('-'):
 				line = re.sub(r'^-', '', line)
-				instrument.add_out.append(line)						
+				instrument.add_out.append(line)	
 			else:
 				instrument_lines.append(line)
-
-	instrument = cordelia.Instrument()
 
 	opcode_name = instrument_lines[0].split(':')[0]
 	opcode_params = instrument_lines[0].split(':')[1].strip()

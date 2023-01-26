@@ -4,4 +4,4 @@ from cordelia.opcodes.eu import eu
 def hex(list):
 	pass
 
-eujo = eu
+hex = eu

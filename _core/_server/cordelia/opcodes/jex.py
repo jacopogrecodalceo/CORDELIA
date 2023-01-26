@@ -4,4 +4,4 @@ from cordelia.opcodes.eu import eu
 def jex(list):
 	pass
 
-eujo = eu
+jex = eu

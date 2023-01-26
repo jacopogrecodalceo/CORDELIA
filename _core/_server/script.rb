@@ -56,7 +56,7 @@ replacements = {
 Dir[cordelia_path + '/_core/4-clothes/SCALA/_current/**/*.scl'].each do |f|
 	name = File.basename(f, '.*')
 
-	if not name.start_with('_'):
+	if not name.start_with?('_')
 
 		f_open = File.open(f).read
 		index_line = 0
@@ -115,6 +115,7 @@ Dir[cordelia_path + '/_core/4-clothes/SCALA/_current/**/*.scl'].each do |f|
 				'ftgen' => string
 			}
 		end
+	end
 end
 File.open(cordelia_json_scala_path, 'w') { |f| f.puts JSON.pretty_generate(scala) }
 

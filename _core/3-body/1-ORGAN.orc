@@ -9,10 +9,8 @@ until	indx == ginchnls do
 	gSmouth[indx]	sprintf	"mouth_%i", indx+1
 	indx	+= 1
 od
-	printarray gSmouth
 
 gkdiv	init 64 ;max division of main tempo for heart and lungs
-
 
 ;	HEART
 ;	tempo for heart
@@ -89,26 +87,6 @@ gibeatf		i gkbeatf
 prints("\n--------- i'm 🔥beating --------\n")
 prints " 💛 %.02fbpm: %.02fs // %.02fHz 💛 \n", gipulse, gibeats, gibeatf
 
-;---ABSOLUTE TIME AND WARN IF INSTRS ARE TOO MANY
-
-indx		init 0
-ilen		lenarray gSinstrs
-ihowmany	init 75
-
-imin		init int(times:i()/60)
-isec		init times:i()%60
-
-until indx == ilen do
-	iactive	active gSinstrs[indx]
-	if (iactive > ihowmany) then
-		prints("🧨 Watch out! %i instaces of %s\n", iactive, gSinstrs[indx])
-	endif
-	indx	+= 1
-od
-
-prints("--------- %.2d'  |  %.2d'' ---------\n", imin, isec)
-ifact	i gkheartbeat_print_fact
-prints	"---------      %i♩      ---------\n", ifact
 
 	turnoff
 

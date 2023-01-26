@@ -1,41 +1,47 @@
-tab_forfstring = chr(10) + chr(9)
+new_line = chr(10)
+tab = chr(9)
 
 def wrapper(index, i):
+
+	instr_str_num = 500
 
 	if i:
 		if i.kill:
 			string = f'''
-kill {500 + index}'''
+	turnoff2_i {instr_str_num + index}, 0, 1'''
 
 			print(f'**I WILL KILL U**')
+			return(string)
 
 		elif i.opcode and not i.name:
 			string = f'''
-	instr {500 + index}
+	instr {instr_str_num + index}
 {i.opcode[0]}
 	endin'''
 
 		elif i.opcode and i.name:
 			string = f'''
-	instr {500 + index}
-{i.add_in if i.add_in else ''}
+	instr {instr_str_num + index}
+{(new_line).join(i.add_out) if i.add_out else ''}
 if {i.opcode[0]}({i.opcode[1]}) == 1 then
-	{tab_forfstring.join(i.add_in)}
-	eva({i.space}, "{i.name}",
+	{(new_line + tab).join(i.add_in)}
+	eva({(i.space + ', ') if i.space else ''}"{i.name}",
 	{i.dur},
 	{i.dyn},
 	{i.env},
-	{tab_forfstring.join(i.freq)})
+	{(new_line + tab).join(i.freq)})
 endif
 	endin'''
 
 		elif i.route:
 			string = f'''
-	instr {500 + index}
-{i.route[0]}(\"{i.name}\", {i.route[1]})
+	instr {instr_str_num + index}
+getmeout("{i.name}")	
 	endin'''
 
-		string += f'\nstart {500 + index}'
+		string += f'''
+	turnoff2_i {instr_str_num + index}, 0, 1
+	schedule {instr_str_num + index}, 0, -1\n'''
 
 		return(string)
 

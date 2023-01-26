@@ -33,8 +33,5 @@ for o in opt:
 with open(f'{CORDELIA_DIR}/_core/setting.orc') as f:
 	csound_cordelia.compileOrcAsync(f.read())
 
-with open(f'{CORDELIA_DIR}/_core/cordelia.orc') as f:
-	csound_cordelia.compileOrcAsync(f.read())
-
 with open(f'{CORDELIA_DIR}/_core/include.orc') as f:
 	csound_cordelia.compileOrcAsync(f.read())
