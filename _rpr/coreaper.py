@@ -1,6 +1,8 @@
 import re
 import socket
 
+MIDI_CORRECTION = 2048
+
 def send_to_csound(action):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	#log(action)
@@ -42,9 +44,7 @@ class CORDELIA_track():
 
 class CORDELIA_item(CORDELIA_track):
 
-	current_pos = RPR_GetCursorPosition()
-
-	def __init__(self, index_on_track, track_id):
+	def __init__(self, current_pos, index_on_track, track_id):
 
 		self.id = None
 		self.start_pos = None
@@ -52,17 +52,17 @@ class CORDELIA_item(CORDELIA_track):
 		self.source_type = None
 		self.index_on_track = index_on_track
 		self.take_id = None
-	
-		self.id  = RPR_GetTrackMediaItem(track_id, self.index_on_track)
+		self.after_cursor = False
 
+		self.id  = RPR_GetTrackMediaItem(track_id, self.index_on_track)
 		item_pos = RPR_GetMediaItemInfo_Value(self.id, 'D_POSITION')
 
-		if CORDELIA_item.current_pos<=item_pos:
+		if current_pos <= item_pos:
+
+			self.after_cursor = True
 			self.length = RPR_GetMediaItemInfo_Value(self.id, 'D_LENGTH')
-
 			self.take_id = RPR_GetMediaItemTake(self.id, 0)
-
-			self.start_pos = item_pos-CORDELIA_item.current_pos
+			self.start_pos = item_pos-current_pos
 
 			source, self.source_type, size = RPR_GetMediaSourceType(RPR_GetMediaItemTake_Source(self.take_id), '', 512)
 			if not self.source_type:
@@ -82,33 +82,38 @@ class CORDELIA_midi():
 		self.start = None
 		self.dur = None
 		self.dyn = None
+		self.env = 'classic'
 
 		note_index = index
 		ret_val, ret_take, note_index, selectedOut, mutedOut, startppqposOut, endppqposOut, note_chn, note_pitch, note_velocity = RPR_MIDI_GetNote(take_id, note_index, 0, 0, 0, 0, 0, 0, 0)
 		
 		ppqdur = endppqposOut-startppqposOut
-		self.name = str(RPR_GetTrackMIDINoteNameEx(0, track_id, note_pitch, note_chn))
+		name = str(RPR_GetTrackMIDINoteNameEx(0, track_id, note_pitch, note_chn))
+		self.name = re.search(r'^\d+(?:\.\d+)?', name)[0]
 		self.start = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
 		self.dur = RPR_MIDI_GetProjTimeFromPPQPos(take_id, ppqdur)
-		self.dyn = float(note_velocity)/2048
-	
+		self.dyn = float(note_velocity)/MIDI_CORRECTION		
 		text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(take_id, note_index, 0, 0, 0, 0, 0, 512)
+		if text_retval:
+			# i don't know why, but i need to remove 2 character from the end of the text string
+			self.env = msgOptional[:-2:]
 
 
 
 def get_score():
 	main_index = 0
+	current_pos = RPR_GetCursorPosition()
 	for i in range(RPR_CountTracks(0)):
 		track = CORDELIA_track(RPR_GetTrack(0, i))
 		if track.id:
 			for j in range(RPR_GetTrackNumMediaItems(track.id)):
-				item = CORDELIA_item(j, track.id)
-				if item.id:
+				item = CORDELIA_item(current_pos, j, track.id)
+				if item.after_cursor:
 					if item.source_type == 'MIDI':
 						ret_val, ret_take, MIDI_notes, ret_cc, ret_sysex = RPR_MIDI_CountEvts(item.take_id, 0, 0, 0)
 						for index in range(MIDI_notes):
 							midi = CORDELIA_midi(index, track.id, item.take_id)
-							csound_code = f'eva_midi "{track.parent_name}", {midi.start}, {midi.dur-item.start_pos}, {midi.dyn}, giclassic, {midi.name}'
+							csound_code = f'eva_midi "{track.parent_name}", {midi.start-current_pos}, {midi.dur-item.start_pos-current_pos}, {midi.dyn}, gi{midi.env}, {midi.name}'
 							CORDELIA_SEND_INSTR.append(csound_code)
 							if track.parent_name not in TURNOFF_NAME:
 								TURNOFF_NAME.append(track.parent_name)
@@ -122,8 +127,10 @@ def get_score():
 						instr_num = instr_start_num + main_index
 						TURNOFF_NUM.append(f'turnoff2 {str(instr_num)}, 0, 0')
 
+						score_core = re.sub(r"'", '"', score.text)
+
 						if track.name == 'ROUTE':
-							lines = score.text.splitlines()
+							lines = score_core.splitlines()
 							opcode_name = lines[0]
 							opcode_params = ', '.join(lines[1:])
 							csound_code = f'''
@@ -137,7 +144,7 @@ def get_score():
 						else:
 							csound_code = f'''
 	instr {instr_num}
-{score.text}
+{score_core}
 	endin	
 	schedule {instr_num}, {item.start_pos}, {item.length}
 '''
@@ -165,26 +172,18 @@ def on_stop():
 
 	send_to_csound('turnoff2_i "heart", 0, 0')
 
-	string = '\n'.join(TURNOFF_NUM)
-	send_to_csound(f'''
-		instr 865
-	{string}
-	turnoff
-		endin
-		schedule 865, 0, 1''')
-
-
 	turnoff_list = []
 	for each in TURNOFF_NAME:
 		turnoff_list.append(f'turnoff3 nstrnum("{each}")')
+		turnoff_list.append(f'turnoff2 nstrnum("{each}"), 0, 0')
 
-	string = '\n'.join(turnoff_list)
+	string = '\n'.join(TURNOFF_NUM + turnoff_list)
 	send_to_csound(f'''
-		instr 870
-	{string}
+		instr 865
+{string}
 	turnoff
 		endin
-		schedule 870, 0, 1''')
+		schedule 865, 0, 1''')
 
 	CORDELIA_SEND_INSTR.clear()
 	TURNOFF_NUM.clear()
@@ -196,7 +195,6 @@ def check_play():
 	
 	if RPR_GetPlayState()==1 and not reaper_play:
 		on_play()
-		pass
 		reaper_play = True
 	elif RPR_GetPlayState()==0 and reaper_play:
 		on_stop()
