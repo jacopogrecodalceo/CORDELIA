@@ -3,7 +3,7 @@ import re
 from os.path import dirname, basename, isfile, join
 from glob import glob
 
-from utils.constants import *
+from utils.constants import bcolors
 
 import cordelia
 import cordelia.opcodes

@@ -26,4 +26,4 @@ def receive_messages():
 		print(f"\n---I come from {direction}\n")
 		# get UDP message
 
-		return message.decode()
+		return [direction, message.decode()]

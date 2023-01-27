@@ -33,7 +33,7 @@ ao2		oscili $ampvar, icps*(3/int(line(11, idur*random:i(.85, 1.25), 1))), gitri
 
 aosc		= ao1 + ao2
 
-across 		cross2 ain, aosc, 1024, 8, gihan, .65
+across 		cross2 ain, aosc, 1024, 8, gihanning, .65
 
 aout		= across + ain + (aosc*cosseg(0, idur, 1))
 

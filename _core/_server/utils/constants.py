@@ -5,11 +5,10 @@ from datetime import datetime
 CORDELIA_DIR = path.abspath(path.join(__file__ , '../../../..'))
 
 CORDELIA_PORTs = {
-	10015: 'CORDELIA_from_BRAIN',
-	10000: 'CSOUND_from_CSOUND',
-	10025: 'CORDELIA_from_REAPER',
-	10005: 'CSOUND_from_REAPER'
-	}
+	10015: 'BRAIN',
+	10000: 'CSOUND',
+	10005: 'REAPER',
+}
 
 CORDELIA_SOCKETs = []
 
@@ -23,8 +22,14 @@ SCALA_HASPLAYED = []
 GEN_HASPLAYED = []
 INSTR_HASPLAYED = []
 
-with open(CORDELIA_DIR + '/_list' + '/replace.json') as f:
-	CORDELIA_REPLACE_json = json.load(f)
+CORDELIA_NOTEs = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'h']
+
+CORDELIA_MACROs = []
+with open(CORDELIA_DIR + '/_list' + '/macro', 'r') as f:
+	init_macros = f.read().splitlines()
+	for each in init_macros:
+		if each:
+			CORDELIA_MACROs.append(each)
 
 with open(CORDELIA_DIR + '/_list' + '/instr.json') as f:
 	CORDELIA_INSTR_json = json.load(f)
