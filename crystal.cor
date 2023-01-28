@@ -1,17 +1,13 @@
 
 
-eujo: 4, 8, 16, .3+klfo
+eujo: 8, 8, 16
 	-klfo = lfh(1)*.15
-	@mhon
-	beats
-	accent(3, mf)
+	@calin
+	wn
+	accent(3, ff)
 	classic
-	random:k(400, 440)
+	c3: pump(4,fill(1 -3)) once(1 3 4 9)
+	c4: pump(4,fill(1 -3)) once(1 3 4 9)
+	
 
-eujo: 4, 8, 16
-	-klfo = lfh(1)*.15
-	@cascade
-	beats*8
-	accent(3, mp)
-	classic
-	random:k(400, 440)*3/2
+

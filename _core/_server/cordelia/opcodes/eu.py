@@ -1,5 +1,6 @@
 import re
 import cordelia
+from utils.constants import CORDELIA_NOTEs
 
 #list of lines
 def eu(unit_lines):
@@ -35,7 +36,16 @@ def eu(unit_lines):
 	instrument.dur = instrument_lines[2]
 	instrument.dyn = instrument_lines[3]
 	instrument.env = instrument_lines[4]
-	instrument.freq = instrument_lines[5:]
+
+	for each_freq_line in instrument_lines[5:]:
+		is_note = re.search(r'^("\w+"):', each_freq_line)
+		if is_note:
+			intervals = each_freq_line.split(':')[1].lstrip().split(' ')
+			intervals_togo = ', '.join(intervals)
+			freq_line = f'cpstun(random:k(1, 3), ntom({is_note[1]})+once(fillarray({intervals_togo})), giedo12)'
+			instrument.freq.append(freq_line)
+		else:
+			instrument.freq.append(each_freq_line)
 
 	route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', instrument_lines[1])
 	if route:

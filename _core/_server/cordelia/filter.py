@@ -1,10 +1,8 @@
 INSTR_LAST = ['init']
-ROUTE_LAST = ['init']
 
 def filter(instruments):
 
 	global INSTR_LAST
-	global ROUTE_LAST
 
 	if INSTR_LAST[0] == 'init':
 		INSTR_LAST = [None]*len(instruments)
@@ -25,7 +23,7 @@ def filter(instruments):
 	for index, i in enumerate(INSTR_LAST):
 		if i and i not in instruments:
 			i.kill = True
-			instrument_filtered[index] = (i)
+			instrument_filtered[index] = i
 			INSTR_LAST[index] = None
 
 	return instrument_filtered

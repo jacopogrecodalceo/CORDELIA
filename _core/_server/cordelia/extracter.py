@@ -1,3 +1,4 @@
+import pprint
 from dataclasses import replace
 import cordelia
 
@@ -10,13 +11,18 @@ def extracter(instrument):
 			instrument_head = replace(instrument)
 			instrument_head.name = each_name
 			instrument_head.route = []
+			
 			instruments.append(instrument_head)
 
 			for each_route in instrument.route:
 				instrument_body = cordelia.Instrument()
 				instrument_body.name = each_name
 				instrument_body.route = each_route
+				
 				instruments.append(instrument_body)
+
+				pprint.pprint(instrument_head.dur)
+				pprint.pprint(instrument_body)
 
 	else:
 		instruments.append(instrument)

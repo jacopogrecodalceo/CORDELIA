@@ -1,7 +1,7 @@
 import re
 from csound import csound_cordelia
 
-from utils.constants import CORDELIA_INSTR_json, CORDELIA_SCALA_json, CORDELIA_GEN_json
+from utils.constants import CORDELIA_INSTR_json, CORDELIA_SCALA_json, CORDELIA_GEN_json, CORDELIA_ABBR_json
 from utils.constants import CORDELIA_NOTEs, CORDELIA_MACROs
 from utils.constants import SCALA_HASPLAYED, GEN_HASPLAYED, INSTR_HASPLAYED
 
@@ -14,14 +14,16 @@ def analyzer(unit) -> str():
 	if not unit.startswith(';'):
 
 		for name in CORDELIA_NOTEs:
-			unit = re.sub(rf'(\W){name}(\d)(\#)(\W)', rf'\1"\2{name.upper()}\3"\4', unit, flags=re.MULTILINE)		
-			unit = re.sub(rf'(\W){name}(\d)b(\W)', rf'\1"\2{name.upper()}b"\3', unit, flags=re.MULTILINE)		
-			unit = re.sub(rf'(\W){name}(\d)(\W)', rf'\1"\2{name.upper()}"\3', unit, flags=re.MULTILINE)	
+			unit = re.sub(rf'(\W){name}(\d)(\W)', rf'\1"\2{(name[0].upper() + name[1]) if len(name) > 1 else name[0].upper()}"\3', unit, flags=re.MULTILINE)		
 
 		for name in CORDELIA_MACROs:
 			wildcard = '$'
 			unit = re.sub(rf'(\W){name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
 		
+		for name, repl in CORDELIA_ABBR_json.items():
+			unit = re.sub(rf'(\W){name}(\W)', rf'\1{repl}\2', unit, flags=re.MULTILINE)
+			#unit = unit.replace(name, repl)
+
 		if re.search(rf'scala-\w+', unit, flags=re.MULTILINE):
 			for name in CORDELIA_SCALA_json:
 				#keep track of scala tuning system
@@ -46,7 +48,6 @@ def analyzer(unit) -> str():
 		for name in re.findall('@(\w+)', unit):
 			if name not in INSTR_HASPLAYED:
 				path = CORDELIA_INSTR_json[name]['path']
-				#csound_cordelia.compileOrcAsync(f'#include "{path}"')
 				with open(path) as f:
 					csound_cordelia.compileOrcAsync(f.read())
 

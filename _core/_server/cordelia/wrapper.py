@@ -1,5 +1,6 @@
 new_line = chr(10)
 tab = chr(9)
+vir = ','
 
 def wrapper(index, i):
 
@@ -29,7 +30,7 @@ if {i.opcode[0]}({i.opcode[1]}) == 1 then
 	{i.dur},
 	{i.dyn},
 	{i.env},
-	{(new_line + tab).join(i.freq)})
+	{(vir + new_line + tab).join(i.freq)})
 endif
 	endin'''
 

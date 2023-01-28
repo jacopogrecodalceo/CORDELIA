@@ -10,8 +10,8 @@ class Instrument:
 	dur: str = None
 	dyn: str = None
 	env: str = None
-	freq: list = None
-	route: list = None
+	freq: list = field(default_factory=list)
+	route: list = field(default_factory=list)
 
 	add_in: list = field(default_factory=list)
 	add_out: list = field(default_factory=list)

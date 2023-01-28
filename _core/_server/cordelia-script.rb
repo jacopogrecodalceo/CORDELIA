@@ -132,6 +132,7 @@ end
 File.open(cordelia_json_gen_path, 'w') { |f| f.puts JSON.pretty_generate(gen) }
 
 
+=begin
 #MACROs
 cordelia_json_instr_path = cordelia_path + '/_list/macro.json'
 macros = []
@@ -172,3 +173,4 @@ Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
 end
 gk = gk.uniq
 File.open(cordelia_json_gk_path, 'w') { |f| f.puts JSON.pretty_generate(gk.flatten) }
+=end

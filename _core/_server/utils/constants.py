@@ -22,7 +22,7 @@ SCALA_HASPLAYED = []
 GEN_HASPLAYED = []
 INSTR_HASPLAYED = []
 
-CORDELIA_NOTEs = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'h']
+CORDELIA_NOTEs = ['c', 'c#', 'db', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'gb', 'g', 'g#', 'ab', 'a', 'bb', 'b']
 
 CORDELIA_MACROs = []
 with open(CORDELIA_DIR + '/_list' + '/macro', 'r') as f:
@@ -30,6 +30,9 @@ with open(CORDELIA_DIR + '/_list' + '/macro', 'r') as f:
 	for each in init_macros:
 		if each:
 			CORDELIA_MACROs.append(each)
+
+with open(CORDELIA_DIR + '/_list' + '/abbr.json') as f:
+	CORDELIA_ABBR_json = json.load(f)
 
 with open(CORDELIA_DIR + '/_list' + '/instr.json') as f:
 	CORDELIA_INSTR_json = json.load(f)

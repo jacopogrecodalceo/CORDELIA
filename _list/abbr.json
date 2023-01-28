@@ -1,3 +1,11 @@
 {
-	"fill": "fillarray"
+	"fill": "fillarray",
+	
+	"beats": "gkbeats",
+
+	"wn": "gkbeats*4",
+	"hn": "gkbeats*2",
+	"qn": "gkbeats",
+	"en": "gkbeats/2",
+	"sn": "gkbeats/4"
 }

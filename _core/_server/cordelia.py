@@ -51,8 +51,9 @@ def main():
 			#count_time(start_time)
 		
 		else:
-			print(code[1])
-			csound_cordelia.compileOrcAsync(code[1])
+			if code[1]:
+				print(code[1])
+				csound_cordelia.compileOrcAsync(code[1])
 
 if __name__ == '__main__':
 
