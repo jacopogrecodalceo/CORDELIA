@@ -22,6 +22,7 @@ def wrapper(index, i):
 
 		elif i.opcode and i.name:
 			string = f'''
+gkinstr_{instr_str_num + index}_1 init 0
 	instr {instr_str_num + index}
 {(new_line).join(i.add_out) if i.add_out else ''}
 if {i.opcode[0]}({i.opcode[1]}) == 1 then

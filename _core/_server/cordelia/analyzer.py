@@ -25,15 +25,15 @@ def analyzer(unit) -> str():
 			#unit = unit.replace(name, repl)
 
 		if re.search(rf'scala-\w+', unit, flags=re.MULTILINE):
-			for name in CORDELIA_SCALA_json:
-				#keep track of scala tuning system
-				if re.search(rf'(\W){name}(\W)', unit, flags=re.MULTILINE):
-					if name not in SCALA_HASPLAYED:
-						string = CORDELIA_SCALA_json[name]['ftgen']
-						csound_cordelia.compileOrcAsync(string)
-						SCALA_HASPLAYED.append(name)
-					wildcard = 'gi'
-					unit = re.sub(rf'(\W){name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
+			name = re.search(rf'scala-(\w+)', unit, flags=re.MULTILINE)[1]
+			if name not in SCALA_HASPLAYED:
+				string = CORDELIA_SCALA_json[name]['ftgen']
+				csound_cordelia.compileOrcAsync(string)
+				print(string)
+				SCALA_HASPLAYED.append(name)
+			wildcard = 'gi'
+			#unit = re.sub(rf'(\W)scala-{name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
+			unit = unit.replace(f'scala-{name}', f'gi{name}')
 
 		for name in CORDELIA_GEN_json:
 			#keep track of scala tuning system

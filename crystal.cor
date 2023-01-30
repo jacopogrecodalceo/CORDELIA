@@ -1,13 +1,20 @@
 
+gktuning = scala-dekany_13579
 
 eujo: 8, 8, 16
-	-klfo = lfh(1)*.15
-	@calin
-	wn
-	accent(3, ff)
+	@fim
+	once(wn, sn, sn, sn)
+	accent(3, fff)
 	classic
-	c3: pump(4,fill(1 -3)) once(1 3 4 9)
-	c4: pump(4,fill(1 -3)) once(1 3 4 9)
-	
+	c3: pump(4 fill(1 -3)) once(1 3 4 9)
+	c3: pump(4 fill(1 -3))+5
 
+
+eujo: 8, 8, 32
+	@mhon
+	sn*once(1, 1, 1, ?*12)
+	accent(5, fff)
+	classic
+	g3: pump(2 fill(1 -3 1 2))+5
+	a3: pump(2 fill(1 -3 1 -5))+5
 

@@ -7,7 +7,7 @@ CORDELIA_DIR = path.abspath(path.join(__file__ , '../../../..'))
 CORDELIA_PORTs = {
 	10015: 'BRAIN',
 	10000: 'CSOUND',
-	10005: 'REAPER',
+	10025: 'REAPER',
 }
 
 CORDELIA_SOCKETs = []

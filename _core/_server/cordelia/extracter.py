@@ -20,10 +20,6 @@ def extracter(instrument):
 				instrument_body.route = each_route
 				
 				instruments.append(instrument_body)
-
-				pprint.pprint(instrument_head.dur)
-				pprint.pprint(instrument_body)
-
 	else:
 		instruments.append(instrument)
 

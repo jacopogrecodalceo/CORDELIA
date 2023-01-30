@@ -40,7 +40,7 @@ class CORDELIA_track():
 			self.num = int(RPR_GetMediaTrackInfo_Value(track_id, 'IP_TRACKNUMBER'))
 			retval, meditem, parname, parent_name, var = RPR_GetSetMediaTrackInfo_String(RPR_GetParentTrack(track_id), 'P_NAME', 0, 0)
 			if parent_name:
-				self.parent_name = re.match(r'^\w+', str(parent_name))[0]
+				self.parent_name = re.match(r'@\w+', str(parent_name))[0]
 
 class CORDELIA_item(CORDELIA_track):
 

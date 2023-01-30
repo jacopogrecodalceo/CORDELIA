@@ -13,6 +13,7 @@
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/2-head/GEN/3-window/hanning.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/2-head/SPACE.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/1-ORGAN.orc"
+#include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/basic/coreva.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/basic/envgen.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/basic/eva.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/basic/evaMIDI.orc"

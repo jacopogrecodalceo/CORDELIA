@@ -1,7 +1,12 @@
 {
 	"fill": "fillarray",
+	"\\?": "random:k(0, 1)",
 	
 	"beats": "gkbeats",
+	"bs": "gkbeats",
+
+	"beatms": "gkbeats",
+	"bms": "gkbeats",
 
 	"wn": "gkbeats*4",
 	"hn": "gkbeats*2",

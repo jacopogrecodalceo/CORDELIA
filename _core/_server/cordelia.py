@@ -50,7 +50,14 @@ def main():
 
 			#count_time(start_time)
 		
-		else:
+		elif code[0] == 'REAPER':
+			if code[1]:
+				unit = cordelia.analyzer(code[1])
+				unit = unit.replace('@', '')
+				print(unit)
+				csound_cordelia.compileOrcAsync(unit)	
+
+		elif code[0] == 'CSOUND':
 			if code[1]:
 				print(code[1])
 				csound_cordelia.compileOrcAsync(code[1])

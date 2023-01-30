@@ -42,7 +42,7 @@ def eu(unit_lines):
 		if is_note:
 			intervals = each_freq_line.split(':')[1].lstrip().split(' ')
 			intervals_togo = ', '.join(intervals)
-			freq_line = f'cpstun(random:k(1, 3), ntom({is_note[1]})+once(fillarray({intervals_togo})), giedo12)'
+			freq_line = f'cpstun(random:k(1, 3), ntom({is_note[1]})+once(fillarray({intervals_togo})), gktuning)'
 			instrument.freq.append(freq_line)
 		else:
 			instrument.freq.append(each_freq_line)

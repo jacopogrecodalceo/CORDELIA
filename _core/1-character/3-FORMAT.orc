@@ -5,7 +5,7 @@ kascii, kpress sensekey
 
 if kascii == iesc && kpress == 1 then
 	printks "\n🌊 GOOOOODBYE! 🌊\n", 1
-	event "e", 0, .5
+	event "e", 0, 25$ms
 	turnoff
 endif
 

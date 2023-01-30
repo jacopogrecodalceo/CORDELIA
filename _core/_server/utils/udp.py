@@ -23,7 +23,7 @@ def receive_messages():
 		# get where the message comes from
 		_host, port = s.getsockname()
 		direction = CORDELIA_PORTs[port]
-		print(f"\n---I come from {direction}\n")
+		#print(f"\n---I come from {direction}\n")
 		# get UDP message
 
 		return [direction, message.decode()]
