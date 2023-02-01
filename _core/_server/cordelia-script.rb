@@ -3,7 +3,6 @@ require 'Pathname'
 
 cordelia_path = File.expand_path('../..', Dir.pwd)
 
-
 #include
 include_dir = [
 	'character',
@@ -108,11 +107,12 @@ Dir[cordelia_path + '/_core/4-clothes/SCALA/_current/**/*.scl'].each do |f|
 		base_val = '1'
 
 		if add_me
-			string = "gi#{name} ftgen 0, 0, 0, -2, #{degrees}, #{interval}, #{basefreq}, #{basekey}, #{base_val}, #{tuning_value.join(', ')}"
+			ftgen_string = "gi#{name} ftgen 0, 0, 0, -2, #{degrees}, #{interval}, #{basefreq}, #{basekey}, #{base_val}, #{tuning_value.join(', ')}"
+			#f_string = "gi#{name} #{degrees} -2 #{interval} #{basefreq} #{basekey} #{base_val} #{tuning_value.join(' ')}"
 			scala[name] = {
 				'path' => f,
 				'degrees' => degrees,
-				'ftgen' => string
+				'ftgen' => ftgen_string
 			}
 		end
 	end

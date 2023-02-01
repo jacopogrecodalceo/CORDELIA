@@ -2,7 +2,7 @@
 ;--format=float
 -3
 -m0
--D
+;-D
 
 ;-M0
 ;-+msg_color=1

@@ -43,6 +43,11 @@ with open(CORDELIA_DIR + '/_list' + '/scala.json') as f:
 with open(CORDELIA_DIR + '/_list' + '/gen.json') as f:
 	CORDELIA_GEN_json = json.load(f)
 
+with open(CORDELIA_DIR + '/_list' + '/interval.json') as f:
+	CORDELIA_INTERVAL_json = json.load(f)
+
+CORDELIA_COMPILE = []
+
 class bcolors:
     WARNING = '\033[91m''\033[1m'
     ENDC = '\033[0m'

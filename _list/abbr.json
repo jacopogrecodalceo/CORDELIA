@@ -1,6 +1,6 @@
 {
 	"fill": "fillarray",
-	"\\?": "random:k(0, 1)",
+	"\\?": "random(0, 1)",
 	
 	"beats": "gkbeats",
 	"bs": "gkbeats",
@@ -8,9 +8,19 @@
 	"beatms": "gkbeats",
 	"bms": "gkbeats",
 
-	"wn": "gkbeats*4",
-	"hn": "gkbeats*2",
+	"wn": "(gkbeats*4)",
+	"hn": "(gkbeats*2)",
 	"qn": "gkbeats",
-	"en": "gkbeats/2",
-	"sn": "gkbeats/4"
+	"en": "(gkbeats/2)",
+	"sn": "(gkbeats/4)",
+
+
+	"beatf": "gkbeatf",
+	"bf": "gkbeatf",
+	
+	"wf": "(gkbeatf*4)",
+	"hf": "(gkbeatf*2)",
+	"qf": "gkbeatf",
+	"ef": "(gkbeatf/2)",
+	"sf": "(gkbeatf/4)"
 }
