@@ -19,6 +19,6 @@ apre    = a1 + a2
 aout    moogladder2 apre, (20$k)*(iamp*2.75), random:i(.15, .25)
 aout    balance2 aout, apre
 
-    $death
+    $END_INSTR
 
     endin

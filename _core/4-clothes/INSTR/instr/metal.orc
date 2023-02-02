@@ -49,6 +49,6 @@ arev2		valpass aosc, krvt, klpt, imaxlpt
 
 aout		= aosc + arev1 + arev2
 
-	$death
+	$END_INSTR
 
 	endin

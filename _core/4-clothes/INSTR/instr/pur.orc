@@ -27,6 +27,6 @@ aout		bqrez	aout, icps+(icps*(32*$ampvar)), cosseg(.95, idur/2, .5)
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

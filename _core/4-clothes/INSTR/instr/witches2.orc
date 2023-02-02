@@ -45,6 +45,6 @@ aout	foscili $ampvar, icps, kcar, amod+randomi:a(-.0015, .0015, 1/idur, 2, 0), k
 ;	ENVELOPE
 ienvvar		init idur/10
 
-		$death
+		$END_INSTR
 
 	endin

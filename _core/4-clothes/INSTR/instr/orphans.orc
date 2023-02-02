@@ -39,6 +39,6 @@ aout		balance2 acheby, aosc
 
 ienvvar		init idur/5
 
-	$death
+	$END_INSTR
 
 	endin

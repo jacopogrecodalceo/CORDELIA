@@ -18,6 +18,6 @@ aout		/= cosseg(32, p3, 1)
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

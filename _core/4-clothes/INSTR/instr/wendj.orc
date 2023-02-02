@@ -53,6 +53,6 @@ aout		= ainstr1_out + (ainstr2_out*.65) + (ainstr3_out*1.35)
 ;		ENVELOPE
 ienvvar		init idur/10
 
-		$death
+		$END_INSTR
 
 	endin

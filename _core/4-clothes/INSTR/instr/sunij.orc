@@ -23,6 +23,6 @@ aout		/= 3
 
 ienvvar		init idur/$M_PI
 
-	$death
+	$END_INSTR
 
 	endin

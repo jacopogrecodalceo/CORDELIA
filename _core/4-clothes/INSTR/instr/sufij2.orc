@@ -38,6 +38,6 @@ aout		balance2 aout, anoi
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

@@ -74,6 +74,6 @@ aout		oscil3 ($ampvar/(ipulse/6))/(iharm/3), icps + randomi:k(-ipanfreq, ipanfre
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

@@ -47,6 +47,6 @@ aout		= a1 + ((a2/2)*scale(iamp*4, 0, 1)) + (af1*cosseg:k(0, idur, 1)) + (af2*co
 ;	ENVELOPE
 ienvvar		init idur/10
 
-		$death
+		$END_INSTR
 
 	endin

@@ -55,6 +55,6 @@ aout		moogladder2 aout, kfreq, $ampvar
 
 ienvvar		init idur/25
 
-	$death
+	$END_INSTR
 
 	endin

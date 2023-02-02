@@ -29,6 +29,6 @@ aout	gendy $ampvar, kampdist, kdurdist, kadpar, kddpar, kminfreq, kmaxfreq, kamp
 ;	ENVELOPE
 ienvvar		init idur/10
 
-		$death
+		$END_INSTR
 
 	endin

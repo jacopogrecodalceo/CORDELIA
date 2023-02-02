@@ -60,6 +60,6 @@ aout		*= vibr(.45, (gkipercluster_vibfreq+random(-.15, .15))/idur, gisine)
 ;		ENVELOPE
 ienvvar		init idur/100
 
-			$death
+			$END_INSTR
 
 	endin

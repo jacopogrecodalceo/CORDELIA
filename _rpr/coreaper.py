@@ -1,7 +1,7 @@
 import re
 import socket
 
-MIDI_CORRECTION = 2048
+MIDI_CORRECTION = 4096
 
 def send_to_csound(action):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -86,10 +86,11 @@ class CORDELIA_midi():
 
 		note_index = index
 		ret_val, ret_take, note_index, selectedOut, mutedOut, startppqposOut, endppqposOut, note_chn, note_pitch, note_velocity = RPR_MIDI_GetNote(take_id, note_index, 0, 0, 0, 0, 0, 0, 0)
-		
+
 		ppqdur = endppqposOut-startppqposOut
 		name = str(RPR_GetTrackMIDINoteNameEx(0, track_id, note_pitch, note_chn))
-		self.name = re.search(r'^\d+(?:\.\d+)?', name)[0]
+
+		self.name = re.search(r'c.\s+(.*)', name)[1]
 		self.start = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
 		self.dur = RPR_MIDI_GetProjTimeFromPPQPos(take_id, ppqdur)
 		self.dyn = float(note_velocity)/MIDI_CORRECTION		

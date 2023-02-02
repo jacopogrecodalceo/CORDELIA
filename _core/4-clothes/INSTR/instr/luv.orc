@@ -32,7 +32,7 @@ aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0)+kvib, kcar, kmod+rando
 ;	ENVELOPE
 ienvvar		init idur/100
 
-		$death
+		$END_INSTR
 
 	endin
 

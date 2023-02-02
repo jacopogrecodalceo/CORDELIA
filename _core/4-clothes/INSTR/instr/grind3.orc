@@ -32,6 +32,6 @@ aout		comb aout, krvt, irvt
 aout		flanger pdhalf(aout/iampred, line(.95, idur/12, -.95)), expon:a((divz(idur, igrind, gizero))$s*.25, idur/24, idur*1.5*igrind)$ms, .125
 aout		flanger pdhalf(aout/iampred, line(-.75, idur/4, .95)), expon:a((divz(idur, igrind, gizero))$s*.15, 35$ms, idur*3.5*igrind)$ms, .95
 
-	$death
+	$END_INSTR
 
 	endin

@@ -22,6 +22,6 @@ aout			/= 32
 ;	ENVELOPE
 ienvvar			init idur/5
 
-			$death
+			$END_INSTR
 
 	endin

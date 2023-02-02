@@ -449,25 +449,25 @@
     "degrees": "6",
     "ftgen": "gihexany_13913 ftgen 0, 0, 0, -2, 6, 2/1, A4, 69, 1, 13/12, 9/8, 39/32, 3/2, 13/8, 2/1"
   },
-  "1110r2_12": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/1110r2_12.scl",
-    "degrees": "12",
-    "ftgen": "gi1110r2_12 ftgen 0, 0, 0, -2, 12, 40000000/19487171, A4, 69, 1, 2000000/1771561, 200000/161051, 1.2745232708407372, 20000/14641, 1.4019755983297806, 2000/1331, 1.5421731577174311, 200/121, 1.6963904739791875, 20/11, 400000000/214358881, 40000000/19487171"
-  },
-  "1110r2_7": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/1110r2_7.scl",
-    "degrees": "7",
-    "ftgen": "gi1110r2_7 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 11/10, 121/100, 1331/1000, 14641/10000, 161051/100000, 20/11, 2/1"
-  },
-  "11_10ET": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/11_10ET.scl",
-    "degrees": "1",
-    "ftgen": "gi11_10ET ftgen 0, 0, 0, -2, 1, 11/10, A4, 69, 1, 11/10"
-  },
   "tetraj": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/tetraj.scl",
     "degrees": "3",
-    "ftgen": "gitetraj ftgen 0, 0, 0, -2, 3, 3/1, A4, 69, 1, 11/7, 21/11, 3/1"
+    "ftgen": "gitetraj ftgen 0, 0, 0, -2, 3, , A4, 69, 1, 11/7, 21/11, 3/1, "
+  },
+  "undet": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/undet.scl",
+    "degrees": "1",
+    "ftgen": "giundet ftgen 0, 0, 0, -2, 1, 11/10, A4, 69, 1, 11/10"
+  },
+  "undetr2_12": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/undetr2_12.scl",
+    "degrees": "12",
+    "ftgen": "giundetr2_12 ftgen 0, 0, 0, -2, 12, 40000000/19487171, A4, 69, 1, 2000000/1771561, 200000/161051, 1.2745232708407372, 20000/14641, 1.4019755983297806, 2000/1331, 1.5421731577174311, 200/121, 1.6963904739791875, 20/11, 400000000/214358881, 40000000/19487171"
+  },
+  "undetr2_7": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/undetr2_7.scl",
+    "degrees": "7",
+    "ftgen": "giundetr2_7 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 11/10, 121/100, 1331/1000, 14641/10000, 161051/100000, 20/11, 2/1"
   },
   "vitry": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/vitry.scl",

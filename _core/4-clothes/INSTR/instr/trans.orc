@@ -29,6 +29,6 @@ aout		*= 4
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

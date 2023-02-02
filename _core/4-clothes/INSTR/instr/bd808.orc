@@ -48,5 +48,5 @@ aout	delay a1 * iamp * aenv * (aenv2 * aenv2), idel
 
 ienvvar init 1/500
 
-	$death
+	$END_INSTR
 	endin

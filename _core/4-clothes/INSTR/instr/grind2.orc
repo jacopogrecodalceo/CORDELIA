@@ -32,6 +32,6 @@ aout		= a1 + (a2/2) + (a3/4)
 aout		*= (20/icps)*1.5
 aout		*= .65 + abs(lfo(.35, 3/idur))
 
-	$death
+	$END_INSTR
 
 	endin

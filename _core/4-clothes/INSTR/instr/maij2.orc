@@ -49,7 +49,7 @@ aout		phaser1 aout, kfreq, kord, kfb
 
 ienvvar		init idur/4
 
-	$death
+	$END_INSTR
 
 	endin
 

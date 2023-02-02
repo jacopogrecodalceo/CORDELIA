@@ -36,9 +36,10 @@ endif
 	endin'''
 
 		elif i.route:
-			string = f'''
+			for each in i.route:
+				string = f'''
 	instr {instr_str_num + index}
-getmeout("{i.name}")	
+{i.route[0]}("{i.name}", {i.route[1]})	
 	endin'''
 
 		string += f'''

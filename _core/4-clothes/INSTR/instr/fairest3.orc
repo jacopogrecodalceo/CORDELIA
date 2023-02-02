@@ -15,6 +15,6 @@ aout	K35_hpf aout, 25, 7.5
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

@@ -123,7 +123,7 @@ girpr_ck	init 95$ms
 
 
 
-#define death		#
+#define END_INSTR		#
 					$env
 					$mix
 					#

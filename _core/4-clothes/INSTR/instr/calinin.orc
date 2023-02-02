@@ -46,5 +46,5 @@ aout		*= 1/kdiff+((abs(lfo(1/kdiff, 4+random:i(-.15, .15))*cosseg(1, idur, .25))
 ;	ENVELOPE
 ienvvar		init idur/100
 
-		$death
+		$END_INSTR
 	endin

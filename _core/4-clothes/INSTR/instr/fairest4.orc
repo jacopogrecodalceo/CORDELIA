@@ -11,6 +11,6 @@ aout	vco2 $ampvar, icps, gisine
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

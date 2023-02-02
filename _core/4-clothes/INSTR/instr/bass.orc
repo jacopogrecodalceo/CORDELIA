@@ -14,6 +14,6 @@ a3_out		foscil $ampvar, icps*3/2, cosseg(.25, idur/32, 2), .25, line(1, idur, 0)
 aout		= a1_out + a2_out/4 + a3_out/8
 ienvvar		init idur/50
 
-	$death
+	$END_INSTR
 
 	endin

@@ -13,6 +13,6 @@ aout	fmb3 $ampvar, icps, kc1, kc2, kvdpth, kvrate
 
 ienvvar	init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

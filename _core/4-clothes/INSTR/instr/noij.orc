@@ -30,7 +30,7 @@ aout			balance2 aFilterR, aSigR
 
 ienvvar			init idur/10
 
-	$death
+	$END_INSTR
 
 	endin
 

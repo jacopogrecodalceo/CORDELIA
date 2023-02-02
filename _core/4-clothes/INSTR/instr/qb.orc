@@ -43,6 +43,6 @@ alast		= (apre/2) + aph + (afl*2)
 aout		moogladder2 alast, (20$k)*(iamp*2.75), random:i(.5, .75)
 aout		balance2 aout, apre
 
-		$death
+		$END_INSTR
 
 		endin

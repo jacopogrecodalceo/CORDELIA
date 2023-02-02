@@ -41,7 +41,7 @@ aout			buthp aout, icps - icps/12
 ;	ENVELOPE
 ienvvar		init idur/5
 
-			$death
+			$END_INSTR
 
 	endin
 

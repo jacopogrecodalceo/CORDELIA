@@ -18,6 +18,6 @@ aout		pluck $ampvar, (icps*iharm) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

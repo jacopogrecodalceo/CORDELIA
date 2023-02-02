@@ -19,6 +19,6 @@ aout		flanger aout, a(125), .85
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

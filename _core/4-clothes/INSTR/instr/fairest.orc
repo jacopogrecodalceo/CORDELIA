@@ -32,6 +32,6 @@ aout	*= iamp + (lfo:a(ivib, kvibfreq + random:i(-.15, .15)) * expsega(.0005, idu
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

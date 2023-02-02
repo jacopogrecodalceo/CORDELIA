@@ -61,6 +61,6 @@ aout		moogladder2 aout, amoog_freq, iq
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin 

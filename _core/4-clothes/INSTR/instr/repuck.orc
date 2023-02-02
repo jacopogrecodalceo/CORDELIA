@@ -16,5 +16,5 @@ ienvvar		init idur/10
 
 aout	buthp aout, icps - icps/12
 
-		$death
+		$END_INSTR
 	endin

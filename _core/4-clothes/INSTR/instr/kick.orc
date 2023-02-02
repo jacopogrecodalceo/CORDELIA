@@ -30,7 +30,7 @@ aout						*= 3
 
 ienvvar		init idur/1000
 
-	$death
+	$END_INSTR
 
 
 	endin

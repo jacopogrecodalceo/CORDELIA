@@ -34,20 +34,36 @@ def eu(unit_lines):
 		instrument.space = space[1]
 
 	instrument.name = re.findall(r'@(\w+)', instrument_lines[1])
+
 	instrument.dur = instrument_lines[2]
 	instrument.dyn = instrument_lines[3]
 	instrument.env = instrument_lines[4]
 
 	for each_freq_line in instrument_lines[5:]:
-		is_string_note = re.search(r'^("\w+"):', each_freq_line)
-		if is_string_note:
-			intervals = each_freq_line.split(':')[1].lstrip().split(' ')
-			intervals_togo = ', '.join(intervals)
-			#for semitone, notation in CORDELIA_INTERVAL_json.items():
-			#	intervals_togo = intervals_togo.replace(notation, semitone)
-			#	print(intervals_togo)
-			freq_line = f'cpstun($once(1, 2), ntom({is_string_note[1]})+once(fillarray({intervals_togo})), gktuning)'
-			instrument.freq.append(freq_line)
+		is_first_note = re.search(r'^("\w+")', each_freq_line)
+		if is_first_note:
+
+			is_cpstun = re.search(r'^("\w+"):', each_freq_line)
+			if is_cpstun:
+				intervals = each_freq_line.split(':')[1].lstrip().split(' ')
+				intervals_togo = ', '.join(intervals)
+				#for semitone, notation in CORDELIA_INTERVAL_json.items():
+				#	intervals_togo = intervals_togo.replace(notation, semitone)
+				#	print(intervals_togo)
+				freq_line = f'cpstun($once(1, 2), ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
+				
+				instrument.freq.append(freq_line)
+
+			else:
+				note = re.search(r'^("\w+")', each_freq_line)[1]
+				cycle = re.search(r'^"\w+"-(\d+)', each_freq_line)[1]
+				limit = re.search(r'^"\w+"-\d+\.(\d+)', each_freq_line)[1]
+				tab = re.search(r'^"\w+"-\d+\.\d+:(.*)', each_freq_line)[1].strip()
+
+				freq_line = f'cpstun($once(1, 2), ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
+				
+				instrument.freq.append(freq_line)
+
 		else:
 			instrument.freq.append(each_freq_line)
 

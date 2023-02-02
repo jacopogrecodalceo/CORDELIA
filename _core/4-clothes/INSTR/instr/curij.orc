@@ -26,6 +26,6 @@ ienvvar		init idur/10
 
 aout		moogladder2 aosc/4, fc(S1, itab, S2, idiv)*(2*envgen(idur-random:i(0, ienvvar), iftenv)), .35
 
-	$death
+	$END_INSTR
 
 	endin

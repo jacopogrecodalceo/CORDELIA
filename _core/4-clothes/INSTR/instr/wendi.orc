@@ -39,6 +39,6 @@ aout	= ai1 + (ai2/2)
 ;	ENVELOPE
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

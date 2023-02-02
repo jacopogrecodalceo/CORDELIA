@@ -33,6 +33,6 @@ aout		flanger pdhalf(aout/iampred, line(-.75, idur/4, .95)), expon:a((divz(idur,
 
 aout		dcblock2 aout
 
-	$death
+	$END_INSTR
 
 	endin

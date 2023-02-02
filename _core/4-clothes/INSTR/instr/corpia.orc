@@ -35,7 +35,7 @@ aout			skf aout, icps*cosseg(13, idur, 3), 2.15+$ampvar
 aout			limit aout, -1, 1
 ienvvar	init idur/10
 
-	$death
+	$END_INSTR
 
 	endin
 

@@ -35,6 +35,6 @@ aout		= ai1 + ai2
 
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

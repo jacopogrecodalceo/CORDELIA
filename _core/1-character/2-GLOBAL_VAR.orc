@@ -19,7 +19,7 @@ gimaxnote		init 300;s
 gienvdur		init 8192		;duration for all envelopes gen envelope tables
 gioscildur		init 16384		;duration for all envelopes gen envelope tables
 
-gkdyn			init 1/8
+gkdyn			init 1
 
 gkclearchns[]		init 128
 

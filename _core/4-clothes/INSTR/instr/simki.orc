@@ -27,7 +27,7 @@ aout						= (adel + abp)*.895
 
 ienvvar					init idur/10
 
-							$death
+							$END_INSTR
 
 gisimki_del 			+= 1*(ich-1)
 

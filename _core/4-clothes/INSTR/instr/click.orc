@@ -13,6 +13,6 @@ aout		balance2 aout, ain
 ;		ENVELOPE
 ienvvar		init idur/10
 
-	$death
+	$END_INSTR
 
 	endin

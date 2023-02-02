@@ -22,7 +22,7 @@ SCALA_HASPLAYED = []
 GEN_HASPLAYED = []
 INSTR_HASPLAYED = []
 
-CORDELIA_NOTEs = ['c', 'c#', 'db', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'gb', 'g', 'g#', 'ab', 'a', 'bb', 'b']
+CORDELIA_NOTEs = ['c', 'c#', 'db', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'gb', 'g', 'g#', 'ab', 'a', 'a#', 'bb', 'b']
 
 CORDELIA_MACROs = []
 with open(CORDELIA_DIR + '/_list' + '/macro', 'r') as f:
