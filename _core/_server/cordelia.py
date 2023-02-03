@@ -1,13 +1,16 @@
 from threading import Thread
 import time
 
+
 import cordelia
 import utils.udp as udp
 from utils.constants import LINE_SEP
 from utils.misc import count_time
 from csound import csound_cordelia, ctcsound
 
-from utils.constants import CORDELIA_COMPILE
+from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_WAV_temp
+
+
 
 def main():
 
@@ -69,6 +72,8 @@ def main():
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 
+RECORD = False
+
 if __name__ == '__main__':
 
 	udp.open_ports()
@@ -82,10 +87,16 @@ if __name__ == '__main__':
 		t.start()
 		pt.play()
 
+		if RECORD:
+			pt.record(CORDELIA_OUT_WAV_temp, 24, 32)
+
 		while pt.status() == 0:	
 			pass
 
-		#pt.stopRecord()
+		if RECORD:
+			pt.stopRecord()
+
+
 		#print('Record OFF')
 		csound_cordelia.cleanup()
 		print('CSOUND is OFF!')

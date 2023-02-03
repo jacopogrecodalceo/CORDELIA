@@ -6,6 +6,7 @@ from utils.constants import CORDELIA_NOTEs, CORDELIA_MACROs
 from utils.constants import SCALA_HASPLAYED, GEN_HASPLAYED, INSTR_HASPLAYED
 
 from utils.constants import CORDELIA_COMPILE
+from utils.constants import bcolors
 
 from csound import CORDELIA_NCHNLS
 
@@ -39,7 +40,9 @@ def analyzer(unit) -> str():
 						SCALA_HASPLAYED.append(name)
 					wildcard = 'gi'
 					#unit = re.sub(rf'(\W)scala-{name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
-					unit = unit.replace(f'scala.{name}', f'gi{name}')
+					unit = unit.replace(f'scala.{name}', f'{wildcard}{name}')
+					print(f'scala.{name}')
+
 
 			for name in CORDELIA_GEN_json:
 				#keep track of scala tuning system
@@ -76,6 +79,7 @@ def analyzer(unit) -> str():
 					CORDELIA_COMPILE.append(instr_setting)
 
 		except Exception as e:
-			print(e)
+			print(f'This is an {bcolors.WARNING}exception{bcolors.ENDC}')
+			print(f'Check this: {bcolors.WARNING}{e}{bcolors.ENDC}, are you sure it exists?')
 
 	return unit

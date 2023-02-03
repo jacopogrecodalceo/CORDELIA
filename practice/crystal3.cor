@@ -2,7 +2,7 @@
 
 gkpulse = 125
 
-gktuning pump 8, fill(scala.edo12, scala.1110et)
+gktuning pump 8, fill(scala.edo12, scala.undet)
 
 eujo: 5, 8, 8
 	-k1 lfh 1

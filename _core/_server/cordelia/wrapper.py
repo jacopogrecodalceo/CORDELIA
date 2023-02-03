@@ -43,8 +43,8 @@ endif
 	endin'''
 
 		string += f'''
-	turnoff2_i {instr_str_num + index}, 0, 1
-	schedule {instr_str_num + index}, 0, -1\n'''
+	turnoff2_i {instr_str_num + index}, (ksmps / sr) * {index}, 1
+	schedule {instr_str_num + index}, (ksmps / sr) * {index} * 3, -1\n'''
 
 		return(string)
 

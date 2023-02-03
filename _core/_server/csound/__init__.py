@@ -38,3 +38,5 @@ with open(f'{CORDELIA_DIR}/_core/include.orc') as f:
 
 CORDELIA_NCHNLS = csound_cordelia.nchnls()
 print(f'I have {CORDELIA_NCHNLS} channels\n')
+
+CORDELIA_SR = csound_cordelia.sr()

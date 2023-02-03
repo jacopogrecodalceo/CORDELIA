@@ -15,6 +15,7 @@ CORDELIA_SOCKETs = []
 CORDELIA_DATE = datetime.today().strftime('%y%m%d-%H%M')
 
 CORDELIA_OUT_WAV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.wav'
+CORDELIA_OUT_WAV_temp = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}-temp.wav'
 CORDELIA_OUT_ORC = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.orc'
 CORDELIA_OUT_ORC = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.mid'
 
