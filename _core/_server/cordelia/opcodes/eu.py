@@ -50,7 +50,8 @@ def eu(unit_lines):
 				#for semitone, notation in CORDELIA_INTERVAL_json.items():
 				#	intervals_togo = intervals_togo.replace(notation, semitone)
 				#	print(intervals_togo)
-				freq_line = f'cpstun($once(1, 2), ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
+				#freq_line = f'cpstun($once(1, 2), ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
+				freq_line = f'cpstun_render(ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
 				
 				instrument.freq.append(freq_line)
 
@@ -60,7 +61,8 @@ def eu(unit_lines):
 				limit = re.search(r'^"\w+"-\d+\.(\d+)', each_freq_line)[1]
 				tab = re.search(r'^"\w+"-\d+\.\d+:(.*)', each_freq_line)[1].strip()
 
-				freq_line = f'cpstun($once(1, 2), ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
+				#freq_line = f'cpstun($once(1, 2), ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
+				freq_line = f'cpstun_render(ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
 				
 				instrument.freq.append(freq_line)
 

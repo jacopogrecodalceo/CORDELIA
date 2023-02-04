@@ -11,4 +11,3 @@ endif
 
 	endin
 	alwayson("quit_csound")
-

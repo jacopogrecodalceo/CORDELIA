@@ -41,7 +41,7 @@ def analyzer(unit) -> str():
 					wildcard = 'gi'
 					#unit = re.sub(rf'(\W)scala-{name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
 					unit = unit.replace(f'scala.{name}', f'{wildcard}{name}')
-					print(f'scala.{name}')
+					#print(f'scala.{name}')
 
 
 			for name in CORDELIA_GEN_json:
@@ -74,9 +74,11 @@ def analyzer(unit) -> str():
 					instr_setting = f'gS{name}[] init ginchnls\n'
 					for each in range(CORDELIA_NCHNLS):
 						instr_setting += f'gS{name}[{each}] sprintf	"{name}_%i", {each+1}\n'
-						instr_setting += f'schedule {950 + ((each+1)/1000) + (len(INSTR_HASPLAYED)-1)/10000}, 0, -1, "{name}_{each+1}"\n'
+						instr_num = 950 + ((each+1)/1000) + ((len(INSTR_HASPLAYED)-1)/10000)
+						instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"\n'
 					#csound_cordelia.compileOrcAsync(instr_setting)
 					CORDELIA_COMPILE.append(instr_setting)
+					#print(instr_setting)
 
 		except Exception as e:
 			print(f'This is an {bcolors.WARNING}exception{bcolors.ENDC}')

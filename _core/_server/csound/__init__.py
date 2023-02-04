@@ -1,6 +1,6 @@
 import ctcsound
 
-from utils.constants import CORDELIA_DIR
+from utils.constants import CORDELIA_DIR, CORDELIA_OUT_SCO, CORDELIA_OUT_CSV, CORDELIA_OUT_MID, CORDELIA_DATE
 from csound.init_csound import *
 
 csound_cordelia = ctcsound.Csound()
@@ -25,6 +25,24 @@ opt.extend(query_devices('dac'))
 for o in opt:
 	csound_cordelia.setOption(o)
 	print(o)
+
+csound_cordelia.setOption(f'--omacro:SCO_NAME="{CORDELIA_OUT_SCO}"')
+
+csound_cordelia.setOption(f'--omacro:CSV_NAME="{CORDELIA_OUT_CSV}"')
+
+csv_init = f'''0, 0, Header, 1, 2, 480
+1, 0, Start_track
+1, 0, Title_t, "cor{CORDELIA_DATE}"
+1, 0, Tempo, 500000
+1, 0, End_track
+2, 0, Start_track
+'''
+
+'''2, 4800, End_track
+0, 0, End_of_file'''
+
+with open(CORDELIA_OUT_CSV, 'w') as f:
+	f.write(csv_init)
 
 #######################################
 # CSOUND SETTING

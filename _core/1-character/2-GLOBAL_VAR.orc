@@ -1,6 +1,8 @@
 gizero			init ksmps / sr		;i variable better than write zero? because it's between samples
 gkzero			init ksmps / sr		;k variable better than write zero? because it's between samples
 
+gkpulse			init 120
+
 giexpzero		init .00015		;a zero value for expseg
 
 giadjust	init 1-(gizero*ksmps)

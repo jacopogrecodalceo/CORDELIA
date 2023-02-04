@@ -55,25 +55,6 @@ endif
 
 	endop
 
-	opcode	pump, k, kk[] ; in heart output kvals[] every kdiv
-	kdiv, kvals[] xin
-
-kdiv	init i(kdiv)
-
-klen	lenarray kvals
-
-kph	chnget	"heart"
-kph	=	int(((kph * kdiv) % 1) * klen)
-
-ktrig	changed	kph
-
-if (ktrig == 1) then
-kout = kvals[kph]	
-endif
-	
-	xout kout
-
-	endop
 
 	opcode	pumparr, k[], kk[]
 	kdiv, kvals[] xin

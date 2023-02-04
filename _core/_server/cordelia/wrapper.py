@@ -1,3 +1,4 @@
+
 new_line = chr(10)
 tab = chr(9)
 vir = ','
@@ -21,8 +22,8 @@ def wrapper(index, i):
 	endin'''
 
 		elif i.opcode and i.name:
+
 			string = f'''
-gkinstr_{instr_str_num + index}_1 init 0
 	instr {instr_str_num + index}
 {(new_line).join(i.add_out) if i.add_out else ''}
 if {i.opcode[0]}({i.opcode[1]}) == 1 then
@@ -43,8 +44,9 @@ endif
 	endin'''
 
 		string += f'''
-	turnoff2_i {instr_str_num + index}, (ksmps / sr) * {index}, 1
-	schedule {instr_str_num + index}, (ksmps / sr) * {index} * 3, -1\n'''
+	turnoff2_i {instr_str_num + index}, (ksmps / sr) * {index+1}, 1
+	schedule {instr_str_num + index}, (ksmps / sr) * {index+1} * 3, -1\n'''
+
 
 		return(string)
 
