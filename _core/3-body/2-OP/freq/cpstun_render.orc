@@ -6,7 +6,7 @@
 ktrig       init 1
 
 kout        cpstun ktrig, kindex, kft
-schedulek   "render_csv_noteon", 0, 1, kindex
+schedulek   "render_midi_on", 0, 1, kindex
 
 ktrig       += 1
 

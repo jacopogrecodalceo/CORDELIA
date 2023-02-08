@@ -14,6 +14,7 @@ gkdiv	init 64 ;max division of main tempo for heart and lungs
 
 ;	HEART
 ;	tempo for heart
+gkpulse 	init 120
 
 	instr heart
 

@@ -29,7 +29,7 @@ def eu(unit_lines):
 	opcode_params = instrument_lines[0].split(':')[1].strip()
 	instrument.opcode = [opcode_name, opcode_params]
 
-	space = re.search(r'^(\w+?)@', instrument_lines[1])
+	space = re.search(r'^(.*?)@', instrument_lines[1])
 	if space:
 		instrument.space = space[1]
 
@@ -62,7 +62,7 @@ def eu(unit_lines):
 				tab = re.search(r'^"\w+"-\d+\.\d+:(.*)', each_freq_line)[1].strip()
 
 				#freq_line = f'cpstun($once(1, 2), ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
-				freq_line = f'cpstun_render(ntom({note})+int(table:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
+				freq_line = f'cpstun_render(ntom({note})+int(tablekt:k((chnget:k("heart") * {cycle}) % 1, {tab}, 1)*{limit}), gktuning)'
 				
 				instrument.freq.append(freq_line)
 

@@ -8,7 +8,7 @@ from utils.constants import LINE_SEP
 from utils.misc import count_time
 from csound import csound_cordelia, ctcsound
 
-from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_WAV_temp
+from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV
 
 
 
@@ -72,7 +72,7 @@ def main():
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 
-RECORD = False
+RECORD = True
 
 if __name__ == '__main__':
 
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 		pt.play()
 
 		if RECORD:
-			pt.record(CORDELIA_OUT_WAV_temp, 24, 32)
+			pt.record(CORDELIA_OUT_WAV, 24, 32)
 
 		while pt.status() == 0:	
 			pass

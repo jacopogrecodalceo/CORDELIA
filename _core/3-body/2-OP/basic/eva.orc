@@ -11,7 +11,7 @@
 					;$gen_score($kcps)
 					kch += 1
 				od
-				schedulek	"render_sco", 0, kdur, kamp, kenv, $kcps, Sinstr
+				;schedulek	"render_sco", 0, kdur, kamp, kenv, $kcps, Sinstr
 			endif
 #
 

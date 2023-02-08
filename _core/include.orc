@@ -1,7 +1,6 @@
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/1-character/1-MACRO.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/1-character/2-GLOBAL_VAR.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/1-character/3-FORMAT.orc"
-#include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/1-character/4-RENDER.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/2-head/GEN/1-polar/asaw.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/2-head/GEN/1-polar/asine.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/2-head/GEN/1-polar/asquare.orc"
@@ -55,4 +54,5 @@
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/util/schedulech.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/2-OP/util/tabj.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/3-OUT/flingj.orc"
+#include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/4-ADDON/RENDER.orc"
 #include "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/3-body/5-SOUL.orc"

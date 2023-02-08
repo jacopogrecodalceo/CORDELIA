@@ -4,7 +4,7 @@ import cordelia
 from utils.constants import LINE_SEP
 from csound import csound_cordelia, ctcsound
 
-from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_SCO
+from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_MID
 
 def main(code):
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
 	csound_cordelia.setOption('--ksmps=4096')
 	csound_cordelia.setOption(f'-o{CORDELIA_OUT_WAV}')
-	#csound_cordelia.setOption(f'--midioutfile={CORDELIA_OUT_MID}')
+	csound_cordelia.setOption(f'--midioutfile={CORDELIA_OUT_MID}')
 
 	corfile = sys.argv[1]
 

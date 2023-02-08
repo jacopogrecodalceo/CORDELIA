@@ -37,6 +37,7 @@ def analyzer(unit) -> str():
 						string = CORDELIA_SCALA_json[name]['ftgen']
 						#csound_cordelia.compileOrcAsync(string)
 						CORDELIA_COMPILE.append(string)
+						print(f'SEND---{name}')
 						SCALA_HASPLAYED.append(name)
 					wildcard = 'gi'
 					#unit = re.sub(rf'(\W)scala-{name}(\W)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
@@ -52,6 +53,7 @@ def analyzer(unit) -> str():
 						with open(path) as f:
 							string = f.read()
 							CORDELIA_COMPILE.append(string)
+							print(f'SEND---{name}')
 						GEN_HASPLAYED.append(name)
 					
 					has_atk = re.search(rf'{name}.a', unit, flags=re.MULTILINE)
@@ -78,6 +80,7 @@ def analyzer(unit) -> str():
 						instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"\n'
 					#csound_cordelia.compileOrcAsync(instr_setting)
 					CORDELIA_COMPILE.append(instr_setting)
+					print(f'SEND---{name}')
 					#print(instr_setting)
 
 		except Exception as e:

@@ -1,7 +1,7 @@
 import re
 import socket
 
-MIDI_CORRECTION = 4096
+MIDI_CORRECTION = 1024
 
 def send_to_csound(action):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -76,13 +76,14 @@ class CORDELIA_score():
 
 class CORDELIA_midi():
 
-	def __init__(self, index, track_id, take_id):
+	def __init__(self, index, track_id, item_id, take_id):
 
 		self.name = None
 		self.start = None
 		self.dur = None
 		self.dyn = None
 		self.env = 'classic'
+		self.text = None
 
 		note_index = index
 		ret_val, ret_take, note_index, selectedOut, mutedOut, startppqposOut, endppqposOut, note_chn, note_pitch, note_velocity = RPR_MIDI_GetNote(take_id, note_index, 0, 0, 0, 0, 0, 0, 0)
@@ -93,11 +94,28 @@ class CORDELIA_midi():
 		self.name = re.search(r'c.\s+(.*)', name)[1]
 		self.start = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
 		self.dur = RPR_MIDI_GetProjTimeFromPPQPos(take_id, ppqdur)
-		self.dyn = float(note_velocity)/MIDI_CORRECTION		
+		self.dyn = float(note_velocity)/MIDI_CORRECTION	
+
+		retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item_id, 'P_NOTES', 0, 0)
+		if text:
+			for line in text.splitlines():
+				if line.startswith('dur'):
+					val = line.split('dur')[1]
+					self.dur = eval(f'{self.dur}{val}')
+				elif line.startswith('dyn'):
+					val = line.split('dyn')[1]
+					self.dyn = eval(f'{self.dyn}{val}')
+				elif line.startswith('env'):
+					val = line.split('env')[1].strip()
+					#log(val)
+					self.env = val
+
+
 		text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(take_id, note_index, 0, 0, 0, 0, 0, 512)
 		if text_retval:
 			# i don't know why, but i need to remove 2 character from the end of the text string
 			self.env = msgOptional[:-2:]
+
 
 
 
@@ -113,8 +131,8 @@ def get_score():
 					if item.source_type == 'MIDI':
 						ret_val, ret_take, MIDI_notes, ret_cc, ret_sysex = RPR_MIDI_CountEvts(item.take_id, 0, 0, 0)
 						for index in range(MIDI_notes):
-							midi = CORDELIA_midi(index, track.id, item.take_id)
-							csound_code = f'eva_midi "{track.parent_name}", {midi.start-current_pos}, {midi.dur-item.start_pos-current_pos}, {midi.dyn}, gi{midi.env}, {midi.name}'
+							midi = CORDELIA_midi(index, track.id, item.id, item.take_id)
+							csound_code = f'eva_midi "{track.parent_name}", {midi.start-current_pos}, {midi.dur-item.start_pos-current_pos}, {midi.dyn}, {midi.env}, {midi.name}'
 							CORDELIA_SEND_INSTR.append(csound_code)
 							if track.parent_name not in TURNOFF_NAME:
 								TURNOFF_NAME.append(track.parent_name)

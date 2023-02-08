@@ -1,5 +1,5 @@
 
-gkpulse = 70
+gkpulse = 75-(chnget:k("heart")*65)*linseg(0, 25, .05, 25, 1)
 
 gktuning pump 4, fill(scala.olympos, scala.vitry, scala.undet)
 
@@ -7,7 +7,7 @@ eujo: 5, 8, 8
 	-kdur lfh 4
 	@wendj
 	qn+(kdur*hn)
-	accent(5, .85)
+	accent(5, f)
 	kazan
 	c3-1.19: kazan
 	d3-4.19: kazan
@@ -17,9 +17,9 @@ eujo: 8, 8, kvar
 	-kvar pump 4, fill(32, 64)
 	-kdyn lfh 1
 	@mhon
-	once(qn, sn, sn, sn)+(1-kdyn)
+	once(qn, sn, sn, sn)+(1-kdyn)/2
 	accent(4, 1)*kdyn
-	tig
+	tig.a(15)
 	c3-1.19: cat
 	d3-4.19: tig
 	f3-8.19: kazan
