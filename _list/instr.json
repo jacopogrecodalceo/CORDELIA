@@ -540,6 +540,13 @@
       "gkqb_q"
     ]
   },
+  "quad": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/INSTR/instr/quad.orc",
+    "global_var": [
+      "giquad_index"
+    ]
+  },
   "repuck": {
     "type": "instr",
     "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/INSTR/instr/repuck.orc",

@@ -40,10 +40,10 @@ def eu(unit_lines):
 	instrument.env = instrument_lines[4]
 
 	for each_freq_line in instrument_lines[5:]:
-		is_first_note = re.search(r'^("\w+")', each_freq_line)
+		is_first_note = re.search(r'^(".*")', each_freq_line)
 		if is_first_note:
 
-			is_cpstun = re.search(r'^("\w+"):', each_freq_line)
+			is_cpstun = re.search(r'^(".*"):', each_freq_line)
 			if is_cpstun:
 				intervals = each_freq_line.split(':')[1].lstrip().split(' ')
 				intervals_togo = ', '.join(intervals)
@@ -56,7 +56,7 @@ def eu(unit_lines):
 				instrument.freq.append(freq_line)
 
 			else:
-				note = re.search(r'^("\w+")', each_freq_line)[1]
+				note = re.search(r'^(".*")', each_freq_line)[1]
 				cycle = re.search(r'^"\w+"-(\d+)', each_freq_line)[1]
 				limit = re.search(r'^"\w+"-\d+\.(\d+)', each_freq_line)[1]
 				tab = re.search(r'^"\w+"-\d+\.\d+:(.*)', each_freq_line)[1].strip()

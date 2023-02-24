@@ -449,6 +449,11 @@
     "degrees": "6",
     "ftgen": "gihexany_13913 ftgen 0, 0, 0, -2, 6, 2/1, A4, 69, 1, 13/12, 9/8, 39/32, 3/2, 13/8, 2/1"
   },
+  "sept_min_penta": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/sept_min_penta.scl",
+    "degrees": "5",
+    "ftgen": "gisept_min_penta ftgen 0, 0, 0, -2, 5, 2/1, A4, 69, 1, 7/6, 4/3, 3/2, 7/4, 2/1"
+  },
   "tetraj": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_core/4-clothes/SCALA/_current/jacques/tetraj.scl",
     "degrees": "3",
