@@ -1,7 +1,7 @@
 ;sr		=	192000
 sr		=	48000
 
-ksmps		=	12	;leave it at 64 for real-time
+;ksmps		=	12	;leave it at 64 for real-time
 ;nchnls_i	=	12
 nchnls		=	2
 0dbfs		=	1

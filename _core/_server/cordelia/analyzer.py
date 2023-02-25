@@ -4,6 +4,7 @@ from csound import csound_cordelia
 from utils.constants import CORDELIA_INSTR_json, CORDELIA_SCALA_json, CORDELIA_GEN_json, CORDELIA_ABBR_json
 from utils.constants import CORDELIA_NOTEs, CORDELIA_MACROs
 from utils.constants import SCALA_HASPLAYED, GEN_HASPLAYED, INSTR_HASPLAYED
+from utils.constants import DEFAULT_SONVS_PATH
 
 from utils.constants import CORDELIA_COMPILE
 from utils.constants import bcolors
@@ -66,10 +67,30 @@ def analyzer(unit) -> str():
 			for name in re.findall('@(\w+)', unit):
 				if name not in INSTR_HASPLAYED:
 					path = CORDELIA_INSTR_json[name]['path']
-					with open(path) as f:
-						#csound_cordelia.compileOrcAsync(f.read())
-						string = f.read()
-						CORDELIA_COMPILE.append(string)
+					type = CORDELIA_INSTR_json[name]['type']
+
+					if type == 'instr':
+						with open(path) as f:
+							#csound_cordelia.compileOrcAsync(f.read())
+							string = f.read()
+							CORDELIA_COMPILE.append(string)
+
+					if type == 'sonvs':
+
+						channels = CORDELIA_INSTR_json[name]['channels']
+						path = CORDELIA_INSTR_json[name]['path']
+
+						with open(DEFAULT_SONVS_PATH) as f:
+
+							string = f'gS{name}_file init "{path}"' + '\n'
+							string += f'gi{name}_ch init {channels}' + '\n'
+
+							for i in range(int(channels)):
+								ch = str(i + 1)
+								string += f'gi{name}_{ch} ftgen 0, 0, 0, 1, gS{name}_file, 0, 0, {ch}' + '\n'
+								
+							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
+							CORDELIA_COMPILE.append(string)
 
 					INSTR_HASPLAYED.append(name)
 					#and create an array

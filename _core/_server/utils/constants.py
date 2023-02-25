@@ -14,6 +14,8 @@ CORDELIA_SOCKETs = []
 
 CORDELIA_DATE = datetime.today().strftime('%y%m%d-%H%M')
 
+DEFAULT_SONVS_PATH = CORDELIA_DIR + '/_setting/_default-sonvs'
+
 CORDELIA_OUT_WAV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.wav'
 CORDELIA_OUT_ORC = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.orc'
 CORDELIA_OUT_SCO = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.sco'
@@ -27,25 +29,25 @@ INSTR_HASPLAYED = []
 CORDELIA_NOTEs = ['c', 'c#', 'db', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'gb', 'g', 'g#', 'ab', 'a', 'a#', 'bb', 'b']
 
 CORDELIA_MACROs = []
-with open(CORDELIA_DIR + '/_list' + '/macro', 'r') as f:
+with open(CORDELIA_DIR + '/_setting' + '/macro', 'r') as f:
 	init_macros = f.read().splitlines()
 	for each in init_macros:
 		if each:
 			CORDELIA_MACROs.append(each)
 
-with open(CORDELIA_DIR + '/_list' + '/abbr.json') as f:
+with open(CORDELIA_DIR + '/_setting' + '/abbr.json') as f:
 	CORDELIA_ABBR_json = json.load(f)
 
-with open(CORDELIA_DIR + '/_list' + '/instr.json') as f:
+with open(CORDELIA_DIR + '/_setting' + '/instr.json') as f:
 	CORDELIA_INSTR_json = json.load(f)
 
-with open(CORDELIA_DIR + '/_list' + '/scala.json') as f:
+with open(CORDELIA_DIR + '/_setting' + '/scala.json') as f:
 	CORDELIA_SCALA_json = json.load(f)
 
-with open(CORDELIA_DIR + '/_list' + '/gen.json') as f:
+with open(CORDELIA_DIR + '/_setting' + '/gen.json') as f:
 	CORDELIA_GEN_json = json.load(f)
 
-with open(CORDELIA_DIR + '/_list' + '/interval.json') as f:
+with open(CORDELIA_DIR + '/_setting' + '/interval.json') as f:
 	CORDELIA_INTERVAL_json = json.load(f)
 
 CORDELIA_COMPILE = []

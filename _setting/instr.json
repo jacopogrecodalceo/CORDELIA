@@ -1,0 +1,1308 @@
+{
+  "BD808": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/BD808"
+  },
+  "SD808": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/SD808"
+  },
+  "aaron": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/aaron.orc",
+    "global_var": [
+      "gkaaron_mod",
+      "gkaaron_indx",
+      "gkaaron_detune",
+      "giaaron_atk"
+    ]
+  },
+  "alghed": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/alghed"
+  },
+  "alghef": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/alghef"
+  },
+  "algo": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/algo.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "algo2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/algo2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "alone": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/alone.orc",
+    "global_var": [
+      "gkalone_env",
+      "gkalone_cps",
+      "gkalone_dur",
+      "gkalone_harm",
+      "gialone_count"
+    ]
+  },
+  "alonefr": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/alonefr.orc",
+    "global_var": [
+      "gkalonefr_env",
+      "gkalonefr_cps",
+      "gkalonefr_dur",
+      "gkalonefr_harm",
+      "gialonefr_count"
+    ]
+  },
+  "amen": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/amen.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "amor": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/amor.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "arm1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/arm1.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "arm2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/arm2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "armagain": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/armagain.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "bass": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/bass.orc",
+    "global_var": [
+
+    ]
+  },
+  "bd10": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/bd10.wav",
+    "channels": "1",
+    "sr": "44100"
+  },
+  "bd808": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/bd808.orc",
+    "global_var": [
+
+    ]
+  },
+  "bebois": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/bebois.orc",
+    "global_var": [
+      "gibebois_imp"
+    ]
+  },
+  "beboo": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/beboo.orc",
+    "global_var": [
+      "gibeboo_imp"
+    ]
+  },
+  "bebor": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/bebor.orc",
+    "global_var": [
+      "gibebor_imp"
+    ]
+  },
+  "becapr": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/becapr.orc",
+    "global_var": [
+      "gibecapr_imp",
+      "gibecapr_indx",
+      "gibecapr_arr"
+    ]
+  },
+  "bee": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/bee"
+  },
+  "begad": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/begad.orc",
+    "global_var": [
+      "gibegad_indx",
+      "gibegad_imp"
+    ]
+  },
+  "begaf": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/begaf.orc",
+    "global_var": [
+      "gibegaf_indx",
+      "gibegaf_imp"
+    ]
+  },
+  "beme": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/beme.orc",
+    "global_var": [
+      "gibeme_indx",
+      "gibeme_imp"
+    ]
+  },
+  "between": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/between.orc",
+    "global_var": [
+      "gkbetween_space",
+      "gkbetween_mod",
+      "gkbetween_ph",
+      "gkbetween_var"
+    ]
+  },
+  "betweenmore": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/betweenmore.orc",
+    "global_var": [
+      "gkbetweenmore_space",
+      "gkbetweenmore_ph",
+      "gkbetweenmore_freq"
+    ]
+  },
+  "bleu": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/bleu.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "bois": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/bois.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "bois2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/bois2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "break": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/break.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "burd": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/burd.orc",
+    "global_var": [
+
+    ]
+  },
+  "caillou": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/caillou"
+  },
+  "caiu": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/caiu.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "calin": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/calin.orc",
+    "global_var": [
+      "gkcalin_vib"
+    ]
+  },
+  "calinin": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/calinin.orc",
+    "global_var": [
+      "gkcalinin_vib"
+    ]
+  },
+  "capr1x": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/capr1x"
+  },
+  "capr2x": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/capr2x"
+  },
+  "capriccio1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/capriccio1.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "capriccio2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/capriccio2.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "careless": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/careless.orc",
+    "global_var": [
+
+    ]
+  },
+  "careless2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/careless2.orc",
+    "global_var": [
+
+    ]
+  },
+  "cascade": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/cascade.orc",
+    "global_var": [
+
+    ]
+  },
+  "cascadexp": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/cascadexp.orc",
+    "global_var": [
+
+    ]
+  },
+  "chime": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/chime"
+  },
+  "chiseq": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/chiseq"
+  },
+  "ciel": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/ciel.wav",
+    "channels": "1",
+    "sr": "48000"
+  },
+  "click": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/click.orc",
+    "global_var": [
+
+    ]
+  },
+  "coeur": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/coeur.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "contempo": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/contempo.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "corpia": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/corpia.orc",
+    "global_var": [
+
+    ]
+  },
+  "crij": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/crij.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "cril": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/cril.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "curij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/curij.orc",
+    "global_var": [
+
+    ]
+  },
+  "curij2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/curij2.orc",
+    "global_var": [
+
+    ]
+  },
+  "dance": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/dance.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "dismatter": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/dismatter"
+  },
+  "distmar": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/distmar"
+  },
+  "dmitri": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/dmitri.orc",
+    "global_var": [
+
+    ]
+  },
+  "dmitrif": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/dmitrif.orc",
+    "global_var": [
+      "gkdmitrif_time"
+    ]
+  },
+  "dp": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/dp.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "drum": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/drum.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "drumhigh": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/drumhigh.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "elacid": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elacid.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elair": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elair.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elground": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elground.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elpark": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elpark.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elpot": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elpot.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "elterre": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elterre.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elwater": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elwater.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "elwind": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/elwind.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "etag": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/etag.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "etag2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/etag2.wav",
+    "channels": "4",
+    "sr": "48000"
+  },
+  "euarm": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/euarm.orc",
+    "global_var": [
+      "gkeuarm_onset",
+      "gkeuarm_pulse"
+    ]
+  },
+  "euarm2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/euarm2.orc",
+    "global_var": [
+      "gkeuarm2_onset",
+      "gkeuarm2_pulse"
+    ]
+  },
+  "fairest": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fairest.orc",
+    "global_var": [
+      "gkfairest_harm"
+    ]
+  },
+  "fairest2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fairest2.orc",
+    "global_var": [
+
+    ]
+  },
+  "fairest3": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fairest3.orc",
+    "global_var": [
+
+    ]
+  },
+  "fairest4": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fairest4.orc",
+    "global_var": [
+
+    ]
+  },
+  "falga": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/falga"
+  },
+  "fim": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fim.orc",
+    "global_var": [
+      "gkfim_detune",
+      "gkfim_var"
+    ]
+  },
+  "flij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/flij.orc",
+    "global_var": [
+      "giflij_indx"
+    ]
+  },
+  "flou": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/flou.orc",
+    "global_var": [
+      "gkflou_p"
+    ]
+  },
+  "fragment": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/fragment.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "fuji": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/fuji.orc",
+    "global_var": [
+      "gkfuji_form",
+      "gkfuji_oct"
+    ]
+  },
+  "gameld": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gameld"
+  },
+  "gamelf": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gamelf"
+  },
+  "gesto1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gesto1.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "gesto1var": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gesto1var.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "gesto2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gesto2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "gesto3": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gesto3.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "gesto4": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/gesto4.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "grind": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/grind.orc",
+    "global_var": [
+      "gkgrind_p"
+    ]
+  },
+  "grind2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/grind2.orc",
+    "global_var": [
+      "gkgrind2_p"
+    ]
+  },
+  "grind3": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/grind3.orc",
+    "global_var": [
+      "gkgrind3_p"
+    ]
+  },
+  "grr": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/grr"
+  },
+  "hh": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/hh.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "in1": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/in1.orc",
+    "global_var": [
+
+    ]
+  },
+  "in2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/in2.orc",
+    "global_var": [
+
+    ]
+  },
+  "inmic1": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/inmic1.orc",
+    "global_var": [
+
+    ]
+  },
+  "inmic2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/inmic2.orc",
+    "global_var": [
+
+    ]
+  },
+  "ipercluster": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/ipercluster.orc",
+    "global_var": [
+      "gkipercluster_linvar",
+      "gkipercluster_vibfreq"
+    ]
+  },
+  "iveheard": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/iveheard"
+  },
+  "ixland": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/ixland.orc",
+    "global_var": [
+
+    ]
+  },
+  "junis": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/junis.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "kali": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/kali"
+  },
+  "kick": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/kick.orc",
+    "global_var": [
+
+    ]
+  },
+  "leo": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/leo.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "lucas": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/lucas.orc",
+    "global_var": [
+
+    ]
+  },
+  "luv": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/luv.orc",
+    "global_var": [
+
+    ]
+  },
+  "madcow": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/madcow.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "maij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/maij.orc",
+    "global_var": [
+      "gimaij_indx"
+    ]
+  },
+  "maij2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/maij2.orc",
+    "global_var": [
+      "gimaij2_indx"
+    ]
+  },
+  "maison": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/maison.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "malon": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/malon"
+  },
+  "mario1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/mario1.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "mario2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/mario2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "meer": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/meer.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "meli": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/meli"
+  },
+  "meli2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/meli2.orc",
+    "global_var": [
+
+    ]
+  },
+  "metal": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/metal.orc",
+    "global_var": [
+      "gimetal_max",
+      "gimetal_metallic"
+    ]
+  },
+  "mhon": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/mhon.orc",
+    "global_var": [
+      "gkmhon_cps",
+      "gkmhon_start",
+      "gkmhon_port",
+      "gimhon_choose"
+    ]
+  },
+  "mhon2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/mhon2.orc",
+    "global_var": [
+      "gkmhon2_cps",
+      "gkmhon2_start",
+      "gkmhon2_ch",
+      "gimhon2_choose"
+    ]
+  },
+  "mhon2q": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/mhon2q.orc",
+    "global_var": [
+      "gkmhon2q_cps",
+      "gkmhon2q_start",
+      "gkmhon2q_ch",
+      "gimhon2q_choose"
+    ]
+  },
+  "mhonq": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/mhonq.orc",
+    "global_var": [
+      "gkmhonq_cps",
+      "gkmhonq_start",
+      "gkmhonq_port",
+      "gimhonq_choose"
+    ]
+  },
+  "mirrors": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/mirrors.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "nasa": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/nasa.wav",
+    "channels": "1",
+    "sr": "48000"
+  },
+  "ninfa": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/ninfa.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "noij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/noij.orc",
+    "global_var": [
+
+    ]
+  },
+  "noinput": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/noinput"
+  },
+  "noneknows": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/noneknows.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "noriff": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/noriff.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "november": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/november.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "ocean": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/ocean.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "ohoh": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/ohoh.orc",
+    "global_var": [
+
+    ]
+  },
+  "org": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/org.orc",
+    "global_var": [
+
+    ]
+  },
+  "orp": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/orp.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "orphans": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/orphans.orc",
+    "global_var": [
+
+    ]
+  },
+  "orphans2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/orphans2.orc",
+    "global_var": [
+      "gkorphans2_var"
+    ]
+  },
+  "orphans3": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/orphans3.orc",
+    "global_var": [
+      "gkorphans3_vib"
+    ]
+  },
+  "orphans4": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/orphans4.orc",
+    "global_var": [
+      "gkorphans4_vib"
+    ]
+  },
+  "pert": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/pert"
+  },
+  "pharm": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/pharm"
+  },
+  "pij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/pij.orc",
+    "global_var": [
+      "gipij_adsr",
+      "gipij_ptof",
+      "gipij_ftrev"
+    ]
+  },
+  "pijnor": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/pijnor.orc",
+    "global_var": [
+      "gipijnor_adsr",
+      "gipijnor_ptof",
+      "gipijnor_ftrev"
+    ]
+  },
+  "planche": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/planche.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "puck": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/puck.orc",
+    "global_var": [
+
+    ]
+  },
+  "pucky": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/pucky.orc",
+    "global_var": [
+
+    ]
+  },
+  "pur": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/pur.orc",
+    "global_var": [
+
+    ]
+  },
+  "qb": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/qb.orc",
+    "global_var": [
+      "gkqb_freq",
+      "gkqb_q"
+    ]
+  },
+  "quad": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/quad.orc",
+    "global_var": [
+      "giquad_index"
+    ]
+  },
+  "quar": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/quar"
+  },
+  "quar2": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/quar2"
+  },
+  "reg": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/reg.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "repuck": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/repuck.orc",
+    "global_var": [
+
+    ]
+  },
+  "search": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/search.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "shaku": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/shaku.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "shinji": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/shinji.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "shinobi": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/shinobi.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "simki": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/simki.orc",
+    "global_var": [
+      "gisimki_del"
+    ]
+  },
+  "sin": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/sin"
+  },
+  "sinimp": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/sinimp"
+  },
+  "six": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/six.wav",
+    "channels": "4",
+    "sr": "48000"
+  },
+  "six2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/six2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "sixcorrect": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/sixcorrect.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "sixspectrumsynth": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/sixspectrumsynth.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "skij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/skij.orc",
+    "global_var": [
+
+    ]
+  },
+  "sophie1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/sophie1.wav",
+    "channels": "2",
+    "sr": "44100"
+  },
+  "space": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/space"
+  },
+  "sufij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/sufij.orc",
+    "global_var": [
+      "gksufij_p"
+    ]
+  },
+  "sufij2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/sufij2.orc",
+    "global_var": [
+      "gksufij2_p"
+    ]
+  },
+  "sunij": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/sunij.orc",
+    "global_var": [
+
+    ]
+  },
+  "syeq": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/syeq.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "tape": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/tape"
+  },
+  "tapein": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/tapein"
+  },
+  "tension": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/tension.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "theorbo": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/theorbo"
+  },
+  "toomuchalone": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/toomuchalone.orc",
+    "global_var": [
+      "gktoomuchalone_dur",
+      "gktoomuchalone_env",
+      "gktoomuchalone_amp",
+      "gktoomuchalone_cps",
+      "gitoomuchalone_morf",
+      "gitoomuchalone_dummy"
+    ]
+  },
+  "toy": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/toy"
+  },
+  "trans": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/trans.orc",
+    "global_var": [
+
+    ]
+  },
+  "tricot": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/tricot.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "uni": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/uni.orc",
+    "global_var": [
+
+    ]
+  },
+  "valle": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/valle.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "var14r": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/var14r"
+  },
+  "varvln": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/varvln"
+  },
+  "ventre": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/ventre.orc",
+    "global_var": [
+      "gkventre_env",
+      "gkventre_cps",
+      "gkventre_lad",
+      "gkventre_dur",
+      "gkventre_harm",
+      "giventre_count"
+    ]
+  },
+  "vipere": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/vipere"
+  },
+  "virgule": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/virgule.wav",
+    "channels": "2",
+    "sr": "192000"
+  },
+  "vla": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/vla"
+  },
+  "vlj": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/vlj"
+  },
+  "vlnatk": {
+    "type": "dir",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/vlnatk"
+  },
+  "wendi": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/wendi.orc",
+    "global_var": [
+
+    ]
+  },
+  "wendj": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/wendj.orc",
+    "global_var": [
+
+    ]
+  },
+  "wendy": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/wendy.orc",
+    "global_var": [
+
+    ]
+  },
+  "witches": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/witches.orc",
+    "global_var": [
+      "gkwitches_mod",
+      "gkwitches_ndx",
+      "gkwitches_detune"
+    ]
+  },
+  "witches11": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/witches11.orc",
+    "global_var": [
+      "gkwitches11_mod",
+      "gkwitches11_ndx",
+      "gkwitches11_detune"
+    ]
+  },
+  "witches2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/witches2.orc",
+    "global_var": [
+      "gkwitches2_mod",
+      "gkwitches2_ndx",
+      "gkwitches2_detune"
+    ]
+  },
+  "wutang": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/wutang.orc",
+    "global_var": [
+      "gkwutang_vib"
+    ]
+  },
+  "xylo": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/instr/xylo.orc",
+    "global_var": [
+      "gixylo_vibes",
+      "gixylo_ft",
+      "gixylo_morf",
+      "gixylo_dummy"
+    ]
+  },
+  "zzz1": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz1.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "zzz2": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz2.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "zzz3": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz3.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "zzz4": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz4.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "zzz5": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz5.wav",
+    "channels": "2",
+    "sr": "48000"
+  },
+  "zzz6": {
+    "type": "sonvs",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIAv4/_INSTR/sonvs/zzz6.wav",
+    "channels": "2",
+    "sr": "48000"
+  }
+}

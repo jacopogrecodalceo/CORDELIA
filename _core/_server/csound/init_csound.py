@@ -29,7 +29,7 @@ def query_devices(converter):
 
 	#ADC
 	#iterate through the list text
-	with open(f'{CORDELIA_DIR}/_list/_{converter}') as f:
+	with open(f'{CORDELIA_DIR}/_setting/_{converter}') as f:
 		for line in f:
 			line = line.strip()
 			#remove comments and blank

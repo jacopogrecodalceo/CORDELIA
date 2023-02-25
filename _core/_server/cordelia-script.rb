@@ -1,7 +1,13 @@
 require 'json'
 require 'Pathname'
 
-cordelia_path = File.expand_path('../..', Dir.pwd)
+cordelia_directory_path = File.expand_path('../..', Dir.pwd)
+
+cordelia_setting_path = cordelia_directory_path + '/_setting'
+
+cordelia_gen_path = cordelia_directory_path + '/_ENV'
+cordelia_instrument_path = cordelia_directory_path + '/_INSTR'
+cordelia_scala_path = cordelia_directory_path + '/_SCALA'
 
 #include
 include_dir = [
@@ -9,9 +15,9 @@ include_dir = [
 	'head',
 	'body'
 ]
-include_path = cordelia_path + '/_core/include.orc'
+include_path = cordelia_directory_path + '/_core/include.orc'
 include_file = File.open(include_path, 'w')
-Dir[cordelia_path + '/**/*.orc'].each do |f|
+Dir[cordelia_directory_path + '/**/*.orc'].each do |f|
 	include_dir.each do |i|
 		#p Pathname.new(f).each_filename.to_a
 		if Pathname.new(f).each_filename.to_a.find{ |e| /#{i}/ =~ e }
@@ -24,23 +30,38 @@ include_file.close()
 
 
 #INSTR
-cordelia_json_instr_path = cordelia_path + '/_list/instr.json'
 instruments = {}
-Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
-	if Pathname.new(f).each_filename.to_a.include?('INSTR')
-		name = File.basename(f, '.*')
-		instruments[name] = {
-			'type' => File.basename(File.dirname(f)),
+Dir[cordelia_instrument_path].each do |f|
+	name = File.basename(f, '.*')
+	p name
+	instruments[name] = {
+		'type' => File.basename(File.dirname(f)),
+		'path' => f,
+		'global_var' => File.read(f).scan(/gk#{name}_[a-z]+/).uniq + File.read(f).scan(/gi#{name}_[a-z]+/).uniq
+	}
+
+=begin
+	if File.file?(f)
+		sonvs[name] = {
+			'type' =>  'file',
 			'path' => f,
-			'global_var' => File.read(f).scan(/gk#{name}_[a-z]+/).uniq + File.read(f).scan(/gi#{name}_[a-z]+/).uniq
+			'channels' => `soxi -c #{f}`.strip,
+			'sr' => `soxi -r #{f}`.strip
+		}
+	else
+		sonvs[name] = {
+			'type' =>  'dir',
+			'path' => f
 		}
 	end
+=end
+
 end
-File.open(cordelia_json_instr_path, 'w') { |f| f.puts JSON.pretty_generate(instruments) }
+File.open(cordelia_setting_path + '/instr.json', 'w') { |f| f.puts JSON.pretty_generate(instruments) }
 
 
 #SCALA
-cordelia_json_scala_path = cordelia_path + '/_list/scala.json'
+cordelia_json_scala_path = cordelia_directory_path + '/_setting/scala.json'
 scala = {}
 replacements = {
     ' ' => '_',
@@ -52,7 +73,7 @@ replacements = {
     '[' => '_',
     ']' => '_'
 }
-Dir[cordelia_path + '/_core/4-clothes/SCALA/_current/**/*.scl'].each do |f|
+Dir[cordelia_directory_path + '/_SCALA/_current/**/*.scl'].each do |f|
 	name = File.basename(f, '.*')
 
 	if not name.start_with?('_')
@@ -117,60 +138,13 @@ Dir[cordelia_path + '/_core/4-clothes/SCALA/_current/**/*.scl'].each do |f|
 		end
 	end
 end
-File.open(cordelia_json_scala_path, 'w') { |f| f.puts JSON.pretty_generate(scala) }
+File.open(cordelia_setting_path + '/scala.json', 'w') { |f| f.puts JSON.pretty_generate(scala) }
 
 
 #GEN
-cordelia_json_gen_path = cordelia_path + '/_list/gen.json'
 gen = {}
-Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
-	if Pathname.new(f).each_filename.to_a.include?('ENV')
-		name = File.basename(f, '.*')
-		gen[name] = f
-	end
+Dir[cordelia_gen_path].each do |f|
+	name = File.basename(f, '.*')
+	gen[name] = f
 end
-File.open(cordelia_json_gen_path, 'w') { |f| f.puts JSON.pretty_generate(gen) }
-
-
-=begin
-#MACROs
-cordelia_json_instr_path = cordelia_path + '/_list/macro.json'
-macros = []
-Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
-	begin
-		macros += File.read(f).scan(/\$(\w+)/)
-	rescue
-		p "Error #{f}"
-	end
-end
-macros = macros.uniq
-File.open(cordelia_json_instr_path, 'w') { |f| f.puts JSON.pretty_generate(macros.flatten) }
-
-
-#gi
-cordelia_json_gi_path = cordelia_path + '/_list/gi.json'
-gi = []
-Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
-	begin
-		gi += File.read(f).scan(/\Wgi(\w+)\W/)
-	rescue
-		p "Error #{f}"
-	end
-end
-gi = gi.uniq
-File.open(cordelia_json_gi_path, 'w') { |f| f.puts JSON.pretty_generate(gi.flatten) }
-
-
-#gk
-cordelia_json_gk_path = cordelia_path + '/_list/gk.json'
-gk = []
-Dir[cordelia_path + '/_core/**/*.orc'].each do |f|
-	begin
-		gk += File.read(f).scan(/\Wgk(\w+)\W/)
-	rescue
-		p "Error #{f}"
-	end
-end
-gk = gk.uniq
-File.open(cordelia_json_gk_path, 'w') { |f| f.puts JSON.pretty_generate(gk.flatten) }
-=end
+File.open(cordelia_setting_path + '/gen.json', 'w') { |f| f.puts JSON.pretty_generate(gen) }
