@@ -1,0 +1,18 @@
+@gkpulse = 120
+
+eujo: 8, 8, 16
+	@kick
+	gkbeats
+	accent(3, $f)
+	giclassic
+	step("2B", giminor, pump(32, fillarray(1, 2, 7, 1, 9, 2)))
+
+eujo: 8, 8, 16
+	t8@between
+	gkbeats*2
+	accent(3, $p)
+	giclassic
+	step("3B", giminor, pump(32, fillarray(1, 2, 7, 1, 9, 2))*$once(.25, .5, 1))
+
+
+

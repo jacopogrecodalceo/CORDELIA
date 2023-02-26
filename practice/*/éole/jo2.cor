@@ -1,0 +1,7 @@
+
+gkpulse = 120
+
+gkpjacopo = tablei:k(oscil3:k(1, gkbeatf/4, giatri), gieau, 1)
+
+
+

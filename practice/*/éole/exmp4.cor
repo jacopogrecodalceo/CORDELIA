@@ -1,0 +1,14 @@
+
+
+jex: "1501", 8
+	+kv = .25 + abs:k(lfo:k(2, gkbeatf/64))
+	+kp pump 3, fillarray(69, 68, 66)
+	@irina_brochin
+	gkbeats*kv
+	accent(3, $fff)*9
+	gilikearev$atk(5)
+	cpstun($once(1, 2), 69+$once(0, 1), gi11_10ET)
+	cpstun($once(1, 2), kp+$once(0, 1, 2), gi11_10ET)
+
+flingj("soundfont", gkbeatms/8)
+

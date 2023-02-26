@@ -1,0 +1,20 @@
+
+gkpulse almost 75
+
+
+gktuning pump 8, fillarray(giedo12, giedo13, giedo23)
+
+eujo: 9, 16, 16
+	@wendi
+	gkbeats*int(random:k(0, 2))
+	accent(5, $f)
+	giclassic$atk(5)
+	stept("0G", gidorian, $once(1, 4, 3, random:k(1, 12)))
+
+eujo: pump(16, fillarray(11, 14, 8, 12)), 16, 16
+	@bass.folj("wendi", 35)
+	gkbeats
+	accent(5, $ff)
+	gilikearev$atk(5)
+	stept("1G", gidorian, $once(1, 4, 11))*$once(1, 1, 1, 3)
+

@@ -1,0 +1,20 @@
+@gkpulse = 40
+
+eujo: 3, 8, 8
+	@alghed.stringj(ntof("4B"), .85, .15)
+	gkbeats
+	accent(5, $mp)
+	gigrembo
+	fc("0B", gired, "5E", 1)
+	fc("1B", gigrembo, "4E", 1)
+
+eujo: 3, 8, 8
+	@maij.stringj(ntof("3B"), .85, .15)
+	gkbeats*5
+	accent(5, $mp)
+	gigrembo
+	fc("3B", gired, "5E", 1)
+	fc("4B", gigrembo, "4E", 1)
+
+
+

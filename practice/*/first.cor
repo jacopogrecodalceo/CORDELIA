@@ -1,0 +1,25 @@
+gkpulse = 95
+
+gkflou_p1 = 1 + lfh(1)
+
+
+jex: "10", 2
+	+Snote = "3F"
+	@flou
+	gkbeats*32
+	$f
+	gikazan
+	cpstun(random:k(1, 2), ntom(Snote)+5, givitry)
+	cpstun(random:k(1, 2), ntom(Snote), givitry)
+
+jex: "10", 2
+	+Snote = "4G"
+	@orphans4
+	gkbeats*32
+	$pp
+	gikazan
+	cpstun(random:k(1, 2), ntom(Snote)+2, givitry)
+	cpstun(random:k(1, 2), ntom(Snote), givitry)
+
+
+

@@ -1,0 +1,28 @@
+@gkpulse = 125;-go(0, 60, 100)
+
+jex: "55100000", 4
+	r4@careless
+	gkbeats*$once(8, 9, 6, 3)
+	accent(3, $f)
+	gieclassic$atk(5)
+	step("5B", gidorian, pump(2, fillarray(0, 1, -2, 5))+pump(32, fillarray(0, 0, 0, 0, 9)))
+	step("4B", gidorian, 2+pump(4, fillarray(0, 1, -2, 5))+pump(32, fillarray(0, 0, 0, 0, 9)))
+	step("3B", gidorian, pump(32, fillarray(1, 2, 3, 8, 0)))*$once(.25, .5, 1, 1)
+
+jex: "55100000", 4
+	-r4@ixland
+	gkbeats*$once(8, 9, 6, 4)
+	accent(3, $f)
+	gieclassic$atk(5)
+	step("5B", gidorian, pump(2, fillarray(0, 1, -2, 5))+pump(32, fillarray(0, 0, 0, 0, 9)))
+	step("4B", gidorian, 2+pump(4, fillarray(0, 1, -2, 5))+pump(32, fillarray(0, 0, 0, 0, 9)))
+	step("3B", gidorian, pump(32, fillarray(1, 2, 3, 8, 0)))*$once(.25, .5, 1, 1)
+
+jex: "1a80", 2
+	@kick@bass
+	gkbeats
+	accent(3, $ff)
+	gieclassic$atk(5)
+	step("1B", gidorian, pump(16, fillarray(1, 2, 3, 12)))
+
+

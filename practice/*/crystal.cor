@@ -1,0 +1,32 @@
+
+
+gkpulse = 75;-go(0, 60, 100)
+
+gktuning pump 4, fillarray(gi12_22h, gipyth12, gi11_10ET)
+
+eu: 6, 8, 14, "heart", 1
+	@corpia.moogj(portk(stept("4B", gilocrian, pump(32, fillarray(2, 3, 4, 1))), .05), .5, 3)
+	gkbeats*$once(8, .25, 1, 0, 4)
+	accent(3, $pp)
+	gieclassic$atk(5)
+	stept("2B", gilocrian, 3+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))
+	stept("2B", gilocrian, 2+pump(22, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("2B", gilocrian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+
+eu: 3, 8, 25, "heart", 1
+	@bebois
+	gkbeats*$once(8, 4)
+	accent(3, $mf)
+	gieclassic$atk(5)
+	stept("5B", gilocrian, 3+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))
+	stept("5B", gilocrian, 2+pump(22, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))
+	stept("5B", gilocrian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))
+
+eu: 6, 8, 3, "heart"
+	@orphans3
+	gkbeats*$once(8, .25, 1)
+	accent(3, $fff)
+	gieclassic$atk(5)
+	stept("4B", gilocrian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+

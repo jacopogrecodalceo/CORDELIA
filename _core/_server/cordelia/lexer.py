@@ -32,7 +32,7 @@ def lexer(unit) -> list():
 				return pre_instrument
 
 			elif re.search(r'^@', unit_lines[0])[0]:
-				pre_instrument = sonvs(unit_lines[0])
+				pre_instrument = cordelia.opcodes.sonvs(unit_lines[0])
 				return pre_instrument
 			else:
 				print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: your code has an unknown opcode {unit_lines}{bcolors.ENDC}')

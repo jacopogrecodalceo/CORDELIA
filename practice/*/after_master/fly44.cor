@@ -1,0 +1,24 @@
+
+gkpulse = 125
+
+gktuning pump 8, fillarray(giedo12, gi1110r2_12, giweingarten, giarch_ptol2)
+
+eu: 11, 12, 16, "heart"
+	+kdyn = abs(lfo($f, 1/pump(4, fillarray(4, 2))))
+	+kch = pump(1, fillarray(0, -2, 0, 5))
+	@corpia.flingj(gkbeatms, .75*lfh(1, giasquare))
+	gkbeats*$once(5, 1, 3, 1, 1)/4
+	accent(5, $f)
+	gieclassic$atk(5)
+	stept("4D", gimajor, pump(8, fillarray(1, 3, 2, 3)))/$once(4, 2, 1)
+	stept("4D", gimajor, pump(2, fillarray(3, 2, 5, 4, 3, 2, 5, 7)) + kch)
+
+eu: 4, 16, 16, "heart"
+	+kdyn = abs(lfo($f, 1/pump(4, fillarray(4, 2))))
+	+kch = pump(1, fillarray(0, -2, 0, 5))
+	@cascadexp@alone
+	gkbeats*$once(5, 1, 3, 1, 1)
+	accent(5, $p)
+	gispina
+	stept("4D", gimajor, pump(8, fillarray(1, 3, 2, 3)))/$once(4, 2, 1)
+	stept("4D", gimajor, pump(2, fillarray(3, 2, 5, 4, 3, 2, 5, 7)) + kch)

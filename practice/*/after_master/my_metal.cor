@@ -1,0 +1,17 @@
+
+eujo: 3, 8, 16
+    @wutang.flingj3(gkbeatms/9, lfh(32))
+    gkbeats*$once(1, 8, 2, 2)
+    $mp
+    giclassic
+    step("1B", giminor, pump(8, fillarray(1, 3, 2, 5)))*$once(.25, .5, 1)
+
+hex: "3391", 8
+    @pur.flingj(gkbeatms/64, lfh(32))
+    gkbeats*$once(1, 8, 2, 2)
+    $f
+    giclassic$atk(5)
+    step("4B", giminor, pump(8, fillarray(1, 3, 2, 5)))
+
+
+

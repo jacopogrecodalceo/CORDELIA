@@ -6,7 +6,7 @@ gktuning pump 16, fill(scala.edo12, scala.edo7)
 
 gkmhon_port = 1+lfh(1)
 
-eujo: 5, 8, 32
+eu: 5, 8, 2
 	-k1 tablei (chnget:k("heart")*24)%1, classicr, 1
 	@mhon@alone.flingj(bms*lfh(24, classicr), .15)
 	k1*2

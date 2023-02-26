@@ -1,0 +1,21 @@
+
+
+gkpulse almost 75
+
+gktuning pump 8, fillarray(giedo12, giedo13, giedo23)
+
+eujo: 9, 16, 4
+	@burd
+	gkbeats*int(random:k(3, 6.5))*2
+	accent(5, $mf)
+	gispina
+	stept("1G", gidorian, $once(1, 4, 3, random:k(1, 12)))*$once(1, 1, 1, 3)
+	stept("2E", gidorian, $once(1, 4, 3, random:k(1, 12)))*$once(1, 1, 1, 3)
+
+eujo: pump(16, fillarray(11, 14, 8, 12)), 16, 8
+	@orp.flingj(gkbeatms)
+	gkbeats/8
+	1
+	gilikearev$atk(5)
+	stept("2G", gidorian, $once(1, 4, 11))*$once(1, 1, 1, 3)
+

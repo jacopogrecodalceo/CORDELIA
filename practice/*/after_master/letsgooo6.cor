@@ -1,0 +1,25 @@
+@gkpulse = 125;-go(0, 60, 100)
+
+eu: 6, 8, 12, "heart"
+	r5@simki
+	gkbeats*$once(8, .25, 1)
+	accent(3, $fff)
+	gieclassic$atk(5)
+	step("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	step("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 16, "heart"
+	@bass
+	gkbeats/$once(8, .25, 1)
+	accent(3, $f)
+	gieclassic$atk(5)
+	step("2B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	step("2B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 16, "heart"
+	@ocean
+	gkbeats/$once(8, .25, 1)
+	accent(3, $fff)
+	gieclassic$atk(5)
+	step("2B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	step("2B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)

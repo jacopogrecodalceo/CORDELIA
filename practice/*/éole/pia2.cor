@@ -1,0 +1,29 @@
+
+gkpulse = 75;-go(0, 60, 100)
+
+gktuning = gi12_22h
+
+eu: 6, 8, 12, "heart"
+	@timp.moogj(portk(stept("3B", gilocrian, pump(32, fillarray(2, 3, 4, 1))), .05), .5, 3)
+	gkbeats*$once(8, .25, 1)
+	accent(3, $ff)
+	gieclassic$atk(5)
+	stept("3B", gilocrian, 3+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gilocrian, 2+pump(22, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gilocrian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 12, "heart", 1
+	@sfpiano.moogj(portk(stept("4B", gilocrian, pump(32, fillarray(2, 3, 4, 1))), .05), .5, 3)
+	gkbeats*$once(8, .25, 1)
+	accent(3, $mf)
+	gieclassic$atk(5)
+	stept("3B", gilocrian, 3+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gilocrian, 2+pump(22, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gilocrian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 3, "heart"
+	@orphans3
+	gkbeats*$once(8, .25, 1)
+	accent(3, $fff)
+	gieclassic$atk(5)
+	stept("4B", gilocrian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)

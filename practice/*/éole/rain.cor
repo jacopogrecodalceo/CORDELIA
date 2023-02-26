@@ -1,0 +1,17 @@
+
+gkpulse almost 125;-go(0, 60, 100)
+
+ciel(pump(32, fillarray(8, 4, 12)), $fff)
+
+ringj3("ciel", 1+gkp1*10, .65, giatri, gkp2)
+
+flingj3("ciel", gkp1*gkbeatms*2, .75, gkp2)
+
+gkwitches_ndx = 15
+
+eu: 6, 8, 4, "heart"
+	@witches
+	gkbeats*8
+	accent(3, $fff)
+	giclassic$atk(5)
+	stept("1B", gidorian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))

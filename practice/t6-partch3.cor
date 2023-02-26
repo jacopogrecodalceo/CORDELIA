@@ -5,14 +5,14 @@ gktuning = scala.partch_greek
 
 gkmhon_port = 1+lfh(1)
 
-eujo: 8, 8, 32
+eu: 8, 8, 32
 	@mhon
 	en
 	accent(4, fff)
 	tig
 	c1-12.15: classicr
 
-eujo: 9, 16, 32
+eu: 9, 16, 32
 	-k1 lfh 1
 	@mhon
 	sn*(1+k1*bs)*once(0, 0, 0, 0, 0, 12)

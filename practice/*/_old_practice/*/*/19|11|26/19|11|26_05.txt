@@ -1,0 +1,72 @@
+set_tempo(95)
+
+instr StJacques
+  seed 0
+
+  alfo = 1 + oscili(random(.0025, .015), random(.25, 3.5))
+    
+  asig =  oscili(p5, p4 * alfo, giTri)
+  asig += oscili(p5, p4 * 3 * alfo, giSine)
+  asig += oscili(p5/24, p4 * 9 * alfo, giTri)
+  asig += oscili(p5/32, p4 * 11 * alfo, giTri)
+
+  asig *= mxadsr(.0135, .025, .35, p6)
+  
+  apan = .5 + oscili(.5, random(.125, 1.5))
+  a1, a2 pan2 asig, apan
+  
+  out(a1, a2)
+endin
+
+instr P1
+  if (phsm(1) == 0) then
+    go_tempo(75, 1)
+  endif
+  
+  if (phsm(2) == 0) then
+    set_scale("min")
+    set_root(59)
+  elseif (phsm(2) == .25) then
+    set_scale("maj")
+    set_root(62) 
+  endif  
+  
+  hexplay("abd",
+      "StJacques", p3,
+      in_scale(-1, (p4 % 8 == 0 ? 0 : (p4 % 7 * 3))),
+      fade_in(1, 64) * ampdbfs(-32),
+      random(.05, .5))
+  
+  if (phs(4) == .5) then
+    hexplay("abdabe",
+      "StJacques", p3,
+      in_scale(0, (p4 % 4 == 0 ? 0 : int(random(-24, 12)))),
+      fade_out(2, 24) * ampdbfs(-24),
+      random(2.5, 9.5))
+  endif
+  
+  hexplay("a97b",
+      "StJacques", p3,
+      in_scale(-2, (p4 % 3 * 2)),
+      fade_out(3, 32) * ampdbfs(-12),
+      random(.25, .5))
+
+  hexplay("f",
+      "Plk", p3,
+      in_scale(1, xoscim(8, array(4, 4, 3, 2)) + p4 % 4 * 2),
+      fade_out(4, 24) * ampdbfs(-12))
+
+  hexplay("28af",
+      "BD", .05,
+      in_scale(0, 0),
+      fade_out(6, 128) * ampdbfs(-24))
+  hexplay("aed23",
+      "CHH", p3/12,
+      in_scale(2, 0),
+      fade_out(7, 128) * ampdbfs(-12))
+  hexplay("13",
+      "OHH", p3/8,
+      in_scale(3, 0),
+      fade_out(8, 128) * ampdbfs(-32))
+
+endin

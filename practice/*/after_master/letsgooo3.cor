@@ -1,0 +1,17 @@
+@gkpulse = 125
+
+eu: 3, 8, 4, "heart"
+	@orphans3
+	gkbeats*24
+	accent(3, $fff)
+	giclassic$atk(5)
+	step("4B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, .5, 1)*3
+	step("4B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, .5, 1)*3/2
+	step("4B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, .5, 1)
+
+eu: 3, 8, 8, "heart"
+	@wutang
+	gkbeats*8
+	accent(3, $f)
+	gidiocle
+	step("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)

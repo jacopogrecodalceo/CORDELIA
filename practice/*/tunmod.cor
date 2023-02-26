@@ -1,0 +1,19 @@
+
+gkpulse = 155
+
+gktuning = giedo19
+
+eu: 6, 14, 16, "heart"
+	@bebois
+	gkbeats
+	accent(5, $ff)
+	gieclassic$atk(5)
+	cpstun($once(1, 2), ntom("4A") + pump(8, fillarray(3, 0)), giedo19)
+
+eu: 6, 16, 16, "heart"
+	@bebois
+	gkbeats
+	accent(5, $ff)
+	gieclassic$atk(5)
+	cpstun($once(1, 2), ntom("4A") + pump(4, fillarray(0, 3)), giedo12)
+

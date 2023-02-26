@@ -1,0 +1,11 @@
+@gkpulse almost 95
+
+eujo: 16, 16, 16
+	@ixland
+	gkbeats
+	accent(3, $fff)
+	gilikearev$atk(5)
+	cedonoi(gicsc1, once(genarray_i(15, 15+7)))
+
+
+

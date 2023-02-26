@@ -1,0 +1,34 @@
+
+@gkpulse almost randomh:k(5, 120, gkbeatf)
+
+@giftnow = gidiocle
+
+@gkbeatsnow = 
+
+eujo: 6, 8, 16
+	@orphans3@gesto1
+	gkbeatsnow
+	accent(5, $ff)
+	giftnow
+	cedonoi(gigrembo, 53+pump(32, fillarray(0, 3, 9, 2)))
+	cedonoi(gigrembo, 50+pump(4, fillarray(0, 3, 9, 2)))
+
+
+eujo: 6, 8, 32
+	+kpl pump 4, fillarray(40, 41, 42, 43)
+	r4@aaron@gesto3
+	gkbeatsnow
+	accent(3, $mp)
+	giftnow
+	cedonoi(gigrembo, kpl+pump(64, fillarray(0, 3, 9, 2)))
+
+eujo: 6, 8, 32
+	+kpl pump 4, fillarray(40, 41, 42, 43)
+	-r8@mhon2q@gesto4
+	gkbeatsnow
+	accent(3, $p)*int(random:k(0, 2))
+	giftnow
+	cedonoi(gigrembo, kpl+pump(64, fillarray(0, 3, 9, 2)))
+
+
+

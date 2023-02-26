@@ -1,0 +1,23 @@
+gkpulse = 110
+
+eujo: 5, 8, 16
+	@bd808
+	gkbeats
+	accent(5, $f)
+	giclassic$atk(95)
+	95
+
+eujo: 4, 8, 12, lfh(1)*.05
+	@bd808
+	gkbeats*2
+	accent(5, $f)
+	giclassic$atk(95)
+	95*$once(2, 3, 4)
+
+eujo: 4, 8, 2
+	@between
+	gkbeats*16
+	accent(5, $f)
+	gispina
+	3*95*$once(2, 3, 4)
+	4*95*$once(2, 3, 4)

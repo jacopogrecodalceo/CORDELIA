@@ -1,0 +1,20 @@
+
+gkpulse = 125;-go(0, 60, 100)
+
+gktuning = gi12_22h
+
+eu: 6, 8, 12, "heart"
+	r5@sfpiano.flingj3(samphold:k(cosseg(gibeatms/4, 85, gibeatms), metro:k(.5))).moogj(500, .85)
+	gkbeats*$once(8, .25, 1)
+	accent(3, $f)
+	gieclassic$atk(5)
+	stept("3B", gidorian, 3+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gidorian, 2+pump(22, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 3, "heart"
+	@orphans3
+	gkbeats*$once(8, .25, 1)
+	accent(3, $fff)
+	gieclassic$atk(5)
+	stept("4B", gidorian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)

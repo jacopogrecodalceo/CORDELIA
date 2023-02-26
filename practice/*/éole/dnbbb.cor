@@ -1,0 +1,13 @@
+
+gkpulse = 155
+
+gktuning pump 2, fillarray(giedo14, giedo29)
+
+eujo: 8, 8, 32
+	@noij.revj(gkbeatms/4)
+	gkbeats/6
+	accent(12, $fff)
+	gikazan$atk(5)
+	step("4E", gidorian, pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))))*$once(.25, .5, 1)
+
+

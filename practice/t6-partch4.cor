@@ -7,14 +7,14 @@ gktuning = scala.partch_greek
 
 gkmhon_port = 1+lfh(1)*2
 
-eujo: 8, 16, 16
+eu: 8, 16, 16
 	@mhon
 	wn
 	accent(4, mf)
 	tig
 	c2-16.9: kazan
 
-eujo: 8, 16, 8
+eu: 8, 16, 8
 	-k1 lfh 1
 	@bass
 	qn
@@ -22,7 +22,7 @@ eujo: 8, 16, 8
 	tig
 	c1-16.5: kazan
 
-eujo: 5, 8, 4
+eu: 5, 8, 4
 	-k1 lfh 1
 	@wutang
 	wn*4
