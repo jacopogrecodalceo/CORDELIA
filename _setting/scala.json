@@ -449,6 +449,41 @@
     "degrees": "6",
     "ftgen": "gihexany_13913 ftgen 0, 0, 0, -2, 6, 2/1, A4, 69, 1, 13/12, 9/8, 39/32, 3/2, 13/8, 2/1"
   },
+  "euler": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler.scl",
+    "degrees": "12",
+    "ftgen": "gieuler ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 25/24, 9/8, 75/64, 5/4, 4/3, 45/32, 3/2, 25/16, 5/3, 225/128, 15/8, 2/1"
+  },
+  "euler20": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler20.scl",
+    "degrees": "20",
+    "ftgen": "gieuler20 ftgen 0, 0, 0, -2, 20, 2/1, A4, 69, 1, 1.049520672160747, 1.0918562157838303, 1.122256563092205, 1.1675261256109362, 1.2253428041164223, 1.2484402563990697, 1.2594598006784532, 1.310263857048487, 1.4010702713723713, 1.4575866156103297, 1.4981699256707863, 1.5586030737977752, 1.5723603164833295, 1.6357861456440472, 1.6813310317114007, 1.7491525288252374, 1.8703756461338121, 1.9458228210764728, 1.9629979166621703, 2/1"
+  },
+  "euler24": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler24.scl",
+    "degrees": "24",
+    "ftgen": "gieuler24 ftgen 0, 0, 0, -2, 24, 2/1, A4, 69, 1, 1.049520672160747, 1.0918562157838303, 1.122256563092205, 1.1675261256109362, 1.177831469236762, 1.2253428041164223, 1.2484402563990697, 1.2594598006784532, 1.310263857048487, 1.4010702713723713, 1.4575866156103297, 1.4704522214488362, 1.4981699256707863, 1.5586030737977752, 1.5723603164833295, 1.6357861456440472, 1.6813310317114007, 1.7491525288252374, 1.8357717377643334, 1.8703756461338121, 1.8868847959677817, 1.9458228210764728, 1.9629979166621703, 2/1"
+  },
+  "euler_diat": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler_diat.scl",
+    "degrees": "8",
+    "ftgen": "gieuler_diat ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 9/8, 5/4, 4/3, 45/32, 3/2, 5/3, 15/8, 2/1"
+  },
+  "euler_enh": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler_enh.scl",
+    "degrees": "7",
+    "ftgen": "gieuler_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 128/125, 256/243, 4/3, 3/2, 192/125, 128/81, 2/1"
+  },
+  "euler_gm": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/euler_gm.scl",
+    "degrees": "8",
+    "ftgen": "gieuler_gm ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 28/27, 16/15, 448/405, 4/3, 112/81, 64/45, 1792/1215, 2/1"
+  },
+  "salinas_enh": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/euler/salinas_enh.scl",
+    "degrees": "7",
+    "ftgen": "gisalinas_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 25/24, 16/15, 4/3, 3/2, 25/16, 8/5, 2/1"
+  },
   "sept_min_penta": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/jacques/sept_min_penta.scl",
     "degrees": "5",

@@ -72,7 +72,7 @@ def main():
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 
-RECORD = True
+RECORD = False
 
 if __name__ == '__main__':
 
