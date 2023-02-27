@@ -12,7 +12,7 @@ def open_ports():
 UDP_size = 4096
 empty = []
 
-def receive_messages():
+def receive_messages() -> tuple():
 	readable, writable, exceptional = select.select(CORDELIA_SOCKETs, empty, empty)
 	for s in readable:
 
@@ -26,4 +26,4 @@ def receive_messages():
 		#print(f"\n---I come from {direction}\n")
 		# get UDP message
 
-		return [direction, message.decode()]
+		return (direction, message.decode())

@@ -3,7 +3,7 @@ konset, kpulses, kdiv, krot xin
 
 krot		= krot % kpulses
 
-kcycle		= chnget:k("heart") * (gkdiv/kdiv)
+kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
 
 kph			= int((kcycle % 1) * kpulses) + krot
 keu_val		= int((konset / kpulses) * kph)

@@ -12,11 +12,13 @@ imode		init p8
 is_opcode	init 1
 is_midi		init 2
 
+iamp_balance init 3
+
 if imode == is_opcode then
 
 	Sinstr		init "---NAME---"
 	idur		init p3
-	iamp		init p4
+	iamp		init p4*iamp_balance
 	idiv		init p5%i(gksamp_mod)
 	ix			init p6
 	ich			init p7
@@ -41,7 +43,7 @@ elseif imode == is_midi then
 
 	Sinstr		init "---NAME---"
 	idur		init p3
-	iamp		init p4
+	iamp		init p4*iamp_balance
 	iftenv		init p5
 	idiv		init p6%i(gksamp_mod)
 	ich			init p7
@@ -68,7 +70,7 @@ else
 
 	Sinstr		init "---NAME---"
 	idur		init p3
-	iamp		init p4
+	iamp		init p4*iamp_balance
 	iftenv		init p5
 	idiv		init p6%i(gksamp_mod)
 	ich			init p7

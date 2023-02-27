@@ -1,25 +1,20 @@
-	opcode	pump, k, kk[]
+	opcode	pump, k, kk[] ; in heart output kvals[] every kdiv
 	kdiv, kvals[] xin
 
+kdiv		init i(kdiv)
+klen		lenarray kvals
 ktrig		init 1
-ilen		lenarray kvals
-
-kph			init int((chnget:i("heart") * i(kdiv) % 1) * ilen)
-
+kph			init -1
 ktrig		changed2 kph
 
 if ktrig == 1 then
 	kout = kvals[kph]	
 endif
 
-kcycle		= chnget("heart") * kdiv
-kph			= int((kcycle % 1) * ilen)
-
-print i(kout)
+kph		chnget	"heart"
+kph		= int(((kph * kdiv) % 1) * klen)
 
 	xout kout
 
 	endop
 	
-
-
