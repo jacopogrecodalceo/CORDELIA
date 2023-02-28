@@ -12,7 +12,7 @@ imode		init p8
 is_opcode	init 1
 is_midi		init 2
 
-iamp_balance init 3
+iamp_balance init 1
 
 if imode == is_opcode then
 
@@ -28,9 +28,9 @@ if imode == is_opcode then
 		ioff		random 0, ioff
 	endif
 
-	korgan	chnget	"heart"
-	aorgan	a korgan
-	aph	= ((aorgan * idiv)+ioff) % 1
+	kcycle		= chnget:k("heart") * divz(gkdiv, idiv, 1)
+	aorgan	a kcycle
+	aph	= ((aorgan)+ioff) % 1
 
 	itab	init ich%gi---NAME---_ch
 	aout	tablei aph, gi---NAME---_1+(itab), 1 
@@ -74,7 +74,6 @@ else
 	iftenv		init p5
 	idiv		init p6%i(gksamp_mod)
 	ich			init p7
-	isonvs		init p9
 	ix			init idur/4
 	ioff		i gk---NAME---_off
 	
@@ -100,46 +99,6 @@ endif
 
 ;-------
 
-	opcode	---NAME---, 0, iJ
-idiv, kamp xin
-
-if kamp == -1 then
-	kamp = $f
-endif
-
-Sinstr	init "---NAME---"
-imax	init 8
-kndx 	init 1
-
-is_opcode init 1
-
-if 	hex("8", gk---NAME---_time) == 1 then
-
-	if kndx == imax+1 then
-		kndx = 1
-	endif
-
-	kdur	= gkbeats*gk---NAME---_dur
-
-	kx		= kdur/4
-
-	kch		= 1
-
-	until kch > ginchnls do
-		schedulek nstrnum(Sinstr)+(kndx/1000), 0, kdur+kx, kamp, idiv, kx, kch, is_opcode
-		#ifdef	printscore
-			kdone	system gkabstime, sprintfk("echo \'i\t\"%s\"\t%f\t%f\t%f\t%i\t%f\' >> %s", Sinstr, gkabstime, kdur, kamp, kenv, kcps1, kch, gScorename)
-		#end
-		if	kch == 1 then
-			printsk "• %s\t%.1fs | %.3f | %.2f\n", Sinstr, kamp, kdur+kx, idiv
-		endif
-		kch += 1
-	od
-	kndx += 1
-endif
-
-	endop
-
 	opcode	---NAME---, 0, kJ
 kdiv, kamp xin
 
@@ -153,7 +112,7 @@ kndx 	init 1
 
 is_opcode init 1
 
-if 	hex("8", gk---NAME---_time) == 1 then
+if 	changed(gkbeatn) == 1 then
 
 	if kndx == imax+1 then
 		kndx = 1
@@ -167,15 +126,10 @@ if 	hex("8", gk---NAME---_time) == 1 then
 
 	until kch > ginchnls do
 		schedulek nstrnum(Sinstr)+(kndx/1000), 0, kdur+kx, kamp, kdiv, kx, kch, is_opcode
-		#ifdef	printscore
-			kdone	system gkabstime, sprintfk("echo \'i\t\"%s\"\t%f\t%f\t%f\t%i\t%f\' >> %s", Sinstr, gkabstime, kdur, kamp, kenv, kcps1, kch, gScorename)
-		#end
-		if	kch == 1 then
-			printsk "• %s\t%.1fs | %.3f | %.2f\n", Sinstr, kamp, kdur+kx, kdiv
-		endif
 		kch += 1
 	od
 	kndx += 1
 endif
 
 	endop	
+

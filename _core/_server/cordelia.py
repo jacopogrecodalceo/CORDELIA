@@ -1,6 +1,5 @@
 from threading import Thread
-import time
-
+import time, pprint
 
 import cordelia
 import utils.udp as udp
@@ -18,41 +17,19 @@ def main():
 		code = udp.receive_messages()
 
 		if code[0] == 'BRAIN':
-			start_time = time.time()
 
-			print('---UNIFIER')
-			units = cordelia.unifier(code[1])
-			#count_time(start_time)
+			#list of class instrument
+			instruments = cordelia.parser(code[1])
 
-			instruments = []
-			for preunit in units:
+			#list of string instrument and vars
+			contents = cordelia.content(instruments)
 
-				print('---ANALYZER')
-				unit = cordelia.analyzer(preunit)
-				#count_time(start_time)
-
-				print('---LEXER')
-				pre_instrument = cordelia.lexer(unit)
-				#count_time(start_time)
-
-				print('---EXTRACTER')
-				instrument_e = cordelia.extracter(pre_instrument)
-				for i in instrument_e:
-					#print(i)
-					instruments.append(i)
-				#count_time(start_time)
-
-			instruments_f = cordelia.filter(instruments)
-			#count_time(start_time)
-			for index, i in enumerate(instruments_f):
-				instruments_i = cordelia.wrapper(index, i)
-				if instruments_i:
-					print(instruments_i)
+			contents_filtered = cordelia.filter(contents)
+			wrapped_instruments = cordelia.wrapper(contents_filtered)	
+			for each in wrapped_instruments:
+					print(each)
 					print(LINE_SEP)
-					#csound_cordelia.compileOrcAsync(instruments_i)
-					CORDELIA_COMPILE.append(instruments_i)
-			
-			#count_time(start_time)
+					CORDELIA_COMPILE.append(each)
 		
 		elif code[0] == 'REAPER':
 			if code[1]:

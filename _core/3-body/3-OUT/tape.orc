@@ -164,16 +164,6 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode TapeEchoN, a, akkkkki
-  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread, iSize xin
-  aDummy delayr (16 * iSize)
-  aEcho tapeReadBatch aIn, kDelay, kRandomSpread, iSize, 1
-  aOut = aIn + kEchoGain * aEcho
-  tapeWrite aIn, aOut, kFbGain
-  xout aOut
-endop
-
-
 opcode  tape, 0, SJJPo
 Sinstr, ktime, kfb, kgain, ich xin
 
@@ -213,7 +203,7 @@ igain		i 1
 kgain_out       init 1
 if krel == 1 then
 	kgain *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
-        kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
+  kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
 endif
 ;---RELEASE_OUT
 

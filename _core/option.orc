@@ -6,11 +6,12 @@
 
 ;-M0
 ;-+msg_color=1
---messagelevel=96
+--messagelevel=231
 --m-amps=1
+--m-range=1
 
 
-;-+id_artist=jacopo greco d'alceo
+-+id_artist="jacopo greco d'alceo"
 ;-b 512 ;mac 1024
 ;-B 1024 ;mac 2048
 

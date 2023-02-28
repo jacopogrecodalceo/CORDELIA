@@ -7,27 +7,24 @@ gktuning = scala.ptolemy_diat
 
 gkmhon_port = 1+lfh(1)
 
-eujo: 8, 8, 32
-	-k1 tablei (chnget:k("heart")*24)%1, classicr, 1
+eu: 8, 8, 2
 	@cascadexp
-	sn+(1-k1)
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
 	accent(4, f)
 	tig.a(5)
 	c3-8.16: classicr
 	e4-8.12: eclassicr
 
-eujo: 8, 8, 32
-	-k1 tablei (chnget:k("heart")*24)%1, classicr, 1
+eu: 8, 8, 2
 	@bd808
-	sn+(1-k1)
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
 	accent(4, fff)
 	tig.a(5)
 	90
 
-eujo: 8, 8, 32
-	-k1 tablei (chnget:k("heart")*24)%1, classicr, 1
+eu: 8, 8, 2
 	@cascadexp
-	sn+(1-k1)
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
 	accent(4, f)
 	tig.a(5)
 	g4-8.12: cat

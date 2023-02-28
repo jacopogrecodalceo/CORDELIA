@@ -10,7 +10,7 @@ gkgain			init 1			;master gain for "mouth" instrument
 
 gkabstime		init 0
 
-gksamp_mod		init 24
+gksamp_mod		init 64
 
 giminnote		init 50$ms
 
@@ -26,8 +26,8 @@ gkclearchns[]		init 128
 
 gis_midi		init 0
 
-gixtratim		init 32
-gixtratim_rel		init gixtratim/2
+gixtratim		init 9
+gixtratim_rel	init gixtratim/2
 
 ;----------------------------------------
 ;			REAPER		|

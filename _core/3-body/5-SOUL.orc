@@ -31,3 +31,11 @@ prints "%s is clear\n", Sinstr
 	endin
 
 
+	instr 985
+
+aouts[]	init ginchnls
+String	init p4
+aouts	monitor
+	fout String, -1, aouts
+
+	endin

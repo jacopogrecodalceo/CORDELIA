@@ -46,12 +46,18 @@ if gkrhy_i410 == 1 then
 	gkdur_i410,
 	gkdyn_i410,
 	gkenv_i410, 
-	gkfreq_i410)
+	gkfreq_i410_1,
+	gkfreq_i410_2,
+	gkfreq_i410_3,
+	gkfreq_i410_4,
+	gkfreq_i410_5)
 endif
-getmeout(gSname_i410)
 	endin
 	turnoff2_i 410, 0, 0
 	schedule 410, 0, -1
+
+
+getmeout(gSname_i410)
 
 
 	schedule 950.1, 0, -1, "puck_1"

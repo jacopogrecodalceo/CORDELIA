@@ -24,25 +24,27 @@ def lexer(unit) -> list():
 	unit_lines = unit.splitlines()
 
 	try:
-		opcode_match = re.search(r'^\w+', unit_lines[0])[0]
 
 		if len(unit_lines) == 1:
-			if opcode_match not in opcode_names:
-				pre_instrument = cordelia.Instrument([unit_lines[0]])
+
+			if re.search(r'^@', unit_lines[0]):
+				pre_instrument = cordelia.opcodes.sonvs(unit_lines[0])
+				print(pre_instrument)
 				return pre_instrument
 
-			elif re.search(r'^@', unit_lines[0])[0]:
-				pre_instrument = cordelia.opcodes.sonvs(unit_lines[0])
-				return pre_instrument
 			else:
-				print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: your code has an unknown opcode {unit_lines}{bcolors.ENDC}')
-		
+				pre_instrument = cordelia.Instrument([unit_lines[0]])
+				return pre_instrument
+					
 		else:
+
+			opcode_match = re.search(r'^\w+', unit_lines[0])[0]
 
 			if opcode_match in opcode_names:
 				opcode_function = getattr(cordelia.opcodes, unit_lines[0].split(':')[0])
 				pre_instrument = opcode_function(unit_lines)
 				return pre_instrument
+
 			else:
 				print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: your code has an unknown opcode {unit_lines}{bcolors.ENDC}')
 
@@ -50,5 +52,4 @@ def lexer(unit) -> list():
 	except Exception as e:
 		print(f'{bcolors.WARNING}WARNING{bcolors.ENDC}: these lines {bcolors.WARNING}{unit_lines}{bcolors.ENDC} have a problem!')
 		print(e)
-		print(f'probably: {opcode_match}')
 

@@ -44,7 +44,7 @@ gkbeatr = ((kph*gkdiv)%1)*gkbeats
 
 	endin
 ;	schedule("heart", .5, -1)
-	alwayson("heart")
+;	alwayson("heart")
 
 
 
