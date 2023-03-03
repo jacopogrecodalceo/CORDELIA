@@ -1,5 +1,6 @@
 import re
 
+
 def space(string):
 		
 	if re.search(r'^[a-z]', string):
@@ -32,3 +33,100 @@ def space(string):
 
 	return string
 
+def if_multiple_route_then_reduce_amp(list):
+	if len(list) == 2:
+		return '*ampdb(-5)'
+	elif len(list) == 3:
+		return '*ampdb(-7)'
+	elif len(list) == 4:
+		return '*ampdb(-9)'
+	elif len(list) == 5:
+		return '*ampdb(-11)'
+	else:
+		return ''	
+
+from utils.constants import CORDELIA_MODULE_json
+
+def gen_route(instr_name_var, route_classes):
+	
+	lines = []
+	
+	#INIT
+	lines.append('''
+if p4 == 0 then
+indx		init 1
+until	indx > ginchnls do
+	schedule p1 + indx/1000, 0, -1, indx
+	indx	+= 1
+od
+turnoff
+
+else
+
+ich init p4
+			xtratim gixtratim
+krel		init 0
+krel		release
+igain		i 1
+kgain_in	init 1
+kgain_out	init 1
+if krel == 1 then
+	kgain_in *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
+	kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
+endif
+
+''')
+	#for index, each in enumerate(route_vars):
+	#	init_val = CORDELIA_MODULE_json[route_name]['init'][index]
+	#	init = f'P{index+1} init {init_val}'
+	#	init = re.sub(rf'(\W|^)P{index+1}(\W|$)', rf'\1{each}\2', init)
+	#	lines.append(init)
+
+	#INPUT
+	input_line = f'\tamain_in chnget sprintf("%s_%i", "{instr_name_var}", ich)'
+	lines.append(input_line)
+	input_line = '\tamain_in *= kgain_in'
+	lines.append(input_line)
+
+	#GAIN IN
+	#gain_in_line = 'ain *= kgain_in'
+	#lines.append(gain_in_line)
+
+	#CORE
+	for index_route, route_class in enumerate(route_classes):
+		index_route += 1
+		#print(route_class.name)
+
+		if route_class.name in CORDELIA_MODULE_json:
+			#csound_cordelia.compileOrcAsync(f.read())
+			string = CORDELIA_MODULE_json[route_class.name]['core']
+			for i in range(CORDELIA_MODULE_json[route_class.name]['how_many_p']):
+				string = re.sub(rf'(\W|^)PARAM_{i+1}(\W|$)', rf'\1{route_class.list_of_each_var_with_val[i][0]}\2', string)
+			
+			if index_route == 1:
+				input_var = 'amain_in'
+			else:
+				input_var = f'aparent_out{index_route-1}'
+
+			if index_route == len(route_classes):
+				output_var = 'amain_out'
+			else:
+				output_var = f'aparent_out{index_route}'
+
+			string = re.sub(rf'(\W|^)PARAM_IN(\W|$)', rf'\1{input_var}\2', string)
+			string = re.sub(rf'(\W|^)PARAM_OUT(\W|$)', rf'\1{output_var}\2', string)
+			lines.append(string)
+
+
+	#gain_out_line = 'aout *= kgain_out'
+	#lines.append(gain_out_line)
+	
+	output_line = '\tchnmix amain_out*kgain_out, gSmouth[ich-1]'
+	lines.append(output_line)
+	lines.append('\tendif')
+
+	res = '\n'.join(lines)
+	
+	#print(res)
+
+	return res

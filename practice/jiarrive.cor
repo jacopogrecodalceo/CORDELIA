@@ -1,0 +1,21 @@
+
+
+
+
+gkpulse = 110;*pump(4, fill(.5, 1, .25, 2))
+
+gktuning = scala.ptolemy_diat
+
+eu: 8, 8, pump(16, fill(4, 8, 4, 4))
+	@corpia
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
+	p
+	cat.a(5)
+	c3-8.16: pump(32, fill(classicr, classic, eau)) 
+
+eu: 8, 8, 8
+	@mhon
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
+	f
+	classic.a(5)
+	c3-8.16: pump(32, fill(classicr, classic, eau)) 

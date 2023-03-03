@@ -1,3 +1,53 @@
+;OPCODE
+    opcode abj, a, ak
+    ain, kp1 xin
+
+afx     balance2 abs(ain), ain
+amod	abs lfo:a(1, kp1/2)
+
+afx	*= (1-amod)
+ain	*= amod
+
+aout	= afx + ain
+
+    xout aout
+    endop
+;OPCODE
+
+	opcode  bij, a, akk
+	ain, ktime, kfb xin
+
+kdel    = ktime
+
+ibpm		i gkpulse
+ibps		init ibpm/60
+isubdiv		init 8 ;4, 8, 12 ..
+ibarlength	init 4
+iphrasebars	init 1
+inumrepeats	init 9
+
+istutterspeed	init 1
+istutterchance	init 1
+ienvchoice	init 1
+
+aout        bbcutm ain, ibps, isubdiv, ibarlength, iphrasebars, inumrepeats, istutterspeed, istutterchance, ienvchoice
+
+	xout aout
+    	endop
+
+
+;OPCODE
+    opcode mooj, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+aout	moogladder2 ain, kfreq+randomi:k(-ifreq_var, ifreq_var, .05), kq
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+;OPCODE
+
 ; Original research and code by Jon Downing  as in paper
 ; Real-time digital modeling of the Roland Space Echo by Jon Downing, Christian Terjesen (ECE 472 - Audio Signal Processing, May 2016)
 ;
@@ -164,55 +214,8 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode  tape, 0, SJJPo
-Sinstr, ktime, kfb, kgain, ich xin
-
-if	ich==ginchnls-1 goto next
-		tape Sinstr, ktime, kfb, kgain, ich+1
-
-next:
-
-;   INIT
-if	ktime==-1 then
-		ktime = gkbeatms/12
-endif
-
-if	kfb==-1 then
-		kfb = .15
-endif
-
-;   LIMIT
-ktime      abs ktime
-#ifdef opcode_kfb_limit
-	kfb	limit kfb, 0, .9995
-#end
-
-;	IF
-if	ktime==0 then
-		ktime = gizero
-endif
-
-;   INPUT
-ain	chnget sprintf("%s_%i", Sinstr, ich+1)
-
-;---RELEASE_IN
-			xtratim gixtratim
-krel		init 0
-krel		release
-igain		i 1
-kgain_out       init 1
-if krel == 1 then
-	kgain *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
-  kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
-endif
-;---RELEASE_OUT
-
-ain     *= kgain
-
-;---INSTRUMENT---
-;---TIME
-;opcode  ---NAME---, 0, SJJPo
-;Sinstr, ktime, kfb, kgain, ich xin
+opcode  tape, a, akk
+ain, ktime, kfb xin
 
 kdel    = ktime
 
@@ -220,8 +223,7 @@ kvar oscili 0.25, gkbeatf/8
 
 aout	TapeEchoN ain, kdel, 1, kfb, 0, 0.75 + kvar, 10
 
-	aout *= kgain_out
-	chnmix aout, gSmouth[ich]
+  xout aout
 
     endop
 

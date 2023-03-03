@@ -6,9 +6,12 @@
 ktrig       init 1
 
 kout        cpstun ktrig, kindex, kft
-schedulek   "render_midi_on", 0, 1, kindex
+;schedulek   "render_midi_on", 0, 1, kindex
 
 ktrig       += 1
+if ktrig > 100 then
+	ktrig = 1
+endif
 
     xout kout
     endop

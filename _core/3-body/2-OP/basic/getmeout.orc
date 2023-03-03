@@ -6,16 +6,16 @@ if		ich==ginchnls-1 goto next
 
 next:	
 
-ain			chnget sprintf("%s_%i", Sinstr, ich+1)
+ain		chnget sprintf("%s_%i", Sinstr, ich+1)
 aout		= ain
 
-			xtratim 15
+		xtratim gixtratim
 krel		init 0
 krel		release
 igain		i kgain
 
 if krel == 1 then
-	kgain	*= cosseg(igain, 10, igain, 5, 0)
+	kgain	*= cosseg(igain, gixtratim/2, igain, gixtratim/2, 0)
 	;kgain lineto kgain, 0
 endif
 

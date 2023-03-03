@@ -6,7 +6,7 @@ gSmouth[]		init ginchnls
 
 indx		init 0
 until	indx == ginchnls do
-	gSmouth[indx]	sprintf	"mouth_%i", indx+1
+	gSmouth[indx]		sprintf	"mouth_%i", indx+1
 	indx	+= 1
 od
 

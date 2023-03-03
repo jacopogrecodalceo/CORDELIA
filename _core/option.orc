@@ -6,10 +6,9 @@
 
 ;-M0
 ;-+msg_color=1
---messagelevel=231
+--messagelevel=99
 --m-amps=1
 --m-range=1
-
 
 -+id_artist="jacopo greco d'alceo"
 ;-b 512 ;mac 1024

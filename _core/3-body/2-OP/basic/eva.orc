@@ -1,104 +1,56 @@
-;-------------------------------------------------
-;-------------------------------------------------
-;-------------------------------------------------
-
-;-------EVA Sk-------|THE STANDARD 5-PARAMs EVA
-#define eva_Sk_kcps(kcps) #
-			if	($kcps != 0) then
-				kch		= 1
-				until kch > ginchnls do
-					schedulek	Sinstr, 0, kdur, kamp, kenv, $kcps, kch
-					;$gen_score($kcps)
-					kch += 1
-				od
-				;schedulek	"render_sco", 0, kdur, kamp, kenv, $kcps, Sinstr
-			endif
-#
-
-	opcode	eva, 0, SkkkkOOOO
-Sinstr, kdur, kamp, kenv, kcps1, kcps2, kcps3, kcps4, kcps5 xin
-
-if	kdur > giminnote && kamp > 0 then
-
-	;LIMIT kdur TO gimax_note
-	$eva_limit
-
-	;AMPLITUDE DEPENDS ON HOW MANY NOTES
-	$eva_amp
-
-	;GENERATE EVENT
-	$eva_Sk_kcps(kcps1)
-	$eva_Sk_kcps(kcps2)
-	$eva_Sk_kcps(kcps3)
-	$eva_Sk_kcps(kcps4)
-	$eva_Sk_kcps(kcps5)
-
-	$eva_showmek
-
-endif
-
-		endop
-
-
-
-
-
-
-	opcode	eva_midi, 0, Siiiii
-Sinstr, iwhen, idur, iamp, ienv, icps xin
-
-if	idur > giminnote && iamp > 0 then
-
-	;GENERATE EVENT
-	if	(icps != 0) then
-		ich		= 1
-		until ich > ginchnls do
-			schedule	Sinstr, iwhen, idur, iamp, ienv, icps, ich
-			ich += 1
-		od
-	endif
-
-endif
-	endop
-
-
-
-
-;-------------------------------------------------
-;-------------------------------------------------
-;-------------------------------------------------
-
-;-------EVA kSk-------|EVA WITH SPACE CONTROL
 #define eva_kSk_kcps(kcps) #
-				if	($kcps != 0) then
-					if (kch	== 0) then
-						;SEND INSTR ON ALL THE SPEAKERs
-						kch = 1
-						until kch > ginchnls do
-							schedulek	Sinstr, 0+random:k(0, kdecimal), kdur, kamp, kenv, $kcps, kch
-							;$gen_score($kcps)
-							kch += 1
-						od
-					else
-						;CHOOSE THE SPEAKER TO GO
-						schedulek	Sinstr, 0, kdur, kamp, kenv, $kcps, kch
-						;$gen_score($kcps)
-					endif
-				endif
+if	($kcps != 0) then
+	if kch == 0 then
+		kch = 1
+		until kch > ginchnls do
+			schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+			kch += 1
+		od
+		kch = 0
+	else
+		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+	endif
+endif
 #
 
 	opcode	eva, 0, kSkkkkOOOO
 kch, Sinstr, kdur, kamp, kenv, kcps1, kcps2, kcps3, kcps4, kcps5 xin
 
-	$eva_ch
+/*
+printk2 kch
+printk2 kdur
+printk2 kamp
+printk2 kenv
+printk2 kcps1
+printk2 kcps2
+printk2 kcps3
+printk2 kcps4
+printk2 kcps5
+*/
+
+if kch != 0 then
+	kch = ((kch+ginchnls)%ginchnls)+1
+endif
 
 if	kdur > giminnote && kamp > 0 then
 
 	;LIMIT kdur TO gimax_note
-	$eva_limit
+	if kdur > gimaxnote then
+		printsk "LOOK! YOU WANTED MORE THAN %is, ARE U SHURE?\n", gimaxnote
+	endif
+
+	kdur	limit	kdur, 0, gimaxnote
 
 	;AMPLITUDE DEPENDS ON HOW MANY NOTES
-	$eva_amp
+	if	(kcps2 != 0 && kcps3 == 0 && kcps4 == 0 && kcps5 == 0) then
+		kamp *= ampdb(-5)
+	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 == 0 && kcps5 == 0) then
+		kamp *= ampdb(-7)
+	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 == 0) then
+		kamp *= ampdb(-9)
+	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 != 0) then
+		kamp *= ampdb(-11)
+	endif
 
 	;GENERATE EVENT
 	$eva_kSk_kcps(kcps1)
@@ -112,56 +64,4 @@ if	kdur > giminnote && kamp > 0 then
 endif
 
 	endop
-
-;-------------------------------------------------
-;-------------------------------------------------
-;-------------------------------------------------
-
-;-------EVA SS-------|EVA WITH DOUBLE STRING
-#define eva_SS_kcps(kcps) #
-			if	($kcps != 0) then
-				kch		= 1
-				until kch > ginchnls do
-					schedulek	Sinstr, 0, kdur, kamp, kenv, $kcps, kch
-					;$gen_score($kcps)
-					kch += 1
-				od
-			endif
-#
-
-gkeva_SS_change init 0
-
-	opcode	eva, 0, SSkkkkOOOO
-Sinstr1, Sinstr2, kdur, kamp, kenv, kcps1, kcps2, kcps3, kcps4, kcps5 xin
-
-if	gkeva_SS_change == 0 then
-	Sinstr	strcpyk Sinstr1
-	gkeva_SS_change = 1
-else
-	Sinstr	strcpyk Sinstr2
-	gkeva_SS_change = 0
-endif
-
-if	kdur > giminnote && kamp > 0 then
-
-	;LIMIT kdur TO gimax_note
-	$eva_limit
-
-	;AMPLITUDE DEPENDS ON HOW MANY NOTES
-	$eva_amp
-
-	;GENERATE EVENT
-	$eva_SS_kcps(kcps1)
-	$eva_SS_kcps(kcps2)
-	$eva_SS_kcps(kcps3)
-	$eva_SS_kcps(kcps4)
-	$eva_SS_kcps(kcps5)
-
-	$eva_showmek
-
-endif
-
-		endop
-
-
 

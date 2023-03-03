@@ -1,24 +1,30 @@
 	opcode eu, k, kkPO
-konset, kpulses, kdiv, krot xin
+konset, kpulses, kdiv_get, krot xin
 
-krot		= krot % kpulses
+kdiv_get approx kdiv_get, 8
 
-kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
+if changed2(kdiv_get) == 1 then
+	kdiv = kdiv_get
+endif
 
-kph			= int((kcycle % 1) * kpulses) + krot
-keu_val		= int((konset / kpulses) * kph)
+if konset != 0 && kpulses != 0 && kdiv != 0 then
 
-klast_eu	init i(keu_val)
-klast_ph	init i(kph)
+	krot		= krot % kpulses
 
-kres		= ((klast_eu != keu_val) && (klast_ph != kph)) ? 1 : 0
+	kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
 
-kres		init i(kres)
+	kph			= int((kcycle % 1) * kpulses) + krot
+	keu_val		= int((konset / kpulses) * kph)
 
-klast_eu	= keu_val
-klast_ph	= kph
+	if changed2(keu_val) == 1 then
+		kres = keu_val + 1
+	else
+		kres = 0
+	endif
 
+		xout kres
+endif
 
-	xout kres
+kdiv	= kdiv_get
 
 	endop

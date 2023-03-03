@@ -6,6 +6,10 @@ class Instrument:
 	def __init__(self, breed):
 		self.breed = breed
 
+class Route():
+    def __init__(self, name):
+        self.name = name
+
 class Parser():
 
 	def __init__(self, unit):
@@ -13,44 +17,29 @@ class Parser():
 
 		self.unit = unit
 		self.lines = unit.splitlines()
-		
-		if len(self.lines) == 1:
-			self.scope = 'single_line'
-		else:
-			self.scope = 'multi_line'
 			
-		# Get all the names defined in the class
-		names = dir(self)
-		
-		# Filter the names to only include method names
-		method_names = [name for name in names if callable(getattr(self, name))]
-		
-		# Iterate over the method names and call each method
-		for name in method_names:
-			if not name.startswith('__') and not name == 'condition':
-				getattr(self, name)()
-				#result = getattr(self, name)()
-				#print(f"{name} returned {result}")
-		
-	def condition(string, pattern):
-		def decorator(func):
-			def wrapper(self, *args, **kwargs):
-				if self.scope == string and re.search(pattern, self.lines[0]):
-					return func(self, *args, **kwargs)
-			return wrapper
-		return decorator
+		# SINGLE LINE
+		if len(self.lines) == 1:
+			if re.search(r'^[^@].*', self.lines[0]):
+				self.control()
+			elif re.search(r'^@.*', self.lines[0]):
+				self.seq()
 
-	#anything but @
-	@condition('single_line', r'^[^@].*')
+		# MULTI LINE
+		else:
+			if re.search(r'^eu:', self.lines[0]):
+				self.eu()
+
+		
 	def control(self):
 		instrument = Instrument('control')
 		instrument.csound_code = self.lines[0]
 		self.instruments.append(instrument)
 		
-	@condition('multi_line', r'^eu:')
 	def eu(self):
 
 		names = re.findall(r'@(\w+)', self.lines[1])
+		routes = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', self.lines[1])
 
 		for name in names:
 
@@ -58,8 +47,6 @@ class Parser():
 		
 			instrument.rhythm_name = self.lines[0].split(':')[0]
 			instrument.rhythm_p = self.lines[0].split(':')[1].strip()
-
-			instrument.opcode = True
 
 			space = re.search(r'^(.*?)@', self.lines[1])[1]
 			if space:
@@ -70,6 +57,8 @@ class Parser():
 			instrument.name = name
 			instrument.dur = self.lines[2]
 			instrument.dyn = self.lines[3]
+			if routes:
+				instrument.dyn += cordelia.if_multiple_route_then_reduce_amp(routes)
 			instrument.env = self.lines[4]
 			
 			instrument.freq = []
@@ -109,52 +98,89 @@ class Parser():
 			instrument = Instrument('aural_route')
 			instrument.name = name
 
-			route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', self.lines[1])
-			instrument.route = []
-			if route:
-				for r in route:
+			instrument.route_classes = []
+
+			if routes:
+				for r in routes:
 					route_name = re.search(r'^\w+', r)[0]
-					route_p = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
-					instrument.route.append([route_name, route_p])
+					route_params = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
+
+					route = Route(route_name)
+					route.values = route_params
+					
+					instrument.route_classes.append(route)
 			else:
-				instrument.route.append(['getmeout', '1'])
+				route_name = 'getmeout'
+				route_params = ['1']
+
+				route = Route(route_name)
+				route.values = route_params
+				
+				instrument.route_classes.append(route)		
 
 			self.instruments.append(instrument)
 
-	@condition('single_line', r'^@.*')
+
 	def seq(self):
 
 		names = re.findall(r'@(\w+)', self.lines[0])
+		params = self.lines[0].split(':')[1].strip().split(',')
+		routes = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|:)', self.lines[0])
 
 		for name in names:
 
-			instrument = Instrument('control')
+			instrument = Instrument('aural_instrument')
+		
+			instrument.rhythm_name = 'changed2'
+			instrument.rhythm_p = 'gkbeatn'
 
 			space = re.search(r'^(.*?)@', self.lines[0])[1]
 			if space:
-				instrument.space = space
+				instrument.space = cordelia.conversion.space(space)
 			else:
 				instrument.space = '0'
 
-			#instrument.dur = self.lines[2]
-			params = self.lines[0].split(':')[1].strip()
-			#instrument.env = self.lines[4]
+			instrument.name = name
 
-			instrument.csound_code = f'{name}({params})'
+			fade = '.025'
+
+			instrument.dur = f'gkbeats + {fade}'
+
+			if len(params) > 1:
+				instrument.dyn = params[1]
+			else:
+				instrument.dyn = '$f'
+
+			if routes:
+				instrument.dyn += cordelia.if_multiple_route_then_reduce_amp(routes)
+
+			instrument.env = fade
+			
+			instrument.freq = [params[0]]
 
 			self.instruments.append(instrument)
 
 			instrument = Instrument('aural_route')
 			instrument.name = name
 
-			route = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|:)', self.lines[0])
-			instrument.route = []
-			if route:
-				for r in route:
-					route_name = re.search(r'^\w+', r)[0]
-					route_p = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
-					instrument.route.append([route_name, route_p])
-			else:
-				instrument.route.append(['getmeout', '1'])
+			instrument.route_classes = []
 
+			if routes:
+				for r in routes:
+					route_name = re.search(r'^\w+', r)[0]
+					route_params = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
+
+					route = Route(route_name)
+					route.values = route_params
+					
+					instrument.route_classes.append(route)
+			else:
+				route_name = 'getmeout'
+				route_params = ['1']
+
+				route = Route(route_name)
+				route.values = route_params
+				
+				instrument.route_classes.append(route)		
 			self.instruments.append(instrument)
+

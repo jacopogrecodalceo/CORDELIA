@@ -1,0 +1,4 @@
+;CORE
+PARAM_1		init 1
+
+PARAM_OUT	= PARAM_IN*PARAM_1

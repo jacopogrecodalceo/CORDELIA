@@ -1,11 +1,67 @@
 {
   "BD808": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2500.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2510.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2525.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2550.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2575.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7500.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7510.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7525.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7550.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7575.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "SD808": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2500.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2510.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2525.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2550.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2575.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7500.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7510.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7525.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7550.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7575.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "aaron": {
     "type": "instr",
@@ -18,22 +74,63 @@
     ]
   },
   "alghed": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-18.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "alghef": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-11.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "algo": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "algo2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -61,31 +158,41 @@
   },
   "amen": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "amor": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "arm1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "arm2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "armagain": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -98,7 +205,9 @@
   },
   "bd10": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
+    ],
     "channels": "1",
     "sr": "44100"
   },
@@ -110,58 +219,89 @@
     ]
   },
   "bebois": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/bebois.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/bebois.orc",
+    "required": [
+      "bois"
+    ],
     "global_var": [
-      "gibebois_imp"
+
     ]
   },
   "beboo": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/beboo.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/beboo.orc",
+    "required": [
+      "bois"
+    ],
     "global_var": [
-      "gibeboo_imp"
+
     ]
   },
   "bebor": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/bebor.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/bebor.orc",
+    "required": [
+      "bois"
+    ],
     "global_var": [
-      "gibebor_imp"
-    ]
-  },
-  "becapr": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/becapr.orc",
-    "global_var": [
-      "gibecapr_imp",
-      "gibecapr_indx",
-      "gibecapr_arr"
+
     ]
   },
   "bee": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee"
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/bee.orc",
+    "required": [
+      "bee2"
+    ],
+    "global_var": [
+      "gibee_imp"
+    ]
+  },
+  "bee1": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
+  },
+  "bee2": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "begad": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/begad.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/begad.orc",
+    "required": [
+      "gameld"
+    ],
     "global_var": [
       "gibegad_indx",
       "gibegad_imp"
     ]
   },
   "begaf": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/begaf.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/begaf.orc",
+    "required": [
+      "gameld"
+    ],
     "global_var": [
       "gibegaf_indx",
       "gibegaf_imp"
     ]
   },
   "beme": {
-    "type": "instr",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/beme.orc",
+    "type": "hybrid",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/beme.orc",
+    "required": [
+      "chime"
+    ],
     "global_var": [
       "gibeme_indx",
       "gibeme_imp"
@@ -188,25 +328,33 @@
   },
   "bleu": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "bois": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "bois2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "break": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -218,12 +366,24 @@
     ]
   },
   "caillou": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-001.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-007.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "caiu": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -242,22 +402,45 @@
     ]
   },
   "capr1x": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-04.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "capr2x": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-001.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-007.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-008.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "capriccio1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "capriccio2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -290,16 +473,95 @@
     ]
   },
   "chime": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_29.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_30.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_31.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_32.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_33.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_34.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_35.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_36.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_37.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_38.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_39.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_40.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_41.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_42.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_43.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_44.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_45.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_46.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "chiseq": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_23.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "ciel": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
+    ],
     "channels": "1",
     "sr": "48000"
   },
@@ -312,13 +574,17 @@
   },
   "coeur": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "contempo": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -329,15 +595,27 @@
 
     ]
   },
+  "cos_u": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
+  },
   "crij": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "cril": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -357,17 +635,75 @@
   },
   "dance": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "dismatter": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil007.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil008.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil009.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil011.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil012.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil013.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil014.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil015.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil016.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil017.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil018.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil019.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil020.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil021.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "distmar": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_29.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "dmitri": {
     "type": "instr",
@@ -385,79 +721,105 @@
   },
   "dp": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "drum": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "drumhigh": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "elacid": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elair": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elground": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elpark": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elpot": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "elterre": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elwater": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "elwind": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "etag": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "etag2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
+    ],
     "channels": "4",
     "sr": "48000"
   },
@@ -506,8 +868,16 @@
     ]
   },
   "falga": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-05.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "fim": {
     "type": "instr",
@@ -533,7 +903,9 @@
   },
   "fragment": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -546,40 +918,82 @@
     ]
   },
   "gameld": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_12.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "gamelf": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_12.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "gesto1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "gesto1var": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "gesto2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "gesto3": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "gesto4": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -605,12 +1019,47 @@
     ]
   },
   "grr": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil001.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil007.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil008.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil009.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil011.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil012.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil013.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil014.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil015.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil016.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil017.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil018.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil019.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil020.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil021.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil022.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil023.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil024.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil026.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil027.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil028.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil029.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil030.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "hh": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -651,8 +1100,35 @@
     ]
   },
   "iveheard": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_00a.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_00b.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_22.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "ixland": {
     "type": "instr",
@@ -663,13 +1139,29 @@
   },
   "junis": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "kali": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_2.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_3.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_4.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_5.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_6.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_7.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_8.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_9.wav"
+    ],
+    "channels": "2",
+    "sr": "96000"
   },
   "kick": {
     "type": "instr",
@@ -680,7 +1172,17 @@
   },
   "leo": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
+  },
+  "lovelines": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -700,7 +1202,9 @@
   },
   "madcow": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
@@ -720,35 +1224,76 @@
   },
   "maison": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "malon": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_09.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "mario1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "mario2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "meer": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "meli": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-001.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-007.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-008.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-009.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-011.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-012.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-013.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-014.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-015.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-016.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-017.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "meli2": {
     "type": "instr",
@@ -807,19 +1352,25 @@
   },
   "mirrors": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "nasa": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
+    ],
     "channels": "1",
     "sr": "48000"
   },
   "ninfa": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -831,30 +1382,78 @@
     ]
   },
   "noinput": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-29.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-30.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-31.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-32.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-33.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-34.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-35.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-36.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-37.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "noneknows": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "noriff": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "november": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "ocean": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -874,7 +1473,9 @@
   },
   "orp": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -907,12 +1508,63 @@
     ]
   },
   "pert": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-29.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "pharm": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_2_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_3_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_4_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_5_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_7_2.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_2_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_3_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_4_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_2_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_3_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_4_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_5_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_7_2.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F4_2_1.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F4_3_1.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "pij": {
     "type": "instr",
@@ -934,7 +1586,9 @@
   },
   "planche": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -975,16 +1629,37 @@
     ]
   },
   "quar": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-10.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "quar2": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-05.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "reg": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -997,25 +1672,33 @@
   },
   "search": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/search.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/search.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "shaku": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "shinji": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "shinobi": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -1027,34 +1710,174 @@
     ]
   },
   "sin": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-26.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "sinimp": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-000.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-001.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-002.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-003.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-004.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-005.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-006.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-007.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-008.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-009.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-010.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-011.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-012.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-013.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-014.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-015.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-016.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-017.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-018.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-019.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-020.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-021.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-022.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-023.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-024.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-025.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-026.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-027.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-028.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-029.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-030.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-031.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-032.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-033.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-034.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-035.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-036.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-037.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-038.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-039.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-040.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-041.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-042.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-043.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-044.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-045.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-046.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-047.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-048.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-049.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-050.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-051.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-052.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-053.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-054.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-055.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-056.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-057.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-058.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-059.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-060.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-061.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-062.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-063.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-064.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-065.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-066.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-067.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-068.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-069.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-070.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-071.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-072.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-073.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-074.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-075.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-076.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-077.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-078.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-079.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-080.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-081.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-082.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-083.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-084.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-085.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-086.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-087.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-088.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-089.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-090.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-091.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-092.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-093.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-094.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-095.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-096.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-097.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-098.wav"
+    ],
+    "channels": "1",
+    "sr": "192000"
   },
   "six": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
+    ],
     "channels": "4",
     "sr": "48000"
   },
   "six2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "sixcorrect": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "sixspectrumsynth": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -1067,13 +1890,34 @@
   },
   "sophie1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
+    ],
     "channels": "2",
     "sr": "44100"
   },
   "space": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-15.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "sufij": {
     "type": "instr",
@@ -1098,27 +1942,89 @@
   },
   "syeq": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "tape": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-16.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "tapein": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-26.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "tension": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "theorbo": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-09.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "toomuchalone": {
     "type": "instr",
@@ -1133,8 +2039,20 @@
     ]
   },
   "toy": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_08.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "trans": {
     "type": "instr",
@@ -1145,7 +2063,9 @@
   },
   "tricot": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
@@ -1158,17 +2078,69 @@
   },
   "valle": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "var14r": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-21.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "varvln": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-21.wav"
+    ],
+    "channels": "1",
+    "sr": "44100"
   },
   "ventre": {
     "type": "instr",
@@ -1183,26 +2155,134 @@
     ]
   },
   "vipere": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-29.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "virgule": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
+    ],
     "channels": "2",
     "sr": "192000"
   },
   "vla": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-07.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "vlj": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_06.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_07.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_08.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_09.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_10.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_11.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_12.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_13.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_14.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_15.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_16.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_17.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_18.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_19.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_20.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_21.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_22.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_23.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_24.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_25.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_26.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_27.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_28.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_29.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_30.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_31.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_32.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_33.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_34.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_35.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_36.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_37.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_38.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_39.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_40.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_41.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_42.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_43.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_44.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_45.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_46.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_47.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_48.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_49.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_50.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "vlnatk": {
-    "type": "dir",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk"
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-00.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-01.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-02.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-03.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-04.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-05.wav",
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-06.wav"
+    ],
+    "channels": "2",
+    "sr": "44100"
   },
   "wendi": {
     "type": "instr",
@@ -1224,6 +2304,14 @@
     "global_var": [
 
     ]
+  },
+  "wetri": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "witches": {
     "type": "instr",
@@ -1271,37 +2359,49 @@
   },
   "zzz1": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "zzz2": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "zzz3": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "zzz4": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "zzz5": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   },
   "zzz6": {
     "type": "sonvs",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
+    ],
     "channels": "2",
     "sr": "48000"
   }

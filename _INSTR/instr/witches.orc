@@ -38,7 +38,7 @@ ich			init p8
 
 kcar 	= int(expseg:k(1, idur, limit(idur, 1, 7)))
 amod 	a gkwitches_mod
-kndx	= expseg:k(.05, idur, indx)
+kndx	= expseg:k(1.05, idur, 1+indx)-1
 
 aout	foscili $ampvar, icps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, amod+randomi:a(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 

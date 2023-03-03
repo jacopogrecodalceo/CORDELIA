@@ -1,38 +1,39 @@
 ;almost some drop of water!
+;REQUIRE gameld
 
-gibegaf_indx init 0
+gibegad_indx init 0
 
-	instr begaf
+	instr begad
 
-Sinstr		init "begaf"
+Sinstr		init "begad"
 idur		init p3
 iamp		init p4
 iftenv		init p5
 icps		init p6
 ich		init p7
 
-if gibegaf_indx >= lenarray(gigameld_sonvs) then
-	gibegaf_indx init 0
+if gibegad_indx >= lenarray(gigameld_sonvs) then
+	gibegad_indx init 0
 endif
 
 if ich == 1 then
 
-	gibegaf_imp init gigameld_sonvs[gibegaf_indx]
+	gibegad_imp init gigameld_sonvs[gibegad_indx]
 
-	gibegaf_indx += 1	
-
+	gibegad_indx += 1
+	
 else
 
-	gibegaf_imp init gigameld_sonvs[gibegaf_indx]
+	gibegad_imp init gigameld_sonvs[gibegad_indx]
 
 endif
-
+	
 
 ;		OSC1
 ihard		init 1-$ampvar	; the hardness of the stick used in the strike. A range of 0 to 1 is used. 0.5 is a suitable value
 ipos		init $ampvar	; where the block is hit, in the range 0 to 1
 
-imp		init gibegaf_imp
+imp		init gibegad_imp
 
 kvrate		expseg 3, idur, 12/idur
 kvdepth		init $ampvar

@@ -7,6 +7,9 @@ until	indx == ginchnls do
 	schedule  900+((indx+1)/1000), 0, -1, indx
 	indx += 1
 od
+
+garecorder[]	init ginchnls
+
 ;-----------------------------------------
 	instr 900; MOUTH
 
@@ -14,9 +17,12 @@ ich	init p4
 	prints("👅---%f\n", p1)
 
 aout	chnget gSmouth[ich]
+
 aout	*= gkgain
 
 	outch gioffch+ich+1, aout
+
+garecorder[ich] = aout
 
 ;	CLEAR
 	chnclear gSmouth[ich]
@@ -33,9 +39,9 @@ prints "%s is clear\n", Sinstr
 
 	instr 985
 
-aouts[]	init ginchnls
-String	init p4
-aouts	monitor
-	fout String, -1, aouts
+Swrite	init p4
+		fout Swrite, -1, garecorder
+
+		clear garecorder
 
 	endin

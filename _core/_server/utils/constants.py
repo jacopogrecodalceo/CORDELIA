@@ -19,6 +19,7 @@ DEFAULT_SONVS_PATH = CORDELIA_DIR + '/_setting/_default-sonvs'
 CORDELIA_OUT_WAV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.wav'
 CORDELIA_OUT_ORC = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.orc'
 CORDELIA_OUT_SCO = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.sco'
+CORDELIA_OUT_LOG = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.log'
 CORDELIA_OUT_CSV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.csv'
 CORDELIA_OUT_MID = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.mid'
 
@@ -49,6 +50,9 @@ with open(CORDELIA_DIR + '/_setting' + '/gen.json') as f:
 
 with open(CORDELIA_DIR + '/_setting' + '/interval.json') as f:
 	CORDELIA_INTERVAL_json = json.load(f)
+
+with open(CORDELIA_DIR + '/_setting' + '/module.json') as f:
+	CORDELIA_MODULE_json = json.load(f)
 
 CORDELIA_COMPILE = []
 

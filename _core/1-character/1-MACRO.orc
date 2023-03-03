@@ -33,43 +33,6 @@ girpr_ck	init 95$ms
 ;-------------EVA-------------|
 ;-----------------------------|
 
-;MANAGE CHANNELs
-#define eva_ch #
-			;GET THE DECIMAL PART OF A NUMBER TO GET DELAY
-			;e.g. 0.25 will produce a random delay between 0 and .25s on all speakers
-			kdecimal = kch % 1
-
-			kch	floor kch
-			kch	-= 1
-
-			if kch == -1 then
-				kch = 0
-			else
-				kch = ((kch+ginchnls)%ginchnls)+1
-			endif
-#
-
-;LIMIT kdur TO gimax_note
-#define eva_limit #
-			if kdur > gimaxnote then
-				printsk "LOOK! YOU WANTED MORE THAN %is, ARE U SHURE?\n", gimaxnote
-			endif
-
-			kdur	limit	kdur, 0, gimaxnote
-#
-
-;AMPLITUDE DEPENDS ON HOW MANY NOTES
-#define eva_amp #
-			if	(kcps2 != 0 && kcps3 == 0 && kcps4 == 0 && kcps5 == 0) then
-				kamp /= 2
-			elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 == 0 && kcps5 == 0) then
-				kamp /= 3
-			elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 == 0) then
-				kamp /= 4
-			elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 != 0) then
-				kamp /= 5
-			endif
-#
 
 ;PRINT INFOs IN THE CONSOLE
 #define eva_showmek #
@@ -142,5 +105,5 @@ girpr_ck	init 95$ms
 #define p		#(ampdb(-19)*i(gkdyn))#
 #define pp		#(ampdb(-23)*i(gkdyn))#
 #define ppp		#(ampdb(-27)*i(gkdyn))#
-#define pppp		#(ampdb(-31)*i(gkdyn))#
+#define pppp	#(ampdb(-31)*i(gkdyn))#
 

@@ -1,0 +1,12 @@
+gkpulse	= 50
+
+eu: 3, 8, 8
+	@flou
+	gkbeats*24
+	p
+	$once(classic, cat)
+	fc("2B", kazan, "4D", 3)*.5
+	fc("2B", kazan, "4D", 2)
+	fc("2B", eau, "4D", 3)*.5
+
+

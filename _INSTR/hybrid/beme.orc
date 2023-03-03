@@ -1,4 +1,5 @@
 ;almost some drop of water!
+;REQUIRE chime
 
 gibeme_indx init 0
 

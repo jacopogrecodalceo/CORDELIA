@@ -1,135 +1,52 @@
-gk---NAME---_time		init 16
+;gi{name}_ch
+
 gk---NAME---_off		init .005
 gk---NAME---_dur		init 1
-;-------
+gk---NAME---_sonvs		init 1
+gi---NAME---_len		init lenarray(gi---NAME---_list)/gi---NAME---_ch
 
 
-;-------
 
 	instr ---NAME---
 
-imode		init p8
-is_opcode	init 1
-is_midi		init 2
+Sinstr		init "---NAME---"
+idur		divz p3, i(gk---NAME---_dur), 1
+iamp		init p4
+ienv		init p5
+icps		init p6
+ich			init p7
 
-iamp_balance init 1
+idiv		init icps%i(gkdiv)
+ioff		i gk---NAME---_off
 
-if imode == is_opcode then
-
-	Sinstr		init "---NAME---"
-	idur		init p3
-	iamp		init p4*iamp_balance
-	idiv		init p5%i(gksamp_mod)
-	ix			init p6
-	ich			init p7
-	ioff		i gk---NAME---_off
-
-	if ioff!=0 then
-		ioff		random 0, ioff
-	endif
-
-	kcycle		= chnget:k("heart") * divz(gkdiv, idiv, 1)
-	aorgan	a kcycle
-	aph	= ((aorgan)+ioff) % 1
-
-	itab	init ich%gi---NAME---_ch
-	aout	tablei aph, gi---NAME---_1+(itab), 1 
-	aout	*= cosseg:a(0, ix, 1, idur-(ix*2), 1, ix, 0)
-	aout	*= $ampvar
-
-		$mix
-
-elseif imode == is_midi then
-
-	Sinstr		init "---NAME---"
-	idur		init p3
-	iamp		init p4*iamp_balance
-	iftenv		init p5
-	idiv		init p6%i(gksamp_mod)
-	ich			init p7
-	ix			init idur/4
-	idummy		init p9
-	ioff		i gk---NAME---_off
-	
-	if ioff!=0 then
-		ioff		random 0, ioff
-	endif
-
-	ifreq	init limit(1/idur, .125, idiv/8)
-	aph		tablei phasor(ifreq/2), gitri, 1
-
-	itab	init ich%gi---NAME---_ch
-	aout	tablei aph, gi---NAME---_1+(itab), 1
-	aout	*= $ampvar
-
-	ienvvar		init idur/5
-
-	$END_INSTR
-
-else
-
-	Sinstr		init "---NAME---"
-	idur		init p3
-	iamp		init p4*iamp_balance
-	iftenv		init p5
-	idiv		init p6%i(gksamp_mod)
-	ich			init p7
-	ix			init idur/4
-	ioff		i gk---NAME---_off
-	
-	if ioff!=0 then
-		ioff		random 0, ioff
-	endif
-
-	korgan	chnget	"heart"
-	aorgan	a korgan
-	aph	= ((aorgan * idiv)+ioff) % 1
-
-	itab	init ich%gi---NAME---_ch
-	aout	tablei aph, gi---NAME---_1+(itab), 1
-	aout	*= $ampvar
-
-	ienvvar		init idur/5
-
-	$END_INSTR
-
+if ioff!=0 then
+	ioff		random 0, ioff
 endif
+
+kcycle		= chnget:k("heart") * divz(gkdiv, idiv, 1)
+aorgan		a kcycle
+aph			= ((aorgan)+ioff) % 1
+
+isonvs		i gk---NAME---_sonvs-1
+isonvs		init isonvs%gi---NAME---_len
+imod		init gi---NAME---_ch-1
+
+index		init (isonvs*gi---NAME---_ch)+imod
+
+ift_sonvs	init gi---NAME---_list[index]
+aout		tablei aph, ift_sonvs, 1
+
+ienvvar		init idur/25
+
+if ienv < 1 then
+	aout	*= cosseg:a(0, ienv, 1, idur-(ienv*2), 1, ienv, 0)
+else
+	aout	*= envgen(idur-random:i(0, ienvvar), ienv)
+endif
+
+aout	*= $ampvar
+
+	$mix
 
 	endin
-
-;-------
-
-	opcode	---NAME---, 0, kJ
-kdiv, kamp xin
-
-if kamp == -1 then
-	kamp = $f
-endif
-
-Sinstr	init "---NAME---"
-imax	init 8
-kndx 	init 1
-
-is_opcode init 1
-
-if 	changed(gkbeatn) == 1 then
-
-	if kndx == imax+1 then
-		kndx = 1
-	endif
-
-	kdur	= gkbeats*gk---NAME---_dur
-
-	kx		= kdur/4
-
-	kch		= 1
-
-	until kch > ginchnls do
-		schedulek nstrnum(Sinstr)+(kndx/1000), 0, kdur+kx, kamp, kdiv, kx, kch, is_opcode
-		kch += 1
-	od
-	kndx += 1
-endif
-
-	endop	
 

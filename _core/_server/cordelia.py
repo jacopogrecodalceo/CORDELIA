@@ -1,15 +1,17 @@
 from threading import Thread
 import time, pprint
+from datetime import datetime
+import traceback
 
 import cordelia
 import utils.udp as udp
-from utils.constants import LINE_SEP
+from utils.constants import LINE_SEP, bcolors
 from utils.misc import count_time
 from csound import csound_cordelia, ctcsound
 
-from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV
+from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_LOG
 
-
+CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
 
 def main():
 
@@ -18,18 +20,26 @@ def main():
 
 		if code[0] == 'BRAIN':
 
-			#list of class instrument
-			instruments = cordelia.parser(code[1])
+			try:
+				#list of class instrument
+				instruments = cordelia.parser(code[1])
 
-			#list of string instrument and vars
-			contents = cordelia.content(instruments)
+				#list of string instrument and vars
+				contents = cordelia.content(instruments)
 
-			contents_filtered = cordelia.filter(contents)
-			wrapped_instruments = cordelia.wrapper(contents_filtered)	
-			for each in wrapped_instruments:
+				contents_filtered = cordelia.filter(contents)
+				wrapped_instruments = cordelia.wrapper(contents_filtered)	
+				for each in wrapped_instruments:
 					print(each)
 					print(LINE_SEP)
 					CORDELIA_COMPILE.append(each)
+
+					CORDELIA_OUT_LOG_open.write(each)
+					CORDELIA_OUT_LOG_open.write(LINE_SEP)
+				CORDELIA_OUT_LOG_open.write(f'\n---{datetime.now()}---\n')
+
+			except Exception:
+				traceback.print_exc()
 		
 		elif code[0] == 'REAPER':
 			if code[1]:
@@ -75,6 +85,7 @@ if __name__ == '__main__':
 
 
 		#print('Record OFF')
+		CORDELIA_OUT_LOG_open.close()
 		csound_cordelia.cleanup()
 		print('CSOUND is OFF!')
 

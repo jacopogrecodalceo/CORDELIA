@@ -1,0 +1,32 @@
+{
+  "abj": {
+    "core": ";CORE\nPARAM_1    init i(gkbeatf)\n\nPARAM_OUT abj PARAM_IN, PARAM_1\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/abj.orc",
+    "how_many_p": 1
+  },
+  "bij": {
+    "core": ";CORE\n\nPARAM_OUT\tbij PARAM_IN, PARAM_1, PARAM_2\n\t\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/bij.orc",
+    "how_many_p": 2
+  },
+  "flanj": {
+    "core": ";CORE\n\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tflanger PARAM_IN, a(portk(PARAM_1, gkbeats/32)), PARAM_2, 15\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanj.orc",
+    "how_many_p": 2
+  },
+  "getmeout": {
+    "core": ";CORE\nPARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*PARAM_1\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc",
+    "how_many_p": 1
+  },
+  "mooj": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT mooj PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/mooj.orc",
+    "how_many_p": 2
+  },
+  "tape": {
+    "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\ttape PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tape.orc",
+    "how_many_p": 2
+  }
+}

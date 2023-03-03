@@ -1,4 +1,6 @@
-gibee_imp	ftgen 0, 0, 0, 1, "../samples/bee/bee02.wav", 0, 0, 0
+;REQUIRE bee2
+
+gibee_imp	ftgen 0, 0, 0, 1, ---REQUIRED_INSTR_PATH_1---, 0, 0, 0
 
 	instr bee
 
@@ -13,7 +15,8 @@ ich			init p7
 ihard		init $ampvar	; the hardness of the stick used in the strike. A range of 0 to 1 is used. 0.5 is a suitable value
 ipos		init $ampvar	; where the block is hit, in the range 0 to 1
 
-imp		init gibee_imp
+imod		init (ich-1) % gibee2_len
+imp			init gibee2_list[imod]
 
 kvrate		expseg random:i(3, 5), idur/2, random:i(.25, .5)/idur
 kvdepth		init iamp

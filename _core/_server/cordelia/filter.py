@@ -9,7 +9,7 @@ def filter(instruments):
 		INSTR_LAST = [None]*len(instruments)
 		CORDELIA_COMPILE.append('schedule "heart", 0, -1')
 		#recording
-		#CORDELIA_COMPILE.append(f'schedule 985, 0, -1, "{CORDELIA_OUT_WAV}"')
+		CORDELIA_COMPILE.append(f'schedule 985, 0, -1, "{CORDELIA_OUT_WAV}"')
 	
 	results = [None]*len(INSTR_LAST)
 

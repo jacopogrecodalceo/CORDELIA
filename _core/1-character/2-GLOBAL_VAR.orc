@@ -10,8 +10,6 @@ gkgain			init 1			;master gain for "mouth" instrument
 
 gkabstime		init 0
 
-gksamp_mod		init 64
-
 giminnote		init 50$ms
 
 gimaxnote		init 300;s
