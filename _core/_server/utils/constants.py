@@ -17,9 +17,11 @@ CORDELIA_DATE = datetime.today().strftime('%y%m%d-%H%M')
 DEFAULT_SONVS_PATH = CORDELIA_DIR + '/_setting/_default-sonvs'
 
 CORDELIA_OUT_WAV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.wav'
+CORDELIA_OUT_RAW = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}-raw.wav'
 CORDELIA_OUT_ORC = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.orc'
 CORDELIA_OUT_SCO = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.sco'
-CORDELIA_OUT_LOG = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.log'
+CORDELIA_OUT_LOG = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}-csound.log'
+CORDELIA_OUT_COR = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}-cordelia.log'
 CORDELIA_OUT_CSV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.csv'
 CORDELIA_OUT_MID = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}.mid'
 

@@ -29,18 +29,30 @@ gkbeatms	= gkbeats*1000
 kph		init 0
 kph		phasor (gkpulse / gkdiv) / 60
 
-gkbeatn	init 0				;number of beats from the beginning of session
-klast	init -1
 
-if (((kph*gkdiv)%1) < klast) then
+aph		init 0
+aph		phasor (gkpulse / gkdiv) / 60
+
+gkbeatn	init 0				;number of beats from the beginning of session
+klast_n	init -1
+
+if (((kph*gkdiv)%1) < klast_n) then
 	gkbeatn += 1
 endif
 
-klast	= ((kph*gkdiv)%1)
+klast_n	= ((kph*gkdiv)%1)
+
+gkbeatc	init 0				;number of beats from the beginning of session
+klast_c	init -1
+
+if kph < klast_c then
+	gkbeatc += 1
+endif
+
+klast_c	= kph
 
 	chnset	kph, "heart"
-
-gkbeatr = ((kph*gkdiv)%1)*gkbeats
+	chnset	aph, "heart_a"
 
 	endin
 ;	schedule("heart", .5, -1)

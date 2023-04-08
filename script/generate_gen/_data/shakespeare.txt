@@ -1,0 +1,42 @@
+Romeo: 163
+Juliet: 118
+Hamlet: 98
+Othello: 70
+Macbeth: 63
+Falstaff: 57
+Lear: 56
+Iago: 42
+Desdemona: 41
+Richard III: 40
+Portia: 39
+Rosalind: 38
+Antony: 37
+Cleopatra: 36
+Prospero: 35
+Beatrice: 34
+Bottom: 33
+Helena: 32
+Titania: 32
+Cordelia: 31
+Lady Macbeth: 29
+Viola: 28
+Shylock: 27
+Mercutio: 25
+Petruchio: 24
+Ariel: 23
+Jessica: 23
+Malvolio: 22
+Tybalt: 22
+Polonius: 21
+Caliban: 20
+Duncan: 19
+Laertes: 19
+Benvolio: 18
+Hermia: 18
+Lady Capulet: 18
+Paris: 18
+Puck: 18
+Rosencrantz: 17
+Guildenstern: 16
+Banquo: 15
+Isabella: 15

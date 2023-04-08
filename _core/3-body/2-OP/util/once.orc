@@ -1,15 +1,11 @@
-	opcode once, k, k[]
-	kdegrees[] xin
+	opcode once, k, kk[]
+	krhythm, kdegrees[] xin
 
-kndx	init 0
 klen	lenarray kdegrees
 
-if	kndx==klen then
-	kndx = 0
+if krhythm != 0 then
+	kres	= kdegrees[((krhythm-1)%klen)]
 endif
-
-kres	= kdegrees[kndx]
-kndx	+= 1
 
 	xout kres
 	endop

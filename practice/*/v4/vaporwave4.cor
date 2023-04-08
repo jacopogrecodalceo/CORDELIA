@@ -1,0 +1,18 @@
+
+
+
+
+gkpulse = 110
+
+gktuning = scala.pto_diat
+
+@lovelines.abij(bf).tapij(bs*pump(2, fill(1, 0, 0, 2, 0, .5)), .5, 1): 16, mf
+
+;@lovelines.abj(bf): 16, mf
+
+eu: pump(8, fill(4, 5)), 8, 4
+	@kick
+	en
+	f
+	classic
+	90

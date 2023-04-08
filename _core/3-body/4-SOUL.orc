@@ -8,7 +8,7 @@ until	indx == ginchnls do
 	indx += 1
 od
 
-garecorder[]	init ginchnls
+;garecorder[]	init ginchnls
 
 ;-----------------------------------------
 	instr 900; MOUTH
@@ -16,19 +16,29 @@ garecorder[]	init ginchnls
 ich	init p4
 	prints("👅---%f\n", p1)
 
-aout	chnget gSmouth[ich]
+ain	chnget gSmouth[ich]
 
-aout	*= gkgain
+ain	*= gkgain
 
-	outch gioffch+ich+1, aout
+aout	dcblock2 ain
 
-garecorder[ich] = aout
+ifreq_low init ntof("2B");~123Hz
+kq	= .35+lfo:k(.105, gkbeatf/64)
+
+alow	rezzy aout, ifreq_low, kq
+
+;alow	diode_ladder aout, ifreq_low, kq , 1, $M_LOG2E
+
+	outch gioffch+ich+1, aout+(alow*4)
+
+;garecorder[ich] = aout
 
 ;	CLEAR
 	chnclear gSmouth[ich]
 
 	endin
 
+turnoff2_i 900, 0, 0
 
 	instr 950
 Sinstr	strget	p4
@@ -36,7 +46,7 @@ prints "%s is clear\n", Sinstr
 		chnclear Sinstr
 	endin
 
-
+/*
 	instr 985
 
 Swrite	init p4
@@ -45,3 +55,6 @@ Swrite	init p4
 		clear garecorder
 
 	endin
+*/
+
+

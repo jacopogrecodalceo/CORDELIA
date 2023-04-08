@@ -8,7 +8,9 @@ idur		init p3
 iamp		init p4
 iftenv		init p5
 icps		init p6
-ich			init p7
+ich		init p7
+
+iamp_fact	init 1
 
 ;		OSC1
 ihard		init $ampvar	; the hardness of the stick used in the strike. A range of 0 to 1 is used. 0.5 is a suitable value
@@ -27,6 +29,8 @@ arev2		vcomb abel/3, idur*(1+k(envgen(idur, iftenv)*3)), 1/icps, idur
 arev3		vcomb abel/4, idur*(1+k(envgen(idur, iftenv)*4)), 1/(icps*9/8), idur
 
 aout		= abel + arev1/12 + arev2/9 + arev3/7
+
+aout		*= iamp_fact
 
 	$mix
 

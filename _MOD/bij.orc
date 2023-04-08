@@ -1,10 +1,10 @@
 ;CORE
 
-PARAM_OUT	bij PARAM_IN, PARAM_1, PARAM_2
+PARAM_OUT	bbcutm_random PARAM_IN, PARAM_1, PARAM_2
 	
 ;OPCODE
 
-	opcode  bij, a, akk
+	opcode  bbcutm_random, a, akk
 	ain, ktime, kfb xin
 
 kdel    = ktime

@@ -38,7 +38,7 @@ CS
 
 score_file.write(rec_opt)
 
-default_fade = '5'
+default_fade = '.025'
 
 section_array.each_with_index do |f, i|
 

@@ -17,6 +17,12 @@ class Parser():
 
 		self.unit = unit
 		self.lines = unit.splitlines()
+
+		rhythm_regex = [
+			'eu',
+			'hex',
+			'jex'
+		]
 			
 		# SINGLE LINE
 		if len(self.lines) == 1:
@@ -27,8 +33,9 @@ class Parser():
 
 		# MULTI LINE
 		else:
-			if re.search(r'^eu:', self.lines[0]):
-				self.eu()
+			for each in rhythm_regex:
+				if re.search(fr'^{each}:', self.lines[0]):
+					self.rhythm_op()
 
 		
 	def control(self):
@@ -36,7 +43,7 @@ class Parser():
 		instrument.csound_code = self.lines[0]
 		self.instruments.append(instrument)
 		
-	def eu(self):
+	def rhythm_op(self):
 
 		names = re.findall(r'@(\w+)', self.lines[1])
 		routes = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', self.lines[1])
@@ -44,7 +51,9 @@ class Parser():
 		for name in names:
 
 			instrument = Instrument('aural_instrument')
-		
+			
+			instrument.origin = 'eva'
+
 			instrument.rhythm_name = self.lines[0].split(':')[0]
 			instrument.rhythm_p = self.lines[0].split(':')[1].strip()
 
@@ -59,6 +68,8 @@ class Parser():
 			instrument.dyn = self.lines[3]
 			if routes:
 				instrument.dyn += cordelia.if_multiple_route_then_reduce_amp(routes)
+			instrument.dyn += cordelia.if_multiple_route_then_reduce_amp(self.lines[5:])
+
 			instrument.env = self.lines[4]
 			
 			instrument.freq = []
@@ -69,13 +80,13 @@ class Parser():
 
 					is_cpstun = re.search(r'^(".*"):', each_freq_line)
 					if is_cpstun:
-						intervals = each_freq_line.split(':')[1].lstrip().split(' ')
-						intervals_togo = ', '.join(intervals)
+						intervals = each_freq_line.split(':')[1].lstrip()
 						#for semitone, notation in CORDELIA_INTERVAL_json.items():
 						#	intervals_togo = intervals_togo.replace(notation, semitone)
 						#	print(intervals_togo)
 						#freq_line = f'cpstun($once(1, 2), ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
-						freq_line = f'cpstun_render(ntom({is_cpstun[1]})+once(fillarray({intervals_togo})), gktuning)'
+						freq_line = f'cpstun_render(ntom({is_cpstun[1]})+once({intervals}), gktuning)'
+						print(freq_line)
 						
 						instrument.freq.append(freq_line)
 
@@ -103,8 +114,9 @@ class Parser():
 			if routes:
 				for r in routes:
 					route_name = re.search(r'^\w+', r)[0]
-					route_params = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
-
+					route_params_combined = re.search(r'^\w+\((.*)\)', r)[1]
+					route_params = cordelia.extract_elements(route_params_combined)
+					
 					route = Route(route_name)
 					route.values = route_params
 					
@@ -124,12 +136,15 @@ class Parser():
 	def seq(self):
 
 		names = re.findall(r'@(\w+)', self.lines[0])
-		params = self.lines[0].split(':')[1].strip().split(',')
+		params_combined = self.lines[0].split(':')[1].strip()
+		params = cordelia.extract_elements(params_combined)
 		routes = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|:)', self.lines[0])
 
 		for name in names:
 
 			instrument = Instrument('aural_instrument')
+
+			instrument.origin = 'eva_sonvs'
 		
 			instrument.rhythm_name = 'changed2'
 			instrument.rhythm_p = 'gkbeatn'
@@ -142,7 +157,7 @@ class Parser():
 
 			instrument.name = name
 
-			fade = '.025'
+			fade = '.035'
 
 			instrument.dur = f'gkbeats + {fade}'
 
@@ -168,7 +183,12 @@ class Parser():
 			if routes:
 				for r in routes:
 					route_name = re.search(r'^\w+', r)[0]
-					route_params = [e.strip() for e in re.findall(r'(?:\([^)]*\)|[^,])+', re.search(r'^\w+\((.*)\)', r)[1])]
+					route_params_combined = re.search(r'^\w+\((.*)\)', r)[1]
+					route_params = cordelia.extract_elements(route_params_combined)
+
+					#route_params_with_empty_items = re.findall(r'[^,(]*(?:\([^)]*\)[^,(]*)*', route_params_combined)
+					#route_params = list(filter(bool, route_params_with_empty_items))
+
 
 					route = Route(route_name)
 					route.values = route_params

@@ -1,5 +1,3 @@
-gimorf		ftgen 0, 0, gienvdur, 10, 1
-gimorfsyn		ftgen 0, 0, gioscildur, 10, 1
 gisotrap_ramp		init sr * 15$ms
 gisotrap_seg		init gienvdur-(gisotrap_ramp*2)
 ;-----------------------
@@ -10,13 +8,15 @@ gisotrap		ftgen	0, 0, gienvdur, 7, 0, gisotrap_ramp, 1, gisotrap_seg, 1, gisotra
 	
 ifenvmod	init	floor(iftenv)-iftenv
 iftenvreal	abs	floor(iftenv)
+idur_env init gienvdur-1
+imax init 1
 
 if	ifenvmod == 0 then
 
 	if	iftenv > 0 then
-		alinenv	linseg 0, idur, gienvdur
+		alinenv	linseg 0, idur, idur_env
 	else
-		alinenv	linseg gienvdur, idur, 0
+		alinenv	linseg idur_env, idur, 0
 	endif
 
 else 
@@ -29,15 +29,16 @@ else
 		indx	init 0
 		ilast	init idur-iatk
 		
-		until ires==1 do
+		until ires==imax do
 			ires	table3 indx, abs(iftenv)
+			ires 	= round(ires * 1000) / 1000
 			indx	+= 1
 		od
 
 		if	iatk<ilast then
-			alinenv	linseg 0, iatk, indx, ilast, gienvdur
+			alinenv	linseg 0, iatk, indx, ilast, idur_env
 		else
-			alinenv	linseg 0, idur, gienvdur
+			alinenv	linseg 0, idur, idur_env
 		endif
 
 	else
@@ -46,28 +47,29 @@ else
 		indx	init 0
 		ilast	init idur-iatk
 			
-		until ires==1 do
+		until ires==imax do
 			ires	table3 indx, abs(iftenv)
+			ires	= round(ires * 1000) / 1000
 			indx	+= 1
 		od
 		
 		if	iatk<ilast then
-			alinenv	linseg gienvdur, ilast, indx, iatk, 0
+			alinenv	linseg idur_env, ilast, indx, iatk, 0
 		else
-			alinenv	linseg gienvdur, idur, 0
+			alinenv	linseg idur_env, idur, 0
 		endif
 
 	endif
 
 endif
 
-if	iftenvreal==gimorf then
-	amorf	table3 alinenv, iftenvreal
-	aramp	table3 alinenv, gisotrap
-	aenv	= amorf*aramp
-else
+
 	aenv	table3 alinenv, iftenvreal
-endif
+
+	;idec	init 295 / sr
+	;aenv	*= cosseg:a(0, idec, 1, idur-(idec*2), 1, idec, 0)
 
 	xout aenv
 	endop
+
+

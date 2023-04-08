@@ -1,7 +1,7 @@
 require 'json'
 require_relative '_path'
 
-path = $cordelia_directory_path + '/_GEN' + '/*'
+path = $cordelia_directory_path + '/_GEN' + '/**/*.orc'
 json = $cordelia_setting_path + '/gen.json'
 
 #GEN

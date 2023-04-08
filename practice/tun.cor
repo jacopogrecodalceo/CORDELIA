@@ -1,0 +1,16 @@
+
+
+
+gkpulse = 75
+
+gktuning = scala.edo12
+
+eu: 8, 16, 2
+	@seno@send_freq1.tapij(hn, .5, .5)
+	sn
+	0
+	mac
+	a4: 2, 4, 9
+
+
+

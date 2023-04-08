@@ -1,10 +1,10 @@
 ;BlackHole --nchnls=2
-;Merging --nchnls=8
+;BlackHole
 Scarlett
 M-Track
 SQ
 RME 
-Fireface --nchnls=8 --limiter
+Fireface --nchnls=2
 JBL --nchnls=2 --limiter
 External Headphones --nchnls=2 --limiter
 MacBook Pro --nchnls=2 --limiter

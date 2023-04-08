@@ -1,0 +1,18 @@
+
+
+
+gkpulse = 75
+
+gktuning = scala.olympos
+
+eu: 3, 16, 1
+	@mhont
+	wn*out12m
+	each(f, mf)*out4m
+	mac
+	g3-4.13: mac
+	e4-4.13: mac
+	g4-1.5: mac
+
+
+

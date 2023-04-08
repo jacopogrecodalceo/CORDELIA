@@ -1,0 +1,15 @@
+
+
+gkpulse = 155
+
+gktuning = scala.partch_greek
+
+eu: 8, 16, 2
+	@noij.flanij(qn, .65)
+	once(qn, sn, sn)
+	each(f, mp)*in12m
+	kazan.a(5)
+	stept(e4, gidorian, 3+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))))*once(.25, .5, 1)
+	stept(e4, gidorian, pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))))*once(.25, .5, 1)
+
+

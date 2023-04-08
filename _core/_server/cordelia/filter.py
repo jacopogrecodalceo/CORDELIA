@@ -1,4 +1,4 @@
-from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV
+from utils.constants import CORDELIA_COMPILE
 INSTR_LAST = ['init']
 
 def filter(instruments):
@@ -8,8 +8,6 @@ def filter(instruments):
 	if INSTR_LAST[0] == 'init':
 		INSTR_LAST = [None]*len(instruments)
 		CORDELIA_COMPILE.append('schedule "heart", 0, -1')
-		#recording
-		CORDELIA_COMPILE.append(f'schedule 985, 0, -1, "{CORDELIA_OUT_WAV}"')
 	
 	results = [None]*len(INSTR_LAST)
 

@@ -1,6 +1,6 @@
 ;	LIKEAREV
 ;	a 6-points function from linear segments
-gilikearev_atk		init sr * 5$ms
+gilikearev_atk		init sr * .005
 gilikearev_dur		init gienvdur - gilikearev_atk
 gilikearev_int		init 32
 gilikearev_intdec		init 1

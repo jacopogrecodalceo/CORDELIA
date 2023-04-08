@@ -484,6 +484,131 @@
     "degrees": "7",
     "ftgen": "gisalinas_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 25/24, 16/15, 4/3, 3/2, 25/16, 8/5, 2/1"
   },
+  "ancient_greek_archytas_diatonic": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/ancient_greek_archytas_diatonic.scl",
+    "degrees": "7",
+    "ftgen": "giancient_greek_archytas_diatonic ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 14/9, 16/9, 2/1"
+  },
+  "ancient_greek_archytas_enharmonic": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/ancient_greek_archytas_enharmonic.scl",
+    "degrees": "7",
+    "ftgen": "giancient_greek_archytas_enharmonic ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 4/3, 3/2, 14/9, 8/5, 2/1"
+  },
+  "arch_chrom": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_chrom.scl",
+    "degrees": "7",
+    "ftgen": "giarch_chrom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 9/8, 4/3, 3/2, 14/9, 27/16, 2/1"
+  },
+  "arch_chromc2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_chromc2.scl",
+    "degrees": "14",
+    "ftgen": "giarch_chromc2 ftgen 0, 0, 0, -2, 14, 2/1, A4, 69, 1, 28/27, 9/8, 7/6, 81/64, 21/16, 4/3, 112/81, 3/2, 14/9, 392/243, 27/16, 7/4, 243/128, 2/1"
+  },
+  "arch_dor": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_dor.scl",
+    "degrees": "8",
+    "ftgen": "giarch_dor ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 28/27, 9/8, 4/3, 3/2, 14/9, 16/9, 27/16, 2/1"
+  },
+  "arch_enh": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enh.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 4/3, 3/2, 14/9, 8/5, 2/1"
+  },
+  "arch_enh2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enh2.scl",
+    "degrees": "8",
+    "ftgen": "giarch_enh2 ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 28/27, 16/15, 4/3, 3/2, 14/9, 16/9, 8/5, 2/1"
+  },
+  "arch_enh3": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enh3.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enh3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 9/7, 4/3, 48/35, 12/7, 2/1"
+  },
+  "arch_enhp": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enhp.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enhp ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 36/35, 16/15, 4/3, 3/2, 54/35, 8/5, 2/1"
+  },
+  "arch_enht": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 36/35, 28/27, 16/15, 9/7, 4/3, 27/14, 2/1"
+  },
+  "arch_enht2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht2.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 5/4, 4/3, 15/8, 35/18, 2/1"
+  },
+  "arch_enht3": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht3.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 784/729, 448/405, 4/3, 112/81, 2/1"
+  },
+  "arch_enht4": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht4.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht4 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 5/4, 35/27, 4/3, 5/3, 2/1"
+  },
+  "arch_enht5": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht5.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht5 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 245/243, 28/27, 16/15, 35/27, 4/3, 35/18, 2/1"
+  },
+  "arch_enht6": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht6.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht6 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 16/15, 448/405, 256/225, 4/3, 64/45, 2/1"
+  },
+  "arch_enht7": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_enht7.scl",
+    "degrees": "7",
+    "ftgen": "giarch_enht7 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 36/35, 28/27, 16/15, 192/175, 4/3, 48/35, 2/1"
+  },
+  "arch_mult": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_mult.scl",
+    "degrees": "12",
+    "ftgen": "giarch_mult ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 28/27, 16/15, 5/4, 9/7, 4/3, 112/81, 3/2, 14/9, 8/5, 15/8, 27/14, 2/1"
+  },
+  "arch_ptol": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_ptol.scl",
+    "degrees": "12",
+    "ftgen": "giarch_ptol ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 28/27, 16/15, 10/9, 32/27, 4/3, 112/81, 3/2, 14/9, 8/5, 5/3, 16/9, 2/1"
+  },
+  "arch_ptol2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_ptol2.scl",
+    "degrees": "12",
+    "ftgen": "giarch_ptol2 ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 28/27, 16/15, 9/8, 6/5, 4/3, 112/81, 3/2, 14/9, 8/5, 27/16, 9/5, 2/1"
+  },
+  "arch_sept": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arch_sept.scl",
+    "degrees": "12",
+    "ftgen": "giarch_sept ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 28/27, 16/15, 9/8, 32/27, 4/3, 112/81, 3/2, 14/9, 8/5, 27/16, 16/9, 2/1"
+  },
+  "archchro": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/archchro.scl",
+    "degrees": "7",
+    "ftgen": "giarchchro ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 1.0365028919110046, 1.1269424101100087, 1.3321837600523923, 1.501294385934673, 1.5560959636426817, 1.6918723135698461, 2/1"
+  },
+  "archytas12": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/archytas12.scl",
+    "degrees": "12",
+    "ftgen": "giarchytas12 ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0583005248111206, 1.1338934205794025, 1.2000000020790584, 1.2549310645077816, 1.3280942041703636, 1.4229580691067514, 1.5059172713198938, 1.5937130385599745, 1.7075496858865147, 1.7638342049626057, 1.8898223643581282, 2/1"
+  },
+  "archytas12sync": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/archytas12sync.scl",
+    "degrees": "12",
+    "ftgen": "giarchytas12sync ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.057298256457198, 1.1374689652782397, 1.202643946816112, 1.2541448705016771, 1.3260051772668553, 1.426550859918474, 1.508289736939319, 1.5947120998868092, 1.715632756506272, 1.7582897301385043, 1.8916138258863806, 2/1"
+  },
+  "archytas7": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/archytas7.scl",
+    "degrees": "7",
+    "ftgen": "giarchytas7 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 1.1346144228693134, 1.2551086065955068, 1.327672161618232, 1.50639597471284, 1.5934875989935384, 1.7627133585541976, 2/1"
+  },
+  "arist_archenh": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/greek/arist_archenh.scl",
+    "degrees": "7",
+    "ftgen": "giarist_archenh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 1.0392592280328423, 1.0697118478665935, 1.3348398541700344, 1.4983070768766815, 1.5571294560710045, 1.602756831877349, 2/1"
+  },
   "sept_min_penta": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/jacques/sept_min_penta.scl",
     "degrees": "5",
@@ -513,6 +638,16 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/jacques/vitry.scl",
     "degrees": "12",
     "ftgen": "givitry ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 256/243, 9/8, 32/27, 81/64, 4/3, 729/512, 3/2, 128/81, 27/16, 16/9, 243/128, 2/1"
+  },
+  "weingarten": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/jacques/weingarten.scl",
+    "degrees": "12",
+    "ftgen": "giweingarten ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0503657227035568, 1.1196997521493277, 1.1936104804869987, 1.253727534963266, 1.3364853591641324, 1.4037984101611567, 1.4964623340511896, 1.5718327319250673, 1.6755885045379215, 1.7861931255775358, 1.8761560332353735, 2/1"
+  },
+  "weingarten2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/jacques/weingarten2.scl",
+    "degrees": "12",
+    "ftgen": "giweingarten2 ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.056476309593319, 1.119929823248409, 1.1902147277718618, 1.2556599655680811, 1.334086381429767, 1.407045273598876, 1.4966160651606069, 1.5856094874628892, 1.6770516052279154, 1.7833071496234334, 1.87818010782136, 2/1"
   },
   "mean10": {
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/mean/mean10.scl",
@@ -1244,204 +1379,204 @@
     "degrees": "22",
     "ftgen": "gipartch_indian ftgen 0, 0, 0, -2, 22, 2/1, A4, 69, 1, 33/32, 17/16, 12/11, 9/8, 7/6, 6/5, 5/4, 9/7, 4/3, 11/8, 7/5, 22/15, 3/2, 14/9, 11/7, 18/11, 27/16, 7/4, 20/11, 15/8, 64/33, 2/1"
   },
-  "ptolemy": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy.scl",
+  "pto": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto.scl",
     "degrees": "7",
-    "ftgen": "giptolemy ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 5/4, 4/3, 3/2, 5/3, 15/8, 2/1"
+    "ftgen": "gipto ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 5/4, 4/3, 3/2, 5/3, 15/8, 2/1"
   },
-  "ptolemy_c": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_c.scl",
+  "pto_c": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_c.scl",
     "degrees": "12",
-    "ftgen": "giptolemy_c ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0594630943592953, 9/8, 1.189207115002721, 5/4, 4/3, 1.4142135623730951, 3/2, 1.5874010519681994, 5/3, 1.7817974362806785, 15/8, 2/1"
+    "ftgen": "gipto_c ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0594630943592953, 9/8, 1.189207115002721, 5/4, 4/3, 1.4142135623730951, 3/2, 1.5874010519681994, 5/3, 1.7817974362806785, 15/8, 2/1"
   },
-  "ptolemy_chrom": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_chrom.scl",
+  "pto_chrom": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_chrom.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_chrom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 10/9, 4/3, 3/2, 14/9, 5/3, 2/1"
+    "ftgen": "gipto_chrom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 10/9, 4/3, 3/2, 14/9, 5/3, 2/1"
   },
-  "ptolemy_ddiat": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_ddiat.scl",
+  "pto_ddiat": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_ddiat.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_ddiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 128/81, 16/9, 2/1"
+    "ftgen": "gipto_ddiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 128/81, 16/9, 2/1"
   },
-  "ptolemy_diat": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diat.scl",
+  "pto_diat": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diat.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 6/5, 4/3, 3/2, 5/3, 9/5, 2/1"
+    "ftgen": "gipto_diat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 6/5, 4/3, 3/2, 5/3, 9/5, 2/1"
   },
-  "ptolemy_diat2": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diat2.scl",
+  "pto_diat2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diat2.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diat2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 7/6, 4/3, 3/2, 14/9, 7/4, 2/1"
+    "ftgen": "gipto_diat2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 7/6, 4/3, 3/2, 14/9, 7/4, 2/1"
   },
-  "ptolemy_diat3": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diat3.scl",
+  "pto_diat3": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diat3.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diat3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 6/5, 4/3, 3/2, 27/16, 9/5, 2/1"
+    "ftgen": "gipto_diat3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 6/5, 4/3, 3/2, 27/16, 9/5, 2/1"
   },
-  "ptolemy_diat4": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diat4.scl",
+  "pto_diat4": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diat4.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diat4 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 8/7, 32/27, 4/3, 3/2, 12/7, 16/9, 2/1"
+    "ftgen": "gipto_diat4 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 8/7, 32/27, 4/3, 3/2, 12/7, 16/9, 2/1"
   },
-  "ptolemy_diat5": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diat5.scl",
+  "pto_diat5": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diat5.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diat5 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 14/9, 16/9, 2/1"
+    "ftgen": "gipto_diat5 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 14/9, 16/9, 2/1"
   },
-  "ptolemy_diff": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_diff.scl",
+  "pto_diff": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_diff.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_diff ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 5/4, 21/16, 3/2, 13/8, 15/8, 2/1"
+    "ftgen": "gipto_diff ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 9/8, 5/4, 21/16, 3/2, 13/8, 15/8, 2/1"
   },
-  "ptolemy_enh": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_enh.scl",
+  "pto_enh": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_enh.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 46/45, 16/15, 4/3, 3/2, 23/15, 8/5, 2/1"
+    "ftgen": "gipto_enh ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 46/45, 16/15, 4/3, 3/2, 23/15, 8/5, 2/1"
   },
-  "ptolemy_exp": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_exp.scl",
+  "pto_exp": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_exp.scl",
     "degrees": "24",
-    "ftgen": "giptolemy_exp ftgen 0, 0, 0, -2, 24, 2/1, A4, 69, 1, 25/24, 135/128, 1125/1024, 10/9, 9/8, 75/64, 5/4, 125/96, 675/512, 4/3, 25/18, 45/32, 375/256, 3/2, 25/16, 405/256, 3375/2048, 5/3, 27/16, 225/128, 15/8, 125/64, 2025/1024, 2/1"
+    "ftgen": "gipto_exp ftgen 0, 0, 0, -2, 24, 2/1, A4, 69, 1, 25/24, 135/128, 1125/1024, 10/9, 9/8, 75/64, 5/4, 125/96, 675/512, 4/3, 25/18, 45/32, 375/256, 3/2, 25/16, 405/256, 3375/2048, 5/3, 27/16, 225/128, 15/8, 125/64, 2025/1024, 2/1"
   },
-  "ptolemy_ext": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_ext.scl",
+  "pto_ext": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_ext.scl",
     "degrees": "12",
-    "ftgen": "giptolemy_ext ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 21/20, 9/8, 7/6, 9/7, 4/3, 10/7, 3/2, 63/40, 27/16, 7/4, 27/14, 2/1"
+    "ftgen": "gipto_ext ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 21/20, 9/8, 7/6, 9/7, 4/3, 10/7, 3/2, 63/40, 27/16, 7/4, 27/14, 2/1"
   },
-  "ptolemy_hom": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_hom.scl",
+  "pto_hom": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_hom.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_hom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 12/11, 6/5, 4/3, 3/2, 18/11, 9/5, 2/1"
+    "ftgen": "gipto_hom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 12/11, 6/5, 4/3, 3/2, 18/11, 9/5, 2/1"
   },
-  "ptolemy_hominv": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_hominv.scl",
+  "pto_hominv": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_hominv.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_hominv ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 11/9, 4/3, 3/2, 5/3, 11/6, 2/1"
+    "ftgen": "gipto_hominv ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 11/9, 4/3, 3/2, 5/3, 11/6, 2/1"
   },
-  "ptolemy_hominv2": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_hominv2.scl",
+  "pto_hominv2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_hominv2.scl",
     "degrees": "14",
-    "ftgen": "giptolemy_hominv2 ftgen 0, 0, 0, -2, 14, 2/1, A4, 69, 1, 19/18, 10/9, 7/6, 11/9, 23/18, 4/3, 17/12, 3/2, 19/12, 5/3, 7/4, 11/6, 23/12, 2/1"
+    "ftgen": "gipto_hominv2 ftgen 0, 0, 0, -2, 14, 2/1, A4, 69, 1, 19/18, 10/9, 7/6, 11/9, 23/18, 4/3, 17/12, 3/2, 19/12, 5/3, 7/4, 11/6, 23/12, 2/1"
   },
-  "ptolemy_iast": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_iast.scl",
+  "pto_iast": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_iast.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_iast ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 8/5, 9/5, 2/1"
+    "ftgen": "gipto_iast ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 8/5, 9/5, 2/1"
   },
-  "ptolemy_iastaiol": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_iastaiol.scl",
+  "pto_iastaiol": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_iastaiol.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_iastaiol ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 27/16, 16/9, 2/1"
+    "ftgen": "gipto_iastaiol ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 32/27, 4/3, 3/2, 27/16, 16/9, 2/1"
   },
-  "ptolemy_ichrom": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_ichrom.scl",
+  "pto_ichrom": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_ichrom.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_ichrom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 22/21, 8/7, 4/3, 3/2, 11/7, 12/7, 2/1"
+    "ftgen": "gipto_ichrom ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 22/21, 8/7, 4/3, 3/2, 11/7, 12/7, 2/1"
   },
-  "ptolemy_idiat": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_idiat.scl",
+  "pto_idiat": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_idiat.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_idiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 16/15, 6/5, 4/3, 3/2, 8/5, 9/5, 2/1"
+    "ftgen": "gipto_idiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 16/15, 6/5, 4/3, 3/2, 8/5, 9/5, 2/1"
   },
-  "ptolemy_imix": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_imix.scl",
+  "pto_imix": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_imix.scl",
     "degrees": "11",
-    "ftgen": "giptolemy_imix ftgen 0, 0, 0, -2, 11, 2/1, A4, 69, 1, 16/15, 9/8, 6/5, 5/4, 4/3, 3/2, 8/5, 5/3, 16/9, 15/8, 2/1"
+    "ftgen": "gipto_imix ftgen 0, 0, 0, -2, 11, 2/1, A4, 69, 1, 16/15, 9/8, 6/5, 5/4, 4/3, 3/2, 8/5, 5/3, 16/9, 15/8, 2/1"
   },
-  "ptolemy_malak": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_malak.scl",
+  "pto_malak": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_malak.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_malak ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 22/21, 8/7, 4/3, 3/2, 14/9, 16/9, 2/1"
+    "ftgen": "gipto_malak ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 22/21, 8/7, 4/3, 3/2, 14/9, 16/9, 2/1"
   },
-  "ptolemy_malak2": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_malak2.scl",
+  "pto_malak2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_malak2.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_malak2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 10/9, 4/3, 3/2, 14/9, 16/9, 2/1"
+    "ftgen": "gipto_malak2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 28/27, 10/9, 4/3, 3/2, 14/9, 16/9, 2/1"
   },
-  "ptolemy_mdiat": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_mdiat.scl",
+  "pto_mdiat": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_mdiat.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_mdiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 21/20, 7/6, 4/3, 3/2, 63/40, 7/4, 2/1"
+    "ftgen": "gipto_mdiat ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 21/20, 7/6, 4/3, 3/2, 63/40, 7/4, 2/1"
   },
-  "ptolemy_mdiat2": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_mdiat2.scl",
+  "pto_mdiat2": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_mdiat2.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_mdiat2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 7/6, 4/3, 3/2, 5/3, 7/4, 2/1"
+    "ftgen": "gipto_mdiat2 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 10/9, 7/6, 4/3, 3/2, 5/3, 7/4, 2/1"
   },
-  "ptolemy_mdiat3": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_mdiat3.scl",
+  "pto_mdiat3": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_mdiat3.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_mdiat3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 8/7, 6/5, 4/3, 3/2, 12/7, 9/5, 2/1"
+    "ftgen": "gipto_mdiat3 ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 8/7, 6/5, 4/3, 3/2, 12/7, 9/5, 2/1"
   },
-  "ptolemy_meta": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_meta.scl",
+  "pto_meta": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_meta.scl",
     "degrees": "7",
-    "ftgen": "giptolemy_meta ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 21/20, 7/6, 4/3, 3/2, 14/9, 16/9, 2/1"
+    "ftgen": "gipto_meta ftgen 0, 0, 0, -2, 7, 2/1, A4, 69, 1, 21/20, 7/6, 4/3, 3/2, 14/9, 16/9, 2/1"
   },
-  "ptolemy_mix": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_mix.scl",
+  "pto_mix": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_mix.scl",
     "degrees": "19",
-    "ftgen": "giptolemy_mix ftgen 0, 0, 0, -2, 19, 2/1, A4, 69, 1, 16/15, 10/9, 9/8, 32/27, 6/5, 5/4, 4/3, 27/20, 45/32, 64/45, 40/27, 3/2, 8/5, 5/3, 27/16, 16/9, 9/5, 15/8, 2/1"
+    "ftgen": "gipto_mix ftgen 0, 0, 0, -2, 19, 2/1, A4, 69, 1, 16/15, 10/9, 9/8, 32/27, 6/5, 5/4, 4/3, 27/20, 45/32, 64/45, 40/27, 3/2, 8/5, 5/3, 27/16, 16/9, 9/5, 15/8, 2/1"
   },
-  "ptolemy_perm": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_perm.scl",
+  "pto_perm": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_perm.scl",
     "degrees": "35",
-    "ftgen": "giptolemy_perm ftgen 0, 0, 0, -2, 35, 2/1, A4, 69, 1, 16/15, 10/9, 9/8, 256/225, 32/27, 6/5, 100/81, 5/4, 512/405, 81/64, 32/25, 320/243, 4/3, 27/20, 25/18, 1024/729, 45/32, 64/45, 729/512, 36/25, 40/27, 3/2, 243/160, 25/16, 128/81, 405/256, 8/5, 81/50, 5/3, 27/16, 225/128, 16/9, 9/5, 15/8, 2/1"
+    "ftgen": "gipto_perm ftgen 0, 0, 0, -2, 35, 2/1, A4, 69, 1, 16/15, 10/9, 9/8, 256/225, 32/27, 6/5, 100/81, 5/4, 512/405, 81/64, 32/25, 320/243, 4/3, 27/20, 25/18, 1024/729, 45/32, 64/45, 729/512, 36/25, 40/27, 3/2, 243/160, 25/16, 128/81, 405/256, 8/5, 81/50, 5/3, 27/16, 225/128, 16/9, 9/5, 15/8, 2/1"
   },
-  "ptolemy_prod": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_prod.scl",
+  "pto_prod": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_prod.scl",
     "degrees": "21",
-    "ftgen": "giptolemy_prod ftgen 0, 0, 0, -2, 21, 2/1, A4, 69, 1, 25/24, 135/128, 16/15, 10/9, 9/8, 6/5, 5/4, 81/64, 4/3, 25/18, 45/32, 64/45, 40/27, 3/2, 8/5, 5/3, 27/16, 16/9, 50/27, 15/8, 2/1"
+    "ftgen": "gipto_prod ftgen 0, 0, 0, -2, 21, 2/1, A4, 69, 1, 25/24, 135/128, 16/15, 10/9, 9/8, 6/5, 5/4, 81/64, 4/3, 25/18, 45/32, 64/45, 40/27, 3/2, 8/5, 5/3, 27/16, 16/9, 50/27, 15/8, 2/1"
   },
-  "ptolemy_tree": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/ptolemy_tree.scl",
+  "pto_tree": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pto/pto_tree.scl",
     "degrees": "14",
-    "ftgen": "giptolemy_tree ftgen 0, 0, 0, -2, 14, 2/1, A4, 69, 1, 9/8, 8/7, 7/6, 6/5, 5/4, 4/3, 3/2, 5/3, 7/4, 9/5, 11/6, 13/7, 15/8, 2/1"
+    "ftgen": "gipto_tree ftgen 0, 0, 0, -2, 14, 2/1, A4, 69, 1, 9/8, 8/7, 7/6, 6/5, 5/4, 4/3, 3/2, 5/3, 7/4, 9/5, 11/6, 13/7, 15/8, 2/1"
   },
-  "pyth12": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth12.scl",
+  "pyt12": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt12.scl",
     "degrees": "12",
-    "ftgen": "gipyth12 ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 2187/2048, 9/8, 32/27, 81/64, 4/3, 729/512, 3/2, 6561/4096, 27/16, 16/9, 243/128, 2/1"
+    "ftgen": "gipyt12 ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 2187/2048, 9/8, 32/27, 81/64, 4/3, 729/512, 3/2, 6561/4096, 27/16, 16/9, 243/128, 2/1"
   },
-  "pyth12s": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth12s.scl",
+  "pyt12s": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt12s.scl",
     "degrees": "12",
-    "ftgen": "gipyth12s ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 2187/2048, 9/8, 19683/16384, 8192/6561, 4/3, 1024/729, 3/2, 6561/4096, 32768/19683, 59049/32768, 4096/2187, 2/1"
+    "ftgen": "gipyt12s ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 2187/2048, 9/8, 19683/16384, 8192/6561, 4/3, 1024/729, 3/2, 6561/4096, 32768/19683, 59049/32768, 4096/2187, 2/1"
   },
-  "pyth17": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth17.scl",
+  "pyt17": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt17.scl",
     "degrees": "17",
-    "ftgen": "gipyth17 ftgen 0, 0, 0, -2, 17, 2/1, A4, 69, 1, 256/243, 2187/2048, 9/8, 32/27, 19683/16384, 81/64, 4/3, 1024/729, 729/512, 3/2, 128/81, 6561/4096, 27/16, 16/9, 59049/32768, 243/128, 2/1"
+    "ftgen": "gipyt17 ftgen 0, 0, 0, -2, 17, 2/1, A4, 69, 1, 256/243, 2187/2048, 9/8, 32/27, 19683/16384, 81/64, 4/3, 1024/729, 729/512, 3/2, 128/81, 6561/4096, 27/16, 16/9, 59049/32768, 243/128, 2/1"
   },
-  "pyth17s": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth17s.scl",
+  "pyt17s": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt17s.scl",
     "degrees": "17",
-    "ftgen": "gipyth17s ftgen 0, 0, 0, -2, 17, 2/1, A4, 69, 1, 256/243, 16/15, 9/8, 32/27, 6/5, 81/64, 4/3, 1024/729, 64/45, 3/2, 128/81, 8/5, 27/16, 16/9, 9/5, 243/128, 2/1"
+    "ftgen": "gipyt17s ftgen 0, 0, 0, -2, 17, 2/1, A4, 69, 1, 256/243, 16/15, 9/8, 32/27, 6/5, 81/64, 4/3, 1024/729, 64/45, 3/2, 128/81, 8/5, 27/16, 16/9, 9/5, 243/128, 2/1"
   },
-  "pyth22": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth22.scl",
+  "pyt22": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt22.scl",
     "degrees": "22",
-    "ftgen": "gipyth22 ftgen 0, 0, 0, -2, 22, 2/1, A4, 69, 1, 256/243, 2187/2048, 65536/59049, 9/8, 32/27, 19683/16384, 8192/6561, 81/64, 4/3, 177147/131072, 1024/729, 729/512, 3/2, 128/81, 6561/4096, 32768/19683, 27/16, 16/9, 59049/32768, 4096/2187, 243/128, 2/1"
+    "ftgen": "gipyt22 ftgen 0, 0, 0, -2, 22, 2/1, A4, 69, 1, 256/243, 2187/2048, 65536/59049, 9/8, 32/27, 19683/16384, 8192/6561, 81/64, 4/3, 177147/131072, 1024/729, 729/512, 3/2, 128/81, 6561/4096, 32768/19683, 27/16, 16/9, 59049/32768, 4096/2187, 243/128, 2/1"
   },
-  "pyth27": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth27.scl",
+  "pyt27": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt27.scl",
     "degrees": "27",
-    "ftgen": "gipyth27 ftgen 0, 0, 0, -2, 27, 2/1, A4, 69, 1, 531441/524288, 256/243, 2187/2048, 65536/59049, 9/8, 4782969/4194304, 32/27, 19683/16384, 8192/6561, 81/64, 4/3, 177147/131072, 1024/729, 729/512, 262144/177147, 3/2, 1594323/1048576, 128/81, 6561/4096, 32768/19683, 27/16, 14348907/8388608, 16/9, 59049/32768, 4096/2187, 243/128, 2/1"
+    "ftgen": "gipyt27 ftgen 0, 0, 0, -2, 27, 2/1, A4, 69, 1, 531441/524288, 256/243, 2187/2048, 65536/59049, 9/8, 4782969/4194304, 32/27, 19683/16384, 8192/6561, 81/64, 4/3, 177147/131072, 1024/729, 729/512, 262144/177147, 3/2, 1594323/1048576, 128/81, 6561/4096, 32768/19683, 27/16, 14348907/8388608, 16/9, 59049/32768, 4096/2187, 243/128, 2/1"
   },
-  "pyth31": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth31.scl",
+  "pyt31": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt31.scl",
     "degrees": "31",
-    "ftgen": "gipyth31 ftgen 0, 0, 0, -2, 31, 2/1, A4, 69, 1, 531441/524288, 256/243, 2187/2048, 1162261467/1073741824, 9/8, 4782969/4194304, 32/27, 19683/16384, 1.2177453858356648, 8192/6561, 81/64, 43046721/33554432, 4/3, 177147/131072, 1024/729, 729/512, 387420489/268435456, 3/2, 1594323/1048576, 128/81, 6561/4096, 1.6236605152591679, 27/16, 14348907/8388608, 16/9, 59049/32768, 1.8266180778404304, 4096/2187, 243/128, 129140163/67108864, 2/1"
+    "ftgen": "gipyt31 ftgen 0, 0, 0, -2, 31, 2/1, A4, 69, 1, 531441/524288, 256/243, 2187/2048, 1162261467/1073741824, 9/8, 4782969/4194304, 32/27, 19683/16384, 1.2177453858356648, 8192/6561, 81/64, 43046721/33554432, 4/3, 177147/131072, 1024/729, 729/512, 387420489/268435456, 3/2, 1594323/1048576, 128/81, 6561/4096, 1.6236605152591679, 27/16, 14348907/8388608, 16/9, 59049/32768, 1.8266180778404304, 4096/2187, 243/128, 129140163/67108864, 2/1"
   },
-  "pyth7a": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyth7a.scl",
+  "pyt7a": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pyt7a.scl",
     "degrees": "12",
-    "ftgen": "gipyth7a ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 17/16, 9/8, 153/128, 81/64, 4/3, 17/12, 3/2, 51/32, 27/16, 459/256, 243/128, 2/1"
+    "ftgen": "gipyt7a ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 17/16, 9/8, 153/128, 81/64, 4/3, 17/12, 3/2, 51/32, 27/16, 459/256, 243/128, 2/1"
   },
-  "pythchrom": {
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pythchrom.scl",
+  "pytchrom": {
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/pyt/pytchrom.scl",
     "degrees": "8",
-    "ftgen": "gipythchrom ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 256/243, 9/8, 4/3, 3/2, 128/81, 27/16, 16/9, 2/1"
+    "ftgen": "gipytchrom ftgen 0, 0, 0, -2, 8, 2/1, A4, 69, 1, 256/243, 9/8, 4/3, 3/2, 128/81, 27/16, 16/9, 2/1"
   }
 }

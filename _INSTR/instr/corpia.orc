@@ -2,6 +2,8 @@
 
 	$params
 
+iamp	init iamp/3
+
 idur	init idur
 
 ifreq 	init icps			;base frequency of the string.

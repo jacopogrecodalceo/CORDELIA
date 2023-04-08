@@ -1,6 +1,8 @@
 ;OPCODE
-    opcode abj, a, ak
+    opcode absolute_dist, a, ak
     ain, kp1 xin
+
+setksmps 1
 
 afx     balance2 abs(ain), ain
 amod	abs lfo:a(1, kp1/2)
@@ -14,7 +16,7 @@ aout	= afx + ain
     endop
 ;OPCODE
 
-	opcode  bij, a, akk
+	opcode  bbcutm_random, a, akk
 	ain, ktime, kfb xin
 
 kdel    = ktime
@@ -37,7 +39,141 @@ aout        bbcutm ain, ibps, isubdiv, ibarlength, iphrasebars, inumrepeats, ist
 
 
 ;OPCODE
-    opcode mooj, a, akk
+    opcode vcomb_balance, a, akkk
+    ain, ktime, kfb, kmix xin
+
+imax_t	init 15
+acomb	vcomb ain, ktime, kfb*(imax_t/1000), imax_t
+;acomb	balance2 acomb, ain
+
+aout	= ain*(1-kmix) + acomb*kmix
+
+    xout aout
+    endop
+;OPCODE
+    opcode conv_1, a, aSik
+    ain, String, ich, kmix xin
+
+adest	chnget sprintf("%s_%i", String, ich)
+
+aout    cross2 ain, adest, 4096, 2, gihanning, kmix
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+;OPCODE
+
+/*
+	Args:  
+	* asig : input signal
+	* imaxdur : size of buffer in seconds
+	* ksub : slicing subdivision
+	* kchoice : which subdivision to use (not obvious it is useful)
+	* kstutter : 1 for stutter, 0 for normal
+	* kstutterspeed : speedy gonzales
+
+*/
+
+opcode jcut, a, akk
+	asig, ksub, kchoice xin
+
+	imaxdur init i(gkbeats)*4
+	kstutter init 0
+	ktrig init i(gkbeatn)
+	ktrig = gkbeatn
+
+	kkey, kdown sensekey
+	if gkkeyboard_spacebar == 1 then 
+		kstutter = (kstutter + 1 ) % 2
+		kstutterspeed = int(random:k(1, 3))
+	endif
+
+	kchoice = kchoice % ksub
+	kreach init 0
+
+	if changed2(ktrig) == 1 then
+		ksub_ch = changed2(ksub)
+		kchoice_ch = changed2(kchoice)
+		kstutter_ch = changed2(kstutter)
+	endif
+	
+	ilen_smps = imaxdur * sr
+	ibuf ftgentmp 0, 0, ilen_smps, -2, 0
+	
+	kstut_sub init 1
+	kstut_rpos init 0
+	if(kstutter_ch > 0) then 
+		kstut_sub = ksub
+		kstut_rpos = 0
+	endif
+
+	kstut_limit = int(ilen_smps / kstut_sub)
+	ibuf_stutter ftgentmp 0, 0, ilen_smps, -2, 0
+
+	kwrite_ptr init 0
+	
+	asig init 0
+
+	kcnt = 0
+	while kcnt < ksmps do 
+		tablew(asig[kcnt], kwrite_ptr, ibuf)
+		kwrite_ptr = (kwrite_ptr + 1) % ilen_smps
+		kcnt += 1
+	od
+
+	kincr init 0
+	kinit init 1
+	if(kinit == 1  || kchoice_ch > 0 || ksub_ch > 0 ) then
+		kplus = ilen_smps / ksub * kchoice
+		kread_ptr = (kwrite_ptr + kplus) % ilen_smps
+		kincr = 0
+	endif
+	kreach = 0
+
+	kcnt = 0
+	if(kstutter > 0) kgoto stutter
+
+	kinit = 0
+	while kcnt < ksmps do 
+		aout[kcnt] = table(  (kread_ptr + kincr) % ilen_smps, ibuf)	
+		kincr = (kincr + 1) % int(ilen_smps / ksub) 
+		// Write for stutter
+		tablew(aout[kcnt], kincr, ibuf_stutter)
+		if(kincr == 0) then 
+			kreach = 1
+		endif
+
+		
+		kcnt += 1 
+	od
+	kgoto nostutter
+
+	stutter:
+	kcnt = 0
+	while kcnt < ksmps do 
+		aout[kcnt] = table(kstut_rpos, ibuf_stutter)
+		kstut_rpos = (kstut_rpos + kstutterspeed) % int(ilen_smps / kstut_sub)
+		kcnt += 1		
+	od
+
+	nostutter:
+	
+	xout aout
+endop
+;OPCODE
+    opcode duck, a, aSik
+    ain, Sinstr, ich, kmix xin
+
+aenv    follow2 chnget:a(sprintf("%s_%i", Sinstr, ich)), 25$ms, 95$ms
+afol	= ain * (1-aenv)
+
+aout	= afol*kmix + ain*(1-kmix)
+
+    xout aout
+    endop
+
+;OPCODE
+    opcode moogladder_balance, a, akk
     ain, kfreq, kq xin
 
 ifreq_var	init 5
@@ -46,6 +182,82 @@ aout	balance2 aout, ain
 
     xout aout
     endop
+;OPCODE
+
+giplate_rev_tabexcite	ftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545
+giplate_rev_tabouts	ftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545
+
+	opcode plate_rev, a, ak
+	ain, kmix xin
+
+itime init i(gkbeats)*8 
+
+arev	platerev giplate_rev_tabexcite, giplate_rev_tabouts, 0, 0.095, .75, itime, 0.0015, ain
+aout	= ain*(1-kmix) + arev*kmix
+
+	xout aout
+	endop
+;OPCODE
+
+
+	opcode reverb_1, a, akkk
+	ain, ktime, khigh_freq, kmix xin
+
+arev	nreverb ain, ktime, 1-khigh_freq
+aout	= ain*(1-kmix) + arev*kmix
+
+	xout aout
+	endop
+;OPCODE
+	opcode ringmod_heart, a, akk
+	ain, kdiv, ktab xin
+
+kphase		= kdiv - floor(kdiv)
+kndx		= ((chnget:k("heart")*kdiv*gkdiv)+kphase)%1
+kring		tableikt kndx, ktab, 1, 0, 1
+
+aout		= ain * a(kring)
+
+	xout aout
+	endop
+;OPCODE
+
+
+	opcode string_filter, a, akk
+	ain, kfreq, kq xin
+
+kfreq += oscili:k(.5, gkbeatf/64)
+
+aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
+
+astr1	streson ain, kfreq, kq
+astr2	streson ain, kfreq*1.25, kq
+
+aout	= aguid + astr1 + astr2
+aout	/= 3
+
+aout	phaser1 aout, kfreq, 12, kq
+	
+	xout aout
+	endop
+;OPCODE
+
+
+	opcode string_filter, a, akk
+	ain, kfreq, kq xin
+
+aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
+
+astr1	streson ain, kfreq, kq
+astr2	streson ain, kfreq*1.25, kq
+
+aout	= aguid + astr1 + astr2
+aout	/= 3
+
+aout	phaser1 aout, kfreq, 12, kq
+	
+	xout aout
+	endop
 ;OPCODE
 
 ; Original research and code by Jon Downing  as in paper
@@ -214,14 +426,15 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode  tape, a, akk
-ain, ktime, kfb xin
+opcode  tape_delay, a, akkk
+ain, ktime, kfb, kgain xin
 
 kdel    = ktime
+kgain	init 1
+kvar	oscili .25, gkbeatf/8
 
-kvar oscili 0.25, gkbeatf/8
 
-aout	TapeEchoN ain, kdel, 1, kfb, 0, 0.75 + kvar, 10
+aout	TapeEchoN ain*kgain, kdel, kfb, .95, 0, .75 + kvar, 10
 
   xout aout
 

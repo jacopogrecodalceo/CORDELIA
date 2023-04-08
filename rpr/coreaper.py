@@ -3,10 +3,44 @@ import socket
 
 MIDI_CORRECTION = 1024
 
-def send_to_csound(action):
+CSOUND_STRINGS = []
+
+NAMED_INSTR = []
+
+def append_to_csound(string):
+	CSOUND_STRINGS.append(string)
+
+def split_message(message, max_size):
+    message_len = len(message.encode())
+    if message_len > max_size:
+        message_parts = []
+        message_lines = message.split('\n')
+        current_message = ''
+        for line in message_lines:
+            line_len = len(line.encode())
+            if len(current_message.encode()) + line_len > max_size:
+                message_parts.append(current_message.strip())
+                current_message = line + '\n'
+            else:
+                current_message += line + '\n'
+        if current_message:
+            message_parts.append(current_message.strip())
+        return message_parts
+    else:
+        return [message.strip()]
+    
+def send_to_csound(message):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-	#log(action)
-	s.sendto(action.encode(), ('localhost', 10025))
+	#s.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 65536)
+
+	#max_size = s.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
+	#log("Max datagram size: " + str(max_size))
+	#log(len(action))
+	max_size = 4096
+	messages = split_message(message, max_size)
+	for message_part in messages:
+		s.sendto(message_part.encode(), ('localhost', 10025))
+
 	s.close()
 
 def log(string):
@@ -132,7 +166,9 @@ def get_score():
 						ret_val, ret_take, MIDI_notes, ret_cc, ret_sysex = RPR_MIDI_CountEvts(item.take_id, 0, 0, 0)
 						for index in range(MIDI_notes):
 							midi = CORDELIA_midi(index, track.id, item.id, item.take_id)
-							csound_code = f'eva_midi "{track.parent_name}", {midi.start-current_pos}, {midi.dur-item.start_pos-current_pos}, {midi.dyn}, {midi.env}, {midi.name}'
+							init_round = 5
+							NAMED_INSTR.append(track.parent_name)
+							csound_code = f'eva_midi "{track.parent_name}", {round(midi.start-current_pos, init_round)}, {round(midi.dur-item.start_pos-current_pos, init_round)}, {round(midi.dyn, init_round)}, {midi.env}, {midi.name}'
 							CORDELIA_SEND_INSTR.append(csound_code)
 							if track.parent_name not in TURNOFF_NAME:
 								TURNOFF_NAME.append(track.parent_name)
@@ -177,19 +213,21 @@ TURNOFF_NUM =[]
 TURNOFF_NAME = []
 
 def on_play():
-	global CORDELIA_SEND_INSTR
+	global CORDELIA_SEND_INSTR, CSOUND_STRINGS
 
 	get_score()
 
-	send_to_csound('schedule "heart", 0, -1')
-
-	for each in CORDELIA_SEND_INSTR:
-		send_to_csound(each)		
+	#send_to_csound('schedule "heart", 0, -1')
+	CSOUND_STRINGS.append('schedule "heart", 0, -1')
+	CSOUND_STRINGS.extend(CORDELIA_SEND_INSTR)
+	send_to_csound('\n'.join(CSOUND_STRINGS))
+	CSOUND_STRINGS.clear()
 
 def on_stop():
-	global TURNOFF_NUM, TURNOFF_NAME
+	global TURNOFF_NUM, TURNOFF_NAME, CSOUND_STRINGS, NAMED_INSTR
 
-	send_to_csound('turnoff2_i "heart", 0, 0')
+	#send_to_csound('turnoff2_i "heart", 0, 0')
+	CSOUND_STRINGS.append('turnoff2_i "heart", 0, 0')
 
 	turnoff_list = []
 	for each in TURNOFF_NAME:
@@ -197,16 +235,26 @@ def on_stop():
 		turnoff_list.append(f'turnoff2 nstrnum("{each}"), 0, 0')
 
 	string = '\n'.join(TURNOFF_NUM + turnoff_list)
-	send_to_csound(f'''
+
+	NAMED_INSTR = list(dict.fromkeys(NAMED_INSTR))
+
+	for each in NAMED_INSTR:
+		CSOUND_STRINGS.append(f'turnoff3 nstrnum("{each}")')
+
+	CSOUND_STRINGS.append(f'''
 		instr 865
 {string}
 	turnoff
 		endin
 		schedule 865, 0, 1''')
 
+	send_to_csound('\n'.join(CSOUND_STRINGS))
+
 	CORDELIA_SEND_INSTR.clear()
 	TURNOFF_NUM.clear()
 	TURNOFF_NAME.clear()
+	CSOUND_STRINGS.clear()
+	NAMED_INSTR.clear()
 
 def check_play():
 

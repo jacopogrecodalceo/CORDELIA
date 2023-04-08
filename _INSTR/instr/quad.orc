@@ -148,7 +148,7 @@ index init (ich-1)+int(giquad_index)
 
 aout = aouts[index]
 
-aout		dcblock2 aout
+;aout		dcblock2 aout
 
 aout		*= $ampvar+(lfo($ampvar/4, i(gkbeats)))
 

@@ -1,0 +1,41 @@
+{
+  "diocles": {
+    "params": [[0.5, 1.75]],
+    "csound": "hc_diocles_curve"
+  },
+  "cubic": {
+    "csound": "hc_cubic_curve"
+  },
+  "power": {
+    "params": [[0.005, 0.995]],
+    "csound": "hc_power_curve"
+  },
+  "hamming": {
+    "csound": "hc_hamming_curve"
+  },
+  "hanning": {
+    "csound": "hc_hanning_curve"
+  },
+  "blackman": {
+    "csound": "hc_blackman_curve"
+  },
+  "gaussian": {
+    "params": [[0.005, 0.995], [0, 3]],
+    "csound": "hc_gaussian_curve"
+  },
+  "toxoid": {
+    "params": [[0, 3]],
+    "csound": "hc_toxoid_curve"
+  },
+  "catenary": {
+    "params": [[0, 2]],
+    "csound": "hc_catenary_curve"
+  },
+  "tightrope_walker": {
+    "params": [[0, 0.995], [0, 0.995]],
+    "csound": "hc_tightrope_walker_curve"
+  },
+  "kiss": {
+    "csound": "hc_kiss_curve"
+  }
+}

@@ -194,3 +194,30 @@ def parser(code) -> str():
 		
 
 	#return code
+
+
+
+def parser_rpr(code) -> str():
+
+	#delete all $ symbol for macros
+	code = re.sub(r'\$', '', code, flags=re.MULTILINE)
+
+	try:
+		code = abbr(code)
+		code = note(code)
+		code = macro(code)
+		code = scala(code)
+		code = gen(code)
+		code = instr(code)
+
+		#added for regex parse
+		code += '\n'
+
+
+		return code
+
+	except Exception as e:
+		print(f'This is an exception in {bcolors.WARNING}parser{bcolors.ENDC}')
+		print(f'in line: {bcolors.WARNING}{code}{bcolors.ENDC}')
+		print(f'{bcolors.WARNING}{e}{bcolors.ENDC}')
+		

@@ -18,6 +18,8 @@
 
 #define	ampvar		#(iamp+random:i(-(iamp/10), iamp/10))#
 
+;#define	ampvar		#iamp#
+
 girpr_ck	init 95$ms
 #define rpr_ck		#(linseg:k(0, girpr_ck, 1, p3-(girpr_ck*2), 1, girpr_ck, 0))#
 #define rpr_courbe	#(cosseg:k(0, p3/2, 1, p3/2, 0))#

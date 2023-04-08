@@ -26,6 +26,8 @@ for o in opt:
 	csound_cordelia.setOption(o)
 	print(o)
 
+csound_cordelia.setOption(f'--midioutfile={CORDELIA_OUT_MID}')
+
 #csound_cordelia.setOption(f'--omacro:SCO_NAME="{CORDELIA_OUT_SCO}"')
 
 #######################################

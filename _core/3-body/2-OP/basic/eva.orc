@@ -8,7 +8,8 @@ if	($kcps != 0) then
 		od
 		kch = 0
 	else
-		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+		kch_i = ((kch-1)%ginchnls)+1
+		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
 	endif
 endif
 #
@@ -27,10 +28,6 @@ printk2 kcps3
 printk2 kcps4
 printk2 kcps5
 */
-
-if kch != 0 then
-	kch = ((kch+ginchnls)%ginchnls)+1
-endif
 
 if	kdur > giminnote && kamp > 0 then
 

@@ -1,17 +1,37 @@
 {
-  "abj": {
-    "core": ";CORE\nPARAM_1    init i(gkbeatf)\n\nPARAM_OUT abj PARAM_IN, PARAM_1\n\n",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/abj.orc",
+  "abij": {
+    "core": ";CORE\nPARAM_1    init i(gkbeatf)\n\nPARAM_OUT absolute_dist PARAM_IN, PARAM_1\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/abij.orc",
     "how_many_p": 1
   },
   "bij": {
-    "core": ";CORE\n\nPARAM_OUT\tbij PARAM_IN, PARAM_1, PARAM_2\n\t\n",
+    "core": ";CORE\n\nPARAM_OUT\tbbcutm_random PARAM_IN, PARAM_1, PARAM_2\n\t\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/bij.orc",
     "how_many_p": 2
   },
-  "flanj": {
-    "core": ";CORE\n\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tflanger PARAM_IN, a(portk(PARAM_1, gkbeats/32)), PARAM_2, 15\n",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanj.orc",
+  "combij": {
+    "core": ";CORE\n;krvt\t= ktime\n;klpt\t= kfb*(imaxlpt/1000)\n\nPARAM_1 init i(gkbeats)\nPARAM_2 init .5\nPARAM_3 init .5\n\nPARAM_OUT\tvcomb_balance PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/combij.orc",
+    "how_many_p": 3
+  },
+  "convij": {
+    "core": ";CORE\n\nPARAM_2\tinit .5\n\nPARAM_OUT    conv_1 PARAM_IN, PARAM_1, ich, PARAM_2\n\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/convij.orc",
+    "how_many_p": 2
+  },
+  "cutij": {
+    "core": ";CORE\nPARAM_1\t\tinit 8\n\nPARAM_OUT\tjcut PARAM_IN, PARAM_1, 1\n\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/cutij.orc",
+    "how_many_p": 1
+  },
+  "duij": {
+    "core": ";CORE\n\nPARAM_2\tinit 1\n\nPARAM_OUT    duck PARAM_IN, PARAM_1, ich, PARAM_2\n\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/duij.orc",
+    "how_many_p": 2
+  },
+  "flanij": {
+    "core": ";CORE\n\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tflanger PARAM_IN, a(portk(PARAM_1, gkbeats/24)), portk(PARAM_2, .025), 15\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanij.orc",
     "how_many_p": 2
   },
   "getmeout": {
@@ -19,14 +39,39 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc",
     "how_many_p": 1
   },
-  "mooj": {
-    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT mooj PARAM_IN, PARAM_1, PARAM_2\n\n",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/mooj.orc",
+  "moij": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT moogladder_balance PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moij.orc",
     "how_many_p": 2
   },
-  "tape": {
-    "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\ttape PARAM_IN, PARAM_1, PARAM_2\n\n",
-    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tape.orc",
+  "platij": {
+    "core": ";CORE\n\n;space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/platij.orc",
+    "how_many_p": 1
+  },
+  "revij": {
+    "core": ";CORE\n\n;space\nPARAM_1 init i(gkbeats)\n\n;high freq\nPARAM_2 init .5\n\n;mix\nPARAM_3 init .5\n\nPARAM_OUT reverb_1 PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/revij.orc",
+    "how_many_p": 3
+  },
+  "rinij": {
+    "core": ";CORE\n\n;division\nPARAM_1 init 4\n\n;gen\nPARAM_2 init giasine\n\nPARAM_OUT ringmod_heart PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/rinij.orc",
     "how_many_p": 2
+  },
+  "strij": {
+    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT string_filter PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strij.orc",
+    "how_many_p": 2
+  },
+  "strijp": {
+    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT string_filter PARAM_IN, portk(PARAM_1, PARAM_2), PARAM_3\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strijp.orc",
+    "how_many_p": 3
+  },
+  "tapij": {
+    "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit 1\n\nPARAM_OUT\ttape_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tapij.orc",
+    "how_many_p": 3
   }
 }

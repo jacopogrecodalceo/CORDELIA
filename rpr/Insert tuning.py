@@ -2,9 +2,9 @@ import json
 import math
 from pathlib import Path
 
-CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIAv4'
+CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIA'
 
-with open(f'{CORDELIA_DIR}/_rpr/midi_name_freq.json') as f:
+with open(f'{CORDELIA_DIR}/rpr/midi_name_freq.json') as f:
 	MIDI_NAME_FREQ = json.load(f)
 
 def log(string):

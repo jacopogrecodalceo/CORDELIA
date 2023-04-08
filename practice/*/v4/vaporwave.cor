@@ -1,0 +1,29 @@
+
+
+
+gkpulse = 110
+
+gktuning = scala.pto_diat
+
+eu: 3, 16, 64
+	@careless2.flanij(bs, .25)
+	wn*8
+	p*in8m
+	classic.a(5)
+	bb3-4.21: pump(32, fill(classic, eclassic, eau))
+
+eu: 3, 16, 64, 4
+	@wutang
+	wn*8
+	pp*in12m
+	spina
+	bb3-4.18: pump(32, fill(classic, eclassic, eau))
+
+@orp: 8, ppp*in8m
+
+;eu: 5, 8, pump(16, fill(8, 8, 6, 4))
+	@bass
+	qn
+	pp
+	classic.a(5)
+	bb3-4.5: pump(32, fill(classic, eclassic, eau))

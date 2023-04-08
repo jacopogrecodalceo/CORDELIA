@@ -21,13 +21,13 @@ prints "I'm ready!\n"
 ;everything is transformed in ms
 
 Sfile           init p4
-istart          init p5/1000
+istart          init p5
 iloop           init p6
 igain           init p7
 
-ifade_in         init p8/1000
+ifade_in         init p8
 ifade_in_mode    init p9
-ifade_out        init p10/1000
+ifade_out        init p10
 ifade_out_mode   init p11
 
 if ifade_in_mode == 0 then
@@ -53,7 +53,7 @@ idur            init ilen
 krel    		init 0
 krel	    	release
 
-if istart < idur*1000 then
+if istart < idur then
 
     prints "\n---\n"
     prints "INSTR:\t\t%.003f\n", p1
@@ -61,8 +61,8 @@ if istart < idur*1000 then
     prints "LENGTH:\t\t%.02fs\n", idur
     prints "START AT:\t%ds\n", istart
     prints "LOOP:\t\t%s\n", iloop == 1 ? "ON" : "OFF"
-    prints "FADE_IN:\t\t%s, %ims\n", Sfade_in, ifade_in*1000
-    prints "FADE_OUT:\t%s, %ims\n", Sfade_out, ifade_out*1000
+    prints "FADE_IN:\t\t%s, %ims\n", Sfade_in, ifade_in
+    prints "FADE_OUT:\t%s, %ims\n", Sfade_out, ifade_out
     prints "---\n"
 
     if iloop == 0 then
@@ -136,7 +136,7 @@ if istart < idur*1000 then
         endif
 
         printks2 "\n---\n%.03f - RELEASE PHASE\n", p1
-        printks2 "FADE_OUT:\t\t%.02fs\n---\n", ifade_out*1000
+        printks2 "FADE_OUT:\t\t%.02fs\n---\n", ifade_out
 
     endif
 

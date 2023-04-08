@@ -13,7 +13,7 @@ if konset != 0 && kpulses != 0 && kdiv != 0 then
 
 	kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
 
-	kph			= int((kcycle % 1) * kpulses) + krot
+	kph		= int((kcycle % 1) * kpulses) + krot
 	keu_val		= int((konset / kpulses) * kph)
 
 	if changed2(keu_val) == 1 then

@@ -1,5 +1,20 @@
 import re
 
+def extract_elements(string):
+    elements = []
+    paren_count = 0
+    start = 0
+    for i, c in enumerate(string):
+        if c == '(':
+            paren_count += 1
+        elif c == ')':
+            paren_count -= 1
+        elif c == ',' and paren_count == 0:
+            elements.append(string[start:i])
+            start = i + 1
+    elements.append(string[start:])
+    return [elem.strip() for elem in elements if elem]
+
 
 def space(string):
 		
@@ -64,15 +79,18 @@ turnoff
 else
 
 ich init p4
+
 			xtratim gixtratim
+
 krel		init 0
 krel		release
-igain		i 1
-kgain_in	init 1
+igain		init 1
+kgain_in	cosseg 0, .015, 1
 kgain_out	init 1
+
 if krel == 1 then
-	kgain_in *= cosseg(igain, (gixtratim-gixtratim_rel)/2, igain, gixtratim_rel/2, 0)
-	kgain_out *= cosseg(igain, gixtratim-gixtratim_rel, igain, gixtratim_rel, 0)
+	kgain_in cosseg igain, gixtratim/4, igain/2, gixtratim*3/4, 0 
+	kgain_out cosseg igain, gixtratim/2, igain, gixtratim/2, 0
 endif
 
 ''')
@@ -120,7 +138,8 @@ endif
 
 	#gain_out_line = 'aout *= kgain_out'
 	#lines.append(gain_out_line)
-	
+	#balance_line = '\tamain_out balance2 amain_out, amain_in'	
+	#lines.append(balance_line)
 	output_line = '\tchnmix amain_out*kgain_out, gSmouth[ich-1]'
 	lines.append(output_line)
 	lines.append('\tendif')
@@ -130,3 +149,25 @@ endif
 	#print(res)
 
 	return res
+
+def find_once_content(string, var):
+    
+	if re.search(r'once', string):
+
+		start = string.find("once(")
+		if start == -1:
+			return None
+		count = 1
+		i = start + len("once(")
+		while i < len(string) and count > 0:
+			if string[i] == "(":
+				count += 1
+			elif string[i] == ")":
+				count -= 1
+			i += 1
+			
+		once_string = string [:start] + f'once({var}, fillarray(' + string[start + len("once("):i-1] + '))' + string[i:]
+		return once_string	
+	else:
+		
+		return string

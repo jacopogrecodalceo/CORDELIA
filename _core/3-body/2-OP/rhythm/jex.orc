@@ -13,9 +13,8 @@ opcode jex, k, SkO
 
 	if (kph < klast) then
 
-		ktick += 1
-
 		kstrlen = strlenk(Spat)
+		ktick = kph*kstrlen
 
 		if (kstrlen > 0) then
 

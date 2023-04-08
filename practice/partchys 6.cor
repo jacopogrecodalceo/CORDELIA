@@ -1,0 +1,30 @@
+
+
+
+
+gkpulse almost 75
+
+gktuning = scala.olympos
+
+eu: 4, 16, 4
+	@bebois.combij(hn*lfh(3), 1/pump(32, fill(8, 4, 3, 9)), .05*lfh(48))
+	each(wn, hn)
+	each(mp, pp)*out2m
+	each(merc, niob, 3)
+	g4-4.9: macb
+	bb4-1.12: macb
+	g4-8.11: pump(4, fill(macb, rose, rosa, malv))
+
+eu: pump(8, fill(4, 3)), 16, 4
+	@xylo
+	once(wn, hn, hn)
+	each(pp, ppp*out2m)*out4m
+	each(pers.a(5), niob)
+	g3-4.11: macb
+
+eu: 4, 16, 8
+	@fairest2@mhon2
+	wn*8
+	each(p, pp)
+	merc.a(5)
+	g4-3.19: macb

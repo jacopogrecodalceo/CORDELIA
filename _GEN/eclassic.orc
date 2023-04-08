@@ -1,6 +1,6 @@
 ;	ECLASSIC
 ;	a 3-points function from segments of exponential curves
-gieclassic_atk		init sr * 5$ms
+gieclassic_atk		init sr * .005
 gieclassic_dur		init gienvdur - gieclassic_atk
 gieclassic_int		init 9
 gieclassic_intdec	init 5

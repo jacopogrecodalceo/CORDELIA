@@ -15,7 +15,7 @@ ihard		init 1-$ampvar	; the hardness of the stick used in the strike. A range of
 ipos		init 1-$ampvar	; where the block is hit, in the range 0 to 1
 
 imod		init (ich-1) % gibois_len
-imp			init gibois_list[imod]
+imp		init gibois_list[imod]
 
 kvrate		expseg 3, idur, 12/idur
 kvdepth		init $ampvar

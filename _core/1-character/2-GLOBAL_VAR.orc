@@ -24,8 +24,7 @@ gkclearchns[]		init 128
 
 gis_midi		init 0
 
-gixtratim		init 9
-gixtratim_rel	init gixtratim/2
+gixtratim		init 15
 
 ;----------------------------------------
 ;			REAPER		|

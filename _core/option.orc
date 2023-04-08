@@ -4,6 +4,7 @@
 -m0
 ;-D
 
+
 ;-M0
 ;-+msg_color=1
 --messagelevel=99
@@ -18,6 +19,7 @@
 ;-B 2048
 
 -+rtaudio=PortAudio
+;-+rtaudio=jack
 ;-+rtaudio=CoreAudio
 
 ;-b 1024
@@ -29,7 +31,7 @@
 ;--m-colours=1
 ;--udp-echo
 
-;--midioutfile=/./cor221218-2200.mid
+;--midioutfile=/Users/j/Documents/PROJECTs/CORDELIA/_score/10.mid
 ;--nosound
 
 ;-v		;verbose orch translation

@@ -1,0 +1,18 @@
+
+
+
+
+gkpulse = 130
+
+gktuning = scala.pto_diat
+
+eu: 7, 16, 8
+	@fairest3.strij(ntof(bb3), .5+lfh(12)*.25).combij(qn, .5, .5)
+	once(wn, hn, wn*4, 0, 0)*.85
+	each(mf, p)
+	once(leda, atno, -rosa)
+	g4-4.11: rich
+	a4-3.9: rich
+	d4-1.7: rich
+
+

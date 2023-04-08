@@ -17,9 +17,11 @@ endif
 kres	tab kndx, abs(igen)
 
 kndx	= ((kndx+kfact)+ilen)%ilen
-
+;printk2 kres
 	xout kres
 	endop
+
+
 
 	opcode oncegen2, k[], i
 	igen xin
