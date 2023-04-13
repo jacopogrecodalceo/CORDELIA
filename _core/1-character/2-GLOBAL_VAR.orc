@@ -6,7 +6,7 @@ giexpzero		init .00015		;a zero value for expseg
 
 giadjust	init 1-(gizero*ksmps)
 
-gkgain			init 1			;master gain for "mouth" instrument
+gkgain			init 2/3			;master gain for "mouth" instrument
 
 gkabstime		init 0
 
