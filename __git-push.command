@@ -14,6 +14,6 @@ git add .
 git commit -m "$commit"
 
 # Push the changes to GitHub
-git push origin master
+git push origin main
 
 $SHELL
