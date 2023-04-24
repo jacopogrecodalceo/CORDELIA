@@ -1,0 +1,27 @@
+gkpulse	= 135
+
+gkran	= 3*floor(random:k(0, 2))
+
+eu: 3, 8, 4
+	@wendy
+	hn
+	f
+	mac
+	step("3B", gidorian, pump(16, fill(7, 7, 5, 4, 1, 5, 3, 1)+gkran))
+
+eu: 3, 8, 4
+	@wendy
+	qn
+	f
+	mac
+	step("2B", gidorian, pump(32, fill(7, 7, 5, 4, 1, 5, 3, 1)))
+
+eu: 3, 8, 2, 1
+	@wendy
+	qn
+	f
+	mac
+	step("1B", gidorian, pump(8, fill(7, 7, 5, 4, 1, 5, 3, 1)+gkran))
+
+
+

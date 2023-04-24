@@ -5,49 +5,49 @@ schedule "MNEMOSINE", 0, -1, "__corlist.wav"
 
 ;---
 schedule 1.001, 0, 1,\
-	"armagain.wav",	\;filename
+	"1.wav",	\;filename
 	0,	\;start from
 	0,	\;is a loop (0 or 1)
 	.5,	\;volume
-	5,	\;fadein duration
+	.025,	\;fadein duration
 	0,	\;fadein mode
-	5,	\;fadeout duration
+	.025,	\;fadeout duration
 	0	;fadeout mode
 ;---
 turnoff2_i 1.001, 4, 1
 ;---
 schedule 1.002, 0, 1,\
-	"contempo.wav",	\;filename
+	"2.wav",	\;filename
 	0,	\;start from
 	0,	\;is a loop (0 or 1)
 	.5,	\;volume
-	5,	\;fadein duration
+	.025,	\;fadein duration
 	0,	\;fadein mode
-	5,	\;fadeout duration
+	.025,	\;fadeout duration
 	0	;fadeout mode
 ;---
 turnoff2_i 1.002, 4, 1
 ;---
 schedule 1.003, 0, 1,\
-	"crij.wav",	\;filename
+	"3.wav",	\;filename
 	0,	\;start from
 	0,	\;is a loop (0 or 1)
 	.5,	\;volume
-	5,	\;fadein duration
+	.025,	\;fadein duration
 	0,	\;fadein mode
-	5,	\;fadeout duration
+	.025,	\;fadeout duration
 	0	;fadeout mode
 ;---
 turnoff2_i 1.003, 4, 1
 ;---
 schedule 1.004, 0, 1,\
-	"cril.wav",	\;filename
+	"4.wav",	\;filename
 	0,	\;start from
 	0,	\;is a loop (0 or 1)
 	.5,	\;volume
-	5,	\;fadein duration
+	.025,	\;fadein duration
 	0,	\;fadein mode
-	5,	\;fadeout duration
+	.025,	\;fadeout duration
 	0	;fadeout mode
 ;---
 turnoff2_i 1.004, 4, 1

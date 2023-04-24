@@ -9,8 +9,8 @@ eu: 4, 16, 8
 	@alone@bebor.combij(hn, .5*lfh(1), .25*lfh(48))
 	each(wn*2, qn, 2)
 	each(mp, p)
-	each(merc, niob, 3)
-	g4-4.9: macb
-	bb4-1.12: macb
-	g4-8.11: pump(4, fill(macb, rose, rosa, malv))
+	each(nere, niob, 3)
+	g4-4.9: mac
+	bb4-1.12: mac
+	g4-8.11: pump(4, fill(mac, rose, rosa))
 

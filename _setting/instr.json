@@ -503,6 +503,13 @@
 
     ]
   },
+  "careless5": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/careless5.orc",
+    "global_var": [
+
+    ]
+  },
   "cascade": {
     "type": "instr",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/cascade.orc",
@@ -516,6 +523,14 @@
     "global_var": [
 
     ]
+  },
+  "cauch": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cauch.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
   },
   "chime": {
     "type": "sonvs",
@@ -1702,6 +1717,13 @@
     ],
     "channels": "2",
     "sr": "44100"
+  },
+  "piano": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/piano.orc",
+    "global_var": [
+
+    ]
   },
   "pij": {
     "type": "instr",

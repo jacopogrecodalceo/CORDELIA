@@ -4,7 +4,7 @@ Scarlett
 M-Track
 SQ
 RME 
-Fireface --nchnls=2
+;Fireface
 JBL --nchnls=2 --limiter
 External Headphones --nchnls=2 --limiter
 MacBook Pro --nchnls=2 --limiter

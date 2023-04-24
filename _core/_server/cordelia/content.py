@@ -53,7 +53,8 @@ def content(instrument_classes):
 				dyn_each = instrument_class.dyn.replace('each(', f'each({rhythm_var}, ')
 				dyn_content = f'{dyn_var} = {dyn_each}*({rhythm_var} == 1 ? ampdb(5) : 1)'
 			else:
-				dyn_content = f'{dyn_var} = {instrument_class.dyn}*({rhythm_var} == 1 ? ampdb(5) : 1)'
+				#dyn_content = f'{dyn_var} = {instrument_class.dyn}*({rhythm_var} == 1 ? ampdb(5) : 1)'
+				dyn_content = f'{dyn_var} = {instrument_class.dyn}'
 			contents.append(dyn_content)
 
 			env_var = f'gkenv_{index_instr}'

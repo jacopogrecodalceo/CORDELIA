@@ -3,7 +3,7 @@ sr		=	48000
 
 ksmps		=	64	;leave it at 64 for real-time
 ;nchnls_i	=	12
-nchnls		=	2
+nchnls		=	4
 0dbfs		=	1
 ;A4		=	438	;only for ancient music	
 

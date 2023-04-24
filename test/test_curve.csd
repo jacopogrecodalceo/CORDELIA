@@ -14,9 +14,6 @@ girich	hc_gen 0, 8192, 0, \
 		hc_segment(9/126, 0.07087, hc_diocles_curve(1.16098)), \ 
 		hc_segment(75/126, 0, hc_diocles_curve(1.22589))
 
-
-
-
 girichr ftgen 0, 0, 8192, 2, 1
 
         opcode table_inv, 0, ii
@@ -41,13 +38,17 @@ if ktrig == 1 then
 	schedulek 2, 0, 4
 endif
 
+
+	;hc_write_as_png(girich, "girich.png", 0, 1, 0, 1)
+	hc_write_as_png(girichr, "girichr.png", 0, 1, 0, 1)
+
 	endin
 
 	instr 2
 
 idur init p3
 
-aout = oscili:a(1/4, random:i(300, 200))*table3:a(linseg:a(1, idur, 0)*.99, girich, 1)
+aout = oscili:a(1/4, random:i(300, 200))*table3:a(linseg:a(1, idur, 0)*.95, girichr, 1)
 outall aout
 
 	endin
