@@ -15,3 +15,5 @@ git commit -m "$commit"
 
 # Push the changes to GitHub
 git push origin master
+
+$SHELL
