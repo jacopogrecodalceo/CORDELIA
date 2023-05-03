@@ -34,7 +34,11 @@ def main():
 				contents = cordelia.content(instruments)
 
 				contents_filtered = cordelia.filter(contents)
-				wrapped_instruments = cordelia.wrapper(contents_filtered)	
+				wrapped_instruments = cordelia.wrapper(contents_filtered)
+
+				CORDELIA_OUT_LOG_open.write(f'\n---cor{datetime.now()}---\n')
+				CORDELIA_OUT_COR_open.write(f'\n---cor{datetime.now()}---\n')
+
 				for each in wrapped_instruments:
 
 					if not cordelia_init:
@@ -44,11 +48,9 @@ def main():
 					print(LINE_SEP)
 					CORDELIA_COMPILE.append(each)
 
-					CORDELIA_OUT_LOG_open.write(f'\n---cor{datetime.now()}---\n')
 					CORDELIA_OUT_LOG_open.write(each)
 					CORDELIA_OUT_LOG_open.write(LINE_SEP)
 
-					CORDELIA_OUT_COR_open.write(f'\n---cor{datetime.now()}---\n')
 					CORDELIA_OUT_COR_open.write(code[1])
 					CORDELIA_OUT_COR_open.write(LINE_SEP)
 					
@@ -57,6 +59,7 @@ def main():
 		
 		elif code[0] == 'REAPER':
 			#list of class instrument
+			
 			if re.findall(';INSTR_BEFORE', code[1]): 
 				instr_before = code[1].split(';INSTR_BEFORE')[0]
 				instr_core = code[1].split(';INSTR_BEFORE')[1].split(';INSTR_AFTER')[0]

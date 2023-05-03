@@ -357,6 +357,14 @@
     "channels": "2",
     "sr": "44100"
   },
+  "bleu2": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
+  },
   "bois": {
     "type": "sonvs",
     "path": [
@@ -1484,6 +1492,13 @@
     ],
     "channels": "2",
     "sr": "44100"
+  },
+  "mkick": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mkick.orc",
+    "global_var": [
+
+    ]
   },
   "nasa": {
     "type": "sonvs",

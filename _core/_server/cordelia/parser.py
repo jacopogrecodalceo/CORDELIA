@@ -28,8 +28,8 @@ def abbr(unit):
 
 from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json, CORDELIA_COMPILE
 def scala(unit):
-	if re.search(rf'scala\.\w+', unit, flags=re.MULTILINE):
-					names = re.findall(rf'scala\.(\w+)', unit, flags=re.MULTILINE)
+	if re.search(r'scala\.\w+', unit, flags=re.MULTILINE):
+					names = re.findall(r'scala\.(\w+)', unit, flags=re.MULTILINE)
 					for name in names:
 						if name not in SCALA_HASPLAYED and name != 'edo12':
 							string = CORDELIA_SCALA_json[name]['ftgen']

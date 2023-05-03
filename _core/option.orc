@@ -3,8 +3,9 @@
 -3
 -m0
 ;-D
-
-
+-Ma
+-b512
+-B2048
 ;-M0
 ;-+msg_color=1
 --messagelevel=99

@@ -10,6 +10,8 @@ aout		comb ain, krvt, ilpt
 
 aout		balance2 aout, ain
 
+aout		/= 3
+
 ;		ENVELOPE
 ienvvar		init idur/10
 
