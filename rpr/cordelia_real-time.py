@@ -85,76 +85,74 @@ def get_item():
 
 	for i in range(RPR_CountTracks(0)):
 
-		is_solo = True
-		is_mute = False
-
 		track_id = RPR_GetTrack(0, i)
 		is_child = RPR_GetMediaTrackInfo_Value(track_id, 'I_FOLDERDEPTH')
+		#log(is_child)
 
 		if is_child==1:
 			is_mute = bool(RPR_GetMediaTrackInfo_Value(track_id, 'B_MUTE'))
 			if RPR_AnyTrackSolo(0):
 				is_solo = bool(RPR_GetMediaTrackInfo_Value(track_id, 'I_SOLO') > 0)
 
-		if is_solo and not is_mute:
-			if is_child <= 0:
-				retval, meditem, parname, parent_name, var = RPR_GetSetMediaTrackInfo_String(RPR_GetParentTrack(track_id), 'P_NAME', 0, 0)
-				instr_name = re.match(r'@\w+', str(parent_name))[0]
+			retval, meditem, parname, parent_name, var = RPR_GetSetMediaTrackInfo_String(track_id, 'P_NAME', 0, 0)
+			#log(parent_name)
+			instr_name = parent_name
 
-			for j in range (RPR_GetTrackNumMediaItems(track_id)):
-				item_id = RPR_GetTrackMediaItem(track_id, j)
-				take_id = RPR_GetMediaItemTake(item_id, 0)
-		
-				if RPR_TakeIsMIDI(take_id):
-					ret_val, ret_take, notecntOut, ret_cc, ret_sysex = RPR_MIDI_CountEvts(take_id, 0, 0, 0)
-					for note_index in range(notecntOut):
-						ret_val, ret_take, note_index, selectedOut, mutedOut, startppqposOut, endppqposOut, note_chn, note_pitch, note_velocity = RPR_MIDI_GetNote(take_id, note_index, 0, 0, 0, 0, 0, 0, 0)
-						text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(take_id, note_index, 0, 0, 0, 0, 0, BUFFER_SIZE)
+		for j in range (RPR_GetTrackNumMediaItems(track_id)):
+			item_id = RPR_GetTrackMediaItem(track_id, j)
+			take_id = RPR_GetMediaItemTake(item_id, 0)
+	
+			if RPR_TakeIsMIDI(take_id):
+				ret_val, ret_take, notecntOut, ret_cc, ret_sysex = RPR_MIDI_CountEvts(take_id, 0, 0, 0)
+				for note_index in range(notecntOut):
+					ret_val, ret_take, note_index, selectedOut, mutedOut, startppqposOut, endppqposOut, note_chn, note_pitch, note_velocity = RPR_MIDI_GetNote(take_id, note_index, 0, 0, 0, 0, 0, 0, 0)
+					text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(take_id, note_index, 0, 0, 0, 0, 0, BUFFER_SIZE)
+				
+
+					start_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
+					end_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, endppqposOut)
+					
+					dur = end_pos - start_pos
+					dyn = note_velocity / MIDI_CORRECTION
+
+					freq = str(RPR_GetTrackMIDINoteNameEx(0, track_id, note_pitch, note_chn))
+					freq = re.search(r'c.\s+(.*)', freq)[1]
+
+					env = 'classic'
+
+					retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item_id, 'P_NOTES', 0, 0)
+					if text:
+						for line in text.splitlines():
+							if line.startswith('dur'):
+								val = line.split('dur')[1]
+								dur = eval(f'{dur}{val}')
+							elif line.startswith('dyn'):
+								val = line.split('dyn')[1]
+								dyn = eval(f'{dyn}{val}')
+							elif line.startswith('env.'):
+								val = line.split('env.')[1].strip()
+								env = val
+
+					if text_retval:
+						# i don't know why, but i need to remove 2 character from the end of the text string
+						env = msgOptional[:-2:]
 						
-						if text_retval:
-							# i don't know why, but i need to remove 2 character from the end of the text string
-							env = msgOptional[:-2:]
-						else:
-							env = 'classic'
+					midi_note = Midi_note(start_pos, end_pos, unique_index_note, instr_name, dur, dyn, env, freq)
 
-						start_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
-						end_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, endppqposOut)
-						
-						dur = end_pos - start_pos
-						dyn = note_velocity / MIDI_CORRECTION
-
-						freq = str(RPR_GetTrackMIDINoteNameEx(0, track_id, note_pitch, note_chn))
-						freq = re.search(r'c.\s+(.*)', freq)[1]
-
-						retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item_id, 'P_NOTES', 0, 0)
-						if text:
-							for line in text.splitlines():
-								if line.startswith('dur'):
-									val = line.split('dur')[1]
-									dur = eval(f'{dur}{val}')
-								elif line.startswith('dyn'):
-									val = line.split('dyn')[1]
-									dyn = eval(f'{dyn}{val}')
-								elif line.startswith('env.'):
-									val = line.split('env.')[1].strip()
-									env = val
-
-						midi_note = Midi_note(start_pos, end_pos, unique_index_note, instr_name, dur, dyn, env, freq)
-
-						midi_notes.append(midi_note)
-						unique_index_note += 1
-				else:
-					source, source_type, size = RPR_GetMediaSourceType(RPR_GetMediaItemTake_Source(take_id), '', BUFFER_SIZE)
-					if not source_type:
-						retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item_id, 'P_NOTES', 0, 0)
-						start_pos = RPR_GetMediaItemInfo_Value(item_id, 'D_POSITION')
-						dur = RPR_GetMediaItemInfo_Value(item_id, 'D_LENGTH')
-						end_pos = start_pos+dur
-						
-						text_item = Text_item(start_pos, end_pos, unique_index_text, instr_name, text, dur)
-						
-						text_items.append(text_item)
-						unique_index_text += 1
+					midi_notes.append(midi_note)
+					unique_index_note += 1
+			else:
+				source, source_type, size = RPR_GetMediaSourceType(RPR_GetMediaItemTake_Source(take_id), '', BUFFER_SIZE)
+				if not source_type:
+					retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item_id, 'P_NOTES', 0, 0)
+					start_pos = RPR_GetMediaItemInfo_Value(item_id, 'D_POSITION')
+					dur = RPR_GetMediaItemInfo_Value(item_id, 'D_LENGTH')
+					end_pos = start_pos+dur
+					
+					text_item = Text_item(start_pos, end_pos, unique_index_text, instr_name, text, dur)
+					
+					text_items.append(text_item)
+					unique_index_text += 1
 	
 	midi_notes = sorted(midi_notes, key=lambda note: note.start_pos)
 	text_items = sorted(text_items, key=lambda item: item.start_pos)
@@ -234,12 +232,13 @@ def main():
 				csound_string = f'turnoff2_i {int(item.unique_index + 300)}, 4, 0'
 				send_to_csound(csound_string)
 
-			midi_notes.clear()
-			text_items.clear()
-			last_seen_note.clear()
-			last_seen_text_on.clear()
-			last_seen_text_off.clear()
-			last_seen_text_left.clear()
+				midi_notes = []
+				text_items = []
+				last_seen_note = []
+				last_seen_text_on = []
+				last_seen_text_off = []
+				last_seen_text_left = []
+
 
 			send_to_csound('turnoff2_i "heart", 0, 0')
 			

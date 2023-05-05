@@ -4,6 +4,13 @@ from cordelia.classes import Parser
 from utils.constants import bcolors
 
 from utils.constants import CORDELIA_NOTEs
+from utils.constants import CORDELIA_COMPILE_FIRST
+from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json
+from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json
+from utils.constants import INSTR_HASPLAYED, CORDELIA_INSTR_json
+from csound import CORDELIA_NCHNLS
+from utils.constants import DEFAULT_SONVS_PATH
+
 def note(unit):
 	for name in CORDELIA_NOTEs:
 		unit = re.sub(rf'(\W){name}(\d)(\W|$)', rf'\1"\2{(name[0].upper() + name[1]) if len(name) > 1 else name[0].upper()}"\3', unit, flags=re.MULTILINE)		
@@ -26,7 +33,6 @@ def abbr(unit):
 		#unit = unit.replace(name, repl)
 	return unit
 
-from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json, CORDELIA_COMPILE
 def scala(unit):
 	if re.search(r'scala\.\w+', unit, flags=re.MULTILINE):
 					names = re.findall(r'scala\.(\w+)', unit, flags=re.MULTILINE)
@@ -34,7 +40,7 @@ def scala(unit):
 						if name not in SCALA_HASPLAYED and name != 'edo12':
 							string = CORDELIA_SCALA_json[name]['ftgen']
 							#csound_cordelia.compileOrcAsync(string)
-							CORDELIA_COMPILE.append(string)
+							CORDELIA_COMPILE_FIRST.append(string)
 							print(f'SEND {name}')
 							SCALA_HASPLAYED.append(name)
 						wildcard = 'gi'
@@ -43,7 +49,6 @@ def scala(unit):
 						#print(f'scala.{name}')
 	return unit
 
-from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json, CORDELIA_COMPILE
 def gen(unit):
 	for name in CORDELIA_GEN_json:
 		#keep track of scala tuning system
@@ -52,7 +57,8 @@ def gen(unit):
 				path = CORDELIA_GEN_json[name]
 				with open(path) as f:
 					string = f.read()
-					CORDELIA_COMPILE.append(string)
+					#csound_cordelia.compileOrcAsync(string)
+					CORDELIA_COMPILE_FIRST.append(string)
 					print(f'SEND {name}')
 				GEN_HASPLAYED.append(name)
 			
@@ -64,9 +70,8 @@ def gen(unit):
 			unit = re.sub(rf'(\W){name}(\W|$)', rf'\1{wildcard}{name}\2', unit, flags=re.MULTILINE)
 	return unit
 
-from utils.constants import INSTR_HASPLAYED, CORDELIA_INSTR_json, CORDELIA_COMPILE
-from csound import CORDELIA_NCHNLS
-from utils.constants import DEFAULT_SONVS_PATH
+
+
 def instr(unit):
 
 	names = re.findall('@(\w+)', unit)
@@ -82,7 +87,7 @@ def instr(unit):
 					with open(path) as f:
 						#csound_cordelia.compileOrcAsync(f.read())
 						string = f.read()
-						CORDELIA_COMPILE.append(string)
+						CORDELIA_COMPILE_FIRST.append(string)
 
 				elif type == 'sonvs':
 
@@ -108,10 +113,10 @@ def instr(unit):
 						string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
 						string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
 					#print(string)
-					CORDELIA_COMPILE.append(string)
+					CORDELIA_COMPILE_FIRST.append(string)
 
 					if queue_hybrid:
-						CORDELIA_COMPILE.extend(queue_hybrid)
+						CORDELIA_COMPILE_FIRST.extend(queue_hybrid)
 						queue_hybrid.clear()
 
 				elif type == 'hybrid':
@@ -138,13 +143,13 @@ def instr(unit):
 					instr_num = 950 + ((each+1)/1000) + ((len(INSTR_HASPLAYED)-1)/10000)
 					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"\n'
 				#csound_cordelia.compileOrcAsync(instr_setting)
-				CORDELIA_COMPILE.append(instr_setting)
+				CORDELIA_COMPILE_FIRST.append(instr_setting)
 				print(f'SEND {name}')
 				#print(instr_setting)
 			
 			else:
 				if queue_hybrid:
-					CORDELIA_COMPILE.extend(queue_hybrid)
+					CORDELIA_COMPILE_FIRST.extend(queue_hybrid)
 					queue_hybrid.clear()
 		else:
 			print(f'Invalid instrument name: {bcolors.WARNING}{name}{bcolors.ENDC}')

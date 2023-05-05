@@ -16,4 +16,4 @@ git commit -m "$commit"
 # Push the changes to GitHub
 git push origin main
 
-$SHELL
+sleep 1

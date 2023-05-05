@@ -10,7 +10,7 @@ from utils.constants import LINE_SEP, bcolors
 from utils.misc import count_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
 
-from utils.constants import CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_RAW, CORDELIA_OUT_LOG, CORDELIA_OUT_COR
+from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_RAW, CORDELIA_OUT_LOG, CORDELIA_OUT_COR
 
 CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
 CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
@@ -84,6 +84,10 @@ def main():
 				#csound_cordelia.compileOrcAsync(code[1])
 				CORDELIA_COMPILE.append(code[1])
 
+		if CORDELIA_COMPILE_FIRST:
+			csound_cordelia.compileOrc('\n'.join(CORDELIA_COMPILE_FIRST))
+			CORDELIA_COMPILE_FIRST.clear()	
+
 		if CORDELIA_COMPILE:
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
@@ -104,7 +108,6 @@ if __name__ == '__main__':
 		print('CSOUND is ON!')
 		t.start()
 		pt.play()
-
 
 		while pt.status() == 0:	
 			if RECORD and cordelia_init and record_init:

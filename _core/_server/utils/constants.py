@@ -56,6 +56,7 @@ with open(CORDELIA_DIR + '/_setting' + '/interval.json') as f:
 with open(CORDELIA_DIR + '/_setting' + '/module.json') as f:
 	CORDELIA_MODULE_json = json.load(f)
 
+CORDELIA_COMPILE_FIRST = []
 CORDELIA_COMPILE = []
 
 class bcolors:
