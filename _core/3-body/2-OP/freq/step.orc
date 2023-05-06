@@ -25,8 +25,10 @@ if	(kdegree != 0) then
 	endif
 
 	ktab	table kndx, iscale
+	kpitch = kbase + (koct * 12) + ktab
 
-	kres	= cpsmidinn(kbase + (koct * 12) + ktab)
+	schedulek   "sense_midi", 0, 1, kpitch
+	kres	= cpsmidinn(kpitch)
 
 else
 	
