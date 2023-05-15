@@ -1,0 +1,18 @@
+
+
+
+
+gkpulse = 75
+
+@katia: 16, mf
+
+@katia.cutij(2): .6, pp
+
+eu: 4, 8, 32
+	@noij
+	wn
+	mf
+	bea
+	e1: pump(8, fill(0, 2))
+
+

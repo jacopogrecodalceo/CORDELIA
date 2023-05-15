@@ -1,4 +1,4 @@
-from threading import Thread
+from threading import Thread, Event
 from datetime import datetime
 import traceback, re
 
@@ -7,8 +7,9 @@ import sox
 import cordelia
 import utils.udp as udp
 from utils.constants import LINE_SEP, bcolors
-from utils.misc import count_time
+from utils.misc import count_time, 	county_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
+import time
 
 from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_RAW, CORDELIA_OUT_LOG, CORDELIA_OUT_COR
 
@@ -16,6 +17,8 @@ CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
 CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
 
 cordelia_init = False
+
+start_time = time.time()
 
 def main():
 
@@ -25,10 +28,12 @@ def main():
 		code = udp.receive_messages()
 
 		if code[0] == 'BRAIN':
+			#county_time(start_time, 'BRAIN EVENT RECV')
 
 			try:
 				#list of class instrument
 				instruments = cordelia.parser(code[1])
+				#county_time(start_time, 'BRAIN PARSE')
 
 				#list of string instrument and vars
 				contents = cordelia.content(instruments)
@@ -84,54 +89,86 @@ def main():
 				#csound_cordelia.compileOrcAsync(code[1])
 				CORDELIA_COMPILE.append(code[1])
 
+		#county_time(start_time, 'BEFORE COMPILATION INSTR; GEN; SCALE')
 		if CORDELIA_COMPILE_FIRST:
 			csound_cordelia.compileOrc('\n'.join(CORDELIA_COMPILE_FIRST))
 			CORDELIA_COMPILE_FIRST.clear()	
+		#county_time(start_time, 'BEFORE CODE')
 
 		if CORDELIA_COMPILE:
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
+		#county_time(start_time, 'END CODE')
 
 RECORD = True
 
 record_init = True
 
+# Define the function to be executed in the thread
+def csound_perf_homemade(cs, completion_event):
+    while cs.performKsmps() == 0:
+        pass
+
+    # Thread has completed, set the completion event
+    completion_event.set()
+    return
+
+# Create the completion event
+completion_event = Event()
+
 if __name__ == '__main__':
 
+	#county_time(start_time, 'init')
 	udp.open_ports()
+	#county_time(start_time, 'csound start')
 	cs_return = csound_cordelia.start()
-	pt = ctcsound.CsoundPerformanceThread(csound_cordelia.csound())
+	#pt = ctcsound.CsoundPerformanceThread(csound_cordelia.csound())
+	#county_time(start_time, 'thread main OSC')
 	t = Thread(target=main, daemon=True)
+	#county_time(start_time, 'thread csound')
+	pt = Thread(target=csound_perf_homemade, args=(csound_cordelia, completion_event))
 
 	if cs_return == ctcsound.CSOUND_SUCCESS:
 
 		print('CSOUND is ON!')
 		t.start()
-		pt.play()
+		pt.start()
+		#pt.play()
 
-		while pt.status() == 0:	
-			if RECORD and cordelia_init and record_init:
-				print(f'RECORDING IS {cordelia_init}')
-				pt.record(CORDELIA_OUT_RAW, 24, 2)
-				record_init = False
+		# Monitor the thread using the completion event
+		while not completion_event.is_set():
+			# Perform any other tasks or checks here
+			# ...
 
-		pt.stopRecord()
+			# Sleep for a specific duration between checks
+			time.sleep(1)
+		
+		pt.join()
+		
+
+#		while pt.status() == 0:	
+#			if RECORD and cordelia_init and record_init:
+#				print(f'RECORDING IS {cordelia_init}')
+#				pt.record(CORDELIA_OUT_RAW, 24, 2)
+#				record_init = False
+
+		#pt.stopRecord()
 
 
 		#print('Record OFF')
-		CORDELIA_OUT_LOG_open.close()
-		CORDELIA_OUT_COR_open.close()
+		
+	CORDELIA_OUT_LOG_open.close()
+	CORDELIA_OUT_COR_open.close()
 
-		if not record_init:
-			tfm = sox.Transformer()
-			min_silence_duration = 3.5
-			#tfm.silence(1, .015, min_silence_duration, True)
-			tfm.set_input_format(ignore_length=True)
-			tfm.build(CORDELIA_OUT_RAW, CORDELIA_OUT_WAV)
+	#if not record_init:
+	#	tfm = sox.Transformer()
+	#	min_silence_duration = 3.5
+	#	#tfm.silence(1, .015, min_silence_duration, True)
+	#	tfm.set_input_format(ignore_length=True)
+	#	tfm.build(CORDELIA_OUT_RAW, CORDELIA_OUT_WAV)
 
-		csound_cordelia.cleanup()
-		print('CSOUND is OFF!')
+	csound_cordelia.cleanup()
+	print('CSOUND is OFF!')
 
-	del csound_cordelia
-	exit()
-	
+del csound_cordelia
+exit()

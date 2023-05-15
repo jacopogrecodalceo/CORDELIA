@@ -1,4 +1,4 @@
-import re
+import re, pprint
 
 import cordelia
 
@@ -26,10 +26,12 @@ class Parser():
 			
 		# SINGLE LINE
 		if len(self.lines) == 1:
-			if re.search(r'^[^@].*', self.lines[0]):
-				self.control()
-			elif re.search(r'^@.*', self.lines[0]):
+			if re.search(r'^@.*', self.lines[0]):
 				self.seq()
+			elif re.search(r'^route.', self.lines[0]):
+				self.route()
+			elif re.search(r'^[^@].*', self.lines[0]):
+				self.control()
 
 		# MULTI LINE
 		else:
@@ -204,3 +206,40 @@ class Parser():
 				instrument.route_classes.append(route)		
 			self.instruments.append(instrument)
 
+	def route(self):
+
+			self.lines[0] = self.lines[0].replace('route.', '')
+			print(self.lines[0])
+			names = re.findall(r'@(\w+)', self.lines[0])
+			routes = re.findall(r'\.(\w+\(.*?\))(?=(?:\.)|$)', self.lines[0])
+
+			for name in names:
+
+				instrument = Instrument('aural_route')
+				instrument.name = name
+
+				instrument.route_classes = []
+
+				if routes:
+					for r in routes:
+						route_name = re.search(r'^\w+', r)[0]
+						route_params_combined = re.search(r'^\w+\((.*)\)', r)[1]
+						route_params = cordelia.extract_elements(route_params_combined)
+
+						#route_params_with_empty_items = re.findall(r'[^,(]*(?:\([^)]*\)[^,(]*)*', route_params_combined)
+						#route_params = list(filter(bool, route_params_with_empty_items))
+
+
+						route = Route(route_name)
+						route.values = route_params
+						
+						instrument.route_classes.append(route)
+				else:
+					route_name = 'getmeout'
+					route_params = ['1']
+
+					route = Route(route_name)
+					route.values = route_params
+					
+					instrument.route_classes.append(route)	
+				self.instruments.append(instrument)

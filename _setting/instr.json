@@ -1278,6 +1278,14 @@
     "channels": "2",
     "sr": "96000"
   },
+  "katia": {
+    "type": "sonvs",
+    "path": [
+      "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
+    ],
+    "channels": "2",
+    "sr": "48000"
+  },
   "kick": {
     "type": "instr",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/kick.orc",

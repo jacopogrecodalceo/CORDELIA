@@ -122,6 +122,20 @@ def get_if_base_freq(track_name):
 	else:
 		return track_name, 'a4'
 
+def extract_elements(string):
+	elements = []
+	paren_count = 0
+	start = 0
+	for i, c in enumerate(string):
+		if c == '(':
+			paren_count += 1
+		elif c == ')':
+			paren_count -= 1
+		elif c == ',' and paren_count == 0:
+			elements.append(string[start:i])
+			start = i + 1
+	elements.append(string[start:])
+	return [elem.strip() for elem in elements if elem]
 
 def get_tuning(track_name):
 	if 'scala' in track_name:
@@ -145,42 +159,50 @@ def main():
 	for i in range(RPR_CountTracks(0)):
 		track_id = RPR_GetTrack(0, i)
 		retval, meditem, parname, track_name, var = RPR_GetSetMediaTrackInfo_String(track_id, 'P_NAME', 0, 0)
-		tuning, base_freq = get_tuning(track_name)
+		
+		elements = extract_elements(track_name)
 
-		if tuning:
+		if not elements:
+			elements = 'dump'
 
-			if len(tuning.scala_data) != int(tuning.length):
-				log(f'WARNING: {tuning.name} length is not the same as the values!\nWritten length is {tuning.length} and calculated {len(tuning.scala_data)}')
+		for each in elements:
 
-			#retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Base frequency', 1, 'Insert base frequency', 'a4', 128)
-			base_frequency_name = base_freq.upper()
+			if each.startswith('scala.'):
+				scala_in_track_name = each
+				tuning, base_freq = get_tuning(scala_in_track_name)
 
-			base_midi_note = MIDI_NAME_FREQ['note_name'].index(base_frequency_name)
-			base_frequency = MIDI_NAME_FREQ['freq'][base_midi_note]
+				if len(tuning.scala_data) != int(tuning.length):
+					log(f'WARNING: {tuning.name} length is not the same as the values!\nWritten length is {tuning.length} and calculated {len(tuning.scala_data)}')
 
-			if retval:
-				
-				tuning.gen_frequency_values(base_frequency, base_midi_note)
+				#retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Base frequency', 1, 'Insert base frequency', 'a4', 128)
+				base_frequency_name = base_freq.upper()
 
-				#log(base_frequency)
-				#log(base_midi_note)
+				base_midi_note = MIDI_NAME_FREQ['note_name'].index(base_frequency_name)
+				base_frequency = MIDI_NAME_FREQ['freq'][base_midi_note]
 
-				#log(tuning.freq)
-				#log(tuning.edo12diff)
+				if retval:
+					
+					tuning.gen_frequency_values(base_frequency, base_midi_note)
 
-				# with open('/Users/j/Desktop/1.txt', 'w') as f:
-				# 	first_line = '# MIDI note / CC name map\n'
-				# 	f.write(first_line)
-				# 	for each in reversed(range(len(tuning.freq))):
-				# 		f.write(f'{str(each)} {tuning.edo12diff[each]},\t\t\t\t\t{tuning.freq[each]}\n')
+					#log(base_frequency)
+					#log(base_midi_note)
 
-				RPR_Undo_BeginBlock()
+					#log(tuning.freq)
+					#log(tuning.edo12diff)
 
-				for i in range(len(tuning.freq)):
-					string = f'{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}\n'
-					retval = RPR_SetTrackMIDINoteNameEx(0, track_id, int(i), -1, string)
+					# with open('/Users/j/Desktop/1.txt', 'w') as f:
+					# 	first_line = '# MIDI note / CC name map\n'
+					# 	f.write(first_line)
+					# 	for each in reversed(range(len(tuning.freq))):
+					# 		f.write(f'{str(each)} {tuning.edo12diff[each]},\t\t\t\t\t{tuning.freq[each]}\n')
 
-				RPR_Undo_EndBlock('Insert tuning', 0)
+					RPR_Undo_BeginBlock()
+
+					for i in range(len(tuning.freq)):
+						string = f'{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}\n'
+						retval = RPR_SetTrackMIDINoteNameEx(0, track_id, int(i), -1, string)
+
+					RPR_Undo_EndBlock('Insert tuning', 0)
 
 main()
 

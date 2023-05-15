@@ -1,12 +1,21 @@
-gain1	init 0
 
 	instr in1
 
 Sinstr		init "in1"
-aout		inch 1
+idur		init p3
+iamp		init p4
+iftenv		init p5
+icps		init p6
+ich		init p7
 
-gain1		= aout
+aout	inch 1
+
+	chnmix aout, sprintf("%s_%i", Sinstr, ich)
 
 	endin
-	alwayson("in1")
-
+	
+indx	init 1
+until	indx > ginchnls do
+	schedule  nstrnum("in1")+((indx+1)/1000), 0, -1, 0, 0, 0, indx
+	indx += 1
+od

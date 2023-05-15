@@ -53,21 +53,22 @@ def extract_elements(string):
 
 
 def check_if_additional_text(item):
-	retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item.item_id, 'P_NOTES', 0, 0)
-	if text:
-		for line in text.splitlines():
-			if line.startswith('dur'):
-				val = line.split('dur')[1]
-				item.dur = eval(f'{item.dur}{val}')
-			elif line.startswith('dyn'):
-				val = line.split('dyn')[1]
-				item.dyn = eval(f'{item.dyn}{val}')
-			elif line.startswith('freq'):
-				val = line.split('freq')[1]
-				item.freq = eval(f'{item.freq}{val}')
-			elif line.startswith('env.'):
-				val = line.split('env.')[1].strip()
-				item.env = val
+	#retval, meditem, parname, text, var = RPR_GetSetMediaItemInfo_String(item.item_id, 'P_NOTES', 0, 0)
+	retval, meditem, parname, track_name, var = RPR_GetSetMediaTrackInfo_String(item.track_id, 'P_NAME', 0, 0)
+	text = track_name
+	for line in extract_elements(text):
+		if line.startswith('dur'):
+			val = line.split('dur')[1]
+			item.dur = eval(f'{item.dur}{val}')
+		elif line.startswith('dyn'):
+			val = line.split('dyn')[1]
+			item.dyn = eval(f'{item.dyn}{val}')
+		elif line.startswith('freq'):
+			val = line.split('freq')[1]
+			item.freq = eval(f'{item.freq}{val}')
+		elif line.startswith('env.'):
+			val = line.split('env.')[1].strip()
+			item.env = val
 
 
 
@@ -76,7 +77,9 @@ def get_midi_note_env_if_text(item):
 	if text_retval:
 		# i don't know why, but i need to remove 2 character from the end of the text string
 		item.env = msgOptional[:-2:]
-
+	else:
+		item.env = 'classic'
+		
 def get_midi_note_freq(item):
 	freq = str(RPR_GetTrackMIDINoteNameEx(0, item.track_id, item.midi_pitch, item.midi_chn))
 	item.freq = re.search(r'c.\s+(.*)', freq)[1]
@@ -98,8 +101,8 @@ def get_midi_notes(item):
 	item.dur = item.end_pos - item.start_pos
 	item.dyn = note_velocity / MIDI_CORRECTION
 	get_midi_note_freq(item)
-	check_if_additional_text(item)
 	get_midi_note_env_if_text(item)
+	check_if_additional_text(item)
 
 	return item
 
@@ -183,7 +186,7 @@ def get_cordelia_instr_clear_lines(instrs_used):
 			f'	isend	= 950 + (indx+1)/1000 + {i}/10000',
 			f'	schedule isend, 0, -1, sprintf("{instr}_%i", indx+1)',
 			'	indx	+= 1',
-			'od',
+			'od\n',
 		]
 		lines.append('\n'.join(line))
 	return lines
@@ -288,6 +291,7 @@ def write_strings():
 					if item.dict_name == each_track_name:
 						lines.append(item.csound_string)
 
+			main_orc.write('\n\n\n;---SCORE---\n\n\n'.encode('utf-8'))
 			main_orc.write('\n'.join(lines).encode('utf-8'))
 		
 			each_orc_path.append(orc_file)
@@ -304,23 +308,29 @@ def execute_csound(chns, sr, ksmps):
 
 		command = f'csound -3 --nchnls={chns} -r {sr} --ksmps={ksmps} --orc {orc_file} -o {wav_file} &> {log_file}'
 
-		#subprocess.call(['osascript', '-e', f'tell application "Terminal" to do script "{command}"'])
-		script = f'tell application "Terminal" to do script "{command} && exit"'
+		# subprocess.call(['osascript', '-e', f'tell application "Terminal" to do script "{command}"'])
+		#script = f'tell application "Terminal" to do script "{command} && exit"'
+		script =	f'tell application "Terminal"\n' \
+						f'set myscript to "{command} && exit || echo ERROR $?"\n' \
+						f'do script myscript\n' \
+					f'end tell'
+
 		subprocess.call(['osascript', '-e', script])
 
-		# Wait for the command to finish
-		p = subprocess.Popen(command, shell=True)
-		p.wait()
+		""" # Wait for the command to finish
+		p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		stdout, stderr = p.communicate()
 
 		# Check the exit status
 		if p.returncode == 0:
 			string = 'Command completed successfully!'
-			print(string)
+			log(string)
 		else:
 			string = f'Command failed with exit code {p.returncode}.'
-			break
+			log(p.returncode)
+			break """
 
-retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2, 48, 16', 512)
+retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2,48,16', 512)
 
 if retval:
 
@@ -328,7 +338,7 @@ if retval:
 	create_dirs()
 	write_strings()
 
-	values = retvals_csv.split(', ')
+	values = retvals_csv.split(',')
 	chns = values[0]
 	sr = int(values[1]) * 1000
 	ksmps = values[2]

@@ -14,8 +14,8 @@
 ;-b 512 ;mac 1024
 ;-B 1024 ;mac 2048
 
-;-b 1024
-;-B 2048
+-b 1024
+-B 1024
 
 -+rtaudio=PortAudio
 ;-+rtaudio=jack

@@ -1,8 +1,7 @@
  dofile( reaper.GetResourcePath() ..
    "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
 
-local MIDI_CORRECTION = 512
-local CORDELIA_CORE = '/Users/j/Documents/PROJECTs/CORDELIA/_core'
+local MIDI_CORRECTION = 1024
 
 function log(e)
 	if type(e) == 'table' then
@@ -60,106 +59,43 @@ function extract_elements(str)
 	end
 	return result
 end
-
-function extract_elements(string)
-	local elements = {}
-	local paren_count = 0
-	local start = 0
-	for i = 1, #string do
-		local c = string:sub(i, i)
-		if c == '(' then
-			paren_count = paren_count + 1
-		elseif c == ')' then
-			paren_count = paren_count - 1
-		elseif c == ',' and paren_count == 0 then
-			table.insert(elements, string:sub(start + 1, i - 1))
-			start = i
-		end
-end
-	table.insert(elements, string:sub(start + 1))
-	local result = {}
-	for i, elem in ipairs(elements) do
-		elem = elem:match("^%s*(.-)%s*$") -- trim whitespace
-		if #elem > 0 then
-			table.insert(result, elem)
-		end
-	end
-	return result
-end
+  
 
 function get_all_midi_items(ids, index)
 
 	local instr_name, track, item, take = table.unpack(ids)
-
 	local retval, selected, muted, startppqpos, endppqpos, note_chn, note_pitch, note_velocity = reaper.MIDI_GetNote(take, index)
-	
-	local item_start_pos = reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
-	local item_end_pos = item_start_pos + reaper.GetMediaItemInfo_Value(item, 'D_LENGTH')
+	local retval, selected, muted, ppqpos, type, env = reaper.MIDI_GetTextSysexEvt(take, index)
 
-	local retval, track_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', 0, 0)
-	
 	local start_pos = reaper.MIDI_GetProjTimeFromPPQPos(take, startppqpos)
 	if start_pos < 0 then
 		start_pos = 0
 	end
 
 	local end_pos = reaper.MIDI_GetProjTimeFromPPQPos(take, endppqpos)
+	
+	local dur = end_pos - start_pos
+	local dyn = note_velocity / MIDI_CORRECTION
+	local env = 'classic'
+	local freq = reaper.GetTrackMIDINoteNameEx(0, track, note_pitch, note_chn)
+	freq = string.match(freq, 'c%s+(.*)')
 
-	if start_pos <= item_end_pos then
-		
-		local dur = end_pos - start_pos
-		local dyn = note_velocity / MIDI_CORRECTION
-		local env = 'classic'
-		local retval_text, selected, muted, ppqpos, type, note_local_env = reaper.MIDI_GetTextSysexEvt(take, index)
+	local params = {
+		start_pos,
+		end_pos,
+		instr_name,
+		dur,
+		dyn,
+		env,
+		freq
+	}
 
-		local freq = reaper.GetTrackMIDINoteNameEx(0, track, note_pitch, note_chn)
-		freq = string.match(freq, 'c%s+(.*)')
-		if not freq then
-			log('You probably forgot to commit your tuning, dumbass')
-			return
-		end
-
-		for _, word in pairs(extract_elements(track_name)) do
-			if word:find("^dur") then
-				local val = word:match("dur%s*(.-)$")
-				dur = load("return " .. dur .. val)()
-			elseif word:find("^dyn") then
-				local val = word:match("dyn%s*(.-)$")
-				dyn = load("return " .. dyn .. val)()
-			elseif word:find("^env%.") then
-				local val = word:match("env%.(%S+)$")
-				env = val
-				--env = if_atk(env)
-			elseif word:find("^freq") then
-				local val = word:match("freq%s*(.-)$")
-				freq = load("return " .. freq .. val)()
-			end
-		end
-
-		if retval_text then
-			env = note_local_env
-		end
-
-		local params = {
-			start_pos,
-			end_pos,
-			instr_name,
-			dur,
-			dyn,
-			env,
-			freq
-		}
-
-		return params
-	else
-		return nil
-	end
+	return params
 end
 
 function get_all_text_items(ids)
 
 	local instr_name, track, item, take = table.unpack(ids)
-
 	local start_pos = reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
 	local dur = reaper.GetMediaItemInfo_Value(item, 'D_LENGTH')
 	local end_pos = start_pos+dur
@@ -185,10 +121,6 @@ function get_all_items()
 
 	local index = 0
 	local instr_name = ''
-	local code = ''
-
-	local is_mute = false
-	local is_solo = false
 
 	for i = 0, reaper.CountTracks(0)-1 do
 
@@ -198,46 +130,27 @@ function get_all_items()
 		if track_depth == 1 then -- it's a parent
 			local retval, parent_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', 0, 0)
 			instr_name = string.match(parent_name, '@%w+')
-
-			is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
-			if reaper.AnyTrackSolo(0) then
-				is_solo = reaper.GetMediaTrackInfo_Value(track, 'I_SOLO') > 0				
-			else
-				is_solo = true
-			end
 		else
-			local parent_track = reaper.GetParentTrack(track)
-			local retval, parent_name = reaper.GetSetMediaTrackInfo_String(parent_track, 'P_NAME', 0, 0)
+			local retval, parent_name = reaper.GetSetMediaTrackInfo_String(reaper.GetParentTrack(track), 'P_NAME', 0, 0)
 			instr_name = string.match(parent_name, '@%w+')
-
-			local is_parent_mute = reaper.GetMediaTrackInfo_Value(parent_track, 'B_MUTE') == 1
-
-			if not is_parent_mute then 
-				is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
-			end
 		end
+	
+		for j = 0, reaper.GetTrackNumMediaItems(track)-1 do
+			local item = reaper.GetTrackMediaItem(track, j)
+			local take = reaper.GetMediaItemTake(item, 0)
+			local ids = {instr_name, track, item, take}
 
-		if not is_mute and is_solo then
-			for j = 0, reaper.GetTrackNumMediaItems(track)-1 do
-				local item = reaper.GetTrackMediaItem(track, j)
-				local take = reaper.GetMediaItemTake(item, 0)
-				local ids = {instr_name, track, item, take}
-
-				if take ~= nil and reaper.TakeIsMIDI(take)then -- if ==, it will work on "empty"/text items only
-					local retval, notecnt, ccevtcnt, textsyxevtcnt = reaper.MIDI_CountEvts(take)
-					for index = 0, notecnt-1 do
-						local midi_note = get_all_midi_items(ids, index)
-						if midi_note ~= nil then
-							table.insert(midi_items, midi_note)
-						end
-					end
-				elseif take == nil then
-					local text_item = get_all_text_items(ids)
-					table.insert(text_item, index)
-					table.insert(text_items, text_item)
-					index = index + 1
-
+			if take ~= nil and reaper.TakeIsMIDI(take)then -- if ==, it will work on "empty"/text items only
+				local retval, notecnt, ccevtcnt, textsyxevtcnt = reaper.MIDI_CountEvts(take)
+				for index = 0, notecnt-1 do
+					table.insert(midi_items, get_all_midi_items(ids, index))
 				end
+			else
+				local text_item = get_all_text_items(ids)
+				table.insert(text_item, index)
+				table.insert(text_items, text_item)
+				index = index + 1
+
 			end
 		end
 	end
@@ -315,8 +228,6 @@ function cordelia_realtime(play_pos)
 
 		on_play()
 
-		local play_pos = reaper.GetPlayPosition()
-
 		local index = 1
 		while index <= #midi_items do
 
@@ -325,7 +236,12 @@ function cordelia_realtime(play_pos)
 
 			if start_pos <= play_pos then
 			
-				local instr_name, dur, dyn, env, freq = item[3], item[4], item[5], item[6], item[7]
+				local instr_name = item[3]
+				local dur = item[4]
+				local dyn = item[5]
+				local env = item[6]
+				local freq = item[7]
+
 				local csound_string = 'eva_midi "' .. instr_name .. '", 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
 				send_to_cordelia(csound_string)
 				table.remove(midi_items, index)
@@ -393,41 +309,7 @@ function cordelia_realtime(play_pos)
 	
 end
 
-
---[[ local temp_log_file = '/Users/j/Desktop/pipie/temp_log.txt'
-local cmd = '/opt/homebrew/bin/python3 "' .. CORDELIA_CORE .. '/_server/cordelia.py" > ' .. temp_log_file
---os.execute(cmd)
---local cordelia_handle = 
---io.popen(cmd)
---log(cmd)
---os.execute(cmd)
-
-local dump = reaper.ExecProcess(cmd, -1)
-local show_size = 1024
- ]]
-local _, _, section_id, cmd_id, _, _, _ = reaper.get_action_context()
-
--- set toggle state to off
-reaper.SetToggleCommandState(section_id, cmd_id, 1);
-reaper.RefreshToolbar2(section_id, cmd_id);
-
-function in_the_end()
-	-- set toggle state to off
-	reaper.SetToggleCommandState(section_id, cmd_id, 0);
-	--send_to_cordelia('event_i "e", 0, .25')
-	reaper.RefreshToolbar2(section_id, cmd_id);
-end
-
-function main_without_gui()
-	cordelia_realtime()
-	reaper.defer(main_without_gui)
-end
-
---[[ local ctx = reaper.ImGui_CreateContext('Console')
-
-local last_size = 0
-local last_time = reaper.time_precise()
-local data = ''
+local ctx = reaper.ImGui_CreateContext('Console')
 
 function main()
 
@@ -436,39 +318,20 @@ function main()
 
 	if visible then
 
-		cordelia_realtime()
+		local play_pos = reaper.GetPlayPosition()
 
-		local time_elapsed = reaper.time_precise()
+		reaper.ImGui_Text(ctx, tostring(play_pos))
+		reaper.ImGui_Text(ctx, '---')	
 
-		if (time_elapsed - last_time) >= .5 then
-			local file = assert(io.open(temp_log_file, "rb")) -- open the file in binary mode
-			local current_size = file:seek("end") -- get the current size of the file
-			if current_size > last_size then -- check if there is new data to read
-			  file:seek("set", current_size - show_size) -- seek to the position of the new data
-			  data = file:read(show_size) -- read the new data
-			  --log(data)
-			end
-			file:close() -- close the file when done
-			last_time = time_elapsed -- update the last time the function was called
-			last_size = current_size -- update the last size of the file
-		end
-		--os.execute('sleep 1')
-		reaper.ImGui_Text(ctx, data)
+		cordelia_realtime(round(play_pos, 3))
 
 		reaper.ImGui_End(ctx)
 	end
 
 	if open then
 		reaper.defer(main)
-	else
-		send_to_cordelia('event_i "e", 0, .25')
-		-- close the pipe file, the child process, and the log file
 	end
 
-end ]]
+end
 
-
-reaper.defer(main_without_gui())
---reaper.defer(main)
-
-reaper.atexit(in_the_end)
+reaper.defer(main)

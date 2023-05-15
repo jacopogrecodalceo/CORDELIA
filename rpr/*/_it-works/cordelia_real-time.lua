@@ -1,4 +1,4 @@
-dofile( reaper.GetResourcePath() ..
+ dofile( reaper.GetResourcePath() ..
    "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
 
 MIDI_CORRECTION = 1024
@@ -20,9 +20,9 @@ function log(e)
 	end
 end
 
-socket = require('socket')
+local socket = require('socket')
 -- Create a new UDP socket using AF_INET as the address family and SOCK_DGRAM as the socket type
-s = socket.udp()
+local s = socket.udp()
 
 function send_to_cordelia(message)
 	-- Encode the message as a byte string before sending
@@ -53,7 +53,7 @@ function extract_elements(str)
 		end
 	end
 	return result
-  end
+end
   
 
 function get_all_midi_attrs(ids, items)
@@ -66,6 +66,10 @@ function get_all_midi_attrs(ids, items)
 		local retval, selected, muted, ppqpos, type, env = reaper.MIDI_GetTextSysexEvt(take, note_index)
 
 		local start_pos = reaper.MIDI_GetProjTimeFromPPQPos(take, startppqpos)
+		if start_pos < 0 then
+			start_pos = 0
+		end
+
 		local end_pos = reaper.MIDI_GetProjTimeFromPPQPos(take, endppqpos)
 		
 		local dur = end_pos - start_pos
@@ -92,7 +96,6 @@ end
 function get_all_empty_attrs(ids, items)
 
 	local instr_name, track, item, take = table.unpack(ids)
-	local unique_index = 0
 	local start_pos = reaper.GetMediaItemInfo_Value(item, 'D_POSITION')
 	local dur = reaper.GetMediaItemInfo_Value(item, 'D_LENGTH')
 	local end_pos = start_pos+dur
@@ -104,20 +107,22 @@ function get_all_empty_attrs(ids, items)
 		instr_name,
 		dur,
 		text,
-		unique_index
+		unique_index_text
 	}
 
 	table.insert(items, params)
 
-	unique_index = unique_index +1
+	unique_index_text = unique_index_text +1
 
 end
 
 function get_all_items()
 	
 	items = {}
+	items_turnoff = {}
 
-	local instr_name = ''
+	--local instr_name = ''
+	unique_index_text = 0
 
 	for i = 0, reaper.CountTracks(0)-1 do
 
@@ -143,11 +148,27 @@ function get_all_items()
 	end
 end
 
+function remove_at_play()
+	local index = 1
+	while index <= #items do
+
+		local item = items[index]
+		local start_pos = item[1]
+
+		if start_pos < reaper.GetCursorPosition() then
+			table.remove(items, index)
+		else
+			index = index + 1
+		end
+	end
+end
+
 STATE = true
 
 function on_play()
 	if STATE then
 		get_all_items()
+		remove_at_play()
 		send_to_cordelia('schedule "heart", 0, -1')
 
 		STATE = false
@@ -158,6 +179,9 @@ function on_stop()
 	if not STATE then
 		send_to_cordelia('turnoff2_i "heart", 0, 0')
 
+		for _, v in pairs(items_turnoff) do
+			send_to_cordelia('turnoff2_i ' .. v .. ', 0, 0')
+		end
 		STATE = true
 	end
 end
@@ -165,6 +189,7 @@ end
 ctx = reaper.ImGui_CreateContext('Console')
 
 function main()
+
 	reaper.ImGui_SetNextWindowSize(ctx, 500, 500)
 	local visible, open = reaper.ImGui_Begin(ctx, 'CORDELIA control', true)
 	if visible then
@@ -180,23 +205,39 @@ function main()
 
 			local index = 1
 			while index <= #items do
+
 				local item = items[index]
 				local start_pos = item[1]
 
 				if start_pos <= play_pos then
 
 					if #item == 7 then --note midi
-						local csound_string = 'eva_midi "' .. item[3] .. '", 0, ' .. item[4] .. ', ' .. item[5] .. ', ' .. item[6] .. ', ' .. item[7]
+
+						local instr_name = item[3]
+						local dur = item[4]
+						local dyn = item[5]
+						local env = item[6]
+						local freq = item[7]
+
+						local csound_string = 'eva_midi "' .. instr_name .. '", 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
 						send_to_cordelia(csound_string)
 
 					elseif #item == 6 then --text item
-						local instr_num = tostring(item[6] + 300)
-						local code = extract_elements(item[5])
-						table.insert(code, 2, '"' .. item[3] .. '"')
+
+						local instr_name = item[3]
+						local text = item[5]
+						local unique_index_text = item[6]
+
+						local instr_num = tostring(unique_index_text + 300)
+						local code = extract_elements(text)
+
+						table.insert(code, 2, '"' .. instr_name .. '"')
 
 						local csound_string = 'instr ' .. instr_num .. '\n' .. table.concat(code, ", ") .. '\nendin\n'
 						csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
 						send_to_cordelia(csound_string)
+
+						table.insert(items_turnoff, instr_num)
 						
 					end
 
@@ -207,7 +248,6 @@ function main()
 			end
 			
 		elseif reaper.GetPlayState() == 0 then
-		
 			on_stop()
 
 		end

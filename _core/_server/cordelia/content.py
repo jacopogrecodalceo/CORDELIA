@@ -3,8 +3,6 @@ new_line = chr(10)
 tab = chr(9)
 vir = ', '
 
-import re
-
 def content(instrument_classes):
 	
 	contents = []
