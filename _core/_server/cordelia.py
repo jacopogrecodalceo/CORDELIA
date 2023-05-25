@@ -1,20 +1,21 @@
 from threading import Thread, Event
 from datetime import datetime
 import traceback, re
+import numpy as np
+import soundfile as sf
 
-import sox
 
 import cordelia
 import utils.udp as udp
 from utils.constants import LINE_SEP, bcolors
-from utils.misc import count_time, 	county_time
+from utils.misc import count_time, county_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
 import time
 
 from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_RAW, CORDELIA_OUT_LOG, CORDELIA_OUT_COR
 
-CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
-CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
+CORDELIA_OUT_LOG_open = ''
+CORDELIA_OUT_COR_open = ''
 
 cordelia_init = False
 
@@ -23,8 +24,11 @@ start_time = time.time()
 def main():
 
 	global cordelia_init
+	global CORDELIA_OUT_LOG_open, CORDELIA_OUT_COR_open
+	last_code = ''
 
 	while True:
+
 		code = udp.receive_messages()
 
 		if code[0] == 'BRAIN':
@@ -40,14 +44,19 @@ def main():
 
 				contents_filtered = cordelia.filter(contents)
 				wrapped_instruments = cordelia.wrapper(contents_filtered)
+				
+				if not cordelia_init:
+					CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
+					CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
+					cordelia_init = True
 
 				CORDELIA_OUT_LOG_open.write(f'\n---cor{datetime.now()}---\n')
+				CORDELIA_OUT_LOG_open.write(f'\n---cor{start_time-time.time()}---\n')
+				
 				CORDELIA_OUT_COR_open.write(f'\n---cor{datetime.now()}---\n')
+				CORDELIA_OUT_COR_open.write(f'\n---cor{start_time-time.time()}---\n')
 
 				for each in wrapped_instruments:
-
-					if not cordelia_init:
-						cordelia_init = True
 
 					print(each)
 					print(LINE_SEP)
@@ -56,9 +65,11 @@ def main():
 					CORDELIA_OUT_LOG_open.write(each)
 					CORDELIA_OUT_LOG_open.write(LINE_SEP)
 
+				if code[1] != last_code:
 					CORDELIA_OUT_COR_open.write(code[1])
 					CORDELIA_OUT_COR_open.write(LINE_SEP)
-					
+				last_code = code[1]
+						
 			except Exception:
 				traceback.print_exc()
 		
@@ -106,13 +117,29 @@ record_init = True
 
 # Define the function to be executed in the thread
 def csound_perf_homemade(cs, completion_event):
+    cs.start()
     while cs.performKsmps() == 0:
         pass
+    
+    cs.cleanup()
 
     # Thread has completed, set the completion event
     completion_event.set()
     return
 
+
+
+
+def recording(cs, completion_event):
+
+	sr = int(CORDELIA_SR)
+	chs = int(CORDELIA_NCHNLS)
+	sig = np.reshape(cs.spout(), (-1, chs))  # Reshape the array
+
+	with sf.SoundFile(CORDELIA_OUT_WAV, 'w', samplerate=sr, channels=chs, subtype='PCM_24') as outfile:
+		while not completion_event.is_set():
+			outfile.write(sig)
+			
 # Create the completion event
 completion_event = Event()
 
@@ -121,44 +148,46 @@ if __name__ == '__main__':
 	#county_time(start_time, 'init')
 	udp.open_ports()
 	#county_time(start_time, 'csound start')
-	cs_return = csound_cordelia.start()
+	#cs_return = csound_cordelia.start()
 	#pt = ctcsound.CsoundPerformanceThread(csound_cordelia.csound())
 	#county_time(start_time, 'thread main OSC')
 	t = Thread(target=main, daemon=True)
 	#county_time(start_time, 'thread csound')
-	pt = Thread(target=csound_perf_homemade, args=(csound_cordelia, completion_event))
+	csound_thread = Thread(target=csound_perf_homemade, args=(csound_cordelia, completion_event))
+	#rec_thread = Thread(target=recording, args=(csound_cordelia, completion_event))
 
-	if cs_return == ctcsound.CSOUND_SUCCESS:
-
-		print('CSOUND is ON!')
-		t.start()
-		pt.start()
+	print('CSOUND is ON!')
+	t.start()
+	csound_thread.start()
 		#pt.play()
 
-		# Monitor the thread using the completion event
-		while not completion_event.is_set():
-			# Perform any other tasks or checks here
-			# ...
+	# Monitor the thread using the completion event
+	while not completion_event.is_set():
+		""" 
+		if RECORD and cordelia_init and record_init:
+			#rec_thread.start()
+			print(f'RECORDING IS {cordelia_init}')
+			record_init = False
 
-			# Sleep for a specific duration between checks
-			time.sleep(1)
-		
-		pt.join()
+ """
+		time.sleep(1/CORDELIA_SR)
+	
+	csound_thread.join()
+	#if not record_init:
+		#rec_thread.join()
 		
 
 #		while pt.status() == 0:	
-#			if RECORD and cordelia_init and record_init:
-#				print(f'RECORDING IS {cordelia_init}')
-#				pt.record(CORDELIA_OUT_RAW, 24, 2)
-#				record_init = False
+
 
 		#pt.stopRecord()
 
 
 		#print('Record OFF')
-		
-	CORDELIA_OUT_LOG_open.close()
-	CORDELIA_OUT_COR_open.close()
+	
+	if CORDELIA_OUT_LOG_open:
+		CORDELIA_OUT_LOG_open.close()
+		CORDELIA_OUT_COR_open.close()
 
 	#if not record_init:
 	#	tfm = sox.Transformer()
@@ -167,8 +196,7 @@ if __name__ == '__main__':
 	#	tfm.set_input_format(ignore_length=True)
 	#	tfm.build(CORDELIA_OUT_RAW, CORDELIA_OUT_WAV)
 
-	csound_cordelia.cleanup()
 	print('CSOUND is OFF!')
 
-del csound_cordelia
-exit()
+	del csound_cordelia
+	exit()

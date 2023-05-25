@@ -6,6 +6,9 @@ MIDI_CORRECTION = 1024
 CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIA'
 MAIN_TRACK_NAME = '_main'
 
+SONVS_SUCCESS = '/Users/j/Documents/script/OOT_Get_Heart.wav'
+SONVS_ERROR = '/Users/j/Documents/script/OOT_Navi_WatchOut1.wav'
+
 project_dir, buf_size = RPR_GetProjectPath("", 512)
 project_dir = project_dir + '/'
 
@@ -13,7 +16,7 @@ project_num, project_name_ext, buf_size = RPR_GetProjectName(0, "", 512)
 project_name = project_name_ext.rsplit(".", 1)[0]
 
 tracks_dir = project_dir + '_renders/'
-render_dir = project_dir + '_cordelia_render/'
+render_dir = project_dir + f'{project_name}-render/'
 main_track_dir = project_dir + f'tracks/{MAIN_TRACK_NAME}'
 
 
@@ -73,12 +76,12 @@ def check_if_additional_text(item):
 
 
 def get_midi_note_env_if_text(item):
-	text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(item.take_id, item.note_index, 0, 0, 0, 0, 0, BUFFER_SIZE)
-	if text_retval:
+	text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(item.take_id, 0, 0, 0, 0, 0, 0, BUFFER_SIZE)
+	if text_retval and item.startppq_pos == ppqposOutOptional:
 		# i don't know why, but i need to remove 2 character from the end of the text string
-		item.env = msgOptional[:-2:]
-	else:
-		item.env = 'classic'
+		if msgOptional.strip() != '':
+			item.env = msgOptional[:-2:]
+			#log(msgOptional)
 		
 def get_midi_note_freq(item):
 	freq = str(RPR_GetTrackMIDINoteNameEx(0, item.track_id, item.midi_pitch, item.midi_chn))
@@ -95,14 +98,16 @@ def get_midi_notes(item):
 	item.midi_pitch = note_pitch
 	item.midi_chn = note_chn
 
+	item.startppq_pos = startppqposOut
 	item.start_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, startppqposOut)
 	item.end_pos = RPR_MIDI_GetProjTimeFromPPQPos(take_id, endppqposOut)
 
 	item.dur = item.end_pos - item.start_pos
 	item.dyn = note_velocity / MIDI_CORRECTION
+	item.env = 'classic'
 	get_midi_note_freq(item)
-	get_midi_note_env_if_text(item)
 	check_if_additional_text(item)
+	get_midi_note_env_if_text(item)
 
 	return item
 
@@ -223,8 +228,15 @@ def get_csound_strings():
 		match item.type:
 			case 'midi':
 				removed_name = (item.instr_name).replace('@', '')
+
 				replace_env = item.env.replace('.a', '$atk')
-				prefix_env = 'gi' + replace_env
+
+				if item.env[0] == '-':
+					replace_env = replace_env.replace('-', '')
+					prefix_env = '-gi' + replace_env
+				else:
+					prefix_env = 'gi' + replace_env
+
 				if item.start_pos < 0:
 					log('WARNING: some notes starts before 0, I just set them to 0!')
 					item.start_pos = 0
@@ -310,11 +322,12 @@ def execute_csound(chns, sr, ksmps):
 
 		# subprocess.call(['osascript', '-e', f'tell application "Terminal" to do script "{command}"'])
 		#script = f'tell application "Terminal" to do script "{command} && exit"'
+
 		script =	f'tell application "Terminal"\n' \
 						f'set myscript to "{command} && exit || echo ERROR $?"\n' \
 						f'do script myscript\n' \
 					f'end tell'
-
+		
 		subprocess.call(['osascript', '-e', script])
 
 		""" # Wait for the command to finish
@@ -330,7 +343,7 @@ def execute_csound(chns, sr, ksmps):
 			log(p.returncode)
 			break """
 
-retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2,48,16', 512)
+retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2,48,64', 512)
 
 if retval:
 

@@ -70,12 +70,16 @@ endif
 ktab	table kndx, iscale
 
 kres	= cpstun(kgo, int(kbase + (koct * 12) + ktab), gktuning)
+
 kgo += 1
 
 
 	xout kres
 
 	endop
+
+
+
 
 	opcode stepm, k, SikO	;classic step to use scales from Sroot using iscale output kdegree NB the last parameter is kshiftroot to shift root and scale easy NBB if step = 0 then rest
 

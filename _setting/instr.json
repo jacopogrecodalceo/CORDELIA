@@ -640,6 +640,13 @@
 
     ]
   },
+  "cnik": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/cnik.orc",
+    "global_var": [
+
+    ]
+  },
   "coeur": {
     "type": "sonvs",
     "path": [
@@ -1748,6 +1755,27 @@
 
     ]
   },
+  "pianon": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianon.orc",
+    "global_var": [
+
+    ]
+  },
+  "pianon2": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianon2.orc",
+    "global_var": [
+
+    ]
+  },
+  "pianons": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianons.orc",
+    "global_var": [
+
+    ]
+  },
   "pij": {
     "type": "instr",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pij.orc",
@@ -1892,6 +1920,13 @@
   "seno": {
     "type": "instr",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/seno.orc",
+    "global_var": [
+
+    ]
+  },
+  "senot": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/senot.orc",
     "global_var": [
 
     ]

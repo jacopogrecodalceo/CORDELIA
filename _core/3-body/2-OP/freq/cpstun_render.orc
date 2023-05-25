@@ -4,7 +4,6 @@
     kindex, kft xin
 
 kout        cpstun 1, kindex, kft
-schedulek   "sense_midi", 0, 1, kindex
 
     xout kout
     endop

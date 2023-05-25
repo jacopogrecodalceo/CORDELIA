@@ -1,16 +1,17 @@
 #define eva_kSk_kcps(kcps) #
-if	($kcps != 0) then
-	if kch == 0 then
-		kch = 1
-		until kch > ginchnls do
-			schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
-			kch += 1
-		od
-		kch = 0
-	else
-		kch_i = ((kch-1)%ginchnls)+1
-		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
-	endif
+
+kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
+
+if kch == 0 then
+	kch = 1
+	until kch > ginchnls do
+		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+		kch += 1
+	od
+	kch = 0
+else
+	kch_i = ((kch-1)%ginchnls)+1
+	schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
 endif
 #
 
@@ -39,22 +40,31 @@ if	kdur > giminnote && kamp > 0 then
 	kdur	limit	kdur, 0, gimaxnote
 
 	;AMPLITUDE DEPENDS ON HOW MANY NOTES
-	if	(kcps2 != 0 && kcps3 == 0 && kcps4 == 0 && kcps5 == 0) then
+	if	(kcps1 != 0 && kcps2 == 0 && kcps3 == 0 && kcps4 == 0 && kcps5 == 0) then
+		$eva_kSk_kcps(kcps1)
+	elseif	(kcps1 != 0 && kcps2 != 0 && kcps3 == 0 && kcps4 == 0 && kcps5 == 0) then
 		kamp *= ampdb(-5)
-	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 == 0 && kcps5 == 0) then
+		$eva_kSk_kcps(kcps1)
+		$eva_kSk_kcps(kcps2)
+	elseif	(kcps1 != 0 && kcps2 != 0 && kcps3 != 0 && kcps4 == 0 && kcps5 == 0) then
 		kamp *= ampdb(-7)
-	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 == 0) then
+		$eva_kSk_kcps(kcps1)
+		$eva_kSk_kcps(kcps2)
+		$eva_kSk_kcps(kcps3)
+	elseif	(kcps1 != 0 && kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 == 0) then
 		kamp *= ampdb(-9)
-	elseif	(kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 != 0) then
+		$eva_kSk_kcps(kcps1)
+		$eva_kSk_kcps(kcps2)
+		$eva_kSk_kcps(kcps3)
+		$eva_kSk_kcps(kcps4)
+	elseif	(kcps1 != 0 && kcps2 != 0 && kcps3 != 0 && kcps4 != 0 && kcps5 != 0) then
 		kamp *= ampdb(-11)
+		$eva_kSk_kcps(kcps1)
+		$eva_kSk_kcps(kcps2)
+		$eva_kSk_kcps(kcps3)
+		$eva_kSk_kcps(kcps4)
+		$eva_kSk_kcps(kcps5)
 	endif
-
-	;GENERATE EVENT
-	$eva_kSk_kcps(kcps1)
-	$eva_kSk_kcps(kcps2)
-	$eva_kSk_kcps(kcps3)
-	$eva_kSk_kcps(kcps4)
-	$eva_kSk_kcps(kcps5)
 
 	$eva_showmek
 

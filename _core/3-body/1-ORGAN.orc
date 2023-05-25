@@ -2,6 +2,8 @@ giedo12					ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0594630943592953, 1.1224620
 
 gktuning init giedo12
 
+gScsound_score init ""
+
 gSmouth[]		init ginchnls
 
 indx		init 0
@@ -9,7 +11,7 @@ until	indx == ginchnls do
 	gSmouth[indx]		sprintf	"mouth_%i", indx+1
 	indx	+= 1
 od
-
+gkabstime init 0 
 gkdiv	init 64 ;max division of main tempo for heart and lungs
 
 ;	HEART
@@ -52,6 +54,9 @@ klast_c	= kph
 
 	chnset	kph, "heart"
 	chnset	aph, "heart_a"
+
+
+gkabstime	times
 
 	endin
 ;	schedule("heart", .5, -1)

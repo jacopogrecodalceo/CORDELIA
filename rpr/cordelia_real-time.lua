@@ -105,12 +105,11 @@ function get_all_midi_items(ids, index)
 
 	local end_pos = reaper.MIDI_GetProjTimeFromPPQPos(take, endppqpos)
 
-	if start_pos <= item_end_pos then
+	if start_pos <= item_end_pos and start_pos >= item_start_pos then
 		
 		local dur = end_pos - start_pos
 		local dyn = note_velocity / MIDI_CORRECTION
 		local env = 'classic'
-		local retval_text, selected, muted, ppqpos, type, note_local_env = reaper.MIDI_GetTextSysexEvt(take, index)
 
 		local freq = reaper.GetTrackMIDINoteNameEx(0, track, note_pitch, note_chn)
 		freq = string.match(freq, 'c%s+(.*)')
@@ -135,8 +134,9 @@ function get_all_midi_items(ids, index)
 				freq = load("return " .. freq .. val)()
 			end
 		end
-
-		if retval_text then
+		
+		local retval_text, selected, muted, ppqpos_text, type, note_local_env = reaper.MIDI_GetTextSysexEvt(take, 0)
+		if retval_text and startppqpos == ppqpos_text then 
 			env = note_local_env
 		end
 
@@ -207,13 +207,14 @@ function get_all_items()
 			end
 		else
 			local parent_track = reaper.GetParentTrack(track)
-			local retval, parent_name = reaper.GetSetMediaTrackInfo_String(parent_track, 'P_NAME', 0, 0)
-			instr_name = string.match(parent_name, '@%w+')
+			if instr_name ~= '' and parent_track ~= nil then
+				local retval, parent_name = reaper.GetSetMediaTrackInfo_String(parent_track, 'P_NAME', 0, 0)
+				instr_name = string.match(parent_name, '@%w+')
+				local is_parent_mute = reaper.GetMediaTrackInfo_Value(parent_track, 'B_MUTE') == 1
 
-			local is_parent_mute = reaper.GetMediaTrackInfo_Value(parent_track, 'B_MUTE') == 1
-
-			if not is_parent_mute then 
-				is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
+				if not is_parent_mute then 
+					is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
+				end
 			end
 		end
 
@@ -343,21 +344,33 @@ function cordelia_realtime(play_pos)
 			local instr_num = tostring(item[6] + 300)
 
 			if start_pos <= play_pos then
-
+				
 				local instr_name = item[3]
 				local text = item[5]
 				local code = extract_elements(text)
 
-				table.insert(code, 2, '"' .. instr_name .. '"')
+				if instr_name == '@cordelia' then
 
-				local csound_string = 'instr ' .. instr_num .. '\n' .. table.concat(code, ", ") .. '\nendin\n'
-				csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
-				
-				send_to_cordelia(csound_string)
+					local csound_string = 'instr ' .. instr_num .. '\n' .. text .. '\nendin\n'
+					csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
+					
+					send_to_cordelia(csound_string)
 
-				table.insert(text_items_off, item)
-				table.remove(text_items, index)
+					table.insert(text_items_off, item)
+					table.remove(text_items, index)
 
+				else
+
+					table.insert(code, 2, '"' .. instr_name .. '"')
+
+					local csound_string = 'instr ' .. instr_num .. '\n' .. table.concat(code, ", ") .. '\nendin\n'
+					csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
+					
+					send_to_cordelia(csound_string)
+
+					table.insert(text_items_off, item)
+					table.remove(text_items, index)
+				end
 			else
 				index = index + 1
 			end

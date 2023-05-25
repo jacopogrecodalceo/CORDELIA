@@ -24,14 +24,7 @@ endif
 	alwayson("sense_keyboard")
 
 
-gkbeats init 1
 
-	instr sense_midi
 
-p3 i gkbeats
 
-ktrig init 1
-midion2 1, p4, 95, ktrig
-ktrig = 0
 
-	endin
