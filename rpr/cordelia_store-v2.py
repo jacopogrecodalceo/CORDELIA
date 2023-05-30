@@ -16,7 +16,7 @@ project_num, project_name_ext, buf_size = RPR_GetProjectName(0, "", 512)
 project_name = project_name_ext.rsplit(".", 1)[0]
 
 tracks_dir = project_dir + '_renders/'
-render_dir = project_dir + f'{project_name}-render/'
+render_dir = project_dir + f'{project_name}-cordelia_render/'
 main_track_dir = project_dir + f'tracks/{MAIN_TRACK_NAME}'
 
 
