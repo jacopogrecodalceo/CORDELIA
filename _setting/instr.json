@@ -1802,6 +1802,13 @@
     "channels": "2",
     "sr": "48000"
   },
+  "plum": {
+    "type": "instr",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/plum.orc",
+    "global_var": [
+      "giplum_freqs"
+    ]
+  },
   "porco": {
     "type": "sonvs",
     "path": [

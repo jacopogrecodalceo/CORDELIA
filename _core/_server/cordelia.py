@@ -117,28 +117,23 @@ record_init = True
 
 # Define the function to be executed in the thread
 def csound_perf_homemade(cs, completion_event):
-    cs.start()
-    while cs.performKsmps() == 0:
-        pass
-    
-    cs.cleanup()
-
-    # Thread has completed, set the completion event
-    completion_event.set()
-    return
-
-
-
-
-def recording(cs, completion_event):
-
+	cs.start()
+	
 	sr = int(CORDELIA_SR)
 	chs = int(CORDELIA_NCHNLS)
 	sig = np.reshape(cs.spout(), (-1, chs))  # Reshape the array
 
 	with sf.SoundFile(CORDELIA_OUT_WAV, 'w', samplerate=sr, channels=chs, subtype='PCM_24') as outfile:
-		while not completion_event.is_set():
+		while cs.performKsmps() == 0:
 			outfile.write(sig)
+
+	cs.cleanup()
+
+	# Thread has completed, set the completion event
+	completion_event.set()
+	return
+
+
 			
 # Create the completion event
 completion_event = Event()
@@ -170,7 +165,7 @@ if __name__ == '__main__':
 			record_init = False
 
  """
-		time.sleep(1/CORDELIA_SR)
+		time.sleep(1/(CORDELIA_SR/16))
 	
 	csound_thread.join()
 	#if not record_init:
