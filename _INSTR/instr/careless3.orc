@@ -1,14 +1,6 @@
+	$START_INSTR(careless3)
 
-	instr careless3
-
-Sinstr		init "careless3"
-idur		init p3
-iamp		init p4
-iftenv		init p5
-icps		init p6
-ich		init p7
-
-anoi		fractalnoise $ampvar, 1
+anoi		fractalnoise $dyn_var, 1
 
 kbw 		= icps/expseg(500, idur, 75) 	;bandwidth in Hz
 
@@ -24,7 +16,7 @@ kost_freq =  kost_val[kost_index%lenarray(kost_val)]*icps+random:i(-.05, .05)
 
 ;kost_fact	cosseg 3, idur, 3/2
 ;iost_dur	init i(gkbeats)
-aost_out	oscil3 $ampvar, portk(kost_freq, gkbeats/cosseg(48, idur, 24)), gitri
+aost_out	oscil3 $dyn_var, portk(kost_freq, gkbeats/cosseg(48, idur, 24)), gitri
 
 ;kost_trig	metro2 gkbeatf*kost_fact, .15
 ;kost_env	triglinseg kost_trig, 1, iost_dur/iost_fact, 0
@@ -48,8 +40,8 @@ if kharm == 0 then
 	kharm = 1
 endif
 
-ao1		oscili $ampvar, icps*(3/kharm), gitri
-ao2		oscili $ampvar, icps*(3/int(line(11, idur*random:i(.85, 1.25), 1))), gitri
+ao1		oscili $dyn_var, icps*(3/kharm), gitri
+ao2		oscili $dyn_var, icps*(3/int(line(11, idur*random:i(.85, 1.25), 1))), gitri
 
 aosc		= ao1 + ao2
 
@@ -61,9 +53,6 @@ idiff		init 12
 aout		*= 1/idiff+((abs(lfo(1/idiff, 1.15+random:i(-.05, .05))))*cosseg(0, idur/2, 1))
 
 
-;	ENVELOPE
-ienvvar		init idur/10
+	$dur_var(10)
+	$END_INSTR
 
-		$END_INSTR
-
-	endin

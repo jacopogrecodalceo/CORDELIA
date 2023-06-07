@@ -3,8 +3,8 @@
 
 Sinstr		init "luv"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
@@ -15,7 +15,7 @@ idetune 	init 0
 
 ivibdiv		random 4, 8
 
-amp		= abs(lfo:a($ampvar, cosseg(random:i(idur*.35, idur*.95)/ivibdiv, idur, random:i(idur*.75, idur*3.5)/ivibdiv)))
+amp		= abs(lfo:a($dyn_var, cosseg(random:i(idur*.35, idur*.95)/ivibdiv, idur, random:i(idur*.75, idur*3.5)/ivibdiv)))
 
 //
 
@@ -30,7 +30,7 @@ kvib 	lfo icps/100, random:i(3, 5)
 aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0)+kvib, kcar, kmod+randomi:k(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
 ;	ENVELOPE
-ienvvar		init idur/100
+$dur_var(100)
 
 		$END_INSTR
 

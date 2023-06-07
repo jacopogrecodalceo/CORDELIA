@@ -1,11 +1,6 @@
-	instr pucky
+	$START_INSTR(pucky)
 
-	$params
+aout		wgpluck2 1-$dyn_var, $dyn_var*12, icps, 1, expseg(.65, idur, .05)
 
-aout		wgpluck2 1-$ampvar, $ampvar*12, icps, 1, expseg(.65, idur, .05)
-
-ienvvar		init idur/10
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

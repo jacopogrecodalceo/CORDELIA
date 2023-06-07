@@ -10,7 +10,7 @@ gk---NAME---_sonvs		init 1
 
 Sinstr		init "---NAME---"
 idur		divz p3, i(gk---NAME---_dur), 1
-iamp		init p4
+idyn		init p4
 ienv		init p5
 icps		init p6 % i(gkdiv)
 ich			init p7
@@ -58,9 +58,9 @@ else
 	aout	*= envgen(idur-random:i(0, ienvvar), ienv)
 endif
 
-aout	*= $ampvar
+aout	*= $dyn_var
 
-	$mix
+	$CHNMIX
 
 ;gi---NAME---_where init (i(gkbeatn)+1)/i(gkdiv)
 

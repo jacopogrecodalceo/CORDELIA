@@ -2,14 +2,14 @@
 
 	$params
 
-ashape	envgen idur, iftenv
+ashape	envgen idur, ienv
 
 afreq	= ashape+(ashape*icps)+icps/10
 
 aout	oscil3 ashape, afreq, gisine
 aout	= tanh(aout)
 
-ienvvar		init idur/100
+$dur_var(100)
 
 	$END_INSTR
 

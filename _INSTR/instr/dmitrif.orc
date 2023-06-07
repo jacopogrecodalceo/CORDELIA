@@ -8,16 +8,16 @@ gkdmitrif_time randomi gkbeatms, gkbeatms/4, gkbeatf/32
 
 Sinstr		init "dmitrif"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
-anoi		fractalnoise cosseg(iamp, idur, 0), cosseg(0, idur, 2)
+anoi		fractalnoise cosseg(idyn, idur, 0), cosseg(0, idur, 2)
 
 asub		resonx anoi, icps, icps/random:i(25, 10)
 
-avco		vco2 cosseg(0, idur, iamp), icps*3/2, 10
+avco		vco2 cosseg(0, idur, idyn), icps*3/2, 10
 
 asub		balance asub, anoi
 
@@ -51,16 +51,16 @@ adel		cosseg ist, idur, iend*16
 adel		samphold adel, metro(3/idur)
 
 af1			flanger asum, adel+random(-itime/100, itime/100), .995
-af1			*= oscil(1, (iamp*8)+random(-itime/100, itime/100), gisotrap)
+af1			*= oscil(1, (idyn*8)+random(-itime/100, itime/100), gisotrap)
 af2			flanger af1, adel+random(-itime/100, itime/100), .995
-af2			*= oscil(1, (iamp*8)+random(-itime/100, itime/100), gisotrap)
+af2			*= oscil(1, (idyn*8)+random(-itime/100, itime/100), gisotrap)
 af3			flanger af2, adel+random(-itime/100, itime/100), .995
-af3			*= oscil(1, (iamp*8)+random(-itime/100, itime/100), gisotrap)
+af3			*= oscil(1, (idyn*8)+random(-itime/100, itime/100), gisotrap)
 
 aout		balance2 af3, asum
 
 ;		ENVELOPE
-ienvvar		init idur/10
+$dur_var(10)
 
 		$END_INSTR
 

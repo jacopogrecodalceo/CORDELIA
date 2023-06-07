@@ -8,11 +8,9 @@ ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf
 	schedule "piano_load", 0, 1
 
 
-	instr pianon
+	$START_INSTR(pianon)
 
-	$params
-
-ain		sfplay3m 1, ftom:i(A4), $ampvar/2048, icps, 0, 1
+ain		sfplay3m 1, ftom:i(A4), $dyn_var/2048, icps, 0, 1
 
 kestfrq = icps*2
 kmaxvar = 0.95
@@ -27,8 +25,5 @@ a2		exciter amain, k2, 15000, 10, 3.5
 
 aout		= a2;amain*cosseg(0, p3/2, 1, p3/2, 0) + a1 + a2
 
-ienvvar		init idur/10
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

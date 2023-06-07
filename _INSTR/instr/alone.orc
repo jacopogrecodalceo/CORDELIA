@@ -6,21 +6,15 @@ gkalone_cps init 20
 
 gialone_count init 1
 
-	instr alone
-
-idur		init p3
-iamp		init p4*.65
-iftenv		init p5
-icps		init p6
-ich		init p7
-
-ienvvar		init idur/10
+	$START_INSTR(alone)
+	$dur_var(10)
+	idyn init idyn*.65
 
 if ich == 1 then
 
 	gkalone_dur	portk idur, 5$ms
 
-	gkalone_env = envgen(idur-random:i(0, ienvvar), iftenv)*$ampvar
+	gkalone_env = envgen(idur-random:i(0, ienvvar), ienv)*$dyn_var
 	gkalone_cps init icps
 
 	gkalone_harm init gialone_count
@@ -34,10 +28,12 @@ endif
 
 	endin
 
+
+
 	instr alone_instr
 
 Sinstr		init "alone"
-ich		init p4
+ich			init p4
 
 kharm		int abs(lfo(9, gkalone_harm/gkalone_dur))
 kharm		+= 3/2
@@ -54,8 +50,7 @@ aout		moogladder2 avco, gkalone_cps+(gkalone_cps*portk(gkalone_env*64, 5$ms)), .
 aout		phaser1 aout, gkalone_cps/1000, 9, .95
 aout		balance2 aout, avco
 
-	$mix
-
+	$CHNMIX
 	endin
 
 indx	init 0

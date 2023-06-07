@@ -2,14 +2,14 @@
 
 Sinstr		init "pur"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
 ipanfreq	random -.25, .25
 
-ifn		init iftenv
+ifn		init ienv
 imeth		init 6
 
 a1		pluck 1, (icps*(1-ich%2)+1) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
@@ -20,12 +20,12 @@ arig2		oscili 1, icps*3/2
 
 igain		init .5 ;gain regulation
 
-aout		= igain*(a1 + a2)*arig1*arig2*$ampvar
+aout		= igain*(a1 + a2)*arig1*arig2*$dyn_var
 
-aout		flanger aout, cosseg:a(idur/128, idur, idur/96), cosseg(.35, idur, 1-$ampvar)
-aout		bqrez	aout, icps+(icps*(32*$ampvar)), cosseg(.95, idur/2, .5)
+aout		flanger aout, cosseg:a(idur/128, idur, idur/96), cosseg(.35, idur, 1-$dyn_var)
+aout		bqrez	aout, icps+(icps*(32*$dyn_var)), cosseg(.95, idur/2, .5)
 
-ienvvar		init idur/10
+$dur_var(10)
 
 	$END_INSTR
 

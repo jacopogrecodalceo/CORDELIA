@@ -9,9 +9,9 @@ kc2	= 5
 kvrate	= gkbeatf*ival[linseg(0, idur, lenarray(ival))]
 kvdpth	cosseg 0, idur, .15
 
-aout	fmb3 $ampvar, icps, kc1, kc2, kvdpth, kvrate
+aout	fmb3 $dyn_var, icps, kc1, kc2, kvdpth, kvrate
 
-ienvvar	init idur/10
+$dur_var(10)
 
 	$END_INSTR
 

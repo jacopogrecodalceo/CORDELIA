@@ -11,7 +11,7 @@ gixylo_dummy	    ftgen		0, 0, 6, 10, 1
 
  	$params
 
-ienvvar		init idur/5
+$dur_var(5)
 ienv_max    init idur
 ienv_min    init -.75        ;the minimum for the audible
 
@@ -20,45 +20,45 @@ ifreq_max   init 20$k
       		ftmorf limit(idur, 0, 12)/2, gixylo_morf, gixylo_dummy
 
 ;-------OSCIL01            
-aenv1   envgen	limit((idur*(1/tab_i(0, gixylo_dummy)))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-a1      oscil3  iamp*aenv1, icps*tab_i(0, gixylo_dummy), gisine
+aenv1   envgen	limit((idur*(1/tab_i(0, gixylo_dummy)))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+a1      oscil3  idyn*aenv1, icps*tab_i(0, gixylo_dummy), gisine
 
 ;-------OSCIL02
-aenv2   envgen	limit((idur*(1/tab_i(1, gixylo_dummy)))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-a2      oscil3  iamp*aenv2, icps*tab_i(1, gixylo_dummy), gisine
+aenv2   envgen	limit((idur*(1/tab_i(1, gixylo_dummy)))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+a2      oscil3  idyn*aenv2, icps*tab_i(1, gixylo_dummy), gisine
 
 
 ;-------OSCIL03
 ir3     init icps*tab_i(2, gixylo_dummy)
 if      ir3<ifreq_max then
-    iamp		= p4/2
+    idyn		= p4/2
 
-    aenv3   envgen	limit((idur*(1/ir3))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-    a3      oscil3  iamp*aenv3, ir3, gisine
+    aenv3   envgen	limit((idur*(1/ir3))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+    a3      oscil3  idyn*aenv3, ir3, gisine
 
 ;-------OSCIL04
     ir4     init icps*tab_i(3, gixylo_dummy)
     if      ir4<20$k then
-        iamp		= p4/2
+        idyn		= p4/2
 
-        aenv4   envgen	limit((idur*(1/ir4))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-        a4      oscil3  iamp*aenv4, ir4, gisine
+        aenv4   envgen	limit((idur*(1/ir4))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+        a4      oscil3  idyn*aenv4, ir4, gisine
 
 ;-------OSCIL05
         ir5     init icps*tab_i(4, gixylo_dummy)
         if      ir5<ifreq_max then
-            iamp		= p4/2
+            idyn		= p4/2
 
-            aenv5   envgen	limit((idur*(1/ir5))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-            a5      oscil3  iamp*aenv5, ir5, gisine
+            aenv5   envgen	limit((idur*(1/ir5))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+            a5      oscil3  idyn*aenv5, ir5, gisine
 
 ;-------OSCIL06
             ir6     init icps*tab_i(5, gixylo_dummy)
             if      ir6<ifreq_max then
-                iamp		= p4/2
+                idyn		= p4/2
 
-                aenv6   envgen	limit((idur*(1/ir6))-random:i(0, ienvvar), ienv_min, ienv_max), iftenv
-                a6      oscil3  iamp*aenv6, ir6, gisine
+                aenv6   envgen	limit((idur*(1/ir6))-random:i(0, ienvvar), ienv_min, ienv_max), ienv
+                a6      oscil3  idyn*aenv6, ir6, gisine
             endif
         endif
     endif

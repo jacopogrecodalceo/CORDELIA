@@ -2,16 +2,16 @@
 
 Sinstr		init "dmitri"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
-anoi		fractalnoise cosseg(iamp, idur, 0), cosseg(0, idur, 2)
+anoi		fractalnoise cosseg(idyn, idur, 0), cosseg(0, idur, 2)
 
 asub		resonx anoi, icps, icps/random:i(25, 10)
 
-avco		vco2 cosseg(0, idur, iamp), icps*3/2, 10
+avco		vco2 cosseg(0, idur, idyn), icps*3/2, 10
 
 asub		balance asub, anoi
 
@@ -39,7 +39,7 @@ aout		= alow + ahigh + flanger(aband, expseg:a(giexpzero, idur, random:i(.065, .
 aout		/= 2
 
 ;		ENVELOPE
-ienvvar		init idur/10
+$dur_var(10)
 
 		$END_INSTR
 

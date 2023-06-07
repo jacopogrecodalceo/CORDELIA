@@ -11,13 +11,13 @@ gipercluster_linvar	init giperfactor-1
 
 Sinstr		init "ipercluster_instr"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
-	schedule Sinstr, 0, idur, iamp, iftenv, icps, ich
-	schedule Sinstr, 0, idur, iamp, iftenv, limit(icps/8, 20, 20$k), ich
+	schedule Sinstr, 0, idur, idyn, ienv, icps, ich
+	schedule Sinstr, 0, idur, idyn, ienv, limit(icps/8, 20, 20$k), ich
 	turnoff
 
 	endin
@@ -34,8 +34,8 @@ gkipercluster_vibfreq	randomh 2, 9, .5, 3
 
 Sinstr		init "ipercluster"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
@@ -48,7 +48,7 @@ kx		expseg 1, idur/random(1, 1.25), random(giexpzero, giexpzero*100)
 
 #define ipercluster_var #tab:k(linseg(giexpzero, idur, giperfactor-random(1, i(gkipercluster_linvar))), giperout)#
 
-ain		oscil $ampvar, $ipercluster_var*icps, ift
+ain		oscil $dyn_var, $ipercluster_var*icps, ift
 
 krvt		cosseg 5/icps, idur, .05/icps
 ilpt		init giexpzero*10 
@@ -58,7 +58,7 @@ aout		vcomb ain, krvt+(krvt/5), ilpt, 15
 aout		*= vibr(.45, (gkipercluster_vibfreq+random(-.15, .15))/idur, gisine)
 
 ;		ENVELOPE
-ienvvar		init idur/100
+$dur_var(100)
 
 			$END_INSTR
 

@@ -266,8 +266,8 @@ endop
 
 Sinstr		init "pijnor"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		ftom p6
 ich			init p7
 
@@ -322,7 +322,7 @@ kLP0			init 109.25
 kLP1			init 102
 kK_TrackL		init .325
 
-kMain_Vol		init $ampvar
+kMain_Vol		init $dyn_var
 
 iPitch          init icps
 
@@ -332,7 +332,7 @@ aout_Pipe		pijnor_opinstr	iPitch, iAtt_ENV, iDec_ENV, iSus_ENV, iRel_ENV, iVel_E
 
 aout	= gapijnor_inrev + aout_Pipe * kMain_Vol
 
-    $mix
+    $CHNMIX
     
     endin
 

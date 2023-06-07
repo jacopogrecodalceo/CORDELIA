@@ -2,8 +2,8 @@
 
 Sinstr		init "rim"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
@@ -13,7 +13,7 @@ icps	=  icps_init*exp(log(2.0)*(57.0-69.0)/12.0)
 acps	expon icps, .0025, icps * .5
 acps	=  acps + icps
 
-iamp	=  .095
+idyn	=  .095
 
 a1a	phasor acps, .0	/* square wave */
 a1b	phasor acps, .5
@@ -33,7 +33,7 @@ aenv	expon 1, .005, .5	/* amp. envelope */
 
 /* distortion */
 
-a0	limit 4*iamp*a0*aenv, -1, 1
+a0	limit 4*idyn*a0*aenv, -1, 1
 a0	table3 a0, gisine, 1, 0, 1
 
 /* lowpass filter freq. envelope */
@@ -50,7 +50,7 @@ aout	pareq aout, kffrq, 0, 0.7071, 2
 
 aout	=  aout*linseg(1, p3-0.1, 1, 0.025, 0, 1, 0)
 
-ienvvar = idur/25
+$dur_var(25)
 
 	$END_INSTR
 

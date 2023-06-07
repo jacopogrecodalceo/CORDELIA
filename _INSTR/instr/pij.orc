@@ -479,8 +479,8 @@ endop
 
 Sinstr		init "pij"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		ftom p6
 ich			init p7
 
@@ -535,7 +535,7 @@ kLP0			init 109.25
 kLP1			init 102
 kK_TrackL		init .325
 
-kMain_Vol		init $ampvar
+kMain_Vol		init $dyn_var
 
 iPitch          init icps
 
@@ -545,7 +545,7 @@ aout_Pipe		pij_opinstr	iPitch, iAtt_ENV, iDec_ENV, iSus_ENV, iRel_ENV, iVel_ENV,
 
 aout	= gapij_inrev + aout_Pipe * kMain_Vol
 
-    $mix
+    $CHNMIX
    
 
 indx	init 0
@@ -584,7 +584,7 @@ kMix_Rev		init .65
 
 aout	pij_oprev	ain, kTime_Rev, kLR_Rev, kSize_Rev, kRT_Rev, kLP_Rev, kLD_Rev, kHD_Rev, kFrq_Rev, kSpin_Rev, kDizzy_Rev, kPos_Rev, kMix_Rev
 
-	$mix
+	$CHNMIX
    	chnclear sprintf("%s_%i", Sin, ich)
     endin
 

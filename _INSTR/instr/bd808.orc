@@ -33,7 +33,7 @@ idect	table 11, ifn	; decay half-time
 ixtim	=  .25 + idel + irel		; expand note length
 p3		=  p3 + ixtim
 ; note amplitude
-iamp	=  $ampvar
+idyn	=  $dyn_var
 
 kcps	port 1, ifrqt, ifrqs
 kcps	=  icps * kcps
@@ -44,9 +44,9 @@ a1	butterlp a1, ilpfrq
 aenv	expon 1, idect, 0.5
 aenv2	linseg 1, ilnth, 1, irel, 0, 1, 0
 
-aout	delay a1 * iamp * aenv * (aenv2 * aenv2), idel
+aout	delay a1 * idyn * aenv * (aenv2 * aenv2), idel
 
-ienvvar init 1/500
+$dur_var(1)/500
 
 	$END_INSTR
 	endin

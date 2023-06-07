@@ -12,19 +12,19 @@ gkqb_freq	samphold gkqb_freq, metro($M_PI*(1+(gkqb_q/4)))
 
 Sinstr		init "qb"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
-ienvvar		init idur/10
+$dur_var(10)
 
 ;kfreq		init icps/50;expseg icps/random:i(25, 50), p3, icps/random:i(25, 50)
 
 ;		OSCIL
-ain1		oscil3 $ampvar, icps, gitri
-ain2		oscil3 $ampvar, icps*(3/2), gitri
-ain3		oscil3 $ampvar, icps*(9/8), gitri
-ain4		oscil3 $ampvar, icps*(9/4), gitri
+ain1		oscil3 $dyn_var, icps, gitri
+ain2		oscil3 $dyn_var, icps*(3/2), gitri
+ain3		oscil3 $dyn_var, icps*(9/8), gitri
+ain4		oscil3 $dyn_var, icps*(9/4), gitri
 
 a1		= ain1 * oscil:a(1, gkqb_freq, gisotrap)
 a2		= ain2 * oscil:a(1, gkqb_freq/3, gisotrap)
@@ -40,7 +40,7 @@ afl		flanger apre, a(gkqb_freq)*4, .75+gkqb_q
 
 alast		= (apre/2) + aph + (afl*2)
 
-aout		moogladder2 alast, (20$k)*(iamp*2.75), random:i(.5, .75)
+aout		moogladder2 alast, (20$k)*(idyn*2.75), random:i(.5, .75)
 aout		balance2 aout, apre
 
 		$END_INSTR

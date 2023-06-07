@@ -20,8 +20,8 @@ gkalonefr_env	init 0
 	instr alonefr
 
 idur		init p3
-iamp		init p4/2
-iftenv		init p5
+idyn		init p4/2
+ienv		init p5
 icps		init p6
 ich			init p7
 
@@ -29,7 +29,7 @@ ich			init p7
 if ich == 1 then
 	gkalonefr_dur	portk idur, 5$ms
 
-	gkalonefr_env = envgen(idur, iftenv)*$ampvar
+	gkalonefr_env = envgen(idur, ienv)*$dyn_var
 
 	gkalonefr_cps init icps
 
@@ -52,11 +52,11 @@ ich		init p4
 kharm		int abs(lfo(9, gkalonefr_harm/gkalonefr_dur))
 kharm		+= 3/2
 
-kamp		= portk(gkalonefr_env, 35$ms, 0)
+kdyn		= portk(gkalonefr_env, 35$ms, 0)
 kfreq		= portk(gkalonefr_cps*gkalonefr_harm, limit(gkalonefr_dur/1000, 75$ms, 1))+randomi:k(-gkalonefr_cps/1000, gkalonefr_cps/1000, 1/gkalonefr_dur)
-avco1		oscil3 kamp, kfreq, gisaw
-avco2		oscil3 kamp, kfreq*kharm, gitri
-avco3		oscil3 kamp, kfreq*kharm/2, gisine
+avco1		oscil3 kdyn, kfreq, gisaw
+avco2		oscil3 kdyn, kfreq*kharm, gitri
+avco3		oscil3 kdyn, kfreq*kharm/2, gisine
 
 avco		= avco1 + avco2 + avco3
 
@@ -68,7 +68,7 @@ amoog		moogladder2 adel, gkalonefr_cps+(gkalonefr_cps*portk((1-gkalonefr_env)*64
 
 aout		phaser1 amoog, gkalonefr_cps, 12, gkalonefr_env
 
-	$mix
+	$CHNMIX
 
 	endin
 

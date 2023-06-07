@@ -1,23 +1,23 @@
 	instr cascadexp_instr
 
-Sinstr	= "cascadexp"
-
+Sinstr	init "cascadexp"
 idur	init p3
-iamp	init p4
-iftenv	init p5
+idyn	init p4
+ienv	init p5
 icps	init p6
 ich		init p7
+
 ipan	init icps/95
 
-iamp	init $ampvar
+idyn	init $dyn_var
 
 ;			1st harmonic
 asquare 		poscil	1, expseg(icps, idur, icps+random:i(-ipan, ipan)), gisquare
-asaw			poscil	iamp, icps*asquare, gisine
+asaw			poscil	idyn, icps*asquare, gisine
 
 ;			2nd harmonic
 aharm_mod		poscil	1, expseg(icps, idur, icps+random:i(-ipan, ipan)*4), gitri
-aharm2_out		poscil	iamp/32, icps*aharm_mod*7, gisquare
+aharm2_out		poscil	idyn/32, icps*aharm_mod*7, gisquare
 
 ;			3rd harmonic
 i1multi3		init 2
@@ -25,7 +25,7 @@ a2multi3		cosseg 24, idur, 12
 kharm3amp		expseg 12, idur, 32
 
 aharm3_mod		poscil	1, expseg(icps, idur, icps+random:i(-ipan, ipan)*i1multi3), gisquare
-aharm3_out		poscil	iamp/kharm3amp, icps*aharm_mod*a2multi3, gisquare
+aharm3_out		poscil	idyn/kharm3amp, icps*aharm_mod*a2multi3, gisquare
 
 ;			total
 asyn			=	asaw + aharm2_out + aharm3_out
@@ -38,27 +38,23 @@ aout			flanger asyn, adel, kfb
 
 aout			buthp aout, icps - icps/12
 
-;	ENVELOPE
-ienvvar		init idur/5
-
-			$END_INSTR
-
-	endin
+	$dur_var(5)
+	$END_INSTR
 
 	instr cascadexp
 
-Sinstr	= "cascadexp_instr"
-
-iarp	init .0125
+Sinstr	init "cascadexp_instr"
 idur	init p3
-iamp	init p4
-iftenv	init p5
+idyn	init p4
+ienv	init p5
 icps	init p6
 ich		init p7
 
-	schedule Sinstr, random:i(0, iarp),	idur, iamp, iftenv, icps, ich
-	schedule Sinstr, random:i(0, iarp),	idur, iamp, iftenv, icps, ich
-	schedule Sinstr, random:i(0, iarp),	idur, iamp, iftenv, icps, ich
+iarp	init .0125
+
+	schedule Sinstr, random:i(0, iarp),	idur, idyn, ienv, icps, ich
+	schedule Sinstr, random:i(0, iarp),	idur, idyn, ienv, icps, ich
+	schedule Sinstr, random:i(0, iarp),	idur, idyn, ienv, icps, ich
 
 	turnoff
 

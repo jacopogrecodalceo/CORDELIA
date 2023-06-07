@@ -4,8 +4,8 @@ gkcalin_vib init 8
 
 Sinstr		init "calin"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
@@ -27,25 +27,25 @@ kbw 		= icps/expseg(500, idur, 75) 	;bandwidth in Hz
 
 kcar	 	= kharm
 amod	 	= 3+ich
-kndx		= expseg:k(giexpzero, idur, 1+$ampvar)
+kndx		= expseg:k(giexpzero, idur, 1+$dyn_var)
 
-ain		foscili $ampvar, icps+randomi:k(-.05, .05, 1/idur, 2, 0)+kbw, kcar, amod+randomi:a(-.015, .015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
+ain		foscili $dyn_var, icps+randomi:k(-.05, .05, 1/idur, 2, 0)+kbw, kcar, amod+randomi:a(-.015, .015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
-ao1		oscili $ampvar, icps*(3/kharm), gitri
-ao2		oscili $ampvar, icps*(3/int(line(11, idur*random:i(.85, 1.25), 1))), gitri
+ao1		oscili $dyn_var, icps*(3/kharm), gitri
+ao2		oscili $dyn_var, icps*(3/int(line(11, idur*random:i(.85, 1.25), 1))), gitri
 
 aosc		= ao1 + ao2
 
 across 		cross2 ain, aosc, 1024, 8, gihanning, .5
 
-aout		= across + (ain*$ampvar) + (aosc*cosseg(0, idur, 1))
+aout		= across + (ain*$dyn_var) + (aosc*cosseg(0, idur, 1))
 
 kdiff		= gkcalin_vib
 
 aout		*= 1/kdiff+((abs(lfo(1/kdiff, 4+random:i(-.15, .15))*cosseg(1, idur, .25)))*cosseg(0, idur/2, 1))
 
 ;	ENVELOPE
-ienvvar		init idur/100
+$dur_var(100)
 
 		$END_INSTR
 	endin

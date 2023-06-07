@@ -21,8 +21,8 @@ gkventre_lad	init 4000
 	instr ventre
 
 idur		init p3
-iamp		init p4/2
-iftenv		init p5
+idyn		init p4/2
+ienv		init p5
 icps		init p6
 ich			init p7
 
@@ -30,7 +30,7 @@ ich			init p7
 if ich == 1 then
 	gkventre_dur	portk idur, 5$ms
 
-	gkventre_env = envgen(idur, iftenv)*$ampvar
+	gkventre_env = envgen(idur, ienv)*$dyn_var
 
 	gkventre_cps init icps
 
@@ -53,11 +53,11 @@ ich		init p4
 kharm		int abs(lfo(9, gkventre_harm/gkventre_dur))
 kharm		+= 3/2
 
-kamp		= portk(gkventre_env, 35$ms, 0)
+kdyn		= portk(gkventre_env, 35$ms, 0)
 kfreq		= portk(gkventre_cps*gkventre_harm, limit(gkventre_dur/1000, 75$ms, 1))+randomi:k(-gkventre_cps/1000, gkventre_cps/1000, 1/gkventre_dur)
-avco1		oscil3 kamp, kfreq, gisaw
-avco2		oscil3 kamp, kfreq*kharm, gitri
-avco3		oscil3 kamp, kfreq*kharm/2, gisine
+avco1		oscil3 kdyn, kfreq, gisaw
+avco2		oscil3 kdyn, kfreq*kharm, gitri
+avco3		oscil3 kdyn, kfreq*kharm/2, gisine
 
 avco		= avco1 + avco2 + avco3
 
@@ -71,7 +71,7 @@ aphas		phaser1 amoog, gkventre_cps, 12, gkventre_env
 
 aout		moogladder2 aphas, gkventre_lad, .95
 aout		balance2 aout, aphas
-	$mix
+	$CHNMIX
 
 	endin
 

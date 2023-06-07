@@ -10,8 +10,8 @@ giaaron_atk		init .0125
 
 Sinstr		init "aaron"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich			init p7
 
@@ -24,7 +24,7 @@ idetune 	init i(gkaaron_detune)
 
 ivibdiv		random 4, 8
 
-amp		= abs(lfo:a($ampvar, cosseg(random:i(idur*.35, idur*.95)/ivibdiv, idur, random:i(idur*.75, idur*3.5)/ivibdiv)))
+amp		= abs(lfo:a($dyn_var, cosseg(random:i(idur*.35, idur*.95)/ivibdiv, idur, random:i(idur*.75, idur*3.5)/ivibdiv)))
 
 //
 
@@ -37,7 +37,7 @@ kcps	= icps + vibr(expseg(.05, idur, icps/(icps*12)), randomi:k(idur*3, idur*5, 
 aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, kmod+randomi:k(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
 ;	ENVELOPE
-ienvvar		init idur/100
+$dur_var(100)
 
 		$END_INSTR
 
@@ -53,18 +53,18 @@ irel	init .015
 
 p3		init giaaron_atk + irel
 idur 	init p3
-iamp 	init p4
+idyn 	init p4
 icps 	init p6
 ich		init p7
 
 ipanfreq	init random:i(-.95, .95)
 
-aout	repluck random:i(.015, .35), iamp, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25),  gitri)
+aout	repluck random:i(.015, .35), idyn, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25),  gitri)
 aout	dcblock2 aout
 
 aout	*= cosseg(0, giaaron_atk, 1, irel, 0)
 
-	$mix
+	$CHNMIX
 
 	endin
 
@@ -75,7 +75,7 @@ Sinstr	init "aaron"
 //
 
 idur 	init p3
-iamp 	init p4
+idyn 	init p4
 icps 	init p6
 ich	init p7
 
@@ -83,12 +83,12 @@ ipanfreq	= random:i(-.95, .95)
 
 //
 
-aout	repluck random:i(.015, .35), $ampvar, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25), gisine)
+aout	repluck random:i(.015, .35), $dyn_var, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25), gisine)
 aout	dcblock2 aout
 
 aout	*= cosseg(0, giaaron_atk, 1, idur/5, 0)
 
-	$mix
+	$CHNMIX
 
 	endin
 
@@ -99,8 +99,8 @@ Sinstr	= "aaron"
 //
 
 idur 	init p3 / 3
-iamp	init p4
-amp		= abs(lfo:a(iamp, cosseg(random:i(idur*.5, idur*.75)/2, idur, random:i(idur*.75, idur*3.5)/2)))
+idyn	init p4
+amp		= abs(lfo:a(idyn, cosseg(random:i(idur*.5, idur*.75)/2, idur, random:i(idur*.75, idur*3.5)/2)))
 
 icps 	init p6
 ich		init p7
@@ -116,9 +116,9 @@ aout	balance arout, af
 
 aout	*= amp
 
-aout	*= cosseg(0, giaaron_atk, iamp, idur, 0)
+aout	*= cosseg(0, giaaron_atk, idyn, idur, 0)
 
-	$mix
+	$CHNMIX
 
 	endin
 
@@ -128,23 +128,23 @@ aout	*= cosseg(0, giaaron_atk, iamp, idur, 0)
 
 Sinstr		init "aaron"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
-ich		init p7
+ich			init p7
 
 indx		init i(gkaaron_indx)
 idetune 	init i(gkaaron_detune)
 
-	event "i", sprintf("%s_instr_1", Sinstr), 0,	idur, iamp,		iftenv, icps, ich
+	event "i", sprintf("%s_instr_1", Sinstr), 0,	idur, idyn,		ienv, icps, ich
 
-	event "i", sprintf("%s_instr_2", Sinstr), 0,	idur, iamp/6,	iftenv, icps+idetune, ich
-	event "i", sprintf("%s_instr_3", Sinstr), 0,	idur, iamp/6,	iftenv, icps+idetune, ich
+	event "i", sprintf("%s_instr_2", Sinstr), 0,	idur, idyn/6,	ienv, icps+idetune, ich
+	event "i", sprintf("%s_instr_3", Sinstr), 0,	idur, idyn/6,	ienv, icps+idetune, ich
 
-	event "i", sprintf("%s_instr_2", Sinstr), 0,	idur, iamp/3,	iftenv, icps*2.11+idetune, ich
-	event "i", sprintf("%s_instr_3", Sinstr), 0,	idur, iamp/3,	iftenv, icps*1.97+idetune, ich
+	event "i", sprintf("%s_instr_2", Sinstr), 0,	idur, idyn/3,	ienv, icps*2.11+idetune, ich
+	event "i", sprintf("%s_instr_3", Sinstr), 0,	idur, idyn/3,	ienv, icps*1.97+idetune, ich
 
-	event "i", sprintf("%s_instr_4", Sinstr), 0,	idur, iamp/5,	iftenv, icps, ich
+	event "i", sprintf("%s_instr_4", Sinstr), 0,	idur, idyn/5,	ienv, icps, ich
 
 	turnoff
 

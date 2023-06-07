@@ -2,14 +2,14 @@
 
 Sinstr		init "grrr"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
-ienvvar		init idur/100
+$dur_var(100)
 
-aex		fractalnoise $ampvar, 2
+aex		fractalnoise $dyn_var, 2
 
 a1		= aex*cosseg(0, 25$ms, 1, 95$ms, 0)
 

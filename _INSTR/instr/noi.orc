@@ -2,15 +2,15 @@
 
 Sinstr		init "noi"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
-ienvvar		init idur/10
+$dur_var(10)
 igainfact	init 256
 
-agen		fractalnoise $ampvar, 0
+agen		fractalnoise $dyn_var, 0
 
 
 iarr[]		fillarray 32, 24, 48, 96, 64

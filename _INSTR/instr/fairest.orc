@@ -1,17 +1,10 @@
 gkfairest_harm init 1
 
-	instr fairest
+	$START_INSTR(fairest)
 
-Sinstr		init "fairest"
-idur		init p3
-iamp		init p4
-iftenv		init p5
-icps		init p6
-ich		init p7
-
-ivib		init $p
+ivib		init idyn/4
 kvibfreq	= randomi:k(1.5, 5, .25, 3)
-iamp		-= ivib
+idyn		-= ivib
 
 ;	a1
 atri1	oscil3	1, icps + random:i(-1, 1), gitri
@@ -28,10 +21,7 @@ aout	distort aout, expseg:k(random:i(.85, .15), idur, .05), gitri
 aout	moogladder aout, icps + expseg:k(icps*8 + random:i(-15, 15), idur, 0.05), expseg:k(.5, idur*9/10, random:i(.895, .65), idur/10, .25)
 aout	K35_hpf aout, 25, 7.5
 
-aout	*= iamp + (lfo:a(ivib, kvibfreq + random:i(-.15, .15)) * expsega(.0005, idur, 1))
+aout	*= idyn + (lfo:a(ivib, kvibfreq + random:i(-.15, .15)) * expsega(.0005, idur, 1))
 
-ienvvar		init idur/10
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

@@ -11,14 +11,14 @@ od
 
 Sinstr		init "metal_instr"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
 indx	init 0
 until indx == gimetal_max_series do
-	schedule Sinstr, 0, idur, iamp, iftenv, icps*gimetal_metallic_harmonic_series[indx], ich
+	schedule Sinstr, 0, idur, idyn, ienv, icps*gimetal_metallic_harmonic_series[indx], ich
 	indx += 1
 od
 	turnoff
@@ -29,18 +29,18 @@ od
 
 Sinstr		init "metal"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
-ienvvar		init idur/10
+$dur_var(10)
 
-aosc		oscil3 $ampvar/gimetal_max_series*2, icps, gisaw
+aosc		oscil3 $dyn_var/gimetal_max_series*2, icps, gisaw
 
-aosc		*= envgen(idur/2-random:i(0, ienvvar), iftenv)
+aosc		*= envgen(idur/2-random:i(0, ienvvar), ienv)
 
-arev1		nreverb aosc/8, idur, $ampvar
+arev1		nreverb aosc/8, idur, $dyn_var
 
 imaxlpt		init idur
 krvt		= idur

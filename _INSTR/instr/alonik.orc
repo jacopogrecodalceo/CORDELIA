@@ -9,18 +9,18 @@ gialone_count init 1
 	instr alone
 
 idur		init p3
-iamp		init p4*.65
-iftenv		init p5
+idyn		init p4*.65
+ienv		init p5
 icps		init p6
 ich		init p7
 
-ienvvar		init idur/10
+$dur_var(10)
 
 if ich == 1 then
 
 	gkalone_dur	portk idur, 5$ms
 
-	gkalone_env = envgen(idur-random:i(0, ienvvar), iftenv)*$ampvar
+	gkalone_env = envgen(idur-random:i(0, ienvvar), ienv)*$dyn_var
 	gkalone_cps init icps
 
 	gkalone_harm init gialone_count
@@ -54,7 +54,7 @@ aout		moogladder2 avco, gkalone_cps+(gkalone_cps*portk(gkalone_env*64, 5$ms)), .
 aout		phaser1 aout, gkalone_cps/1000, 9, .95
 aout		balance2 aout, avco
 
-	$mix
+	$CHNMIX
 
 	endin
 

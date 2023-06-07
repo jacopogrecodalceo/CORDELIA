@@ -7,7 +7,7 @@ ich		init p4
 
 aout		inch ginmic2
 
-	$mix	
+	$CHNMIX	
 
 	endin
 

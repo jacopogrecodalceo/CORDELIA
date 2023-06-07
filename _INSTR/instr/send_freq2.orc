@@ -4,8 +4,8 @@ maxalloc "send_freq2", 1
 
 Sinstr		init "send_freq2"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6/20000
 ich		init p7
 

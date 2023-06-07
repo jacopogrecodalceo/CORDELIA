@@ -1,11 +1,4 @@
-	instr puck
-
-Sinstr		init "puck"
-idur		init p3
-iamp		init p4
-iftenv		init p5
-icps		init p6
-ich			init p7
+	$START_INSTR(puck)
 
 ipanfreq	random -.25, .25
 
@@ -14,10 +7,7 @@ imeth		init 6
 
 iharm		init (ich%2)+1
 
-aout		pluck $ampvar, (icps*iharm) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
+aout		pluck $dyn_var, (icps*iharm) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
 
-ienvvar		init idur/10
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

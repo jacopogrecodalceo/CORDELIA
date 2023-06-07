@@ -247,13 +247,19 @@ def get_csound_strings():
 
 			case 'text':
 				removed_name = (item.instr_name).replace('@', '')
-				score = extract_elements(item.text)
-				score.insert(1, f'"{removed_name}"')
-				score = ', '.join(score)
-				csound_string = f'\tinstr {int(instr_num_index + 300)}\n{score}\n\tendin\n'
-				csound_string += f'schedule {int(instr_num_index + 300)}, {item.start_pos}, {item.end_pos}'
-				item.csound_string = csound_string
-				instr_num_index += 1
+				if removed_name == 'cordelia':
+					csound_string = f'\tinstr {int(instr_num_index + 300)}\n{item.text}\n\tendin\n'
+					csound_string += f'schedule {int(instr_num_index + 300)}, {item.start_pos}, {item.end_pos}'
+					item.csound_string = csound_string
+					instr_num_index += 1
+				else:
+					score = extract_elements(item.text)
+					score.insert(1, f'"{removed_name}"')
+					score = ', '.join(score)
+					csound_string = f'\tinstr {int(instr_num_index + 300)}\n{score}\n\tendin\n'
+					csound_string += f'schedule {int(instr_num_index + 300)}, {item.start_pos}, {item.end_pos}'
+					item.csound_string = csound_string
+					instr_num_index += 1					
 
 
 def write_strings():
@@ -267,46 +273,53 @@ def write_strings():
 	includes.extend(get_cordelia_instr_paths(instrs_used))
 	includes.extend(get_cordelia_gen_paths(gens_used))
 
+
+
 	for each_track_name in track_names:
-		
 		lines = []
-		
-		lines.append(f'schedule "heart", 0, {proj_len}')
-		lines.append('\tinstr end_score\nevent "e", 0, .025\n\tendin')
-		lines.append(f'\tschedule "end_score", {proj_len}, .025')
 
-		# create directory
-		directory = os.path.join(render_dir, each_track_name)
-		os.mkdir(directory)
-		
-		orc_file = os.path.join(directory, f'{project_name}-{each_track_name}.orc')
+		for item in items:
+			if each_track_name.startswith('cordelia'):
+				lines.append(item.csound_string)
+				
+		if not each_track_name.startswith('cordelia'):
+			
+			lines.append(f'schedule "heart", 0, {proj_len}')
+			lines.append('\tinstr end_score\nevent "e", 0, .025\n\tendin')
+			lines.append(f'\tschedule "end_score", {proj_len}, .025')
 
-		with open(orc_file, 'wb') as main_orc:
-			for include in includes:
-				#log(include.split('.')[-1])
-				if include.split('.')[-1] == 'orc':
-					with open(include, 'rb') as f:
-						main_orc.write(f';{include}\n'.encode('utf-8'))
-						main_orc.write(f';---\n'.encode('utf-8'))
-						content = f.read()
-						main_orc.write(content)
-				else:
-					pass
-					#log(include)
-					#main_orc.write(f'#include "{include}"'.encode('utf-8'))
-			lines.extend(get_cordelia_instr_clear_lines(instrs_used))
-	
-			for item in items:
-				if each_track_name == MAIN_TRACK_NAME:
-					lines.append(item.csound_string)
-				else:
-					if item.dict_name == each_track_name:
+			# create directory
+			directory = os.path.join(render_dir, each_track_name)
+			os.mkdir(directory)
+			
+			orc_file = os.path.join(directory, f'{project_name}-{each_track_name}.orc')
+
+			with open(orc_file, 'wb') as main_orc:
+				for include in includes:
+					#log(include.split('.')[-1])
+					if include.split('.')[-1] == 'orc':
+						with open(include, 'rb') as f:
+							main_orc.write(f';{include}\n'.encode('utf-8'))
+							main_orc.write(f';---\n'.encode('utf-8'))
+							content = f.read()
+							main_orc.write(content)
+					else:
+						pass
+						#log(include)
+						#main_orc.write(f'#include "{include}"'.encode('utf-8'))
+				lines.extend(get_cordelia_instr_clear_lines(instrs_used))
+		
+				for item in items:
+					if each_track_name == MAIN_TRACK_NAME:
 						lines.append(item.csound_string)
+					else:
+						if item.dict_name == each_track_name:
+							lines.append(item.csound_string)
 
-			main_orc.write('\n\n\n;---SCORE---\n\n\n'.encode('utf-8'))
-			main_orc.write('\n'.join(lines).encode('utf-8'))
-		
-			each_orc_path.append(orc_file)
+				main_orc.write('\n\n\n;---SCORE---\n\n\n'.encode('utf-8'))
+				main_orc.write('\n'.join(lines).encode('utf-8'))
+			
+				each_orc_path.append(orc_file)
 			
 
 

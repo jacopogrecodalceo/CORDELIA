@@ -1,10 +1,9 @@
-	instr cnik
+	$START_INSTR(cnik)
 
-	$params
 
-a1		oscili $ampvar, icps, gisquare
-a2		vco2 $ampvar, icps*expseg(3/2, p3, 3/4)		
-a3		vco2 $ampvar, icps*expseg(3/2, p3, 3)
+a1		oscili $dyn_var, icps, gisquare
+a2		vco2 $dyn_var, icps*expseg(3/2, p3, 3/4)		
+a3		vco2 $dyn_var, icps*expseg(3/2, p3, 3)
 
 ain		= a1 + a2 + a3
 
@@ -29,17 +28,13 @@ abal		balance2 acheb, ain
 icps_limit	= icps/2
 
 if icps_limit > 20 then
-	abal	+= oscili($ampvar, icps_limit, gisine)
+	abal	+= oscili($dyn_var, icps_limit, gisine)
 else
-	abal	+= oscili($ampvar, icps*2, gisine)
+	abal	+= oscili($dyn_var, icps*2, gisine)
 endif
 
 aout		= abal
 aout		/= 6
 
-;		ENVELOPE
-ienvvar		init idur/10
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

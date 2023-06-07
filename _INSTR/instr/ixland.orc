@@ -2,8 +2,8 @@
 
 Sinstr		init "ixland"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
@@ -14,20 +14,20 @@ ifn		init 0
 ichoose[]	fillarray 1, 3
 imeth		init ichoose[int(random(0, lenarray(ichoose)))]
 
-ap		pluck $ampvar, icps + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
+ap		pluck $dyn_var, icps + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
 
 ;		RESONANCE
 
-ap_res1		pluck $ampvar, (icps*4) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
-ap_res2		pluck $ampvar, (icps*6) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
-ap_res3		pluck $ampvar, (icps*7) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
+ap_res1		pluck $dyn_var, (icps*4) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
+ap_res2		pluck $dyn_var, (icps*6) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
+ap_res3		pluck $dyn_var, (icps*7) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
 
 ap_resum	= ap_res1 + ap_res2 + ap_res3
 
-ao_res1		oscil3 $ampvar, icps, gitri
-ao_res2		oscil3 $ampvar, icps*3, gisine
-ao_res3		oscil3 $ampvar, icps*5, gitri
-ao_res4		oscil3 $ampvar, icps+(icps*21/9), gitri
+ao_res1		oscil3 $dyn_var, icps, gitri
+ao_res2		oscil3 $dyn_var, icps*3, gisine
+ao_res3		oscil3 $dyn_var, icps*5, gitri
+ao_res4		oscil3 $dyn_var, icps+(icps*21/9), gitri
 
 ao_resum	= ao_res1 + ao_res2 + (ao_res3/4) + (ao_res4/6)
 
@@ -43,7 +43,7 @@ arev		*= 1-(oscil:k(1, gkbeatf*(ivibt+random:i(-.05, 05)), giasine)*cosseg(0, id
 
 aout		= ap + arev	
 
-ienvvar		init idur/10
+$dur_var(10)
 
 	$END_INSTR
 

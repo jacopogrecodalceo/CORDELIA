@@ -3,33 +3,45 @@
 #define c		#*100#
 #define d		#*10#
 
-#define ms		#/1000#
-#define s		#*1000#
-
-#define if		#if (#
-#define then	# == 1) then#
-
 #define atk(atkms)			#+($atkms/1000)#
-#define when(is_one)	#if ($is_one) == 1 then#
-
-#define fill		#fillarray#
 
 #define once(infill)		#once(fillarray($infill))#
 
-#define	ampvar		#(iamp+random:i(-(iamp/10), iamp/10))#
 
-;#define	ampvar		#iamp#
+; variation selected in each instrument [0 - 1]
+gidyn_var init 1
+#define	dyn_var #(idyn+random:i(-(idyn/10), idyn/10)*gidyn_var)#
 
-girpr_ck	init 95$ms
-#define rpr_ck		#(linseg:k(0, girpr_ck, 1, p3-(girpr_ck*2), 1, girpr_ck, 0))#
-#define rpr_courbe	#(cosseg:k(0, p3/2, 1, p3/2, 0))#
+; variation selected in each instrument [0 - 1]
+gidur_var init 1
+#define dur_var(dur_var_ratio) #idur_var init idur - random:i(0, idur*(1 - 1/$dur_var_ratio))*gidur_var#
 
-;	ENVELOPEs
-#define env1		#a1*=envgen(idur-random:i(0, ienvvar), iftenv)#
-#define env2		#a2*=envgen(idur-random:i(0, ienvvar), iftenv)#
+;INSTRUMENT MACROs
 
-#define env			#aout*=envgen(idur-random:i(0, ienvvar), iftenv)#
-#define mix			#chnmix aout, sprintf("%s_%i", Sinstr, ich)#
+#define PARAMS #
+Sinstr		nstrstr p1
+idur		init p3
+idyn		init p4
+ienv		init p5
+icps		init p6
+ich         init p7
+#
+
+#define START_INSTR(START_INSTR_NAME) #
+	instr $START_INSTR_NAME
+	$PARAMS
+#
+
+#define ENVGEN #aout *= envgen(idur_var, ienv)#
+
+#define CHNMIX #chnmix aout, sprintf("%s_%i", Sinstr, ich)#
+
+#define END_INSTR #
+	$ENVGEN
+	$CHNMIX
+	endin
+#
+
 
 ;-----------------------------|
 ;-------------EVA-------------|
@@ -68,14 +80,6 @@ girpr_ck	init 95$ms
 ;-------INSTRUMENT MACRO-------|
 ;------------------------------|
 
-#define params #
-				Sinstr		nstrstr p1
-				idur		init p3
-				iamp		init p4
-				iftenv		init p5
-				icps		init p6
-				ich			init p7
-#
 
 #define showme		#
 					if		(icps1 != 0 && icps2 == 0 && icps3 == 0 && icps4 == 0 && icps5 == 0) then
@@ -93,12 +97,6 @@ girpr_ck	init 95$ms
 
 
 
-#define END_INSTR		#
-					$env
-					$mix
-					#
-
-
 
 ;------------------------------|
 ;-----------DYNAMICs-----------|
@@ -113,4 +111,18 @@ girpr_ck	init 95$ms
 #define pp		#(ampdb(-23)*i(gkdyn))#
 #define ppp		#(ampdb(-27)*i(gkdyn))#
 #define pppp	#(ampdb(-31)*i(gkdyn))#
+
+; deprecated
+#define ms		#/1000#
+#define s		#*1000#
+#define if		#if (#
+#define then	# == 1) then#
+#define when(is_one)	#if ($is_one) == 1 then#
+girpr_ck	init 95$ms
+#define rpr_ck		#(linseg:k(0, girpr_ck, 1, p3-(girpr_ck*2), 1, girpr_ck, 0))#
+#define rpr_courbe	#(cosseg:k(0, p3/2, 1, p3/2, 0))#
+#define fill		#fillarray#
+#define env1		#a1*=envgen(idur-random:i(0, ienvvar), iftenv)#
+#define env2		#a2*=envgen(idur-random:i(0, ienvvar), iftenv)#
+#define	ampvar		#(iamp+random:i(-(iamp/10), iamp/10))#
 

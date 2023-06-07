@@ -127,8 +127,8 @@ giquad_index init 0
 
 Sinstr		init "quad"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
@@ -150,9 +150,9 @@ aout = aouts[index]
 
 ;aout		dcblock2 aout
 
-aout		*= $ampvar+(lfo($ampvar/4, i(gkbeats)))
+aout		*= $dyn_var+(lfo($dyn_var/4, i(gkbeats)))
 
-ienvvar		init idur/10
+$dur_var(10)
 
 	$END_INSTR
 

@@ -2,8 +2,8 @@
 
 Sinstr		init "curij"
 idur		init p3
-iamp		init p4
-iftenv		init p5
+idyn		init p4
+ienv		init p5
 icps		init p6
 ich		init p7
 
@@ -18,13 +18,13 @@ itab		init p9
 S2		init p10
 idiv		init p11
 
-aosc1		oscil3 $ampvar, fc(S1, itab, S2, idiv), gitri
-aosc2		oscil3 $ampvar, fc(S1, itab, S2, idiv)*3/2, gisine
+aosc1		oscil3 $dyn_var, fc(S1, itab, S2, idiv), gitri
+aosc2		oscil3 $dyn_var, fc(S1, itab, S2, idiv)*3/2, gisine
 
 aosc		= aosc1+aosc2
-ienvvar		init idur/10
+$dur_var(10)
 
-aout		moogladder2 aosc/4, fc(S1, itab, S2, idiv)*(2*envgen(idur-random:i(0, ienvvar), iftenv)), .35
+aout		moogladder2 aosc/4, fc(S1, itab, S2, idiv)*(2*envgen(idur-random:i(0, $dur_var(35)
 
 	$END_INSTR
 
