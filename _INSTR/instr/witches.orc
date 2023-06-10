@@ -10,7 +10,7 @@ idur		init p3
 idyn		init p4
 ienv		init p5
 icps		init p6
-ich		init p7
+ich			init p7
 
 indx	= i(gkwitches_ndx)
 idetune = i(gkwitches_detune)
@@ -42,9 +42,5 @@ kndx	= expseg:k(1.05, idur, 1+indx)-1
 
 aout	foscili $dyn_var, icps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, amod+randomi:a(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
-;	ENVELOPE
-$dur_var(10)
-
-		$END_INSTR
-
-	endin
+	$dur_var(10)
+	$END_INSTR

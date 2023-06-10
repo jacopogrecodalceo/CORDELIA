@@ -13,8 +13,8 @@ gidyn_var init 1
 #define	dyn_var #(idyn+random:i(-(idyn/10), idyn/10)*gidyn_var)#
 
 ; variation selected in each instrument [0 - 1]
-gidur_var init 1
-#define dur_var(dur_var_ratio) #idur_var init idur - random:i(0, idur*(1 - 1/$dur_var_ratio))*gidur_var#
+gidur_var init 0
+#define dur_var(dur_var_ratio) #idur_var init idur - (random:i(0, idur*(1 - 1/$dur_var_ratio))*gidur_var)#
 
 ;INSTRUMENT MACROs
 
@@ -122,7 +122,4 @@ girpr_ck	init 95$ms
 #define rpr_ck		#(linseg:k(0, girpr_ck, 1, p3-(girpr_ck*2), 1, girpr_ck, 0))#
 #define rpr_courbe	#(cosseg:k(0, p3/2, 1, p3/2, 0))#
 #define fill		#fillarray#
-#define env1		#a1*=envgen(idur-random:i(0, ienvvar), iftenv)#
-#define env2		#a2*=envgen(idur-random:i(0, ienvvar), iftenv)#
-#define	ampvar		#(iamp+random:i(-(iamp/10), iamp/10))#
 

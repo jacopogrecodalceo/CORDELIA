@@ -164,6 +164,8 @@ function get_all_text_items(ids)
 	local dur = reaper.GetMediaItemInfo_Value(item, 'D_LENGTH')
 	local end_pos = start_pos+dur
 	local retval, text = reaper.GetSetMediaItemInfo_String(item, 'P_NOTES', 0, 0)
+
+	text = string.gsub(text, "p3", tostring(dur))
 	
 	local params = {
 		start_pos,

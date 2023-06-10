@@ -24,6 +24,11 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/cutij.orc",
     "how_many_p": 1
   },
+  "delij": {
+    "core": ";CORE\n\nPARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    delay_array PARAM_IN, PARAM_1, PARAM_2, 4\n\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/delij.orc",
+    "how_many_p": 2
+  },
   "duij": {
     "core": ";CORE\n\nPARAM_2\tinit 1\n\nPARAM_OUT    duck PARAM_IN, PARAM_1, ich, PARAM_2\n\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/duij.orc",
@@ -57,6 +62,11 @@
   "rinij": {
     "core": ";CORE\n\n;division\nPARAM_1 init 4\n\n;gen\nPARAM_2 init giasine\n\nPARAM_OUT ringmod_heart PARAM_IN, PARAM_1, PARAM_2\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/rinij.orc",
+    "how_many_p": 2
+  },
+  "solij": {
+    "core": ";CORE\n\nPARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    solina_chorus PARAM_IN, PARAM_1, PARAM_2\n\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/solij.orc",
     "how_many_p": 2
   },
   "strij": {

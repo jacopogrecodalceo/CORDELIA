@@ -1,13 +1,6 @@
 gkwutang_vib init 0
 
-	instr wutang
-
-Sinstr		init "wutang"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$START_INSTR(wutang)
 
 ival		init idyn*2
 
@@ -39,8 +32,5 @@ aharms		moogladder2 aharms, 7500+((13.5$k)*idyn), limit(kcx1, 0, .95)
 aout		= asig + aharms
 aout		/= 2
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

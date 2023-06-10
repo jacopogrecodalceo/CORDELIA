@@ -1,4 +1,4 @@
-    $START_INSTR(burd)
+    $START_INSTR(burdsk)
     $dur_var(10)
 
 icpsvar     init icps/100
@@ -9,7 +9,7 @@ a2		vco2 idyn*abs(lfo(1, ((iharm+1)*8)/random:i(55, 65)))*.75, (icps*iharm)+rand
 
 apre    = a1 + a2
 
-aout    moogladder2 apre, (20$k)*(idyn*2.75), .25+jitter:k(.15, 1/idur, 3/idur)
+aout    skf apre, (20$k)*(idyn*2.75), 2+jitter:k(.5, 1/idur, 3/idur)
 aout    balance2 aout, apre
 
     $END_INSTR

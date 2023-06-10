@@ -1,11 +1,4 @@
-	instr pur
-
-Sinstr		init "pur"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(pur)
 
 ipanfreq	random -.25, .25
 
@@ -25,8 +18,6 @@ aout		= igain*(a1 + a2)*arig1*arig2*$dyn_var
 aout		flanger aout, cosseg:a(idur/128, idur, idur/96), cosseg(.35, idur, 1-$dyn_var)
 aout		bqrez	aout, icps+(icps*(32*$dyn_var)), cosseg(.95, idur/2, .5)
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
 
-	endin

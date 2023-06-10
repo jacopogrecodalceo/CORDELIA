@@ -1,13 +1,6 @@
 gkcalinin_vib init 8
 
-	instr calinin
-
-Sinstr		init "calinin"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(calinin)
 
 kharm		init 0
 kline		linseg 1, idur*21/22, 11, idur/22, 7
@@ -43,8 +36,5 @@ kdiff		= gkcalinin_vib
 
 aout		*= 1/kdiff+((abs(lfo(1/kdiff, 4+random:i(-.15, .15))*cosseg(1, idur, .25)))*cosseg(0, idur/2, 1))
 
-;	ENVELOPE
-$dur_var(100)
-
-		$END_INSTR
-	endin
+	$dur_var(100)
+	$END_INSTR

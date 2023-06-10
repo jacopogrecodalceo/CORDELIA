@@ -188,7 +188,7 @@ def get_cordelia_instr_clear_lines(instrs_used):
 			'indx	init 0',
 			'until	indx == ginchnls do',
 			f'	gS{instr}[indx] sprintf "{instr}_%i", indx+1',
-			f'	isend	= 950 + (indx+1)/1000 + {i}/10000',
+			f'	isend	= 950 + (indx+1)/1000 + {i+1}/10000',
 			f'	schedule isend, 0, -1, sprintf("{instr}_%i", indx+1)',
 			'	indx	+= 1',
 			'od\n',
@@ -239,7 +239,9 @@ def get_csound_strings():
 
 				if item.start_pos < 0:
 					log('WARNING: some notes starts before 0, I just set them to 0!')
+					log(f'in {item.dict_name} at {item.start_pos}, {item.type}')
 					item.start_pos = 0
+
 				csound_string = f'eva_midi "{removed_name}", {item.start_pos}, {item.dur}, {item.dyn}, {prefix_env}, {item.freq}'
 				item.csound_string = csound_string
 				instrs_used.add(removed_name)
@@ -247,6 +249,12 @@ def get_csound_strings():
 
 			case 'text':
 				removed_name = (item.instr_name).replace('@', '')
+				
+				if item.start_pos < 0:
+					log('WARNING: some notes starts before 0, I just set them to 0!')
+					log(f'in {item.dict_name} at {item.start_pos}, {item.type}')
+					item.start_pos = 0
+
 				if removed_name == 'cordelia':
 					csound_string = f'\tinstr {int(instr_num_index + 300)}\n{item.text}\n\tendin\n'
 					csound_string += f'schedule {int(instr_num_index + 300)}, {item.start_pos}, {item.end_pos}'
@@ -272,8 +280,6 @@ def write_strings():
 	includes.extend(get_cordelia_include_paths())
 	includes.extend(get_cordelia_instr_paths(instrs_used))
 	includes.extend(get_cordelia_gen_paths(gens_used))
-
-
 
 	for each_track_name in track_names:
 		lines = []
@@ -325,36 +331,44 @@ def write_strings():
 
 def execute_csound(chns, sr, ksmps):
 
+
 	for each_track_name in track_names:
-		directory = os.path.join(render_dir, each_track_name)
-		orc_file = os.path.join(directory, f'{project_name}-{each_track_name}.orc')
-		wav_file = os.path.join(directory, f'{project_name}-{each_track_name}.wav')
-		log_file = os.path.join(directory, f'{project_name}-{each_track_name}.log')
+		if not each_track_name.startswith('cordelia'):
+			directory = os.path.join(render_dir, each_track_name)
+			orc_file = os.path.join(directory, f'{project_name}-{each_track_name}.orc')
+			wav_file = os.path.join(directory, f'{project_name}-{each_track_name}.wav')
+			log_file = os.path.join(directory, f'{project_name}-{each_track_name}.log')
+			cmd_file = os.path.join(directory, f'_.command')
 
-		command = f'csound -3 --nchnls={chns} -r {sr} --ksmps={ksmps} --orc {orc_file} -o {wav_file} &> {log_file}'
+			command = f'csound -3 --nchnls={chns} -r {sr} --ksmps={ksmps} --orc {orc_file} -o {wav_file} &> {log_file}'
 
-		# subprocess.call(['osascript', '-e', f'tell application "Terminal" to do script "{command}"'])
-		#script = f'tell application "Terminal" to do script "{command} && exit"'
+			with open(cmd_file, 'w') as f:
+				f.write(command)
+			
+			subprocess.call(['chmod', '+x', cmd_file])
 
-		script =	f'tell application "Terminal"\n' \
-						f'set myscript to "{command} && exit || echo ERROR $?"\n' \
-						f'do script myscript\n' \
-					f'end tell'
-		
-		subprocess.call(['osascript', '-e', script])
+			# subprocess.call(['osascript', '-e', f'tell application "Terminal" to do script "{command}"'])
+			#script = f'tell application "Terminal" to do script "{command} && exit"'
 
-		""" # Wait for the command to finish
-		p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-		stdout, stderr = p.communicate()
+			script =	f'tell application "Terminal"\n' \
+							f'set csound_script to "{command} && exit || echo ERROR $?"\n' \
+							'do script csound_script\n' \
+						f'end tell'
+			
+			subprocess.call(['osascript', '-e', script])
 
-		# Check the exit status
-		if p.returncode == 0:
-			string = 'Command completed successfully!'
-			log(string)
-		else:
-			string = f'Command failed with exit code {p.returncode}.'
-			log(p.returncode)
-			break """
+			""" # Wait for the command to finish
+			p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+			stdout, stderr = p.communicate()
+
+			# Check the exit status
+			if p.returncode == 0:
+				string = 'Command completed successfully!'
+				log(string)
+			else:
+				string = f'Command failed with exit code {p.returncode}.'
+				log(p.returncode)
+				break """
 
 retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2,48,64', 512)
 

@@ -6,15 +6,23 @@ gkalone_cps init 20
 
 gialone_count init 1
 
-	$START_INSTR(alone)
+	instr alone
+
+Sinstr		init "alone_instr"
+idur		init p3
+idyn		init p4
+ienv		init p5
+icps		init p6
+ich         init p7
+
 	$dur_var(10)
-	idyn init idyn*.65
+idyn init idyn*.65
 
 if ich == 1 then
 
 	gkalone_dur	portk idur, 5$ms
 
-	gkalone_env = envgen(idur-random:i(0, ienvvar), ienv)*$dyn_var
+	gkalone_env = envgen(idur-random:i(0, idur_var), ienv)*$dyn_var
 	gkalone_cps init icps
 
 	gkalone_harm init gialone_count

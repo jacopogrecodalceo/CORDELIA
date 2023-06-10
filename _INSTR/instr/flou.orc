@@ -1,13 +1,6 @@
 gkflou_p1 init 1
 
-	instr flou
-
-Sinstr		init "flou"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(flou)
 
 icps		/= 2
 
@@ -37,8 +30,6 @@ aout		= af + (asig/8) + (aex/12)
 
 aout		balance2 aout, aorg
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
 
-	endin

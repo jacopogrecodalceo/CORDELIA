@@ -1,12 +1,5 @@
-	instr ixland
-
-Sinstr		init "ixland"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
-
+	$START_INSTR(ixland)
+	
 ipanfreq	random -.25, .25
 
 ifn		init 0
@@ -43,8 +36,5 @@ arev		*= 1-(oscil:k(1, gkbeatf*(ivibt+random:i(-.05, 05)), giasine)*cosseg(0, id
 
 aout		= ap + arev	
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

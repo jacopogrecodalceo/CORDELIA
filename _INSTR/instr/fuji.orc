@@ -1,19 +1,14 @@
 	instr fuji_control
 
-gkfuji_form	randomi $ppp, $fff, gkbeatf/4, 3
-gkfuji_oct	randomi $pppp, $mf, gkbeatf/4, 3
+;gkfuji_form	randomi $ppp, $fff, gkbeatf/4, 3
+;gkfuji_oct	randomi $pppp, $mf, gkbeatf/4, 3
+gkfuji_form	scale jitter:k(1, gkbeatf/8, gkbeatf/4), $fff, $ppp, 1, -1
+gkfuji_oct	scale jitter:k(1, gkbeatf/8, gkbeatf/4), $mf, $pppp, 1, -1
 
 	endin
 	alwayson("fuji_control")
 
-	instr fuji
-
-Sinstr		init "fuji"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(fuji)
 
 kris 		init .0035
 kdur 		init .0095
@@ -52,9 +47,6 @@ kfreq		limit kfreq, 7.5$k, 19.5$k
 
 aout		moogladder2 aout, kfreq, $dyn_var
 
-
-$dur_var(25)
-
+	$dur_var(25)
 	$END_INSTR
 
-	endin
