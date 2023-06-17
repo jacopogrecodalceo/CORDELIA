@@ -19,13 +19,15 @@ itab_sonvs	init gi---NAME---_list[index]
 ktimewarp			= 0
 kresample			init icps / ---PITCH---		;do not change pitch
 ibeg				init .45		;start at beginning
-kwsize 				= sr / 20
-iwsize				init 4800			;window size in samples with
-irandw				init icps / 4				;bandwidth of a random number generator
+kwsize 				= sr / 10
+iwsize				init sr / 10			;window size in samples with
+irandw				init iwsize * (1/4)				;bandwidth of a random number generator
 itimemode			init 1					;ktimewarp is "time" pointer
-ioverlap			init 4
+ioverlap			init 8
 
 aout	sndwarp  .5, ktimewarp, kresample, itab_sonvs, ibeg, iwsize, irandw, ioverlap, giasine, itimemode
+
+aout				*= $dyn_var
 
 	$dur_var(10)
 	$END_INSTR

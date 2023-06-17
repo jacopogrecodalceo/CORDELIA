@@ -1,11 +1,4 @@
-	instr sunij
-
-Sinstr		init "sunij"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(sunij)
 
 kcps		= icps+fractalnoise(icps/($M_PI*100), $M_PI_2)
 
@@ -21,8 +14,7 @@ amoog		balance2 amoog, avco
 aout		= (avco*cosseg(0, idur, 1)*abs(lfo(.5, icps/($M_PI*100)))) + amoog + (aosc*cosseg(2, idur, 1))
 aout		/= 3
 
-ienvvar		init idur/$M_PI
+idur_var	init idur/$M_PI
 
 	$END_INSTR
 
-	endin

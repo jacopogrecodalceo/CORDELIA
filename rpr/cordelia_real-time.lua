@@ -134,11 +134,17 @@ function get_all_midi_items(ids, index)
 				freq = load("return " .. freq .. val)()
 			end
 		end
-		
+
+
 		local retval_text, selected, muted, ppqpos_text, type, note_local_env = reaper.MIDI_GetTextSysexEvt(take, 0)
-		if retval_text and startppqpos == ppqpos_text then 
+
+		local epsilon = 15 -- Adjust the epsilon value based on your desired precision
+		local difference = math.abs(startppqpos - ppqpos_text)
+
+		if retval_text and difference < epsilon then 
 			env = note_local_env
 		end
+
 
 		local params = {
 			start_pos,
@@ -199,7 +205,7 @@ function get_all_items()
 
 		if track_depth == 1 then -- it's a parent
 			local retval, parent_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', 0, 0)
-			instr_name = string.match(parent_name, '@%w+')
+			instr_name = string.match(parent_name, '@.*')
 
 			is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
 			if reaper.AnyTrackSolo(0) then
@@ -211,7 +217,7 @@ function get_all_items()
 			local parent_track = reaper.GetParentTrack(track)
 			if instr_name ~= '' and parent_track ~= nil then
 				local retval, parent_name = reaper.GetSetMediaTrackInfo_String(parent_track, 'P_NAME', 0, 0)
-				instr_name = string.match(parent_name, '@%w+')
+				instr_name = string.match(parent_name, '@.*')
 				local is_parent_mute = reaper.GetMediaTrackInfo_Value(parent_track, 'B_MUTE') == 1
 
 				if not is_parent_mute then 
@@ -285,6 +291,10 @@ local STATE = true
 function on_play()
 	if STATE then
 		get_all_items()
+		if #midi_items > 15000 then
+			reaper.CSurf_OnStop()
+			log('Items are more than 150000')
+		end
 		remove_at_play()
 		send_to_cordelia('schedule "heart", 0, -1')
 

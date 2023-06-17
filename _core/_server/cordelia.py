@@ -126,6 +126,7 @@ def csound_perf_homemade(cs, completion_event):
 	with sf.SoundFile(CORDELIA_OUT_WAV, 'w', samplerate=sr, channels=chs, subtype='PCM_24') as outfile:
 		while cs.performKsmps() == 0:
 			outfile.write(sig)
+			pass
 
 	cs.cleanup()
 
@@ -165,7 +166,7 @@ if __name__ == '__main__':
 			record_init = False
 
  """
-		time.sleep(1/(CORDELIA_SR/16))
+		time.sleep(1/CORDELIA_SR)
 	
 	csound_thread.join()
 	#if not record_init:

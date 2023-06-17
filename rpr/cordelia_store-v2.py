@@ -77,7 +77,11 @@ def check_if_additional_text(item):
 
 def get_midi_note_env_if_text(item):
 	text_retval, take, textsyxevtidx, selectedOutOptional, mutedOutOptional, ppqposOutOptional, typeOutOptional, msgOptional, msgOptional_sz = RPR_MIDI_GetTextSysexEvt(item.take_id, 0, 0, 0, 0, 0, 0, BUFFER_SIZE)
-	if text_retval and item.startppq_pos == ppqposOutOptional:
+	
+	epsilon = 15 #Adjust the epsilon value based on your desired precision
+	difference = abs(item.startppq_pos - ppqposOutOptional)
+	
+	if text_retval and difference < epsilon:
 		# i don't know why, but i need to remove 2 character from the end of the text string
 		if msgOptional.strip() != '':
 			item.env = msgOptional[:-2:]

@@ -1,6 +1,4 @@
-	instr trans
-
-	$params
+	$START_INSTR(trans)
 
 ifreq		init (icps*10/8)-icps*((ich%2)+1)
 kenvib		cosseg 0, idur*2/3, .125*$dyn_var, idur/3, 1
@@ -27,8 +25,5 @@ af		moogladder2 aorg1+aorg2, limit(icps*(24*$dyn_var*2)+lfo(icps/10, 2*ivib_arr[
 aout		= aosc/8 + ab1 + af/.75
 aout		*= 4
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
-
-	endin

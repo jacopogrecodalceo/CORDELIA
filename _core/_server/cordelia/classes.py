@@ -17,29 +17,23 @@ class Parser():
 
 		self.unit = unit
 		self.lines = unit.splitlines()
-
-		rhythm_regex = [
-			'eu',
-			'hex',
-			'jex'
-		]
 			
 		# SINGLE LINE
-		if len(self.lines) == 1:
-			if re.search(r'^@.*', self.lines[0]):
-				self.seq()
-			elif re.search(r'^route.', self.lines[0]):
-				self.route()
-			elif re.search(r'^[^@].*', self.lines[0]):
-				self.control()
+		if len(self.lines) == 1 and re.search(r'^@.*', self.lines[0]):
+			self.seq()
+			return
+		elif len(self.lines) == 1 and re.search(r'^route.', self.lines[0]):
+			self.route()
+			return
+		elif len(self.lines) == 1 and re.search(r'^[^@].*', self.lines[0]):
+			self.control()
+			return
 
 		# MULTI LINE
-		else:
-			for each in rhythm_regex:
-				if re.search(fr'^{each}:', self.lines[0]):
-					self.rhythm_op()
+		rhythm_regex = {'eu', 'hex', 'jex'}
+		if len(self.lines) > 1 and self.lines[0].split(':', 1)[0] in rhythm_regex:
+			self.rhythm_op()
 
-		
 	def control(self):
 		instrument = Instrument('control')
 		instrument.csound_code = self.lines[0]

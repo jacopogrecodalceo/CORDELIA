@@ -18,8 +18,8 @@ gidur_var init 0
 
 ;INSTRUMENT MACROs
 
-#define PARAMS #
-Sinstr		nstrstr p1
+#define PARAMS(INSTR_NAME) #
+Sinstr		init "$INSTR_NAME"
 idur		init p3
 idyn		init p4
 ienv		init p5
@@ -29,9 +29,8 @@ ich         init p7
 
 #define START_INSTR(START_INSTR_NAME) #
 	instr $START_INSTR_NAME
-	$PARAMS
+	$PARAMS($START_INSTR_NAME)
 #
-
 #define ENVGEN #aout *= envgen(idur_var, ienv)#
 
 #define CHNMIX #chnmix aout, sprintf("%s_%i", Sinstr, ich)#

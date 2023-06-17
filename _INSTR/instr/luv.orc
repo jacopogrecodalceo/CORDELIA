@@ -1,12 +1,5 @@
 
-	instr luv
-
-Sinstr		init "luv"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(luv)
 
 //
 
@@ -28,12 +21,8 @@ kcps	= icps + vibr(expseg(.05, idur, icps/(icps*12)), randomi:k(idur*3, idur*5, 
 kvib 	lfo icps/100, random:i(3, 5)
 
 aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0)+kvib, kcar, kmod+randomi:k(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
-
-;	ENVELOPE
-$dur_var(100)
-
-		$END_INSTR
-
-	endin
+	
+	$dur_var(100)
+	$END_INSTR
 
 
