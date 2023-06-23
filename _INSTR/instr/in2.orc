@@ -1,12 +1,14 @@
-gain2	init 0
 
-	instr in2
+	$START_INSTR(in2)
+aout	inch 2
+aout	*= idyn
 
-Sinstr		init "in2"
-aout		inch 2
 
-gain2		= aout
-
-	endin
-	alwayson("in2")
-
+	$dur_var(25)
+	$END_INSTR
+	
+indx	init 1
+until	indx > ginchnls do
+	schedule  nstrnum("in2")+((indx+1)/1000), 0, -1, 0, 0, 0, indx
+	indx += 1
+od

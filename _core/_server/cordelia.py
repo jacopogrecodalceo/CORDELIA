@@ -115,6 +115,7 @@ RECORD = True
 
 record_init = True
 
+
 # Define the function to be executed in the thread
 def csound_perf_homemade(cs, completion_event):
 	cs.start()

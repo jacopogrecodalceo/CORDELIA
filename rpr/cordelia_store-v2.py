@@ -278,7 +278,7 @@ def write_strings():
 
 	each_orc_path = []
 
-	proj_len = RPR_GetProjectLength(0) + 1
+	proj_len = RPR_GetProjectLength(0)
 
 	includes = []
 	includes.extend(get_cordelia_include_paths())
@@ -295,8 +295,8 @@ def write_strings():
 		if not each_track_name.startswith('cordelia'):
 			
 			lines.append(f'schedule "heart", 0, {proj_len}')
-			lines.append('\tinstr end_score\nevent "e", 0, .025\n\tendin')
-			lines.append(f'\tschedule "end_score", {proj_len}, .025')
+			lines.append('\tinstr end_score\nevent "e", 0, 0\nturnoff\n\tendin')
+			lines.append(f'\tschedule "end_score", {proj_len}, 1')
 
 			# create directory
 			directory = os.path.join(render_dir, each_track_name)
@@ -355,7 +355,7 @@ def execute_csound(chns, sr, ksmps):
 			#script = f'tell application "Terminal" to do script "{command} && exit"'
 
 			script =	f'tell application "Terminal"\n' \
-							f'set csound_script to "{command} && exit || echo ERROR $?"\n' \
+							f'set csound_script to "{command} && afplay -v 0.35 {SONVS_SUCCESS} && exit || echo ERROR $?"\n' \
 							'do script csound_script\n' \
 						f'end tell'
 			

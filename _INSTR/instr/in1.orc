@@ -1,18 +1,10 @@
-
-	instr in1
-
-Sinstr		init "in1"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
-
+	$START_INSTR(in1)
 aout	inch 1
+aout	*= idyn
 
-	chnmix aout, sprintf("%s_%i", Sinstr, ich)
-
-	endin
+	$dur_var(25)
+	$END_INSTR
+	
 	
 indx	init 1
 until	indx > ginchnls do

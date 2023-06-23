@@ -8,12 +8,7 @@ giaaron_atk		init .0125
 
 	instr aaron_instr_1
 
-Sinstr		init "aaron"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$PARAMS(aaron)
 
 //
 
@@ -36,12 +31,8 @@ kcps	= icps + vibr(expseg(.05, idur, icps/(icps*12)), randomi:k(idur*3, idur*5, 
 
 aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, kmod+randomi:k(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
-;	ENVELOPE
-$dur_var(100)
-
+		$dur_var(100)
 		$END_INSTR
-
-	endin
 
 	instr aaron_instr_2
 
@@ -124,14 +115,7 @@ aout	*= cosseg(0, giaaron_atk, idyn, idur, 0)
 
 ;---
 
-	instr aaron
-
-Sinstr		init "aaron"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$START_INSTR(aaron)
 
 indx		init i(gkaaron_indx)
 idetune 	init i(gkaaron_detune)

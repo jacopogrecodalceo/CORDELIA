@@ -11,11 +11,11 @@
 --m-range=1
 
 -+id_artist="jacopo greco d'alceo"
-;-b 512 ;mac 1024
-;-B 1024 ;mac 2048
+;-b 64 ;mac 1024
+;-B 128 ;mac 2048
 
-;-b 1024
-;-B 1024
+;-b 256
+;-B 512
 
 -+rtaudio=PortAudio
 ;-+rtaudio=jack
