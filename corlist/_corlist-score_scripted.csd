@@ -1,54 +1,46 @@
-;		when	file				start	loop	gain	fadin	mode	fadout	mode
+;/Users/j/Documents/PROJECTs/CORDELIA/corlist/_corlist-score_scripted.csd
 
 ;---RECORD ON
 schedule "MNEMOSINE", 0, -1, "__corlist.wav"
 
 ;---
 schedule 1.001, 0, 1,\
-	"1.wav",	\;filename
-	0,	\;start from
-	0,	\;is a loop (0 or 1)
-	.5,	\;volume
-	.025,	\;fadein duration
-	0,	\;fadein mode
-	.025,	\;fadeout duration
-	0	;fadeout mode
+	"1.wav",\
+	0,		\;START FROM
+	0,		\;IS LOOP
+	1,		\;DYN
+	0,	0,	\;FADEIN
+	0,	0	 ;FADEOUT
 ;---
 turnoff2_i 1.001, 4, 1
 ;---
 schedule 1.002, 0, 1,\
-	"2.wav",	\;filename
-	0,	\;start from
-	0,	\;is a loop (0 or 1)
-	.5,	\;volume
-	.025,	\;fadein duration
-	0,	\;fadein mode
-	.025,	\;fadeout duration
-	0	;fadeout mode
+	"2.wav",\
+	0,		\;START FROM
+	0,		\;IS LOOP
+	1,		\;DYN
+	0,	0,	\;FADEIN
+	0,	0	 ;FADEOUT
 ;---
 turnoff2_i 1.002, 4, 1
 ;---
 schedule 1.003, 0, 1,\
-	"3.wav",	\;filename
-	0,	\;start from
-	0,	\;is a loop (0 or 1)
-	.5,	\;volume
-	.025,	\;fadein duration
-	0,	\;fadein mode
-	.025,	\;fadeout duration
-	0	;fadeout mode
+	"3.wav",\
+	0,		\;START FROM
+	0,		\;IS LOOP
+	1,		\;DYN
+	0,	0,	\;FADEIN
+	0,	0	 ;FADEOUT
 ;---
 turnoff2_i 1.003, 4, 1
 ;---
 schedule 1.004, 0, 1,\
-	"4.wav",	\;filename
-	0,	\;start from
-	0,	\;is a loop (0 or 1)
-	.5,	\;volume
-	.025,	\;fadein duration
-	0,	\;fadein mode
-	.025,	\;fadeout duration
-	0	;fadeout mode
+	"4.wav",\
+	0,		\;START FROM
+	0,		\;IS LOOP
+	1,		\;DYN
+	0,	0,	\;FADEIN
+	0,	0	 ;FADEOUT
 ;---
 turnoff2_i 1.004, 4, 1
 

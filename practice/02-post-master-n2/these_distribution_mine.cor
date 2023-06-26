@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+gkpulse = 130
+
+gktuning = scala.pto_diat
+
+gkorp_sync_freq pump 8, fill(5, 8, 2, 3)
+
+eu: 6, 16, 16
+	@orp_sync
+	wn
+	fff*8
+	likearev
+	a4: 0, 0, 0, 1
+	b4: 0, 0, 0, 1
+	g4: 0, 0, 0, 1
+
+
+

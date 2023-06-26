@@ -34,6 +34,7 @@ else
 endif
 
 aout		= acomb
+aout		dcblock2 aout
 aout		/= 16
 
 	$dur_var(10)

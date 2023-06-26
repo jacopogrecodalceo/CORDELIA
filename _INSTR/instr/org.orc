@@ -1,6 +1,4 @@
-	instr org
-
-	$params
+	$START_INSTR(org)
 
 ival[]	fillarray 6, 6, 3, 4
 
@@ -11,8 +9,6 @@ kvdpth	cosseg 0, idur, .15
 
 aout	fmb3 $dyn_var, icps, kc1, kc2, kvdpth, kvrate
 
-$dur_var(10)
-
+	$dur_var(10)
 	$END_INSTR
 
-	endin

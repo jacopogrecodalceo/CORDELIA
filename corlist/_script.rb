@@ -6,7 +6,7 @@ opt_path		= __dir__ + '/_' + title + '-opt'
 score_file = File.open(score_path, 'w')
 opt_file = File.open(opt_path, 'w')
 
-ref_string =";\t\twhen\tfile\t\t\t\tstart\tloop\tgain\tfadin\tmode\tfadout\tmode"
+ref_string = ";#{score_path}"
 
 section_array = []
 maximum_ch = []
@@ -22,11 +22,6 @@ end
 
 section_array = section_array.sort
 
-csound_instance_div = 1000.0
-
-csound_score_instr_num = 1.0
-
-
 score_file.write(ref_string + "\n")
 
 rec_opt = <<CS
@@ -38,31 +33,33 @@ CS
 
 score_file.write(rec_opt)
 
-default_fade = '.025'
-
 section_array.each_with_index do |f, i|
 
-	score_file.write(";---\n")
 	index = i + 1
+
+	number = f.split(/[\s-]/)[1]
+	name = f.split(/[\s-]/)[2].gsub(/[^a-zA-Z]/, '').upcase
+	label = "#{number}-#{name}-#{index.to_s}"
+	score_file.write(";---#{label}\n")
 
 	schedule_string = []
 
-	schedule_string << "schedule #{csound_score_instr_num + index/csound_instance_div}, 0, 1,\\"
-	schedule_string << "\"#{f}\",\t\\;filename"
-	schedule_string << "0,\t\\;start from"
-	schedule_string << "0,\t\\;is a loop (0 or 1)"
-	schedule_string << ".5,\t\\;volume"
-	schedule_string << "#{default_fade},\t\\;fadein duration"
-	schedule_string << "0,\t\\;fadein mode"
-	schedule_string << "#{default_fade},\t\\;fadeout duration"
-	schedule_string << "0\t;fadeout mode"
+	schedule_string << "$START\t#{index},\\"
+	schedule_string << "\"#{f}\",\\"
+	schedule_string << "0,\t\t\\;DELAY STARTING SEQ"
+	schedule_string << "0,\t\t\\;START SEQ FROM"
+	schedule_string << "0,\t\t\\;IS LOOP"
+	schedule_string << "1,\t\t\\;DYN"
+	schedule_string << "0,\t0,\t\\;FADEIN"
+	schedule_string << ".005,\t0\t ;FADEOUT"
 	
 	score_file.write(schedule_string.join("\n\t"))
 
 	score_file.write("\n;---\n")
-	turnoff = "turnoff2_i #{csound_score_instr_num + index/csound_instance_div}, 4, 1\n"
+	
+	turnoff_string = "$END\t#{index}, 0\n"
 
-	score_file.write(turnoff)
+	score_file.write(turnoff_string)
 
 end
 

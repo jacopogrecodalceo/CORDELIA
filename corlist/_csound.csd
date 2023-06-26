@@ -11,9 +11,12 @@
 <CsInstruments>
 
 sr = 48000
-ksmps = 16
+ksmps = 32
 nchnls = 4
 0dbfs  = 1
+
+#define START #schedule "start_seq", 0, 0, #
+#define END #schedule "end_seq", 0, 0, #
 
 prints "I'm ready!\n"
 
@@ -21,12 +24,55 @@ gkgain init 1
 
 gaouts[] init nchnls
 
-    instr 1
+	instr start_seq
+
+inum_this_instr init 10
+inum_seq		init p4
+Sfile           init p5
+istart_instr    init p6
+istart_seq		init p7
+iloop           init p8
+idyn            init p9
+
+ifade_in         init p10
+ifade_in_mode    init p11
+ifade_out        init p12
+ifade_out_mode   init p13
+
+schedule inum_this_instr + (inum_seq/1000), istart_instr, 1, \
+		Sfile,\
+		istart_seq,\
+		iloop,\
+		idyn,\
+		ifade_in,\
+		ifade_in_mode,\
+		ifade_out,\
+		ifade_out_mode
+
+	endin
+
+
+
+	instr end_seq
+
+inum_this_instr	init 11
+inum_instr		init 10
+inum_seq		init p4
+istart_instr	init p5
+
+schedule inum_this_instr, istart_instr, 0, \
+	inum_instr + (inum_seq/1000)
+
+	endin
+
+
+
+    instr 10
 
 Sfile           init p4
 istart          init p5
 iloop           init p6
-igain           init p7
+idyn            init p7
 
 ifade_in         init p8
 ifade_in_mode    init p9
@@ -118,21 +164,21 @@ endif
 aout_file[]     diskin Sfile, 1, istart, iloop ;istart is in seconds
 ich_file        lenarray aout_file
 
-if ifade_in_mode == 0 then
+if ifade_in_mode == 0 && ifade_in > 0 then
 	aout_file       *= cosseg(0, ifade_in, 1)
-elseif ifade_in_mode == 1 then
+elseif ifade_in_mode == 1 && ifade_in > 0 then
 	aout_file       *= linseg(0, ifade_in, 1)
-elseif ifade_in_mode == 2 then
+elseif ifade_in_mode == 2 && ifade_in > 0 then
 	aout_file       *= expseg(1, ifade_in, 2)-1
 endif
 
 if krel == 1 then
 
-if ifade_out_mode == 0 then
+if ifade_out_mode == 0 && ifade_out > 0 then
 	aout_file       *= cosseg(1, ifade_out, 0)
-elseif ifade_out_mode == 1 then
+elseif ifade_out_mode == 1 && ifade_out > 0 then
 	aout_file       *= linseg(1, ifade_out, 0)
-elseif ifade_in_mode == 2 then
+elseif ifade_in_mode == 2 && ifade_out > 0 then
 	aout_file       *= expseg(2, ifade_out, 1)-1
 endif
 
@@ -141,13 +187,15 @@ printks2 "FADE_OUT:\t\t%.02fs\n---\n", ifade_out
 
 endif
 
-gaouts += aout_file*igain*gkgain
+gaouts += aout_file*idyn *gkgain
 
 	endin
 
-	instr 2
+	instr 11
 
-turnoff_i p4,4 , 1
+inum	init p4
+
+turnoff2_i inum, 4, 1
 
 	endin
 
@@ -161,7 +209,7 @@ kascii, kpress sensekey
 
 if kascii == iesc && kpress == 1 then
 	printks "\n🌊 STOOOOP! 🌊\n", 1
-	turnoff2 1, 0, 1
+	turnoff2 10, 0, 1
 endif
 
 	endin

@@ -150,13 +150,6 @@ function create_midi_item(item)
 
 	local start = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
 	local length = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
-	
-	if length > 15 then
-		local response = reaper.ShowMessageBox("Do you want to proceed?", 'Length is ' .. length .. 's and it will take time.', 1)
-		if response ~= 1 then
-			return
-		end
-	end
 
 	-- Create a new MIDI item with the same length
 	local midi_item = reaper.CreateNewMIDIItemInProj(reaper.GetMediaItem_Track(item), start, start+length)

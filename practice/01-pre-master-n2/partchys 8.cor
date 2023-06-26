@@ -1,0 +1,29 @@
+
+
+
+gkpulse = 130
+
+gktuning = scala.pto_diat
+
+@arm1.cutij(pump(16, fill(16, 8, 4))): .96, 0
+
+gkarm1_dur = 4
+
+eu: 4, 16, 4
+	r10@bebor.rinij(8, gisine)
+	each(wn, hn)
+	each(p, pppp)
+	zeus
+	a4-8.15: ares
+
+eu: 8, 16, 8
+	r9@seno.rinij(15, zeus)
+	each(wn, hn)
+	each(f, ppp)
+	zeus
+	a3-8.16: ares
+
+
+@elwind: .96, pppp/2
+
+@tricot: 16, ppp/8

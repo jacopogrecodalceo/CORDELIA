@@ -9,7 +9,7 @@ from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json
 from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json
 from utils.constants import INSTR_HASPLAYED, CORDELIA_INSTR_json
 from csound import CORDELIA_NCHNLS
-from utils.constants import DEFAULT_SONVS_PATH, DEFAULT_SONVS_SAMP_PATH
+from utils.constants import DEFAULT_SONVS_PATH, DEFAULT_SONVS_SAMP_PATH, DEFAULT_SONVS_SYNC_PATH
 
 def note(unit):
 	for name in CORDELIA_NOTEs:
@@ -97,23 +97,7 @@ def instr(unit):
 					file_vars = []
 					vir = ', '
 
-					if '_samp' not in name:
-						with open(DEFAULT_SONVS_PATH) as f:
-							for index, p in enumerate(path):
-								index_file = index + 1
-								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
-								for i in range(int(channels)):
-									ch = str(i + 1)
-									num = str(index_num)
-									file_var = f'gi{name}_{num}'
-									file_vars.append(file_var)
-									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
-									index_num += 1
-							
-							string += '\n'
-							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
-							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
-					else:
+					if '_samp' in name:
 						with open(DEFAULT_SONVS_SAMP_PATH) as f:
 							for index, p in enumerate(path):
 								index_file = index + 1
@@ -130,6 +114,39 @@ def instr(unit):
 							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
 							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
 							string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)	
+					elif '_sync' in name:
+						with open(DEFAULT_SONVS_SYNC_PATH) as f:
+							for index, p in enumerate(path):
+								index_file = index + 1
+								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+								for i in range(int(channels)):
+									ch = str(i + 1)
+									num = str(index_num)
+									file_var = f'gi{name}_{num}'
+									file_vars.append(file_var)
+									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+									index_num += 1
+							
+							string += '\n'
+							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
+							string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)	
+					else:
+						with open(DEFAULT_SONVS_PATH) as f:
+							for index, p in enumerate(path):
+								index_file = index + 1
+								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+								for i in range(int(channels)):
+									ch = str(i + 1)
+									num = str(index_num)
+									file_var = f'gi{name}_{num}'
+									file_vars.append(file_var)
+									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+									index_num += 1
+							
+							string += '\n'
+							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
 										
 					print(string)
 					CORDELIA_COMPILE_FIRST.append(string)

@@ -287,6 +287,7 @@ def write_strings():
 
 	for each_track_name in track_names:
 		lines = []
+		score_lines = []
 
 		for item in items:
 			if each_track_name.startswith('cordelia'):
@@ -322,6 +323,7 @@ def write_strings():
 				for item in items:
 					if each_track_name == MAIN_TRACK_NAME:
 						lines.append(item.csound_string)
+						score_lines.append(item.csound_string)
 					else:
 						if item.dict_name == each_track_name:
 							lines.append(item.csound_string)
@@ -330,7 +332,14 @@ def write_strings():
 				main_orc.write('\n'.join(lines).encode('utf-8'))
 			
 				each_orc_path.append(orc_file)
-			
+
+	main_score_txt = os.path.join(directory, f'{project_name}-{each_track_name}-score.txt')
+	with open(main_score_txt, 'w') as f:
+		for line in score_lines:
+			if line.startswith('eva_midi'):
+				stripped_line = line.replace('eva_midi', '').lstrip().rstrip()
+				f.write(f'{stripped_line}\n')
+
 
 
 def execute_csound(chns, sr, ksmps):

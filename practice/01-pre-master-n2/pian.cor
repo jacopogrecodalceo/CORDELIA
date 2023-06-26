@@ -1,0 +1,26 @@
+
+
+
+
+gkpulse = 75
+
+gktuning = scala.euler_diat
+
+eu: 10, 21, 8
+	@piano@seno
+	wn
+	each(mp, p)
+	classic.a(5)
+	g3-4.13: mac
+	a3-5.15: mac
+	d4-2.9: mac
+
+
+eu: 7, 17, 8
+	@piano@orphans3
+	once(wn, 0, wn, wn, wn, 0)*2
+	each(p, pp)
+	classic.a(5)
+	d2-4.21: mac
+	f3-4.21: mac
+	f4-9.23: mac
