@@ -21,7 +21,6 @@ from musx.paint import brush
 
 piano_talea = rhythm('q q q e e. e e e e e. e. e. s e e. q h', tempo=80)
 
-
 piano_color = keynum(["f3 g bf c4 ef b e5",  "f3 g bf c4 e a d5", 
                       "f3 af bf df4 ef a d5", "f3 af bf df4 ef g c5",
                       "f3 g bf d4 fs b c5", "f3 g bf d4 e a c5",

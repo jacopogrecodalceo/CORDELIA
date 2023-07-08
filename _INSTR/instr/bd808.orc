@@ -10,9 +10,7 @@ gibd808 ftgen 25, 0, 16, -2,	30000,			/* amplitude scale	     */
 		0.25			/* decay half-time	     */
 
 
-	instr bd808
-
-	$params
+	$START_INSTR(bd808)
 
 ilnth	=  idur
 ifn		=  gibd808		; table number
@@ -46,7 +44,5 @@ aenv2	linseg 1, ilnth, 1, irel, 0, 1, 0
 
 aout	delay a1 * idyn * aenv * (aenv2 * aenv2), idel
 
-$dur_var(1)/500
-
+	$dur_var(5)
 	$END_INSTR
-	endin

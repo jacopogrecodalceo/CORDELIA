@@ -34,6 +34,7 @@ imax_overlaps 		init 4
 ;itimescale			init ilen / idur
 ;ips     			init 1 / imax_overlaps
 
-aout				syncgrain idyn, kfreq, kresample, idur/i(gkbeatf), idur, itab_sonvs, ienv, imax_overlaps
+aout				syncgrain $dyn_var, kfreq, kresample, idur/i(gkbeatf), idur, itab_sonvs, ienv, imax_overlaps
+aout				*= 3.5
 
 	$END_INSTR

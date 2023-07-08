@@ -519,6 +519,32 @@
         "sr": "48000",
         "type": "sonvs"
     },
+    "bee_char": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
+        ],
+        "sr": "48000",
+        "type": "sonvs"
+    },
+    "bee_char_samp": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
+        ],
+        "pitch": 56.83740864554024,
+        "sr": "48000",
+        "type": "sonvs"
+    },
+    "bee_char_sync": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
+        ],
+        "pitch": 56.83740864554024,
+        "sr": "48000",
+        "type": "sonvs"
+    },
     "begad": {
         "global_var": [
             "gibegad_indx",

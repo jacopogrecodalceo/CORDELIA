@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+gkpulse = 110
+
+gktuning = scala.pto_diat
+
+gkbee_char_sync_freq = 32
+
+eu: 4, 16, 32
+	@bee_char_sync@bee_char@bee_char_samp@cascadexp
+	wn*4
+	mp
+	mac
+	c3-1.12: mac
+
+@dead4.convij(bee_char, 1): 8, fff
+
+@dead3: 8, f
+
+eu: 4, 8, 4, 1
+	@bd808
+	qn
+	ff
+	mac
+	ntof(g2)
+
