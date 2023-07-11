@@ -15,7 +15,6 @@ python3 -m demos.fm
 import random
 from musx import Score, Note, Seq, MidiFile, fmspectrum, keynum, hertz, odds, between, pick
 
-
 def fm_chords(score, reps, cen, cm1, cm2, in1, in2, rhy):
     """
     Generates a series of FM chords with random fluctuations in its
@@ -28,11 +27,9 @@ def fm_chords(score, reps, cen, cm1, cm2, in1, in2, rhy):
             score.add(m)
     yield rhy
 
-
 contour = keynum("a4 g f e a4 b c d gs b c5 ef fs g a5 bf g f e a5 b c d \
                   gs3 f e cs c bf5 gs5 as3 cs5 e6 f4 gs5 d6 e f g c5 b a \
                   g bf c5 cs e4 f gs d4 c b a4 e5 f g a5")
-
 
 def fm_improv(score, line, beat):
     """
@@ -60,11 +57,10 @@ def fm_improv(score, line, beat):
             score.add(m)
         yield rhy
 
-
 if __name__ == '__main__':
     # It's good practice to add any metadata such as tempo, midi instrument
     # assignments, micro tuning, etc. to track 0 in your midi file.
-    track0 = MidiFile.metatrack()
+    # track0 = MidiFile.metatrack()
     # Track 1 will hold the composition.
     track1 = Seq()
     # Create a score and give it tr1 to hold the score event data.
@@ -75,7 +71,7 @@ if __name__ == '__main__':
     score.compose(fm_improv(score, contour, 8))
 
     #  Write the tracks to a midi file in the current directory.
-    file = MidiFile("fm_j.mid", [track0, track1]).write()
+    file = MidiFile("fm_j.mid", [track1]).write()
     print(f"Wrote '{file.pathname}'.")
 
     # To automatially play demos use setmidiplayer() and playfile().

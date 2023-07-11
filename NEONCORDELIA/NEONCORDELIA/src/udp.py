@@ -10,7 +10,7 @@ def open_ports():
 		print(f'Port {name} open @{port}')
 		UDP_SOCKETs.append(server_socket)
 
-def receive_messages() -> tuple():
+def receive() -> tuple():
 	readable, writable, exceptional = select.select(UDP_SOCKETs, empty, empty)
 	for s in readable:
 
@@ -25,3 +25,8 @@ def receive_messages() -> tuple():
 		# get UDP message
 
 		return (direction, message.decode())
+
+def listen(message_queue):
+	while True:
+		direction, code = receive()
+		message_queue.put((direction, code))

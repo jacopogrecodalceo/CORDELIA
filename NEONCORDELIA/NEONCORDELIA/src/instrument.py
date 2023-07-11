@@ -95,35 +95,36 @@ class Parsing:
 
 class GlobalVariable():
 		
-	def __init__(self, instrument_index, Parsing):
+	def __init__(self, index, Parsing):
 
 		if Parsing.instrument_name == 'cordelia':
 		
 			self.__dict__.update(vars(Parsing))
-			#self.instrument_index = instrument_index
+			self.index = index
+			#self.index = index
 			del self.instrument_name
 		
 		else:
 			
-			rhythm_var = f'gkrhy_{instrument_index}'
+			rhythm_var = f'gkrhy_{index}'
 			self.rhythm = f'{rhythm_var} {Parsing.rhythm_name} {", ".join(Parsing.rhythm_params)}'
 
 			if_openvar = f'\tif {rhythm_var} != 0 then\n'
 			if_closevar = f'\n\tendif'
 
-			space_var = f'gkspace_{instrument_index}'
+			space_var = f'gkspace_{index}'
 			self.space = f'{if_openvar}{space_var} = {Parsing.space}{if_closevar}'
 
-			name_var = f'gSname_{instrument_index}'
+			name_var = f'gSname_{index}'
 			self.instrument_name = f'{name_var} = "{Parsing.instrument_name}"'
 
-			dur_var = f'gkdur_{instrument_index}'
+			dur_var = f'gkdur_{index}'
 			self.dur = f'{dur_var} = {Parsing.dur}'
 
-			dyn_var = f'gkdyn_{instrument_index}'
+			dyn_var = f'gkdyn_{index}'
 			self.dyn = f'{dyn_var} = {Parsing.dyn}*({rhythm_var} == 1 ? ampdb(5) : 1)'
 
-			env_var = f'gkenv_{instrument_index}'
+			env_var = f'gkenv_{index}'
 			self.env = f'{env_var} = {Parsing.env}'
 
 			self.freqs = []
@@ -131,14 +132,14 @@ class GlobalVariable():
 			for i in range(5):
 				if i <= (len(Parsing.freqs)-1):
 					#print(Parsing.freq[i])
-					freq_var = f'gkfreq_{instrument_index}_{i+1}'
+					freq_var = f'gkfreq_{index}_{i+1}'
 					freq_vars.append(freq_var)
 					freq = f'{freq_var} = {Parsing.freqs[i]}'
 					self.freqs.append(freq)
 			
 			freq_string = ", \n".join(freq_vars)
 
-			self.instrument_index = instrument_index
+			self.index = index
 
 			self.route = self.parse_route(Parsing.instrument_name, Parsing.routes)
 
@@ -192,14 +193,14 @@ else
 		])
 
 		# Add name to instrument
-		#route_var = f'gS{route_dict["name"]}{route_index}_{instrument_name}{self.instrument_index}_p1'
+		#route_var = f'gS{route_dict["name"]}{route_index}_{instrument_name}{self.index}_p1'
 		#route_dict['params'].insert(0, (route_var, f'"{instrument_name}"'))	
 
 		#CORE
 		for route_index, route_dict in enumerate(routes_dict, start=1):
 
 			for index_var, value in enumerate(route_dict['params']):
-				route_var = f'gk{route_dict["name"]}{route_index}_{instrument_name}{self.instrument_index}_p{index_var+1}'
+				route_var = f'gk{route_dict["name"]}{route_index}_{instrument_name}{self.index}_p{index_var+1}'
 				route_dict['params'][index_var] = [route_var, value]
 
 			if route_dict['name'] in const_path.MODULE_json:
@@ -227,3 +228,32 @@ else
 
 		return '\n'.join(lines)
 
+
+def wrapper(instruments):
+	
+	instrument_start = 500
+
+	result = []
+	index = 0
+	for instrument in instruments:
+		content = []
+		for attr, v in vars(instrument).items():
+			if attr != 'index':
+				if attr == 'freqs':
+					content.extend(v)
+				else:
+					content.append(v)	
+
+		for e in content:
+			instrument_num = instrument_start + index
+			string = f'\tinstr {instrument_num}\n'
+			string += e + '\n'
+			string += '\tendin\n'
+			string += f'turnoff2_i {instrument_num}, 0, 1\n'
+			string += f'schedule {instrument_num}, ksmps / sr, -1\n'
+			
+			result.append(string)
+			print(string)
+			index += 1
+
+	return result

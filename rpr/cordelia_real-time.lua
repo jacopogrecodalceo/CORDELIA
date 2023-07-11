@@ -141,7 +141,7 @@ function get_all_midi_items(ids, index)
 		local epsilon = 15 -- Adjust the epsilon value based on your desired precision
 		local difference = math.abs(startppqpos - ppqpos_text)
 
-		if retval_text and difference < epsilon then 
+		if note_local_env ~= '' and difference < epsilon then 
 			env = note_local_env
 		end
 

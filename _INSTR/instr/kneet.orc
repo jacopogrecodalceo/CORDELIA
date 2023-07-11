@@ -6,7 +6,15 @@ a2		vco2 $dyn_var, icps*expseg(11/10, p3, 3/4)
 a3		vco2 $dyn_var, icps*expseg(3/2, p3, 3)
 
 kndx		= abs(jitter(1, gibeatf/8, gibeatf))
-a4		vco2 $dyn_var, icps*tab:k(kndx, i(gktuning), 1)
+
+ituning		i gktuning
+ilen		tab_i 0, ituning
+ioff		init 4
+itun_len	init ilen - ioff
+
+ktun_dec		tab (kndx*itun_len)+ioff, ituning
+
+a4			vco2 $dyn_var, icps*ktun_dec
 
 ain		= (a1 + a2 + a3)/2 + a4*2
 
@@ -35,7 +43,7 @@ else
 endif
 
 aout		= acomb
-aout		/= 12
+aout		/= 160
 
 	$dur_var(10)
 	$END_INSTR

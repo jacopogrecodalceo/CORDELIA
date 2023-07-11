@@ -16,9 +16,9 @@ ilen		tab_i 0, i(gktuning)
 ioff		init 4
 itun_len	init ilen - ioff
 
-kcps		tab (abs(kndx)*itun_len)+ioff, i(gktuning)
+ktun_dec		tab (abs(kndx)*itun_len)+ioff, i(gktuning)
 
-kcps	= portk(icps * kcps, .025)+kvibf
+kcps	= portk(icps * ktun_dec, .025)+kvibf
 aout	vco2 $dyn_var*abs(kvibd), kcps, imode, kpw, kphs, inyx
 
 	$dur_var(10)

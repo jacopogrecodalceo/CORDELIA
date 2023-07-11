@@ -37,8 +37,13 @@ section_array.each_with_index do |f, i|
 
 	index = i + 1
 
-	number = f.split(/[\s-]/)[1]
-	name = f.split(/[\s-]/)[2].gsub(/[^a-zA-Z]/, '').upcase
+	begin
+		number = f.split(/[\s-]/)[1]
+		name = f.split(/[\s-]/)[2].gsub(/[^a-zA-Z]/, '').upcase
+	rescue
+		# Handle the error here
+		puts "No name specified"
+	end
 	label = "#{number}-#{name}-#{index.to_s}"
 	score_file.write(";---#{label}\n")
 

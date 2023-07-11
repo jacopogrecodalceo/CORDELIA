@@ -9,16 +9,11 @@ gkpulse = 130
 
 gktuning = scala.pto_diat
 
-gkorp_sync_freq pump 8, fill(5, 8, 2, 3)
-
-eu: 6, 16, 16
-	@orp_sync
+eu: 8, 16, 16
+	@in2.tapij(qn, .5, 1).cutij(int(1+abs(jitter:k(1, gkbeatf/8, gkbeatf)*12)))
 	wn
-	fff*8
-	likearev
-	a4: 0, 0, 0, 1
-	b4: 0, 0, 0, 1
-	g4: 0, 0, 0, 1
+	fff
+	classic
+	1
 
-
-
+@orp: 8, pp

@@ -21,6 +21,7 @@ nchnls = 4
 prints "I'm ready!\n"
 
 gkgain init 1
+gkrehearsal init 0
 
 gaouts[] init nchnls
 
@@ -209,7 +210,7 @@ kascii, kpress sensekey
 
 if kascii == iesc && kpress == 1 then
 	printks "\n🌊 STOOOOP! 🌊\n", 1
-	turnoff2 10, 0, 1
+	turnoff2 10, 0, 1-gkrehearsal
 endif
 
 	endin

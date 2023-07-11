@@ -1,28 +1,52 @@
 require 'json'
 require_relative '_path'
 
-path = $cordelia_directory_path + '/_INSTR' + '/*'
-json = $cordelia_setting_path + '/instr.json'
+# Set the file paths
+path = File.join($cordelia_directory_path, '_INSTR', '*')
+json = File.join($cordelia_setting_path, 'instr.json')
+fft_script = File.join($cordelia_setting_path, '_script/fft_foundamental.py')
 
-instruments = {}
-Dir[path].each do |t|
+$hard_reset = false
+$suffix = ['_so', '_sy']
 
-	type = File.basename(t)
+if $hard_reset
+	$instruments = {}
+else
+	$instruments = JSON.parse(File.read(json))
+end
 
-	if type == 'instr'
-		Dir[t + '/*.orc'].each do |f|
-			name = File.basename(f, '.*')
-			instruments[name] = {
-				'type' => type,
+def extract_global_vars(filename, name)
+	content = File.read(filename)
+	gk_vars = content.scan(/\bgk#{name}\w+/).uniq
+	gi_vars = content.scan(/\bgi#{name}\w+/).uniq
+	gk_vars + gi_vars
+end
+
+def process_instr(t)
+	# Processing 'instr' type files
+	Dir[File.join(t, '*.orc')].each do |f|
+		name = File.basename(f, '.*')
+
+		if $hard_reset or !$instruments.key?(name)
+			p "#{name} is added"
+			global_vars = extract_global_vars(f, name)
+
+			$instruments[name] = {
+				'type' => 'instr',
 				'path' => f,
-				'global_var' => File.read(f).scan(/gk#{name}_[a-z]+/).uniq + File.read(f).scan(/gi#{name}_[a-z]+/).uniq
+				'global_var' => global_vars
 			}
 		end
+	end
+end
 
-	elsif type == 'hybrid'
-		Dir[t + '/*.orc'].each do |f|
-			name = File.basename(f, '.*')
+def process_hybrid(t)
+	# Processing 'hybrid' type files
+	Dir[File.join(t, '*.orc')].each do |f|
+		name = File.basename(f, '.*')
 
+		if $hard_reset or !$instruments.key?(name)
+			p "#{name} is added"
 			first_lines = File.open(f).first(5)
 			keyword = ';REQUIRE'
 			required_instr = []
@@ -38,38 +62,73 @@ Dir[path].each do |t|
 				end
 			end
 
-			instruments[name] = {
-				'type' => type,
+			global_vars = extract_global_vars(f, name)
+
+			$instruments[name] = {
+				'type' => 'hybrid',
 				'path' => f,
 				'required' => required_instr,
-				'global_var' => File.read(f).scan(/gk#{name}_[a-z]+/).uniq + File.read(f).scan(/gi#{name}_[a-z]+/).uniq
+				'global_var' => global_vars
 			}
 		end
-			
-	elsif type == 'sonvs'
-		Dir[t + '/*'].each do |f|
-			name = File.basename(f, '.*')
+	end
+end
 
-			if File.file?(f)
-				instruments[name] = {
-					'type' =>  'sonvs',
-					'path' => ["#{f}"],
-					'channels' => `soxi -c #{f}`.strip,
-					'sr' => `soxi -r #{f}`.strip
-				}
-			elsif File.directory?(f)
-				wav_inside = Dir[f + '/*.wav']
-				cavia = wav_inside.first
-				instruments[name] = {
-					'type' =>  'sonvs',
-					'path' => wav_inside,
-					'channels' => `soxi -c #{cavia}`.strip,
-					'sr' => `soxi -r #{cavia}`.strip
-				}
+def process_sonvs(t)
+	# Processing 'sonvs' type files
+	Dir[File.join(t, '*')].each do |f|
+		name = File.basename(f, '.*')
+		names = [name]
 
+		$suffix.each do |extension|
+			names << name + extension
+		end
+
+		names.each do |name|
+			if $hard_reset or !$instruments.key?(name)
+				p "#{name} is added"
+				if File.file?(f)
+					$instruments[name] = {
+						'type' => 'sonvs',
+						'path' => [f],
+						'channels' => `soxi -c #{f}`.strip,
+						'sample_rate' => `soxi -r #{f}`.strip
+					}
+				elsif File.directory?(f)
+					wav_inside = Dir[File.join(f, '*.wav')]
+
+					$instruments[name] = {
+						'type' => 'sonvs',
+						'path' => wav_inside,
+						'channels' => `soxi -c #{wav_inside.first}`.strip,
+						'sample_rate' => `soxi -r #{wav_inside.first}`.strip
+					}
+				end
 			end
 		end
 	end
 end
-instruments = instruments.sort.to_h
-File.open(json, 'w') { |f| f.puts JSON.pretty_generate(instruments) }
+
+Dir[path].each do |t|
+	
+	type = File.basename(t)
+
+	if type == 'instr'
+		process_instr(t)
+	elsif type == 'hybrid'
+		process_hybrid(t)
+	elsif type == 'sonvs'
+		process_sonvs(t)
+	end
+end
+
+$instruments = $instruments.sort.to_h
+
+# Write $instruments dictionary to JSON file
+File.open(json, 'w') { |f| f.puts JSON.pretty_generate($instruments) }
+
+IO.popen("python3 #{fft_script}") do |io|
+	while (line = io.gets)
+		puts line
+	end
+end

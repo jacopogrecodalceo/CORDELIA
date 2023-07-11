@@ -27,7 +27,11 @@ itab_sonvs	init gi---NAME---_list[index]
 
 kfreq = (gkbeatf*gk---NAME---_freq)-((gkbeatf*3/2)*envgen(idur_var, ienv))
 
-kresample			init icps / ---PITCH--- 
+if icps > 20 && icps > 0 then
+	kresample			init icps / ---PITCH--- 
+else
+	kresample			init 1
+endif
 
 imax_overlaps 		init 4
 

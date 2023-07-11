@@ -97,7 +97,7 @@ def instr(unit):
 					file_vars = []
 					vir = ', '
 
-					if '_samp' in name:
+					if '_so' in name:
 						with open(DEFAULT_SONVS_SAMP_PATH) as f:
 							for index, p in enumerate(path):
 								index_file = index + 1
@@ -114,7 +114,7 @@ def instr(unit):
 							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
 							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
 							string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)	
-					elif '_sync' in name:
+					elif '_sy' in name:
 						with open(DEFAULT_SONVS_SYNC_PATH) as f:
 							for index, p in enumerate(path):
 								index_file = index + 1
