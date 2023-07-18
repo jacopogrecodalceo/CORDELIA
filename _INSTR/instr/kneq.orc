@@ -36,7 +36,7 @@ else
 endif
 
 aout		= acomb
-aout		/= 21
+aout		/= 160
 
 	$dur_var(10)
 	$END_INSTR

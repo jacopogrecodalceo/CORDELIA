@@ -1,0 +1,19 @@
+
+
+
+
+gkpulse = 75*pump(16, fill(1, .5, .75, 1));-go(0, 60, 100)
+
+gktuning pump 1, fill(scala.pyt12, scala.edo31hex)
+
+eu: 8, 16, 2
+	@pianon.flanij(sn, .5)
+	wn
+	fff
+	zeus.a(5)
+	stept(g3, gilocrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))*once(.25, .5, 1)
+	stept(g3, gilocrian, 2+pump(22, fill(2, 3, 4, 0))+pump(12, fill(7, 5/2, -1)))*once(.75, 1, 2)
+
+@bleu2: .96, f*in2m
+
+

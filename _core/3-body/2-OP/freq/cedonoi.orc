@@ -51,8 +51,8 @@ od
     xout ix_arr
     endop
 
-gicedonoi    =   hc_gen(0, gienvdur, 0,
-		hc_segment(1/2, 1, hc_mirror(hc_cubic_curve())),
+gicedonoi    =   hc_gen(0, gienvdur, 0, 
+		hc_segment(1/2, 1, hc_mirror(hc_cubic_curve())), 
 		hc_segment(1/2, 1, hc_mirror(hc_cubic_curve())))
 		
 

@@ -24,6 +24,6 @@ k2		expseg icps/2, p3, icps*4
 a2		exciter amain, k2, 15000, 10, 3.5
 
 aout		= a2;amain*cosseg(0, p3/2, 1, p3/2, 0) + a1 + a2
-
+aout		dcblock2 aout
 	$dur_var(10)
 	$END_INSTR

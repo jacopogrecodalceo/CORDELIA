@@ -39,27 +39,45 @@ alow 			skf aout, ilfreq, klq
 ;garecorder[ich] = aout
 
 ;	CLEAR
-	chnclear gSmouth[ich]
+;	chnclear gSmouth[ich]
 
 	endin
 
-turnoff2_i 900, 0, 0
+;turnoff2_i 900, 0, 0
 
-	instr 950
-Sinstr	strget	p4
-prints "%s is clear\n", Sinstr
-		chnclear Sinstr
-	endin
-
-/*
-	instr 985
+/*	instr main_recorder
 
 Swrite	init p4
 		fout Swrite, -1, garecorder
 
 		clear garecorder
 
+	endin*/
+
+	instr 945
+
+Sinstrs[]	init ginchnls
+arec[]		init ginchnls
+
+Sinstr		strget	p4
+Sname		strget	p5
+
+indx		init 0
+until	indx == ginchnls do
+	Sinstrs[indx]	sprintf "%s_%i", Sinstr, indx+1
+	indx += 1
+od
+
+arec	chngeta Sinstrs
+
+		fout Sname, -1, arec
+
 	endin
-*/
+
+	instr 950
+Sinstr	strget	p4
+prints "%s is clear\n", Sinstr
+	chnclear Sinstr
+	endin
 
 

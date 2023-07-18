@@ -31,6 +31,8 @@ kcps	= icps + vibr(expseg(.05, idur, icps/(icps*12)), randomi:k(idur*3, idur*5, 
 
 aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, kmod+randomi:k(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
+aout	dcblock2 aout
+
 		$dur_var(100)
 		$END_INSTR
 
@@ -51,9 +53,9 @@ ich		init p7
 ipanfreq	init random:i(-.95, .95)
 
 aout	repluck random:i(.015, .35), idyn, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25),  gitri)
-aout	dcblock2 aout
 
 aout	*= cosseg(0, giaaron_atk, 1, irel, 0)
+aout	dcblock2 aout
 
 	$CHNMIX
 
@@ -75,9 +77,9 @@ ipanfreq	= random:i(-.95, .95)
 //
 
 aout	repluck random:i(.015, .35), $dyn_var, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25), gisine)
-aout	dcblock2 aout
 
 aout	*= cosseg(0, giaaron_atk, 1, idur/5, 0)
+aout	dcblock2 aout
 
 	$CHNMIX
 
@@ -108,6 +110,7 @@ aout	balance arout, af
 aout	*= amp
 
 aout	*= cosseg(0, giaaron_atk, idyn, idur, 0)
+aout	dcblock2 aout
 
 	$CHNMIX
 

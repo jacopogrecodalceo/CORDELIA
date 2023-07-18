@@ -1,0 +1,28 @@
+
+
+
+
+
+gkpulse = 110
+
+gkgain = .5
+
+gktuning = scala.pto_diat
+
+eu: 4, 16, 32
+	@cascadexp@mhon
+	wn*6
+	f
+	mac
+	c3-1.12: mac
+	e4-1.12: mac
+
+@dead3: 8, ff
+
+eu: 3, 8, 4
+	@bd808
+	sn
+	fff
+	mac
+	ntof(g2)
+

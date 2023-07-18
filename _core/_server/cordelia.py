@@ -1,9 +1,7 @@
 from threading import Thread, Event
 from datetime import datetime
 import traceback, re
-import numpy as np
-import soundfile as sf
-
+import os
 
 import cordelia
 import utils.udp as udp
@@ -12,7 +10,7 @@ from utils.misc import count_time, county_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
 import time
 
-from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_RAW, CORDELIA_OUT_LOG, CORDELIA_OUT_COR
+from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_LOG, CORDELIA_OUT_COR, CORDELIA_CURRENT_DIR
 
 CORDELIA_OUT_LOG_open = ''
 CORDELIA_OUT_COR_open = ''
@@ -46,6 +44,7 @@ def main():
 				wrapped_instruments = cordelia.wrapper(contents_filtered)
 				
 				if not cordelia_init:
+
 					CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
 					CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
 					cordelia_init = True
@@ -75,7 +74,26 @@ def main():
 		
 		elif code[0] == 'REAPER':
 			#list of class instrument
-			
+			if not cordelia_init:
+				# Replace 'new_directory' with the desired name of the new directory
+				new_directory = CORDELIA_CURRENT_DIR
+
+				# Check if the directory doesn't exist, then create it
+				if not os.path.exists(new_directory):
+					os.mkdir(new_directory)
+					print(f"Directory '{new_directory}' created successfully.")
+				else:
+					print(f"Directory '{new_directory}' already exists.")
+
+				name = 'mouth'
+				instr_setting = ''
+				for each in range(CORDELIA_NCHNLS):
+					instr_num = 950 + ((each+1)/10000)
+					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"\n'
+				
+				CORDELIA_COMPILE.append(instr_setting)
+				cordelia_init = True
+
 			if re.findall(';INSTR_BEFORE', code[1]): 
 				instr_before = code[1].split(';INSTR_BEFORE')[0]
 				instr_core = code[1].split(';INSTR_BEFORE')[1].split(';INSTR_AFTER')[0]
@@ -116,7 +134,7 @@ RECORD = True
 record_init = True
 
 
-# Define the function to be executed in the thread
+""" # Define the function to be executed in the thread
 def csound_perf_homemade(cs, completion_event):
 	cs.start()
 	
@@ -133,8 +151,20 @@ def csound_perf_homemade(cs, completion_event):
 
 	# Thread has completed, set the completion event
 	completion_event.set()
-	return
+	return """
 
+# Define the function to be executed in the thread
+def csound_perf_homemade(cs, completion_event):
+	cs.start()
+
+	while cs.performKsmps() == 0:
+		pass
+
+	cs.cleanup()
+
+	# Thread has completed, set the completion event
+	completion_event.set()
+	return
 
 			
 # Create the completion event

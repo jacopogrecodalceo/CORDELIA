@@ -9,7 +9,7 @@ from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json
 from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json
 from utils.constants import INSTR_HASPLAYED, CORDELIA_INSTR_json
 from csound import CORDELIA_NCHNLS
-from utils.constants import DEFAULT_SONVS_PATH, DEFAULT_SONVS_SAMP_PATH, DEFAULT_SONVS_SYNC_PATH
+from utils.constants import DEFAULT_SONVS_PATH, DEFAULT_SONVS_SAMP_PATH, DEFAULT_SONVS_SYNC_PATH, CORDELIA_CURRENT_DIR, CORDELIA_DATE
 
 def note(unit):
 	for name in CORDELIA_NOTEs:
@@ -176,8 +176,17 @@ def instr(unit):
 				instr_setting = f'gS{name}[] init ginchnls\n'
 				for each in range(CORDELIA_NCHNLS):
 					instr_setting += f'gS{name}[{each}] sprintf	"{name}_%i", {each+1}\n'
-					instr_num = 950 + ((each+1)/1000) + ((len(INSTR_HASPLAYED)-1)/10000)
-					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"\n'
+
+				start = CORDELIA_NCHNLS * (len(INSTR_HASPLAYED) - 1) + 1
+				sequence = [start + i for i in range(CORDELIA_NCHNLS)]
+				for index, val in enumerate(sequence):
+					instr_num = 950 + (val/10000)
+					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{index+1}"\n'
+				
+				instr_add = (len(INSTR_HASPLAYED))/10000
+				instr_setting += f'schedule 945+{round(instr_add, 5)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/cor{CORDELIA_DATE}-{name}.wav"\n'
+				
+				print(instr_setting)
 				#csound_cordelia.compileOrcAsync(instr_setting)
 				CORDELIA_COMPILE_FIRST.append(instr_setting)
 				print(f'SEND {name}')

@@ -2,7 +2,7 @@
 	opcode	eva_midi, 0, Siiiii
 Sinstr, iwhen, idur, iamp, ienv, icps xin
 
-if	idur > giminnote && iamp > 0 then
+if	idur > giminnote && iamp > 0 && icps < 19500 then
 
 	;GENERATE EVENT
 	if	(icps != 0) then

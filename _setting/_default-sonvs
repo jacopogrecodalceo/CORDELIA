@@ -15,7 +15,14 @@ ienv		init p5
 icps		init p6 % i(gkdiv)
 ich			init p7
 
-isonvs		i gk---NAME---_sonvs-1
+isonvs		i gk---NAME---_sonvs
+isonvs		abs isonvs
+
+if isonvs == 0 then
+	isonvs random 0, gi---NAME---_len
+	prints "I'll play a random sonvs\n"
+endif
+
 isonvs		init isonvs%(gi---NAME---_len-1)
 imod		init gi---NAME---_ch-1
 

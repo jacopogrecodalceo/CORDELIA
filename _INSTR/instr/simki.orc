@@ -1,8 +1,6 @@
 gisimki_del	init 1+1/nchnls
 
-	instr simki
-
-							$params
+	$START_INSTR(simki)
 
 idiv						init icps/100
 
@@ -25,9 +23,7 @@ ahp ,alp ,abp, abr	svn amoog, icps*3+(icps*$dyn_var), 0, $dyn_var
 adel						flanger ahp, random:i(-.00125, .00125)+(a(idur/int(gisimki_del))/12), $dyn_var
 aout						= (adel + abp)*.895
 
-$dur_var(10)
-
-							$END_INSTR
+						$dur_var(10)
 
 gisimki_del 			+= 1*(ich-1)
 
@@ -35,5 +31,5 @@ if int(gisimki_del) == 7 then
 	gisimki_del init 1+1/nchnls
 endif
 
-	endin
+	$END_INSTR
 

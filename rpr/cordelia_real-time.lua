@@ -287,9 +287,11 @@ function remove_at_play()
 end
 
 local STATE = true
+local last_play_pos = 0
 
 function on_play()
 	if STATE then
+		last_play_pos = reaper.GetPlayPosition()
 		get_all_items()
 		if #midi_items > 15000 then
 			reaper.CSurf_OnStop()
@@ -329,6 +331,13 @@ function cordelia_realtime(play_pos)
 		on_play()
 
 		local play_pos = reaper.GetPlayPosition()
+
+		if play_pos - last_play_pos > 1 then
+			reaper.CSurf_OnStop()
+		end
+		
+        last_play_pos = play_pos
+
 
 		local index = 1
 		while index <= #midi_items do

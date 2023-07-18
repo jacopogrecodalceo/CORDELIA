@@ -35,6 +35,7 @@ ivibt		init ivib[int(random(0, lenarray(ivib)))]
 arev		*= 1-(oscil:k(1, gkbeatf*(ivibt+random:i(-.05, 05)), giasine)*cosseg(0, idur*.95, 1, idur*.05, 1))
 
 aout		= ap + arev	
+aout		dcblock2 aout
 
 	$dur_var(10)
 	$END_INSTR

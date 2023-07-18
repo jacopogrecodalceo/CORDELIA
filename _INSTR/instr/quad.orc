@@ -123,14 +123,7 @@ endop
 
 giquad_index init 0
 
-	instr quad
-
-Sinstr		init "quad"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$START_INSTR(quad)
 
 ax = oscili(1, icps+(lfo(icps-(11/10*icps), random:i(3, 5)))*cosseg(0, idur/2, 1, idur/2, 0)/cosseg(9, idur, 3))
 ay = oscili(1/6, icps*$M_PI)
@@ -152,13 +145,11 @@ aout = aouts[index]
 
 aout		*= $dyn_var+(lfo($dyn_var/4, i(gkbeats)))
 
-$dur_var(10)
-
-	$END_INSTR
-
 giquad_index += 1
 
 if giquad_index == 7 then
 	giquad_index = 0
 endif
-	endin
+
+	$dur_var(10)
+	$END_INSTR

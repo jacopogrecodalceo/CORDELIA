@@ -1,7 +1,6 @@
 gimaij_indx	init 1
 
 
-
 	instr maij
 
 Sinstr		init "maij_instr"
@@ -53,5 +52,4 @@ $dur_var(4)
 
 	$END_INSTR
 
-	endin
 

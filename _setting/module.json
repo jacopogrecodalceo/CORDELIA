@@ -64,6 +64,16 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/rinij.orc",
     "how_many_p": 2
   },
+  "skh": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skh.orc",
+    "how_many_p": 2
+  },
+  "skl": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skl PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skl.orc",
+    "how_many_p": 2
+  },
   "solij": {
     "core": ";CORE\n\nPARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    solina_chorus PARAM_IN, PARAM_1, PARAM_2\n\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/solij.orc",

@@ -1,9 +1,9 @@
 	$START_INSTR(kneet)
 
 
-a1		oscili $dyn_var, icps, gisquare
-a2		vco2 $dyn_var, icps*expseg(11/10, p3, 3/4)		
-a3		vco2 $dyn_var, icps*expseg(3/2, p3, 3)
+a1			oscili $dyn_var, icps, gisquare
+a2			vco2 $dyn_var, icps*expseg(11/10, p3, 3/4)		
+a3			vco2 $dyn_var, icps*expseg(3/2, p3, 3)
 
 kndx		= abs(jitter(1, gibeatf/8, gibeatf))
 
@@ -12,11 +12,11 @@ ilen		tab_i 0, ituning
 ioff		init 4
 itun_len	init ilen - ioff
 
-ktun_dec		tab (kndx*itun_len)+ioff, ituning
+ktun_dec	tab (kndx*(itun_len+1))+ioff, ituning
 
 a4			vco2 $dyn_var, icps*ktun_dec
 
-ain		= (a1 + a2 + a3)/2 + a4*2
+ain			= (a1 + a2 + a3)/2 + a4*2
 
 k1 = 1 - jitter(2, gibeatf/8, gibeatf)
 k2 = 1 - jitter(2, gibeatf/8, gibeatf)

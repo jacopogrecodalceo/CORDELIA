@@ -244,6 +244,26 @@ aout		= ain * a(kring)
 	xout aout
 	endop
 ;OPCODE
+    opcode cordelia_skh, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+aout	skf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 1
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+;OPCODE
+    opcode cordelia_skl, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+aout	skf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 0
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+;OPCODE
 
 /* Solina Chorus, based on Solina String Ensemble Chorus Module
   

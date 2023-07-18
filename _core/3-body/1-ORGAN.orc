@@ -4,6 +4,7 @@ gktuning init giedo12
 
 gScsound_score init ""
 
+
 gSmouth[]		init ginchnls
 
 indx		init 0
@@ -11,8 +12,9 @@ until	indx == ginchnls do
 	gSmouth[indx]		sprintf	"mouth_%i", indx+1
 	indx	+= 1
 od
-gkabstime init 0 
-gkdiv	init 64 ;max division of main tempo for heart and lungs
+
+gkabstime	init 0 
+gkdiv		init 64 ;max division of main tempo for heart and lungs
 
 ;	HEART
 ;	tempo for heart

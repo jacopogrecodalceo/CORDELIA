@@ -1,6 +1,4 @@
-	instr corpia
-
-	$params
+	$START_INSTR(corpia)
 
 idyn	init idyn/3
 
@@ -35,9 +33,8 @@ aout			*= ($dyn_var)/7
 
 aout			skf aout, icps*cosseg(13, idur, 3), 2.15+$dyn_var
 aout			limit aout, -1, 1
-$dur_var(10)
+aout			dcblock2 aout
+	$dur_var(10)
 
 	$END_INSTR
-
-	endin
 

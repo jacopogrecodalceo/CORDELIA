@@ -1002,6 +1002,11 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/burdsk.orc",
         "type": "instr"
     },
+    "burdt": {
+        "global_var": [],
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/burdt.orc",
+        "type": "instr"
+    },
     "caillou": {
         "channels": "2",
         "path": [
