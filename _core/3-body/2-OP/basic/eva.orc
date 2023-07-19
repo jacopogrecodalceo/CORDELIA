@@ -1,17 +1,18 @@
 #define eva_kSk_kcps(kcps) #
+if $kcps > 15 && $kcps < 20000 then
+	kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
 
-kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
-
-if kch == 0 then
-	kch = 1
-	until kch > ginchnls do
-		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
-		kch += 1
-	od
-	kch = 0
-else
-	kch_i = ((kch-1)%ginchnls)+1
-	schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
+	if kch == 0 then
+		kch = 1
+		until kch > ginchnls do
+			schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+			kch += 1
+		od
+		kch = 0
+	else
+		kch_i = ((kch-1)%ginchnls)+1
+		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
+	endif
 endif
 #
 

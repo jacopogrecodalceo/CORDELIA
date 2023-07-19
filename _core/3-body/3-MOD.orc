@@ -325,7 +325,7 @@ a3 vdelay3 aLeft, at3, imax
 	endop;OPCODE
 
 
-	opcode string_filter, a, akk
+	opcode cor_streason, a, akk
 	ain, kfreq, kq xin
 
 kfreq += oscili:k(.5, gkbeatf/64)
@@ -345,8 +345,10 @@ aout	phaser1 aout, kfreq, 12, kq
 ;OPCODE
 
 
-	opcode string_filter, a, akk
-	ain, kfreq, kq xin
+	opcode cor_streason_p, a, akkk
+	ain, kfreq, kport, kq xin
+
+kfreq	portk kfreq, kport
 
 aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
 
@@ -528,7 +530,7 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode  tape_delay, a, akkk
+opcode  cor_tape_del, a, akkk
 ain, ktime, kfb, kgain xin
 
 kdel    = ktime

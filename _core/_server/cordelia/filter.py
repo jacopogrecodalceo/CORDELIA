@@ -20,7 +20,7 @@ def filter(instruments):
 		
 		CORDELIA_COMPILE.append(instr_setting)
 		print(instr_setting)
-		CORDELIA_COMPILE.append(f'schedule 945+(1/10000), 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/main-cor{CORDELIA_DATE}.wav"')
+		CORDELIA_COMPILE.append(f'schedule +{945+(1/10000)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/main-cor{CORDELIA_DATE}.wav"')
 
 	results = [None]*len(INSTR_LAST)
 

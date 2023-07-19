@@ -44,7 +44,14 @@ def main():
 				wrapped_instruments = cordelia.wrapper(contents_filtered)
 				
 				if not cordelia_init:
+					new_directory = CORDELIA_CURRENT_DIR
 
+					# Check if the directory doesn't exist, then create it
+					if not os.path.exists(new_directory):
+						os.mkdir(new_directory)
+						print(f"Directory '{new_directory}' created successfully.")
+					else:
+						print(f"Directory '{new_directory}' already exists.")
 					CORDELIA_OUT_LOG_open = open(CORDELIA_OUT_LOG, 'w')
 					CORDELIA_OUT_COR_open = open(CORDELIA_OUT_COR, 'w')
 					cordelia_init = True
@@ -125,7 +132,7 @@ def main():
 		#county_time(start_time, 'BEFORE CODE')
 
 		if CORDELIA_COMPILE:
-			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
+			csound_cordelia.compileOrc('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 		#county_time(start_time, 'END CODE')
 

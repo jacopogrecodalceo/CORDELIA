@@ -184,7 +184,7 @@ def instr(unit):
 					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{index+1}"\n'
 				
 				instr_add = (len(INSTR_HASPLAYED))/10000
-				instr_setting += f'schedule 945+{round(instr_add, 5)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/cor{CORDELIA_DATE}-{name}.wav"\n'
+				instr_setting += f'schedule {round(945+instr_add, 5)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/cor{CORDELIA_DATE}-{name}.wav"\n'
 				
 				print(instr_setting)
 				#csound_cordelia.compileOrcAsync(instr_setting)

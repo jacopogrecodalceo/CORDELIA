@@ -3,12 +3,18 @@
 -3
 -m0
 ;-D
--Ma
+;MIDI is HERE
+;-Ma
 ;-M0
 ;-+msg_color=1
---messagelevel=99
+;--messagelevel=99
+
 --m-amps=1
 --m-range=1
+--m-warnings=0
+--m-dB=1
+--m-colours=1
+--m-benchmarks=0
 
 -+id_artist="jacopo greco d'alceo"
 ;-b 64 ;mac 1024
@@ -25,7 +31,7 @@
 ;-B 1024
 ;--realtime
 
--+rtaudio=PortAudio
+;-+rtaudio=PortAudio
 ;-+rtaudio=jack
 ;-+rtaudio=CoreAudio
 
@@ -33,18 +39,12 @@
 ;-B 4096
 ;-+rtaudio=auhal
 
-;--realtime
+
 ;--num-threads=8
-;--m-colours=1
 ;--udp-echo
 
-;--midioutfile=/Users/j/Documents/PROJECTs/CORDELIA/_score/10.mid
 ;--nosound
 
 ;-v		;verbose orch translation
 ;-N		;notify (ring the bell) when score or miditrack is done
 ;--postscriptdisplay     ;suppress graphics, use Postscript displays
-;--env:SSDIR=/Users/j/Documents/PROJECTs/IDRA/samples ;/Users/j/Documents/my_livecode/_samples
-;--env:OPCODE6DIR64=/Library/Frameworks/CsoundLib64.framework/Versions/6.0/Resources/Opcodes64
-;--opcode-lib=/Users/j/Documents/PROJECTs/__INSTRUMENTs__/hypercurve/git/build/csound_opcode/libcsound_hypercurve.dylib
-

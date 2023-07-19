@@ -3,7 +3,7 @@ PARAM_1		init i(gkbeats)
 PARAM_2		init .5
 PARAM_3		init 1
 
-PARAM_OUT	tape_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+PARAM_OUT	cor_tape_del PARAM_IN, PARAM_1, PARAM_2, PARAM_3
 
 ;OPCODE
 
@@ -173,7 +173,7 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode  tape_delay, a, akkk
+opcode  cor_tape_del, a, akkk
 ain, ktime, kfb, kgain xin
 
 kdel    = ktime

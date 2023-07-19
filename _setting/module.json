@@ -80,17 +80,17 @@
     "how_many_p": 2
   },
   "strij": {
-    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT string_filter PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strij.orc",
     "how_many_p": 2
   },
   "strijp": {
-    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT string_filter PARAM_IN, portk(PARAM_1, PARAM_2), PARAM_3\n\n",
+    "core": ";CORE\n\n;division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strijp.orc",
     "how_many_p": 3
   },
   "tapij": {
-    "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit 1\n\nPARAM_OUT\ttape_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
+    "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit 1\n\nPARAM_OUT\tcor_tape_del PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tapij.orc",
     "how_many_p": 3
   }

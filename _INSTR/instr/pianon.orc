@@ -1,27 +1,32 @@
 	instr piano_load
 
-ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
+ipiano	sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
 	sfpassign 0, ipiano
-	turnoff
 
 	endin
-	schedule "piano_load", 0, 1
+	schedule "piano_load", 0, 0
 
 
 	$START_INSTR(pianon)
 
 ain		sfplay3m 1, ftom:i(A4), $dyn_var/2048, icps, 0, 1
 
-kestfrq = icps*2
+iestfreq = (icps*2)*int(random:i(2, 8))
+if iestfreq > 15$k then
+	iestfreq = icps*2
+endif
+
 kmaxvar = 0.95
 imode   = 1
-iminfrq = 95
+iminfreq = 95
 iprd    = 0.005
   
-amain		harmon ain, kestfrq, kmaxvar, kestfrq*.5, kestfrq*int(random:i(2, 8)), imode, iminfrq, iprd
+amain		harmon ain, icps*2, kmaxvar, icps, iestfreq, imode, iminfreq, iprd
 
 k2		expseg icps/2, p3, icps*4
 a2		exciter amain, k2, 15000, 10, 3.5
+
+;prints("\nMYCPSIS %f\n\n", icps)
 
 aout		= a2;amain*cosseg(0, p3/2, 1, p3/2, 0) + a1 + a2
 aout		dcblock2 aout

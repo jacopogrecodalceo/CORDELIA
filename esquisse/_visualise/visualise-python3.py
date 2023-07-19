@@ -3,9 +3,6 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 import numpy as np
 
-fftSize = 4096 # this needs to match gifftsiz in orc
-fs = 48000 # sample rate
-
 orc = '''
 0dbfs = 1
 ksmps = 1
@@ -33,6 +30,9 @@ endin
 '''
 sco = "i1 0 50\n"
 
+
+fftSize = 4096 # this needs to match gifftsiz in orc
+fs = 48000 # sample rate
 cs = csound.Csound()
 cs.setOption('-odac')
 cs.compileOrc(orc)
@@ -46,9 +46,8 @@ fig, ax = plt.subplots()
 ax.set(xlim=(0, fs/2), ylim=(0, 1))
 line, = ax.plot([], [], lw=2)
 
-f_axis_delta = fs/fftSize
-f_axis = np.arange(0,fs/2 + f_axis_delta,f_axis_delta)
-fftArray = np.zeros(fftSize + 2) # array length must be fftSize+2
+	chs = int(CORDELIA_NCHNLS)
+	sig = np.reshape(cs.spout(), (-1, chs))  # Reshape the array
 
 def animate(i, f_axis_cs=[], amp_vals=[]):
     cs.tableCopyOut(1, fftArray)

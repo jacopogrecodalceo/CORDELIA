@@ -31,6 +31,7 @@ aosc		/= 3
 
 acheby		chebyshevpoly  aosc, 25*idyn, k1*idyn, k2, k3, k4, k5*idyn, k6
 aout		balance2 acheby, aosc
+aout		dcblock2 aout
 
 	$dur_var(5)
 	$END_INSTR

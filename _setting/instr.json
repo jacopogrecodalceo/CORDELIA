@@ -4129,6 +4129,11 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/orphans3.orc",
         "type": "instr"
     },
+    "orphans3x": {
+        "global_var": [],
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/orphans3x.orc",
+        "type": "instr"
+    },
     "orphans4": {
         "global_var": [
             "gkorphans4_vib"
@@ -4331,6 +4336,11 @@
     "pianons": {
         "global_var": [],
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianons.orc",
+        "type": "instr"
+    },
+    "pianot": {
+        "global_var": [],
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianot.orc",
         "type": "instr"
     },
     "pij": {

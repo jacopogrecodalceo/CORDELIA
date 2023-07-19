@@ -6,12 +6,12 @@ PARAM_1 init ntof("4B")
 ;gen
 PARAM_2 init .5
 
-PARAM_OUT string_filter PARAM_IN, PARAM_1, PARAM_2
+PARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2
 
 ;OPCODE
 
 
-	opcode string_filter, a, akk
+	opcode cor_streason, a, akk
 	ain, kfreq, kq xin
 
 kfreq += oscili:k(.5, gkbeatf/64)

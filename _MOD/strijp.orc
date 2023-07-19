@@ -8,13 +8,15 @@ PARAM_2 init i(gkbeats)/24
 
 PARAM_3 init .5
 
-PARAM_OUT string_filter PARAM_IN, portk(PARAM_1, PARAM_2), PARAM_3
+PARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3
 
 ;OPCODE
 
 
-	opcode string_filter, a, akk
-	ain, kfreq, kq xin
+	opcode cor_streason_p, a, akkk
+	ain, kfreq, kport, kq xin
+
+kfreq	portk kfreq, kport
 
 aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
 
