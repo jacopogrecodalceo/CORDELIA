@@ -185,7 +185,21 @@ def get_cordelia_instr_paths(instrs_used):
 
 def get_cordelia_instr_clear_lines(instrs_used):
 	lines = []
+
+	master_line = [
+			';---',
+			'gSmouth[] init ginchnls',
+			'indx	init 0',
+			'until	indx == ginchnls do',
+			'	gSmouth[indx] sprintf "mouth_%i", indx+1',
+			'	isend	= 950 + (indx+1)/1000 + 1/10000',
+			'	schedule isend, 0, -1, sprintf("mouth_%i", indx+1)',
+			'	indx	+= 1',
+			'od\n',
+		]
+	lines.append('\n'.join(master_line))
 	for i, instr in enumerate(instrs_used):
+		i += 1
 		line = [
 			';---',
 			f'gS{instr}[] init ginchnls',

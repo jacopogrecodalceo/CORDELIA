@@ -10,7 +10,13 @@ from utils.misc import count_time, county_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
 import time
 
+from visual import show_spectrogram
+
 from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_LOG, CORDELIA_OUT_COR, CORDELIA_CURRENT_DIR
+import queue
+
+# Define a thread-safe queue
+cordelia_queue = queue.Queue()
 
 CORDELIA_OUT_LOG_open = ''
 CORDELIA_OUT_COR_open = ''
@@ -162,10 +168,11 @@ def csound_perf_homemade(cs, completion_event):
 
 # Define the function to be executed in the thread
 def csound_perf_homemade(cs, completion_event):
+	
 	cs.start()
 
 	while cs.performKsmps() == 0:
-		pass
+		cordelia_queue.put(cs.spout())  # Put the data into the queue
 
 	cs.cleanup()
 
@@ -193,44 +200,30 @@ if __name__ == '__main__':
 	print('CSOUND is ON!')
 	t.start()
 	csound_thread.start()
-		#pt.play()
-
-	# Monitor the thread using the completion event
-	while not completion_event.is_set():
-		""" 
-		if RECORD and cordelia_init and record_init:
-			#rec_thread.start()
-			print(f'RECORDING IS {cordelia_init}')
-			record_init = False
-
- """
-		time.sleep(1/CORDELIA_SR)
 	
+	# Show the spectrogram in parallel while updating the queue
+	while True:
+		try:
+			cordelia_spout = cordelia_queue.get_nowait()
+			show_spectrogram(cordelia_spout)
+		except queue.Empty:
+			# If the queue is empty, continue processing or do other tasks
+			pass
+
+		if csound_thread.is_alive():
+			# Optionally, add a small sleep to avoid busy waiting
+			time.sleep(100/CORDELIA_SR)
+		else:
+			break
+
 	csound_thread.join()
-	#if not record_init:
-		#rec_thread.join()
-		
 
-#		while pt.status() == 0:	
-
-
-		#pt.stopRecord()
-
-
-		#print('Record OFF')
-	
 	if CORDELIA_OUT_LOG_open:
 		CORDELIA_OUT_LOG_open.close()
 		CORDELIA_OUT_COR_open.close()
-
-	#if not record_init:
-	#	tfm = sox.Transformer()
-	#	min_silence_duration = 3.5
-	#	#tfm.silence(1, .015, min_silence_duration, True)
-	#	tfm.set_input_format(ignore_length=True)
-	#	tfm.build(CORDELIA_OUT_RAW, CORDELIA_OUT_WAV)
 
 	print('CSOUND is OFF!')
 
 	del csound_cordelia
 	exit()
+

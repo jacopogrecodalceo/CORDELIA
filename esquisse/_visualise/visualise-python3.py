@@ -46,7 +46,7 @@ fig, ax = plt.subplots()
 ax.set(xlim=(0, fs/2), ylim=(0, 1))
 line, = ax.plot([], [], lw=2)
 
-	chs = int(CORDELIA_NCHNLS)
+	chs = int(2)
 	sig = np.reshape(cs.spout(), (-1, chs))  # Reshape the array
 
 def animate(i, f_axis_cs=[], amp_vals=[]):

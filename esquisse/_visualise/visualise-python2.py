@@ -3,6 +3,8 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 import numpy as np
 
+cs = csound.Csound()
+
 def animate(i, fftArray, line, f_axis):
     cs.tableCopyOut(1, fftArray)
     amp_vals = fftArray[0::2]  # fft amplitude values
@@ -35,7 +37,6 @@ def main():
     '''
     sco = "i1 0 50\n"
 
-    cs = csound.Csound()
     cs.setOption('-odac')
     cs.compileOrc(orc)
     cs.readScore(sco)
