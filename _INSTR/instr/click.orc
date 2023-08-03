@@ -1,6 +1,4 @@
-	instr click
-
-	$params
+	$START_INSTR(click)
 
 ain		fractalnoise $dyn_var, expseg(.95, idur, .05)
 
@@ -17,4 +15,3 @@ $dur_var(10)
 
 	$END_INSTR
 
-	endin

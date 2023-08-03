@@ -31,6 +31,38 @@
         "sample_rate": "44100",
         "type": "sonvs"
     },
+    "BD808_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD0075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD1075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2500.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2510.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2525.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2550.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD2575.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD5075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7500.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7510.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7525.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7550.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/BD808/BD7575.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
     "BD808_so": {
         "channels": "1",
         "path": [
@@ -96,6 +128,38 @@
         "type": "sonvs"
     },
     "SD808": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD1075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2500.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2510.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2525.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2550.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD2575.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD5075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7500.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7510.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7525.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7550.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD7575.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "SD808_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/SD808/SD0000.wav",
@@ -227,6 +291,32 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "alghed_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghed/alghed-18.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "alghed_so": {
         "channels": "2",
         "path": [
@@ -298,6 +388,25 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "alghef_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alghef/alghef-11.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "alghef_so": {
         "channels": "2",
         "path": [
@@ -341,7 +450,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
         ],
-        "pitch": 70.66826987915456,
+        "pitch": 70.66827353708615,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -350,7 +459,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
         ],
-        "pitch": 269.7970559556251,
+        "pitch": 269.79703553235873,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "algo2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
+        ],
+        "pitch": 269.79703553235873,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -359,7 +477,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
         ],
-        "pitch": 269.7970559556251,
+        "pitch": 269.79703553235873,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -368,7 +486,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
         ],
-        "pitch": 269.7970559556251,
+        "pitch": 269.79703553235873,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "algo_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
+        ],
+        "pitch": 70.66827353708615,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -377,7 +504,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
         ],
-        "pitch": 70.66826987915456,
+        "pitch": 70.66827353708615,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -386,7 +513,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
         ],
-        "pitch": 70.66826987915456,
+        "pitch": 70.66827353708615,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -395,7 +522,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alina.wav"
         ],
-        "pitch": 30.82134466831558,
+        "pitch": 30.82134444872327,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "alina_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alina.wav"
+        ],
+        "pitch": 30.82134444872327,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -404,7 +540,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alina.wav"
         ],
-        "pitch": 30.82134466831558,
+        "pitch": 30.82134444872327,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -413,7 +549,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alina.wav"
         ],
-        "pitch": 30.82134466831558,
+        "pitch": 30.82134444872327,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -457,7 +593,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
         ],
-        "pitch": 61.50975093855285,
+        "pitch": 61.50653809423439,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "amen_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
+        ],
+        "pitch": 61.50653809423439,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -466,7 +611,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
         ],
-        "pitch": 61.50975093855285,
+        "pitch": 61.50653809423439,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -475,7 +620,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
         ],
-        "pitch": 61.50975093855285,
+        "pitch": 61.50653809423439,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -484,7 +629,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
         ],
-        "pitch": 100.60885962825185,
+        "pitch": 100.60885785203001,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "amor_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
+        ],
+        "pitch": 100.60885785203001,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -493,7 +647,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
         ],
-        "pitch": 100.60885962825185,
+        "pitch": 100.60885785203001,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -502,7 +656,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
         ],
-        "pitch": 100.60885962825185,
+        "pitch": 100.60885785203001,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -521,7 +675,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
         ],
-        "pitch": 179.68486426864337,
+        "pitch": 179.6374851472783,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "arm1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
+        ],
+        "pitch": 179.6374851472783,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -530,7 +693,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
         ],
-        "pitch": 179.68486426864337,
+        "pitch": 179.6374851472783,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -539,7 +702,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
         ],
-        "pitch": 179.68486426864337,
+        "pitch": 179.6374851472783,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -548,7 +711,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
         ],
-        "pitch": 184.02468309908318,
+        "pitch": 184.0663662811584,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "arm2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
+        ],
+        "pitch": 184.0663662811584,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -557,7 +729,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
         ],
-        "pitch": 184.02468309908318,
+        "pitch": 184.0663662811584,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -566,7 +738,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
         ],
-        "pitch": 184.02468309908318,
+        "pitch": 184.0663662811584,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -575,7 +747,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
         ],
-        "pitch": 192.32944001075856,
+        "pitch": 192.72614282829514,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "armagain_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
+        ],
+        "pitch": 192.72614282829514,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -584,7 +765,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
         ],
-        "pitch": 192.32944001075856,
+        "pitch": 192.72614282829514,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -593,7 +774,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
         ],
-        "pitch": 192.32944001075856,
+        "pitch": 192.72614282829514,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -602,7 +783,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/balbal.wav"
         ],
-        "pitch": 331.7504677264159,
+        "pitch": 331.75100120290716,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "balbal_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/balbal.wav"
+        ],
+        "pitch": 331.75100120290716,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -611,7 +801,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/balbal.wav"
         ],
-        "pitch": 331.7504677264159,
+        "pitch": 331.75100120290716,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -620,7 +810,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/balbal.wav"
         ],
-        "pitch": 331.7504677264159,
+        "pitch": 331.75100120290716,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -634,7 +824,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
         ],
-        "pitch": 49.650627804386446,
+        "pitch": 49.650574178914994,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "bd10_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
+        ],
+        "pitch": 49.650574178914994,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -643,7 +842,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
         ],
-        "pitch": 49.650627804386446,
+        "pitch": 49.650574178914994,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -652,7 +851,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
         ],
-        "pitch": 49.650627804386446,
+        "pitch": 49.650574178914994,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -702,7 +901,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
         ],
-        "pitch": 419.8680203052896,
+        "pitch": 419.86804390282737,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bee1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
+        ],
+        "pitch": 419.86804390282737,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -711,7 +919,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
         ],
-        "pitch": 419.8680203052896,
+        "pitch": 419.86804390282737,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -720,7 +928,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
         ],
-        "pitch": 419.8680203052896,
+        "pitch": 419.86804390282737,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -729,7 +937,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
         ],
-        "pitch": 843.3270497028882,
+        "pitch": 843.3270197646509,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bee2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
+        ],
+        "pitch": 843.3270197646509,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -738,7 +955,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
         ],
-        "pitch": 843.3270497028882,
+        "pitch": 843.3270197646509,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -747,7 +964,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
         ],
-        "pitch": 843.3270497028882,
+        "pitch": 843.3270197646509,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -756,7 +973,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
         ],
-        "pitch": 34.46136339004773,
+        "pitch": 34.46136306357735,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bee_char_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
+        ],
+        "pitch": 34.46136306357735,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -765,7 +991,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
         ],
-        "pitch": 34.46136339004773,
+        "pitch": 34.46136306357735,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -774,7 +1000,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
         ],
-        "pitch": 34.46136339004773,
+        "pitch": 34.46136306357735,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -835,7 +1061,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
         ],
-        "pitch": 55.704014184917995,
+        "pitch": 55.70401911816885,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -844,7 +1070,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
         ],
-        "pitch": 777.6465155138214,
+        "pitch": 777.6483664350721,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bleu2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
+        ],
+        "pitch": 777.6483664350721,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -853,7 +1088,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
         ],
-        "pitch": 777.6465155138214,
+        "pitch": 777.6483664350721,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -862,8 +1097,17 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
         ],
-        "pitch": 777.6465155138214,
+        "pitch": 777.6483664350721,
         "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bleu_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
+        ],
+        "pitch": 55.70401911816885,
+        "sample_rate": "44100",
         "type": "sonvs"
     },
     "bleu_so": {
@@ -871,7 +1115,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
         ],
-        "pitch": 55.704014184917995,
+        "pitch": 55.70401911816885,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -880,7 +1124,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
         ],
-        "pitch": 55.704014184917995,
+        "pitch": 55.70401911816885,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -889,7 +1133,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
         ],
-        "pitch": 1373.59990079712,
+        "pitch": 135.99431750120326,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -898,7 +1142,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
         ],
-        "pitch": 156.57435834503903,
+        "pitch": 153.14374428633778,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bois2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
+        ],
+        "pitch": 153.14374428633778,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -907,7 +1160,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
         ],
-        "pitch": 156.57435834503903,
+        "pitch": 153.14374428633778,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -916,7 +1169,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
         ],
-        "pitch": 156.57435834503903,
+        "pitch": 153.14374428633778,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bois_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
+        ],
+        "pitch": 135.99431750120326,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -925,7 +1187,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
         ],
-        "pitch": 1373.59990079712,
+        "pitch": 135.99431750120326,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -934,7 +1196,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
         ],
-        "pitch": 1373.59990079712,
+        "pitch": 135.99431750120326,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -943,7 +1205,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
         ],
-        "pitch": 49.133859419735884,
+        "pitch": 49.46363043380227,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "break_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
+        ],
+        "pitch": 49.46363043380227,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -952,7 +1223,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
         ],
-        "pitch": 49.133859419735884,
+        "pitch": 49.46363043380227,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -961,7 +1232,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
         ],
-        "pitch": 49.133859419735884,
+        "pitch": 49.46363043380227,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -970,7 +1241,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bros.wav"
         ],
-        "pitch": 261.56019412486535,
+        "pitch": 261.56256331640486,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "bros_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bros.wav"
+        ],
+        "pitch": 261.56256331640486,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -979,7 +1259,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bros.wav"
         ],
-        "pitch": 261.56019412486535,
+        "pitch": 261.56256331640486,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -988,7 +1268,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bros.wav"
         ],
-        "pitch": 261.56019412486535,
+        "pitch": 261.56256331640486,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1008,6 +1288,20 @@
         "type": "instr"
     },
     "caillou": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-001.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-007.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "caillou_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caillou/caillou-001.wav",
@@ -1054,7 +1348,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
         ],
-        "pitch": 58.20972885928379,
+        "pitch": 58.20944965235337,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "caiu_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
+        ],
+        "pitch": 58.20944965235337,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1063,7 +1366,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
         ],
-        "pitch": 58.20972885928379,
+        "pitch": 58.20944965235337,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1072,7 +1375,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
         ],
-        "pitch": 58.20972885928379,
+        "pitch": 58.20944965235337,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1091,6 +1394,18 @@
         "type": "instr"
     },
     "capr1x": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-04.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "capr1x_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr1x/capr1x-00.wav",
@@ -1141,6 +1456,21 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "capr2x_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-001.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-007.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capr2x/capr2x-008.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "capr2x_so": {
         "channels": "2",
         "path": [
@@ -1176,7 +1506,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
         ],
-        "pitch": 49.25161096352133,
+        "pitch": 49.25158490216755,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "capriccio1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
+        ],
+        "pitch": 49.25158490216755,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1185,7 +1524,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
         ],
-        "pitch": 49.25161096352133,
+        "pitch": 49.25158490216755,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1194,7 +1533,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
         ],
-        "pitch": 49.25161096352133,
+        "pitch": 49.25158490216755,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1203,7 +1542,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
         ],
-        "pitch": 1121.9286254781873,
+        "pitch": 1121.9303468502064,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "capriccio2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
+        ],
+        "pitch": 1121.9303468502064,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1212,7 +1560,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
         ],
-        "pitch": 1121.9286254781873,
+        "pitch": 1121.9303468502064,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1221,7 +1569,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
         ],
-        "pitch": 1121.9286254781873,
+        "pitch": 1121.9303468502064,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1274,6 +1622,15 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "cauch_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cauch.wav"
+        ],
+        "pitch": 3675.0,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "cauch_so": {
         "channels": "2",
         "path": [
@@ -1293,6 +1650,60 @@
         "type": "sonvs"
     },
     "chime": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_29.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_30.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_31.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_32.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_33.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_34.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_35.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_36.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_37.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_38.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_39.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_40.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_41.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_42.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_43.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_44.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_45.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_46.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "chime_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chime/chime_00.wav",
@@ -1485,6 +1896,37 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "chiseq_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/chiseq/chiseq_23.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "chiseq_so": {
         "channels": "2",
         "path": [
@@ -1552,7 +1994,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
         ],
-        "pitch": 43.4463378197655,
+        "pitch": 43.44627820337512,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "ciel_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
+        ],
+        "pitch": 43.44627820337512,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1561,7 +2012,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
         ],
-        "pitch": 43.4463378197655,
+        "pitch": 43.44627820337512,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1570,7 +2021,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
         ],
-        "pitch": 43.4463378197655,
+        "pitch": 43.44627820337512,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1589,7 +2040,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
         ],
-        "pitch": 41.75700815996066,
+        "pitch": 41.76160766212245,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "coeur_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
+        ],
+        "pitch": 41.76160766212245,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1598,7 +2058,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
         ],
-        "pitch": 41.75700815996066,
+        "pitch": 41.76160766212245,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1607,7 +2067,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
         ],
-        "pitch": 41.75700815996066,
+        "pitch": 41.76160766212245,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1616,7 +2076,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
         ],
-        "pitch": 247.52541768359123,
+        "pitch": 257.7988230579166,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "contempo_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
+        ],
+        "pitch": 257.7988230579166,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1625,7 +2094,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
         ],
-        "pitch": 247.52541768359123,
+        "pitch": 257.7988230579166,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1634,7 +2103,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
         ],
-        "pitch": 247.52541768359123,
+        "pitch": 257.7988230579166,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1648,7 +2117,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
         ],
-        "pitch": 304.44493918213306,
+        "pitch": 304.44495737915935,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "cos_u_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
+        ],
+        "pitch": 304.44495737915935,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1657,7 +2135,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
         ],
-        "pitch": 304.44493918213306,
+        "pitch": 304.44495737915935,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1666,7 +2144,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
         ],
-        "pitch": 304.44493918213306,
+        "pitch": 304.44495737915935,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1675,7 +2153,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
         ],
-        "pitch": 404.66528802382203,
+        "pitch": 404.6652739863112,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "crij_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
+        ],
+        "pitch": 404.6652739863112,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1684,7 +2171,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
         ],
-        "pitch": 404.66528802382203,
+        "pitch": 404.6652739863112,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1693,7 +2180,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
         ],
-        "pitch": 404.66528802382203,
+        "pitch": 404.6652739863112,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1702,7 +2189,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
         ],
-        "pitch": 271.9127863251336,
+        "pitch": 271.9585616722328,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "cril_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
+        ],
+        "pitch": 271.9585616722328,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1711,7 +2207,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
         ],
-        "pitch": 271.9127863251336,
+        "pitch": 271.9585616722328,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1720,7 +2216,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
         ],
-        "pitch": 271.9127863251336,
+        "pitch": 271.9585616722328,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1729,7 +2225,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crys.wav"
         ],
-        "pitch": 49.99680655889206,
+        "pitch": 49.98990163796816,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "crys_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crys.wav"
+        ],
+        "pitch": 49.98990163796816,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1738,7 +2243,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crys.wav"
         ],
-        "pitch": 49.99680655889206,
+        "pitch": 49.98990163796816,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1747,7 +2252,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crys.wav"
         ],
-        "pitch": 49.99680655889206,
+        "pitch": 49.98990163796816,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1766,7 +2271,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
         ],
-        "pitch": 155.80865287378617,
+        "pitch": 154.24315578233544,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "dance_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
+        ],
+        "pitch": 154.24315578233544,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1775,7 +2289,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
         ],
-        "pitch": 155.80865287378617,
+        "pitch": 154.24315578233544,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1784,7 +2298,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
         ],
-        "pitch": 155.80865287378617,
+        "pitch": 154.24315578233544,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -1793,7 +2307,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead1.wav"
         ],
-        "pitch": 61.23996292580172,
+        "pitch": 61.24023307533537,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "dead1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead1.wav"
+        ],
+        "pitch": 61.24023307533537,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1802,7 +2325,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead1.wav"
         ],
-        "pitch": 61.23996292580172,
+        "pitch": 61.24023307533537,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1811,7 +2334,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead1.wav"
         ],
-        "pitch": 61.23996292580172,
+        "pitch": 61.24023307533537,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1820,7 +2343,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead2.wav"
         ],
-        "pitch": 2790.9051800243874,
+        "pitch": 2731.661661068115,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "dead2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead2.wav"
+        ],
+        "pitch": 2731.661661068115,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1829,7 +2361,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead2.wav"
         ],
-        "pitch": 2790.9051800243874,
+        "pitch": 2731.661661068115,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1838,7 +2370,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead2.wav"
         ],
-        "pitch": 2790.9051800243874,
+        "pitch": 2731.661661068115,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1847,7 +2379,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead3.wav"
         ],
-        "pitch": 206.5787229238402,
+        "pitch": 206.57876244998448,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "dead3_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead3.wav"
+        ],
+        "pitch": 206.57876244998448,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1856,7 +2397,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead3.wav"
         ],
-        "pitch": 206.5787229238402,
+        "pitch": 206.57876244998448,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1865,7 +2406,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead3.wav"
         ],
-        "pitch": 206.5787229238402,
+        "pitch": 206.57876244998448,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1874,7 +2415,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead4.wav"
         ],
-        "pitch": 194.95168149468458,
+        "pitch": 194.94569962390892,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "dead4_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead4.wav"
+        ],
+        "pitch": 194.94569962390892,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1883,7 +2433,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead4.wav"
         ],
-        "pitch": 194.95168149468458,
+        "pitch": 194.94569962390892,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -1892,11 +2442,38 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead4.wav"
         ],
-        "pitch": 194.95168149468458,
+        "pitch": 194.94569962390892,
         "sample_rate": "44100",
         "type": "sonvs"
     },
     "dismatter": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil007.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil008.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil009.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil011.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil012.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil013.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil014.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil015.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil016.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil017.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil018.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil019.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil020.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil021.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "dismatter_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dismatter/disfigured_matter_split_sil002.wav",
@@ -1978,6 +2555,43 @@
         "type": "sonvs"
     },
     "distmar": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_29.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "distmar_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/distmar/distmar_00.wav",
@@ -2105,7 +2719,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
         ],
-        "pitch": 46.308676549606645,
+        "pitch": 46.30867644672575,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "dp_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
+        ],
+        "pitch": 46.30867644672575,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2114,7 +2737,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
         ],
-        "pitch": 46.308676549606645,
+        "pitch": 46.30867644672575,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2123,7 +2746,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
         ],
-        "pitch": 46.308676549606645,
+        "pitch": 46.30867644672575,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2132,7 +2755,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
         ],
-        "pitch": 185.1109839078336,
+        "pitch": 185.1113294948081,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "drum_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
+        ],
+        "pitch": 185.1113294948081,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2141,7 +2773,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
         ],
-        "pitch": 185.1109839078336,
+        "pitch": 185.1113294948081,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2150,7 +2782,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
         ],
-        "pitch": 185.1109839078336,
+        "pitch": 185.1113294948081,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2159,7 +2791,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
         ],
-        "pitch": 103.21580189003899,
+        "pitch": 103.21569407741408,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "drumhigh_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
+        ],
+        "pitch": 103.21569407741408,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2168,7 +2809,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
         ],
-        "pitch": 103.21580189003899,
+        "pitch": 103.21569407741408,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2177,7 +2818,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
         ],
-        "pitch": 103.21580189003899,
+        "pitch": 103.21569407741408,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2186,7 +2827,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
         ],
-        "pitch": 38.87875356543427,
+        "pitch": 38.87869470352459,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elacid_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
+        ],
+        "pitch": 38.87869470352459,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2195,7 +2845,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
         ],
-        "pitch": 38.87875356543427,
+        "pitch": 38.87869470352459,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2204,7 +2854,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
         ],
-        "pitch": 38.87875356543427,
+        "pitch": 38.87869470352459,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2213,7 +2863,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
         ],
-        "pitch": 84.89055262232296,
+        "pitch": 84.91156065722468,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elair_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
+        ],
+        "pitch": 84.91156065722468,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2222,7 +2881,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
         ],
-        "pitch": 84.89055262232296,
+        "pitch": 84.91156065722468,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2231,7 +2890,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
         ],
-        "pitch": 84.89055262232296,
+        "pitch": 84.91156065722468,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2240,7 +2899,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
         ],
-        "pitch": 38.80380648293869,
+        "pitch": 38.80380747251939,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elground_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
+        ],
+        "pitch": 38.80380747251939,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2249,7 +2917,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
         ],
-        "pitch": 38.80380648293869,
+        "pitch": 38.80380747251939,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2258,7 +2926,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
         ],
-        "pitch": 38.80380648293869,
+        "pitch": 38.80380747251939,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2267,7 +2935,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
         ],
-        "pitch": 62.1111896104924,
+        "pitch": 62.097931443769255,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elpark_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
+        ],
+        "pitch": 62.097931443769255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2276,7 +2953,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
         ],
-        "pitch": 62.1111896104924,
+        "pitch": 62.097931443769255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2285,7 +2962,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
         ],
-        "pitch": 62.1111896104924,
+        "pitch": 62.097931443769255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2294,7 +2971,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
         ],
-        "pitch": 37.09326030109037,
+        "pitch": 37.0933973518127,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "elpot_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
+        ],
+        "pitch": 37.0933973518127,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2303,7 +2989,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
         ],
-        "pitch": 37.09326030109037,
+        "pitch": 37.0933973518127,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2312,7 +2998,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
         ],
-        "pitch": 37.09326030109037,
+        "pitch": 37.0933973518127,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2321,7 +3007,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
         ],
-        "pitch": 85.06686211940188,
+        "pitch": 85.07164565424972,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elterre_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
+        ],
+        "pitch": 85.07164565424972,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2330,7 +3025,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
         ],
-        "pitch": 85.06686211940188,
+        "pitch": 85.07164565424972,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2339,7 +3034,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
         ],
-        "pitch": 85.06686211940188,
+        "pitch": 85.07164565424972,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2348,7 +3043,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
         ],
-        "pitch": 91.78865625863328,
+        "pitch": 91.6806124394752,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elwater_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
+        ],
+        "pitch": 91.6806124394752,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2357,7 +3061,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
         ],
-        "pitch": 91.78865625863328,
+        "pitch": 91.6806124394752,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2366,7 +3070,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
         ],
-        "pitch": 91.78865625863328,
+        "pitch": 91.6806124394752,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2375,7 +3079,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
         ],
-        "pitch": 85.8263488697309,
+        "pitch": 85.82634945871483,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "elwind_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
+        ],
+        "pitch": 85.82634945871483,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2384,7 +3097,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
         ],
-        "pitch": 85.8263488697309,
+        "pitch": 85.82634945871483,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2393,7 +3106,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
         ],
-        "pitch": 85.8263488697309,
+        "pitch": 85.82634945871483,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2402,7 +3115,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
         ],
-        "pitch": 53.07608257195746,
+        "pitch": 53.076080743783734,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2411,7 +3124,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
         ],
-        "pitch": 41.26031787195845,
+        "pitch": 41.26031769343689,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "etag2_lpc": {
+        "channels": "4",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
+        ],
+        "pitch": 41.26031769343689,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2420,7 +3142,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
         ],
-        "pitch": 41.26031787195845,
+        "pitch": 41.26031769343689,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2429,7 +3151,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
         ],
-        "pitch": 41.26031787195845,
+        "pitch": 41.26031769343689,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "etag_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
+        ],
+        "pitch": 53.076080743783734,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2438,7 +3169,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
         ],
-        "pitch": 53.07608257195746,
+        "pitch": 53.076080743783734,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2447,7 +3178,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
         ],
-        "pitch": 53.07608257195746,
+        "pitch": 53.076080743783734,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2490,6 +3221,18 @@
         "type": "instr"
     },
     "falga": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-05.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "falga_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/falga/falga-01.wav",
@@ -2552,7 +3295,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
         ],
-        "pitch": 29.12187522278858,
+        "pitch": 29.121874166053704,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "fragment_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
+        ],
+        "pitch": 29.121874166053704,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2561,7 +3313,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
         ],
-        "pitch": 29.12187522278858,
+        "pitch": 29.121874166053704,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2570,7 +3322,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
         ],
-        "pitch": 29.12187522278858,
+        "pitch": 29.121874166053704,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2583,6 +3335,26 @@
         "type": "instr"
     },
     "gameld": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_12.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gameld_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gameld/gameld_00.wav",
@@ -2662,6 +3434,26 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "gamelf_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gamelf/gamelf_12.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "gamelf_so": {
         "channels": "2",
         "path": [
@@ -2707,7 +3499,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
         ],
-        "pitch": 91.86717073955158,
+        "pitch": 93.74362634326617,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gesto1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
+        ],
+        "pitch": 93.74362634326617,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2716,7 +3517,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
         ],
-        "pitch": 91.86717073955158,
+        "pitch": 93.74362634326617,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2725,7 +3526,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
         ],
-        "pitch": 91.86717073955158,
+        "pitch": 93.74362634326617,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2734,7 +3535,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
         ],
-        "pitch": 397.12606951971446,
+        "pitch": 397.1662289676019,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gesto1var_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
+        ],
+        "pitch": 397.1662289676019,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2743,7 +3553,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
         ],
-        "pitch": 397.12606951971446,
+        "pitch": 397.1662289676019,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2752,7 +3562,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
         ],
-        "pitch": 397.12606951971446,
+        "pitch": 397.1662289676019,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2761,7 +3571,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
         ],
-        "pitch": 64.71265933191782,
+        "pitch": 64.71112709534916,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gesto2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
+        ],
+        "pitch": 64.71112709534916,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2770,7 +3589,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
         ],
-        "pitch": 64.71265933191782,
+        "pitch": 64.71112709534916,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2779,7 +3598,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
         ],
-        "pitch": 64.71265933191782,
+        "pitch": 64.71112709534916,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2788,7 +3607,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
         ],
-        "pitch": 63.48233284693832,
+        "pitch": 63.44151666401817,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gesto3_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
+        ],
+        "pitch": 63.44151666401817,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2797,7 +3625,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
         ],
-        "pitch": 63.48233284693832,
+        "pitch": 63.44151666401817,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2806,7 +3634,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
         ],
-        "pitch": 63.48233284693832,
+        "pitch": 63.44151666401817,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2815,7 +3643,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
         ],
-        "pitch": 95.14107535113838,
+        "pitch": 95.14079173589681,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "gesto4_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
+        ],
+        "pitch": 95.14079173589681,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2824,7 +3661,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
         ],
-        "pitch": 95.14107535113838,
+        "pitch": 95.14079173589681,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2833,7 +3670,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
         ],
-        "pitch": 95.14107535113838,
+        "pitch": 95.14079173589681,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -2860,6 +3697,43 @@
         "type": "instr"
     },
     "grr": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil001.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil007.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil008.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil009.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil011.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil012.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil013.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil014.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil015.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil016.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil017.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil018.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil019.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil020.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil021.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil022.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil023.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil024.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil026.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil027.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil028.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil029.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil030.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "grr_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/grr/marimba_split_sil001.wav",
@@ -2980,7 +3854,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
         ],
-        "pitch": 816.6484035969142,
+        "pitch": 816.5704348862315,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "hh_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
+        ],
+        "pitch": 816.5704348862315,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2989,7 +3872,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
         ],
-        "pitch": 816.6484035969142,
+        "pitch": 816.5704348862315,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -2998,7 +3881,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
         ],
-        "pitch": 816.6484035969142,
+        "pitch": 816.5704348862315,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3036,6 +3919,37 @@
         "type": "instr"
     },
     "iveheard": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_00a.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_00b.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_22.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "iveheard_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/iveheard/ive-heard-a-piano_00a.wav",
@@ -3138,7 +4052,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
         ],
-        "pitch": 435.6934597455593,
+        "pitch": 435.39218179899825,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "junis_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
+        ],
+        "pitch": 435.39218179899825,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3147,7 +4070,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
         ],
-        "pitch": 435.6934597455593,
+        "pitch": 435.39218179899825,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3156,11 +4079,29 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
         ],
-        "pitch": 435.6934597455593,
+        "pitch": 435.39218179899825,
         "sample_rate": "48000",
         "type": "sonvs"
     },
     "kali": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_2.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_3.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_4.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_5.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_6.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_7.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_8.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_9.wav"
+        ],
+        "sample_rate": "96000",
+        "type": "sonvs"
+    },
+    "kali_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/kali/note_1.wav",
@@ -3219,7 +4160,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
         ],
-        "pitch": 77.86379357537533,
+        "pitch": 77.86379170247156,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "katia_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
+        ],
+        "pitch": 77.86379170247156,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3228,7 +4178,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
         ],
-        "pitch": 77.86379357537533,
+        "pitch": 77.86379170247156,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3237,7 +4187,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
         ],
-        "pitch": 77.86379357537533,
+        "pitch": 77.86379170247156,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3266,7 +4216,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
         ],
-        "pitch": 123.35651566215691,
+        "pitch": 123.3565147694425,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "leo_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
+        ],
+        "pitch": 123.3565147694425,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3275,7 +4234,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
         ],
-        "pitch": 123.35651566215691,
+        "pitch": 123.3565147694425,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3284,7 +4243,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
         ],
-        "pitch": 123.35651566215691,
+        "pitch": 123.3565147694425,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3293,7 +4252,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
         ],
-        "pitch": 46.03890415388763,
+        "pitch": 46.03849613488452,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "lovelines_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
+        ],
+        "pitch": 46.03849613488452,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3302,7 +4270,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
         ],
-        "pitch": 46.03890415388763,
+        "pitch": 46.03849613488452,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3311,7 +4279,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
         ],
-        "pitch": 46.03890415388763,
+        "pitch": 46.03849613488452,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3330,7 +4298,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
         ],
-        "pitch": 136.7135718414375,
+        "pitch": 137.71130428158006,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "madcow_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
+        ],
+        "pitch": 137.71130428158006,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3339,7 +4316,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
         ],
-        "pitch": 136.7135718414375,
+        "pitch": 137.71130428158006,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3348,7 +4325,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
         ],
-        "pitch": 136.7135718414375,
+        "pitch": 137.71130428158006,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3371,7 +4348,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
         ],
-        "pitch": 958.4168986761897,
+        "pitch": 959.7610792514669,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "maison_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
+        ],
+        "pitch": 959.7610792514669,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3380,7 +4366,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
         ],
-        "pitch": 958.4168986761897,
+        "pitch": 959.7610792514669,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3389,11 +4375,28 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
         ],
-        "pitch": 958.4168986761897,
+        "pitch": 959.7610792514669,
         "sample_rate": "48000",
         "type": "sonvs"
     },
     "malon": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_09.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "malon_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/malon/malon_00.wav",
@@ -3449,7 +4452,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
         ],
-        "pitch": 54.862377752832614,
+        "pitch": 54.86237390285555,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "mario1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
+        ],
+        "pitch": 54.86237390285555,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3458,7 +4470,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
         ],
-        "pitch": 54.862377752832614,
+        "pitch": 54.86237390285555,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3467,7 +4479,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
         ],
-        "pitch": 54.862377752832614,
+        "pitch": 54.86237390285555,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3476,7 +4488,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
         ],
-        "pitch": 48.81273231829961,
+        "pitch": 48.8127619429104,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "mario2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
+        ],
+        "pitch": 48.8127619429104,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3485,7 +4506,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
         ],
-        "pitch": 48.81273231829961,
+        "pitch": 48.8127619429104,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3494,7 +4515,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
         ],
-        "pitch": 48.81273231829961,
+        "pitch": 48.8127619429104,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3503,7 +4524,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
         ],
-        "pitch": 481.7561711263587,
+        "pitch": 481.7600952198258,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "meer_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
+        ],
+        "pitch": 481.7600952198258,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3512,7 +4542,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
         ],
-        "pitch": 481.7561711263587,
+        "pitch": 481.7600952198258,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3521,7 +4551,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
         ],
-        "pitch": 481.7561711263587,
+        "pitch": 481.7600952198258,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3553,6 +4583,30 @@
         "global_var": [],
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/meli2.orc",
         "type": "instr"
+    },
+    "meli_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-001.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-007.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-008.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-009.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-011.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-012.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-013.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-014.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-015.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-016.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meli/meli-017.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
     },
     "meli_so": {
         "channels": "2",
@@ -3615,7 +4669,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mh.wav"
         ],
-        "pitch": 219.47765061944332,
+        "pitch": 219.477658304794,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "mh_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mh.wav"
+        ],
+        "pitch": 219.477658304794,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3624,7 +4687,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mh.wav"
         ],
-        "pitch": 219.47765061944332,
+        "pitch": 219.477658304794,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3633,7 +4696,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mh.wav"
         ],
-        "pitch": 219.47765061944332,
+        "pitch": 219.477658304794,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3702,7 +4765,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
         ],
-        "pitch": 248.2080414419562,
+        "pitch": 248.20804106937487,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "mirrors_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
+        ],
+        "pitch": 248.20804106937487,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3711,7 +4783,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
         ],
-        "pitch": 248.2080414419562,
+        "pitch": 248.20804106937487,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3720,7 +4792,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
         ],
-        "pitch": 248.2080414419562,
+        "pitch": 248.20804106937487,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -3734,7 +4806,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
         ],
-        "pitch": 506.3704313334824,
+        "pitch": 506.36999355971545,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "nasa_lpc": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
+        ],
+        "pitch": 506.36999355971545,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3743,7 +4824,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
         ],
-        "pitch": 506.3704313334824,
+        "pitch": 506.36999355971545,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3752,7 +4833,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
         ],
-        "pitch": 506.3704313334824,
+        "pitch": 506.36999355971545,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3761,7 +4842,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/neige.wav"
         ],
-        "pitch": 332.1392074630395,
+        "pitch": 332.1099972404347,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "neige_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/neige.wav"
+        ],
+        "pitch": 332.1099972404347,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3770,7 +4860,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/neige.wav"
         ],
-        "pitch": 332.1392074630395,
+        "pitch": 332.1099972404347,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3779,7 +4869,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/neige.wav"
         ],
-        "pitch": 332.1392074630395,
+        "pitch": 332.1099972404347,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3788,7 +4878,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
         ],
-        "pitch": 219.3132803754479,
+        "pitch": 219.3132718582671,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "ninfa_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
+        ],
+        "pitch": 219.3132718582671,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3797,7 +4896,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
         ],
-        "pitch": 219.3132803754479,
+        "pitch": 219.3132718582671,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3806,7 +4905,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
         ],
-        "pitch": 219.3132803754479,
+        "pitch": 219.3132718582671,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3831,6 +4930,50 @@
         "type": "instr"
     },
     "noinput": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-29.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-30.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-31.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-32.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-33.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-34.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-35.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-36.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-37.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "noinput_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput/noinput-01.wav",
@@ -3967,7 +5110,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
         ],
-        "pitch": 32.88091182818266,
+        "pitch": 32.88085092129788,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "noneknows_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
+        ],
+        "pitch": 32.88085092129788,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3976,7 +5128,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
         ],
-        "pitch": 32.88091182818266,
+        "pitch": 32.88085092129788,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3985,7 +5137,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
         ],
-        "pitch": 32.88091182818266,
+        "pitch": 32.88085092129788,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -3994,7 +5146,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
         ],
-        "pitch": 74.04069433671269,
+        "pitch": 74.04069511001262,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "noriff_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
+        ],
+        "pitch": 74.04069511001262,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4003,7 +5164,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
         ],
-        "pitch": 74.04069433671269,
+        "pitch": 74.04069511001262,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4012,7 +5173,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
         ],
-        "pitch": 74.04069433671269,
+        "pitch": 74.04069511001262,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4021,7 +5182,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
         ],
-        "pitch": 78.84278765386577,
+        "pitch": 78.84289603217252,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "november_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
+        ],
+        "pitch": 78.84289603217252,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -4030,7 +5200,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
         ],
-        "pitch": 78.84278765386577,
+        "pitch": 78.84289603217252,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -4039,7 +5209,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
         ],
-        "pitch": 78.84278765386577,
+        "pitch": 78.84289603217252,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -4048,7 +5218,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
         ],
-        "pitch": 59.15912582330698,
+        "pitch": 59.15868130244689,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "ocean_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
+        ],
+        "pitch": 59.15868130244689,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4057,7 +5236,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
         ],
-        "pitch": 59.15912582330698,
+        "pitch": 59.15868130244689,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4066,7 +5245,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
         ],
-        "pitch": 59.15912582330698,
+        "pitch": 59.15868130244689,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4088,7 +5267,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
         ],
-        "pitch": 59.79155342739299,
+        "pitch": 60.09275591380142,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "orp_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
+        ],
+        "pitch": 60.09275591380142,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4097,7 +5285,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
         ],
-        "pitch": 59.79155342739299,
+        "pitch": 60.09275591380142,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4106,7 +5294,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
         ],
-        "pitch": 59.79155342739299,
+        "pitch": 60.09275591380142,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4130,7 +5318,9 @@
         "type": "instr"
     },
     "orphans3x": {
-        "global_var": [],
+        "global_var": [
+            "gkorphans3x_vib"
+        ],
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/orphans3x.orc",
         "type": "instr"
     },
@@ -4142,6 +5332,43 @@
         "type": "instr"
     },
     "pert": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-29.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "pert_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pert/pert-00.wav",
@@ -4274,6 +5501,28 @@
         "sample_rate": "44100",
         "type": "sonvs"
     },
+    "pharm_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_2_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_3_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_4_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_5_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D3_7_2.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_2_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_3_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/D4_4_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_2_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_3_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_4_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_5_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F3_7_2.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F4_2_1.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/pharm/F4_3_1.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
     "pharm_so": {
         "channels": "2",
         "path": [
@@ -4368,7 +5617,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
         ],
-        "pitch": 377.05971297028424,
+        "pitch": 377.2435747593685,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "planche_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
+        ],
+        "pitch": 377.2435747593685,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4377,7 +5635,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
         ],
-        "pitch": 377.05971297028424,
+        "pitch": 377.2435747593685,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4386,7 +5644,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
         ],
-        "pitch": 377.05971297028424,
+        "pitch": 377.2435747593685,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4403,7 +5661,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/porco.wav"
         ],
-        "pitch": 370.84134158804443,
+        "pitch": 372.1257592257831,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "porco_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/porco.wav"
+        ],
+        "pitch": 372.1257592257831,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4412,7 +5679,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/porco.wav"
         ],
-        "pitch": 370.84134158804443,
+        "pitch": 372.1257592257831,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4421,7 +5688,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/porco.wav"
         ],
-        "pitch": 370.84134158804443,
+        "pitch": 372.1257592257831,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4482,6 +5749,16 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "quar2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-05.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "quar2_so": {
         "channels": "2",
         "path": [
@@ -4498,6 +5775,23 @@
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-01.wav",
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-02.wav",
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar2/quar2-05.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "quar_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/quar/quar-10.wav"
         ],
         "sample_rate": "48000",
         "type": "sonvs"
@@ -4541,7 +5835,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
         ],
-        "pitch": 113.71039950741898,
+        "pitch": 113.71048063333778,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "reg_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
+        ],
+        "pitch": 113.71048063333778,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4550,7 +5853,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
         ],
-        "pitch": 113.71039950741898,
+        "pitch": 113.71048063333778,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4559,7 +5862,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
         ],
-        "pitch": 113.71039950741898,
+        "pitch": 113.71048063333778,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4574,6 +5877,15 @@
         "type": "instr"
     },
     "search": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/search.wav"
+        ],
+        "pitch": 3675.0,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "search_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/search.wav"
@@ -4629,7 +5941,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
         ],
-        "pitch": 603.0041316545753,
+        "pitch": 603.0257772822608,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "shaku_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
+        ],
+        "pitch": 603.0257772822608,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4638,7 +5959,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
         ],
-        "pitch": 603.0041316545753,
+        "pitch": 603.0257772822608,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4647,7 +5968,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
         ],
-        "pitch": 603.0041316545753,
+        "pitch": 603.0257772822608,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4656,7 +5977,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
         ],
-        "pitch": 130.53903245976818,
+        "pitch": 130.53509286012513,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "shinji_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
+        ],
+        "pitch": 130.53509286012513,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4665,7 +5995,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
         ],
-        "pitch": 130.53903245976818,
+        "pitch": 130.53509286012513,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4674,7 +6004,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
         ],
-        "pitch": 130.53903245976818,
+        "pitch": 130.53509286012513,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4683,7 +6013,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
         ],
-        "pitch": 137.90762934942012,
+        "pitch": 137.90788126152881,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "shinobi_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
+        ],
+        "pitch": 137.90788126152881,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4692,7 +6031,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
         ],
-        "pitch": 137.90762934942012,
+        "pitch": 137.90788126152881,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4701,7 +6040,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
         ],
-        "pitch": 137.90762934942012,
+        "pitch": 137.90788126152881,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -4713,6 +6052,40 @@
         "type": "instr"
     },
     "sin": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-26.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "sin_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sin/sin-00.wav",
@@ -4815,6 +6188,112 @@
         "type": "sonvs"
     },
     "sinimp": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-000.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-001.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-002.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-003.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-004.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-005.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-006.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-007.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-008.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-009.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-010.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-011.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-012.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-013.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-014.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-015.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-016.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-017.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-018.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-019.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-020.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-021.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-022.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-023.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-024.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-025.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-026.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-027.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-028.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-029.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-030.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-031.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-032.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-033.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-034.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-035.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-036.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-037.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-038.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-039.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-040.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-041.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-042.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-043.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-044.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-045.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-046.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-047.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-048.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-049.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-050.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-051.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-052.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-053.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-054.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-055.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-056.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-057.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-058.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-059.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-060.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-061.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-062.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-063.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-064.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-065.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-066.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-067.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-068.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-069.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-070.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-071.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-072.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-073.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-074.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-075.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-076.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-077.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-078.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-079.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-080.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-081.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-082.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-083.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-084.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-085.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-086.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-087.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-088.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-089.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-090.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-091.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-092.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-093.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-094.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-095.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-096.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-097.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-098.wav"
+        ],
+        "sample_rate": "192000",
+        "type": "sonvs"
+    },
+    "sinimp_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sinimp/sinimp-000.wav",
@@ -5137,7 +6616,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
         ],
-        "pitch": 127.44300686190495,
+        "pitch": 127.44302460554779,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5146,7 +6625,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
         ],
-        "pitch": 189.90280950746552,
+        "pitch": 189.84666244722303,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "six2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
+        ],
+        "pitch": 189.84666244722303,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5155,7 +6643,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
         ],
-        "pitch": 189.90280950746552,
+        "pitch": 189.84666244722303,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5164,7 +6652,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
         ],
-        "pitch": 189.90280950746552,
+        "pitch": 189.84666244722303,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "six_lpc": {
+        "channels": "4",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
+        ],
+        "pitch": 127.44302460554779,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5173,7 +6670,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
         ],
-        "pitch": 127.44300686190495,
+        "pitch": 127.44302460554779,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5182,7 +6679,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
         ],
-        "pitch": 127.44300686190495,
+        "pitch": 127.44302460554779,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5191,7 +6688,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
         ],
-        "pitch": 44.81684260957328,
+        "pitch": 44.81614172316546,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "sixcorrect_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
+        ],
+        "pitch": 44.81614172316546,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5200,7 +6706,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
         ],
-        "pitch": 44.81684260957328,
+        "pitch": 44.81614172316546,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5209,7 +6715,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
         ],
-        "pitch": 44.81684260957328,
+        "pitch": 44.81614172316546,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5218,7 +6724,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
         ],
-        "pitch": 64.3782165526822,
+        "pitch": 64.38056867257751,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "sixspectrumsynth_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
+        ],
+        "pitch": 64.38056867257751,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5227,7 +6742,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
         ],
-        "pitch": 64.3782165526822,
+        "pitch": 64.38056867257751,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5236,7 +6751,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
         ],
-        "pitch": 64.3782165526822,
+        "pitch": 64.38056867257751,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5250,7 +6765,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
         ],
-        "pitch": 49.97374306446435,
+        "pitch": 49.97374284326142,
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "sophie1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
+        ],
+        "pitch": 49.97374284326142,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -5259,7 +6783,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
         ],
-        "pitch": 49.97374306446435,
+        "pitch": 49.97374284326142,
         "sample_rate": "44100",
         "type": "sonvs"
     },
@@ -5268,11 +6792,34 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
         ],
-        "pitch": 49.97374306446435,
+        "pitch": 49.97374284326142,
         "sample_rate": "44100",
         "type": "sonvs"
     },
     "space": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-15.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "space_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/space/space-00.wav",
@@ -5369,7 +6916,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
         ],
-        "pitch": 69.65190912491606,
+        "pitch": 69.6459537339249,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "syeq_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
+        ],
+        "pitch": 69.6459537339249,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5378,7 +6934,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
         ],
-        "pitch": 69.65190912491606,
+        "pitch": 69.6459537339249,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5387,11 +6943,35 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
         ],
-        "pitch": 69.65190912491606,
+        "pitch": 69.6459537339249,
         "sample_rate": "48000",
         "type": "sonvs"
     },
     "tape": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-16.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "tape_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tape/tape-00.wav",
@@ -5464,6 +7044,40 @@
         "type": "sonvs"
     },
     "tapein": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-26.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "tapein_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tapein/tapein-00.wav",
@@ -5570,7 +7184,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
         ],
-        "pitch": 42.202577282662034,
+        "pitch": 42.31776717151877,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "tension_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
+        ],
+        "pitch": 42.31776717151877,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5579,7 +7202,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
         ],
-        "pitch": 42.202577282662034,
+        "pitch": 42.31776717151877,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5588,11 +7211,23 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
         ],
-        "pitch": 42.202577282662034,
+        "pitch": 42.31776717151877,
         "sample_rate": "48000",
         "type": "sonvs"
     },
     "theorbo": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-09.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "theorbo_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/theorbo/theorbo-05.wav",
@@ -5661,6 +7296,22 @@
         "sample_rate": "48000",
         "type": "sonvs"
     },
+    "toy_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/toy/toy_08.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
     "toy_so": {
         "channels": "2",
         "path": [
@@ -5703,7 +7354,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
         ],
-        "pitch": 45.31801749686569,
+        "pitch": 45.31809187249553,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "tricot_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
+        ],
+        "pitch": 45.31809187249553,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5712,7 +7372,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
         ],
-        "pitch": 45.31801749686569,
+        "pitch": 45.31809187249553,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5721,7 +7381,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
         ],
-        "pitch": 45.31801749686569,
+        "pitch": 45.31809187249553,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5735,7 +7395,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
         ],
-        "pitch": 72.60525985044993,
+        "pitch": 72.58822830240607,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "valle_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
+        ],
+        "pitch": 72.58822830240607,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5744,7 +7413,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
         ],
-        "pitch": 72.60525985044993,
+        "pitch": 72.58822830240607,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -5753,11 +7422,40 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
         ],
-        "pitch": 72.60525985044993,
+        "pitch": 72.58822830240607,
         "sample_rate": "48000",
         "type": "sonvs"
     },
     "var14r": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-21.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "var14r_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/var14r/var14r-00.wav",
@@ -5845,6 +7543,35 @@
         "type": "sonvs"
     },
     "varvln": {
+        "channels": "1",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-21.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
+    "varvln_lpc": {
         "channels": "1",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/varvln/varvln-00.wav",
@@ -5980,6 +7707,43 @@
         "sample_rate": "44100",
         "type": "sonvs"
     },
+    "vipere_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vipere/vipere-29.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
     "vipere_so": {
         "channels": "2",
         "path": [
@@ -6059,7 +7823,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
         ],
-        "pitch": 41.45611277499887,
+        "pitch": 41.455662303639556,
+        "sample_rate": "192000",
+        "type": "sonvs"
+    },
+    "virgule_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
+        ],
+        "pitch": 41.455662303639556,
         "sample_rate": "192000",
         "type": "sonvs"
     },
@@ -6068,7 +7841,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
         ],
-        "pitch": 41.45611277499887,
+        "pitch": 41.455662303639556,
         "sample_rate": "192000",
         "type": "sonvs"
     },
@@ -6077,11 +7850,25 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
         ],
-        "pitch": 41.45611277499887,
+        "pitch": 41.455662303639556,
         "sample_rate": "192000",
         "type": "sonvs"
     },
     "vla": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-07.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "vla_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vla/vla-01.wav",
@@ -6124,6 +7911,63 @@
         "type": "sonvs"
     },
     "vlj": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_06.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_07.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_08.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_09.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_10.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_11.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_12.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_13.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_14.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_15.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_16.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_17.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_18.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_19.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_20.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_21.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_22.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_23.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_24.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_25.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_26.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_27.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_28.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_29.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_30.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_31.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_32.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_33.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_34.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_35.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_36.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_37.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_38.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_39.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_40.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_41.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_42.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_43.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_44.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_45.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_46.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_47.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_48.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_49.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_50.wav"
+        ],
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "vlj_lpc": {
         "channels": "2",
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlj/vlj_01.wav",
@@ -6308,6 +8152,20 @@
         "sample_rate": "44100",
         "type": "sonvs"
     },
+    "vlnatk_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-00.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-01.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-02.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-03.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-04.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-05.wav",
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/vlnatk/vlnatk-06.wav"
+        ],
+        "sample_rate": "44100",
+        "type": "sonvs"
+    },
     "vlnatk_so": {
         "channels": "2",
         "path": [
@@ -6356,7 +8214,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
         ],
-        "pitch": 43.74725423289486,
+        "pitch": 43.74725428648136,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "wetri_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
+        ],
+        "pitch": 43.74725428648136,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6365,7 +8232,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
         ],
-        "pitch": 43.74725423289486,
+        "pitch": 43.74725428648136,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6374,7 +8241,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
         ],
-        "pitch": 43.74725423289486,
+        "pitch": 43.74725428648136,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6427,7 +8294,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/yeux.wav"
         ],
-        "pitch": 68.00178035897713,
+        "pitch": 68.00177912912012,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "yeux_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/yeux.wav"
+        ],
+        "pitch": 68.00177912912012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6436,7 +8312,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/yeux.wav"
         ],
-        "pitch": 68.00178035897713,
+        "pitch": 68.00177912912012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6445,7 +8321,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/yeux.wav"
         ],
-        "pitch": 68.00178035897713,
+        "pitch": 68.00177912912012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6454,7 +8330,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
         ],
-        "pitch": 80.39759447086763,
+        "pitch": 80.39782566571012,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz1_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
+        ],
+        "pitch": 80.39782566571012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6463,7 +8348,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
         ],
-        "pitch": 80.39759447086763,
+        "pitch": 80.39782566571012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6472,7 +8357,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
         ],
-        "pitch": 80.39759447086763,
+        "pitch": 80.39782566571012,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6481,7 +8366,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
         ],
-        "pitch": 111.03599054312463,
+        "pitch": 111.03589347212255,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz2_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
+        ],
+        "pitch": 111.03589347212255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6490,7 +8384,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
         ],
-        "pitch": 111.03599054312463,
+        "pitch": 111.03589347212255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6499,7 +8393,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
         ],
-        "pitch": 111.03599054312463,
+        "pitch": 111.03589347212255,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6508,7 +8402,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
         ],
-        "pitch": 354.04910229267773,
+        "pitch": 354.04957543533214,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz3_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
+        ],
+        "pitch": 354.04957543533214,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6517,7 +8420,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
         ],
-        "pitch": 354.04910229267773,
+        "pitch": 354.04957543533214,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6526,7 +8429,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
         ],
-        "pitch": 354.04910229267773,
+        "pitch": 354.04957543533214,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6535,7 +8438,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
         ],
-        "pitch": 1822.2452453853264,
+        "pitch": 1817.3531585215082,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz4_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
+        ],
+        "pitch": 1817.3531585215082,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6544,7 +8456,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
         ],
-        "pitch": 1822.2452453853264,
+        "pitch": 1817.3531585215082,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6553,7 +8465,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
         ],
-        "pitch": 1822.2452453853264,
+        "pitch": 1817.3531585215082,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6562,7 +8474,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
         ],
-        "pitch": 170.12528482319607,
+        "pitch": 170.11341121453478,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz5_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
+        ],
+        "pitch": 170.11341121453478,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6571,7 +8492,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
         ],
-        "pitch": 170.12528482319607,
+        "pitch": 170.11341121453478,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6580,7 +8501,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
         ],
-        "pitch": 170.12528482319607,
+        "pitch": 170.11341121453478,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6589,7 +8510,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
         ],
-        "pitch": 62.80686912629008,
+        "pitch": 71.08881028333502,
+        "sample_rate": "48000",
+        "type": "sonvs"
+    },
+    "zzz6_lpc": {
+        "channels": "2",
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
+        ],
+        "pitch": 71.08881028333502,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6598,7 +8528,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
         ],
-        "pitch": 62.80686912629008,
+        "pitch": 71.08881028333502,
         "sample_rate": "48000",
         "type": "sonvs"
     },
@@ -6607,7 +8537,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
         ],
-        "pitch": 62.80686912629008,
+        "pitch": 71.08881028333502,
         "sample_rate": "48000",
         "type": "sonvs"
     }

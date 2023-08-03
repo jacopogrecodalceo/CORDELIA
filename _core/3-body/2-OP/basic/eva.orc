@@ -1,5 +1,5 @@
 #define eva_kSk_kcps(kcps) #
-if $kcps > 15 && $kcps < 20000 then
+if $kcps > 0 && $kcps < 20000 then
 	kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
 
 	if kch == 0 then

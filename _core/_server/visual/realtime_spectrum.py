@@ -6,57 +6,58 @@ from collections import deque
 from csound import CORDELIA_NCHNLS, CORDELIA_SR
 import threading
 
-# Set the dark background style for plots
-plt.style.use('dark_background')
+def init_spectrum():
+    # Set the dark background style for plots
+    plt.style.use('dark_background')
 
-# Set the desired width and height of the plot in inches
-PLOT_W = 15
-PLOT_H = 5
+    # Set the desired width and height of the plot in inches
+    PLOT_W = 15
+    PLOT_H = 5
 
-# Number of points for FFT (Fast Fourier Transform)
-N_FFT = 8192
+    # Number of points for FFT (Fast Fourier Transform)
+    N_FFT = 8192
 
-N_FFT_CH = N_FFT*CORDELIA_NCHNLS
+    N_FFT_CH = N_FFT*CORDELIA_NCHNLS
 
-# Maximum index of frequency to display
-F_MAX_IDX = int(N_FFT/4)  # 1 < F_MAX_IDX < n_freqs
+    # Maximum index of frequency to display
+    F_MAX_IDX = int(N_FFT/4)  # 1 < F_MAX_IDX < n_freqs
 
-# Number of time frames to plot
-N_PLOT_TF = 50
-VMIN, VMAX = 0, 1
+    # Number of time frames to plot
+    N_PLOT_TF = 50
+    VMIN, VMAX = 0, 1
 
-# Create a Hamming window for FFT processing
-WINDOW = np.hanning(N_FFT)
+    # Create a Hamming window for FFT processing
+    WINDOW = np.hanning(N_FFT)
 
-# Create the figure and axes for subplots
-fig, axes = plt.subplots(1, CORDELIA_NCHNLS, figsize=(PLOT_W, PLOT_H))
-# Create images for each subplot to display the spectrogram
-images = [ax.imshow(np.zeros((N_PLOT_TF, F_MAX_IDX)).T, aspect="auto") for ax in axes]
+    # Create the figure and axes for subplots
+    fig, axes = plt.subplots(1, CORDELIA_NCHNLS, figsize=(PLOT_W, PLOT_H))
+    # Create images for each subplot to display the spectrogram
+    images = [ax.imshow(np.zeros((N_PLOT_TF, F_MAX_IDX)).T, aspect="auto") for ax in axes]
 
-# Set the color limits for the images
-for i, _ in enumerate(images):
-    images[i].set_clim(VMIN, VMAX)
+    # Set the color limits for the images
+    for i, _ in enumerate(images):
+        images[i].set_clim(VMIN, VMAX)
 
-# Set labels and titles for each subplot
-for i, ax in enumerate(axes):
-    ax.set_xlabel("Time frame")
-    ax.set_ylabel("Frequency")
-    ax.set_title(f"Channel {i + 1}")
+    # Set labels and titles for each subplot
+    for i, ax in enumerate(axes):
+        ax.set_xlabel("Time frame")
+        ax.set_ylabel("Frequency")
+        ax.set_title(f"Channel {i + 1}")
 
-# Update y-axis tick labels for each subplot to display corresponding frequencies
-for ax in axes:
-    ax.set_yticks(np.linspace(0, F_MAX_IDX, 5))
-    ax.set_yticklabels([f"{np.fft.rfftfreq(N_FFT, d=1.0 / CORDELIA_SR)[int(tick)]:.0f}" for tick in ax.get_yticks()[::-1]])
+    # Update y-axis tick labels for each subplot to display corresponding frequencies
+    for ax in axes:
+        ax.set_yticks(np.linspace(0, F_MAX_IDX, 5))
+        ax.set_yticklabels([f"{np.fft.rfftfreq(N_FFT, d=1.0 / CORDELIA_SR)[int(tick)]:.0f}" for tick in ax.get_yticks()[::-1]])
 
-# Add text on the right side of the plot to show frames per second (FPS)
-text_x = 0.95  # Adjust this value to control the distance of the text from the right side of the plot
-text_y = 0.5   # Adjust this value to control the vertical position of the text
+    # Add text on the right side of the plot to show frames per second (FPS)
+    text_x = 0.95  # Adjust this value to control the distance of the text from the right side of the plot
+    text_y = 0.5   # Adjust this value to control the vertical position of the text
 
-# Create the text object and store it for future updates
-text_object = fig.text(text_x, text_y, "FPS", va='center', ha='center', fontsize=9, color='white')
+    # Create the text object and store it for future updates
+    text_object = fig.text(text_x, text_y, "FPS", va='center', ha='center', fontsize=9, color='white')
 
-# Add a colorbar to the first subplot
-fig.colorbar(images[0], ax=axes)
+    # Add a colorbar to the first subplot
+    fig.colorbar(images[0], ax=axes)
 
 
 

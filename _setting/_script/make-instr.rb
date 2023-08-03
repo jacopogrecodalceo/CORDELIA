@@ -7,7 +7,7 @@ json = File.join($cordelia_setting_path, 'instr.json')
 fft_script = File.join($cordelia_setting_path, '_script/fft_foundamental.py')
 
 $hard_reset = false
-$suffix = ['_so', '_sy']
+$suffix = ['_so', '_sy', '_lpc']
 
 if $hard_reset
 	$instruments = {}

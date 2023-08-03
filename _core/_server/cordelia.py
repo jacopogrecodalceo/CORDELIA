@@ -10,7 +10,7 @@ from utils.misc import count_time, county_time
 from csound import csound_cordelia, ctcsound, CORDELIA_SR, CORDELIA_NCHNLS
 import time
 
-from visual import show_spectrogram
+from visual import show_spectrogram, init_spectrum
 
 from utils.constants import CORDELIA_COMPILE_FIRST, CORDELIA_COMPILE, CORDELIA_OUT_WAV, CORDELIA_OUT_LOG, CORDELIA_OUT_COR, CORDELIA_CURRENT_DIR
 import queue
@@ -200,12 +200,12 @@ if __name__ == '__main__':
 	print('CSOUND is ON!')
 	t.start()
 	csound_thread.start()
-	
+	#init_spectrum()
 	# Show the spectrogram in parallel while updating the queue
 	while True:
 		try:
 			cordelia_spout = cordelia_queue.get_nowait()
-			show_spectrogram(cordelia_spout)
+			#show_spectrogram(cordelia_spout)
 		except queue.Empty:
 			# If the queue is empty, continue processing or do other tasks
 			pass

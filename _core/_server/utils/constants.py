@@ -17,6 +17,7 @@ CORDELIA_DATE = datetime.today().strftime('%y%m%d-%H%M')
 DEFAULT_SONVS_PATH = CORDELIA_DIR + '/_setting/_default-sonvs'
 DEFAULT_SONVS_SAMP_PATH = CORDELIA_DIR + '/_setting/_default-sonvs_sampler'
 DEFAULT_SONVS_SYNC_PATH = CORDELIA_DIR + '/_setting/_default-sonvs_sync'
+DEFAULT_SONVS_LPC_PATH = CORDELIA_DIR + '/_setting/_default-sonvs_lpc'
 
 CORDELIA_CURRENT_DIR = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}'
 CORDELIA_OUT_WAV = f'{CORDELIA_DIR}/_score/cor{CORDELIA_DATE}/cor{CORDELIA_DATE}.wav'
