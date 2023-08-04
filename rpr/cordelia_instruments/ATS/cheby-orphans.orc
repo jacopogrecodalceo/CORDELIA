@@ -24,15 +24,9 @@ ain 		oscili iamp*kamp, afreq*ifreq
 
 ibeatf = p3/64
 
-k1 = 1 - jitter(2, ibeatf/8, ibeatf)
-k2 = 1 - jitter(2, ibeatf/8, ibeatf)
-k3 = 1 - jitter(2, ibeatf/8, ibeatf)
-k4 = 1 - jitter(2, ibeatf/8, ibeatf)
-k5 = 1 - jitter(2, ibeatf/8, ibeatf)
-k6 = 1 - jitter(2, ibeatf/8, ibeatf)
-k7 = 1 - jitter(2, ibeatf/8, ibeatf)
+#define jit #1 - jitter(2, ibeatf/8, ibeatf)#
 
-aout		chebyshevpoly  ain, 0, k1, k2, k3, k4, k5, k6, k7
+aout		chebyshevpoly  ain, 0, $jit, $jit, $jit, $jit, $jit, $jit, $jit
 aout		balance2 aout, ain
 aout		dcblock2 aout
 	outch ich, aout

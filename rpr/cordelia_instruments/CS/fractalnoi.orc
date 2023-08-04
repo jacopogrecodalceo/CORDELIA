@@ -16,7 +16,7 @@ idur    init ftlen(ich)/sr
 ispeed  init 1
 isize   init 1024
 iord    init ksmps
-
+iamp	init 1/4
 p3      init idur*ispeed
 
 kport   = .05
@@ -65,7 +65,7 @@ kf_temp = kf0
 
 kn_harm             = sr/(kf0*4)
 
-amain       fractalnoise 1, 1
+amain       fractalnoise iamp, 1
 aout        allpole amain*krms*kerr, kcfs
 
 kread      += ksmps*kspeed  

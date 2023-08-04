@@ -3,7 +3,7 @@ ipole_ord   init 24
 
 indx init 0
 until indx == lenarray(gSfiles) do
-    ires system_i 1, sprintf("lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_ord, sr, gSfiles[indx], gSfiles[indx])
+    ires system_i 1, sprintf("lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_ord, filesr(gSfiles[indx]), gSfiles[indx], gSfiles[indx])
     indx += 1
 od
 

@@ -3,7 +3,7 @@ ipole_ord   init 24
 
 indx init 0
 until indx == lenarray(gSfiles) do
-    ires system_i 1, sprintf("lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_ord, sr, gSfiles[indx], gSfiles[indx])
+    ires system_i 1, sprintf("lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_ord, filesr(gSfiles[indx]), gSfiles[indx], gSfiles[indx])
     indx += 1
 od
 
@@ -24,9 +24,8 @@ ktrig metro 15
 ;kdyn = krmso/8192
 kdyn = krmsr/1024
 
-idur_note init 5
 if ktrig == 1 && kdyn > .005 then
-    schedulek 2, 0, idur_note, ich, kdyn, kcps
+    schedulek 2, 0, random:k(2, 5), ich, kdyn, kcps
 endif
 
     endin
@@ -36,7 +35,7 @@ ich init p4
 kdyn init p5
 kcps init p6
 ;aout pluck kdyn, kcps+jitter(1, .25, 1)*4, kcps*4, 0, 1
-aout oscili kdyn*linseg(0, .005, 1, p3-.005, 0), kcps*4
+aout oscili kdyn*linseg:a(0, .005, 1, p3-.005, 0), kcps
     outch ich, aout
 
     endin

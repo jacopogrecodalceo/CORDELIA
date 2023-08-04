@@ -326,7 +326,7 @@ function tab_context(method_name)
 
 		local unique_timestamp = generate_unique_timestamp()
 
-		local output_file_orc = temp_dir .. basename .. '-' .. method_name .. unique_timestamp .. '.orc'
+		local output_file_orc = temp_dir .. basename .. '-' .. method.selected .. unique_timestamp .. '.orc'
 		csound_code = string.format("sr\t= %d\nksmps\t= %d\nnchnls\t= %d\n\n\n%s",
 			cs_option.sr * 1000,
 			cs_option.ksmps,
@@ -334,7 +334,7 @@ function tab_context(method_name)
 			csound_code
 		)
 		write_file(output_file_orc, csound_code)
-		MAIN_OUTPUT = temp_dir .. basename .. '-' .. method_name .. unique_timestamp .. '.wav'
+		MAIN_OUTPUT = temp_dir .. basename .. '-' .. method.selected .. unique_timestamp .. '.wav'
 		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', method.script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
 		reaper.ExecProcess(command, -2)
 		log(command)
@@ -399,7 +399,7 @@ end
 
 
 local progress_bar = {}
-
+local lasttime_pbar = os.time()
 if not progress_bar.plots then
 	progress_bar.plots = {
 	  progress     = 0.0
@@ -415,12 +415,9 @@ function loop_progress_bar()
 
 		local newtime = os.time()
 
-		if newtime-lasttime >= OUTPUT_LENGTH then
-			open = false
-		else
-			progress_bar.plots.progress = (progress_bar.plots.progress + (newtime-lasttime))/OUTPUT_LENGTH
+		if newtime-lasttime_pbar < OUTPUT_LENGTH then
+			progress_bar.plots.progress = (progress_bar.plots.progress + (newtime-lasttime_pbar))/OUTPUT_LENGTH			
 		end
-
 		-- Typically we would use (-1.0,0.0) or (-FLT_MIN,0.0) to use all available width,
 		-- or (width,0.0) for a specified width. (0.0,0.0) uses ItemWidth.
 		local buf = ('%.02f/%.02fs'):format(progress_bar.plots.progress * OUTPUT_LENGTH, OUTPUT_LENGTH)
