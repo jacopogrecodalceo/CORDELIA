@@ -3,12 +3,6 @@ local temp_dir = '/Users/j/Documents/PROJECTs/_temp/'
 local OUTPUT_LENGTH, OUTPUT_POSITION
 local MAIN_OUTPUT, SELECTED_GLUED_ITEM
 
-cs_option = {
-	sr = 48,
-	ksmps = 32,
-}
-
-
 function log(string)
 	reaper.ShowConsoleMsg(tostring(string) .. '\n')
 end
@@ -90,24 +84,14 @@ function write_file(file_path, string)
     end
 end
 
-function get_info_from_items()
+function glue_selected_items()
+
 	local selected_items_count = reaper.CountSelectedMediaItems(0)
 
-	local channels = {}
-
-	for i = 0, selected_items_count-1  do
-		-- GET ITEMS
-		local item = reaper.GetSelectedMediaItem(0, i) -- Get selected item i
-		local take = reaper.GetActiveTake(item)
-		local source = reaper.GetMediaItemTake_Source(take)
-		local input_file = reaper.GetMediaSourceFileName(source, "")
-		table.insert(channels, reaper.GetMediaSourceNumChannels(source))
+	if selected_items_count == 0 then
+		log('No item selected')
+		return
 	end
-	cs_option.channels = math.max(table.unpack(channels))
-end
-
-
-function glue_selected_items()
 
 	-- Glue items
 	reaper.Main_OnCommand(40362, 0)
@@ -197,8 +181,7 @@ function wait_for_file()
 		reaper.InsertTrackAtIndex(track_index, true) -- Create a new track
 	
 		local track = reaper.GetTrack(0, track_index)
-		reaper.SetMediaTrackInfo_Value(track, "I_NCHAN", cs_option.channels)
-
+		
 		-- Add the WAV file to the track
 		local item = reaper.AddMediaItemToTrack(track)
 		local take = reaper.AddTakeToMediaItem(item)
@@ -215,6 +198,7 @@ function wait_for_file()
 		-- Remove files
 		os.remove(SELECTED_GLUED_ITEM)
 		os.remove(check_file)
+		
 		close_console()
 
 		close_progress_bar = true
@@ -225,6 +209,11 @@ function wait_for_file()
 end
 
 
+local cs_option = {
+	sr = 48,
+	ksmps = 32,
+	channels = 2
+}
 
 
 local ctx = reaper.ImGui_CreateContext('Cordelia offline')
@@ -275,47 +264,12 @@ local function convert_table(input_table)
     return keys
 end
 
-popup_prefix = '---'
-
-function create_popup_list()
-	local group_names = {}
-	local popup_list = {}
-
-	for method, tab in pairs(methods) do
-		table.insert(group_names, method)
-	end
-
-	table.sort(group_names)
-
-	for i, group_name in ipairs(group_names) do
-		local method = methods[group_name]
-		local files = find_orc_files_in_directory(method.dir)
-		method.files = files
-		files = convert_table(files)
-
-		popup_list[#popup_list+1] = popup_prefix .. group_name
-		for j, file in ipairs(files) do
-			table.insert(popup_list, file)
-		end
-	end
-
-	return popup_list
+for method, tab in pairs(methods) do
+	tab.files = find_orc_files_in_directory(tab.dir)
+	tab.basenames = convert_table(tab.files)
 end
 
-popup = {
-	list = {},
-	selected_group = ''
-}
-
-popup.list = create_popup_list()
-
-function startswith(text, prefix)
-    return text:find(prefix, 1, true) == 1
-end
-
-local selected_group
-
-function main_context()
+function tab_context(method_name)
 
 	local sr_retval, sr_val = reaper.ImGui_InputText(ctx, 'sample rate', cs_option.sr)
 	if sr_retval then cs_option.sr = sr_val end
@@ -324,35 +278,26 @@ function main_context()
 	local channels_retval, channels_val = reaper.ImGui_InputText(ctx, 'channels', cs_option.channels)
 	if channels_retval then cs_option.channels = channels_val end
 
+	local method = methods[method_name]
 	if reaper.ImGui_Button(ctx, 'Select..') then
 		reaper.ImGui_OpenPopup(ctx, 'Instrument popup')
 	end
 
 	reaper.ImGui_SameLine(ctx)
-
 	local b_retval = reaper.ImGui_Button(ctx, 'ok', 70)
-
-	reaper.ImGui_Text(ctx, popup.selected_basename or '<None>')
+	
+	reaper.ImGui_Text(ctx, method.selected or '<None>')
 	if reaper.ImGui_BeginPopup(ctx, 'Instrument popup') then
+		reaper.ImGui_SeparatorText(ctx, 'Aquarium')
 
-		for i, name in ipairs(popup.list) do
-
-			if startswith(name, popup_prefix) then
-				popup.selected_group = string.gsub(name, popup_prefix, '')
-				reaper.ImGui_SeparatorText(ctx, popup.selected_group)
-			else
-				if reaper.ImGui_Selectable(ctx, name) then
-					popup.selected_basename = name
-					local path = methods[popup.selected_group].files[name]
-					csound_code = read_orc(path)
-					selected_group = popup.selected_group
-				end
+		for _, basename in pairs(method.basenames) do
+			if reaper.ImGui_Selectable(ctx, basename) then
+				method.selected = basename
+				csound_code = read_orc(method.files[basename])
 			end
-
 		end
 		reaper.ImGui_EndPopup(ctx)
 	end
-	
 
 	local retval, return_code = reaper.ImGui_InputTextMultiline(ctx, '##Csound code', csound_code, 550, 805, reaper.ImGui_InputTextFlags_AllowTabInput())
 	if retval then csound_code = return_code end
@@ -360,7 +305,7 @@ function main_context()
 	local s_retval = reaper.ImGui_Button(ctx, 'save')
 
 	if s_retval then
-		local retval, path = reaper.JS_Dialog_BrowseForSaveFile('Save me', methods[selected_group].dir, '', '')
+		local retval, path = reaper.JS_Dialog_BrowseForSaveFile('Save me', method.dir, '', '')
 		local save_to
 		if string.sub(path, -4) == ".orc" then
 			save_to = path
@@ -381,17 +326,16 @@ function main_context()
 
 		local unique_timestamp = generate_unique_timestamp()
 
-		local output_file_orc = temp_dir .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.orc'
+		local output_file_orc = temp_dir .. basename .. '-' .. method.selected .. unique_timestamp .. '.orc'
 		csound_code = string.format("sr\t= %d\nksmps\t= %d\nnchnls\t= %d\n\n\n%s",
 			cs_option.sr * 1000,
 			cs_option.ksmps,
 			cs_option.channels,
 			csound_code
 		)
-
 		write_file(output_file_orc, csound_code)
-		MAIN_OUTPUT = temp_dir .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.wav'
-		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', methods[selected_group].script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
+		MAIN_OUTPUT = temp_dir .. basename .. '-' .. method.selected .. unique_timestamp .. '.wav'
+		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', method.script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
 		reaper.ExecProcess(command, -2)
 		log(command)
 		close_GUI = true
@@ -409,7 +353,29 @@ function defer_GUI()
 
 	if visible then
 
-		main_context()
+		if reaper.ImGui_BeginTabBar(ctx, 'CS_TAB') then
+
+			local item_name = 'CS'
+			reaper.ImGui_SetNextItemWidth(ctx, 100)
+			if reaper.ImGui_BeginTabItem(ctx, item_name) then
+				tab_context(item_name)
+				reaper.ImGui_EndTabItem(ctx)
+			end
+			item_name = 'ATS'
+			reaper.ImGui_SetNextItemWidth(ctx, 100)
+			if reaper.ImGui_BeginTabItem(ctx, item_name) then
+				tab_context(item_name)
+			  	reaper.ImGui_EndTabItem(ctx)
+			end
+			item_name = 'LPC'
+			reaper.ImGui_SetNextItemWidth(ctx, 100)
+			if reaper.ImGui_BeginTabItem(ctx, item_name) then
+				tab_context(item_name)
+			  	reaper.ImGui_EndTabItem(ctx)
+			end
+
+			reaper.ImGui_EndTabBar(ctx)
+		end
 
 		reaper.ImGui_End(ctx)
 
@@ -423,7 +389,7 @@ function defer_GUI()
 end
 
 local selected_items_count = reaper.CountSelectedMediaItems(0)
-get_info_from_items()
+
 if selected_items_count > 0 then
 	reaper.defer(defer_GUI)
 else
@@ -451,12 +417,10 @@ function loop_progress_bar()
 
 		if newtime-lasttime_pbar < OUTPUT_LENGTH then
 			progress_bar.plots.progress = (progress_bar.plots.progress + (newtime-lasttime_pbar))/OUTPUT_LENGTH			
-		else
-			progress_bar.plots.progress = 1
 		end
 		-- Typically we would use (-1.0,0.0) or (-FLT_MIN,0.0) to use all available width,
 		-- or (width,0.0) for a specified width. (0.0,0.0) uses ItemWidth.
-		local buf = ('%.02fs/%.02fs'):format(progress_bar.plots.progress * OUTPUT_LENGTH, OUTPUT_LENGTH)
+		local buf = ('%.02f/%.02fs'):format(progress_bar.plots.progress * OUTPUT_LENGTH, OUTPUT_LENGTH)
 		reaper.ImGui_ProgressBar(ctx, progress_bar.plots.progress, -1, 0, buf)
 
 		reaper.ImGui_End(ctx)

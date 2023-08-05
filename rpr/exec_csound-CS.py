@@ -4,6 +4,8 @@ import os, sys
 import time
 import re
 
+REMOVE_FILEs = True
+
 def extract_score_data(string):
 	pattern = r'/\*([\s\S]*?)\*/'
 	matches = re.findall(pattern, string)
@@ -14,6 +16,7 @@ def extract_score_data(string):
 		return None
 
 cs = ctcsound.Csound()
+cs.createMessageBuffer(False)
 
 input_file_wav = sys.argv[1]
 input_file_orc = sys.argv[2]
@@ -27,6 +30,7 @@ sample_rate = sox.file_info.sample_rate(input_file_wav)
 
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/PROJECTs/_temp'
+log_file = output_file_wav + '.log'
 
 channels = sox.file_info.channels(input_file_wav)
 
@@ -64,8 +68,16 @@ cs.compileOrc(orc_code)
 cs.readScore(score)
 
 cs.start()
-cs.perform()
+with open(log_file, 'a') as f:
+	while cs.performKsmps() == 0:
+		string = cs.firstMessage()
+		# Set the custom performance callback
+		if string:
+			f.write(string)
+		cs.popFirstMessage()
+
 cs.cleanup()
+cs.destroyMessageBuffer()
 del cs
 
 time.sleep(1/8)
@@ -77,8 +89,8 @@ try:
 	# Remove the file
 	with open(input_file_orc, 'w') as f:
 		f.write(orc_code)
-	os.remove(input_file_wav)
-	# os.remove(input_file_orc)
+	if REMOVE_FILEs:
+		os.remove(input_file_wav)
 
 	print("File removed successfully.")
 except FileNotFoundError:

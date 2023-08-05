@@ -4,6 +4,9 @@ import os, sys
 import time
 import re
 
+REMOVE_FILEs = True
+
+
 def extract_score_data(string):
 	pattern = r'/\*([\s\S]*?)\*/'
 	matches = re.findall(pattern, string)
@@ -14,6 +17,7 @@ def extract_score_data(string):
 		return None
 
 cs = ctcsound.Csound()
+cs.createMessageBuffer(False)
 
 input_file_wav = sys.argv[1]
 input_file_orc = sys.argv[2]
@@ -26,6 +30,8 @@ sample_rate = sox.file_info.sample_rate(input_file_wav)
 
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/PROJECTs/_temp'
+
+log_file = output_file_wav + '.log'
 
 lpc_files = []
 mono_files = []
@@ -47,6 +53,11 @@ orc_code = f'gSfiles[] fillarray {", ".join(mono_files_code)}\n'
 
 with open(input_file_orc, 'r') as f:
 	orc_code += f.read()
+	if 'gScsound_score' in orc_code:
+		output_file = output_file_wav + '.sco'
+		string = f'gScsound_score init "{output_file}"\n'
+		orc_code = string + orc_code
+
 	sco_python_code = extract_score_data(orc_code)
 
 print(orc_code)
@@ -76,8 +87,16 @@ cs.compileOrc(orc_code)
 cs.readScore(score)
 
 cs.start()
-cs.perform()
+with open(log_file, 'a') as f:
+	while cs.performKsmps() == 0:
+		string = cs.firstMessage()
+		# Set the custom performance callback
+		if string:
+			f.write(string)
+		cs.popFirstMessage()
+	
 cs.cleanup()
+cs.destroyMessageBuffer()
 del cs
 
 time.sleep(1/8)
@@ -85,16 +104,20 @@ time.sleep(1/8)
 with open(output_file_wav + '--finished', 'w') as f:
 	f.write('I EXIST')
 
+
 try:
+
 	# Remove the file
-	
-	os.remove(input_file_wav)
 	with open(input_file_orc, 'w') as f:
 		f.write(orc_code)
-	for f in mono_files:
-		os.remove(f)
-	for f in lpc_files:
-		os.remove(f.replace('"', ''))
+
+	if REMOVE_FILEs:
+		os.remove(input_file_wav)
+
+		for f in mono_files:
+			os.remove(f)
+		for f in lpc_files:
+			os.remove(f.replace('"', ''))
 
 	print("File removed successfully.")
 except FileNotFoundError:
