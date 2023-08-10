@@ -1,4 +1,4 @@
-from utils.constants import CORDELIA_COMPILE, CORDELIA_CURRENT_DIR, CORDELIA_DATE, INSTR_HASPLAYED
+from utils.constants import CORDELIA_COMPILE, CORDELIA_CURRENT_DIR, CORDELIA_DATE, INSTR_HASPLAYED, CORDELIA_FOUT_MEMORIES
 from csound import CORDELIA_NCHNLS
 
 INSTR_LAST = ['init']
@@ -20,7 +20,9 @@ def filter(instruments):
 		
 		CORDELIA_COMPILE.append(instr_setting)
 		print(instr_setting)
-		CORDELIA_COMPILE.append(f'schedule +{945+(1/10000)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/main-cor{CORDELIA_DATE}.wav"')
+		if CORDELIA_FOUT_MEMORIES:
+			CORDELIA_COMPILE.append('gieva_memories init 0\n')
+			CORDELIA_COMPILE.append(f'schedule +{945+(1/10000)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/main-cor{CORDELIA_DATE}.wav"')
 
 	results = [None]*len(INSTR_LAST)
 

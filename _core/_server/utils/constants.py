@@ -12,6 +12,8 @@ CORDELIA_PORTs = {
 
 CORDELIA_SOCKETs = []
 
+CORDELIA_FOUT_MEMORIES = True
+
 CORDELIA_DATE = datetime.today().strftime('%y%m%d-%H%M')
 
 DEFAULT_SONVS_PATH = CORDELIA_DIR + '/_setting/_default-sonvs'

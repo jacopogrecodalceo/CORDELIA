@@ -1,0 +1,26 @@
+
+
+gkpulse = 105;/pump(32, fillarray(1, 1/4, 1, 1/3, 1/4, 1))
+
+eu: 16, 16, 2
+	@noij
+	each(wn, sn)
+	once(fff, p)
+	kazan.a(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.5, 1, 4)
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(1, .5, 3)
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.25, 2, 1)
+
+
+@amen.skl(ntof(b5)*pump(64, fill(1, 4, .5, 3, 4, 5, 4)), .65*lfh(2)).tapij(qn, .5, 1): 4, ff
+
+gkamen_dur = 1
+
+eu: 5, 8, 4
+	@seno
+	qn
+	f
+	mac
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*1/8
+
+

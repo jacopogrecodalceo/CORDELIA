@@ -8,7 +8,7 @@ kscaleroot = iscaleroot + kshiftroot
 
 idegrees = ftlen(iscale)
 
-ktrig	changed kdegree
+ktrig	changed2 kdegree
 
 if	(kdegree != 0) then
 
@@ -27,7 +27,7 @@ if	(kdegree != 0) then
 	ktab	table kndx, iscale
 	kpitch = kbase + (koct * 12) + ktab
 
-	schedulek   "sense_midi", 0, 1, kpitch
+	;schedulek   "sense_midi", 0, 1, kpitch
 	kres	= cpsmidinn(kpitch)
 
 else
@@ -51,7 +51,7 @@ kscaleroot = iscaleroot + kshiftroot
 
 idegrees = ftlen(iscale)
 
-ktrig	changed kdegree
+ktrig	changed2 kdegree
 kgo init 0
 	
 kgo = 1+(kgo%4)
@@ -91,7 +91,7 @@ kscaleroot = iscaleroot + kshiftroot
 
 idegrees = ftlen(iscale)
 
-ktrig	changed kdegree
+ktrig	changed2 kdegree
 
 if	(kdegree != 0) then
 
@@ -130,7 +130,7 @@ kscaleroot = iscaleroot + kshiftroot
 
 idegrees = ftlen(iscale)
 
-ktrig	changed kdegree
+ktrig	changed2 kdegree
 
 if	(kdegree != 0) then
 

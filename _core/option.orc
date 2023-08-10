@@ -20,8 +20,8 @@
 ;-b 64 ;mac 1024
 ;-B 128 ;mac 2048
 
-;-b 128
-;-B 256
+;-b 2048
+;-B 4096
 
 ;suggested https://csound-floss-dev.firebaseapp.com/how-to/hardware#realtime-audio-issues-and-errors
 ;-b 256
@@ -31,7 +31,7 @@
 ;-B 1024
 ;--realtime
 
-;-+rtaudio=PortAudio
+-+rtaudio=PortAudio
 ;-+rtaudio=jack
 ;-+rtaudio=CoreAudio
 

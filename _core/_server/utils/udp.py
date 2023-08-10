@@ -27,3 +27,11 @@ def receive_messages() -> tuple():
 		# get UDP message
 
 		return (direction, message.decode())
+
+
+from pythonosc.udp_client import SimpleUDPClient
+local_ip = socket.gethostbyname(socket.gethostname())
+client = SimpleUDPClient(local_ip, 8500)
+def send_message_reaper(message):
+	client.send_message(message, ' ')
+

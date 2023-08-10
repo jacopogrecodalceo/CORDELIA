@@ -3,7 +3,7 @@ import re
 from cordelia.classes import Parser
 from utils.constants import bcolors
 
-from utils.constants import CORDELIA_NOTEs
+from utils.constants import CORDELIA_NOTEs, CORDELIA_FOUT_MEMORIES
 from utils.constants import CORDELIA_COMPILE_FIRST
 from utils.constants import SCALA_HASPLAYED, CORDELIA_SCALA_json
 from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json
@@ -204,8 +204,9 @@ def instr(unit):
 					instr_num = 950 + (val/10000)
 					instr_setting += f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{index+1}"\n'
 				
-				instr_add = (len(INSTR_HASPLAYED))/10000
-				instr_setting += f'schedule {round(945+instr_add, 5)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/cor{CORDELIA_DATE}-{name}.wav"\n'
+				if CORDELIA_FOUT_MEMORIES:
+					instr_add = (len(INSTR_HASPLAYED))/10000
+					instr_setting += f'schedule {round(945+instr_add, 5)}, 0, -1, "{name}", "{CORDELIA_CURRENT_DIR}/cor{CORDELIA_DATE}-{name}.wav"\n'
 				
 				print(instr_setting)
 				#csound_cordelia.compileOrcAsync(instr_setting)

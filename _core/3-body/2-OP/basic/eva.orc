@@ -1,7 +1,10 @@
 #define eva_kSk_kcps(kcps) #
 if $kcps > 0 && $kcps < 20000 then
-	kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
 
+	if gieva_memories == 1 then
+		kdone	system gkabstime, sprintfk("echo \'%s, %f, %f, %f, %i, %f\' >> %s-%s.txt", Sinstr, gkabstime, kdur, kamp, kenv, $kcps, gScsound_score, Sinstr)
+	endif
+	
 	if kch == 0 then
 		kch = 1
 		until kch > ginchnls do

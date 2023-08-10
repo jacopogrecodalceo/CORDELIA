@@ -118,7 +118,7 @@ def get_if_base_freq(track_name):
 	if '@' in track_name:
 		name = track_name.split('@')[0]
 		base_freq = track_name.split('@')[1]
-		base_freq = re.search(r'\w+', base_freq)[0]
+		base_freq = base_freq.split(',')[0]
 		return name, base_freq
 	else:
 		return track_name, 'a4'
@@ -126,6 +126,7 @@ def get_if_base_freq(track_name):
 def get_tuning(track_name):
 	if 'scala' in track_name:
 		name, base_freq = get_if_base_freq(track_name)
+
 		match = scala_regex.search(name)
 		if match:
 			scala_name = match.group(1)

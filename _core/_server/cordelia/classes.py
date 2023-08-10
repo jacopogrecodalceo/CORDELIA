@@ -1,5 +1,5 @@
 import re, pprint
-
+from utils.udp import send_message_reaper
 import cordelia
 
 class Instrument:
@@ -13,13 +13,17 @@ class Route():
 class Parser():
 
 	def __init__(self, unit):
+
 		self.instruments = []
 
 		self.unit = unit
 		self.lines = unit.splitlines()
-			
+
 		# SINGLE LINE
-		if len(self.lines) == 1 and re.search(r'^@.*', self.lines[0]):
+		if len(self.lines) == 1 and re.search(r'^cordelia_tape', self.lines[0]):
+			self.tape()
+			return
+		elif len(self.lines) == 1 and re.search(r'^@.*', self.lines[0]):
 			self.seq()
 			return
 		elif len(self.lines) == 1 and re.search(r'^route.', self.lines[0]):
@@ -128,6 +132,17 @@ class Parser():
 
 			self.instruments.append(instrument)
 
+
+	def tape(self):
+		line = self.lines[0]
+		message_line = line.split(":", 1)[1]
+		messages = message_line.split(",")
+		for m in messages:
+			print(m)
+			send_message_reaper(m.strip())
+		instrument = Instrument('control')
+		instrument.csound_code = ';' + self.lines[0]
+		self.instruments.append(instrument)
 
 	def seq(self):
 
