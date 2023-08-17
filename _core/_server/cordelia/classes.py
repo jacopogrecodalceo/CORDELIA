@@ -1,5 +1,6 @@
 import re, pprint
 from utils.udp import send_message_reaper
+from utils.constants import CORDELIA_OSC_MESSAGE_LAST
 import cordelia
 
 class Instrument:
@@ -20,7 +21,7 @@ class Parser():
 		self.lines = unit.splitlines()
 
 		# SINGLE LINE
-		if len(self.lines) == 1 and re.search(r'^cordelia_tape', self.lines[0]):
+		if len(self.lines) == 1 and re.search(r'^cordelia_murmur', self.lines[0]):
 			self.tape()
 			return
 		elif len(self.lines) == 1 and re.search(r'^@.*', self.lines[0]):
@@ -134,12 +135,20 @@ class Parser():
 
 
 	def tape(self):
+
+		global CORDELIA_OSC_MESSAGE_LAST
+
 		line = self.lines[0]
-		message_line = line.split(":", 1)[1]
-		messages = message_line.split(",")
-		for m in messages:
-			print(m)
-			send_message_reaper(m.strip())
+
+		if line != CORDELIA_OSC_MESSAGE_LAST:
+			message_line = line.split(":", 1)[1]
+			messages = message_line.split(",")
+			for m in messages:
+				m = 't/' + m.strip()
+				print(m)
+				send_message_reaper(m)
+			CORDELIA_OSC_MESSAGE_LAST = line
+			
 		instrument = Instrument('control')
 		instrument.csound_code = ';' + self.lines[0]
 		self.instruments.append(instrument)

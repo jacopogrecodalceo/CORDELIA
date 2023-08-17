@@ -36,6 +36,8 @@ SCALA_HASPLAYED = []
 GEN_HASPLAYED = []
 INSTR_HASPLAYED = ['mouth']
 
+CORDELIA_OSC_MESSAGE_LAST = ''
+
 CORDELIA_NOTEs = ['c', 'c#', 'db', 'd', 'd#', 'eb', 'e', 'f', 'f#', 'gb', 'g', 'g#', 'ab', 'a', 'a#', 'bb', 'b']
 
 CORDELIA_MACROs = []

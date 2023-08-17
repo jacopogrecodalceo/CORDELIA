@@ -206,6 +206,24 @@ aout	balance2 aout, ain
     xout aout
     endop
 ;OPCODE
+    opcode cordelia_pconvolve, a, aiki
+    ain, ir, kmix, ich xin
+
+SFiles[]        directory "/Users/j/Documents/PROJECTs/CORDELIA/_setting/_IR", ".wav"
+
+inchnls         filenchnls SFiles[ir]
+;inchnls         init 2
+
+ichnl_array     init (ich%inchnls)+1
+
+aconv           pconvolve ain, SFiles[ir], 0, ichnl_array
+
+aout            = aconv*kmix + ain*(1-kmix)
+
+    xout aout
+
+    endop
+;OPCODE
 
 giplate_rev_tabexcite	ftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545
 giplate_rev_tabouts	ftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545

@@ -17,7 +17,6 @@
 -- USER CONFIG AREA --
 --------------------------------------------------------------------------------
 
-console = true -- Display debug messages in the console
 window_flags =    reaper.ImGui_WindowFlags_NoDecoration()       |
                     reaper.ImGui_WindowFlags_NoDocking()          |
                     reaper.ImGui_WindowFlags_AlwaysAutoResize()   |

@@ -1,18 +1,27 @@
 	instr 1
 
-Satsfile		init p4
-ich				init p5
-imax_p			ATSinfo Satsfile, 3
-gidur			ATSinfo Satsfile, 7
+; ============
+; *** INIT ***
+; ============
+Satsfile	init p4
+ich			init p5
 
-inum			init 31
+; ============
+; *** INFO ***
+; ============
+imax_p		ATSinfo	Satsfile, 3
+gidur		ATSinfo	Satsfile, 7
 
-indx			init 1
-inum			limit inum, 1, imax_p
-until indx > inum do
-	schedule 2, 0, 1, Satsfile, ich, indx
-	indx += 1
+inum		init 31
+
+indx		init 1
+inum		limit inum, 1, imax_p
+
+until indx>inum do
+	schedule	2, 0, 1, Satsfile, ich, indx
+	indx	+= 1
 od
+
 	endin
 
 	instr 2

@@ -133,12 +133,12 @@ def main():
 
 		#county_time(start_time, 'BEFORE COMPILATION INSTR; GEN; SCALE')
 		if CORDELIA_COMPILE_FIRST:
-			csound_cordelia.compileOrc('\n'.join(CORDELIA_COMPILE_FIRST))
+			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE_FIRST))
 			CORDELIA_COMPILE_FIRST.clear()	
 		#county_time(start_time, 'BEFORE CODE')
 
 		if CORDELIA_COMPILE:
-			csound_cordelia.compileOrc('\n'.join(CORDELIA_COMPILE))
+			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 		#county_time(start_time, 'END CODE')
 
@@ -171,8 +171,9 @@ def csound_perf_homemade(cs, completion_event):
 	
 	cs.start()
 
-	while cs.performKsmps() == 0:
-		cordelia_queue.put(cs.spout())  # Put the data into the queue
+	cs.perform()
+	#while cs.performKsmps() == 0:
+	#	cordelia_queue.put(cs.spout())  # Put the data into the queue
 
 	cs.cleanup()
 

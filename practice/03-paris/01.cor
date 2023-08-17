@@ -5,7 +5,7 @@
 
 
 
-cordelia_tape: t/play
+cordelia_murmur: t/play
 
 gkpulse = 110/pump(16, fill(4, 2, 1, 8))
 

@@ -49,6 +49,11 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moij.orc",
     "how_many_p": 2
   },
+  "pconvij": {
+    "core": ";CORE\n\nPARAM_1\tinit 1\nPARAM_2\tinit 1\n\nPARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/pconvij.orc",
+    "how_many_p": 2
+  },
   "platij": {
     "core": ";CORE\n\n;space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/platij.orc",
