@@ -4,13 +4,7 @@ gkmhon2q_start	init 0
 gkmhon2q_ch	init 8
 
 	instr mhon2q
-
-Sinstr		init "mhon2q_instr"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhon2q_instr)
 
 istart		init i(gkmhon2q_start)
 
@@ -27,16 +21,10 @@ endif
 
 	turnoff
 
-	endin
+	
 
 	instr mhon2q_instr
-
-Sinstr		init "mhon2q"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhon2q)
 
 a1		oscil3 $dyn_var, cosseg(i(gkmhon2q_cps), idur/8, icps), gisquare
 a2		oscil3 $dyn_var, cosseg(i(gkmhon2q_cps), idur/6, icps)*3/2*1.975, gitri
@@ -56,5 +44,5 @@ aq		limit a1, 0, .9995
 aout		moogladder2 aout, amoog_freq, aq
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr
 

@@ -30,8 +30,8 @@ aout						*= 3
 
 $dur_var(1000)
 
-	$END_INSTR
+	$end_instr
 
 
-	endin
+	
 

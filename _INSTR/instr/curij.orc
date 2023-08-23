@@ -26,6 +26,6 @@ $dur_var(10)
 
 aout		moogladder2 aosc/4, fc(S1, itab, S2, idiv)*(2*envgen(idur-random:i(0, $dur_var(35)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

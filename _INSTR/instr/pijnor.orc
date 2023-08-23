@@ -334,6 +334,6 @@ aout	= gapijnor_inrev + aout_Pipe * kMain_Vol
 
     $CHNMIX
     
-    endin
+    
 
 

@@ -1,4 +1,4 @@
-	$START_INSTR(careless2)
+	$start_instr(careless2)
 
 anoi		fractalnoise $dyn_var, 1
 
@@ -30,4 +30,4 @@ klfo		abs lfo(1/idiff, 1.15+random:i(-.05, .05))
 aout		*= 1/(idiff+.05+(klfo*cosseg(0, idur/2, 1)))
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

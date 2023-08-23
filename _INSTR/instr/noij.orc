@@ -1,4 +1,4 @@
-	$START_INSTR(noij)
+	$start_instr(noij)
 
 i1div2pi	init 0.1592
 
@@ -22,5 +22,5 @@ aFilterR		bqrez	aSigR, icps+(icps*(16*$dyn_var)), .75
 aout			balance2 aFilterR, aSigR
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr
 

@@ -1,4 +1,4 @@
-	$START_INSTR(puck)
+	$start_instr(puck)
 
 ipanfreq	random -.25, .25
 
@@ -10,4 +10,4 @@ iharm		init (ich%2)+1
 aout		pluck $dyn_var, (icps*iharm) + randomi:k(-ipanfreq, ipanfreq, 1/idur), icps, ifn, imeth
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

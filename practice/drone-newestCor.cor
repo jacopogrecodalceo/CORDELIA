@@ -1,0 +1,14 @@
+gkpulse = 110
+
+eu: 5, 8, 32
+	@mhon
+	wn*8
+	pp
+	spina
+	stept("5F", gidorian, 3+once(1, 3, -3, 5))
+	stept("2F", gidorian, once(1, 3, -3, 5))
+
+@ciel.convij(mhon, 1): 8, mf
+
+
+

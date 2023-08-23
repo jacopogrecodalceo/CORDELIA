@@ -1,0 +1,12 @@
+
+
+
+gkpulse = 125;-go(0, 60, 100)
+
+gktuning pump 2, fillarray(scala.12_22h, scala.edo13)
+
+@bleu: pump(8, fillarray(4, 8, 6, 12)), f
+
+@bleu: pump(16, fillarray(8, 6, 12, 16, 8)), mp
+
+

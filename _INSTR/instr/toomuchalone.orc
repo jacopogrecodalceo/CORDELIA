@@ -18,7 +18,7 @@ ich						init p7
 kph						portk abs(active:k("toomuchalone")), gktoomuchalone_dur
 gktoomuchalone_env		table3 kph, int(abs(p5)), 1
 
-	endin
+	
 
 	instr toomuchalone_instr
 
@@ -64,7 +64,7 @@ aout		buthp aout, 21.5
 
 	$CHNMIX
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

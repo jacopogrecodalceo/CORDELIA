@@ -34,4 +34,4 @@ aout		*= idyn_fact
 
 	$CHNMIX
 
-	endin
+	

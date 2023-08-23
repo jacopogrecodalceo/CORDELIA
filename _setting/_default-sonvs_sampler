@@ -6,7 +6,7 @@ gk---NAME---_off		init .005
 gk---NAME---_dur		init 1
 gk---NAME---_sonvs		init 1
 
-	$START_INSTR(---NAME---)
+	$start_instr(---NAME---)
 
 isonvs		i gk---NAME---_sonvs-1
 isonvs		init isonvs%(gi---NAME---_len-1)
@@ -30,4 +30,4 @@ aout	sndwarp  .5, ktimewarp, kresample, itab_sonvs, ibeg, iwsize, irandw, ioverl
 aout				*= $dyn_var
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

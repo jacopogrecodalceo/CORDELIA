@@ -29,7 +29,7 @@ endif
 
 	turnoff
 
-	endin
+	
 
 	instr noijt_instr
 
@@ -71,4 +71,4 @@ aFilterR		bqrez	aSigR, kfreq1+(icps*(16*$dyn_var)), .95*cosseg(1, idur, .5)
 aout			balance2 aFilterR, aSigR
 
 	$dur_var(100)
-	$END_INSTR
+	$end_instr

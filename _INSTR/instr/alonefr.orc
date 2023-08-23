@@ -42,7 +42,7 @@ if ich == 1 then
 
 endif
 
-	endin
+	
 
 	instr alonefr_instr
 
@@ -70,7 +70,7 @@ aout		phaser1 amoog, gkalonefr_cps, 12, gkalonefr_env
 
 	$CHNMIX
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

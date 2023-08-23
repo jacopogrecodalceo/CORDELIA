@@ -1,4 +1,4 @@
-	$START_INSTR(click)
+	$start_instr(click)
 
 ain		fractalnoise $dyn_var, expseg(.95, idur, .05)
 
@@ -13,5 +13,5 @@ aout		/= 3
 ;		ENVELOPE
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 

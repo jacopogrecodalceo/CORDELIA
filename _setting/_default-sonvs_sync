@@ -6,13 +6,14 @@ gk---NAME---_off		init .005
 gk---NAME---_freq		init 1
 gk---NAME---_sonvs		init 1
 
-	$START_INSTR(---NAME---)
-
+	$start_instr(---NAME---)
+/*
 idur		init p3
 idyn		init p4
 ienv		init p5
 icps		init p6
 ich			init p7
+*/
 			$dur_var(10)
 
 isonvs		i gk---NAME---_sonvs-1
@@ -41,4 +42,4 @@ imax_overlaps 		init 4
 aout				syncgrain $dyn_var, kfreq, kresample, idur/i(gkbeatf), idur, itab_sonvs, ienv, imax_overlaps
 aout				*= 3.5
 
-	$END_INSTR
+	$end_instr

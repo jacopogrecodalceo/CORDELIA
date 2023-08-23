@@ -1,6 +1,6 @@
 gkflou_p1 init 1
 
-	$START_INSTR(flou)
+	$start_instr(flou)
 
 icps		/= 2
 
@@ -31,5 +31,5 @@ aout		= af + (asig/8) + (aex/12)
 aout		balance2 aout, aorg
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr
 

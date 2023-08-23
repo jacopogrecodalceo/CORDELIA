@@ -555,7 +555,7 @@ until	indx == nchnls do
 	indx	+= 1
 od
  
-    endin
+    
 
 maxalloc	"pij_rev", ginchnls	;maximum polyphony
 
@@ -586,5 +586,5 @@ aout	pij_oprev	ain, kTime_Rev, kLR_Rev, kSize_Rev, kRT_Rev, kLP_Rev, kLD_Rev, kH
 
 	$CHNMIX
    	chnclear sprintf("%s_%i", Sin, ich)
-    endin
+    
 

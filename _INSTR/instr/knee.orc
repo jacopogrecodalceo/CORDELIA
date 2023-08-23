@@ -1,4 +1,4 @@
-	$START_INSTR(knee)
+	$start_instr(knee)
 
 
 a1		oscili $dyn_var, icps, gisquare
@@ -38,4 +38,4 @@ aout		dcblock2 aout
 aout		/= 16
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

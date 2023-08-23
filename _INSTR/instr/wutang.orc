@@ -1,6 +1,6 @@
 gkwutang_vib init 0
 
-	$START_INSTR(wutang)
+	$start_instr(wutang)
 
 ival		init idyn*2
 
@@ -33,4 +33,4 @@ aout		= asig + aharms
 aout		/= 2
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

@@ -1,11 +1,11 @@
 
-	$START_INSTR(in3)
+	$start_instr(in3)
 aout	inch 3
 aout	*= idyn
 
 
 	$dur_var(25)
-	$END_INSTR
+	$end_instr
 	
 indx	init 1
 until	indx > ginchnls do

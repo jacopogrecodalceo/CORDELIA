@@ -1,4 +1,4 @@
-	$START_INSTR(cascade)
+	$start_instr(cascade)
 
 idur	init idur*3
 
@@ -15,4 +15,4 @@ aout			flanger asaw, adel, kfb
 aout			/= 16
 
 	$dur_var(5)
-	$END_INSTR
+	$end_instr

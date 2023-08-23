@@ -1,4 +1,4 @@
-	$START_INSTR(fairest3)
+	$start_instr(fairest3)
 
 aout	vco2 $dyn_var, icps
 
@@ -7,4 +7,4 @@ aout	moogladder aout, icps + expseg:k(icps*8 + random:i(-15, 15), idur, 0.05), e
 aout	K35_hpf aout, 25, 7.5
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

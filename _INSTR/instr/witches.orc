@@ -24,7 +24,7 @@ idetune = i(gkwitches_detune)
 
 	turnoff
 
-	endin
+	
 
 	instr witches_instr
 
@@ -43,4 +43,4 @@ kndx	= expseg:k(1.05, idur, 1+indx)-1
 aout	foscili $dyn_var, icps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, amod+randomi:a(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

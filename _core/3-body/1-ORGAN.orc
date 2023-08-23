@@ -1,7 +1,7 @@
 giedo12					ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0594630943592953, 1.122462048309373, 1.189207115002721, 1.2599210498948732, 1.3348398541700344, 1.4142135623730951, 1.4983070768766815, 1.5874010519681994, 1.681792830507429, 1.7817974362806785, 1.8877486253633868, 2/1
 
 gktuning init giedo12
-
+gktuning_len init tab_i(0, i(gktuning))
 gScsound_score init ""
 
 
@@ -60,11 +60,18 @@ klast_c	= kph
 
 gkabstime	times
 
+if changed2(gktuning) == 1 then
+	schedulek "tuning_info", 0, 1
+endif
+
 	endin
 ;	schedule("heart", .5, -1)
 ;	alwayson("heart")
 
-
+	instr tuning_info
+gktuning_len	tab 0, i(gktuning)
+	turnoff
+	endin
 
 gkheartbeat_print_fact init 1
 

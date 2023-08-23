@@ -67,7 +67,7 @@ endif
 
 aout	*= $dyn_var
 
-	$CHNMIX
+	$channel_mix
 
 ;gi---NAME---_where init (i(gkbeatn)+1)/i(gkdiv)
 

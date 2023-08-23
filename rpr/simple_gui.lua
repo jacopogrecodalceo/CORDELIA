@@ -5,6 +5,12 @@ tables = {}
 local FLT_MIN, FLT_MAX = reaper.ImGui_NumericLimits_Float()
 local file_path = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/cordelia_instruments/ATS/cheby-orphans-even.orc'
 
+
+function log(string)
+	reaper.ShowConsoleMsg(string .. '\n')
+end
+
+
 function flat_table(inputTable)
     local flattenedTable = {}
 
@@ -75,7 +81,7 @@ function read_orc(file_path)
 end
 
 local num_rows = 0
-
+local num_column = 4
 if not tables.padding then
 	tables.padding = {
 	flags1 = reaper.ImGui_TableFlags_BordersV(),
@@ -97,29 +103,42 @@ end
 
 function make_table()
 
-	if reaper.ImGui_BeginTable(ctx, 'table_padding_2', 3) then
+	if reaper.ImGui_BeginTable(ctx, 'table_padding_2', num_column) then
 
 		for cell = 1, num_rows do
+
 			reaper.ImGui_TableNextColumn(ctx)
 			reaper.ImGui_SetNextItemWidth(ctx, -FLT_MIN)
-			reaper.ImGui_PushID(ctx, cell)
-			local content = tables.padding.text_bufs[cell]
 
-			local is_first_column = ((cell-1) % 3) == 0
 
-			if is_first_column and content == '' then
-				do end
+			local is_first_column = ((cell-1) % num_column) == 0
+
+			if is_first_column then
+				reaper.ImGui_Checkbox(ctx, '')
 			else
-				--rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content)
-				if string.sub(content, 1, 1) == 'i' then
-					reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Text(), 0xFF6666FF)
-					rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content)
-					reaper.ImGui_PopStyleColor(ctx)
+
+				reaper.ImGui_PushID(ctx, cell)
+				local content = tables.padding.text_bufs[cell]
+				if is_first_column and content == '' then
+					do end
 				else
-					rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content)
+					--rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content)
+					if string.sub(content, 1, 1) == 'i' then
+						reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Text(), 0xFF6666FF)
+						rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content, reaper.ImGui_InputTextFlags_EnterReturnsTrue())
+						if rv then
+							log('enter')
+						end
+						reaper.ImGui_PopStyleColor(ctx)
+					else
+						rv, tables.padding.text_bufs[cell] = reaper.ImGui_InputText(ctx, '##cell', content, reaper.ImGui_InputTextFlags_EnterReturnsTrue())
+						if rv then
+							log('enter')
+						end
+					end
 				end
+				reaper.ImGui_PopID(ctx)
 			end
-			reaper.ImGui_PopID(ctx)
 		end
 
 		reaper.ImGui_EndTable(ctx)

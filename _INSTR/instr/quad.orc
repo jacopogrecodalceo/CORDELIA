@@ -123,7 +123,7 @@ endop
 
 giquad_index init 0
 
-	$START_INSTR(quad)
+	$start_instr(quad)
 
 ax = oscili(1, icps+(lfo(icps-(11/10*icps), random:i(3, 5)))*cosseg(0, idur/2, 1, idur/2, 0)/cosseg(9, idur, 3))
 ay = oscili(1/6, icps*$M_PI)
@@ -152,4 +152,4 @@ if giquad_index == 7 then
 endif
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

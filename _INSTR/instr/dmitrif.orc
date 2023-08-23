@@ -2,7 +2,7 @@
 
 gkdmitrif_time randomi gkbeatms, gkbeatms/4, gkbeatf/32
 
-	endin
+	
 
 	instr dmitrif
 
@@ -62,6 +62,6 @@ aout		balance2 af3, asum
 ;		ENVELOPE
 $dur_var(10)
 
-		$END_INSTR
+		$end_instr
 
-	endin
+	

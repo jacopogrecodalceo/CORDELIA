@@ -1,4 +1,4 @@
-	$START_INSTR(pur)
+	$start_instr(pur)
 
 ipanfreq	random -.25, .25
 
@@ -19,5 +19,5 @@ aout		flanger aout, cosseg:a(idur/128, idur, idur/96), cosseg(.35, idur, 1-$dyn_
 aout		bqrez	aout, icps+(icps*(32*$dyn_var)), cosseg(.95, idur/2, .5)
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr
 

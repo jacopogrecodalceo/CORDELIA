@@ -1,7 +1,7 @@
 gkgrind_p1	init 1
 gkgrind_p2	init 1
 
-	$START_INSTR(grind)
+	$start_instr(grind)
 
 	$dur_var(10)
 
@@ -26,5 +26,5 @@ aout		flanger pdhalf(aout/idynred, line(-.75, idur/4, .95)), expon:a((divz(idur,
 
 aout		dcblock2 aout
 
-	$END_INSTR
+	$end_instr
 

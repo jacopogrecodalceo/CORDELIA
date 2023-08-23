@@ -161,6 +161,24 @@ opcode jcut, a, akk
 	xout aout
 endop
 ;OPCODE
+	opcode cordelia_decimator, a, akk	;UDO Sample rate / Bit depth reducer
+
+	setksmps   1
+
+	ain, kbit, ksrate xin
+
+kbits		=        2^kbit                ;bit depth (1 to 16)
+kfold		=        (sr/ksrate)           ;sample rate
+kin			downsamp ain                   ;convert to kr
+kin			=        (kin+0dbfs)           ;add DC to avoid (-)
+kin			=        kin*(kbits/(0dbfs*2)) ;scale signal level
+kin			=        int(kin)              ;quantise
+aout		upsamp   kin                   ;convert to sr
+aout		=        aout*(2/kbits)-0dbfs  ;rescale and remove DC
+a0ut		fold     aout, kfold           ;resample
+			xout     a0ut
+
+	endop;OPCODE
 
     opcode delay_array, a, akki
     
@@ -184,10 +202,14 @@ adel_out    limit adel_out, -1, 1
     xout adel_out
     
     endop;OPCODE
-    opcode duck, a, aSik
+
+gkcordelia_duck_atk init 5$ms
+gkcordelia_duck_rel init 75$ms
+
+    opcode cordelia_duck, a, aSik
     ain, Sinstr, ich, kmix xin
 
-aenv    follow2 chnget:a(sprintf("%s_%i", Sinstr, ich)), 25$ms, 95$ms
+aenv    follow2 chnget:a(sprintf("%s_%i", Sinstr, ich)), gkcordelia_duck_atk, gkcordelia_duck_rel
 afol	= ain * (1-aenv)
 
 aout	= afol*kmix + ain*(1-kmix)
@@ -205,6 +227,38 @@ aout	balance2 aout, ain
 
     xout aout
     endop
+;OPCODE
+
+gkcordelia_moijb3_port init 5$ms
+gkcordelia_moijb3_freq1 init 3
+gkcordelia_moijb3_freq2 init 4
+gkcordelia_moijb3_freq3 init 5
+
+    opcode cordelia_moijb3, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+
+kfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a1      moogladder2 ain, portk(kfreq1, gkcordelia_moijb3_port), kq
+
+a0      init 0
+kfreq2  limit gkcordelia_moijb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a2      spf a0, a0, ain, portk(kfreq2, gkcordelia_moijb3_port), 2-(kq*2)
+
+kfreq3  limit gkcordelia_moijb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a3      spf a0, a0, ain, portk(kfreq3, gkcordelia_moijb3_port), 2-(kq*2)
+
+kfreq4  limit gkcordelia_moijb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a4      spf a0, a0, ain, portk(kfreq4, gkcordelia_moijb3_port), 2-(kq*2)
+
+aout    = a1 + a2 + a3 + a4
+
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
 ;OPCODE
     opcode cordelia_pconvolve, a, aiki
     ain, ir, kmix, ich xin
@@ -276,11 +330,67 @@ aout	balance2 aout, ain
     ain, kfreq, kq xin
 
 ifreq_var	init 5
-aout	skf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 0
+aout	skf ain, portk(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 5$ms), 1+(kq*3), 0
 aout	balance2 aout, ain
 
     xout aout
     endop
+;OPCODE
+
+gkcordelia_sklb_port init 5$ms
+gkcordelia_sklb_freq init 3
+
+    opcode cordelia_sklb, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+
+kfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a1      skf ain, portk(kfreq1, gkcordelia_sklb_port), 1+(kq*3), 0
+
+a0      init 0
+kfreq2  limit gkcordelia_sklb_freq*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a2      spf a0, a0, ain, portk(kfreq2, gkcordelia_sklb_port), 2-(kq*2)
+
+aout    = a1 + a2
+
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
+;OPCODE
+
+gkcordelia_sklb3_port init 5$ms
+gkcordelia_sklb3_freq1 init 3
+gkcordelia_sklb3_freq2 init 4
+gkcordelia_sklb3_freq3 init 5
+
+    opcode cordelia_sklb3, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+
+kfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a1      skf ain, portk(kfreq1, gkcordelia_sklb3_port), 1+(kq*3), 0
+
+a0      init 0
+kfreq2  limit gkcordelia_sklb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a2      spf a0, a0, ain, portk(kfreq2, gkcordelia_sklb3_port), 2-(kq*2)
+
+kfreq3  limit gkcordelia_sklb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a3      spf a0, a0, ain, portk(kfreq3, gkcordelia_sklb3_port), 2-(kq*2)
+
+kfreq4  limit gkcordelia_sklb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a4      spf a0, a0, ain, portk(kfreq4, gkcordelia_sklb3_port), 2-(kq*2)
+
+aout    = a1 + a2 + a3 + a4
+
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
 ;OPCODE
 
 /* Solina Chorus, based on Solina String Ensemble Chorus Module

@@ -1,4 +1,4 @@
-	$START_INSTR(sunij)
+	$start_instr(sunij)
 
 kcps		= icps+fractalnoise(icps/($M_PI*100), $M_PI_2)
 
@@ -16,5 +16,5 @@ aout		/= 3
 
 idur_var	init idur/$M_PI
 
-	$END_INSTR
+	$end_instr
 

@@ -31,6 +31,6 @@ aout		= ain/igainfact
 ;aout		K35_hpf aout, icps, 5.5, 1, 1.35
 
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

@@ -4,13 +4,7 @@ gkmhont_start	init 0
 gkmhont_port	init 1
 
 	instr mhont
-
-Sinstr		init "mhont_instr"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhont_instr)
 
 istart		init i(gkmhont_start)
 
@@ -28,17 +22,12 @@ else
 endif
 
 	turnoff
-
 	endin
 
-	instr mhont_instr
+	
 
-Sinstr		init "mhont"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	instr mhont_instr
+	$params(mhont)
 
 ilast_freq	init i(gkmhont_cps)
 iport		init i(gkmhont_port)
@@ -67,4 +56,4 @@ aq		limit a1, 0, .9995
 aout		moogladder2 aout, amoog_freq, iq
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

@@ -54,7 +54,7 @@ ipulse		i gkeuarm2_pulse
 
 euarm2_sched(Sinstr, idur, idyn, ienv, icps, ich, ionset, ipulse)
 
-	endin
+	
 
 	instr euarm2_instr
 
@@ -74,6 +74,6 @@ aout		oscil3 ($dyn_var/(ionset/6))/(iharm/3), icps + randomi:k(-ipanfreq, ipanfr
 
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

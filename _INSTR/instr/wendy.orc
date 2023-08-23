@@ -29,6 +29,4 @@ aout	gendy $dyn_var, kdyndist, kdurdist, kadpar, kddpar, kminfreq, kmaxfreq, kdy
 ;	ENVELOPE
 $dur_var(10)
 
-		$END_INSTR
-
-	endin
+		$end_instr

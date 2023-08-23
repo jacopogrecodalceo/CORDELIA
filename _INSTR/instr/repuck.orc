@@ -1,4 +1,4 @@
-		$START_INSTR(repuck)
+		$start_instr(repuck)
 
 ipanfreq	init random:i(-.25, .25)
 
@@ -8,4 +8,4 @@ aout	dcblock2 aout
 aout	buthp aout, icps - icps/12
 
 		$dur_var(10)
-		$END_INSTR
+		$end_instr

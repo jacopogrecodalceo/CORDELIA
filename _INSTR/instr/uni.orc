@@ -35,4 +35,4 @@ S2		sprintf	"%s-2", Sinstr
 		chnmix a1, S1
 		chnmix a2, S2
 
-		endin
+		

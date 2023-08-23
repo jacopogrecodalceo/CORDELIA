@@ -33,7 +33,7 @@ if ich == 1 then
 
 endif
 
-	endin
+	
 
 	instr alones_instr
 
@@ -46,7 +46,7 @@ aout		= avco;skf avco, gkalones_cps+(gkalones_cps*portk:k(gkalones_env*48, 95$ms
 
 	$CHNMIX
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

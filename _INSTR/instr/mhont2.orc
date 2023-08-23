@@ -29,7 +29,7 @@ endif
 
 	turnoff
 
-	endin
+	
 
 	instr mhont2_instr
 
@@ -75,4 +75,4 @@ aq		limit a1, 0, .9995
 aout		moogladder2 aout, amoog_freq, iq
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

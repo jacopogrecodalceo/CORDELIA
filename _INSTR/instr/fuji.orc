@@ -5,10 +5,10 @@
 gkfuji_form	scale jitter:k(1, gkbeatf/8, gkbeatf/4), $fff, $ppp, 1, -1
 gkfuji_oct	scale jitter:k(1, gkbeatf/8, gkbeatf/4), $mf, $pppp, 1, -1
 
-	endin
+	
 	alwayson("fuji_control")
 
-	$START_INSTR(fuji)
+	$start_instr(fuji)
 
 kris 		init .0035
 kdur 		init .0095
@@ -48,5 +48,5 @@ kfreq		limit kfreq, 7.5$k, 19.5$k
 aout		moogladder2 aout, kfreq, $dyn_var
 
 	$dur_var(25)
-	$END_INSTR
+	$end_instr
 

@@ -1,4 +1,4 @@
-    $START_INSTR(burd)
+    $start_instr(burd)
     $dur_var(10)
 
 icpsvar     init icps/100
@@ -12,4 +12,4 @@ apre    = a1 + a2
 aout    moogladder2 apre, (20$k)*(idyn*2.75), .25+jitter:k(.15, 1/idur, 3/idur)
 aout    balance2 aout, apre
 
-    $END_INSTR
+    $end_instr

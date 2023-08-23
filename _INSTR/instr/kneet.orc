@@ -1,4 +1,4 @@
-	$START_INSTR(kneet)
+	$start_instr(kneet)
 
 
 a1			oscili $dyn_var, icps, gisquare
@@ -46,4 +46,4 @@ aout		= acomb
 aout		/= 160
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

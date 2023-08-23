@@ -21,6 +21,6 @@ aout		comb aout, krvt, irvt
 
 aout		/= 12
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

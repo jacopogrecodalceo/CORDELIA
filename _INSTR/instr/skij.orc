@@ -18,6 +18,6 @@ aout		/= cosseg(32, p3, 1)
 
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

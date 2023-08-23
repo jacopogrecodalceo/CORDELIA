@@ -9,7 +9,7 @@ aout		inch ginmic1
 
 	$CHNMIX	
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

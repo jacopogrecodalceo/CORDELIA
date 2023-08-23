@@ -26,7 +26,7 @@ endif
 
 	turnoff
 
-	endin
+	
 
 	instr flij_instr
 
@@ -49,7 +49,7 @@ aout		phaser1 aout, kfreq, kord, kfb
 
 $dur_var(4)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	
 

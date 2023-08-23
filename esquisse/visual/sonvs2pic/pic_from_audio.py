@@ -3,8 +3,8 @@ import numpy as np
 import librosa
 import os
 
-audio = "/Users/j/Downloads/eduaredotempesta_2_.mp3"
-pic = "/Users/j/Documents/pics/314131102_493789726115535_5038325166102419351_n.jpg"
+audio = "/Users/j/Documents/PROJECTs/je_monstre/2308-paris_poisson/_reaper-render/20230817-3-post-cordelia.wav"
+pic = "/Users/j/Documents/pics/_chainsaw man/chainsaw_man-3.jpg"
 width, height = 960, 540
 
 audio_name = os.path.splitext(os.path.basename(audio))[0]

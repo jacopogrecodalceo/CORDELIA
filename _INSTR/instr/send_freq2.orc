@@ -9,10 +9,10 @@ ienv		init p5
 icps		init p6/20000
 ich		init p7
 
-	prints "FREQ2 is sending %f\n", icps
+	prints "FREQ2 is sg %f\n", icps
 
 acps	a icps
 
 	outch gisend_freq2_ch, acps
 
-	endin
+	

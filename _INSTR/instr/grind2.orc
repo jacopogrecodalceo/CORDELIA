@@ -1,6 +1,6 @@
 gkgrind2_p1	init 1
 
-	$START_INSTR(grind2)
+	$start_instr(grind2)
 	$dur_var(10)
 
 igrind		i gkgrind2_p1
@@ -26,4 +26,4 @@ aout		*= .65 + abs(lfo(.35, 3/idur))
 
 aout		dcblock2 aout
 
-	$END_INSTR
+	$end_instr

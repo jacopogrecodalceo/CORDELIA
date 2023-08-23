@@ -1,4 +1,4 @@
-	$START_INSTR(ixland)
+	$start_instr(ixland)
 	
 ipanfreq	random -.25, .25
 
@@ -38,4 +38,4 @@ aout		= ap + arev
 aout		dcblock2 aout
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

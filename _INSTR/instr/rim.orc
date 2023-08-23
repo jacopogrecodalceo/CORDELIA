@@ -52,6 +52,6 @@ aout	=  aout*linseg(1, p3-0.1, 1, 0.025, 0, 1, 0)
 
 $dur_var(25)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

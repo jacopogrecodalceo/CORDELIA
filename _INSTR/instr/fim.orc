@@ -1,7 +1,7 @@
 gkfim_detune	init 1.95
 gkfim_var		init 1
 
-	$START_INSTR(fim)
+	$start_instr(fim)
 
 afreq		= icps*oscil3(1, icps*gkfim_detune, gisaw)
 
@@ -13,4 +13,4 @@ aout		balance2 aout, as
 aout		/= 4
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

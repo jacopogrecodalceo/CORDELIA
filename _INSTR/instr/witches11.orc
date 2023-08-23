@@ -24,7 +24,7 @@ idetune = i(gkwitches11_detune)
 
 	turnoff
 
-	endin
+	
 
 	instr witches11_instr
 
@@ -45,6 +45,6 @@ aout	foscili $dyn_var, icps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, amod+rando
 ;	ENVELOPE
 $dur_var(10)
 
-		$END_INSTR
+		$end_instr
 
-	endin
+	

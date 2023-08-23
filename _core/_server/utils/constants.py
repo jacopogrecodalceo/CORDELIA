@@ -65,6 +65,13 @@ with open(CORDELIA_DIR + '/_setting' + '/interval.json') as f:
 with open(CORDELIA_DIR + '/_setting' + '/module.json') as f:
 	CORDELIA_MODULE_json = json.load(f)
 
+try:
+	with open('/Volumes/petit_elements_di_j/_sonvs_reseau/soundfont/sf.json') as f:
+		CORDELIA_SF_json = json.load(f)
+except Exception:
+	CORDELIA_SF_json = ''
+
+
 CORDELIA_COMPILE_FIRST = []
 CORDELIA_COMPILE = []
 

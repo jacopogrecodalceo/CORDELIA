@@ -177,7 +177,10 @@ def main():
 			RPR_Undo_BeginBlock()
 
 			for i in range(len(tuning.freq)):
-				string = f'{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}\n'
+				index = abs(i-base_midi_note)%len(tuning.scala_data)
+				formatted_index = str(index).zfill(2)
+
+				string = f'{formatted_index}|{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}\n'
 				retval = RPR_SetTrackMIDINoteNameEx(0, track_id, int(i), -1, string)
 
 			RPR_Undo_EndBlock('Insert tuning', 0)

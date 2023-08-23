@@ -19,6 +19,6 @@ aout		flanger aout, a(125), .85
 
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

@@ -1,6 +1,6 @@
 gkorphans3x_vib init .25
 
-		$START_INSTR(orphans3x)
+		$start_instr(orphans3x)
 
 ift1		init gisine
 ift2		init gisaw
@@ -30,4 +30,4 @@ aout		balance2 acheby, aosc
 aout		dcblock2 aout
 
 	$dur_var(5)
-	$END_INSTR
+	$end_instr

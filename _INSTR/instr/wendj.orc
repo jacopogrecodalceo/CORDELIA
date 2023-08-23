@@ -53,6 +53,6 @@ aout		= ainstr1_out + (ainstr2_out*.65) + (ainstr3_out*1.35)
 ;		ENVELOPE
 $dur_var(10)
 
-		$END_INSTR
+		$end_instr
 
-	endin
+	

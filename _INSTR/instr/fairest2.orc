@@ -1,4 +1,4 @@
-	$START_INSTR(fairest2)
+	$start_instr(fairest2)
 
 ivib		= idyn/4
 kvibfreq	= randomi:k(1.5, 5, .25, 3)
@@ -26,4 +26,4 @@ aout	K35_hpf aout, 25, 7.5
 aout	*= idyn + (lfo:a(ivib, kvibfreq + random:i(-.15, .15)) * expsega(.0005, idur, 1))
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

@@ -5,7 +5,7 @@ gkqb_q		lfo .235, gkqb_freq/2, 1
 
 gkqb_freq	samphold gkqb_freq, metro($M_PI*(1+(gkqb_q/4)))
 
-		endin
+		
 		alwayson("qb_control")
 
 		instr qb
@@ -43,6 +43,6 @@ alast		= (apre/2) + aph + (afl*2)
 aout		moogladder2 alast, (20$k)*(idyn*2.75), random:i(.5, .75)
 aout		balance2 aout, apre
 
-		$END_INSTR
+		$end_instr
 
-		endin
+		

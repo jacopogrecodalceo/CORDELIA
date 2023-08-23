@@ -34,7 +34,7 @@ if ich == 1 then
 
 endif
 
-	endin
+	
 
 
 
@@ -59,7 +59,7 @@ aout		phaser1 aout, gkalone_cps/1000, 9, .95
 aout		balance2 aout, avco
 
 	$CHNMIX
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

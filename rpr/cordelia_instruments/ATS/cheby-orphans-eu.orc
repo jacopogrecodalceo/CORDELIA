@@ -47,7 +47,7 @@ ionset			limit ionset, 1, imax_p
 	instr 2
 ; ============
 ; *** INIT ***
-; ============
+; ============ 
 idur			init gidur
 p3				init idur
 Satsfile		init p4

@@ -48,4 +48,4 @@ aout		= abel + arev1/12 + arev2/9 + arev3/7
 aout		/= 3
 	$CHNMIX
 
-	endin
+	

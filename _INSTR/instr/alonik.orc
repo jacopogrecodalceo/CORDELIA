@@ -32,7 +32,7 @@ if ich == 1 then
 
 endif
 
-	endin
+	
 
 	instr alone_instr
 
@@ -56,7 +56,7 @@ aout		balance2 aout, avco
 
 	$CHNMIX
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

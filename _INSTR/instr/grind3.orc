@@ -1,6 +1,6 @@
 gkgrind3_p1	init 1
 
-	$START_INSTR(grind3)
+	$start_instr(grind3)
 
 	$dur_var(10)
 
@@ -25,5 +25,5 @@ aout		comb aout, krvt, irvt
 aout		flanger pdhalf(aout/idynred, line(.95, idur/12, -.95)), expon:a((divz(idur, igrind, gizero))$s*.25, idur/24, idur*1.5*igrind)$ms, .125
 aout		flanger pdhalf(aout/idynred, line(-.75, idur/4, .95)), expon:a((divz(idur, igrind, gizero))$s*.15, 35$ms, idur*3.5*igrind)$ms, .95
 
-	$END_INSTR
+	$end_instr
 

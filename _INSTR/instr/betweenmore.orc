@@ -46,7 +46,7 @@ aout		= a1 + ((a2/2)*scale(idyn*4, 0, 1)) + (af1*cosseg:k(0, idur, 1)) + (af2*co
 ;	ENVELOPE
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	
 

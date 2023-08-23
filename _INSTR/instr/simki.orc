@@ -1,6 +1,6 @@
 gisimki_del	init 1+1/nchnls
 
-	$START_INSTR(simki)
+	$start_instr(simki)
 
 idiv						init icps/100
 
@@ -31,5 +31,5 @@ if int(gisimki_del) == 7 then
 	gisimki_del init 1+1/nchnls
 endif
 
-	$END_INSTR
+	$end_instr
 

@@ -2,13 +2,12 @@
 
 ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
 	sfpassign 0, ipiano
-	turnoff
-
 	endin
-	schedule "piano_load", 0, 1
+	
+	schedule "piano_load", 0, 0
 
 
-	$START_INSTR(pianon2)
+	$start_instr(pianon2)
 
 ain		sfplay3m 1, ftom:i(A4), $dyn_var/2048, icps, 0, 1
 
@@ -43,4 +42,4 @@ aout		= a1 + a2*abs:a(lfo:a(expseg(1, p3, .005), cosseg(6, p3, 2)/p3))
 aout		/= 4
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

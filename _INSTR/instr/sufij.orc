@@ -38,6 +38,6 @@ aout		balance2 aout, anoi
 
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

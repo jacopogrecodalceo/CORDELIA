@@ -1,0 +1,9 @@
+[
+    {"type": "VALUE", "pattern": "\\w+"},
+    {"type": "LPAREN", "pattern": "\\("},
+    {"type": "RPAREN", "pattern": "\\)"},
+    {"type": "COMMA", "pattern": ","},
+    {"type": "COLON", "pattern": ":"},
+    {"type": "COMMENT", "pattern": ";"},
+    {"type": "NEWLINE", "pattern": "\\n"}
+]

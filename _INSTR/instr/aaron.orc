@@ -34,7 +34,7 @@ aout	foscili amp, kcps+randomi:k(-.05, .05, 1/idur, 2, 0), kcar, kmod+randomi:k(
 aout	dcblock2 aout
 
 		$dur_var(100)
-		$END_INSTR
+		$end_instr
 
 	instr aaron_instr_2
 
@@ -59,7 +59,7 @@ aout	dcblock2 aout
 
 	$CHNMIX
 
-	endin
+	
 
 	instr aaron_instr_3
 
@@ -83,7 +83,7 @@ aout	dcblock2 aout
 
 	$CHNMIX
 
-	endin
+	
 
 	instr aaron_instr_4
 
@@ -114,11 +114,11 @@ aout	dcblock2 aout
 
 	$CHNMIX
 
-	endin
+	
 
 ;---
 
-	$START_INSTR(aaron)
+	$start_instr(aaron)
 
 indx		init i(gkaaron_indx)
 idetune 	init i(gkaaron_detune)
@@ -135,4 +135,4 @@ idetune 	init i(gkaaron_detune)
 
 	turnoff
 
-	endin
+	

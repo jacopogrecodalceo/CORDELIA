@@ -25,8 +25,9 @@ if gimaij_indx >= ilenharm then
 endif
 
 	turnoff
-
 	endin
+
+	
 
 
 
@@ -50,6 +51,6 @@ aout		phaser1 aout, kfreq, kord, kfb
 
 $dur_var(4)
 
-	$END_INSTR
+	$end_instr
 
 

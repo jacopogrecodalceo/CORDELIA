@@ -39,7 +39,7 @@ aout			flanger asyn, adel, kfb
 aout			buthp aout, icps - icps/12
 
 	$dur_var(5)
-	$END_INSTR
+	$end_instr
 
 	instr cascadexp
 
@@ -58,4 +58,4 @@ iarp	init .0125
 
 	turnoff
 
-	endin
+	

@@ -1,4 +1,4 @@
-	$START_INSTR(corpia)
+	$start_instr(corpia)
 
 idyn	init idyn/3
 
@@ -36,5 +36,5 @@ aout			limit aout, -1, 1
 aout			dcblock2 aout
 	$dur_var(10)
 
-	$END_INSTR
+	$end_instr
 

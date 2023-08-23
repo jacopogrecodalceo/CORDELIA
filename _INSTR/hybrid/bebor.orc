@@ -28,4 +28,4 @@ aout		= adel
 
 	$CHNMIX
 
-	endin
+	

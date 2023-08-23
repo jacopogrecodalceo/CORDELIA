@@ -2,10 +2,10 @@
 
 gkorphans2_var lfse 50, 100, gkbeatf/64
 
-	endin
+	
 	schedule("orphans2_control", 0, -1)
 
-	$START_INSTR(orphans2)
+	$start_instr(orphans2)
 
 icpsvar		init icps/i(gkorphans2_var)
 ift			init gisine
@@ -34,4 +34,4 @@ aout		balance2 acheby, aosc
 aout		dcblock2 aout
 
 	$dur_var(5)
-	$END_INSTR
+	$end_instr

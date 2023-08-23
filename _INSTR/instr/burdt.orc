@@ -1,4 +1,4 @@
-    $START_INSTR(burdt)
+    $start_instr(burdt)
     $dur_var(10)
 
 kndx		    = abs(jitter(1, gibeatf/16, gibeatf))
@@ -22,4 +22,4 @@ ksk_q           = 2+jitter:k(.5, 1/idur, 3/idur)
 aout            skf apre, isk_freq, ksk_q
 aout            balance2 aout, apre
 
-    $END_INSTR
+    $end_instr

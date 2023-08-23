@@ -23,7 +23,7 @@ until indx == gimetal_max_series do
 od
 	turnoff
 
-	endin
+	
 
 	instr metal_instr
 
@@ -49,6 +49,6 @@ arev2		valpass aosc, krvt, klpt, imaxlpt
 
 aout		= aosc + arev1 + arev2
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

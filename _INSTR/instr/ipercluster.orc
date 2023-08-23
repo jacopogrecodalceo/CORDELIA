@@ -20,14 +20,14 @@ ich			init p7
 	schedule Sinstr, 0, idur, idyn, ienv, limit(icps/8, 20, 20$k), ich
 	turnoff
 
-	endin
+	
 
 	instr ipercluster_control
 
 gkipercluster_linvar	= giperfactor/2 + lfo((giperfactor-1)/2, gkbeatf/16)
 gkipercluster_vibfreq	randomh 2, 9, .5, 3
 
-	endin
+	
 	alwayson("ipercluster_control")
 
 	instr ipercluster_instr
@@ -60,6 +60,6 @@ aout		*= vibr(.45, (gkipercluster_vibfreq+random(-.15, .15))/idur, gisine)
 ;		ENVELOPE
 $dur_var(100)
 
-			$END_INSTR
+			$end_instr
 
-	endin
+	

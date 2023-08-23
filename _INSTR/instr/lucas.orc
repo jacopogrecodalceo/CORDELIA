@@ -19,6 +19,6 @@ aout		/= 4
 
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

@@ -43,7 +43,7 @@ if ich == 1 then
 
 endif
 
-	endin
+	
 
 	instr ventre_instr
 
@@ -73,7 +73,7 @@ aout		moogladder2 aphas, gkventre_lad, .95
 aout		balance2 aout, aphas
 	$CHNMIX
 
-	endin
+	
 
 indx	init 0
 until	indx == nchnls do

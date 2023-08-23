@@ -39,10 +39,7 @@ def process_messages():
 
 def csound_perf_homemade(cs):
 	cs.start()
-	
-	while cs.performKsmps() == 0:
-		pass
-
+	cs.perform()
 	cs.cleanup()
 
 	return

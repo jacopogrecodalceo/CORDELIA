@@ -1,6 +1,6 @@
-	$START_INSTR(fairest4)
+	$start_instr(fairest4)
 
 aout	vco2 $dyn_var, icps, gisine
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

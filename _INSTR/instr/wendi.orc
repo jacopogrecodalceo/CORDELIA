@@ -39,6 +39,6 @@ aout	= ai1 + (ai2/2)
 ;	ENVELOPE
 $dur_var(10)
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

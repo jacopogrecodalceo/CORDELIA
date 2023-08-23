@@ -16,6 +16,6 @@ aout		balance2 aout, astat
 
 ienvvar		init idur/$M_PI
 
-	$END_INSTR
+	$end_instr
 
-	endin
+	

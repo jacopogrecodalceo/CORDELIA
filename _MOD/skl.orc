@@ -9,7 +9,7 @@ PARAM_OUT cordelia_skl PARAM_IN, PARAM_1, PARAM_2
     ain, kfreq, kq xin
 
 ifreq_var	init 5
-aout	skf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 0
+aout	skf ain, portk(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 5$ms), 1+(kq*3), 0
 aout	balance2 aout, ain
 
     xout aout

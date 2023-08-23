@@ -1,4 +1,4 @@
-	$START_INSTR(cnik)
+	$start_instr(cnik)
 
 
 a1		oscili $dyn_var, icps, gisquare
@@ -37,4 +37,4 @@ aout		= abal
 aout		/= 6
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

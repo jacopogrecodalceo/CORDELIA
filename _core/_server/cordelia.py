@@ -131,13 +131,18 @@ def main():
 				#csound_cordelia.compileOrcAsync(code[1])
 				CORDELIA_COMPILE.append(code[1])
 
+	
 		#county_time(start_time, 'BEFORE COMPILATION INSTR; GEN; SCALE')
-		if CORDELIA_COMPILE_FIRST:
-			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE_FIRST))
-			CORDELIA_COMPILE_FIRST.clear()	
-		#county_time(start_time, 'BEFORE CODE')
-
-		if CORDELIA_COMPILE:
+		if CORDELIA_COMPILE_FIRST and CORDELIA_COMPILE:
+			retval = csound_cordelia.evalCode('\n'.join(CORDELIA_COMPILE_FIRST))
+			CORDELIA_COMPILE_FIRST.clear()
+			if retval == 0 and CORDELIA_COMPILE:
+				csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
+				CORDELIA_COMPILE.clear()
+		elif CORDELIA_COMPILE_FIRST:
+			csound_cordelia.evalCode('\n'.join(CORDELIA_COMPILE_FIRST))
+			CORDELIA_COMPILE_FIRST.clear()
+		elif CORDELIA_COMPILE:
 			csound_cordelia.compileOrcAsync('\n'.join(CORDELIA_COMPILE))
 			CORDELIA_COMPILE.clear()
 		#county_time(start_time, 'END CODE')

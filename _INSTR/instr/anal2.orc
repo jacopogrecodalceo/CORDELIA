@@ -1,4 +1,4 @@
-	$START_INSTR(anal)
+	$start_instr(anal)
 
 
 imode	init 16
@@ -22,6 +22,6 @@ kcps	= portk(icps * ktun_dec, .025)+kvibf
 aout	vco2 $dyn_var*abs(kvibd), kcps, imode, kpw, kphs, inyx
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr
 
 

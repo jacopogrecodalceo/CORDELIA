@@ -1,4 +1,4 @@
-	$START_INSTR(trans)
+	$start_instr(trans)
 
 ifreq		init (icps*10/8)-icps*((ich%2)+1)
 kenvib		cosseg 0, idur*2/3, .125*$dyn_var, idur/3, 1
@@ -26,4 +26,4 @@ aout		= aosc/8 + ab1 + af/.75
 aout		*= 4
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

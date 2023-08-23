@@ -1,6 +1,6 @@
 gkorphans4_vib init .25
 
-		$START_INSTR(orphans4)
+		$start_instr(orphans4)
 
 icpsvar		init icps/100
 ift1		init gisine
@@ -32,4 +32,4 @@ aout		balance2 acheby, aosc
 aout		dcblock2 aout
 
 	$dur_var(5)
-	$END_INSTR
+	$end_instr

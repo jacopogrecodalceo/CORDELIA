@@ -4,13 +4,7 @@ gkmhonq_start	init 0
 gkmhonq_port	init 1
 
 	instr mhonq
-
-Sinstr		init "mhonq_instr"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhonq_instr)
 
 istart		init i(gkmhonq_start)
 
@@ -28,17 +22,12 @@ else
 endif
 
 	turnoff
-
 	endin
 
-	instr mhonq_instr
+	
 
-Sinstr		init "mhonq"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	instr mhonq_instr
+	$params(mhonq)
 
 iport		init i(gkmhonq_port)
 
@@ -60,4 +49,4 @@ aq		limit a1, 0, .9995
 aout		moogladder2 aout, amoog_freq, aq
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

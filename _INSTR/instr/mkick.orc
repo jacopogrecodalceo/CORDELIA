@@ -11,8 +11,8 @@ aout	= tanh(aout)
 
 $dur_var(100)
 
-	$END_INSTR
+	$end_instr
 
 
-	endin
+	
 

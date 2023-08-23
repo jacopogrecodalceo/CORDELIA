@@ -2,12 +2,13 @@
 
 ipiano	sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
 	sfpassign 0, ipiano
-
 	endin
+
+	
 	schedule "piano_load", 0, 0
 
 
-	$START_INSTR(pianot)
+	$start_instr(pianot)
 
 
 ituning		i gktuning
@@ -50,4 +51,4 @@ aout		/= 4
 aout		dcblock2 aout
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

@@ -30,8 +30,8 @@
 ;-b 128
 ;-B 1024
 ;--realtime
-
--+rtaudio=PortAudio
+-+rtaudio=pa_cb
+;-+rtaudio=PortAudio
 ;-+rtaudio=jack
 ;-+rtaudio=CoreAudio
 

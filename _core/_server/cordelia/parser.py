@@ -10,7 +10,7 @@ from utils.constants import GEN_HASPLAYED, CORDELIA_GEN_json
 from utils.constants import INSTR_HASPLAYED, CORDELIA_INSTR_json
 from csound import CORDELIA_NCHNLS
 from utils.constants import CORDELIA_CURRENT_DIR, CORDELIA_DATE
-
+from utils.constants import CORDELIA_SF_json
 from utils.constants import DEFAULT_SONVS_PATH, DEFAULT_SONVS_SAMP_PATH, DEFAULT_SONVS_SYNC_PATH, DEFAULT_SONVS_LPC_PATH
 
 def note(unit):
@@ -80,117 +80,122 @@ def instr(unit):
 	queue_hybrid = []
 
 	for name in names:
-		if name in CORDELIA_INSTR_json:
-			if name not in INSTR_HASPLAYED:
-				path = CORDELIA_INSTR_json[name]['path']
-				type = CORDELIA_INSTR_json[name]['type']
+		if name not in INSTR_HASPLAYED:
 
-				if type == 'instr':
-					with open(path) as f:
-						#csound_cordelia.compileOrcAsync(f.read())
-						string = f.read()
+			if name in CORDELIA_INSTR_json or name.startswith('sf_'):
+
+				if name.startswith('sf_'):
+					if name in CORDELIA_SF_json:
+						CORDELIA_COMPILE_FIRST.append(CORDELIA_SF_json[name]['csound'])
+				else:
+					path = CORDELIA_INSTR_json[name]['path']
+					type = CORDELIA_INSTR_json[name]['type']
+
+					if type == 'instr':
+						with open(path) as f:
+							#csound_cordelia.compileOrcAsync(f.read())
+							string = f.read()
+							CORDELIA_COMPILE_FIRST.append(string)
+
+					elif type == 'sonvs':
+
+						channels = CORDELIA_INSTR_json[name]['channels']
+						string = f'gi{name}_ch init {channels}' + '\n'
+						index_num = 1
+						file_vars = []
+						vir = ', '
+
+						if '_so' in name:
+							with open(DEFAULT_SONVS_SAMP_PATH) as f:
+								for index, p in enumerate(path):
+									index_file = index + 1
+									string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+									for i in range(int(channels)):
+										ch = str(i + 1)
+										num = str(index_num)
+										file_var = f'gi{name}_{num}'
+										file_vars.append(file_var)
+										string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+										index_num += 1
+								
+								string += '\n'
+								string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+								string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
+								string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)
+
+						elif '_sy' in name:
+							with open(DEFAULT_SONVS_SYNC_PATH) as f:
+								for index, p in enumerate(path):
+									index_file = index + 1
+									string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+									for i in range(int(channels)):
+										ch = str(i + 1)
+										num = str(index_num)
+										file_var = f'gi{name}_{num}'
+										file_vars.append(file_var)
+										string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+										index_num += 1
+								
+								string += '\n'
+								string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+								string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
+								string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)
+
+						elif '_lpc' in name:
+							with open(DEFAULT_SONVS_LPC_PATH) as f:
+								for index, p in enumerate(path):
+									index_file = index + 1
+									string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+									for i in range(int(channels)):
+										ch = str(i + 1)
+										num = str(index_num)
+										file_var = f'gi{name}_{num}'
+										file_vars.append(file_var)
+										string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+										index_num += 1
+								
+								string += '\n'
+								string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+								string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
+								
+						else:
+							with open(DEFAULT_SONVS_PATH) as f:
+								for index, p in enumerate(path):
+									index_file = index + 1
+									string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
+									for i in range(int(channels)):
+										ch = str(i + 1)
+										num = str(index_num)
+										file_var = f'gi{name}_{num}'
+										file_vars.append(file_var)
+										string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
+										index_num += 1
+								
+								string += '\n'
+								string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
+								string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
+											
+						print(string)
 						CORDELIA_COMPILE_FIRST.append(string)
 
-				elif type == 'sonvs':
+						if queue_hybrid:
+							CORDELIA_COMPILE_FIRST.extend(queue_hybrid)
+							queue_hybrid.clear()
 
-					channels = CORDELIA_INSTR_json[name]['channels']
-					string = f'gi{name}_ch init {channels}' + '\n'
-					index_num = 1
-					file_vars = []
-					vir = ', '
+					elif type == 'hybrid':
 
-					if '_so' in name:
-						with open(DEFAULT_SONVS_SAMP_PATH) as f:
-							for index, p in enumerate(path):
-								index_file = index + 1
-								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
-								for i in range(int(channels)):
-									ch = str(i + 1)
-									num = str(index_num)
-									file_var = f'gi{name}_{num}'
-									file_vars.append(file_var)
-									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
-									index_num += 1
-							
-							string += '\n'
-							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
-							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
-							string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)
+						required_instr = CORDELIA_INSTR_json[name]['required']
+						names.extend(required_instr)
 
-					elif '_sy' in name:
-						with open(DEFAULT_SONVS_SYNC_PATH) as f:
-							for index, p in enumerate(path):
-								index_file = index + 1
-								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
-								for i in range(int(channels)):
-									ch = str(i + 1)
-									num = str(index_num)
-									file_var = f'gi{name}_{num}'
-									file_vars.append(file_var)
-									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
-									index_num += 1
-							
-							string += '\n'
-							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
-							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
-							string = re.sub(r'---PITCH---', str(CORDELIA_INSTR_json[name]['pitch']), string, flags=re.MULTILINE)
+						with open(path) as f:
+							#csound_cordelia.compileOrcAsync(f.read())
+							string = f.read()
+							for index, each in enumerate(required_instr):
+								repl = CORDELIA_INSTR_json[required_instr[index]]['path'][index]
+								string = re.sub(fr'---REQUIRED_INSTR_PATH_{index+1}---', f'"{repl}"', string, flags=re.MULTILINE)
 
-					elif '_lpc' in name:
-						with open(DEFAULT_SONVS_LPC_PATH) as f:
-							for index, p in enumerate(path):
-								index_file = index + 1
-								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
-								for i in range(int(channels)):
-									ch = str(i + 1)
-									num = str(index_num)
-									file_var = f'gi{name}_{num}'
-									file_vars.append(file_var)
-									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
-									index_num += 1
-							
-							string += '\n'
-							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
-							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)	
-							
-					else:
-						with open(DEFAULT_SONVS_PATH) as f:
-							for index, p in enumerate(path):
-								index_file = index + 1
-								string += f'\ngS{name}_file_{index_file} init "{p}"' + '\n'
-								for i in range(int(channels)):
-									ch = str(i + 1)
-									num = str(index_num)
-									file_var = f'gi{name}_{num}'
-									file_vars.append(file_var)
-									string += f'{file_var} ftgen 0, 0, 0, 1, gS{name}_file_{index_file}, 0, 0, {ch}' + '\n'
-									index_num += 1
-							
-							string += '\n'
-							string += f'gi{name}_list[] fillarray {vir.join(file_vars)}\n'
-							string += re.sub(r'---NAME---', name, f.read(), flags=re.MULTILINE)
-										
-					print(string)
-					CORDELIA_COMPILE_FIRST.append(string)
-
-					if queue_hybrid:
-						CORDELIA_COMPILE_FIRST.extend(queue_hybrid)
-						queue_hybrid.clear()
-
-				elif type == 'hybrid':
-
-					required_instr = CORDELIA_INSTR_json[name]['required']
-					names.extend(required_instr)
-
-					with open(path) as f:
-						#csound_cordelia.compileOrcAsync(f.read())
-						string = f.read()
-						for index, each in enumerate(required_instr):
-							repl = CORDELIA_INSTR_json[required_instr[index]]['path'][index]
-							string = re.sub(fr'---REQUIRED_INSTR_PATH_{index+1}---', f'"{repl}"', string, flags=re.MULTILINE)
-
-						queue_hybrid.append(string)
+							queue_hybrid.append(string)
 			
-
 				INSTR_HASPLAYED.append(name)
 
 				#and create an array
@@ -218,9 +223,7 @@ def instr(unit):
 				if queue_hybrid:
 					CORDELIA_COMPILE_FIRST.extend(queue_hybrid)
 					queue_hybrid.clear()
-		else:
-			print(f'Invalid instrument name: {bcolors.WARNING}{name}{bcolors.ENDC}')
-			#raise ValueError(f'Invalid instrument name: {bcolors.WARNING}{name}{bcolors.ENDC}')
+			
 				
 	names.clear()
 	return unit

@@ -66,6 +66,4 @@ endif
 
 aout        =     a1 + a2 + a3 + a4 + a5 + a6
 
-	        $END_INSTR
-
-            endin
+	        $end_instr

@@ -1,16 +1,10 @@
-gkmhon_cps	init 20
+gkmhon_cps		init 20
 gimhon_choose	init 0
 gkmhon_start	init 0
-gkmhon_port	init 1
+gkmhon_port		init 1
 
 	instr mhon
-
-Sinstr		init "mhon_instr"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhon_instr)
 
 istart		init i(gkmhon_start)
 
@@ -28,17 +22,11 @@ else
 endif
 
 	turnoff
-
 	endin
+	
 
 	instr mhon_instr
-
-Sinstr		init "mhon"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$params(mhon)
 
 iport		init i(gkmhon_port)
 
@@ -60,4 +48,4 @@ aq			limit a1, 0, .9995
 aout		moogladder2 aout, amoog_freq, iq
 
 	$dur_var(10)
-	$END_INSTR
+	$end_instr

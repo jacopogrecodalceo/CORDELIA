@@ -1,4 +1,4 @@
-	$START_INSTR(orphans)
+	$start_instr(orphans)
 
 icpsvar		init icps/100
 
@@ -32,4 +32,4 @@ aout		balance2 acheby, aosc
 aout		dcblock2 aout
 
 		$dur_var(5)
-		$END_INSTR
+		$end_instr
