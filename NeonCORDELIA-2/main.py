@@ -5,45 +5,25 @@ def main():
 	input_code = """
 
 
+eu: 6, pump(4, fill(1, 3,2)), 2
+	r4asd@ixland@solo;.decij(gk1, sr/pump(64, fill(4, 1, 3, 8))).flanij(divz(sn, gk1-2, 0), .65)
+	gkbeats*once(8, .25, 1)
+	mp
+	likearev.a(5)
+	1
+	2
+	3
+	4
+	5
 
-gkpulse = 130
-
-gktuning = scala.pto_diat
-;gkarm2_sync_freq = 5
-
-eu: 6, 16, 8
-	@careless4;.moij(ntof(g3)*pump(16, fill(1, 1, 2, 3, 1)), .95).moij(ntof(b4)*pump(12, fill(1, 1, 2, 3, 1)), .95)
-	wn*once(0, 0, 0, 3)
-	fff*4
-	bea
-	a4: 0, 0, 0, 1
-	b4: 0, 0, 0, 1
-	g4: 0, 0, 0, 1
-
-eu: 6, 16, 16
-	@bebois.revij(qn, .5, .5)
-	wn*once(0, 0, 0, 4)
-	fff
-	iago
-	a4: 0, 0, 0, 1
-	b4: 0, 0, 0, 1
-	g4: 0, 0, 0, 1
-
-
-@orp: 16, mf*in8m
-
-@dead4: 16, pppp
-
-@drum.cutij(2).sklb3(2asd3): 8, fff
-
-scala.undet
-
-gkpulse = 032
 
 	"""
 	parser = Parser(input_code)
 	parser.parse()
-
+	instruments = parser.get_instruments()
+	for i in instruments:
+		i.print_attributes()
+		print('-'*40)
 
 if __name__ == "__main__":
 	main()

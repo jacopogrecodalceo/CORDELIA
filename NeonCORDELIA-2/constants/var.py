@@ -1,5 +1,8 @@
 import json
 
+cordelia_init_commit = []
+cordelia_compile_code = []
+
 cordelia_has = []
 
 with open('./config/basic_token.json', 'r') as f:

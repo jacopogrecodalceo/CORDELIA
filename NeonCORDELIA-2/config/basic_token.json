@@ -1,9 +1,19 @@
 [
-    {"type": "VALUE", "pattern": "\\w+"},
+    {"type": "RHYTHM", "pattern": "(eu|jex):"},
+    {"type": "SCALA", "pattern": "scala\\.\\w+"},
+    {"type": "INSTR", "pattern": "@\\w+"},
+    {"type": "ROUTING", "pattern": "\\.[a-z]\\w+"},
+    {"type": "FUNC", "pattern": "\\w+(?=\\()"},
     {"type": "LPAREN", "pattern": "\\("},
     {"type": "RPAREN", "pattern": "\\)"},
+    {"type": "GKVAR", "pattern": "gk\\w+"},
+    {"type": "GIVAR", "pattern": "gi\\w+"},
+    {"type": "NUMBER_FLOAT", "pattern": "\\d+\\.\\d+|\\.\\d+"},
+    {"type": "NUMBER_INT", "pattern": "\\d+"},
     {"type": "COMMA", "pattern": ","},
     {"type": "COLON", "pattern": ":"},
     {"type": "COMMENT", "pattern": ";"},
+    {"type": "SYMBOL", "pattern": "[^\\w\\s]"},
+    {"type": "VALUE", "pattern": "\\w+"},
     {"type": "NEWLINE", "pattern": "\\n"}
 ]

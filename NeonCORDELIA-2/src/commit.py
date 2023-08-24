@@ -6,7 +6,7 @@ token_drop_types = [
 	'SCALA'
 ]
 
-def drop_to_csound(tokens):
+def commit_to_csound(tokens):
 	parsed_tokens = []
 	for token in tokens:
 		if token.type in token_drop_types and token.value not in cordelia_has:
