@@ -57,5 +57,5 @@ iarp	init .0125
 	schedule Sinstr, random:i(0, iarp),	idur, idyn, ienv, icps, ich
 
 	turnoff
-
+	endin
 	

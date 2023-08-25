@@ -1,6 +1,22 @@
-from src.lexer import Token, Tokenizer
-from src.commit import commit_to_csound
-from src.instrumenter import Instrument
+from src.instrumenter import Instrument, postInstrument
+from src.lexer import Token
+
+def remove_sequence(tokens, start_type, end_type):
+	start_index = next((i for i, token in enumerate(tokens) if token.type in start_type), None)
+	if start_index is None:
+		return tokens, list() # No matching start type found, return the original tokens
+	
+	end_index = next((i for i, token in enumerate(tokens[start_index:]) if token.type in end_type), None)
+	if end_index is None:
+		return tokens, list() # No matching end type found, return the original tokens
+	
+	end_index += start_index + 1  # Adjust end_index based on start_index
+
+	sequence = tokens[:start_index] + tokens[end_index:]
+	extracted_sequence = tokens[start_index:end_index]
+
+	return sequence, extracted_sequence
+
 
 def extract_comma(tokens):
 	tokens_nocomma = []
@@ -19,49 +35,6 @@ def extract_comma(tokens):
 	tokens_nocomma.append(''.join(t.value for t in tokens[start_index:]))
 
 	return tokens_nocomma
-
-def extract_params_until_newline(tokens):
-	tokens_nocomma = []
-	open_paren_count = 0
-	start_index = 0
-	for i, token in enumerate(tokens):
-		if token.type == 'NEWLINE':
-			tokens_nocomma.append(''.join(t.value for t in tokens[start_index:i]))
-			break
-		elif token.type == 'LPAREN':
-			open_paren_count += 1
-		elif token.type == 'RPAREN':
-			open_paren_count -= 1
-		elif token.type == 'COMMA' and open_paren_count == 0:
-			tokens_nocomma.append(''.join(t.value for t in tokens[start_index:i]))
-			start_index = i + 1
-
-	return tokens_nocomma
-
-def extract_params(tokens, start_type='NEWLINE', end_type='NEWLINE', include_start=False, include_end=False):
-	remaining_tokens = []
-
-	open_paren_count = 0
-	extraction_start_index = None
-	inside_extraction = False
-
-	for i, token in enumerate(tokens):
-		if token.type == start_type:
-			inside_extraction = True
-			extraction_start_index = i + (0 if include_start else 1)  # Start including from start_token_type
-			open_paren_count = 0  # Reset open parenthesis count
-
-		if inside_extraction:
-			if token.type == 'LPAREN':
-				open_paren_count += 1
-			elif token.type == 'RPAREN':
-				open_paren_count -= 1
-			elif token.type in end_type and open_paren_count == 0:
-				tokens_nocomma = [t.value for t in tokens[extraction_start_index:i + (1 if include_end else 0)]]
-				remaining_tokens = tokens[i + (1 if include_end else 0):]  # Remaining tokens after end_token_type
-				break
-
-	return tokens_nocomma, remaining_tokens
 
 def extract_sequence(tokens, start_type, end_type, include_start=False, include_end=False, include_paren=True):
 	sequence = []
@@ -105,12 +78,9 @@ def condition(condition_data):
 
 class Parser:
 
-	def __init__(self, input_code):
+	def __init__(self, tokens):
 
-		tokenizer = Tokenizer(input_code)
-
-		tokens = tokenizer.get_tokens()
-		self.tokens = commit_to_csound(tokens)
+		self.tokens = tokens
 		#self.print_tokens(self.tokens)
 
 		self.parse_func = []
@@ -158,32 +128,33 @@ class Parser:
 	@condition({'start': 'RHYTHM', 'end': 'EMPTYLINE'})
 	def parse_rhythmic_seq(self, main_tokens):
 		main_tokens.append(Token('EOF', ''))
-		print_tokens(main_tokens)
-		_, tokens = extract_sequence(main_tokens, start_type='COMMENT', end_type='NEWLINE')
+		main_tokens, ex = remove_sequence(main_tokens, start_type='COMMENT', end_type='NEWLINE')
 
 		names = [token.value for token in main_tokens if token.type == 'INSTR']
 		for name in names:
 			tokens = list(main_tokens) # Make a copy
 			instrument = Instrument(name)
 
-			rhythm_name = next((token.value for token in tokens if token.type == 'RHYTHM'), None)
-			instrument.rhythm[rhythm_name], tokens  = extract_sequence(tokens, start_type='RHYTHM', end_type='NEWLINE')
+			instrument.rhythm = {'name': next((token.value for token in tokens if token.type == 'RHYTHM'), None)}
+			instrument.rhythm['params'], tokens  = extract_sequence(tokens, start_type='RHYTHM', end_type='NEWLINE')
 			instrument.space, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='INSTR')
 
+			instrument.routing = []
 			for token in tokens:
 				if token.type == 'ROUTING':
 					params, tokens = extract_sequence(tokens, start_type='ROUTING', end_type=['ROUTING', 'NEWLINE'], include_paren=False)
-					instrument.rounting[token.value] = params
+					instrument.routing.append({'name': token.value, 'params': params})
 			
 
 			instrument.dur, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='NEWLINE')
 			instrument.dyn, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='NEWLINE')
 			instrument.env, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='NEWLINE')
 
+			instrument.freq = []
 			for token in tokens:
 				if tokens:
 					freqs, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='NEWLINE')
-					instrument.freq.append(freqs)
+					instrument.freq.extend(freqs)
 				
 			self.instruments.append(instrument)
 
@@ -194,23 +165,50 @@ class Parser:
 		for name in names:
 			tokens = list(main_tokens) # Make a copy
 			instrument = Instrument(name)
-			while tokens:
-				if tokens[0].type == 'COLON':
-					tokens.pop(0) # Remove the 'COLON'
-					params = extract_comma(tokens)
-					instrument.freq = params[0]
-					instrument.dyn = params[1] if len(params) > 1 else 'mf'
-					break
-				tokens.pop(0)
-					
+			
+			instrument.routing = []
+			for token in tokens:
+				if token.type == 'ROUTING':
+					params, tokens = extract_sequence(tokens, start_type='ROUTING', end_type=['ROUTING', 'COLON'], include_paren=False)
+					instrument.routing[token.value] = params
+			
+			tokens.pop(0) # Remove 'COLON'
+			params = extract_comma(tokens)
+			instrument.space, tokens = extract_sequence(tokens, start_type='NEWLINE', end_type='INSTR')
+			instrument.freq = params[0]
+			instrument.dyn = params[1] if len(params) > 1 else 'mf'
+
+			# Custom for sonvs_seq
+			instrument.rhythm = {'changed2': 'gkbeatn'}
+			fade = '.035'
+			instrument.dur = f'gkbeats + {fade}'
+			instrument.env = fade
+
 			self.instruments.append(instrument)
 
 	@condition({'start': ['GKVAR', 'GIVAR'], 'end': ['EMPTYLINE', 'NEWLINE']})
 	def parse_csound_command(self, tokens):
-		code = ' '.join(token.value for token in tokens)
+		code = ''.join(token.value for token in tokens)
 		instrument = Instrument('cordelia')
 		instrument.csound_code = code
 		self.instruments.append(instrument)
 
 	def get_instruments(self):
-		return self.instruments
+
+		post_instruments = []
+		index_id = 1
+		for i in self.instruments:
+			i.index = index_id
+			i.converter()
+			i.make_variables()
+
+			for post_attr in i.get_attributes():
+				if isinstance(post_attr, list):
+					for post in post_attr:
+						post_instruments.append(postInstrument(i.index, post))
+				else:
+					post_instruments.append(postInstrument(i.index, post_attr))
+
+			index_id += 1
+
+		return post_instruments

@@ -1,21 +1,25 @@
+import os
 import json
 
-cordelia_init_commit = []
+cordelia_init_code = []
 cordelia_compile_code = []
 
 cordelia_has = []
 
-with open('./config/basic_token.json', 'r') as f:
-	cordelia_basic_token_json = json.load(f)
 
-with open('./config/instr.json', 'r') as f:
-	cordelia_instr_json = json.load(f)
+def make_json(dictonary, directory):
+	for file_name in os.listdir(directory):
+		if file_name.endswith('.json'):
+			file_path = os.path.join(directory, file_name)
+			with open(file_path, 'r') as f:
+				key = file_path.split('/')[-1].split('.')[0]
+				dictonary[key] = json.load(f)
 
-with open('./config/gen.json', 'r') as f:
-	cordelia_gen_json = json.load(f)
+cordelia_json = {}
+json_dir = './config/'
+make_json(cordelia_json, json_dir)
 
-with open('./config/routing.json', 'r') as f:
-	cordelia_routing_json = json.load(f)
+cordelia_alias = {}
+json_dir = os.path.join(json_dir, 'alias/')
+make_json(cordelia_alias, json_dir)
 
-with open('./config/scala.json', 'r') as f:
-	cordelia_scala_json = json.load(f)

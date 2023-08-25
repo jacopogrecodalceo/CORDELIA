@@ -218,6 +218,38 @@ aout	= afol*kmix + ain*(1-kmix)
     endop
 
 ;OPCODE
+
+#define cordelia_glass_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
+#define cordelia_glass_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#
+
+    opcode cordelia_glass, a, akk
+    ain, kfreq, kq xin
+
+if1     init 80
+if2     init 188
+
+iq1     init 8
+iq2     init 3
+
+aexc1    mode ain, $cordelia_glass_cps(if1), $cordelia_glass_q(iq1)
+aexc2    mode ain, $cordelia_glass_cps(if2), $cordelia_glass_q(iq2)
+
+aexc    = (aexc1+aexc2)/2
+aexc    limit aexc, 0, 1
+
+ares1   mode aexc,  $cordelia_glass_cps(kfreq),  $cordelia_glass_q(scale(kq, 500, 60))
+ares2   mode aexc,  $cordelia_glass_cps(kfreq*2),  $cordelia_glass_q(scale(kq, 420, 53))
+
+aout    = (ares1+ares2)/2
+
+aout    balance2 aout, ain
+adel    flanger aout, a(1/$cordelia_glass_cps), kq/12
+
+aout    = aout + adel/8
+
+    xout aout
+    endop
+;OPCODE
     opcode moogladder_balance, a, akk
     ain, kfreq, kq xin
 
@@ -673,3 +705,32 @@ aout	TapeEchoN ain*kgain, kdel, kfb, .95, 0, .75 + kvar, 10
     endop
 
 
+;OPCODE
+
+#define cordelia_wooden_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
+#define cordelia_wooden_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#
+
+    opcode cordelia_wooden, a, akk
+    ain, kfreq, kq xin
+
+if1     init 1000
+if2     init 3000
+
+iq1     init 12
+iq2     init 8
+
+aexc1    mode ain, $cordelia_wooden_cps(if1), $cordelia_wooden_q(iq1)
+aexc2    mode ain, $cordelia_wooden_cps(if2), $cordelia_wooden_q(iq2)
+
+aexc    = (aexc1+aexc2)/2
+aexc    limit aexc, 0, 1
+
+ares1   mode aexc,  $cordelia_wooden_cps(kfreq),  $cordelia_wooden_q(scale(kq, 500, 60))
+ares2   mode aexc,  $cordelia_wooden_cps(kfreq*2),  $cordelia_wooden_q(scale(kq, 420, 53))
+
+aout    = (ares1+ares2)/2
+
+aout    balance2 aout, ain
+
+    xout aout
+    endop

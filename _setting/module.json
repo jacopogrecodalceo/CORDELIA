@@ -49,6 +49,11 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc",
     "how_many_p": 1
   },
+  "glass": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_glass PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/glass.orc",
+    "how_many_p": 2
+  },
   "moij": {
     "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT moogladder_balance PARAM_IN, PARAM_1, PARAM_2\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moij.orc",
@@ -118,5 +123,10 @@
     "core": ";CORE\nPARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit 1\n\nPARAM_OUT\tcor_tape_del PARAM_IN, PARAM_1, PARAM_2, PARAM_3\n\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tapij.orc",
     "how_many_p": 3
+  },
+  "wooden": {
+    "core": ";CORE\nPARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden PARAM_IN, PARAM_1, PARAM_2\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/wooden.orc",
+    "how_many_p": 2
   }
 }

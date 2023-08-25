@@ -1,29 +1,33 @@
-from src.parser.parser import Parser
-
+from src.cordelia_lang import cordelia_input
 def main():
 	# Example input code
 	input_code = """
 
+gktuning = scala.edo13	
 
-eu: 6, pump(4, fill(1, 3,2)), 2
-	r4asd@ixland@solo;.decij(gk1, sr/pump(64, fill(4, 1, 3, 8))).flanij(divz(sn, gk1-2, 0), .65)
-	gkbeats*once(8, .25, 1)
-	mp
-	likearev.a(5)
-	1
-	2
-	3
-	4
-	5
+eu: 16, 16, 2
+	@noij.moij(ntof(3), .95).tapij(3).convij(aaron, 2)
+	each(wn, sn)
+	once(fff, p)
+	kazan.a(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.5, 1, 4)
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(1, .5, 3)
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.25, 2, 1)
 
 
-	"""
-	parser = Parser(input_code)
-	parser.parse()
-	instruments = parser.get_instruments()
-	for i in instruments:
-		i.print_attributes()
-		print('-'*40)
+
+eu: 16, 16, 2
+	@aaron.moij(ntof(3), .95).tapij(3).convij(aaron, 2)
+	each(wn, sn)
+	once(fff, p)
+	kazan.a(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.5, 1, 4)
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(1, .5, 3)
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.25, 2, 1)
+
+"""
+
+	cordelia_input(input_code)
 
 if __name__ == "__main__":
 	main()

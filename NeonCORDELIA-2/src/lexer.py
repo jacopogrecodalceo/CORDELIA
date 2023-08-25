@@ -21,7 +21,7 @@ class Tokenizer:
 		while code:
 			#print(self.code)
 			match = None
-			for token in cordelia_basic_token_json:
+			for token in cordelia_json['basic_token']:
 				regex = re.compile(token['pattern'])
 				match = regex.match(code)
 				if match:
@@ -38,8 +38,8 @@ class Tokenizer:
 
 	def tokenize_gen(self):
 		token_type = 'GEN'
-		for name in cordelia_gen_json:
-			regex = re.compile(f'(?<=\W){name}(?=\W|$)')
+		for name in cordelia_json[token_type]:
+			regex = re.compile(rf'(?<=\W){name}(?=\W|$)')
 			matches = regex.finditer(self.code)
 			for match in matches:
 				value = match.group(0).strip()
@@ -56,7 +56,7 @@ class Tokenizer:
 		for i, token in enumerate(self.tokens):
 			if token.type == 'SCALA':
 				# Remove 'scala.'
-				token.value = token.value.replace('scala.', 'gi')	
+				token.value = token.value.replace('scala.', '')
 			elif token.type == 'INSTR':
 				# Remove '@'
 				token.value = token.value[1:]
@@ -69,6 +69,43 @@ class Tokenizer:
 			elif token.type == 'NEWLINE' and i < len(self.tokens)-1 and self.tokens[i + 1].type == 'NEWLINE' :
 				token.type = 'EMPTYLINE'
 
+	def verify(self):
+
+		verify_token = [
+			'SCALA',
+			'GEN',
+			'ROUTING',
+			'INSTR'
+		]
+		
+		for i, token in enumerate(self.tokens):
+			token_type = token.type
+			value = token.value
+			if token_type in verify_token and value not in cordelia_has:
+				cordelia_has.append(value)
+				file_json = cordelia_json[token_type]
+
+				if value in file_json:
+					print(f'📩{value} is verified.')
+
+					if token_type == 'SCALA':
+						cordelia_init_code.append(file_json[value]['ftgen'])
+						self.tokens[i].value = 'gi' + value
+
+					elif token_type == 'GEN':
+						cordelia_init_code.append(file_json[value])
+						self.tokens[i].value = 'gi' + value
+
+					elif token_type == 'ROUTING':
+						pass
+
+					elif token_type == 'INSTR':
+						pass
+
+				else:
+					raise ValueError(f'{token.type} with {token.value} is not found!')
+		
+
 	def get_tokens(self):
 
 		for attr_name in dir(self):
@@ -78,6 +115,8 @@ class Tokenizer:
 	
 		self.tokens = sorted(self.tokens, key=lambda item: item[0])
 		self.tokens = [token for (_, token) in self.tokens]
+		
 		self.ruler()
-	
+		self.verify()
+
 		return self.tokens
