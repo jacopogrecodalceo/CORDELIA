@@ -290,11 +290,12 @@ class Parser:
 
 	def get_instruments(self):
 
-		global names_last
+		#global names_last
 
 		self.parse()
 
 		name_counts = {}
+		instruments = []
 
 		for i in self.instruments:
 			# ----------------------------------------------------------------
@@ -312,7 +313,6 @@ class Parser:
 		print(name_counts)
 		print(names_last)
 		print('-'*90) """
-		instruments = []
 		for i in self.instruments:
 			i.spell()
 			i.make_variables()

@@ -1,8 +1,7 @@
 
-from constants.var import cordelia_compile
-from constants.var import cordelia_nchnls
-
-from src.instrument import Instrument
+from constants.var import cordelia_init_code, cordelia_compile
+from csoundAPI.init_csound import cordelia_nchnls
+from constants.var import cordelia_instr_start_num
 
 instr_last = ['init']
 
@@ -19,10 +18,8 @@ def cordelia_init():
 			instr_num = 950 + ((each+1)/10000)
 			instr_setting.append(f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"')
 		
-		instrument = Instrument()
-		instrument.code = '\n'.join(instr_setting)
-		cordelia_compile.append(instrument)
-		instr_last = [None]*12
+		cordelia_init_code.append('\n'.join(instr_setting))
+		instr_last = [None]
 
 def compare_instruments_last(instruments):
 	
@@ -33,12 +30,37 @@ def compare_instruments_last(instruments):
 	for i, instrument in enumerate(instruments):
 		if instrument.code not in codes:
 			instrument.status = 'alive'
-			instr_last.append(instrument)
-			cordelia_compile.append(instrument)
+			if i < len(cordelia_compile):
+				cordelia_compile[i] = instrument
+				instr_last[i] = instrument
+			else:
+				cordelia_compile.append(instrument)
+				instr_last.append(instrument)
 
 	# Update instruments that are no longer present
 	for i, instrument in enumerate(instr_last):
 		if instrument and instrument.code not in [i.code for i in instruments]:
 			instrument.status = 'dead'
-			cordelia_compile.append(instrument)
+			cordelia_compile[i] = instrument
 			instr_last[i] = None
+
+
+def wrapper(index, instrument):
+	
+	num = cordelia_instr_start_num + index
+
+	if instrument:
+		if instrument.status == 'alive':
+
+			string = [f'\tinstr {num}']
+			string.append(instrument.code)
+			string.append('\tendin')
+
+			string.append(f'turnoff2_i {num}, 0, 1')
+			string.append(f'schedule {num}, ksmps / sr, -1')
+			
+			return '\n'.join(string)
+
+		elif instrument.status == 'dead':
+			return f'turnoff2_i {num}, 0, 1\n'
+

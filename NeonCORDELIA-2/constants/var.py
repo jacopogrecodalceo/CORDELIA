@@ -6,7 +6,7 @@ cordelia_compile = []
 
 cordelia_given = []
 
-cordelia_nchnls = 2
+cordelia_instr_start_num = 215
 
 def make_json(dictonary, directory):
 	for file_name in os.listdir(directory):

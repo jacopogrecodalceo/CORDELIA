@@ -2,7 +2,7 @@ from src.a_lexer import Lexer
 from src.b_parser import Parser
 from src.c_interpreter import *
 
-from constants.var import cordelia_compile
+from constants.var import cordelia_init_code, cordelia_compile
 
 def handle_input(code):
 
@@ -14,8 +14,18 @@ def handle_input(code):
 	
 	cordelia_init()
 	compare_instruments_last(instruments)
-	for i in cordelia_compile:
-		if i.status == 'alive':
-			print(i.code)
-			
-	cordelia_compile.clear()
+
+	res = []
+	for index in range(len(cordelia_compile)):
+		code = wrapper(index, cordelia_compile[index])
+		if code:
+			res.append(code)
+		cordelia_compile[index] = None
+	
+	main_code = '\n'.join(cordelia_init_code + res)
+	cordelia_init_code.clear()
+	
+	print(main_code)
+	return main_code
+
+
