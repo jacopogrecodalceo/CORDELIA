@@ -2,10 +2,11 @@ import os
 import json
 
 cordelia_init_code = []
-cordelia_compile_code = []
+cordelia_compile = []
 
-cordelia_has = []
+cordelia_given = []
 
+cordelia_nchnls = 2
 
 def make_json(dictonary, directory):
 	for file_name in os.listdir(directory):

@@ -89,8 +89,8 @@ kgain_in	cosseg 0, .015, 1
 kgain_out	init 1
 
 if krel == 1 then
-	kgain_in cosseg igain, gixtratim/4, igain/2, gixtratim*3/4, 0 
-	kgain_out cosseg igain, gixtratim/2, igain, gixtratim/2, 0
+	kgain_in cosseg igain, gixtratim/4, igain/4, gixtratim*3/4, 0 
+	kgain_out cosseg igain, gixtratim*3/2, igain, gixtratim/3, 0
 endif
 
 ''')

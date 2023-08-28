@@ -218,6 +218,17 @@ aout	= afol*kmix + ain*(1-kmix)
     endop
 
 ;OPCODE
+    opcode cordelia_follow, a, aSi
+    ain, String, ich xin
+
+adest	chnget sprintf("%s_%i", String, ich)
+
+aenv    follow adest, i(gkbeats)/32
+aout    balance2 ain, aenv/2
+
+    xout aout
+    endop
+;OPCODE
 
 #define cordelia_glass_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
 #define cordelia_glass_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#

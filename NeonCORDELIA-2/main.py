@@ -1,33 +1,40 @@
-from src.cordelia_lang import cordelia_input
+import time
+import queue
+import sys
+
+from threading import Thread
+
+import utils.udp as udp 
+from src.run import handle_input
+
+message_queue = queue.Queue()
+
+def process_messages():
+	while True:
+		direction, code = message_queue.get()
+		if direction == 'CORDELIA':	
+			handle_input(code)
+
 def main():
-	# Example input code
-	input_code = """
+	udp.open_ports()
 
-gktuning = scala.edo13	
+	# Create and start the thread for listening to messages
+	threads = [
+		Thread(target=process_messages, daemon=True), 
+	    Thread(target=udp.listen, daemon=True, args=(message_queue,))
+		]
 
-eu: 16, 16, 2
-	@noij.moij(ntof(3), .95).tapij(3).convij(aaron, 2)
-	each(wn, sn)
-	once(fff, p)
-	kazan.a(5)
-	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.5, 1, 4)
-	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(1, .5, 3)
-	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.25, 2, 1)
+	# Process the received messages in the main thread
+	for t in threads:
+		t.start()
 
-
-
-eu: 16, 16, 2
-	@aaron.moij(ntof(3), .95).tapij(3).convij(aaron, 2)
-	each(wn, sn)
-	once(fff, p)
-	kazan.a(5)
-	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.5, 1, 4)
-	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(1, .5, 3)
-	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh)*once(.25, 2, 1)
-
-"""
-
-	cordelia_input(input_code)
+	try:
+		while True:
+			time.sleep(.5)
+			print('I am listening..')
+	except KeyboardInterrupt:
+		print("Threads stopped. Exiting.")
+		sys.exit(0)  # Cleanly exit the program
 
 if __name__ == "__main__":
 	main()

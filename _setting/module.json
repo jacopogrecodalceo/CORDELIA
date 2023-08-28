@@ -44,6 +44,11 @@
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanij.orc",
     "how_many_p": 2
   },
+  "folij": {
+    "core": ";CORE\n\nPARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich\n\n",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/folij.orc",
+    "how_many_p": 1
+  },
   "getmeout": {
     "core": ";CORE\nPARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*PARAM_1\n",
     "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc",

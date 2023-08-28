@@ -2,7 +2,7 @@
 
 		$start_instr(pwm2)
 
-idyn		init idyn/2
+idyn		init idyn/4
 ibound		init sr/2	; set it to sr/2 for true BL square wave
 kratio		cosseg 1, idur, 0; fractional width of the pulse part of a cycle
 
@@ -17,6 +17,8 @@ avpw		= apulse1 - apulse2
 apwmdc		integ avpw
 apwm		= apwmdc + kratio - .5
 aout		= apwm * idyn
+
+aout		dcblock2 aout
 
 		$dur_var(10)
 		$end_instr
