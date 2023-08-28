@@ -19,16 +19,18 @@ def cordelia_init():
 			instr_setting.append(f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"')
 		
 		cordelia_init_code.append('\n'.join(instr_setting))
-		instr_last = [None]
+		instr_last.clear()
 
 def compare_instruments_last(instruments):
 	
 	global instr_last
 
-	codes = [i.code for i in instr_last if i]
+	codes = [i.code if i else None for i in instruments]
+	codes_last = [i.code if i else None for i in instr_last]
+
 	# Update instruments that are still present
 	for i, instrument in enumerate(instruments):
-		if instrument.code not in codes:
+		if instrument.code not in codes_last:
 			instrument.status = 'alive'
 			if i < len(cordelia_compile):
 				cordelia_compile[i] = instrument
@@ -39,11 +41,14 @@ def compare_instruments_last(instruments):
 
 	# Update instruments that are no longer present
 	for i, instrument in enumerate(instr_last):
-		if instrument and instrument.code not in [i.code for i in instruments]:
+		if instrument and instrument.code not in codes:
 			instrument.status = 'dead'
 			cordelia_compile[i] = instrument
 			instr_last[i] = None
 
+def interpreter(code):
+	
+	return code
 
 def wrapper(index, instrument):
 	

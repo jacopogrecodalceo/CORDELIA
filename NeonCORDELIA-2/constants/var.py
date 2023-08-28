@@ -4,7 +4,7 @@ import json
 cordelia_init_code = []
 cordelia_compile = []
 
-cordelia_given = []
+cordelia_given = ['mouth']
 
 cordelia_instr_start_num = 215
 
@@ -24,3 +24,11 @@ cordelia_alias = {}
 json_dir = os.path.join(json_dir, 'alias/')
 make_json(cordelia_alias, json_dir)
 
+default_sonvs_dir = './default/sonvs'
+default_sonvs = {}
+for file_name in os.listdir(default_sonvs_dir):
+	if file_name.endswith('.orc'):
+		file_path = os.path.join(default_sonvs_dir, file_name)
+		with open(file_path, 'r') as f:
+			key = file_path.split('/')[-1].split('.')[0]
+			default_sonvs[key] = f.read()

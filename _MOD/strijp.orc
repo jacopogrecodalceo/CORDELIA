@@ -1,4 +1,4 @@
-;CORE
+;START CORE
 
 ;division
 PARAM_1 init ntof("4B")
@@ -9,8 +9,12 @@ PARAM_2 init i(gkbeats)/24
 PARAM_3 init .5
 
 PARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+;END CORE
+;START INPUT
+kkk
+;END INPUT
 
-;OPCODE
+;START OPCODE
 
 
 	opcode cor_streason_p, a, akkk
@@ -30,3 +34,4 @@ aout	phaser1 aout, kfreq, 12, kq
 	
 	xout aout
 	endop
+;END OPCODE

@@ -1,10 +1,15 @@
-;CORE
+;START CORE
 PARAM_1    init 500
 PARAM_2    init .5
 
 PARAM_OUT cordelia_wooden PARAM_IN, PARAM_1, PARAM_2
+;END CORE
 
-;OPCODE
+;START INPUT
+kk
+;END INPUT
+
+;START OPCODE
 
 #define cordelia_wooden_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
 #define cordelia_wooden_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#
@@ -33,3 +38,4 @@ aout    balance2 aout, ain
 
     xout aout
     endop
+;END OPCODE

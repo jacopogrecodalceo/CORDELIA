@@ -1,11 +1,16 @@
-;CORE
+;START CORE
 PARAM_1		init i(gkbeats)
 PARAM_2		init .5
 PARAM_3		init 1
 
-PARAM_OUT	cor_tape_del PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+PARAM_OUT	cordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+;END CORE
 
-;OPCODE
+;START INPUT
+kkk
+;END INPUT
+
+;START OPCODE
 
 ; Original research and code by Jon Downing  as in paper
 ; Real-time digital modeling of the Roland Space Echo by Jon Downing, Christian Terjesen (ECE 472 - Audio Signal Processing, May 2016)
@@ -173,18 +178,18 @@ opcode TapeEchoN, a, akkkkki
 endop
 
 
-opcode  cor_tape_del, a, akkk
-ain, ktime, kfb, kgain xin
+opcode  cordelia_tapij, a, akkk
+ain, ktime, kfb, kmix xin
 
-kdel    = ktime
-kgain	init 1
-kvar	oscili .25, gkbeatf/8
+kdel  = ktime
+kvar	jitter .25, gkbeatf/8, gkbeatf
 
-
-aout	TapeEchoN ain*kgain, kdel, kfb, .95, 0, .75 + kvar, 10
+adel	TapeEchoN ain, kdel, kfb, .95, 0, .75 + kvar, 10
+aout	= ain*(1-kmix) + adel*kmix
 
   xout aout
 
     endop
 
 
+;END OPCODE

@@ -15,7 +15,12 @@ def process_messages():
 	while True:
 		direction, code = message_queue.get()
 		if direction == 'CORDELIA':	
+			print('CORDELIA:\n')
 			csound_cordelia.compileOrcAsync(handle_input(code))
+		elif direction == 'CSOUND':
+			print('CSOUND:\n')
+			csound_cordelia.compileOrcAsync(code)
+
 
 def csound_perf_homemade(cs):
 	

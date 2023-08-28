@@ -1,9 +1,14 @@
-;CORE
+;START CORE
 PARAM_1    init i(gkbeatf)
 
 PARAM_OUT absolute_dist PARAM_IN, PARAM_1
+;END CORE
 
-;OPCODE
+;START INPUT
+k
+;END INPUT
+
+;START OPCODE
     opcode absolute_dist, a, ak
     ain, kp1 xin
 
@@ -19,3 +24,4 @@ aout	= afx + ain
 
     xout aout
     endop
+;END OPCODE

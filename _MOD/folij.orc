@@ -1,8 +1,12 @@
-;CORE
+;START CORE
 
 PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich
+;END CORE
+;START INPUT
+k
+;END INPUT
 
-;OPCODE
+;START OPCODE
     opcode cordelia_follow, a, aSi
     ain, String, ich xin
 
@@ -13,3 +17,4 @@ aout    balance2 ain, aenv/2
 
     xout aout
     endop
+;END OPCODE

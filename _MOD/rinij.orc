@@ -1,4 +1,4 @@
-;CORE
+;START CORE
 
 ;division
 PARAM_1 init 4
@@ -6,10 +6,15 @@ PARAM_1 init 4
 ;gen
 PARAM_2 init giasine
 
-PARAM_OUT ringmod_heart PARAM_IN, PARAM_1, PARAM_2
+PARAM_OUT cordelia_ringmod PARAM_IN, PARAM_1, PARAM_2
+;END CORE
 
-;OPCODE
-	opcode ringmod_heart, a, akk
+;START INPUT
+kk
+;END INPUT
+
+;START OPCODE
+	opcode cordelia_ringmod, a, akk
 	ain, kdiv, ktab xin
 
 kphase		= kdiv - floor(kdiv)
@@ -20,3 +25,4 @@ aout		= ain * a(kring)
 
 	xout aout
 	endop
+;END OPCODE

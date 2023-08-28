@@ -1,12 +1,16 @@
-;CORE
+;START CORE
 
 PARAM_1 init i(gkbeats)
 PARAM_2	init .5
 
 PARAM_OUT    solina_chorus PARAM_IN, PARAM_1, PARAM_2
 
+;END CORE
+;START INPUT
+kk
+;END INPUT
 
-;OPCODE
+;START OPCODE
 
 /* Solina Chorus, based on Solina String Ensemble Chorus Module
   
@@ -66,3 +70,4 @@ a3 vdelay3 aLeft, at3, imax
 
 	xout (a1 + a2 + a3) / 3
 	endop
+;END OPCODE

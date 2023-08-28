@@ -1,4 +1,4 @@
-;CORE
+;START CORE
 ;krvt	= ktime
 ;klpt	= kfb*(imaxlpt/1000)
 
@@ -7,8 +7,12 @@ PARAM_2 init .5
 PARAM_3 init .5
 
 PARAM_OUT	vcomb_balance PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+;END CORE
 
-;OPCODE
+;START INPUT
+kkk
+;END INPUT
+;START OPCODE
     opcode vcomb_balance, a, akkk
     ain, ktime, kfb, kmix xin
 
@@ -20,3 +24,4 @@ aout	= ain*(1-kmix) + acomb*kmix
 
     xout aout
     endop
+;END OPCODE

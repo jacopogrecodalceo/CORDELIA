@@ -1,11 +1,9 @@
 import subprocess, re
 
-from constants.path import cordelia_dir
-
 # Return the real-time audio module: 'PortAudio' or 'CoreAudio' on macOS
 def which_rtaudio():
 	match = '-+rtaudio='
-	with open(f'{cordelia_dir}/_core/option.orc') as f:
+	with open('./csound_cordelia/option.orc') as f:
 		for line in f:
 			line = line.strip()
 			if not line.startswith(';') and line.startswith(match):
@@ -37,7 +35,7 @@ def query_devices(converter):
 		string = 'output'
 
 	OPTIONs = []
-	with open(f'{cordelia_dir}/_setting/_{converter}') as f:
+	with open(f'./default/{converter}') as f:
 		for line in f:
 			line = line.strip()
 			if line and not line.startswith(';'):

@@ -1,11 +1,15 @@
-;CORE
+;START CORE
 
 PARAM_1	init 1
 PARAM_2	init 1
 
 PARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich
+;END CORE
+;START INPUT
+kk
+;END INPUT
 
-;OPCODE
+;START OPCODE
     opcode cordelia_pconvolve, a, aiki
     ain, ir, kmix, ich xin
 
@@ -23,3 +27,4 @@ aout            = aconv*kmix + ain*(1-kmix)
     xout aout
 
     endop
+;END OPCODE

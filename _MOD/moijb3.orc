@@ -1,10 +1,14 @@
-;CORE
+;START CORE
 PARAM_1    init 500
 PARAM_2    init .5
 
 PARAM_OUT cordelia_moijb3 PARAM_IN, PARAM_1, PARAM_2
+;END CORE
+;START INPUT
+kk
+;END INPUT
 
-;OPCODE
+;START OPCODE
 
 gkcordelia_moijb3_port init 5$ms
 gkcordelia_moijb3_freq1 init 3
@@ -36,3 +40,4 @@ aout	balance2 aout, ain
     xout aout
     endop
 
+;END OPCODE

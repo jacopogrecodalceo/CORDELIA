@@ -1,10 +1,15 @@
-;CORE
+;START CORE
 PARAM_1    init 16
 PARAM_2    init sr
 
 PARAM_OUT cordelia_decimator PARAM_IN, PARAM_1, PARAM_2
+;END CORE
 
-;OPCODE
+;START INPUT
+kk
+;END INPUT
+
+;START OPCODE
 	opcode cordelia_decimator, a, akk	;UDO Sample rate / Bit depth reducer
 
 	setksmps   1
@@ -23,3 +28,4 @@ a0ut		fold     aout, kfold           ;resample
 			xout     a0ut
 
 	endop
+;END OPCODE

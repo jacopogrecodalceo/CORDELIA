@@ -1,11 +1,14 @@
-;CORE
+;START CORE
 
 PARAM_2	init 1
 
 PARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2
+;END CORE
+;START INPUT
+Sk
+;END INPUT
 
-
-;OPCODE
+;START OPCODE
 
 gkcordelia_duck_atk init 5$ms
 gkcordelia_duck_rel init 75$ms
@@ -21,3 +24,4 @@ aout	= afol*kmix + ain*(1-kmix)
     xout aout
     endop
 
+;END OPCODE

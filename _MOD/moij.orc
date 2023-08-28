@@ -1,16 +1,23 @@
-;CORE
+;START CORE
 PARAM_1    init 500
 PARAM_2    init .5
 
-PARAM_OUT moogladder_balance PARAM_IN, PARAM_1, PARAM_2
+PARAM_OUT cordelia_moog PARAM_IN, PARAM_1, PARAM_2
+;END CORE
 
-;OPCODE
-    opcode moogladder_balance, a, akk
+;START INPUT
+kk
+;END INPUT
+
+;START OPCODE
+    opcode cordelia_moij, a, akk
     ain, kfreq, kq xin
 
-ifreq_var	init 5
-aout	moogladder2 ain, kfreq+randomi:k(-ifreq_var, ifreq_var, .05), kq
-aout	balance2 aout, ain
+kfreq_var   = (kfreq*11/10)-kfreq
+aout	    moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq
+aout	    balance2 aout, ain
 
     xout aout
     endop
+;END OPCODE
+

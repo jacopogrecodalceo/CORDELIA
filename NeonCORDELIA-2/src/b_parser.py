@@ -1,8 +1,9 @@
 from src.instrument import Instrument
 from src.a_lexer import Token
 
-from constants.var import cordelia_json
+from constants.var import cordelia_json, default_sonvs
 from constants.var import cordelia_init_code, cordelia_given
+from csoundAPI.init_csound import cordelia_nchnls
 
 PRINT_TOKEN = False
 
@@ -19,7 +20,7 @@ def verify(token):
 			cordelia_given.append(value)
 			if value in cordelia_json[type]:
 				print(f'📩{value} is verified.')
-				cordelia_init_code.append(cordelia_json[type][value]['ftgen'])
+				cordelia_init_code.append(cordelia_json[type][value]['default_ftgen'])
 				token.value = 'gi' + value
 				return token
 			else:
@@ -35,7 +36,9 @@ def verify(token):
 			cordelia_given.append(value)
 			if value in cordelia_json[type]:
 				print(f'📩{value} is verified.')
-				cordelia_init_code.append(cordelia_json[type][value]['path'])
+				verify_instr(value)
+				#cordelia_json[type][value]['type']
+				#cordelia_init_code.append(cordelia_json[type][value]['path'])
 				token.value = value
 				return token
 			else:
@@ -77,7 +80,64 @@ def verify(token):
 
 	else:
 		return token
+
+def verify_instr(instrument_name):
 	
+	local_json = cordelia_json['INSTR']
+
+	if local_json[instrument_name]['type'] == 'instr':
+		with open(local_json[instrument_name]['path']) as f:
+			cordelia_init_code.append(f.read())
+
+	elif local_json[instrument_name]['type'] == 'hybrid':
+		required_instr = local_json[instrument_name]['required']
+		for i in required_instr:
+			if i not in cordelia_given:
+				verify_instr(i)
+		with open(local_json[instrument_name]['path']) as f:
+			cordelia_init_code.append(f.read())
+
+	elif local_json[instrument_name]['type'] == 'sonvs':
+		channels = local_json[instrument_name]['channels']
+		sonvs_string = [f'gi{instrument_name}_ch init {channels}']
+		index_num = 1
+		audio_files = []
+
+		for index, p in enumerate(local_json[instrument_name]['path']):
+			index_file = index + 1
+			sonvs_string.append(f'gS{instrument_name}_file_{index_file} init "{p}"')
+			for i in range(int(channels)):
+				ch = str(i + 1)
+				num = str(index_num)
+				file_var = f'gi{instrument_name}_{num}'
+				audio_files.append(file_var)
+				sonvs_string.append(f'{file_var} ftgen 0, 0, 0, 1, gS{instrument_name}_file_{index_file}, 0, 0, {ch}')
+				index_num += 1
+		
+		sonvs_string.append(f'gi{instrument_name}_list[] fillarray {", ".join(audio_files)}')
+
+		for key in default_sonvs.keys():
+			if instrument_name.endswith(key):
+				sonvs_string.append(default_sonvs[key].replace('---NAME---', instrument_name))
+			else:
+				sonvs_string.append(default_sonvs['_'].replace('---NAME---', instrument_name))
+				break
+
+		cordelia_init_code.append('\n'.join(sonvs_string))
+
+	#and create an array
+	instr_setting = [f'gS{instrument_name}[] init ginchnls']
+	for each in range(cordelia_nchnls):
+		instr_setting.append(f'gS{instrument_name}[{each}] sprintf	"{instrument_name}_%i", {each+1}')
+
+	start = cordelia_nchnls * (len(cordelia_given) - 1) + 1
+	sequence = [start + i for i in range(cordelia_nchnls)]
+	for index, val in enumerate(sequence):
+		instr_num = 950 + (val/10000)
+		instr_setting.append(f'schedule {round(instr_num, 5)}, 0, -1, "{instrument_name}_{index+1}"')
+		
+	cordelia_init_code.append('\n'.join(instr_setting))
+
 def remove_sequence(tokens, start_types, end_types):
 	start_index = next((i for i, token in enumerate(tokens) if token.type in start_types), None)
 	if start_index is None:

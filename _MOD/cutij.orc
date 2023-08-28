@@ -1,10 +1,15 @@
-;CORE
+;START CORE
 PARAM_1		init 8
 
 PARAM_OUT	jcut PARAM_IN, PARAM_1, 1
+;END CORE
+
+;START INPUT
+k
+;END INPUT
 
 
-;OPCODE
+;START OPCODE
 
 /*
 	Args:  
@@ -103,3 +108,4 @@ opcode jcut, a, akk
 	
 	xout aout
 endop
+;END OPCODE

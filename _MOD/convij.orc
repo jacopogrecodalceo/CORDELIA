@@ -1,11 +1,16 @@
-;CORE
+;START CORE
 
-PARAM_2	init .5
+PARAM_2	init 1
 
 PARAM_OUT    conv_1 PARAM_IN, PARAM_1, ich, PARAM_2
+;END CORE
+
+;START INPUT
+Sk
+;END INPUT
 
 
-;OPCODE
+;START OPCODE
     opcode conv_1, a, aSik
     ain, String, ich, kmix xin
 
@@ -16,3 +21,4 @@ aout	balance2 aout, ain
 
     xout aout
     endop
+;END OPCODE

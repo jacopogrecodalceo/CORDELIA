@@ -1,14 +1,17 @@
-;CORE
+;START CORE
 
 PARAM_1 init i(gkbeats)
 PARAM_2	init .5
 
-PARAM_OUT    delay_array PARAM_IN, PARAM_1, PARAM_2, 4
+PARAM_OUT    cordelia_delay_array PARAM_IN, PARAM_1, PARAM_2, 4
+;END CORE
+;START INPUT
+kk
+;END INPUT
 
+;START OPCODE
 
-;OPCODE
-
-    opcode delay_array, a, akki
+    opcode cordelia_delay_array, a, akki
     
     setksmps 1
     adel_in, kdel_time, kfb, instances xin
@@ -30,3 +33,4 @@ adel_out    limit adel_out, -1, 1
     xout adel_out
     
     endop
+;END OPCODE

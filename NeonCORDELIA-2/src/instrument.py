@@ -99,7 +99,7 @@ else
 		for rounting_name_id, routing in enumerate(self.routing, start = 1):
 			routing_vars = []
 			name = routing['name']
-			xin = routing_json[name]['xin']
+			xin = routing_json[name]['input']
 			for i, var_type in enumerate(xin):
 				routing_var = f'g{var_type}{name}{rounting_name_id}_{self.name}{self.name_id}_p{i + 1}'
 				if 'params' in routing:
