@@ -10,7 +10,7 @@ csound_cordelia = ctcsound.Csound()
 #######################################
 OPTIONs = []
 
-with open(f'{cordelia_dir}/_core/option.orc') as f:
+with open('./csound_cordelia/option.orc') as f:
 	for line in f:
 		line = line.strip()
 		if line and not line.startswith(';'):
@@ -32,10 +32,10 @@ for option in OPTIONs:
 # csound_cordelia.setOption('-n')
 
 SETTINGs = []
-with open(f'{cordelia_dir}/_core/setting.orc') as f:
+with open('./csound_cordelia/setting.orc') as f:
 	SETTINGs.append(f.read())
 
-with open(f'{cordelia_dir}/_core/include.orc') as f:
+with open('./csound_cordelia/include.orc') as f:
 	SETTINGs.append(f.read())
 
 for setting in SETTINGs:

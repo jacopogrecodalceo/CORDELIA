@@ -1,7 +1,7 @@
 ;START CORE
 PARAM_1		init i(gkbeats)
 PARAM_2		init .5
-PARAM_3		init 1
+PARAM_3		init .5
 
 PARAM_OUT	cordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3
 ;END CORE

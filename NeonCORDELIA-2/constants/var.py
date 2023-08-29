@@ -32,3 +32,16 @@ for file_name in os.listdir(default_sonvs_dir):
 		with open(file_path, 'r') as f:
 			key = file_path.split('/')[-1].split('.')[0]
 			default_sonvs[key] = f.read()
+
+
+
+cordelia_alias = {}
+
+alias_path = './config/alias/alias.json'
+with open(alias_path, 'r') as f:
+	cordelia_alias['alias'] = json.load(f)
+
+complex_path = './config/alias/complex.json'
+with open(complex_path, 'r') as f:
+	cordelia_alias['complex'] = json.load(f)
+

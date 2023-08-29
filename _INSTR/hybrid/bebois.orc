@@ -1,14 +1,7 @@
 ;almost some drop of water!
 ;REQUIRE bois
 
-	instr bebois
-
-Sinstr		init "bebois"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$start_instr(bebois)
 
 idyn_fact	init 1
 
@@ -32,6 +25,8 @@ aout		= abel + arev1/12 + arev2/9 + arev3/7
 
 aout		*= idyn_fact
 
-	$CHNMIX
+	$channel_mix
+	endin
+
 
 	

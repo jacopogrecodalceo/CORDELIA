@@ -1,14 +1,7 @@
 ;almost some drop of water!
 ;REQUIRE bois
 
-	instr bebor
-
-Sinstr		init "bebor"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich		init p7
+	$start_instr(bebor)
 
 ;		OSC1
 ihard		init 1-$dyn_var	; the hardness of the stick used in the strike. A range of 0 to 1 is used. 0.5 is a suitable value
@@ -26,6 +19,7 @@ adel		flanger abel/2, idur/cosseg:a(icps/500, idur, icps/100), icps%.995
 
 aout		= adel
 
-	$CHNMIX
+	$channel_mix
+	endin
 
 	

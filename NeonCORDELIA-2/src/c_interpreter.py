@@ -1,7 +1,9 @@
+import re
 
 from constants.var import cordelia_init_code, cordelia_compile
 from csoundAPI.init_csound import cordelia_nchnls
 from constants.var import cordelia_instr_start_num
+from constants.var import cordelia_alias
 
 instr_last = ['init']
 
@@ -46,8 +48,15 @@ def compare_instruments_last(instruments):
 			cordelia_compile[i] = instrument
 			instr_last[i] = None
 
-def interpreter(code):
-	
+def perform_alias(code):
+	escaped_replacements = {re.escape(name): repl for name, repl in cordelia_alias['alias'].items()}
+	pattern = re.compile(rf'(\W)({"|".join(escaped_replacements.keys())})(\W|$)', re.MULTILINE)
+	code = pattern.sub(lambda match: f'{match.group(1)}{escaped_replacements[match.group(2)]}{match.group(3)}', code)
+	return code
+
+def perform_complex(code):
+	for name, repl in cordelia_alias['complex'].items():
+		code = re.sub(rf'{name}', rf'{repl}', code, flags=re.MULTILINE)
 	return code
 
 def wrapper(index, instrument):

@@ -65,9 +65,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/aaron.orc",
         "global_var": [
+            "gkaaron_detune",
             "gkaaron_indx",
             "gkaaron_mod",
-            "gkaaron_detune",
             "giaaron_atk"
         ]
     },
@@ -120,7 +120,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo.wav"
         ],
-        "pitch": 41.366985411116545
+        "pitch": "41.366985411116545"
     },
     "algo2": {
         "type": "sonvs",
@@ -128,7 +128,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/algo2.wav"
         ],
-        "pitch": 123.8233186952467
+        "pitch": "123.8233186952467"
     },
     "alina": {
         "type": "sonvs",
@@ -136,16 +136,16 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/alina.wav"
         ],
-        "pitch": 45.042199028630606
+        "pitch": "45.042199028630606"
     },
     "alone": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/alone.orc",
         "global_var": [
-            "gkalone_harm",
-            "gkalone_dur",
-            "gkalone_env",
             "gkalone_cps",
+            "gkalone_harm",
+            "gkalone_env",
+            "gkalone_dur",
             "gialone_count"
         ]
     },
@@ -153,9 +153,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/alonefr.orc",
         "global_var": [
-            "gkalonefr_env",
-            "gkalonefr_cps",
             "gkalonefr_harm",
+            "gkalonefr_cps",
+            "gkalonefr_env",
             "gkalonefr_dur",
             "gialonefr_count"
         ]
@@ -179,7 +179,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen.wav"
         ],
-        "pitch": 40.411334347537185
+        "pitch": "40.411334347537185"
     },
     "amor": {
         "type": "sonvs",
@@ -187,7 +187,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amor.wav"
         ],
-        "pitch": 46.12259555149615
+        "pitch": "46.12259555149615"
     },
     "anal": {
         "type": "instr",
@@ -205,7 +205,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm1.wav"
         ],
-        "pitch": 83.14461113324371
+        "pitch": "83.14461113324371"
     },
     "arm2": {
         "type": "sonvs",
@@ -213,7 +213,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
         ],
-        "pitch": 84.60002372519567
+        "pitch": "84.60002372519567"
     },
     "armagain": {
         "type": "sonvs",
@@ -221,7 +221,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/armagain.wav"
         ],
-        "pitch": 89.28630042574753
+        "pitch": "89.28630042574753"
     },
     "balbal": {
         "type": "sonvs",
@@ -229,7 +229,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/balbal.wav"
         ],
-        "pitch": 151.06249240602082
+        "pitch": "151.06249240602082"
     },
     "bass": {
         "type": "instr",
@@ -242,7 +242,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bd10.wav"
         ],
-        "pitch": 25.0
+        "pitch": "25.0"
     },
     "bd808": {
         "type": "instr",
@@ -291,7 +291,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee1.wav"
         ],
-        "pitch": 192.95371457706545
+        "pitch": "192.95371457706545"
     },
     "bee2": {
         "type": "sonvs",
@@ -299,15 +299,15 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee2.wav"
         ],
-        "pitch": 387.5491515324076
+        "pitch": "387.5491515324076"
     },
-    "bee_char": {
+    "beechar": {
         "type": "sonvs",
         "channels": 1,
         "path": [
-            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bee_char.wav"
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/beechar.wav"
         ],
-        "pitch": 26.339214540535657
+        "pitch": "26.339214540535657"
     },
     "begad": {
         "type": "hybrid",
@@ -316,8 +316,8 @@
             "gameld"
         ],
         "global_var": [
-            "gibegad_indx",
-            "gibegad_imp"
+            "gibegad_imp",
+            "gibegad_indx"
         ]
     },
     "begaf": {
@@ -327,8 +327,8 @@
             "gameld"
         ],
         "global_var": [
-            "gibegaf_imp",
-            "gibegaf_indx"
+            "gibegaf_indx",
+            "gibegaf_imp"
         ]
     },
     "beme": {
@@ -338,17 +338,17 @@
             "chime"
         ],
         "global_var": [
-            "gibeme_indx",
-            "gibeme_imp"
+            "gibeme_imp",
+            "gibeme_indx"
         ]
     },
     "between": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/between.orc",
         "global_var": [
-            "gkbetween_ph",
-            "gkbetween_mod",
             "gkbetween_space",
+            "gkbetween_mod",
+            "gkbetween_ph",
             "gkbetween_var"
         ]
     },
@@ -356,9 +356,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/betweenmore.orc",
         "global_var": [
+            "gkbetweenmore_space",
             "gkbetweenmore_ph",
-            "gkbetweenmore_freq",
-            "gkbetweenmore_space"
+            "gkbetweenmore_freq"
         ]
     },
     "bleu": {
@@ -367,7 +367,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu.wav"
         ],
-        "pitch": 28.052138112718158
+        "pitch": "28.052138112718158"
     },
     "bleu2": {
         "type": "sonvs",
@@ -375,7 +375,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleu2.wav"
         ],
-        "pitch": 359.60928536743205
+        "pitch": "359.60928536743205"
     },
     "bois": {
         "type": "sonvs",
@@ -383,7 +383,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois.wav"
         ],
-        "pitch": 2161.3208401903435
+        "pitch": "2161.3208401903435"
     },
     "bois2": {
         "type": "sonvs",
@@ -391,7 +391,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bois2.wav"
         ],
-        "pitch": 149.80104575214588
+        "pitch": "149.80104575214588"
     },
     "break": {
         "type": "sonvs",
@@ -399,7 +399,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/break.wav"
         ],
-        "pitch": 42.72568327177734
+        "pitch": "42.72568327177734"
     },
     "bros": {
         "type": "sonvs",
@@ -407,7 +407,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bros.wav"
         ],
-        "pitch": 151.93310460885925
+        "pitch": "151.93310460885925"
     },
     "burd": {
         "type": "instr",
@@ -443,7 +443,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/caiu.wav"
         ],
-        "pitch": 48.06696683624976
+        "pitch": "48.06696683624976"
     },
     "calin": {
         "type": "instr",
@@ -490,7 +490,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio1.wav"
         ],
-        "pitch": 49.06880947698497
+        "pitch": "49.06880947698497"
     },
     "capriccio2": {
         "type": "sonvs",
@@ -498,7 +498,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/capriccio2.wav"
         ],
-        "pitch": 586.4015168324938
+        "pitch": "586.4015168324938"
     },
     "careless": {
         "type": "instr",
@@ -546,7 +546,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cauch.wav"
         ],
-        "pitch": 3675.0
+        "pitch": "3675.0"
     },
     "chime": {
         "type": "sonvs",
@@ -637,7 +637,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ciel.wav"
         ],
-        "pitch": 60.43907382983036
+        "pitch": "60.43907382983036"
     },
     "click": {
         "type": "instr",
@@ -655,7 +655,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/coeur.wav"
         ],
-        "pitch": 28.163283246734892
+        "pitch": "28.163283246734892"
     },
     "contempo": {
         "type": "sonvs",
@@ -663,20 +663,20 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/contempo.wav"
         ],
-        "pitch": 139.37733245223222
+        "pitch": "139.37733245223222"
     },
     "corpia": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/corpia.orc",
         "global_var": []
     },
-    "cos_u": {
+    "cosu": {
         "type": "sonvs",
         "channels": 2,
         "path": [
-            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cos_u.wav"
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cosu.wav"
         ],
-        "pitch": 72.07836014959233
+        "pitch": "72.07836014959233"
     },
     "crij": {
         "type": "sonvs",
@@ -684,7 +684,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crij.wav"
         ],
-        "pitch": 188.7581709660014
+        "pitch": "188.7581709660014"
     },
     "cril": {
         "type": "sonvs",
@@ -692,7 +692,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/cril.wav"
         ],
-        "pitch": 137.01147510866272
+        "pitch": "137.01147510866272"
     },
     "crys": {
         "type": "sonvs",
@@ -700,7 +700,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/crys.wav"
         ],
-        "pitch": 25.0
+        "pitch": "25.0"
     },
     "curij": {
         "type": "instr",
@@ -718,7 +718,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dance.wav"
         ],
-        "pitch": 83.59776168874512
+        "pitch": "83.59776168874512"
     },
     "dead1": {
         "type": "sonvs",
@@ -726,7 +726,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead1.wav"
         ],
-        "pitch": 31.91198956058235
+        "pitch": "31.91198956058235"
     },
     "dead2": {
         "type": "sonvs",
@@ -734,7 +734,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead2.wav"
         ],
-        "pitch": 1367.3287893026422
+        "pitch": "1367.3287893026422"
     },
     "dead3": {
         "type": "sonvs",
@@ -742,7 +742,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead3.wav"
         ],
-        "pitch": 103.26383813245776
+        "pitch": "103.26383813245776"
     },
     "dead4": {
         "type": "sonvs",
@@ -750,7 +750,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dead4.wav"
         ],
-        "pitch": 60.533981612544665
+        "pitch": "60.533981612544665"
     },
     "dirty": {
         "type": "sonvs",
@@ -758,7 +758,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dirty.wav"
         ],
-        "pitch": 32.257632561474
+        "pitch": "32.257632561474"
     },
     "dirty2": {
         "type": "sonvs",
@@ -766,7 +766,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dirty2.wav"
         ],
-        "pitch": 35.10415089561558
+        "pitch": "35.10415089561558"
     },
     "dismatter": {
         "type": "sonvs",
@@ -848,7 +848,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dp.wav"
         ],
-        "pitch": 42.604567208825145
+        "pitch": "42.604567208825145"
     },
     "drum": {
         "type": "sonvs",
@@ -856,7 +856,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drum.wav"
         ],
-        "pitch": 92.44701113866905
+        "pitch": "92.44701113866905"
     },
     "drumhigh": {
         "type": "sonvs",
@@ -864,7 +864,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/drumhigh.wav"
         ],
-        "pitch": 51.62366704972774
+        "pitch": "51.62366704972774"
     },
     "elacid": {
         "type": "sonvs",
@@ -872,7 +872,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elacid.wav"
         ],
-        "pitch": 70.93782888234186
+        "pitch": "70.93782888234186"
     },
     "elair": {
         "type": "sonvs",
@@ -880,7 +880,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elair.wav"
         ],
-        "pitch": 60.60705248456758
+        "pitch": "60.60705248456758"
     },
     "elground": {
         "type": "sonvs",
@@ -888,7 +888,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elground.wav"
         ],
-        "pitch": 40.17512167374536
+        "pitch": "40.17512167374536"
     },
     "elpark": {
         "type": "sonvs",
@@ -896,7 +896,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpark.wav"
         ],
-        "pitch": 45.211328972462155
+        "pitch": "45.211328972462155"
     },
     "elpot": {
         "type": "sonvs",
@@ -904,7 +904,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elpot.wav"
         ],
-        "pitch": 47.00067078096522
+        "pitch": "47.00067078096522"
     },
     "elterre": {
         "type": "sonvs",
@@ -912,7 +912,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elterre.wav"
         ],
-        "pitch": 53.28778436846558
+        "pitch": "53.28778436846558"
     },
     "elwater": {
         "type": "sonvs",
@@ -920,7 +920,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwater.wav"
         ],
-        "pitch": 64.1585030971858
+        "pitch": "64.1585030971858"
     },
     "elwind": {
         "type": "sonvs",
@@ -928,7 +928,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/elwind.wav"
         ],
-        "pitch": 39.45106079286454
+        "pitch": "39.45106079286454"
     },
     "etag": {
         "type": "sonvs",
@@ -936,7 +936,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag.wav"
         ],
-        "pitch": 67.47266303454718
+        "pitch": "67.47266303454718"
     },
     "etag2": {
         "type": "sonvs",
@@ -944,14 +944,14 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/etag2.wav"
         ],
-        "pitch": 38.05422188482441
+        "pitch": "38.05422188482441"
     },
     "euarm": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/euarm.orc",
         "global_var": [
-            "gkeuarm_onset",
-            "gkeuarm_pulse"
+            "gkeuarm_pulse",
+            "gkeuarm_onset"
         ]
     },
     "euarm2": {
@@ -999,8 +999,8 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/fim.orc",
         "global_var": [
-            "gkfim_detune",
-            "gkfim_var"
+            "gkfim_var",
+            "gkfim_detune"
         ]
     },
     "flij": {
@@ -1023,14 +1023,14 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment.wav"
         ],
-        "pitch": 29.095882282642958
+        "pitch": "29.095882282642958"
     },
     "fuji": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/fuji.orc",
         "global_var": [
-            "gkfuji_form",
-            "gkfuji_oct"
+            "gkfuji_oct",
+            "gkfuji_form"
         ]
     },
     "gameld": {
@@ -1077,7 +1077,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1.wav"
         ],
-        "pitch": 90.65628894562974
+        "pitch": "90.65628894562974"
     },
     "gesto1var": {
         "type": "sonvs",
@@ -1085,7 +1085,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto1var.wav"
         ],
-        "pitch": 1428.4051112395944
+        "pitch": "1428.4051112395944"
     },
     "gesto2": {
         "type": "sonvs",
@@ -1093,7 +1093,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto2.wav"
         ],
-        "pitch": 42.95046394815297
+        "pitch": "42.95046394815297"
     },
     "gesto3": {
         "type": "sonvs",
@@ -1101,7 +1101,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto3.wav"
         ],
-        "pitch": 40.70396093729856
+        "pitch": "40.70396093729856"
     },
     "gesto4": {
         "type": "sonvs",
@@ -1109,7 +1109,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/gesto4.wav"
         ],
-        "pitch": 46.12563894594144
+        "pitch": "46.12563894594144"
     },
     "gluck": {
         "type": "instr",
@@ -1185,7 +1185,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/hh.wav"
         ],
-        "pitch": 148.1880050486879
+        "pitch": "148.1880050486879"
     },
     "in1": {
         "type": "instr",
@@ -1216,8 +1216,8 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ipercluster.orc",
         "global_var": [
-            "gkipercluster_vibfreq",
-            "gkipercluster_linvar"
+            "gkipercluster_linvar",
+            "gkipercluster_vibfreq"
         ]
     },
     "iveheard": {
@@ -1261,7 +1261,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/junis.wav"
         ],
-        "pitch": 201.68595650555983
+        "pitch": "201.68595650555983"
     },
     "kali": {
         "type": "sonvs",
@@ -1286,7 +1286,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/katia.wav"
         ],
-        "pitch": 36.04346937178606
+        "pitch": "36.04346937178606"
     },
     "kick": {
         "type": "instr",
@@ -1314,7 +1314,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/leo.wav"
         ],
-        "pitch": 56.70284232910026
+        "pitch": "56.70284232910026"
     },
     "lithlu": {
         "type": "sonvs",
@@ -1322,7 +1322,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lithlu.wav"
         ],
-        "pitch": 111.11509983345195
+        "pitch": "111.11509983345195"
     },
     "lithlu2": {
         "type": "sonvs",
@@ -1330,7 +1330,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lithlu2.wav"
         ],
-        "pitch": 111.58144951664681
+        "pitch": "111.58144951664681"
     },
     "lovelines": {
         "type": "sonvs",
@@ -1338,7 +1338,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lovelines.wav"
         ],
-        "pitch": 41.38116321501665
+        "pitch": "41.38116321501665"
     },
     "lucas": {
         "type": "instr",
@@ -1356,7 +1356,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/madcow.wav"
         ],
-        "pitch": 75.92524059796933
+        "pitch": "75.92524059796933"
     },
     "maij": {
         "type": "instr",
@@ -1378,7 +1378,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav"
         ],
-        "pitch": 490.55486825853836
+        "pitch": "490.55486825853836"
     },
     "malon": {
         "type": "sonvs",
@@ -1402,7 +1402,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario1.wav"
         ],
-        "pitch": 30.156409750477565
+        "pitch": "30.156409750477565"
     },
     "mario2": {
         "type": "sonvs",
@@ -1410,7 +1410,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mario2.wav"
         ],
-        "pitch": 40.54731577116195
+        "pitch": "40.54731577116195"
     },
     "meer": {
         "type": "sonvs",
@@ -1418,7 +1418,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/meer.wav"
         ],
-        "pitch": 195.274855939026
+        "pitch": "195.274855939026"
     },
     "meli": {
         "type": "sonvs",
@@ -1452,8 +1452,8 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/metal.orc",
         "global_var": [
-            "gimetal_metallic_harmonic_series",
-            "gimetal_max_series"
+            "gimetal_max_series",
+            "gimetal_metallic_harmonic_series"
         ]
     },
     "mh": {
@@ -1462,15 +1462,15 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mh.wav"
         ],
-        "pitch": 100.82490189636314
+        "pitch": "100.82490189636314"
     },
     "mhon": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhon.orc",
         "global_var": [
+            "gkmhon_start",
             "gkmhon_port",
             "gkmhon_cps",
-            "gkmhon_start",
             "gimhon_choose"
         ]
     },
@@ -1478,8 +1478,8 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhon2.orc",
         "global_var": [
-            "gkmhon2_cps",
             "gkmhon2_start",
+            "gkmhon2_cps",
             "gkmhon2_ch",
             "gimhon2_choose"
         ]
@@ -1488,9 +1488,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhon2q.orc",
         "global_var": [
-            "gkmhon2q_cps",
-            "gkmhon2q_start",
             "gkmhon2q_ch",
+            "gkmhon2q_start",
+            "gkmhon2q_cps",
             "gimhon2q_choose"
         ]
     },
@@ -1498,9 +1498,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhonq.orc",
         "global_var": [
-            "gkmhonq_port",
-            "gkmhonq_start",
             "gkmhonq_cps",
+            "gkmhonq_start",
+            "gkmhonq_port",
             "gimhonq_choose"
         ]
     },
@@ -1508,9 +1508,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhonr.orc",
         "global_var": [
-            "gkmhonr_port",
             "gkmhonr_cps",
             "gkmhonr_start",
+            "gkmhonr_port",
             "gimhonr_choose"
         ]
     },
@@ -1518,9 +1518,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhonrx.orc",
         "global_var": [
-            "gkmhonrx_start",
             "gkmhonrx_cps",
             "gkmhonrx_port",
+            "gkmhonrx_start",
             "gimhonrx_choose"
         ]
     },
@@ -1529,8 +1529,8 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhont.orc",
         "global_var": [
             "gkmhont_cps",
-            "gkmhont_start",
             "gkmhont_port",
+            "gkmhont_start",
             "gimhont_choose"
         ]
     },
@@ -1539,8 +1539,8 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/mhont2.orc",
         "global_var": [
             "gkmhont2_cps",
-            "gkmhont2_start",
             "gkmhont2_port",
+            "gkmhont2_start",
             "gimhont2_choose"
         ]
     },
@@ -1550,7 +1550,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/mirrors.wav"
         ],
-        "pitch": 146.85191863627995
+        "pitch": "146.85191863627995"
     },
     "mkick": {
         "type": "instr",
@@ -1568,7 +1568,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nasa.wav"
         ],
-        "pitch": 231.83448635057766
+        "pitch": "231.83448635057766"
     },
     "neige": {
         "type": "sonvs",
@@ -1576,7 +1576,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/neige.wav"
         ],
-        "pitch": 152.75442439157274
+        "pitch": "152.75442439157274"
     },
     "ninfa": {
         "type": "sonvs",
@@ -1584,7 +1584,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ninfa.wav"
         ],
-        "pitch": 100.96906566153571
+        "pitch": "100.96906566153571"
     },
     "noi": {
         "type": "instr",
@@ -1600,9 +1600,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/noijt.orc",
         "global_var": [
+            "gknoijt_port",
             "gknoijt_cps",
             "gknoijt_start",
-            "gknoijt_port",
             "ginoijt_choose"
         ]
     },
@@ -1655,7 +1655,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noneknows.wav"
         ],
-        "pitch": 60.08839425085653
+        "pitch": "60.08839425085653"
     },
     "noriff": {
         "type": "sonvs",
@@ -1663,7 +1663,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noriff.wav"
         ],
-        "pitch": 51.086020380684374
+        "pitch": "51.086020380684374"
     },
     "november": {
         "type": "sonvs",
@@ -1671,7 +1671,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/november.wav"
         ],
-        "pitch": 43.41304746073162
+        "pitch": "43.41304746073162"
     },
     "ocean": {
         "type": "sonvs",
@@ -1679,14 +1679,14 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/ocean.wav"
         ],
-        "pitch": 46.42136746012285
+        "pitch": "46.42136746012285"
     },
     "ohoh": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ohoh.orc",
         "global_var": [
-            "giohohft",
-            "giohohmorf"
+            "giohohmorf",
+            "giohohft"
         ]
     },
     "org": {
@@ -1700,7 +1700,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/orp.wav"
         ],
-        "pitch": 34.329937955254714
+        "pitch": "34.329937955254714"
     },
     "orphans": {
         "type": "instr",
@@ -1821,10 +1821,10 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pij.orc",
         "global_var": [
-            "gipij_ptof",
-            "gipij_adsr",
+            "gipij_ftrev2",
             "gipij_ftrev1",
-            "gipij_ftrev2"
+            "gipij_adsr",
+            "gipij_ptof"
         ]
     },
     "pijnor": {
@@ -1832,9 +1832,9 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pijnor.orc",
         "global_var": [
             "gipijnor_adsr",
+            "gipijnor_ptof",
             "gipijnor_ftrev2",
-            "gipijnor_ftrev1",
-            "gipijnor_ptof"
+            "gipijnor_ftrev1"
         ]
     },
     "planche": {
@@ -1843,14 +1843,14 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/planche.wav"
         ],
-        "pitch": 170.23333035110275
+        "pitch": "170.23333035110275"
     },
     "plum": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/plum.orc",
         "global_var": [
-            "giplum_freqs1",
-            "giplum_freqs2"
+            "giplum_freqs2",
+            "giplum_freqs1"
         ]
     },
     "porco": {
@@ -1859,7 +1859,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/porco.wav"
         ],
-        "pitch": 172.00965567648316
+        "pitch": "172.00965567648316"
     },
     "puck": {
         "type": "instr",
@@ -1890,8 +1890,8 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/qb.orc",
         "global_var": [
-            "gkqb_q",
-            "gkqb_freq"
+            "gkqb_freq",
+            "gkqb_q"
         ]
     },
     "quad": {
@@ -1932,7 +1932,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/reg.wav"
         ],
-        "pitch": 66.58106652334541
+        "pitch": "66.58106652334541"
     },
     "repuck": {
         "type": "instr",
@@ -1950,7 +1950,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/search.wav"
         ],
-        "pitch": 3675.0
+        "pitch": "3675.0"
     },
     "send_freq1": {
         "type": "instr",
@@ -1976,9 +1976,9 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/senom.orc",
         "global_var": [
             "gksenom_cps",
-            "gksenom_port",
+            "gksenom_dyn",
             "gksenom_noteon",
-            "gksenom_dyn"
+            "gksenom_port"
         ]
     },
     "senot": {
@@ -1992,7 +1992,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav"
         ],
-        "pitch": 277.02322544429717
+        "pitch": "277.02322544429717"
     },
     "shinji": {
         "type": "sonvs",
@@ -2000,7 +2000,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinji.wav"
         ],
-        "pitch": 85.10643393110874
+        "pitch": "85.10643393110874"
     },
     "shinobi": {
         "type": "sonvs",
@@ -2008,7 +2008,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shinobi.wav"
         ],
-        "pitch": 63.35173259888963
+        "pitch": "63.35173259888963"
     },
     "simki": {
         "type": "instr",
@@ -2161,7 +2161,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six.wav"
         ],
-        "pitch": 61.497794918991936
+        "pitch": "61.497794918991936"
     },
     "six2": {
         "type": "sonvs",
@@ -2169,7 +2169,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/six2.wav"
         ],
-        "pitch": 87.34559858462303
+        "pitch": "87.34559858462303"
     },
     "sixcorrect": {
         "type": "sonvs",
@@ -2177,7 +2177,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixcorrect.wav"
         ],
-        "pitch": 58.15119866967129
+        "pitch": "58.15119866967129"
     },
     "sixspectrumsynth": {
         "type": "sonvs",
@@ -2185,7 +2185,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sixspectrumsynth.wav"
         ],
-        "pitch": 2788.5097353184633
+        "pitch": "2788.5097353184633"
     },
     "skij": {
         "type": "instr",
@@ -2198,7 +2198,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sophie1.wav"
         ],
-        "pitch": 55.356481536422
+        "pitch": "55.356481536422"
     },
     "space": {
         "type": "sonvs",
@@ -2235,9 +2235,9 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/sufij2.orc",
         "global_var": [
-            "gksufij2_p3",
             "gksufij2_p1",
-            "gksufij2_p2"
+            "gksufij2_p2",
+            "gksufij2_p3"
         ]
     },
     "sunij": {
@@ -2251,7 +2251,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/syeq.wav"
         ],
-        "pitch": 38.13861454325407
+        "pitch": "38.13861454325407"
     },
     "tape": {
         "type": "sonvs",
@@ -2315,7 +2315,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tension.wav"
         ],
-        "pitch": 27.514913827608044
+        "pitch": "27.514913827608044"
     },
     "theorbo": {
         "type": "sonvs",
@@ -2337,10 +2337,10 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/toomuchalone.orc",
         "global_var": [
-            "gktoomuchalone_dur",
-            "gktoomuchalone_cps",
-            "gktoomuchalone_env",
             "gktoomuchalone_amp",
+            "gktoomuchalone_cps",
+            "gktoomuchalone_dur",
+            "gktoomuchalone_env",
             "gitoomuchalone_morf",
             "gitoomuchalone_dummy"
         ]
@@ -2371,7 +2371,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/tricot.wav"
         ],
-        "pitch": 33.19475399699783
+        "pitch": "33.19475399699783"
     },
     "uni": {
         "type": "instr",
@@ -2384,7 +2384,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/valle.wav"
         ],
-        "pitch": 62.66431153451198
+        "pitch": "62.66431153451198"
     },
     "var14r": {
         "type": "sonvs",
@@ -2446,11 +2446,11 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ventre.orc",
         "global_var": [
-            "gkventre_lad",
-            "gkventre_cps",
-            "gkventre_dur",
-            "gkventre_env",
             "gkventre_harm",
+            "gkventre_env",
+            "gkventre_dur",
+            "gkventre_cps",
+            "gkventre_lad",
             "giventre_count"
         ]
     },
@@ -2496,7 +2496,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/virgule.wav"
         ],
-        "pitch": 1842.3238036884127
+        "pitch": "1842.3238036884127"
     },
     "vla": {
         "type": "sonvs",
@@ -2601,15 +2601,15 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wetri.wav"
         ],
-        "pitch": 39.96003478012733
+        "pitch": "39.96003478012733"
     },
     "witches": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/witches.orc",
         "global_var": [
-            "gkwitches_mod",
+            "gkwitches_detune",
             "gkwitches_ndx",
-            "gkwitches_detune"
+            "gkwitches_mod"
         ]
     },
     "witches11": {
@@ -2641,10 +2641,10 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/xylo.orc",
         "global_var": [
-            "gixylo_vibes",
-            "gixylo_ft",
             "gixylo_dummy",
-            "gixylo_morf"
+            "gixylo_morf",
+            "gixylo_vibes",
+            "gixylo_ft"
         ]
     },
     "yeux": {
@@ -2653,7 +2653,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/yeux.wav"
         ],
-        "pitch": 48.49390711576517
+        "pitch": "48.49390711576517"
     },
     "zzz1": {
         "type": "sonvs",
@@ -2661,7 +2661,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz1.wav"
         ],
-        "pitch": 46.129797536505784
+        "pitch": "46.129797536505784"
     },
     "zzz2": {
         "type": "sonvs",
@@ -2669,7 +2669,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz2.wav"
         ],
-        "pitch": 51.10984161388053
+        "pitch": "51.10984161388053"
     },
     "zzz3": {
         "type": "sonvs",
@@ -2677,7 +2677,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz3.wav"
         ],
-        "pitch": 100.41222923274324
+        "pitch": "100.41222923274324"
     },
     "zzz4": {
         "type": "sonvs",
@@ -2685,7 +2685,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz4.wav"
         ],
-        "pitch": 875.0668170711347
+        "pitch": "875.0668170711347"
     },
     "zzz5": {
         "type": "sonvs",
@@ -2693,7 +2693,7 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz5.wav"
         ],
-        "pitch": 83.35148227797643
+        "pitch": "83.35148227797643"
     },
     "zzz6": {
         "type": "sonvs",
@@ -2701,6 +2701,6 @@
         "path": [
             "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/zzz6.wav"
         ],
-        "pitch": 53.432306454085726
+        "pitch": "53.432306454085726"
     }
 }

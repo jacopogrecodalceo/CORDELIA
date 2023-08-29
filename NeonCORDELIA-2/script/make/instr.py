@@ -76,7 +76,7 @@ def process_sonvs(directory, json_file):
 					'type': 'sonvs',
 					'channels': sox.file_info.channels(file_path),
 					'path': [file_path],
-					'pitch': main_f0
+					'pitch': str(main_f0)
 				}
 		else:
 			audio_files = []

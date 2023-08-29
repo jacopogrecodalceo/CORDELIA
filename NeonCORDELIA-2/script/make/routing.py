@@ -3,8 +3,8 @@ import os
 import re
 
 def extract_text(text, section):
-	start = fr';START {section}\n'
-	end = fr';END {section}\n'
+	start = fr';START {section}\s'
+	end = fr';END {section}\s'
 	match = re.search(f'{start}(.*?){end}', text, re.DOTALL)
 	if match:
 		return match.group(1).strip()
@@ -15,10 +15,11 @@ def make(orc_file, directory, json_file):
 		modules = {}
 		for f in os.listdir(directory):
 			if f.endswith('.orc'):
-				name = os.path.splitext(f)[0]
+				name = f.split('.')[0]
 
 				with open(os.path.join(directory, f), 'r') as file:
 					text = file.read()
+					text += '\n'
 
 					input_section = extract_text(text, 'INPUT')
 					opcode_section = extract_text(text, 'OPCODE')

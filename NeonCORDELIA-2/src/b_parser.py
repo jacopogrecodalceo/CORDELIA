@@ -75,7 +75,20 @@ def verify(token):
 			else:
 				token.value = 'gi' + value
 				return token
-		
+
+		elif value in cordelia_json['MODE']:
+			if value not in cordelia_given:
+				cordelia_given.append(value)
+				print(f'📩{value} is verified.')
+				values = cordelia_json['MODE'][value]
+				code = f'gi{value} ftgen 0,0,0,-2,' + values
+				cordelia_init_code.append(code)
+				token.value = 'gi' + value
+				return token
+			else:
+				token.value = 'gi' + value
+				return token
+
 		return token
 
 	else:
@@ -138,7 +151,9 @@ def verify_instr(instrument_name):
 		
 	cordelia_init_code.append('\n'.join(instr_setting))
 
-def remove_sequence(tokens, start_types, end_types):
+def remove_comment(tokens):
+	start_types = 'COMMENT'
+	end_types = 'NEWLINE'
 	start_index = next((i for i, token in enumerate(tokens) if token.type in start_types), None)
 	if start_index is None:
 		return tokens, list() # No matching start type found, return the original tokens
@@ -147,7 +162,7 @@ def remove_sequence(tokens, start_types, end_types):
 	if end_index is None:
 		return tokens, list() # No matching end type found, return the original tokens
 	
-	end_index += start_index + 1  # Adjust end_index based on start_index
+	end_index += start_index
 
 	sequence = tokens[:start_index] + tokens[end_index:]
 	extracted_sequence = tokens[start_index:end_index]
@@ -268,7 +283,7 @@ class Parser:
 
 	@condition({'start': 'RHYTHM', 'end': 'EMPTYLINE'})
 	def parse_rhythmic_seq(self, tokens):
-		tokens, _ = remove_sequence(tokens, start_types='COMMENT', end_types='NEWLINE')
+		tokens, _ = remove_comment(tokens)
 
 		tokens.insert(0, Token('SOC', None))
 		tokens.insert(len(tokens), Token('EOC', None))

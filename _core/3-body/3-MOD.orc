@@ -16,6 +16,25 @@ aout	balance2 aout, ain
 
 
 ;===================================
+;platij
+;===================================
+
+giplate_rev_tabexcite	ftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545
+giplate_rev_tabouts		ftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545
+
+	opcode plate_rev, a, ak
+	ain, kmix xin
+
+itime	init i(gkbeats)*8 
+
+arev	platerev giplate_rev_tabexcite, giplate_rev_tabouts, 0, .095, .75, itime, .0015, ain
+aout	= ain*(1-kmix) + arev*kmix
+
+	xout aout
+	endop
+
+
+;===================================
 ;rinij
 ;===================================
 
@@ -29,6 +48,120 @@ kring		tableikt kndx, ktab, 1, 0, 1
 aout		= ain * a(kring)
 
 	xout aout
+	endop
+
+
+;===================================
+;skh
+;===================================
+
+opcode cordelia_skh, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+aout	skf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 1
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
+
+;===================================
+;moijb3
+;===================================
+
+gkcordelia_moijb3_port init 5$ms
+gkcordelia_moijb3_freq1 init 3
+gkcordelia_moijb3_freq2 init 4
+gkcordelia_moijb3_freq3 init 5
+
+    opcode cordelia_moijb3, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+
+kfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a1      moogladder2 ain, portk(kfreq1, gkcordelia_moijb3_port), kq
+
+a0      init 0
+kfreq2  limit gkcordelia_moijb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a2      spf a0, a0, ain, portk(kfreq2, gkcordelia_moijb3_port), 2-(kq*2)
+
+kfreq3  limit gkcordelia_moijb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a3      spf a0, a0, ain, portk(kfreq3, gkcordelia_moijb3_port), 2-(kq*2)
+
+kfreq4  limit gkcordelia_moijb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a4      spf a0, a0, ain, portk(kfreq4, gkcordelia_moijb3_port), 2-(kq*2)
+
+aout    = a1 + a2 + a3 + a4
+
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
+
+;===================================
+;solij
+;===================================
+
+/* Solina Chorus, based on Solina String Ensemble Chorus Module
+  
+   based on:
+
+   J. Haible: Triple Chorus
+   http://jhaible.com/legacy/triple_chorus/triple_chorus.html
+
+   Hugo Portillo: Solina-V String Ensemble
+   http://www.native-instruments.com/en/reaktor-community/reaktor-user-library/entry/show/4525/ 
+
+   Parabola tabled shape borrowed from Iain McCurdy delayStereoChorus.csd:
+   http://iainmccurdy.org/CsoundRealtimeExamples/Delays/delayStereoChorus.csd
+
+   Author: Steven Yi
+   Date: 2016.05.22
+
+   */
+
+	gi_solina_parabola ftgen 0, 0, 65537, 19, 0.5, 1, 180, 1 
+
+	;; 3 sine wave LFOs, 120 degrees out of phase
+	opcode sol_lfo_3, aaa, kk
+	kfreq, kamp xin
+
+aphs	phasor kfreq
+
+a0		tablei aphs, gi_solina_parabola, 1, 0, 1
+a120	tablei aphs, gi_solina_parabola, 1, 0.333, 1
+a240	tablei aphs, gi_solina_parabola, 1, -0.333, 1
+
+	xout (a0 * kamp), (a120 * kamp), (a240 * kamp)
+	endop
+
+	opcode solina_chorus, a, akk
+
+	aLeft, klfo_freq1, klfo_amp1 xin
+
+klfo_freq2 = klfo_freq1*3
+klfo_amp2 = klfo_amp1*3
+
+imax = 100
+
+;; slow lfo
+as1, as2, as3 sol_lfo_3 klfo_freq1, klfo_amp1
+
+;; fast lfo
+af1, af2, af3  sol_lfo_3 klfo_freq2, klfo_amp2
+
+at1 = limit(as1 + af1 + 5, 0, imax)
+at2 = limit(as2 + af2 + 5, 0, imax)
+at3 = limit(as3 + af3 + 5, 0, imax)
+	
+a1 vdelay3 aLeft, at1, imax 
+a2 vdelay3 aLeft, at2, imax 
+a3 vdelay3 aLeft, at3, imax 
+
+	xout (a1 + a2 + a3) / 3
 	endop
 
 
@@ -75,6 +208,22 @@ aout	balance2 aout, ain
 
 
 ;===================================
+;folij
+;===================================
+
+opcode cordelia_follow, a, aSi
+    ain, String, ich xin
+
+adest	chnget sprintf("%s_%i", String, ich)
+
+aenv    follow adest, i(gkbeats)/32
+aout    balance2 ain, aenv/2
+
+    xout aout
+    endop
+
+
+;===================================
 ;revij
 ;===================================
 
@@ -86,6 +235,70 @@ aout	= ain*(1-kmix) + arev*kmix
 
 	xout aout
 	endop
+
+
+;===================================
+;delij
+;===================================
+
+opcode cordelia_delay_array, a, akki
+    
+    setksmps 1
+    adel_in, kdel_time, kfb, instances xin
+
+idel_buf    init 10
+
+adel_dump   delayr idel_buf
+adel_tap    deltap kdel_time
+            delayw adel_in + (adel_tap * kfb)
+
+adel_out    limit adel_tap, -1, 1
+
+if instances > 1 then
+    adel_out += cordelia_delay_array(adel_out, kdel_time + .15, kfb, instances-1)
+endif
+
+adel_out    limit adel_out, -1, 1
+    
+    xout adel_out
+    
+    endop
+
+
+;===================================
+;glass
+;===================================
+
+#define cordelia_glass_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
+#define cordelia_glass_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#
+
+    opcode cordelia_glass, a, akk
+    ain, kfreq, kq xin
+
+if1     init 80
+if2     init 188
+
+iq1     init 8
+iq2     init 3
+
+aexc1    mode ain, $cordelia_glass_cps(if1), $cordelia_glass_q(iq1)
+aexc2    mode ain, $cordelia_glass_cps(if2), $cordelia_glass_q(iq2)
+
+aexc    = (aexc1+aexc2)/2
+aexc    limit aexc, 0, 1
+
+ares1   mode aexc,  $cordelia_glass_cps(kfreq),  $cordelia_glass_q(scale(kq, 500, 60))
+ares2   mode aexc,  $cordelia_glass_cps(kfreq*2),  $cordelia_glass_q(scale(kq, 420, 53))
+
+aout    = (ares1+ares2)/2
+
+aout    balance2 aout, ain
+adel    flanger aout, a(1/$cordelia_glass_cps), kq/12
+
+aout    = aout + adel/8
+
+    xout aout
+    endop
 
 
 ;===================================
@@ -273,6 +486,177 @@ aout	= ain*(1-kmix) + adel*kmix
 
 
 ;===================================
+;strij
+;===================================
+
+opcode cor_streason, a, akk
+	ain, kfreq, kq xin
+
+kfreq += oscili:k(.5, gkbeatf/64)
+
+aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
+
+astr1	streson ain, kfreq, kq
+astr2	streson ain, kfreq*1.25, kq
+
+aout	= aguid + astr1 + astr2
+aout	/= 3
+
+aout	phaser1 aout, kfreq, 12, kq
+	
+	xout aout
+	endop
+
+
+;===================================
+;strijp
+;===================================
+
+opcode cor_streason_p, a, akkk
+	ain, kfreq, kport, kq xin
+
+kfreq	portk kfreq, kport
+
+aguid	wguide1 ain, 1/kfreq, kfreq/2, kq
+
+astr1	streson ain, kfreq, kq
+astr2	streson ain, kfreq*1.25, kq
+
+aout	= aguid + astr1 + astr2
+aout	/= 3
+
+aout	phaser1 aout, kfreq, 12, kq
+	
+	xout aout
+	endop
+
+
+;===================================
+;combij
+;===================================
+
+opcode vcomb_balance, a, akkk
+    ain, ktime, kfb, kmix xin
+
+imax_t	init 15
+acomb	vcomb ain, ktime, kfb*(imax_t/1000), imax_t
+;acomb	balance2 acomb, ain
+
+aout	= ain*(1-kmix) + acomb*kmix
+
+    xout aout
+    endop
+
+
+;===================================
+;sklb3
+;===================================
+
+gkcordelia_sklb3_port init 5$ms
+gkcordelia_sklb3_freq1 init 3
+gkcordelia_sklb3_freq2 init 4
+gkcordelia_sklb3_freq3 init 5
+
+    opcode cordelia_sklb3, a, akk
+    ain, kfreq, kq xin
+
+ifreq_var	init 5
+
+kfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a1      skf ain, portk(kfreq1, gkcordelia_sklb3_port), 1+(kq*3), 0
+
+a0      init 0
+kfreq2  limit gkcordelia_sklb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a2      spf a0, a0, ain, portk(kfreq2, gkcordelia_sklb3_port), 2-(kq*2)
+
+kfreq3  limit gkcordelia_sklb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a3      spf a0, a0, ain, portk(kfreq3, gkcordelia_sklb3_port), 2-(kq*2)
+
+kfreq4  limit gkcordelia_sklb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k
+a4      spf a0, a0, ain, portk(kfreq4, gkcordelia_sklb3_port), 2-(kq*2)
+
+aout    = a1 + a2 + a3 + a4
+
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
+
+;===================================
+;wooden
+;===================================
+
+#define cordelia_wooden_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#
+#define cordelia_wooden_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#
+
+    opcode cordelia_wooden, a, akk
+    ain, kfreq, kq xin
+
+if1     init 1000
+if2     init 3000
+
+iq1     init 12
+iq2     init 8
+
+aexc1    mode ain, $cordelia_wooden_cps(if1), $cordelia_wooden_q(iq1)
+aexc2    mode ain, $cordelia_wooden_cps(if2), $cordelia_wooden_q(iq2)
+
+aexc    = (aexc1+aexc2)/2
+aexc    limit aexc, 0, 1
+
+ares1   mode aexc,  $cordelia_wooden_cps(kfreq),  $cordelia_wooden_q(scale(kq, 500, 60))
+ares2   mode aexc,  $cordelia_wooden_cps(kfreq*2),  $cordelia_wooden_q(scale(kq, 420, 53))
+
+aout    = (ares1+ares2)/2
+
+aout    balance2 aout, ain
+
+    xout aout
+    endop
+
+
+;===================================
+;convij
+;===================================
+
+opcode cordelia_cross, a, aSik
+    ain, String, ich, kmix xin
+
+adest	chnget sprintf("%s_%i", String, ich)
+
+aout    cross2 ain, adest, 4096, 2, gihanning, kmix
+aout	balance2 aout, ain
+
+    xout aout
+    endop
+
+
+;===================================
+;decij
+;===================================
+
+opcode cordelia_decimator, a, akk	;UDO Sample rate / Bit depth reducer
+
+	setksmps   1
+
+	ain, kbit, ksrate xin
+
+kbits		=        2^kbit                ;bit depth (1 to 16)
+kfold		=        (sr/ksrate)           ;sample rate
+kin			downsamp ain                   ;convert to kr
+kin			=        (kin+0dbfs)           ;add DC to avoid (-)
+kin			=        kin*(kbits/(0dbfs*2)) ;scale signal level
+kin			=        int(kin)              ;quantise
+aout		upsamp   kin                   ;convert to sr
+aout		=        aout*(2/kbits)-0dbfs  ;rescale and remove DC
+a0ut		fold     aout, kfold           ;resample
+			xout     a0ut
+
+	endop
+
+
+;===================================
 ;cutij
 ;===================================
 
@@ -373,3 +757,66 @@ opcode jcut, a, akk
 	
 	xout aout
 endop
+
+
+;===================================
+;pconvij
+;===================================
+
+opcode cordelia_pconvolve, a, aiki
+    ain, ir, kmix, ich xin
+
+SFiles[]        directory "/Users/j/Documents/PROJECTs/CORDELIA/_setting/_IR", ".wav"
+
+inchnls         filenchnls SFiles[ir]
+;inchnls         init 2
+
+ichnl_array     init (ich%inchnls)+1
+
+aconv           pconvolve ain, SFiles[ir], 0, ichnl_array
+
+aout            = aconv*kmix + ain*(1-kmix)
+
+    xout aout
+
+    endop
+
+
+;===================================
+;abij
+;===================================
+
+opcode absolute_dist, a, ak
+    ain, kp1 xin
+
+setksmps 1
+
+afx     balance2 abs(ain), ain
+amod	abs lfo:a(1, kp1/2)
+
+afx	*= (1-amod)
+ain	*= amod
+
+aout	= afx + ain
+
+    xout aout
+    endop
+
+
+;===================================
+;duij
+;===================================
+
+gkcordelia_duck_atk init 5$ms
+gkcordelia_duck_rel init 75$ms
+
+    opcode cordelia_duck, a, aSik
+    ain, Sinstr, ich, kmix xin
+
+aenv    follow2 chnget:a(sprintf("%s_%i", Sinstr, ich)), gkcordelia_duck_atk, gkcordelia_duck_rel
+afol	= ain * (1-aenv)
+
+aout	= afol*kmix + ain*(1-kmix)
+
+    xout aout
+    endop

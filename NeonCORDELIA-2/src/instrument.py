@@ -82,13 +82,12 @@ else
 		kgain_in cosseg igain, gixtratim/4, igain/2, gixtratim*3/4, 0 
 		kgain_out cosseg igain, gixtratim*3/2, igain, gixtratim/3, 0
 	endif
-	''']
+''']
 
 		lines.extend([
 			f'\tamain_in chnget sprintf("%s_%i", "{self.name}", ich)',
 			'\tamain_in *= kgain_in'
 		])
-
 		# Add name to instrument
 		#route_var = f'gS{route_dict["name"]}{route_name_id}_{name}{self.name_id}_p1'
 		#route_dict['params'].insert(0, (route_var, f'"{name}"')) 
@@ -121,8 +120,10 @@ else
 
 			string = re.sub(r'(\W|^)PARAM_IN(\W|$)', rf'\1{input_var}\2', string)
 			string = re.sub(r'(\W|^)PARAM_OUT(\W|$)', rf'\1{output_var}\2', string)
-
+			
+			lines.append('\n;---\n')
 			lines.append(string)
+			lines.append('\n;---\n')
 
 		lines.extend([
 			'\tchnmix amain_out*kgain_out, gSmouth[ich-1]',

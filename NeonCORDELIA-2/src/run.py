@@ -7,6 +7,9 @@ from constants.var import cordelia_init_code, cordelia_compile
 def handle_input(code):
 	cordelia_init()
 
+	code = perform_alias(code)
+	code = perform_complex(code)
+
 	lexer = Lexer(code)
 	tokens = lexer.tokenize()
 

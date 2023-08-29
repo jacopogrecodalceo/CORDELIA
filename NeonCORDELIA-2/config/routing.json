@@ -9,7 +9,7 @@
     },
     "convij": {
         "input": "Sk",
-        "core": "PARAM_2\tinit 1\n\nPARAM_OUT    conv_1 PARAM_IN, PARAM_1, ich, PARAM_2"
+        "core": "PARAM_2\tinit 1\n\nPARAM_OUT cordelia_cross PARAM_IN, PARAM_1, ich, PARAM_2"
     },
     "cutij": {
         "input": "k",
@@ -97,7 +97,7 @@
     },
     "tapij": {
         "input": "kkk",
-        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit 1\n\nPARAM_OUT\tcordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
+        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
     },
     "wooden": {
         "input": "kk",

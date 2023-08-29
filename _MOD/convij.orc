@@ -2,7 +2,8 @@
 
 PARAM_2	init 1
 
-PARAM_OUT    conv_1 PARAM_IN, PARAM_1, ich, PARAM_2
+PARAM_OUT cordelia_cross PARAM_IN, PARAM_1, ich, PARAM_2
+
 ;END CORE
 
 ;START INPUT
@@ -11,7 +12,7 @@ Sk
 
 
 ;START OPCODE
-    opcode conv_1, a, aSik
+    opcode cordelia_cross, a, aSik
     ain, String, ich, kmix xin
 
 adest	chnget sprintf("%s_%i", String, ich)

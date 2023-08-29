@@ -1,8 +1,7 @@
 {   
-    "fill": "fillarray",
-    "once": "once(fillarray())",
+    "(\\W)\\?(\\W|$)": "\\1abs(jitter:k(1, gkbeatf/8, gkbeatf))\\2",
 
-    "(\\W)\\?(\\W|$)": "random:k(0, 1)",
+    "(\\w+)\\.a(\\(.*\\))": "\\1$atk(\\2)",
 
     "(\\W)in(\\d+)q(\\W|$)": "\\1come_in_q(\\2)\\3",
     "(\\W)in(\\d+)m(\\W|$)": "\\1come_in_q(\\2*4)\\3",
