@@ -18,25 +18,24 @@ ich	init p4
 
 ain	chnget gSmouth[ich]
 
-apre_out	= ain*gkgain
+aout	= ain*gkgain
 
-;aout	dcblock2 ain
 
-ihfreq			init ntof("3B")	; ~264Hz
-khq				= 1.95+lfo:k(.405, gkbeatf/48)
+/* ihfreq			init ntof("3B")	; ~264Hz
+khq				= 1.95+jitter:k(.405, gkbeatf/48, gkbeatf)
 
 ilfreq			init ntof("2B")	; ~123Hz
-klq				= 2.15+lfo:k(.305, gkbeatf/64)
+klq				= 2.15+jitter:k(.305, gkbeatf/64, gkbeatf)
 
 ahigh 			skf apre_out, ihfreq, khq, 1
 alow 			skf apre_out, ilfreq, klq
 
-apost_out		= ahigh+alow
+apost_out		= ahigh+alow */
 
 ;alow	rezzy aout, ifreq_low, kq
 ;alow	diode_ladder aout, ifreq_low, kq , 1, $M_LOG2E
 
-	outch gioffch+ich+1, apost_out
+	outch gioffch+ich+1, aout
 
 ;garecorder[ich] = aout
 

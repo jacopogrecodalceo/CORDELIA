@@ -12,6 +12,15 @@ if $kcps > 0 && $kcps < 20000 then
 			kch += 1
 		od
 		kch = 0
+	elseif kch % 1 > 0 then
+		kch_jit = kch
+		kch = 1
+		until kch > ginchnls do
+			kdec abs random(0, kch_jit % 1)
+			schedulek Sinstr, kdec, kdur, kamp, kenv, $kcps, int(kch)
+			kch += 1
+		od
+		kch = kch_jit
 	else
 		kch_i = ((kch-1)%ginchnls)+1
 		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i

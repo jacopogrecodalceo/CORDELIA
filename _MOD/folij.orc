@@ -3,7 +3,7 @@
 PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich
 ;END CORE
 ;START INPUT
-k
+Sk
 ;END INPUT
 
 ;START OPCODE

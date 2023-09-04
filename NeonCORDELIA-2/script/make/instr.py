@@ -6,8 +6,19 @@ import librosa
 import numpy as np
 
 HARD_RESET = False
+HARD_RESET_with_anal = False
+
 suffix = ['_so', '_sy', '_lpc', '_conv']
 audio_extensions = ['.flac', '.wav']
+
+default_sonvs_dir = './default/sonvs'
+default_sonvs = {}
+default_sonvs = {}
+for file_name in os.listdir(default_sonvs_dir):
+	if file_name.endswith('.orc'):
+		file_path = os.path.join(default_sonvs_dir, file_name)
+		key = file_path.split('/')[-1].split('.')[0]
+		default_sonvs[key] = file_path
 
 def extract_global_vars(path, name):
 	content = open(path).read()
@@ -55,30 +66,55 @@ def process_hybrid(directory, json_file):
 						'global_var': extract_global_vars(file_path, basename)
 					}
 
+def sonvs_anal(directory):
+	json_file = './config/sonvs_anal.json'
+
+	if HARD_RESET_with_anal or not os.path.exists(json_file):
+		anals = {}
+	else:
+		with open(json_file, 'r') as f:
+			anals = json.load(f)
+
+	for file in os.listdir(directory):
+		file_path = os.path.join(directory, file)
+		if os.path.isfile(file_path):
+			_, extension = os.path.splitext(file)
+			if extension in audio_extensions and file_path not in anals:
+				audio, sr = librosa.load(file_path)
+				f0 = librosa.yin(audio, fmin=25, fmax=3500)
+				main_f0 = np.median(f0)
+				anals[file_path] = {'pitch': str(main_f0)}
+	with open(json_file, 'w') as f:
+		json.dump(anals, f, indent=4)
+	return anals
+		
+
 def process_sonvs(directory, json_file):
+
+	anals_json = sonvs_anal(directory)
 
 	for file in os.listdir(directory):
 		file_path = os.path.join(directory, file)
 		
 		if os.path.isfile(file_path):
-			basename, extension = os.path.splitext(file)
-			
-			if extension in audio_extensions and basename not in json_file:
-				print(f'{basename} is added.')
-				
-				audio, sr = librosa.load(file_path, sr=None)
-				# Extract the fundamental frequency
-				f0 = librosa.yin(audio, fmin=25, fmax=3500)
-				# Find the main fundamental frequency using statistical mode
-				main_f0 = np.median(f0)
 
-				json_file[basename] = {
-					'type': 'sonvs',
-					'channels': sox.file_info.channels(file_path),
-					'path': [file_path],
-					'pitch': str(main_f0)
-				}
+			for variant in default_sonvs.keys():
+				basename, extension = os.path.splitext(file)
+				if variant != '_':
+					basename += variant		
+
+				if extension in audio_extensions and basename not in json_file:
+					print(f'{basename} is added.')
+					
+					json_file[basename] = {
+						'type': 'sonvs',
+						'channels': sox.file_info.channels(file_path),
+						'path': [file_path],
+						'pitch': anals_json[file_path]['pitch'],
+						'orc': default_sonvs[variant]
+					}
 		else:
+
 			audio_files = []
 			
 			for f in os.listdir(file_path):
@@ -86,12 +122,18 @@ def process_sonvs(directory, json_file):
 				
 				if extension in audio_extensions:
 					audio_files.append(os.path.join(file_path, f))
-						
-			json_file[file] = {
-				'type': 'sonvs',
-				'path': audio_files,
-				'channels': sox.file_info.channels(audio_files[0])
-			}
+			for variant in default_sonvs.keys():
+				basename = file
+				if variant != '_':
+					basename += variant		
+	
+				json_file[basename] = {
+					'type': 'dir_sonvs',
+					'channels': sox.file_info.channels(audio_files[0]),
+					'path': audio_files,
+					'pitch': "440",
+					'orc': default_sonvs[variant]
+				}
 
 
 def make(directory, json_file):

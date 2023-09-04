@@ -28,7 +28,7 @@ else
 endif
 
 	turnoff
-
+	endin
 	
 
 	instr mhont2_instr

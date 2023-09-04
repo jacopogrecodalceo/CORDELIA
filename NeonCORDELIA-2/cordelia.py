@@ -1,26 +1,29 @@
-import time
 import queue
-import sys
 
 from threading import Thread
 
 import utils.udp as udp 
 
-from src.run import handle_input
-from csoundAPI.init_csound import csound_cordelia
+from src.run_handler import handle_input
+from csoundAPI.cs import csound_cordelia
 
 message_queue = queue.Queue()
 
 def process_messages():
 	while True:
 		direction, code = message_queue.get()
+
 		if direction == 'CORDELIA':	
 			print('CORDELIA:\n')
 			csound_cordelia.compileOrcAsync(handle_input(code))
+		
+		elif direction == 'REAPER':
+			print('REAPER:\n')
+			csound_cordelia.compileOrcAsync(handle_input(code))
+
 		elif direction == 'CSOUND':
 			print('CSOUND:\n')
 			csound_cordelia.compileOrcAsync(code)
-
 
 def csound_perf_homemade(cs):
 	

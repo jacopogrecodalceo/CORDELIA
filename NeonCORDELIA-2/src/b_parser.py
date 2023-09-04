@@ -1,9 +1,11 @@
 from src.instrument import Instrument
 from src.a_lexer import Token
 
-from constants.var import cordelia_json, default_sonvs
-from constants.var import cordelia_init_code, cordelia_given
-from csoundAPI.init_csound import cordelia_nchnls
+from constants.var import cordelia_json
+from constants.var import cordelia_init_code, cordelia_given_else, cordelia_given_instr
+from csoundAPI.cs import cordelia_nchnls
+
+from csoundAPI.cs import remember, clear
 
 PRINT_TOKEN = False
 
@@ -16,8 +18,8 @@ def verify(token):
 	if type == 'SCALA':
 		# Remove 'scala.'
 		value = token.value.replace('scala.', '')
-		if value not in cordelia_given:
-			cordelia_given.append(value)
+		if value not in cordelia_given_else:
+			cordelia_given_else.append(value)
 			if value in cordelia_json[type]:
 				print(f'📩{value} is verified.')
 				cordelia_init_code.append(cordelia_json[type][value]['default_ftgen'])
@@ -32,8 +34,8 @@ def verify(token):
 	elif type == 'INSTR':
 		# Remove '@'
 		value = token.value[1:]
-		if value not in cordelia_given:
-			cordelia_given.append(value)
+		if value not in cordelia_given_instr:
+			cordelia_given_instr.append(value)
 			if value in cordelia_json[type]:
 				print(f'📩{value} is verified.')
 				verify_instr(value)
@@ -66,8 +68,8 @@ def verify(token):
 		value = token.value
 
 		if value in cordelia_json['GEN']:
-			if value not in cordelia_given:
-				cordelia_given.append(value)
+			if value not in cordelia_given_else:
+				cordelia_given_else.append(value)
 				print(f'📩{value} is verified.')
 				cordelia_init_code.append(cordelia_json['GEN'][value])
 				token.value = 'gi' + value
@@ -77,8 +79,8 @@ def verify(token):
 				return token
 
 		elif value in cordelia_json['MODE']:
-			if value not in cordelia_given:
-				cordelia_given.append(value)
+			if value not in cordelia_given_else:
+				cordelia_given_else.append(value)
 				print(f'📩{value} is verified.')
 				values = cordelia_json['MODE'][value]
 				code = f'gi{value} ftgen 0,0,0,-2,' + values
@@ -105,12 +107,12 @@ def verify_instr(instrument_name):
 	elif local_json[instrument_name]['type'] == 'hybrid':
 		required_instr = local_json[instrument_name]['required']
 		for i in required_instr:
-			if i not in cordelia_given:
+			if i not in cordelia_given_instr:
 				verify_instr(i)
 		with open(local_json[instrument_name]['path']) as f:
 			cordelia_init_code.append(f.read())
 
-	elif local_json[instrument_name]['type'] == 'sonvs':
+	elif local_json[instrument_name]['type'] == 'sonvs' or local_json[instrument_name]['type'] == 'dir_sonvs':
 		channels = local_json[instrument_name]['channels']
 		sonvs_string = [f'gi{instrument_name}_ch init {channels}']
 		index_num = 1
@@ -126,28 +128,28 @@ def verify_instr(instrument_name):
 				audio_files.append(file_var)
 				sonvs_string.append(f'{file_var} ftgen 0, 0, 0, 1, gS{instrument_name}_file_{index_file}, 0, 0, {ch}')
 				index_num += 1
-		
+
+
 		sonvs_string.append(f'gi{instrument_name}_list[] fillarray {", ".join(audio_files)}')
 
-		for key in default_sonvs.keys():
-			if instrument_name.endswith(key):
-				sonvs_string.append(default_sonvs[key].replace('---NAME---', instrument_name))
-			else:
-				sonvs_string.append(default_sonvs['_'].replace('---NAME---', instrument_name))
-				break
+		with open(local_json[instrument_name]['orc'], 'r') as f:
+			code = f.read()
+			code = code.replace('---NAME---', instrument_name)
+			code = code.replace('---PITCH---', local_json[instrument_name]['pitch'])
+			sonvs_string.append(code)
 
 		cordelia_init_code.append('\n'.join(sonvs_string))
 
 	#and create an array
 	instr_setting = [f'gS{instrument_name}[] init ginchnls']
-	for each in range(cordelia_nchnls):
-		instr_setting.append(f'gS{instrument_name}[{each}] sprintf	"{instrument_name}_%i", {each+1}')
+	for i in range(cordelia_nchnls):
+		instr_setting.append(f'gS{instrument_name}[{i}] sprintf	"{instrument_name}_%i", {i+1}')
 
-	start = cordelia_nchnls * (len(cordelia_given) - 1) + 1
-	sequence = [start + i for i in range(cordelia_nchnls)]
-	for index, val in enumerate(sequence):
-		instr_num = 950 + (val/10000)
-		instr_setting.append(f'schedule {round(instr_num, 5)}, 0, -1, "{instrument_name}_{index+1}"')
+	instr_setting.extend(clear(instrument_name))
+	
+	do_u_remember = remember(instrument_name)
+	if do_u_remember:
+		instr_setting.append(do_u_remember)
 		
 	cordelia_init_code.append('\n'.join(instr_setting))
 
@@ -323,7 +325,7 @@ class Parser:
 
 			self.instruments.append(instrument)
 
-	@condition({'start': 'INSTR', 'end': ['EMPTYLINE', 'NEWLINE']})
+	@condition({'start': 'INSTR', 'end': 'EMPTYLINE'})
 	def parse_sonvs_seq(self, tokens):
 
 		tokens.insert(0, Token('SOC', None))
@@ -355,9 +357,28 @@ class Parser:
 
 			self.instruments.append(instrument)
 
-	@condition({'start': ['GKVAR', 'GIVAR'], 'end': ['EMPTYLINE', 'NEWLINE']})
+	@condition({'start': 'EVENT', 'end': 'EMPTYLINE'})
+	def parse_event(self, tokens):
+		code = ''.join(tokens)
+		instrument = Instrument()
+		instrument.name = [token for token in tokens if token.type == 'INSTR'][0]
+		instrument.code = code
+
+		self.instruments.append(instrument)
+
+	@condition({'start': ['GKVAR', 'GIVAR'], 'end': 'EMPTYLINE'})
 	def parse_csound_command(self, tokens):
-		code = ''.join(token.value for token in tokens)
+
+		tokens_with_spaces = []
+
+		for i, token in enumerate(tokens):
+			tokens_with_spaces.append(token.value)
+			
+			if token.type in ['WORD', 'GKVAR', 'GIVAR'] and i < len(tokens) - 1 and tokens[i + 1].type in ['WORD', 'FUNC', 'NUMBER_FLOAT', 'NUMBER_INT']:
+				tokens_with_spaces.append(' ')  # Insert a space after each token
+   
+		code = ''.join(tokens_with_spaces)
+
 		instrument = Instrument()
 		instrument.name = 'cordelia'
 		instrument.code = code

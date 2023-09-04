@@ -1,24 +1,35 @@
 import re
 
 from constants.var import cordelia_init_code, cordelia_compile
-from csoundAPI.init_csound import cordelia_nchnls
 from constants.var import cordelia_instr_start_num
+from constants.var import cordelia_given_instr
 from constants.var import cordelia_alias
 
+from constants.path import cordelia_score
+
+from csoundAPI.cs import remember, clear, create_dir
+
 instr_last = ['init']
+
 
 def cordelia_init():
 
 	global instr_last
 
-	if instr_last[0] == 'init':
-
+	if instr_last and instr_last[0] == 'init':
+		print('INIT CORDELIA')
+		create_dir(cordelia_score)
 		instr_setting = ['schedule "heart", 0, -1']
 
 		name = 'mouth'
-		for each in range(cordelia_nchnls):
-			instr_num = 950 + ((each+1)/10000)
-			instr_setting.append(f'schedule {round(instr_num, 5)}, 0, -1, "{name}_{each+1}"')
+		
+		instr_setting.extend(clear(name))
+		
+		do_u_remember = remember(name)
+		if do_u_remember:
+			instr_setting.append(do_u_remember)
+
+		cordelia_given_instr.append(name)
 		
 		cordelia_init_code.append('\n'.join(instr_setting))
 		instr_last.clear()

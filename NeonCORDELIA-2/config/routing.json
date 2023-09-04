@@ -32,7 +32,7 @@
         "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tflanger PARAM_IN, a(portk(PARAM_1, gkbeats/24)), portk(PARAM_2, .025), 15"
     },
     "folij": {
-        "input": "k",
+        "input": "Sk",
         "core": "PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich"
     },
     "getmeout": {

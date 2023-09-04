@@ -44,6 +44,6 @@ endif
 
 aout		= acomb
 aout		/= 160
-
+aout		dcblock2 aout
 	$dur_var(10)
 	$end_instr

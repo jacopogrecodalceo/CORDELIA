@@ -18,16 +18,16 @@ def handle_input(code):
 	
 	compare_instruments_last(instruments)
 
-	res = []
+	instrument_res = []
 	for index in range(len(cordelia_compile)):
 		code = wrapper(index, cordelia_compile[index])
 		if code:
-			res.append(code)
+			instrument_res.append(code)
 			cordelia_compile[index] = None
 	
-	main_code = '\n'.join(cordelia_init_code + res) if cordelia_init_code else '\n'.join(res)
+	main_code = '\n'.join(cordelia_init_code + instrument_res) if cordelia_init_code else '\n'.join(instrument_res)
+	print('\n---\n'.join(cordelia_init_code + instrument_res))
 	cordelia_init_code.clear()
-	print('\n---\n'.join(cordelia_init_code + res))
 	return main_code
 
 

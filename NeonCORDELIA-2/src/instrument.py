@@ -5,6 +5,17 @@ attribute_order = ['name', 'rhythm', 'space', 'dur', 'dyn', 'env', 'freq', 'core
 
 instr_last = []
 
+def insert_each(rhythm_var, var):
+	if len(var) == 1:
+		res = var[0]
+	elif len(var) == 2:
+		res = f'{rhythm_var} == 1 ? {var[0]} : {var[1]}'
+	elif len(var) == 3:
+		res = f'{rhythm_var} == {var[2]} ? {var[0]} : {var[1]}'
+	else:
+		res = var
+	return res
+
 class Instrument:
 
 	def print_attributes(self):
@@ -79,8 +90,8 @@ else
 	kgain_out   init 1
 
 	if krel == 1 then
-		kgain_in cosseg igain, gixtratim/4, igain/2, gixtratim*3/4, 0 
-		kgain_out cosseg igain, gixtratim*3/2, igain, gixtratim/3, 0
+		kgain_in cosseg igain, gixtratim/4, 0, gixtratim*3/4, 0 
+		kgain_out cosseg igain, gixtratim*2/3, igain, gixtratim/3, 0
 	endif
 ''']
 
@@ -155,12 +166,13 @@ else
 			self.name = f'{name_var} = "{self.name}"'
 
 			dur_var = f'gkdur_{instrument_name}{self.name_id}'
-			dur = self.dur[0] if isinstance(self.dur, list) else self.dur
+			dur = insert_each(rhythm_var, self.dur)
 			self.dur = f'{dur_var} = {dur}'
 
 			dyn_var = f'gkdyn_{instrument_name}{self.name_id}'
-			dyn = self.dyn[0] if isinstance(self.dyn, list) else self.dyn
-			self.dyn = f'{dyn_var} = {dyn}*({rhythm_var} == 1 ? ampdb(5) : 1)'
+			dyn = insert_each(rhythm_var, self.dyn)
+			#self.dyn = f'{dyn_var} = {dyn}*({rhythm_var} == 1 ? ampdb(5) : 1)'
+			self.dyn = f'{dyn_var} = {dyn}'
 
 			env_var = f'gkenv_{instrument_name}{self.name_id}'
 			env = self.env[0] if isinstance(self.env, list) else self.env

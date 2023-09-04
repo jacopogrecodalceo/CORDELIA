@@ -16,7 +16,7 @@ index		init (isonvs*gi---NAME---_ch)+imod
 
 itab_sonvs	init gi---NAME---_list[index]
 
-kport		= .025
+kport		= 1/6
 ;kspeed		= 1 / (icps % 64)
 
 isize		init 1024
@@ -95,10 +95,10 @@ kf_temp = kf0
 ;printk2 kf0_last
 kn_harm             = sr/(kf0*4)
 
-a1      buzz 0dbfs, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
+a1      buzz idyn, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
 
 ;a2      vco2 4*(krms*kerr), kf0_last
-a2      buzz 0dbfs, portk(kf0_last, abs(jitter(kport, 1/12, 1))), kn_harm, -1
+a2      buzz idyn, portk(kf0_last, abs(jitter(kport, 1/12, 1))), kn_harm, -1
 
 asum    = a1 + a2
 
@@ -108,6 +108,10 @@ aout      allpole asum*krms*kerr, kcfs
 aout        *= 2
 if kread > ftlen(itab_sonvs) then
     kread = 0
+endif
+
+if ienv < 1 then
+	ienv init gisotrap
 endif
 
     $dur_var(10)

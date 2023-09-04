@@ -1,10 +1,9 @@
 opcode jex, k, SkO
 	Spat, kdiv, krot xin
 	
-
-	korgan	chnget "heart"
-	kph	= (korgan * kdiv * gkdiv) % 1
-
+	kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
+	kph			= int(kcycle % 1) + krot
+	
 	klast init -1
 	ktick init 0
 	kpat_indx init 0

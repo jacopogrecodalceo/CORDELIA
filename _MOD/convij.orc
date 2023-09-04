@@ -17,8 +17,10 @@ Sk
 
 adest	chnget sprintf("%s_%i", String, ich)
 
-aout    cross2 ain, adest, 4096, 2, gihanning, kmix
-aout	balance2 aout, ain
+across      cross2 ain, adest, 4096, 2, gihanning, kmix
+abalanced   balance2 across, ain
+
+aout	    = ain*(1-kmix) + abalanced*kmix
 
     xout aout
     endop
