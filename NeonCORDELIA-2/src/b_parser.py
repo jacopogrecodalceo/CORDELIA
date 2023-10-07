@@ -4,6 +4,7 @@ from src.a_lexer import Token
 from constants.var import cordelia_json
 from constants.var import cordelia_init_code, cordelia_given_else, cordelia_given_instr
 from csoundAPI.cs import cordelia_nchnls
+from csoundAPI.cs import csound_cordelia
 
 from csoundAPI.cs import remember, clear
 
@@ -283,6 +284,12 @@ class Parser:
 	def parse_comment(self, _):
 		pass
 
+	@condition({'start': 'EVENT', 'end': 'EMPTYLINE'})
+	def parse_event(self, tokens):
+		print_tokens(tokens)
+		#code = ''.join(tokens)
+		#csound_cordelia.compileOrcAsync()
+
 	@condition({'start': 'RHYTHM', 'end': 'EMPTYLINE'})
 	def parse_rhythmic_seq(self, tokens):
 		tokens, _ = remove_comment(tokens)
@@ -357,16 +364,7 @@ class Parser:
 
 			self.instruments.append(instrument)
 
-	@condition({'start': 'EVENT', 'end': 'EMPTYLINE'})
-	def parse_event(self, tokens):
-		code = ''.join(tokens)
-		instrument = Instrument()
-		instrument.name = [token for token in tokens if token.type == 'INSTR'][0]
-		instrument.code = code
-
-		self.instruments.append(instrument)
-
-	@condition({'start': ['GKVAR', 'GIVAR'], 'end': 'EMPTYLINE'})
+	@condition({'start': ['PRINT', 'GKVAR', 'GIVAR'], 'end': 'EMPTYLINE'})
 	def parse_csound_command(self, tokens):
 
 		tokens_with_spaces = []

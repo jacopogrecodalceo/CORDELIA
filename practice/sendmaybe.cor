@@ -1,0 +1,49 @@
+
+
+
+
+
+
+gkpulse = 25+abs(lfo(50, 1/128))*pump(2, fill(1, .5, .25));-go(0, 60, 100)
+
+gktuning = pump(1, fill(scala.pyt12, scala.edo31hex))
+
+eu: 6, 16, gkbeatn%16
+	out12m@ixland.convij(repuck)
+	wn*2, qn, 2
+	f, p
+	classic.a(5)
+	stept("3E", locrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("4E", locrian, 2+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+
+hex: "a0230ab00", 4+gkbeatn%16
+	.05@repuck
+	wn*2, qn
+	f, p, 2
+	classic.a(5)
+	stept("2E", locrian, pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("3E", locrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("4E", locrian, 2+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+
+hex: "000802", 64
+	@kneet
+	wn
+	ppp
+	bea
+	stept("3B", locrian, pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+
+eu: 3, 12, 64
+	@arm2_lpc
+	wn*2
+	fff
+	iago
+	4
+
+eu: 6, 12, 64, 2
+	@arm2_sy.convij(kneet)
+	wn
+	f
+	iago
+	4
+
+

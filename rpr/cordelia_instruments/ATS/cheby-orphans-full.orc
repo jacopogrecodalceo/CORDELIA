@@ -5,7 +5,7 @@ ich				init p5
 imax_p			ATSinfo Satsfile, 3
 gidur			ATSinfo Satsfile, 7
 
-inum			init 31
+inum			init imax_p
 
 indx			init 1
 inum			limit inum, 1, imax_p

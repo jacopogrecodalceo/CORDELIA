@@ -19,6 +19,7 @@ def process_messages():
 		
 		elif direction == 'REAPER':
 			print('REAPER:\n')
+			print(code)
 			csound_cordelia.compileOrcAsync(handle_input(code))
 
 		elif direction == 'CSOUND':

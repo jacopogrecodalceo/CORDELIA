@@ -348,7 +348,7 @@ function cordelia_realtime(play_pos)
 			if start_pos <= play_pos then
 			
 				local instr_name, dur, dyn, env, freq = item[3], item[4], item[5], item[6], item[7]
-				local csound_string = 'eva_midi "' .. instr_name .. '", 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
+				local csound_string = 'event: ' .. instr_name .. ', 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
 				send_to_cordelia(csound_string)
 				table.remove(midi_items, index)
 			else

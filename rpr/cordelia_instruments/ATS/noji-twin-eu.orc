@@ -30,10 +30,17 @@ gisaw	ftgen 0, 0, 8192, 7, 1, 8192, -1
 
 	instr 1
 
-Satsfile		init p4
-ich				init p5
-imax_p			ATSinfo Satsfile, 3
-gidur			ATSinfo Satsfile, 7
+; ============
+; *** INIT ***
+; ============
+Satsfile	init p4
+ich			init p5
+
+; ============
+; *** INFO ***
+; ============
+imax_p		ATSinfo	Satsfile, 3
+gidur		ATSinfo	Satsfile, 7
 
 ionset			init 15
 
@@ -59,7 +66,7 @@ ifreq			init 1
 ; ============
 ; *** READ ***
 ; ============
-kread 			line 0, p3, idur
+kread 			line 0, p3, gidur
 kfreq, kdyn		ATSread kread, Satsfile, ipartial
 adyn			a kdyn
 afreq			a kfreq
@@ -79,7 +86,7 @@ kjit_r			jitter cosseg(5, idur, .75), 1.5, 3.5
 a_modulator1		oscili	kpeakdev*linseg(0, idur, 1), afreq * 5
 a_modulator2		oscili	kpeakdev2*cosseg(0, idur, 1), afreq * 2, gisaw
 
-avib1			= lfo(kfreq/32, kfreq/250)*abs(jitter(1, 1/p3, 100/p3))
+avib1			= lfo(kfreq/32, kfreq/250)*abs(jitter(1, 1/idur, 100/idur))
 
 a_carrier_r		phasor	portk(kfreq + kjit_r, idur/96, 20)+avib1
 a_carrier_r		table3	a_carrier_r + a_modulator1 + a_modulator2, gisaw, 1, 0, 1

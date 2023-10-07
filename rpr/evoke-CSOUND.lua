@@ -1,3 +1,11 @@
+dofile( reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
+
+local cjson = require("cjson")
+
+instr_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/NeonCORDELIA-2/config/INSTR.json', 'r')
+gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/NeonCORDELIA-2/config/GEN.json', 'r')
+
+
 local temp_dir = '/Users/j/Documents/PROJECTs/_temp/'
 
 local OUTPUT_LENGTH, OUTPUT_POSITION
@@ -356,6 +364,16 @@ function main_context()
 
 	local retval, return_code = reaper.ImGui_InputTextMultiline(ctx, '##Csound code', csound_code, 550, 805, reaper.ImGui_InputTextFlags_AllowTabInput())
 	if retval then csound_code = return_code end
+
+	for word in csound_code:gmatch("%S+") do
+		if instr_json[word] ~= nil then
+			csound_code = '#include "' .. instr_json[word]['path'] .. '"\n' .. csound_code
+		end
+		if gen_json[word] ~= nil then
+			csound_code = '#include "' .. instr_json[word]['path'] .. '"\n' .. csound_code
+		end
+	end
+
 	reaper.ImGui_SameLine(ctx)
 	local s_retval = reaper.ImGui_Button(ctx, 'save')
 
