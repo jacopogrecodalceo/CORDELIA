@@ -4,15 +4,12 @@ import re, os
 
 from constants.var import cordelia_date
 from constants.path import cordelia_score
-from constants.var import memories
 from constants.var import cordelia_given_instr
 
 def remember(instrument_name):
-	if memories:
-		instr_add = (len(cordelia_given_instr))/10000
-		instr_setting = f'schedule {round(945+instr_add, 5)}, 0, -1, "{instrument_name}", "{cordelia_score}/cor{cordelia_date}-{instrument_name}.wav"\n'
-		return instr_setting
-	return False
+	instr_add = (len(cordelia_given_instr))/10000
+	instr_setting = f'schedule {round(945+instr_add, 5)}, 0, -1, "{instrument_name}", "{cordelia_score}/cor{cordelia_date}-{instrument_name}.wav"\n'
+	return instr_setting
 
 def clear(instrument_name):
 	instr_setting = []
@@ -24,13 +21,12 @@ def clear(instrument_name):
 	return instr_setting
 
 def create_dir(directory):
-	if memories:
-		# Check if the directory doesn't exist, then create it
-		if not os.path.exists(directory):
-			os.mkdir(directory)
-			print(f"Directory '{directory}' created successfully.")
-		else:
-			print(f"Directory '{directory}' already exists.")
+	# Check if the directory doesn't exist, then create it
+	if not os.path.exists(directory):
+		os.mkdir(directory)
+		print(f"Directory '{directory}' created successfully.")
+	else:
+		print(f"Directory '{directory}' already exists.")
 
 # Extract the device name from the input string
 def extract_device(input_string):

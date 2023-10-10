@@ -4,7 +4,6 @@ from src.a_lexer import Token
 from constants.var import cordelia_json
 from constants.var import cordelia_init_code, cordelia_given_else, cordelia_given_instr
 from csoundAPI.cs import cordelia_nchnls
-from csoundAPI.cs import csound_cordelia
 
 from csoundAPI.cs import remember, clear
 
@@ -274,7 +273,6 @@ class Parser:
 					func = getattr(self, condition_func)
 					func(selected_tokens)
 					break
-
 
 	# ================
 	# PARSE CONDITIONs

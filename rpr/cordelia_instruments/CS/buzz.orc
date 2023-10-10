@@ -66,8 +66,8 @@ kf_temp = kf0
 
 kn_harm             = sr/(kf0*4)
 
-abuzz      buzz 0dbfs, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
-aout          allpole abuzz*krms*kerr, kcfs
+abuzz           buzz 0dbfs, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
+aout            allpole abuzz*krms*kerr, kcfs
 
 kread      += ksmps*kspeed  
 
