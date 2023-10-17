@@ -1,12 +1,31 @@
- dofile( reaper.GetResourcePath() ..
-   "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
+dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
 
-local MIDI_CORRECTION = 512
-local CORDELIA_CORE = '/Users/j/Documents/PROJECTs/CORDELIA/_core'
+-- =================================================================
+-- =================================================================
+-- =================================================================
+
+MIDI_CORRECTION = 512
+MAIN_TRACK_NAME = '_main'
+
+-- =================================================================
+-- =================================================================
+-- =================================================================
+
+local socket = require('socket')
+local s = socket.udp()
+
+function send_to_cordelia(message)
+	-- Encode the message as a byte string before sending
+	s:sendto(message, socket.dns.toip('localhost'), 10025)
+end
+
+-- =================================================================
+-- =================================================================
+-- =================================================================
 
 function log(e)
 	if type(e) == 'table' then
-		indent = indent or 0
+		local indent = indent or 0
 		for k, v in pairs(e) do
 			local formatting = string.rep(' ', indent) .. k .. ": "
 			if type(v) == 'table' then
@@ -21,47 +40,16 @@ function log(e)
 	end
 end
 
-local socket = require('socket')
--- Create a new UDP socket using AF_INET as the address family and SOCK_DGRAM as the socket type
-local s = socket.udp()
+-- =================================================================
+-- =================================================================
+-- =================================================================
 
-function send_to_cordelia(message)
-	-- Encode the message as a byte string before sending
-	s:sendto(message, socket.dns.toip('localhost'), 10025)
-end
-
-function round(num, numDecimalPlaces)
-	local mult = 10^(numDecimalPlaces or 0)
+function round(num, decimals)
+	local mult = 10^(decimals or 0)
 	return math.floor(num * mult + 0.5) / mult
 end
 
-function extract_elements(str)
-	local elements = {}
-	local paren_count = 0
-	local start = 1
-	for i = 1, #str do
-		local c = str:sub(i,i)
-		if c == '(' then
-			paren_count = paren_count + 1
-		elseif c == ')' then
-			paren_count = paren_count - 1
-		elseif c == ',' and paren_count == 0 then
-			table.insert(elements, str:sub(start, i-1))
-			start = i + 1
-		end
-	end
-	table.insert(elements, str:sub(start))
-	local result = {}
-	for _, elem in ipairs(elements) do
-		elem = elem:match("^%s*(.-)%s*$") -- remove leading/trailing whitespace
-		if elem ~= "" then
-			table.insert(result, elem)
-		end
-	end
-	return result
-end
-
-function extract_elements(string)
+function extract_csv(string)
 	local elements = {}
 	local paren_count = 0
 	local start = 0
@@ -75,7 +63,7 @@ function extract_elements(string)
 			table.insert(elements, string:sub(start + 1, i - 1))
 			start = i
 		end
-end
+	end
 	table.insert(elements, string:sub(start + 1))
 	local result = {}
 	for i, elem in ipairs(elements) do
@@ -86,6 +74,17 @@ end
 	end
 	return result
 end
+
+function insert_after_pattern(input, pattern, insertion)
+	local result = input:gsub(pattern, function(match)
+		return match .. insertion
+	end)
+	return result
+end
+
+-- =================================================================
+-- =================================================================
+-- =================================================================
 
 function get_all_midi_items(ids, index)
 
@@ -118,7 +117,7 @@ function get_all_midi_items(ids, index)
 			return
 		end
 
-		for _, word in pairs(extract_elements(track_name)) do
+		for _, word in pairs(extract_csv(track_name)) do
 			if word:find("^dur") then
 				local val = word:match("dur%s*(.-)$")
 				dur = load("return " .. dur .. val)()
@@ -324,6 +323,36 @@ function on_stop()
 	end
 end
 
+function get_project_paths()
+
+	local project_path = reaper.GetProjectPath() .. '/'
+	local project_name, ext = reaper.GetProjectName(0):match("(.+)%.(.*)")
+
+	local tracks_directory = project_path .. project_name .. '-cordelia_renders/'
+	local main_track_dir = tracks_directory .. MAIN_TRACK_NAME
+
+	log(project_path)
+	log('---')
+	log(project_name)
+	log('---')
+	log(tracks_directory)
+	log('---')
+	log(main_track_dir)
+
+end
+
+get_project_paths()
+
+function cordelia_store()
+
+	local score_file = io.open(file_path, 'w')
+	score_file:write(score_string)  -- Write the text to the file
+	score_file:close() -- Close the file when done
+
+	get_all_items()
+
+end
+
 function cordelia_realtime(play_pos)
 
 	if reaper.GetPlayState() == 1 then
@@ -336,8 +365,7 @@ function cordelia_realtime(play_pos)
 			reaper.CSurf_OnStop()
 		end
 		
-        last_play_pos = play_pos
-
+		last_play_pos = play_pos
 
 		local index = 1
 		while index <= #midi_items do
@@ -348,7 +376,7 @@ function cordelia_realtime(play_pos)
 			if start_pos <= play_pos then
 			
 				local instr_name, dur, dyn, env, freq = item[3], item[4], item[5], item[6], item[7]
-				local csound_string = 'eva_midi "' .. instr_name .. '", 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
+				local csound_string = 'eva_midi ' .. instr_name .. ', 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
 				send_to_cordelia(csound_string)
 				table.remove(midi_items, index)
 			else
@@ -368,7 +396,6 @@ function cordelia_realtime(play_pos)
 				
 				local instr_name = item[3]
 				local text = item[5]
-				local code = extract_elements(text)
 
 				if instr_name == '@cordelia' then
 
@@ -381,11 +408,9 @@ function cordelia_realtime(play_pos)
 					table.remove(text_items, index)
 
 				else
-
-					table.insert(code, 2, '"' .. instr_name .. '"')
-
-					local csound_string = 'instr ' .. instr_num .. '\n' .. table.concat(code, ", ") .. '\nendin\n'
-					csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
+					local csound_string = insert_after_pattern(text, "%.%w+%(", instr_num .. ', ' .. instr_name .. ', ')
+					--local csound_string = 'instr ' .. instr_num .. '\n' .. table.concat(code, ", ") .. '\nendin\n'
+					--csound_string = csound_string .. 'schedule ' .. instr_num .. ', 0, -1'
 					
 					send_to_cordelia(csound_string)
 
@@ -408,9 +433,8 @@ function cordelia_realtime(play_pos)
 
 				if end_pos <= play_pos then
 
-					local csound_string = 'turnoff2_i ' .. instr_num .. ', 0, 0'
-
-					send_to_cordelia(csound_string)
+					--local csound_string = 'turnoff2_i ' .. instr_num .. ', 0, 0'
+					--send_to_cordelia(csound_string)
 					
 					table.remove(text_items_off, index)
 

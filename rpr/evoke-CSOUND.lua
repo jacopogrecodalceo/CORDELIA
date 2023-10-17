@@ -2,8 +2,8 @@ dofile( reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Variou
 
 local cjson = require("cjson")
 
-instr_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/NeonCORDELIA-2/config/INSTR.json', 'r')
-gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/NeonCORDELIA-2/config/GEN.json', 'r')
+instr_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/INSTR.json', 'r')
+gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/GEN.json', 'r')
 
 
 local temp_dir = '/Users/j/Documents/PROJECTs/_temp/'

@@ -5,7 +5,7 @@ from pathlib import Path
 
 CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIA'
 
-with open(f'{CORDELIA_DIR}/_setting/scala.json') as f:
+with open(f'{CORDELIA_DIR}/_cordelia/config/SCALA.json') as f:
 	SCALA_JSON = json.load(f)
 
 with open(f'{CORDELIA_DIR}/rpr/midi_name_freq.json') as f:

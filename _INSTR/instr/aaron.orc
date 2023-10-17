@@ -8,7 +8,7 @@ giaaron_atk		init .0125
 
 	instr aaron_instr_1
 
-	$PARAMS(aaron)
+	$params(aaron)
 
 //
 
@@ -57,7 +57,8 @@ aout	repluck random:i(.015, .35), idyn, icps + random:i(-ipanfreq, ipanfreq), ra
 aout	*= cosseg(0, giaaron_atk, 1, irel, 0)
 aout	dcblock2 aout
 
-	$CHNMIX
+	$channel_mix
+	endin
 
 	
 
@@ -81,7 +82,8 @@ aout	repluck random:i(.015, .35), $dyn_var, icps + random:i(-ipanfreq, ipanfreq)
 aout	*= cosseg(0, giaaron_atk, 1, idur/5, 0)
 aout	dcblock2 aout
 
-	$CHNMIX
+	$channel_mix
+	endin
 
 	
 
@@ -112,7 +114,8 @@ aout	*= amp
 aout	*= cosseg(0, giaaron_atk, idyn, idur, 0)
 aout	dcblock2 aout
 
-	$CHNMIX
+	$channel_mix
+	endin
 
 	
 
@@ -134,5 +137,6 @@ idetune 	init i(gkaaron_detune)
 	event "i", sprintf("%s_instr_4", Sinstr), 0,	idur, idyn/5,	ienv, icps, ich
 
 	turnoff
+	endin
 
 	

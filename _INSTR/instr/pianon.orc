@@ -3,10 +3,7 @@
 ipiano	sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
 	sfpassign 0, ipiano
 	endin
-
-	
 	schedule "piano_load", 0, 0
-
 
 	$start_instr(pianon)
 
