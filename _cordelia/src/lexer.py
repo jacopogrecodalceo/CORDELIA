@@ -13,8 +13,8 @@ def tokenize(code):
 	while code:
 		match = None
 		for token in cordelia_json['tokens']:
-			#regex = re.compile(token['pattern'], re.MULTILINE)
-			regex = re.compile(token['pattern'])
+			regex = re.compile(token['pattern'], re.MULTILINE)
+			#regex = re.compile(token['pattern'])
 			match = regex.match(code)
 			if match:
 				value = match.group()
@@ -34,11 +34,11 @@ def print_tokens(tokens):
 		if token.type != 'NEWLINE' and token.type != 'EMPTYLINE':
 			print(token.type, '   \t', '.'*30, token.value)
 		else:
-			print(token.type)
+			print(token.type, '   \t', '.'*30, token.type)
 	print('-'*40)
 
 def print_token(token):
 	if token.type != 'NEWLINE' and token.type != 'EMPTYLINE':
 		print(token.type, '   \t', '.'*30, token.value)
 	else:
-		print(token.type)
+		print(token.type, '   \t', '.'*30, token.type)

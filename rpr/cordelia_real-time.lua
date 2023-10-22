@@ -1,5 +1,17 @@
-dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
+-- If you want to ship the sockets files within your script uncomment these lines (it is recommended to use Mavriq repository with his dll and so files this way user will have the latest version without you needing to update. Also will avoid confusion with multiple binaries files.)
+--[=[ local info = debug.getinfo(1, 'S');
+local script_path = info.source:match[[^@?(.*[\/])[^\/]-$]];
+package.cpath = package.cpath .. ";" .. script_path .. "/socket module/?.dll"  -- Add current folder/socket module for looking at .dll (need for loading basic luasocket)
+package.cpath = package.cpath .. ";" .. script_path .. "/socket module/?.so"  -- Add current folder/socket module for looking at .so (need for loading basic luasocket)
+package.path = package.path .. ";" .. script_path .. "/socket module/?.lua" -- Add current folder/socket module for looking at .lua ( Only need for loading the other functions packages lua osc.lua, url.lua etc... You can change those files path and update this line) ]=]
 
+-- if you want to load the sockets from Mavriq repository:
+-- package.cpath = package.cpath .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.dll'    -- Add current folder/socket module for looking at .dll
+package.cpath = package.cpath .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.so'    -- Add current folder/socket module for looking at .so
+-- package.path = package.path .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.lua'    -- Add current folder/socket module for looking at .so
+
+-- dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
+-- dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/headers.lua")
 -- =================================================================
 -- =================================================================
 -- =================================================================
@@ -22,11 +34,11 @@ SCOREs_off = {}
 -- =================================================================
 -- =================================================================
 
-local socket = require('socket')
+local socket = require('socket.core')
 local s = socket.udp()
 
 function send_to_cordelia(message)
-	--log(message)
+	-- log(message)
 	-- Encode the message as a byte string before sending
 	s:sendto(message, socket.dns.toip('localhost'), 10025)
 end
@@ -108,57 +120,49 @@ end
 
 function get_tracks()
 
-	local tracks = {}
 	local i = 0
+	local tracks = {}
+	local any_solo = reaper.AnyTrackSolo(0)
+	local count_tracks = reaper.CountTracks(0)
 
-	while i < reaper.CountTracks(0) do
+	while i < count_tracks do
 
 		local track = reaper.GetTrack(0, i)
 		local is_parent = reaper.GetMediaTrackInfo_Value(track, 'I_FOLDERDEPTH') == 1
 		local is_solo = reaper.GetMediaTrackInfo_Value(track, 'I_SOLO') > 0
 		local is_mute = reaper.GetMediaTrackInfo_Value(track, 'B_MUTE') == 1
 
-
-		
-		if reaper.AnyTrackSolo(0) then
-			if is_solo and is_parent then
-				table.insert(tracks, track)
-				for j = i + 1, reaper.CountTracks(0) - 1 do
-					local sub_track = reaper.GetTrack(0, j)
-					local track_depth = reaper.GetMediaTrackInfo_Value(sub_track, 'I_FOLDERDEPTH')
-					if track_depth == 1 then
-						i = j  -- Set the outer loop index to continue from here
-						break
-					else
-						table.insert(tracks, sub_track)
-					end
+		if any_solo and is_parent and is_solo then
+			table.insert(tracks, track)
+			local j = i + 1
+			while j < count_tracks do
+				local sub_track = reaper.GetTrack(0, j)
+				local track_depth = reaper.GetMediaTrackInfo_Value(sub_track, 'I_FOLDERDEPTH')
+				if track_depth == 1 then
+					break
 				end
+				table.insert(tracks, sub_track)
+				j = j + 1
 			end
-		else
-			if is_mute and is_parent then
-				for j = i + 1, reaper.CountTracks(0) - 1 do
-					local sub_track = reaper.GetTrack(0, j)
-					local track_depth = reaper.GetMediaTrackInfo_Value(sub_track, 'I_FOLDERDEPTH')
-					if track_depth == 1 then
-						table.insert(tracks, track)
-						i = j  -- Set the outer loop index to continue from here
-						break
-					elseif j == reaper.CountTracks(0) - 1 then
-						i = j  -- Set the outer loop index to continue from here
-						break
-					end
+			i = j - 1
+		elseif is_parent and is_mute then
+			local j = i + 1
+			while j < count_tracks do
+				local sub_track = reaper.GetTrack(0, j)
+				local track_depth = reaper.GetMediaTrackInfo_Value(sub_track, 'I_FOLDERDEPTH')
+				if track_depth == 1 then
+					break
 				end
-			elseif not is_mute then
-				table.insert(tracks, track)
+				j = j + 1
 			end
+			i = j - 1
+		elseif not is_mute and not any_solo then
+			table.insert(tracks, track)
 		end
-
 		i = i + 1
-	
 	end
 
 	return tracks
-
 end
 
 function get_item_info(track, j)
@@ -233,31 +237,31 @@ function get_items()
 		end 
 
 		local _, track_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', '', false)
-		log(instrument_name)
-		log(track_name)
 
-		for j = 0, reaper.GetTrackNumMediaItems(track)-1 do
-			local item = get_item_info(track, j)
+		if instrument_name and string.match(instrument_name, '@') then
+			for j = 0, reaper.GetTrackNumMediaItems(track)-1 do
+				local item = get_item_info(track, j)
 
-			-- ITEM INFO
-			local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
+				-- ITEM INFO
+				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
 
-			if item_type == 'MIDI' then
-				local info = get_track_name_info(track_name)
-				info.freqs_by_tuning = get_freqs_by_tuning(track)
+				if item_type == 'MIDI' then
+					local info = get_track_name_info(track_name)
+					info.freqs_by_tuning = get_freqs_by_tuning(track)
 
-				local item_notes = get_notes_from_item(info, item)
+					local item_notes = get_notes_from_item(info, item)
 
-				for _, note in pairs(item_notes) do
-					note.instrument_name = instrument_name
-					table.insert(NOTEs, note)
+					for _, note in pairs(item_notes) do
+						note.instrument_name = instrument_name
+						table.insert(NOTEs, note)
+					end
+				elseif item_type == 'SCORE' then
+					item.index = item_index
+					local score = get_scores_item(item)
+					score.instrument_name = instrument_name
+					table.insert(SCOREs, score)
+					item_index = item_index + 1
 				end
-			elseif item_type == 'SCORE' then
-				item.index = item_index
-				local score = get_scores_item(item)
-				score.instrument_name = instrument_name
-				table.insert(SCOREs, score)
-				item_index = item_index + 1
 			end
 		end
 	end
@@ -282,7 +286,7 @@ function get_notes_from_item(info, item)
 
 		if not is_muted then
 			local onset = reaper.MIDI_GetProjTimeFromPPQPos(item.take, start_ppqpos)
-			onset = onset < 0 and 0 or onset
+			-- onset = onset < 0 and 0 or onset
 
 			if onset <= item.end_pos and onset >= item.start_pos then
 				
@@ -364,16 +368,16 @@ function safety_play(play_pos)
 	end
 end
 
-function remove_at_play(play_pos, notes, scores)
+function remove_at_play(play_pos)
 
-	for i, note in pairs(NOTEs) do
-		if note.onset < play_pos then
+	for i = #NOTEs, 1, -1 do
+		if NOTEs[i].onset < play_pos then
 			table.remove(NOTEs, i)
 		end
 	end
 
-	for i, score in pairs(SCOREs) do
-		if score.onset < play_pos and score.end_pos < play_pos then
+	for i = #SCOREs, 1, -1 do
+		if SCOREs[i].onset < play_pos and SCOREs[i].end_pos < play_pos then
 			table.remove(SCOREs, i)
 		end
 	end
@@ -457,8 +461,13 @@ function cordelia_realtime(play_pos)
 				score.instrument_num = tostring(score.index + 300)
 
 				if score.instrument_name == '@cordelia' then
-					local csound_string = 'instr ' .. score.instrument_num .. '\n' .. score.code .. '\nendin\n'
-					csound_string = csound_string .. 'schedule ' .. score.instrument_num .. ', 0, -1'
+					local csound_parts = {
+						'REAPER_INSTR_START ' .. score.instrument_num,
+						score.code,
+						'REAPER_INSTR_END'
+					}
+					local csound_string = table.concat(csound_parts, '\n')
+					--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
 					
 					send_to_cordelia(csound_string)
 

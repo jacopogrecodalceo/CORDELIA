@@ -17,30 +17,21 @@
 --m-benchmarks=0
 
 -+id_artist="jacopo greco d'alceo"
-;-b 64 ;mac 1024
-;-B 128 ;mac 2048
-
-;-b 2048
-;-B 4096
 
 ;suggested https://csound-floss-dev.firebaseapp.com/how-to/hardware#realtime-audio-issues-and-errors
-;-b 256
-;-B 1024
+;-b 16284
+;-B 16284
 
-;-b 128
-;-B 1024
 ;--realtime
 -+rtaudio=pa_cb
 ;-+rtaudio=PortAudio
 ;-+rtaudio=jack
 ;-+rtaudio=CoreAudio
 
-;-b 1024
-;-B 4096
 ;-+rtaudio=auhal
 
 
-;--num-threads=8
+;--num-threads=10
 ;--udp-echo
 
 ;--nosound

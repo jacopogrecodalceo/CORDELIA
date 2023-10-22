@@ -290,7 +290,7 @@ def separate(instruments):
 def wrap(index, instrument):
 	
 	if instrument:
-		num = instrument.num if instrument.num else (cordelia_instr_start_num + index)
+		num = instrument.num if instrument.num else cordelia_instr_start_num + index
 		if instrument.wrap:
 			if instrument.status == 'alive':
 

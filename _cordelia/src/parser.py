@@ -191,7 +191,7 @@ def verify_word(token):
 # =================================================================
 # =================================================================
 
-condition_data = {'parse_comment': {'start': ['COMMENT'], 'end': ['NEWLINE', 'EMPTYLINE']}}  # Create a dictionary to store condition data
+condition_data = {} # Create a dictionary to store condition data
 
 def condition(condition_data_dict):
 	def decorator(func):
@@ -200,15 +200,37 @@ def condition(condition_data_dict):
 		return func
 	return decorator
 
+def parse_comments(tokens):
+	i = 0
+	while i < len(tokens):
+		token = tokens[i]
+
+		if token.type in ['COMMENT']:
+			selected_tokens = [token]
+
+			j = i + 1
+			while j < len(tokens) and tokens[j].type not in ['NEWLINE', 'EMPTYLINE']:
+				selected_tokens.append(tokens[j])
+				j += 1
+
+			# Remove selected_tokens from tokens
+			tokens = tokens[:i] + tokens[j:]
+
+		else:
+			i += 1
+
+	return tokens
+
+
+
 def parse_by_group(tokens):
 
 	grouped_tokens = []
 
-	for func_name, condition in condition_data.items():
-		i = 0
-		while i < len(tokens):
-			token = tokens[i]
-
+	""" i = 0
+	while i < len(tokens):
+		token = tokens[i]
+		for func_name, condition in condition_data.items():
 			if token.type in condition['start']:
 				selected_tokens = [token]
 
@@ -223,8 +245,26 @@ def parse_by_group(tokens):
 				tokens = tokens[:i] + tokens[j:]
 
 			else:
-				i += 1
+				i += 1 """
+	while tokens:
+		token = tokens.pop(0)
 
+		if PRINT_TOKENS:
+			print_token(token)
+
+		for condition_func, condition in condition_data.items():
+			selected_tokens = []
+			if token.type in condition['start']:
+				selected_tokens.append(token)
+
+				while tokens and tokens[0].type not in condition['end']:
+					token = tokens.pop(0)
+					selected_tokens.append(token)
+					if PRINT_TOKENS:
+						print_token(token)
+
+				grouped_tokens.append((condition_func, selected_tokens))
+				break
 	return grouped_tokens
 
 # =================================================================
@@ -258,7 +298,9 @@ def parse(grouped_tokens):
 			print_tokens(tokens)
 		func = globals().get(func_name)
 		if func:
-			instruments.extend(func(tokens))
+			instrument = func(tokens)
+			if instrument:
+				instruments.extend(instrument)
 
 	return instruments
 
@@ -296,19 +338,18 @@ def extract_sequence(tokens, start=None, end=None, include_start=True, include_e
 # =================================================================
 # =================================================================
 
-@condition({'start': ['CSOUND_OPCODE_INIT'], 'end': ['EMPTYLINE']})
-def parse_csound_i(tokens):
-
-	tokens = [Token(token.type, f'"{token.value}"') if token.type == 'INSTR' else token for token in tokens]
-	code = f'{tokens[0].value} {"".join([token.value for token in tokens[1:]])}'
-
-	instrument = Instrument(
-		name='cordelia',
-		wrap=False
-	)
-	instrument.code = code
-
-	return [instrument]
+@condition({'start': ['REAPER'], 'end': ['REAPER']})
+def parse_reaper(tokens):
+	if tokens[0].value.startswith('REAPER_INSTR_START'):
+		instrument_num = tokens[1].value
+		tokens = tokens[2:]
+		grouped_tokens = parse_by_group(tokens)
+		for func_name, tokens in grouped_tokens:
+			func = globals().get(func_name)
+			if func:
+				instrument = func(tokens)
+				instrument[0].num = instrument_num
+				return [instrument[0]]
 
 @condition({'start': ['RHYTHM'], 'end': ['EMPTYLINE']})
 def parse_rhythmic(tokens):
@@ -437,6 +478,20 @@ def parse_csound_k(tokens):
 	instrument = Instrument(
 		name='cordelia',
 		wrap=True
+	)
+	instrument.code = code
+
+	return [instrument]
+
+@condition({'start': ['CSOUND_OPCODE_INIT'], 'end': ['EMPTYLINE']})
+def parse_csound_i(tokens):
+
+	tokens = [Token(token.type, f'"{token.value}"') if token.type == 'INSTR' else token for token in tokens]
+	code = f'{tokens[0].value} {"".join([token.value for token in tokens[1:]])}'
+
+	instrument = Instrument(
+		name='cordelia',
+		wrap=False
 	)
 	instrument.code = code
 

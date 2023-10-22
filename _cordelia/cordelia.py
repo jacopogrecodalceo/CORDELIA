@@ -4,7 +4,8 @@ from threading import Thread
 
 import utils.udp as udp 
 
-from src.run import handler_cordelia, handler_reaper
+from src.run import handler_cordelia, handler_reaper_1, handler_reaper_2
+from constants.var import cordelia_init_code
 #from src.run_handler import handle_input_cordelia, handle_input_reaper
 from csoundAPI.cs import csound_cordelia
 
@@ -20,7 +21,13 @@ def process_messages():
 		
 		elif direction == 'REAPER':
 			print('REAPER:\n')
-			csound_cordelia.compileOrcAsync(handler_reaper(code))
+			instrs = handler_reaper_1(code)
+			if cordelia_init_code:
+				print('\n'.join(cordelia_init_code))
+				csound_cordelia.compileOrcAsync('\n'.join(cordelia_init_code))
+			res = handler_reaper_2(instrs)
+			print(res)
+			csound_cordelia.compileOrcAsync(res)
 
 		elif direction == 'CSOUND':
 			print('CSOUND:\n')
