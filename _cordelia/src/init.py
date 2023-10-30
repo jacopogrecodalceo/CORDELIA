@@ -61,6 +61,16 @@ def add_to_compile(instruments):
 # =================================================================
 # =================================================================
 
+def convert_note(code):
+	def replace_note(match):
+		note_name = match.group(0)[:-1]
+		octave = match.group(0)[-1:]
+		return f'"{octave}{note_name.upper()}"'
+
+	pattern = r'\b[A-Ga-g](?:[b#])?\d+\b'
+	code = re.sub(pattern, replace_note, code)
+	return code
+
 def convert_alias(code):
 	escaped_replacements = {re.escape(name): repl for name, repl in cordelia_alias['alias'].items()}
 	pattern = re.compile(rf'(\W)({"|".join(escaped_replacements.keys())})(\W|$)', re.MULTILINE)
@@ -70,17 +80,6 @@ def convert_alias(code):
 def convert_complex(code):
 	for name, repl in cordelia_alias['complex'].items():
 		code = re.sub(rf'{name}', rf'{repl}', code, flags=re.MULTILINE)
-	return code
-
-def convert_note(code):
-
-	def replace_note(match):
-		note_name = match.group(0)[:-1]
-		octave = match.group(0)[-1:]
-		return f'"{octave}{note_name.upper()}"'
-
-	pattern = r'\b[A-Ga-g](?:[b#])?\d+\b'
-	code = re.sub(pattern, replace_note, code)
 	return code
 
 def convert(code):

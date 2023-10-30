@@ -1,7 +1,3 @@
-dofile( reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
-
-local cjson = require("cjson")
-
 instr_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/INSTR.json', 'r')
 gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/GEN.json', 'r')
 

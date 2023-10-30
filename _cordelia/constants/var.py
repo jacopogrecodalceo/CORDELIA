@@ -13,7 +13,7 @@ cordelia_instr_start_num = 215
 
 cordelia_date = datetime.today().strftime('%y%m%d-%H%M')
 
-memories = True
+memories = False
 
 def make_json(dictonary, directory):
 	for file_name in os.listdir(directory):

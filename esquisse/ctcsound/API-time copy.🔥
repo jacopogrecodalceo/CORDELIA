@@ -1,0 +1,29 @@
+from python import Python
+
+fn main() raises:
+	let ctcsound = Python.import_module('ctcsound')
+
+	let orc_text = '''
+	instr 1
+		out(linen(oscili(p4,p5),0.1,p3,0.1))
+	endin'''
+
+	let random = Python.import_module('random')
+
+	var sco_text = 'i1 0 5' + random.randint(500, 5000) + '440'
+	print(sco_text)
+
+	let cs = ctcsound.Csound()
+	cs.setOption('-odac')
+	cs.compileOrc(orc_text)
+	cs.readScore(sco_text)
+	cs.start()
+
+	while True:
+		let result = cs.performKsmps()
+		var elapsed_time = cs.scoreTime()
+		if elapsed_time%.25 > 0:
+			elapsed_time = cs.scoreTime()
+		#time.sleep(.5)
+		if result != 0:
+			break

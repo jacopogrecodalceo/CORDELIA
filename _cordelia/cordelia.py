@@ -5,17 +5,21 @@ from threading import Thread
 import utils.udp as udp 
 
 from src.run import handler_cordelia, handler_reaper_1, handler_reaper_2
-from constants.var import cordelia_init_code
+from constants.var import cordelia_init_code, memories
 #from src.run_handler import handle_input_cordelia, handle_input_reaper
 from csoundAPI.cs import csound_cordelia
 
 message_queue = queue.Queue()
 
 def process_messages():
+
+	global memories
+
 	while True:
 		direction, code = message_queue.get()
 
-		if direction == 'CORDELIA':	
+		if direction == 'CORDELIA':
+			memories = True
 			print('CORDELIA:\n')
 			csound_cordelia.compileOrcAsync(handler_cordelia(code))
 		
