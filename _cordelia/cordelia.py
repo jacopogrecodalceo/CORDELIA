@@ -1,6 +1,8 @@
 import queue
-
+from pathlib import Path
+import os, sys
 from threading import Thread
+import argparse
 
 import utils.udp as udp 
 
@@ -10,6 +12,12 @@ from constants.var import cordelia_init_code, memories
 from csoundAPI.cs import csound_cordelia
 
 message_queue = queue.Queue()
+
+def process_args():
+	parser = argparse.ArgumentParser(description='CORDELIA SCORE')
+	parser.add_argument('--score', '-s', help='Score (optional)')
+	args = parser.parse_args()
+	return args.score
 
 def process_messages():
 
@@ -38,31 +46,48 @@ def process_messages():
 			csound_cordelia.compileOrcAsync(code)
 
 def csound_perf_homemade(cs):
-	
 	cs.start()
 	cs.perform()
 	cs.cleanup()
 
 def main():
-	udp.open_ports()
-	print(csound_cordelia.csound())
 
-	# Create and start the thread for listening to messages
-	threads = [
-		Thread(target=process_messages, daemon=True), 
-	    Thread(target=udp.listen, daemon=True, args=(message_queue,)),
-		Thread(target=csound_perf_homemade, args=(csound_cordelia,))]
+	input_score = process_args()
+	if not input_score:
 
-	# Process the received messages in the main thread
-	for t in threads:
-		t.start()
+		udp.open_ports()
+		print(csound_cordelia.csound())
 
-	""" try:
-		while True:
-			time.sleep(.5)
-	except KeyboardInterrupt:
-		print("Threads stopped. Exiting.")
-		sys.exit(0)  # Cleanly exit the program
- """
+		# Create and start the thread for listening to messages
+		threads = [
+			Thread(target=process_messages, daemon=True), 
+			Thread(target=udp.listen, daemon=True, args=(message_queue,)),
+			Thread(target=csound_perf_homemade, args=(csound_cordelia,))
+			]
+
+		# Process the received messages in the main thread
+		for t in threads:
+			t.start()
+	else:
+		input_name = Path(input_score).stem
+		input_ext = Path(input_score).suffix[1:]
+		input_dir = Path(input_score).parent
+
+		output_score = os.path.join(input_dir, input_name + '-cordelia' + '.orc')
+
+		with open(input_score, 'r') as f:
+			code = f.read()
+
+		instrs = handler_reaper_1(code)
+
+		with open(output_score, 'w') as output:	
+			if cordelia_init_code:
+				output.write('\n'.join(cordelia_init_code))
+
+			res = handler_reaper_2(instrs)
+			output.write(res)
+
+		sys.exit(0)
+
 if __name__ == "__main__":
 	main()

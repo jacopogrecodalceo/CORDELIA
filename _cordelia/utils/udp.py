@@ -43,5 +43,9 @@ def udpsend_reaper(message):
 
 def listen(message_queue):
 	while True:
-		direction, code = receive()
-		message_queue.put((direction, code))
+		try:
+			direction, code = receive()
+			message_queue.put((direction, code))
+		except:
+			print("WARNING IN UDP")
+			

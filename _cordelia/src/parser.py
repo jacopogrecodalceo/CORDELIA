@@ -12,6 +12,15 @@ from src.lexer import print_tokens, print_token, Token
 
 PRINT_TOKENS = False
 
+def extract_keyword_from_list(list_params, keyword):
+	for element in list_params:
+		if keyword in element:
+			extracted = element.replace(keyword, '')
+			list_params.remove(element)
+			return list_params, extracted
+	return list_params, None
+
+
 def extract_csv(string):
 	elements = []
 	paren_count = 0
@@ -408,7 +417,7 @@ def parse_sonvs_routing(tokens):
 
 		routings = []
 		for _ in [token.value for token in tokens if token.type == 'ROUTING']:
-			routing_sequence, tokens = extract_sequence(tokens, start=['ROUTING'], end=['ROUTING', 'NEWLINE'])
+			routing_sequence, tokens = extract_sequence(tokens, start=['ROUTING'], end=['ROUTING', 'COLON'])
 			routings.append({'name': routing_sequence[0], 'params': extract_csv(''.join(routing_sequence[2:-1]))})
 
 		params_sequence, tokens = extract_sequence(tokens, start=['COLON'], end=['NEWLINE'], include_start=False)
@@ -423,7 +432,7 @@ def parse_sonvs_routing(tokens):
 				dur=f'gkbeats + {custom_sonvs_fade}',
 				dyn=params_sequence[1] if len(params_sequence) > 1 else 'mf',
 				env=str(custom_sonvs_fade),
-				freq=params_sequence[0],
+				freq=[params_sequence[0]],
 				wrap=True
 			)
 			instruments.append(instrument)
@@ -445,20 +454,20 @@ def parse_sonvs_routing(tokens):
 			routing_sequence, tokens = extract_sequence(tokens, start=['ROUTING'], end=['ROUTING', 'NEWLINE'])
 			routing_name = routing_sequence[0]
 			routing_params = extract_csv(''.join(routing_sequence[2:-1])) # Removing parentheses
-			if routing_params[0].isnumeric():
-				instrument_num = routing_params[0]
-				instrument_name = routing_params[1]
-				routing_params = routing_params[2:]
-			else:
-				instrument_name = routing_params[0]
-				routing_params = routing_params[1:]
+
+			routing_params, extract_num = extract_keyword_from_list(routing_params, 'num=')
+			routing_params, extract_dur = extract_keyword_from_list(routing_params, 'dur=')
+
+			instrument_name = routing_params[0]
+			routing_params = routing_params[1:]
 			routings.append({'name': routing_name, 'params': routing_params})
 
 		instrument = Instrument(
 			name=instrument_name,
 			routing= routings if routings else [{'name': 'getmeout', 'params': '1'}],
 			wrap=True,
-			num=instrument_num if instrument_num else None
+			num=extract_num if extract_num else None,
+			dur=extract_dur if extract_dur else None
 		)
 
 		return [instrument]

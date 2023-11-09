@@ -1,52 +1,59 @@
+; ============
+; *** WINDOWs ***
+; ============
+gihanning   ftgen   0, 0, 8192, 20, 2
+
+; ============
+; *** TABs ***
+; ============
 ich     filenchnls gSfile
 indx    init 0
 until indx == ich do
-    inum init indx + 1
-    itab ftgen inum, 0, 0, 1, gSfile, 0, 0, inum
-    indx += 1
+	inum init indx + 1
+	itab ftgen inum, 0, 0, 1, gSfile, 0, 0, inum
+	indx += 1
 od
 
-gihanning   ftgen   0, 0, 8192, 20, 2
-
-        instr 1
+	instr 1
 
 ich     init p4
 idur    init ftlen(ich)/sr
 
-ispeed  init 1
-isize   init 1024
-iord    init ksmps
+; ============
+; *** INIT ***
+; ============
+ispeed	init 1
+isize	init 1024
+iord	init ksmps
 
-p3      init idur*ispeed
+p3		init idur*ispeed
 
 kport   = .05
 kspeed  = 1/ispeed
 
-kis_samphold_freq   init 0
-kfreq_samphold       = 8
-
+kis_samphold_freq	init 0
+kfreq_samphold		= 8
 
 kread   init 0
-
 kcfs[], krms, kerr, kf0 lpcanal kread, 1, ich, isize, iord, gihanning
 
 if kis_samphold_freq == 1 then
-    ;kflag init 1
-    ;kflag_var jitter 1, 1/12, 1/3
-    kflag       metro kfreq_samphold
-    kf0         samphold kf0, kflag
+	;kflag init 1
+	;kflag_var jitter 1, 1/12, 1/3
+	kflag       metro kfreq_samphold
+	kf0         samphold kf0, kflag
 endif
 
 ibandwidth ntof "5B"
 
 if (kf0 > ibandwidth * 8) then
-    kf0 /= 64
+	kf0 /= 64
 elseif (kf0 > ibandwidth * 4) then
-    kf0 /= 32
+	kf0 /= 32
 elseif (kf0 > ibandwidth * 2) then
-    kf0 /= 16
+	kf0 /= 16
 elseif (kf0 > ibandwidth) then
-    kf0 /= 8
+	kf0 /= 8
 ; Add more conditions as needed
 ; elseif (kf0 > ibandwidth * 16) then
 ;     kf0 /= 32
@@ -60,14 +67,13 @@ kf_temp     init 0
 kf0_last    init 0
 
 if kf0 != kf_temp then
-    kf0_last = kf_temp
+	kf0_last = kf_temp
 endif
 kf_temp = kf0
 
-kn_harm             = sr/(kf0*4)
+kn_harm = sr/(kf0*4)
 
 a1      buzz 0dbfs, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
-
 a2      vco2 4*(krms*kerr), kf0_last
 
 asum    = a1 + a2
@@ -76,12 +82,12 @@ aout      allpole asum*krms*kerr, kcfs
 kread      += ksmps*kspeed  
 
 if kread > ftlen(ich) then
-    kread = 0
+	kread = 0
 endif 
 
-        outch ich, aout
+	outch ich, aout
 
-        endin
+	endin
 
 ;---SCORE---
 /* 

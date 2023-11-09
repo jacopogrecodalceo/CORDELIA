@@ -23,6 +23,7 @@ idetune = i(gkwitches_detune)
 	schedule Sinstr, random:i(p3/3, (p3/3)*2),			p3, idyn/16,	ienv, 	(icps*11)+(idetune*3),	indx, ich
 
 	turnoff
+	endin
 
 	
 

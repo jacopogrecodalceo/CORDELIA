@@ -1,60 +1,12 @@
--- If you want to ship the sockets files within your script uncomment these lines (it is recommended to use Mavriq repository with his dll and so files this way user will have the latest version without you needing to update. Also will avoid confusion with multiple binaries files.)
---[=[ local info = debug.getinfo(1, 'S');
-local script_path = info.source:match[[^@?(.*[\/])[^\/]-$]];
-package.cpath = package.cpath .. ";" .. script_path .. "/socket module/?.dll"  -- Add current folder/socket module for looking at .dll (need for loading basic luasocket)
-package.cpath = package.cpath .. ";" .. script_path .. "/socket module/?.so"  -- Add current folder/socket module for looking at .so (need for loading basic luasocket)
-package.path = package.path .. ";" .. script_path .. "/socket module/?.lua" -- Add current folder/socket module for looking at .lua ( Only need for loading the other functions packages lua osc.lua, url.lua etc... You can change those files path and update this line) ]=]
 
--- if you want to load the sockets from Mavriq repository:
--- package.cpath = package.cpath .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.dll'    -- Add current folder/socket module for looking at .dll
-package.cpath = package.cpath .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.so'    -- Add current folder/socket module for looking at .so
--- package.path = package.path .. ";" .. reaper.GetResourcePath() ..'/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/?.lua'    -- Add current folder/socket module for looking at .so
-
--- dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Batteries/batteries_header.lua")
--- dofile(reaper.GetResourcePath() .. "/Scripts/Mavriq ReaScript Repository/Various/Mavriq-Lua-Sockets/headers.lua")
--- =================================================================
--- =================================================================
--- =================================================================
-
-MIDI_CORRECTION = 512
-MAIN_TRACK_NAME = '_main'
-
--- =================================================================
--- =================================================================
--- =================================================================
-
-STATE = true
-PLAY_POS_LAST = 0
-
-NOTEs = {}
-SCOREs = {}
-SCOREs_off = {}
-
--- =================================================================
--- =================================================================
--- =================================================================
-
-local socket = require('socket.core')
-local s = socket.udp()
-
-function send_to_cordelia(message)
-	-- log(message)
-	-- Encode the message as a byte string before sending
-	s:sendto(message, socket.dns.toip('localhost'), 10025)
-end
-
--- =================================================================
--- =================================================================
--- =================================================================
-
-function log(e)
+function log(e, indent)
 	if type(e) == 'table' then
-		local indent = indent or 0
+		indent = indent or 0
 		for k, v in pairs(e) do
 			local formatting = string.rep(' ', indent) .. k .. ": "
 			if type(v) == 'table' then
 				reaper.ShowConsoleMsg(formatting .. '\n')
-				log(v, indent + 2)
+				log(v, indent + 4)
 			else
 				reaper.ShowConsoleMsg(formatting .. tostring(v) .. '\n')
 			end
@@ -173,7 +125,7 @@ function get_item_info(track, j)
 		start_pos = reaper.GetMediaItemInfo_Value(id, 'D_POSITION'),
 		dur = reaper.GetMediaItemInfo_Value(id, 'D_LENGTH')
 	}
-	
+
 	item.end_pos = item.start_pos + item.dur
 
 	return item
@@ -187,20 +139,21 @@ function get_track_name_info(track_name)
 		env = 'classic',
 		freq = nil
 	}
-
-	for _, word in pairs(extract_csv(track_name)) do
-		if word:find("^dur") then
-			local val = word:match("dur%s*(.-)$")
-			info.dur = val
-		elseif word:find("^dyn") then
-			local val = word:match("dyn%s*(.-)$")
-			info.dyn = val
-		elseif word:find("^env%.") then
-			local val = word:match("env%.(%S+)$")
-			info.env = val
-		elseif word:find("^freq") then
-			local val = word:match("freq%s*(.-)$")
-			info.freq = val
+	if track_name then
+		for _, word in pairs(extract_csv(track_name)) do
+			if word:find("^dur") then
+				local val = word:match("dur%s*(.-)$")
+				info.dur = val
+			elseif word:find("^dyn") then
+				local val = word:match("dyn%s*(.-)$")
+				info.dyn = val
+			elseif word:find("^env%.") then
+				local val = word:match("env%.(%S+)$")
+				info.env = val
+			elseif word:find("^freq") then
+				local val = word:match("freq%s*(.-)$")
+				info.freq = val
+			end
 		end
 	end
 
@@ -226,15 +179,15 @@ end
 -- =================================================================
 
 function get_items()
-	
+
 	local tracks = get_tracks()
 	local item_index = 0
-	local instrument_name 
+	local instrument_name
 	for _, track in pairs(tracks) do
 
 		if reaper.GetMediaTrackInfo_Value(track, 'I_FOLDERDEPTH') == 1 then
 			_, instrument_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', '', false)
-		end 
+		end
 
 		local _, track_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', '', false)
 
@@ -289,7 +242,7 @@ function get_notes_from_item(info, item)
 			-- onset = onset < 0 and 0 or onset
 
 			if onset <= item.end_pos and onset >= item.start_pos then
-				
+
 				local end_note = reaper.MIDI_GetProjTimeFromPPQPos(item.take, end_ppqpos)
 
 				local dur = apply_dynamic_change(end_note - onset, info.dur)
@@ -330,32 +283,139 @@ end
 -- =================================================================
 -- =================================================================
 
-function cordelia_store()
-
-	local score_file = io.open(file_path, 'w')
-	score_file:write(score_string)  -- Write the text to the file
-	score_file:close() -- Close the file when done
-
-	get_all_items()
-
+function create_folder_if_not_exists(dir_path)
+	local success, message = io.popen('mkdir "' .. dir_path .. '"', 'r')
 end
 
-function get_project_paths()
+function get_project_info()
 
 	local project_path = reaper.GetProjectPath() .. '/'
 	local project_name, ext = reaper.GetProjectName(0):match("(.+)%.(.*)")
+	local retval, title = reaper.GetSetProjectInfo_String(0, 'PROJECT_TITLE', '', false)
 
-	local tracks_directory = project_path .. project_name .. '-cordelia_renders/'
+	local tracks_directory = project_path  .. project_name  .. '-cordelia_render'
+	create_folder_if_not_exists(tracks_directory)
 	local main_track_dir = tracks_directory .. MAIN_TRACK_NAME
 
-	log(project_path)
-	log('---')
-	log(project_name)
-	log('---')
-	log(tracks_directory)
-	log('---')
-	log(main_track_dir)
+	title = title == '' and project_name or title
 
+	return title, tracks_directory
+end
+
+function get_tracks_info(tracks)
+	local instrument_name
+	local parent_tracks = {}
+	for parent_track_index, parent_track_id in pairs(tracks) do
+		local is_parent = reaper.GetMediaTrackInfo_Value(parent_track_id, 'I_FOLDERDEPTH') == 1
+		if is_parent then
+			_, instrument_name = reaper.GetSetMediaTrackInfo_String(parent_track_id, 'P_NAME', '', false)
+			if instrument_name and string.match(instrument_name, '@') then
+				local parent_track = {
+					id = parent_track_id,
+					name = instrument_name,
+					index = parent_track_index,
+					tracks = {}
+				}
+				for track_index = parent_track_index + 1, #tracks do
+					track_id = tracks[track_index]
+					if reaper.GetMediaTrackInfo_Value(track_id, 'I_FOLDERDEPTH') == 1 then
+						break
+					else
+						local _, track_name = reaper.GetSetMediaTrackInfo_String(track_id, 'P_NAME', '', false)
+						track = {
+							id = track_id,
+							name = track_name
+						}
+						table.insert(parent_track.tracks, track)
+					end
+				end
+				table.insert(parent_tracks, parent_track)
+			end
+		end
+	end
+	return parent_tracks
+end
+
+function store()
+
+	local play_pos = 0 --reaper.GetPlayPosition()
+
+	local title, tracks_directory = get_project_info()
+
+	local tracks = get_tracks()
+	tracks = get_tracks_info(tracks)
+
+	local item_index  = 0
+
+	for _, parent_track in pairs(tracks) do
+		local instrument_name = parent_track.name
+
+		local score_path = tracks_directory .. '/' .. title .. '-' .. instrument_name:sub(2) .. '_' .. parent_track.index .. '.sco'
+		local score_file = assert(io.open(score_path, 'w'), 'Error opening file')
+		for _, track in pairs(parent_track.tracks) do
+			local NOTEs = {}
+			local SCOREs = {}
+			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
+				local item = get_item_info(track.id, j)
+
+				-- ITEM INFO
+				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
+
+				if item_type == 'MIDI' then
+					local info = get_track_name_info(track.name)
+					info.freqs_by_tuning = get_freqs_by_tuning(track.id)
+
+					local item_notes = get_notes_from_item(info, item)
+
+					for _, note in pairs(item_notes) do
+						note.instrument_name = instrument_name
+						table.insert(NOTEs, note)
+					end
+				elseif item_type == 'SCORE' then
+					item.index = item_index
+					local score = get_scores_item(item)
+					score.instrument_name = instrument_name
+					table.insert(SCOREs, score)
+					item_index = item_index + 1
+				end
+			end
+
+			table.sort(NOTEs, sort_by_onset)
+			table.sort(SCOREs, sort_by_onset)
+
+			for _, note in pairs(NOTEs) do
+				if note.onset >= play_pos then
+					local csound_string = 'eva_midi ' .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
+					score_file:write(csound_string .. '\n\n')  -- Write the text to the file
+				end
+			end
+
+			for _, score in pairs(SCOREs) do
+				if score.onset >= play_pos then
+					score.instrument_num = tostring(score.index + 300)
+
+					if score.instrument_name == 'cordelia' then
+						local csound_parts = {
+							'instr ' .. score.instrument_num,
+							score.code,
+							'endin',
+							'schedule ' .. score.onset .. ', ' .. score.duration
+						}
+						local csound_string = table.concat(csound_parts, '\n\n')
+						--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
+
+						score_file:write(csound_string)  -- Write the text to the file
+
+					else
+						local csound_string = insert_after_pattern(score.code, "%.%w+%(", 'dur=' .. score.dur .. ', ' .. score.instrument_name .. ', ')
+
+						score_file:write(csound_string)  -- Write the text to the file
+					end
+				end
+			end
+		end
+		score_file:close()
+	end
 end
 
 -- =================================================================
@@ -392,7 +452,7 @@ function on_play(play_pos)
 	if STATE then
 		PLAY_POS_LAST = reaper.GetPlayPosition()
 		get_items()
-		
+
 		table.sort(NOTEs, sort_by_onset)
 		table.sort(SCOREs, sort_by_onset)
 
@@ -416,11 +476,11 @@ function on_stop()
 				send_to_cordelia('turnoff2_i ' .. score.instrument_num .. ', 0, 0')
 			end
 		end
-		
+
 		NOTEs = {}
 		SCOREs = {}
 		SCOREs_off = {}
-		
+
 		STATE = true
 
 	end
@@ -431,7 +491,7 @@ end
 -- =================================================================
 
 function cordelia_realtime(play_pos)
-	
+
 	if reaper.GetPlayState() == 1 then
 
 		local play_pos = reaper.GetPlayPosition()
@@ -445,7 +505,7 @@ function cordelia_realtime(play_pos)
 		while index <= #NOTEs do
 			local note = NOTEs[index]
 			if note.onset <= play_pos then
-			
+
 				local csound_string = 'eva_midi ' .. note.instrument_name .. ', 0, ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
 				send_to_cordelia(csound_string)
 				table.remove(NOTEs, index)
@@ -468,15 +528,15 @@ function cordelia_realtime(play_pos)
 					}
 					local csound_string = table.concat(csound_parts, '\n')
 					--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
-					
+
 					send_to_cordelia(csound_string)
 
 					table.insert(SCOREs_off, score)
 					table.remove(SCOREs, index)
 
 				else
-					local csound_string = insert_after_pattern(score.code, "%.%w+%(", score.instrument_num .. ', ' .. score.instrument_name .. ', ')
-					
+					local csound_string = insert_after_pattern(score.code, "%.%w+%(", 'num=' .. score.instrument_num .. ', ' .. score.instrument_name .. ', ')
+
 					send_to_cordelia(csound_string)
 
 					table.insert(SCOREs_off, score)
@@ -500,11 +560,11 @@ function cordelia_realtime(play_pos)
 				end
 			end
 		end
-		
+
 	elseif reaper.GetPlayState() == 0 then
 		on_stop()
 	end
-	
+
 end
 
 
@@ -519,17 +579,19 @@ local cmd = '/opt/homebrew/bin/python3 "' .. CORDELIA_CORE .. '/_server/cordelia
 local dump = reaper.ExecProcess(cmd, -1)
 local show_size = 1024
  ]]
-local _, _, section_id, cmd_id, _, _, _ = reaper.get_action_context()
+_, _, section_id, cmd_id, _, _, _ = reaper.get_action_context()
 
--- set toggle state to off
-reaper.SetToggleCommandState(section_id, cmd_id, 1);
-reaper.RefreshToolbar2(section_id, cmd_id);
+function init()
+	-- set toggle state to off
+	reaper.SetToggleCommandState(section_id, cmd_id, 1)
+	reaper.RefreshToolbar2(section_id, cmd_id)
+end
 
 function in_the_end()
 	-- set toggle state to off
-	reaper.SetToggleCommandState(section_id, cmd_id, 0);
+	reaper.SetToggleCommandState(section_id, cmd_id, 0)
 	--send_to_cordelia('event_i "e", 0, .25')
-	reaper.RefreshToolbar2(section_id, cmd_id);
+	reaper.RefreshToolbar2(section_id, cmd_id)
 end
 
 function main_without_gui()
@@ -580,9 +642,3 @@ function main()
 	end
 
 end ]]
-
-
-reaper.defer(main_without_gui())
---reaper.defer(main)
-
-reaper.atexit(in_the_end)

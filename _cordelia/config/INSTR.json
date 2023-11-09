@@ -1387,7 +1387,7 @@
         "type": "sonvs",
         "channels": 2,
         "path": [
-            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/amen16.wav"
+            "/Volumes/Untitled/amen16.wav"
         ],
         "pitch": "103.48072847734261",
         "orc": "./default/sonvs/_.orc"
