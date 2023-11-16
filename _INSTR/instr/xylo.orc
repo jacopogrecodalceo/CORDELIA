@@ -7,11 +7,9 @@ gixylo_vibes		ftgen		0, 0, 6, -2, 1, 3.997, 9.469, 15.566, 20.863, 29.440
 gixylo_morf         ftgen		0, 0, 2, -2, gixylo_ft, gixylo_vibes
 gixylo_dummy	    ftgen		0, 0, 6, 10, 1
 
-    instr xylo
+    $start_instr(xylo)
 
- 	$params
-
-$dur_var(5)
+    $dur_var(5)
 ienv_max    init idur
 ienv_min    init -.75        ;the minimum for the audible
 
@@ -66,4 +64,4 @@ endif
 
 aout        =     a1 + a2 + a3 + a4 + a5 + a6
 
-	        $end_instr
+	$end_instr

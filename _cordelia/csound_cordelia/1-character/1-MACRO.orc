@@ -20,7 +20,7 @@ gidur_var init 0
 
 #define params(instr_name) #
 Sinstr		init "$instr_name"
-idur		init p3
+idur		init abs(p3)
 idyn		init p4
 ienv		init p5
 icps		init p6

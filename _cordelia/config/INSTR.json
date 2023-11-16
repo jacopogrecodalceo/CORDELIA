@@ -709,6 +709,13 @@
         "pitch": "30.82134444872327",
         "orc": "./default/sonvs/_sy.orc"
     },
+    "alo": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/alo.orc",
+        "global_var": [
+            "gkalo_channel_var"
+        ]
+    },
     "alone": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/alone.orc",
@@ -7547,6 +7554,14 @@
         ],
         "pitch": "74.04069511001262",
         "orc": "./default/sonvs/_sy.orc"
+    },
+    "notalo": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/notalo.orc",
+        "global_var": [
+            "gknotalo_channel_var",
+            "ginotalo_rel"
+        ]
     },
     "november": {
         "type": "sonvs",

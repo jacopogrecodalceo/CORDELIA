@@ -1,0 +1,23 @@
+
+
+
+gkpulse = 75;-go(0, 60, 100)
+
+gktuning = scala.12_22h
+
+gk1 = pump(32, fill(8, 4, 2, 6))
+
+
+@arm1: 32, f
+
+eu: 6, 8, 4
+	@pwm.folij(arm1).convij(arm1, 1)
+	qn
+	ff
+	classic.a(5)
+	stept("2B", gilocrian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))*once(.75, 1, 2)
+
+
+
+
+

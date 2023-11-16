@@ -1,4 +1,7 @@
 
+CORDELIA_SON = '/Users/j/Documents/script/OOT_Get_Heart.wav'
+CORDELIA_PATH = '/Users/j/Documents/PROJECTs/CORDELIA/_cordelia'
+
 function log(e, indent)
 	if type(e) == 'table' then
 		indent = indent or 0
@@ -246,18 +249,21 @@ function get_notes_from_item(info, item)
 				local end_note = reaper.MIDI_GetProjTimeFromPPQPos(item.take, end_ppqpos)
 
 				local dur = apply_dynamic_change(end_note - onset, info.dur)
-				local dyn = apply_dynamic_change(vel / MIDI_CORRECTION, info.dyn)
-				local env = info.env
-				local freq = apply_dynamic_change(info.freqs_by_tuning[pitch], info.freq)
 
-				table.insert(notes, {
-					onset = onset,
-					end_note = end_note,
-					dur = dur,
-					dyn = dyn,
-					env = env,
-					freq = freq
-				})
+				if dur > 0 then
+					local dyn = apply_dynamic_change(vel / MIDI_CORRECTION, info.dyn)
+					local env = info.env
+					local freq = apply_dynamic_change(info.freqs_by_tuning[pitch], info.freq)
+
+					table.insert(notes, {
+						onset = onset,
+						end_note = end_note,
+						dur = dur,
+						dyn = dyn,
+						env = env,
+						freq = freq
+					})
+				end
 			end
 		end
 	end
@@ -266,7 +272,7 @@ end
 
 function get_scores_item(item)
 	local _, code = reaper.GetSetMediaItemInfo_String(item.id, 'P_NOTES', '', false)
-	code = code:gsub('%bp3%b', tostring(item.dur))
+	code = code:gsub('\\bp3\\b', tostring(item.dur))
 
 	local score = {
 		onset = item.start_pos,
@@ -284,9 +290,16 @@ end
 -- =================================================================
 
 function create_folder_if_not_exists(dir_path)
-	local success, message = io.popen('mkdir "' .. dir_path .. '"', 'r')
-end
+    local command = 'mkdir "' .. dir_path .. '"'
 
+    -- Check if the directory exists
+    if os.execute('[ -d "' .. dir_path .. '" ]') then
+        -- If it exists, remove it
+        command = 'rm -r "' .. dir_path .. '" && ' .. command
+    end
+
+    os.execute(command)
+end
 function get_project_info()
 
 	local project_path = reaper.GetProjectPath() .. '/'
@@ -331,14 +344,37 @@ function get_tracks_info(tracks)
 				end
 				table.insert(parent_tracks, parent_track)
 			end
+		else
+			_, instrument_name = reaper.GetSetMediaTrackInfo_String(parent_track_id, 'P_NAME', '', false)
+			if instrument_name == '@cordelia' then
+				local parent_track = {
+					id = parent_track_id,
+					name = instrument_name,
+					index = parent_track_index,
+					tracks = {}
+				}
+				table.insert(parent_tracks, parent_track)
+			end
 		end
 	end
 	return parent_tracks
 end
 
-function store()
+function check_for_cordelia_tracks(tracks)
+	for _, parent_track in pairs(tracks) do
+		if parent_track.name == 'cordelia' then
+			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
+				local item = get_item_info(track.id, j)
+				local score = get_scores_item(item)
+			end
+		end
+	end
+end
+
+function store_tracks(channels, sr, ksmps)
 
 	local play_pos = 0 --reaper.GetPlayPosition()
+	local project_len = reaper.GetProjectLength(0)
 
 	local title, tracks_directory = get_project_info()
 
@@ -347,14 +383,27 @@ function store()
 
 	local item_index  = 0
 
+	check_for_cordelia_tracks(tracks)
+
 	for _, parent_track in pairs(tracks) do
+
 		local instrument_name = parent_track.name
 
-		local score_path = tracks_directory .. '/' .. title .. '-' .. instrument_name:sub(2) .. '_' .. parent_track.index .. '.sco'
+		local track_dir = tracks_directory .. '/' .. instrument_name:sub(2) .. '_' .. parent_track.index .. '/'
+		create_folder_if_not_exists(track_dir)
+
+		local track_path = track_dir .. title .. '-' .. instrument_name:sub(2) .. '_' .. parent_track.index
+		local score_path = track_path .. '.sco'
+		local orc_cordelia_path = track_path .. '-cordelia.orc'
+		local wav_path = track_path .. '.wav'
+		local cmd_path = track_dir .. '_.command'
 		local score_file = assert(io.open(score_path, 'w'), 'Error opening file')
+
 		for _, track in pairs(parent_track.tracks) do
+
 			local NOTEs = {}
 			local SCOREs = {}
+
 			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
 				local item = get_item_info(track.id, j)
 
@@ -405,17 +454,42 @@ function store()
 						--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
 
 						score_file:write(csound_string)  -- Write the text to the file
+						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
 
 					else
-						local csound_string = insert_after_pattern(score.code, "%.%w+%(", 'dur=' .. score.dur .. ', ' .. score.instrument_name .. ', ')
+						local csound_string = insert_after_pattern(score.code, "%.%w+%(",
+							'sched_onset=' .. score.onset .. ', ' ..
+							'sched_dur=' .. score.dur .. ', ' ..
+							score.instrument_name .. ', '
+						)
 
 						score_file:write(csound_string)  -- Write the text to the file
+						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
+
 					end
 				end
 			end
 		end
+		score_file:write('\n\nevent_i "e", 0, ' .. project_len + 5)
 		score_file:close()
+
+		local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
+		os.execute(execute_cordelia)
+
+		local execute_csound = 'csound' 		.. ' ' ..
+								'-3' .. ' ' ..
+								'--orc ' 		.. '"' .. orc_cordelia_path .. '"' .. ' ' ..
+								'--nchnls=' 	.. channels .. ' ' ..
+								'--sample-rate=' .. sr .. ' ' ..
+								'--ksmps=' 		.. ksmps .. ' ' ..
+								'--output='		.. '"' .. wav_path .. '"'
+
+		local cmd_file = assert(io.open(cmd_path, 'w'), 'Error opening file')
+		cmd_file:write(execute_csound)
+		cmd_file:close()
 	end
+	local main_command = 'find ' .. tracks_directory .. ' -type f -name "*.command" -print | parallel sh' .. '&& afplay ' .. CORDELIA_SON
+	io.popen(main_command)
 end
 
 -- =================================================================
@@ -505,7 +579,6 @@ function cordelia_realtime(play_pos)
 		while index <= #NOTEs do
 			local note = NOTEs[index]
 			if note.onset <= play_pos then
-
 				local csound_string = 'eva_midi ' .. note.instrument_name .. ', 0, ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
 				send_to_cordelia(csound_string)
 				table.remove(NOTEs, index)

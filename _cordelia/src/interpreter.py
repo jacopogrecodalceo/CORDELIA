@@ -271,6 +271,8 @@ def separate(instruments):
 						instrument.code = a
 						instrument.wrap = i.wrap
 						instrument.num = i.num
+						instrument.sched_onset = i.sched_onset if hasattr(i, 'sched_onset') else None
+						instrument.sched_dur = i.sched_dur if hasattr(i, 'sched_dur') else None
 						separated_instruments.append(instrument)
 				else:
 					if attr != 'cordelia':
@@ -291,6 +293,9 @@ def wrap(index, instrument):
 	
 	if instrument:
 		num = instrument.num if instrument.num else cordelia_instr_start_num + index
+		sched_onset = instrument.sched_onset if hasattr(instrument, 'sched_onset') and instrument.sched_onset else "ksmps / sr"
+		sched_dur = instrument.sched_dur if hasattr(instrument, 'sched_dur') and instrument.sched_dur else "-1"
+
 		if instrument.wrap:
 			if instrument.status == 'alive':
 
@@ -299,7 +304,7 @@ def wrap(index, instrument):
 				string.append('\tendin')
 
 				string.append(f'turnoff2_i {num}, 0, 1')
-				string.append(f'schedule {num}, ksmps / sr, -1')
+				string.append(f'schedule {num}, {sched_onset}, {sched_dur}')
 				return '\n'.join(string)
 
 			elif instrument.status == 'dead':

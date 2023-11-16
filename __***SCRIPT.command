@@ -1,16 +1,9 @@
 #!/bin/zsh
 
-cd "$(dirname "$0")/_setting/_script"
+cd "$(dirname "$0")/_cordelia"
 
-for f in *.rb
-	do
-		if ruby "$f"; then
-			echo "Script '$f' executed successfully."
-		else
-			echo "Error executing script '$f'."
-			read -p "Press any key to continue..."
-		fi
-	done
+python3 "script/main_script.py"
 
 echo "All scripts executed. Closing terminal..."
+sleep 3
 exit 0

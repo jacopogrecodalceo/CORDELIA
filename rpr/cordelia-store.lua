@@ -35,4 +35,24 @@ MAIN_TRACK_NAME = '_main'
 -- =================================================================
 -- =================================================================
 
-store()
+function split_csv(csv)
+	local values = {}
+	for value in csv:gmatch("[^,]+") do
+		table.insert(values, value)
+	end
+	return values
+end
+
+local retval, retvals_csv = reaper.GetUserInputs('Render with', 3, 'channels, sample rate, ksmps', '2,48,64', 512)
+
+if retval then
+
+	local values = split_csv(retvals_csv)
+	local channels = values[1]
+	local sr = tonumber(values[2]) * 1000
+	local ksmps = values[3]
+
+	store_tracks(channels, tostring(sr), ksmps)
+
+end
+

@@ -456,7 +456,8 @@ def parse_sonvs_routing(tokens):
 			routing_params = extract_csv(''.join(routing_sequence[2:-1])) # Removing parentheses
 
 			routing_params, extract_num = extract_keyword_from_list(routing_params, 'num=')
-			routing_params, extract_dur = extract_keyword_from_list(routing_params, 'dur=')
+			routing_params, extract_sched_onset = extract_keyword_from_list(routing_params, 'sched_onset=')
+			routing_params, extract_sched_dur = extract_keyword_from_list(routing_params, 'sched_dur=')
 
 			instrument_name = routing_params[0]
 			routing_params = routing_params[1:]
@@ -466,10 +467,14 @@ def parse_sonvs_routing(tokens):
 			name=instrument_name,
 			routing= routings if routings else [{'name': 'getmeout', 'params': '1'}],
 			wrap=True,
-			num=extract_num if extract_num else None,
-			dur=extract_dur if extract_dur else None
+			num=extract_num if extract_num else None
 		)
-
+		if extract_sched_dur:
+			instrument.sched_dur = extract_sched_dur
+		
+		if extract_sched_onset:
+			instrument.sched_onset = extract_sched_onset
+		
 		return [instrument]
 
 	if tokens[0].type == 'INSTR':

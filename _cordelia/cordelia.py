@@ -81,11 +81,27 @@ def main():
 		instrs = handler_reaper_1(code)
 
 		with open(output_score, 'w') as output:	
+
+			with open('./csound_cordelia/setting.orc') as f:
+				output.write(f.read())
+				output.write('\n;' + ('*'*32) + '\n')
+
+			with open('./csound_cordelia/include.orc', 'r') as f:
+				lines = f.readlines()
+				for line in lines:
+					parts = line.split('"')
+					inside_quotes = parts[1::2][0]
+					with open(inside_quotes, 'r') as f:
+						output.write(f.read())
+						output.write('\n;' + ('*'*32) + '\n')
+
 			if cordelia_init_code:
 				output.write('\n'.join(cordelia_init_code))
+				output.write('\n;' + ('*'*32) + '\n')
 
 			res = handler_reaper_2(instrs)
 			output.write(res)
+			output.write('\n;' + ('*'*32) + '\n')
 
 		sys.exit(0)
 

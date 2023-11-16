@@ -1,6 +1,5 @@
 	$start_instr(anal)
 
-
 imode	init 16
 kpw	abs jitter(1, gkbeatf/4, gkbeatf)
 kphs	abs jitter(1, gkbeatf/4, gkbeatf)
