@@ -488,7 +488,7 @@ function store_tracks(channels, sr, ksmps)
 		cmd_file:write(execute_csound)
 		cmd_file:close()
 	end
-	local main_command = 'find ' .. tracks_directory .. ' -type f -name "*.command" -print | parallel sh' .. '&& afplay ' .. CORDELIA_SON
+	local main_command = 'find ' .. tracks_directory .. ' -type f -name "*.command" -print | parallel sh && afplay ' .. CORDELIA_SON
 	io.popen(main_command)
 end
 

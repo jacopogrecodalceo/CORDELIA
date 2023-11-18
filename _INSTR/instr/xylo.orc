@@ -8,11 +8,10 @@ gixylo_morf         ftgen		0, 0, 2, -2, gixylo_ft, gixylo_vibes
 gixylo_dummy	    ftgen		0, 0, 6, 10, 1
 
     $start_instr(xylo)
-
     $dur_var(5)
 ienv_max    init idur
 ienv_min    init -.75        ;the minimum for the audible
-
+ienvvar     init .05
 ifreq_max   init 20$k
 
       		ftmorf limit(idur, 0, 12)/2, gixylo_morf, gixylo_dummy

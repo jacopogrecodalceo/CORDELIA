@@ -41,7 +41,6 @@ class Tuning():
 		self.description = lines[0]
 		self.length = lines[1]
 		self.scala_data = lines[2:]
-
 		self.gen_decimal_values()
 
 	def gen_decimal_values(self):
@@ -74,10 +73,13 @@ class Tuning():
 			self.freq.append(freq)
 			self.midi.append(i)
 			
-
 			index_nearest = find_index_of_nearest(MIDI_NAME_FREQ['freq'], freq)
 
-			if index_nearest == base_midi_note:
+			step_size = 12
+			limit = 127
+			base_midi_octaves_notes = [num for num in range(base_midi_note + step_size, limit, step_size) if num < limit] + [num for num in range(base_midi_note - step_size, -1, -step_size) if num >= 0]
+
+			if index_nearest in base_midi_octaves_notes:
 				nearest_note_name = MIDI_NAME_FREQ['note_name'][index_nearest] + '[***]'
 			else:
 				nearest_note_name = MIDI_NAME_FREQ['note_name'][index_nearest]
@@ -106,7 +108,7 @@ class Tuning():
 				else:
 					numt = space-(space-1)
 
-				self.edo12diff.append(f'{nearest_note_name}\t{text_cent}c'.expandtabs(numt))
+				self.edo12diff.append(f'{nearest_note_name}{text_cent}c'.expandtabs(numt))
 
 			except Exception as e:
 				log(e)
@@ -175,12 +177,14 @@ def main():
 			# 		f.write(f'{str(each)} {tuning.edo12diff[each]},\t\t\t\t\t{tuning.freq[each]}\n')
 
 			RPR_Undo_BeginBlock()
-
 			for i in range(len(tuning.freq)):
-				index = abs(i-base_midi_note)%len(tuning.scala_data)
+				#index = abs(i-base_midi_note)%len(tuning.scala_data)
+				index = (i - base_midi_note) % len(tuning.scala_data)
 				formatted_index = str(index).zfill(2)
 
-				string = f'{formatted_index}|{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}\n'
+				scala_data = '1/1' if index == 0 else tuning.scala_data[index-1][:5]
+
+				string = f'{formatted_index}|{scala_data}|{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}'
 				retval = RPR_SetTrackMIDINoteNameEx(0, track_id, int(i), -1, string)
 
 			RPR_Undo_EndBlock('Insert tuning', 0)
