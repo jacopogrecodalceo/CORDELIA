@@ -647,6 +647,8 @@ end
 -- =================================================================
 
 function cordelia_realtime(play_pos)
+	local epsilon = .015
+	local play_pos =reaper.GetPlayPosition()-epsilon
 
 	local function on_play(play_pos)
 		if STATE then
@@ -688,8 +690,6 @@ function cordelia_realtime(play_pos)
 
 	if reaper.GetPlayState() == 1 then
 
-		local play_pos = reaper.GetPlayPosition()
-
 		on_play(play_pos)
 		safety_play(play_pos)
 
@@ -698,7 +698,7 @@ function cordelia_realtime(play_pos)
 		local index = 1
 		while index <= #NOTEs do
 			local note = NOTEs[index]
-			if note.onset <= play_pos then
+			if math.abs(note.onset - play_pos) <= epsilon then
 				local csound_string = 'eva_midi ' .. note.instrument_name .. ', 0, ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
 				send_to_cordelia(csound_string)
 				table.remove(NOTEs, index)

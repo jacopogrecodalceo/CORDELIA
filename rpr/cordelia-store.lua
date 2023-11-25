@@ -52,7 +52,7 @@ if retval then
 	local sr = tonumber(values[2]) * 1000
 	local ksmps = values[3]
 
-	store_main(channels, tostring(sr), ksmps)
+	--store_main(channels, tostring(sr), ksmps)
 	store_tracks(channels, tostring(sr), ksmps)
 
 end

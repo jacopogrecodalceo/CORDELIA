@@ -1,106 +1,158 @@
 {
     "abij": {
         "input": "k",
-        "core": "PARAM_1    init i(gkbeatf)\n\nPARAM_OUT absolute_dist PARAM_IN, PARAM_1"
+        "core": "PARAM_1    init i(gkbeatf)\n\nPARAM_OUT absolute_dist PARAM_IN, PARAM_1",
+        "opcode": "opcode absolute_dist, a, ak\n    ain, kp1 xin\n\nsetksmps 1\n\nafx     balance2 abs(ain), ain\namod\tabs lfo:a(1, kp1/2)\n\nafx\t*= (1-amod)\nain\t*= amod\n\naout\t= afx + ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/abij.orc"
     },
     "combij": {
         "input": "kkk",
-        "core": ";krvt\t= ktime\n;klpt\t= kfb*(imaxlpt/1000)\n\nPARAM_1 init i(gkbeats)\nPARAM_2 init .5\nPARAM_3 init .5\n\nPARAM_OUT\tvcomb_balance PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
+        "core": ";krvt\t= ktime\n;klpt\t= kfb*(imaxlpt/1000)\n\nPARAM_1 init i(gkbeats)\nPARAM_2 init .5\nPARAM_3 init .5\n\nPARAM_OUT\tvcomb_balance PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode vcomb_balance, a, akkk\n    ain, ktime, kfb, kmix xin\n\nimax_t\tinit 15\nacomb\tvcomb ain, ktime, kfb*(imax_t/1000), imax_t\n;acomb\tbalance2 acomb, ain\n\naout\t= ain*(1-kmix) + acomb*kmix\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/combij.orc"
     },
     "convij": {
         "input": "Sk",
-        "core": "PARAM_2\tinit 1\n\nPARAM_OUT cordelia_cross PARAM_IN, PARAM_1, ich, PARAM_2"
+        "core": "PARAM_2\tinit 1\n\nPARAM_OUT cordelia_cross PARAM_IN, PARAM_1, ich, PARAM_2",
+        "opcode": "opcode cordelia_cross, a, aSik\n    ain, String, ich, kmix xin\n\nadest\tchnget sprintf(\"%s_%i\", String, ich)\n\nacross      cross2 ain, adest, 4096, 2, gihanning, kmix\nabalanced   balance2 across, ain\n\naout\t    = ain*(1-kmix) + abalanced*kmix\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/convij.orc"
     },
     "cutij": {
         "input": "k",
-        "core": "PARAM_1\t\tinit 8\n\nPARAM_OUT\tjcut PARAM_IN, PARAM_1, 1"
+        "core": "PARAM_1\t\tinit 8\n\nPARAM_OUT\tjcut PARAM_IN, PARAM_1, 1",
+        "opcode": "/*\n\tArgs:  \n\t* asig : input signal\n\t* imaxdur : size of buffer in seconds\n\t* ksub : slicing subdivision\n\t* kchoice : which subdivision to use (not obvious it is useful)\n\t* kstutter : 1 for stutter, 0 for normal\n\t* kstutterspeed : speedy gonzales\n\n*/\n\nopcode jcut, a, akk\n\tasig, ksub, kchoice xin\n\n\timaxdur init i(gkbeats)\n\timaxdur init imaxdur*4\n\tif imaxdur < .5 then\n\t\timaxdur = 4\n\tendif\n\tkstutter init 0\n\tktrig init i(gkbeatn)\n\tktrig = gkbeatn\n\n\tkkey, kdown sensekey\n\tif gkkeyboard_spacebar == 1 then \n\t\tkstutter = (kstutter + 1 ) % 2\n\t\tkstutterspeed = int(random:k(1, 3))\n\tendif\n\n\tkchoice = kchoice % ksub\n\tkreach init 0\n\n\tif changed2(ktrig) == 1 then\n\t\tksub_ch = changed2(ksub)\n\t\tkchoice_ch = changed2(kchoice)\n\t\tkstutter_ch = changed2(kstutter)\n\tendif\n\t\n\tilen_smps = imaxdur * sr\n\tibuf ftgentmp 0, 0, ilen_smps, -2, 0\n\t\n\tkstut_sub init 1\n\tkstut_rpos init 0\n\tif(kstutter_ch > 0) then \n\t\tkstut_sub = ksub\n\t\tkstut_rpos = 0\n\tendif\n\n\tkstut_limit = int(ilen_smps / kstut_sub)\n\tibuf_stutter ftgentmp 0, 0, ilen_smps, -2, 0\n\n\tkwrite_ptr init 0\n\t\n\tasig init 0\n\n\tkcnt = 0\n\twhile kcnt < ksmps do \n\t\ttablew(asig[kcnt], kwrite_ptr, ibuf)\n\t\tkwrite_ptr = (kwrite_ptr + 1) % ilen_smps\n\t\tkcnt += 1\n\tod\n\n\tkincr init 0\n\tkinit init 1\n\tif(kinit == 1  || kchoice_ch > 0 || ksub_ch > 0 ) then\n\t\tkplus = ilen_smps / ksub * kchoice\n\t\tkread_ptr = (kwrite_ptr + kplus) % ilen_smps\n\t\tkincr = 0\n\tendif\n\tkreach = 0\n\n\tkcnt = 0\n\tif(kstutter > 0) kgoto stutter\n\n\tkinit = 0\n\twhile kcnt < ksmps do \n\t\taout[kcnt] = table(  (kread_ptr + kincr) % ilen_smps, ibuf)\t\n\t\tkincr = (kincr + 1) % int(ilen_smps / ksub) \n\t\t// Write for stutter\n\t\ttablew(aout[kcnt], kincr, ibuf_stutter)\n\t\tif(kincr == 0) then \n\t\t\tkreach = 1\n\t\tendif\n\n\t\t\n\t\tkcnt += 1 \n\tod\n\tkgoto nostutter\n\n\tstutter:\n\tkcnt = 0\n\twhile kcnt < ksmps do \n\t\taout[kcnt] = table(kstut_rpos, ibuf_stutter)\n\t\tkstut_rpos = (kstut_rpos + kstutterspeed) % int(ilen_smps / kstut_sub)\n\t\tkcnt += 1\t\t\n\tod\n\n\tnostutter:\n\t\n\txout aout\nendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/cutij.orc"
     },
     "decij": {
         "input": "kk",
-        "core": "PARAM_1    init 16\nPARAM_2    init sr\n\nPARAM_OUT cordelia_decimator PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 16\nPARAM_2    init sr\n\nPARAM_OUT cordelia_decimator PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_decimator, a, akk\t;UDO Sample rate / Bit depth reducer\n\n\tsetksmps   1\n\n\tain, kbit, ksrate xin\n\nkbits\t\t=        2^kbit                ;bit depth (1 to 16)\nkfold\t\t=        (sr/ksrate)           ;sample rate\nkin\t\t\tdownsamp ain                   ;convert to kr\nkin\t\t\t=        (kin+0dbfs)           ;add DC to avoid (-)\nkin\t\t\t=        kin*(kbits/(0dbfs*2)) ;scale signal level\nkin\t\t\t=        int(kin)              ;quantise\naout\t\tupsamp   kin                   ;convert to sr\naout\t\t=        aout*(2/kbits)-0dbfs  ;rescale and remove DC\na0ut\t\tfold     aout, kfold           ;resample\n\t\t\txout     a0ut\n\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/decij.orc"
     },
     "delij": {
         "input": "kk",
-        "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    cordelia_delay_array PARAM_IN, PARAM_1, PARAM_2, 4"
+        "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    cordelia_delay_array PARAM_IN, PARAM_1, PARAM_2, 4",
+        "opcode": "opcode cordelia_delay_array, a, akki\n    \n    setksmps 1\n    adel_in, kdel_time, kfb, instances xin\n\nidel_buf    init 10\n\nadel_dump   delayr idel_buf\nadel_tap    deltap kdel_time\n            delayw adel_in + (adel_tap * kfb)\n\nadel_out    limit adel_tap, -1, 1\n\nif instances > 1 then\n    adel_out += cordelia_delay_array(adel_out, kdel_time + .15, kfb, instances-1)\nendif\n\nadel_out    limit adel_out, -1, 1\n    \n    xout adel_out\n    \n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/delij.orc"
     },
     "duij": {
         "input": "Sk",
-        "core": "PARAM_2\tinit 1\n\nPARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2"
+        "core": "PARAM_2\tinit 1\n\nPARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2",
+        "opcode": "gkcordelia_duck_atk init 5$ms\ngkcordelia_duck_rel init 75$ms\n\n    opcode cordelia_duck, a, aSik\n    ain, Sinstr, ich, kmix xin\n\naenv    follow2 chnget:a(sprintf(\"%s_%i\", Sinstr, ich)), gkcordelia_duck_atk, gkcordelia_duck_rel\nafol\t= ain * (1-aenv)\n\naout\t= afol*kmix + ain*(1-kmix)\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/duij.orc"
     },
     "flanij": {
         "input": "kk",
-        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tflanger PARAM_IN, a(portk(PARAM_1, gkbeats/24)), portk(PARAM_2, .025), 15"
+        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tcordelia_flanger PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_flanger, a, akk\n    ain, ktime, kfb xin\n\naout       flanger ain, a(portk(ktime, gkbeats/24)), portk(kfb, .025), 15\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanij.orc"
     },
     "folij": {
         "input": "Sk",
-        "core": "PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich"
+        "core": "PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich",
+        "opcode": "opcode cordelia_follow, a, aSi\n    ain, String, ich xin\n\nadest\tchnget sprintf(\"%s_%i\", String, ich)\n\naenv    follow adest, i(gkbeats)/32\naout    balance2 ain, aenv/2\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/folij.orc"
     },
     "getmeout": {
         "input": "k",
-        "core": "PARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*PARAM_1"
+        "core": "PARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*PARAM_1",
+        "opcode": "opcode\tgetmeout, 0, SPo\nSinstr, kgain, ich\txin\n\nif\t\tich==ginchnls-1 goto next\n\t\tgetmeout Sinstr, kgain, ich+1\n\nnext:\t\n\nain\t\tchnget sprintf(\"%s_%i\", Sinstr, ich+1)\naout\t\t= ain\n\n\t\txtratim gixtratim\nkrel\t\tinit 0\nkrel\t\trelease\nigain\t\ti kgain\n\nif krel == 1 then\n\tkgain\t*= cosseg(igain, gixtratim/2, igain, gixtratim/2, 0)\n\t;kgain lineto kgain, 0\nendif\n\naout\t\t*= kgain\n\n\t\tchnmix aout, gSmouth[ich]\n\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc"
     },
     "glass": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_glass PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_glass PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "#define cordelia_glass_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#\n#define cordelia_glass_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#\n\n    opcode cordelia_glass, a, akk\n    ain, kfreq, kq xin\n\nif1     init 80\nif2     init 188\n\niq1     init 8\niq2     init 3\n\naexc1    mode ain, $cordelia_glass_cps(if1), $cordelia_glass_q(iq1)\naexc2    mode ain, $cordelia_glass_cps(if2), $cordelia_glass_q(iq2)\n\naexc    = (aexc1+aexc2)/2\naexc    limit aexc, 0, 1\n\nares1   mode aexc,  $cordelia_glass_cps(kfreq),  $cordelia_glass_q(scale(kq, 500, 60))\nares2   mode aexc,  $cordelia_glass_cps(kfreq*2),  $cordelia_glass_q(scale(kq, 420, 53))\n\naout    = (ares1+ares2)/2\n\naout    balance2 aout, ain\nadel    flanger aout, a(1/$cordelia_glass_cps), kq/12\n\naout    = aout + adel/8\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/glass.orc"
     },
     "moij": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moog PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moog PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_moij, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout\t    moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moij.orc"
     },
     "moijb3": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moijb3 PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moijb3 PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gkcordelia_moijb3_port init 5$ms\ngkcordelia_moijb3_freq1 init 3\ngkcordelia_moijb3_freq2 init 4\ngkcordelia_moijb3_freq3 init 5\n\n    opcode cordelia_moijb3, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\n\nkfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na1      moogladder2 ain, portk(kfreq1, gkcordelia_moijb3_port), kq\n\na0      init 0\nkfreq2  limit gkcordelia_moijb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na2      spf a0, a0, ain, portk(kfreq2, gkcordelia_moijb3_port), 2-(kq*2)\n\nkfreq3  limit gkcordelia_moijb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na3      spf a0, a0, ain, portk(kfreq3, gkcordelia_moijb3_port), 2-(kq*2)\n\nkfreq4  limit gkcordelia_moijb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na4      spf a0, a0, ain, portk(kfreq4, gkcordelia_moijb3_port), 2-(kq*2)\n\naout    = a1 + a2 + a3 + a4\n\naout\tbalance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moijb3.orc"
     },
     "pconvij": {
         "input": "kk",
-        "core": "PARAM_1\tinit 1\nPARAM_2\tinit 1\n\nPARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich"
+        "core": "PARAM_1\tinit 1\nPARAM_2\tinit 1\n\nPARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich",
+        "opcode": "opcode cordelia_pconvolve, a, aiki\n    ain, ir, kmix, ich xin\n\nSFiles[]        directory \"/Users/j/Documents/PROJECTs/CORDELIA/_setting/_IR\", \".wav\"\n\ninchnls         filenchnls SFiles[ir]\n;inchnls         init 2\n\nichnl_array     init (ich%inchnls)+1\n\naconv           pconvolve ain, SFiles[ir], 0, ichnl_array\n\naout            = aconv*kmix + ain*(1-kmix)\n\n    xout aout\n\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/pconvij.orc"
     },
     "platij": {
         "input": "k",
-        "core": ";space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1"
+        "core": ";space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1",
+        "opcode": "giplate_rev_tabexcite\tftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545\ngiplate_rev_tabouts\t\tftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545\n\n\topcode plate_rev, a, ak\n\tain, kmix xin\n\nitime\tinit i(gkbeats)*8 \n\narev\tplaterev giplate_rev_tabexcite, giplate_rev_tabouts, 0, .095, .75, itime, .0015, ain\naout\t= ain*(1-kmix) + arev*kmix\n\n\txout aout\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/platij.orc"
     },
     "revij": {
         "input": "kkk",
-        "core": "PARAM_1 init i(gkbeats) ;space\nPARAM_2 init .5 ;high freq\nPARAM_3 init .5 ;mix\n\nPARAM_OUT reverb_1 PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
+        "core": "PARAM_1 init i(gkbeats) ;space\nPARAM_2 init .5 ;high freq\nPARAM_3 init .5 ;mix\n\nPARAM_OUT reverb_1 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode reverb_1, a, akkk\n\tain, ktime, khigh_freq, kmix xin\n\narev\tnreverb ain, ktime, 1-khigh_freq\naout\t= ain*(1-kmix) + arev*kmix\n\n\txout aout\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/revij.orc"
     },
     "rinij": {
         "input": "kk",
-        "core": ";division\nPARAM_1 init 4\n\n;gen\nPARAM_2 init giasine\n\nPARAM_OUT cordelia_ringmod PARAM_IN, PARAM_1, PARAM_2"
+        "core": ";division\nPARAM_1 init 4\n\n;gen\nPARAM_2 init giasine\n\nPARAM_OUT cordelia_ringmod PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_ringmod, a, akk\n\tain, kdiv, ktab xin\n\nkphase\t\t= kdiv - floor(kdiv)\nkndx\t\t= ((chnget:k(\"heart\")*kdiv*gkdiv)+kphase)%1\nkring\t\ttableikt kndx, ktab, 1, 0, 1\n\naout\t\t= ain * a(kring)\n\n\txout aout\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/rinij.orc"
     },
     "skh": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_skh, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\naout\tskf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 1\naout\tbalance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skh.orc"
     },
     "skl": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skl PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skl PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_skl, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\naout\tskf ain, portk(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 5$ms), 1+(kq*3), 0\naout\tbalance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skl.orc"
     },
     "sklb": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_sklb PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_sklb PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gkcordelia_sklb_port init 5$ms\ngkcordelia_sklb_freq init 3\n\n    opcode cordelia_sklb, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\n\nkfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na1      skf ain, portk(kfreq1, gkcordelia_sklb_port), 1+(kq*3), 0\n\na0      init 0\nkfreq2  limit gkcordelia_sklb_freq*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na2      spf a0, a0, ain, portk(kfreq2, gkcordelia_sklb_port), 2-(kq*2)\n\naout    = a1 + a2\n\naout\tbalance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/sklb.orc"
     },
     "sklb3": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_sklb3 PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_sklb3 PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gkcordelia_sklb3_port init 5$ms\ngkcordelia_sklb3_freq1 init 3\ngkcordelia_sklb3_freq2 init 4\ngkcordelia_sklb3_freq3 init 5\n\n    opcode cordelia_sklb3, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\n\nkfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na1      skf ain, portk(kfreq1, gkcordelia_sklb3_port), 1+(kq*3), 0\n\na0      init 0\nkfreq2  limit gkcordelia_sklb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na2      spf a0, a0, ain, portk(kfreq2, gkcordelia_sklb3_port), 2-(kq*2)\n\nkfreq3  limit gkcordelia_sklb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na3      spf a0, a0, ain, portk(kfreq3, gkcordelia_sklb3_port), 2-(kq*2)\n\nkfreq4  limit gkcordelia_sklb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na4      spf a0, a0, ain, portk(kfreq4, gkcordelia_sklb3_port), 2-(kq*2)\n\naout    = a1 + a2 + a3 + a4\n\naout\tbalance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/sklb3.orc"
     },
     "solij": {
         "input": "kk",
-        "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    solina_chorus PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    solina_chorus PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "/* Solina Chorus, based on Solina String Ensemble Chorus Module\n  \n   based on:\n\n   J. Haible: Triple Chorus\n   http://jhaible.com/legacy/triple_chorus/triple_chorus.html\n\n   Hugo Portillo: Solina-V String Ensemble\n   http://www.native-instruments.com/en/reaktor-community/reaktor-user-library/entry/show/4525/ \n\n   Parabola tabled shape borrowed from Iain McCurdy delayStereoChorus.csd:\n   http://iainmccurdy.org/CsoundRealtimeExamples/Delays/delayStereoChorus.csd\n\n   Author: Steven Yi\n   Date: 2016.05.22\n\n   */\n\n\tgi_solina_parabola ftgen 0, 0, 65537, 19, 0.5, 1, 180, 1 \n\n\t;; 3 sine wave LFOs, 120 degrees out of phase\n\topcode sol_lfo_3, aaa, kk\n\tkfreq, kamp xin\n\naphs\tphasor kfreq\n\na0\t\ttablei aphs, gi_solina_parabola, 1, 0, 1\na120\ttablei aphs, gi_solina_parabola, 1, 0.333, 1\na240\ttablei aphs, gi_solina_parabola, 1, -0.333, 1\n\n\txout (a0 * kamp), (a120 * kamp), (a240 * kamp)\n\tendop\n\n\topcode solina_chorus, a, akk\n\n\taLeft, klfo_freq1, klfo_amp1 xin\n\nklfo_freq2 = klfo_freq1*3\nklfo_amp2 = klfo_amp1*3\n\nimax = 100\n\n;; slow lfo\nas1, as2, as3 sol_lfo_3 klfo_freq1, klfo_amp1\n\n;; fast lfo\naf1, af2, af3  sol_lfo_3 klfo_freq2, klfo_amp2\n\nat1 = limit(as1 + af1 + 5, 0, imax)\nat2 = limit(as2 + af2 + 5, 0, imax)\nat3 = limit(as3 + af3 + 5, 0, imax)\n\t\na1 vdelay3 aLeft, at1, imax \na2 vdelay3 aLeft, at2, imax \na3 vdelay3 aLeft, at3, imax \n\n\txout (a1 + a2 + a3) / 3\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/solij.orc"
     },
     "strij": {
         "input": "kk",
-        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2"
+        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cor_streason, a, akk\n\tain, kfreq, kq xin\n\nkfreq += oscili:k(.5, gkbeatf/64)\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, kq\n\t\n\txout aout\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strij.orc"
     },
     "strijp": {
         "input": "kkk",
-        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
+        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cor_streason_p, a, akkk\n\tain, kfreq, kport, kq xin\n\nkfreq\tportk kfreq, kport\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, kq\n\t\n\txout aout\n\tendop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strijp.orc"
     },
     "tapij": {
         "input": "kkk",
-        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3"
+        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "; Original research and code by Jon Downing  as in paper\n; Real-time digital modeling of the Roland Space Echo by Jon Downing, Christian Terjesen (ECE 472 - Audio Signal Processing, May 2016)\n;\n; Reimplemented in Csound by Anton Kholomiov\n\n; Error function approximation ~ 2% accuracy\nopcode ErrorFunApprox, a, a\n  aIn xin\n  kCoeff init ( (3.1415926535 ^ 0.5) * log(2) )\n  xout tanh(kCoeff * aIn)\nendop\n\n; Bandpass Chebyshev Type I filter\nopcode bandpassCheby1, a, akkii\n  aIn, kLowFreq, kHighFreq, iOrder, iRipple xin\n\n  aHigh clfilt aIn,   kLowFreq,  1, iOrder, 1, iRipple\n  aLow  clfilt aHigh, kHighFreq, 0, iOrder, 1, iRipple\n\n  xout aLow\nendop\n\n; Function to read from tape.\n;\n; tapeRead aIn, kDelay, kRandomSpread\n;\n; The function is used in the same manner as deltapi\n; first init the delay buffer and the use tapeRead.\n;\n; aIn - input signal\n; kDelay - delay time\n; kRandomSpread - [0, Inf] - the random spread of reading from the tape\n;    the higher the worser the quality of the tape.\nopcode tapeRead, a, akk\n  aIn, kDelay, kRandomSpread xin\n  iTauUp = 1.07\n  iTauDown = 1.89\n  aPrevDelay init 0.06\n  kOldDelay  init 0.06\n  kLambda init 0.5\n\n  kDelChange changed2 kDelay\n  if (kDelChange == 1) then\n    if (kOldDelay < kDelay) then\n      kLambda = exp(-1/(iTauUp*sr))\n    else\n      kLambda = exp(-1/(iTauDown*sr))\n    endif\n  endif\n\n  anoise noise kRandomSpread, 0\n  anoise = 3*(7.5 - aPrevDelay*(10^-3))*(10^-7)*anoise\n  anoiseMod butterlp anoise, 0.25  ; (0.5 / sr) * giNyquistFreq\n  aActualDelay = (1 - kLambda) * kDelay + kLambda * aPrevDelay + anoiseMod\n  aPrevDelay = aActualDelay\n                                         ; measured\n  aDelaySamps = aActualDelay * sr\n  aReadSr = floor(aDelaySamps)          ; in samples\n  aLastSr = aReadSr + 1                 ; in samples\n  aReadIndex = aReadSr / sr             ; in seconds\n  aLastIndex = aLastSr / sr             ; in seconds\n  aFrac = aDelaySamps - aReadSr\n  aFracScale = (1 - aFrac) * (1 + aFrac)\n\n  aReadSample deltapi aReadIndex\n  aLastSample deltapi aLastIndex\n\n  aEcho ErrorFunApprox (aLastSample + aFracScale * (aReadSample - aLastSample))\n\n  kOldDelay = kDelay\n  xout aEcho\nendop\n\n; function to write to tape\n;\n; tapeWrite aIn, aOut, kFbGain\n;\n; It should be though of as delayw for magnetic tape.\n;\n; aIn - input signal\n; aOut - output signal\n; kFbGain - gain of feedback [0, 2]\nopcode tapeWrite, 0, aak\n  aIn, aOut, kFbGain xin\n  iOrder    = 2\n  iRippleDb = 6\n  aProc bandpassCheby1 aOut * kFbGain, 95, 3000, iOrder, iRippleDb\n  delayw aIn + aProc * kFbGain\nendop\n\n; Simple tape delay effect with tone-color.\n;\n; aIn - input signal\n; kDelay - delay time\n; kEchoGain - gain for the echo\n; kFbGain - feedback gain\n; kTone - color of the low-pass filter (frequency for the filter)\n; kRandomSpread - radius of noisy reading from the tape [0.5, Inf] - relates to \"tape age\".\n;   smaller - the better tape is\nopcode TapeEcho1, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho tapeRead aIn, kDelay, kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode TapeEcho3, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho1 tapeRead aIn, kDelay, kRandomSpread\n  aEcho2 tapeRead aIn, (kDelay * 2), kRandomSpread\n  aEcho3 tapeRead aIn, (kDelay * 4), kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho1 + 0.5 * kEchoGain * aEcho2 + 0.25 * kEchoGain * aEcho3\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\nopcode TapeEcho4, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho1 tapeRead aIn, kDelay, kRandomSpread\n  aEcho2 tapeRead aIn, (kDelay * 2), kRandomSpread\n  aEcho3 tapeRead aIn, (kDelay * 4), kRandomSpread\n  aEcho4 tapeRead aIn, (kDelay * 8), kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho1 + 0.5 * kEchoGain * aEcho2 + 0.25 * kEchoGain * aEcho3  + 0.2 * kEchoGain * aEcho4\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode tapeReadBatch, a, akkii\n  aIn, kDelay, kRandomSpread, iSize, iStart xin\n\n  if iStart <= iSize then\n    acall tapeReadBatch aIn, kDelay, kRandomSpread, iSize, iStart + 1\n  else\n    acall = 0\n  endif\n\n  iScale = iStart\n  aEcho tapeRead aIn, kDelay * iScale, kRandomSpread\n  xout acall + aEcho / iScale\nendop\n\nopcode TapeEchoN, a, akkkkki\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread, iSize xin\n  aDummy delayr (16 * iSize)\n  aEcho tapeReadBatch aIn, kDelay, kRandomSpread, iSize, 1\n  aOut = aIn + kEchoGain * aEcho\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode  cordelia_tapij, a, akkk\nain, ktime, kfb, kmix xin\n\nkdel  = ktime\nkvar\tjitter .25, gkbeatf/8, gkbeatf\n\nadel\tTapeEchoN ain, kdel, kfb, .95, 0, .75 + kvar, 10\naout\t= ain*(1-kmix) + adel*kmix\n\n  xout aout\n\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tapij.orc"
     },
     "wooden": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden PARAM_IN, PARAM_1, PARAM_2"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "#define cordelia_wooden_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#\n#define cordelia_wooden_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#\n\n    opcode cordelia_wooden, a, akk\n    ain, kfreq, kq xin\n\nif1     init 1000\nif2     init 3000\n\niq1     init 12\niq2     init 8\n\naexc1    mode ain, $cordelia_wooden_cps(if1), $cordelia_wooden_q(iq1)\naexc2    mode ain, $cordelia_wooden_cps(if2), $cordelia_wooden_q(iq2)\n\naexc    = (aexc1+aexc2)/2\naexc    limit aexc, 0, 1\n\nares1   mode aexc,  $cordelia_wooden_cps(kfreq),  $cordelia_wooden_q(scale(kq, 500, 60))\nares2   mode aexc,  $cordelia_wooden_cps(kfreq*2),  $cordelia_wooden_q(scale(kq, 420, 53))\n\naout    = (ares1+ares2)/2\n\naout    balance2 aout, ain\n\n    xout aout\n    endop",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/wooden.orc"
     }
 }

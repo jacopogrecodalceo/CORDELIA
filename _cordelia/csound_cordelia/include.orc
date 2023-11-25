@@ -56,6 +56,5 @@
 #include "./csound_cordelia/3-body/2-OP/util/rprtab.orc"
 #include "./csound_cordelia/3-body/2-OP/util/schedulech.orc"
 #include "./csound_cordelia/3-body/2-OP/util/tabj.orc"
-#include "./csound_cordelia/3-body/3-MOD.orc"
-#include "./csound_cordelia/3-body/4-SOUL.orc"
-#include "./csound_cordelia/3-body/5-ADDONs.orc"
+#include "./csound_cordelia/3-body/3-SOUL.orc"
+#include "./csound_cordelia/3-body/4-ADDONs.orc"
