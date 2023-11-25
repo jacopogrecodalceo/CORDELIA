@@ -33,6 +33,7 @@
 #include "./csound_cordelia/3-body/2-OP/rhythm/eu.orc"
 #include "./csound_cordelia/3-body/2-OP/rhythm/hex.orc"
 #include "./csound_cordelia/3-body/2-OP/rhythm/jex.orc"
+#include "./csound_cordelia/3-body/2-OP/rhythm/saf.orc"
 #include "./csound_cordelia/3-body/2-OP/util/accent.orc"
 #include "./csound_cordelia/3-body/2-OP/util/accenth.orc"
 #include "./csound_cordelia/3-body/2-OP/util/almost.orc"

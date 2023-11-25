@@ -49,13 +49,15 @@ def compare_instruments_last(instruments):
 			cordelia_compile[i] = instrument
 			instr_last[i] = None
 
-def add_to_compile(instruments):
+def add_to_compile(instruments, instrument_res):
 	
 	# Update instruments that are still present
 	for instrument in instruments:
-		if instrument.code:
+		if instrument.code and not instrument.code.startswith('eva_midi'):
 			instrument.status = 'alive'
 			cordelia_compile.append(instrument)
+		elif instrument.code.startswith('eva_midi'):
+			instrument_res.append(instrument.code)
 
 # =================================================================
 # =================================================================

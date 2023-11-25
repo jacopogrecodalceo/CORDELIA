@@ -5,7 +5,7 @@ gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/GEN.js
 local temp_dir = '/Users/j/Documents/PROJECTs/_temp/'
 
 local OUTPUT_LENGTH, OUTPUT_POSITION
-local MAIN_OUTPUT, SELECTED_GLUED_ITEM
+local MAIN_OUTPUT, SELECTED_GLUED_ITEM, GLUED_ITEM_TRACK
 
 cs_option = {
 	sr = 48,
@@ -48,7 +48,7 @@ end
 function close_console()
 	local title = reaper.JS_Localize('ReaScript console output', 'common')
 	local hwnd = reaper.JS_Window_Find(title, true)
-	if hwnd then reaper.JS_Window_Destroy(hwnd) end  
+	if hwnd then reaper.JS_Window_Destroy(hwnd) end
 end
 
 function read_orc(file_path)
@@ -110,24 +110,36 @@ function get_info_from_items()
 	cs_option.channels = math.max(table.unpack(channels))
 end
 
-
 function glue_selected_items()
+	local selected_items_count = reaper.CountSelectedMediaItems(0)
+
+	if selected_items_count == 0 then
+		log('No item selected')
+		return
+	end
+
+	reaper.PreventUIRefresh(1)
+	OUTPUT_POSITION = reaper.GetMediaItemInfo_Value(reaper.GetSelectedMediaItem(0, 0), "D_POSITION")
+	-- Duplicate items
+	reaper.Main_OnCommand(41295, 0)
 
 	-- Glue items
 	reaper.Main_OnCommand(40362, 0)
 
+	local glued_item = reaper.GetSelectedMediaItem(0, 0)
+	local take = reaper.GetActiveTake(glued_item)
+
 	-- Get glued item source
-	local item = reaper.GetSelectedMediaItem(0, 0) -- Get selected item i
-	local take = reaper.GetActiveTake(item)
 	local source = reaper.GetMediaItemTake_Source(take)
 	local input_file = reaper.GetMediaSourceFileName(source, "")
-	OUTPUT_LENGTH = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
-	OUTPUT_POSITION = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+	OUTPUT_LENGTH = reaper.GetMediaItemInfo_Value(glued_item, "D_LENGTH")
 
-	-- Undo glue
-	reaper.Main_OnCommand(40029, 0)
+	-- Remove item
+	GLUED_ITEM_TRACK = reaper.GetMediaItem_Track(glued_item)
+	reaper.DeleteTrackMediaItem(GLUED_ITEM_TRACK, glued_item)
+	reaper.PreventUIRefresh(-1)
 
-	return input_file, position, length
+	return input_file
 
 end
 
@@ -188,18 +200,17 @@ function wait_for_file()
 			lasttime = newtime
 			--log('Looking for..' .. extract_basename(check_file))
 
-			reaper.defer(wait_for_file)	
+			reaper.defer(wait_for_file)
 		end
 
-		reaper.defer(wait_for_file)	
+		reaper.defer(wait_for_file)
 
 	elseif retval and not status then
 
 		log('Done!')
-
-		local track_index = reaper.GetNumTracks()
+		local track_index = reaper.GetMediaTrackInfo_Value(GLUED_ITEM_TRACK, 'IP_TRACKNUMBER') --reaper.GetNumTracks()
 		reaper.InsertTrackAtIndex(track_index, true) -- Create a new track
-	
+
 		local track = reaper.GetTrack(0, track_index)
 		reaper.SetMediaTrackInfo_Value(track, "I_NCHAN", cs_option.channels)
 
@@ -209,13 +220,13 @@ function wait_for_file()
 		local source = reaper.PCM_Source_CreateFromFile(MAIN_OUTPUT)
 		reaper.SetMediaItemTake_Source(take, source)
 		reaper.PCM_Source_BuildPeaks(source, 0)
-		
+
 		reaper.GetSetMediaItemTakeInfo_String(take, "P_NAME", extract_basename(MAIN_OUTPUT), true)
 		reaper.SetMediaItemInfo_Value(item, "D_POSITION", OUTPUT_POSITION)
 		-- Adjust the item length to match the WAV file length
 		local source_length = reaper.GetMediaSourceLength(reaper.GetMediaItemTake_Source(take))
 		reaper.SetMediaItemInfo_Value(item, "D_LENGTH", source_length)
-		
+
 		-- Remove files
 		os.remove(SELECTED_GLUED_ITEM)
 		os.remove(check_file)
@@ -225,7 +236,7 @@ function wait_for_file()
 		status = true
 
 	end
-	
+
 end
 
 
@@ -356,7 +367,7 @@ function main_context()
 		end
 		reaper.ImGui_EndPopup(ctx)
 	end
-	
+
 
 	local retval, return_code = reaper.ImGui_InputTextMultiline(ctx, '##Csound code', csound_code, 550, 805, reaper.ImGui_InputTextFlags_AllowTabInput())
 	if retval then csound_code = return_code end
@@ -387,7 +398,7 @@ function main_context()
 			write_file(save_to, csound_code)
 		end
 	end
-	
+
 	if b_retval then
 		SELECTED_GLUED_ITEM = glue_selected_items()
 		local basename = extract_basename(SELECTED_GLUED_ITEM)
@@ -407,7 +418,7 @@ function main_context()
 		MAIN_OUTPUT = temp_dir .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.wav'
 		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', methods[selected_group].script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
 		reaper.ExecProcess(command, -2)
-		log(command)
+		--log(command)
 		close_GUI = true
 
 		wait_for_file()
@@ -458,13 +469,13 @@ function loop_progress_bar()
 	reaper.ImGui_SetNextWindowSize(ctx, 300, 60, 1)
 
 	local visible, open = reaper.ImGui_Begin(ctx, 'Loading..', true)
-	
+
 	if visible then
 
 		local newtime = os.time()
 
 		if newtime-lasttime_pbar < OUTPUT_LENGTH then
-			progress_bar.plots.progress = (progress_bar.plots.progress + (newtime-lasttime_pbar))/OUTPUT_LENGTH			
+			progress_bar.plots.progress = (progress_bar.plots.progress + (newtime-lasttime_pbar))/OUTPUT_LENGTH
 		else
 			progress_bar.plots.progress = 1
 		end

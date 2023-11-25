@@ -56,9 +56,10 @@ def handler_reaper_2(virgin_instruments):
 	cordelia_init_code.clear()
 	explicit_instruments = interpreter.explicit(virgin_instruments) # Explicit and make variables
 	separated_instruments = interpreter.separate(explicit_instruments)
-	init.add_to_compile(separated_instruments)
 
 	instrument_res = []
+	init.add_to_compile(separated_instruments, instrument_res)
+
 	for index in range(len(cordelia_compile)):
 		code = interpreter.wrap(index, cordelia_compile[index])
 		if code:

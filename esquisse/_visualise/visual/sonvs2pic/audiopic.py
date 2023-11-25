@@ -4,7 +4,7 @@ import librosa
 import os
 
 
-audio = "/Users/j/Documents/PROJECTs/je_monstre/2308-paris_poisson/_reaper-render/20230817-3-post-cordelia.wav"
+audio = "/Users/j/Documents/PROJECTs/elle/2310-elle/_versions/elle-grrrnd_zero.wav"
 pic = "/Users/j/Documents/pics/_chainsaw man/chainsaw_man-3.jpg"
 
 audio_basename = os.path.basename(audio)
@@ -34,7 +34,7 @@ max_ratio = 1.75
 ran1 = (max_ratio - min_ratio) * np.random.rand(pic_data.shape[0], pic_data.shape[1], 1)
 ran2 = (max_ratio - min_ratio) * np.random.rand(pic_data.shape[0], pic_data.shape[1], 1)
 
-channel_to_modify = 0
+channel_to_modify = 1
 
 # Extract the chosen dimension from the picture data
 image_dimension = pic_data[:, :, channel_to_modify]

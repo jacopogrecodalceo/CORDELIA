@@ -292,11 +292,11 @@ def separate(instruments):
 def wrap(index, instrument):
 	
 	if instrument:
-		num = instrument.num if instrument.num else cordelia_instr_start_num + index
 		sched_onset = instrument.sched_onset if hasattr(instrument, 'sched_onset') and instrument.sched_onset else "ksmps / sr"
 		sched_dur = instrument.sched_dur if hasattr(instrument, 'sched_dur') and instrument.sched_dur else "-1"
 
 		if instrument.wrap:
+			num = instrument.num if instrument.num else cordelia_instr_start_num + index
 			if instrument.status == 'alive':
 
 				string = [f'\tinstr {num}']
@@ -311,3 +311,5 @@ def wrap(index, instrument):
 				return f'turnoff2_i {num}, 0, 1\n'
 		else:
 			return instrument.code
+
+

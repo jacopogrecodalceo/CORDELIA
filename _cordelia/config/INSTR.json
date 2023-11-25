@@ -5090,6 +5090,13 @@
             "gkflou_p1"
         ]
     },
+    "flou2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/flou2.orc",
+        "global_var": [
+            "gkflou2_p1"
+        ]
+    },
     "fragment": {
         "type": "sonvs",
         "channels": 2,
@@ -8150,6 +8157,13 @@
         "global_var": [
             "giplum_freqs1",
             "giplum_freqs2"
+        ]
+    },
+    "plumk": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/plumk.orc",
+        "global_var": [
+            "giplumk_detune"
         ]
     },
     "porco": {
@@ -11620,6 +11634,51 @@
         "pitch": "43.74725428648136",
         "orc": "./default/sonvs/_sy.orc"
     },
+    "wings": {
+        "type": "sonvs",
+        "channels": 1,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wings.wav"
+        ],
+        "pitch": "81.11420636603708",
+        "orc": "./default/sonvs/_.orc"
+    },
+    "wings_conv": {
+        "type": "sonvs",
+        "channels": 1,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wings.wav"
+        ],
+        "pitch": "81.11420636603708",
+        "orc": "./default/sonvs/_conv.orc"
+    },
+    "wings_lpc": {
+        "type": "sonvs",
+        "channels": 1,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wings.wav"
+        ],
+        "pitch": "81.11420636603708",
+        "orc": "./default/sonvs/_lpc.orc"
+    },
+    "wings_so": {
+        "type": "sonvs",
+        "channels": 1,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wings.wav"
+        ],
+        "pitch": "81.11420636603708",
+        "orc": "./default/sonvs/_so.orc"
+    },
+    "wings_sy": {
+        "type": "sonvs",
+        "channels": 1,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/wings.wav"
+        ],
+        "pitch": "81.11420636603708",
+        "orc": "./default/sonvs/_sy.orc"
+    },
     "witches": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/witches.orc",
@@ -11645,6 +11704,33 @@
             "gkwitches2_ndx",
             "gkwitches2_mod",
             "gkwitches2_detune"
+        ]
+    },
+    "witchesv": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/witchesv.orc",
+        "global_var": [
+            "gkwitchesv_mod",
+            "gkwitchesv_detune",
+            "gkwitchesv_ndx"
+        ]
+    },
+    "witchesv2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/witchesv2.orc",
+        "global_var": [
+            "gkwitchesv2_mod",
+            "gkwitchesv2_detune",
+            "gkwitchesv2_ndx"
+        ]
+    },
+    "witchesvr": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/witchesvr.orc",
+        "global_var": [
+            "gkwitchesvr_ndx",
+            "gkwitchesvr_mod",
+            "gkwitchesvr_detune"
         ]
     },
     "wutang": {

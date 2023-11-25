@@ -21,10 +21,10 @@ function get_tuning_list(take)
 	local names, cent_diffs, freqs = {}, {}, {}
 
 	for i = 0, 127 do
-		local name, cent_diff, freq = reaper.GetTrackMIDINoteNameEx(0, track, i, 0):match("(%S+)%s+(%S+)%s+(%S+)")
-		names[i] = name
-		cent_diffs[i] = cent_diff
-		freqs[i] = freq
+		local note_name = reaper.GetTrackMIDINoteNameEx(0, track, i, 0)
+		names[i] = string.match(note_name, '|([^%d]+%d+)')
+		cent_diffs[i] = string.match(note_name, '([%+%-]%d+%.%d+c)')
+		freqs[i] = string.match(note_name, '([%d%.]+)$')
 	end
 
 	return names, cent_diffs, freqs
@@ -67,8 +67,6 @@ function process_file(file_path, take)
 
 	local file = io.open(file_path, 'r')
 	if not file then return end
-
-	local midi_buffer = ''
 
 	mu.MIDI_OpenWriteTransaction(take)
 
@@ -121,28 +119,43 @@ function get_selected_audio_item(selected)
 		log('No item selected')
 		return
 	end
-	
-	-- INITIALIZE loop through selected items
-	for i = 0, selected_items_count-1  do
-		-- GET ITEMS
-		local item = reaper.GetSelectedMediaItem(0, i) -- Get selected item i
-		local take = reaper.GetActiveTake(item)
-		local source = reaper.GetMediaItemTake_Source(take)
-		-- Check if a media source is available
-		if source ~= nil then
-			-- Get the file name of the media source
-			local file = reaper.GetMediaSourceFileName(source, "")
 
-			local source_start = reaper.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
-			local source_end = source_start + reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+	reaper.PreventUIRefresh(1)
+	local first_item_onset = reaper.GetMediaItemInfo_Value(reaper.GetSelectedMediaItem(0, 0), "D_POSITION")
 
-			local command = string.format('python3 "%s" "%s" %f %f', librosa_script, file, source_start, source_end)
-			os.execute(command)
+	-- Duplicate items
+	reaper.Main_OnCommand(41295, 0)
 
-			local file = string.match(file, "([^/\\]+)%.%w+$")
-			--local basename = string.gsub(file, "%..*", "")
-			return item
-		end
+	-- Glue items
+	reaper.Main_OnCommand(40362, 0)
+
+	local glued_item = reaper.GetSelectedMediaItem(0, 0)
+	reaper.SetMediaItemInfo_Value(glued_item, "D_POSITION", first_item_onset)
+	local take = reaper.GetActiveTake(glued_item)
+
+	-- Get glued item source
+	local source = reaper.GetMediaItemTake_Source(take)
+--[[ 	-- Remove item
+	local track = reaper.GetMediaItem_Track(glued_item)
+	reaper.DeleteTrackMediaItem(track, glued_item) ]]
+	reaper.PreventUIRefresh(-1)
+
+	-- Check if a media source is available
+	if source ~= nil then
+		-- Get the file name of the media source
+		local file = reaper.GetMediaSourceFileName(source, "")
+
+--[[ 		local source_start = reaper.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
+		local source_end = source_start + reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+		local command = string.format('python3 "%s" "%s" %f %f', librosa_script, file, source_start, source_end) ]]
+
+		local command = string.format('python3 "%s" "%s"', librosa_script, file)
+		log(command)
+		os.execute(command)
+
+		--local file = string.match(file, "([^/\\]+)%.%w+$")
+		--local basename = string.gsub(file, "%..*", "")
+		return glued_item
 	end
 end
 
@@ -162,7 +175,7 @@ function create_midi_item(item)
 
 end
 
-function main(file_path)
+function main()
 	reaper.ClearConsole()
 	local item = get_selected_audio_item()
 	log('Get selected audio')
@@ -172,7 +185,8 @@ function main(file_path)
 		local temp_file = temp_dir .. '/' .. 'temp.txt'
 		log('Processing.. ' .. temp_file)
 		process_file(temp_file, midi_take)
-		reaper.DeleteTrackMediaItem(reaper.GetMediaItemTrack(item), item)		
+		os.remove(reaper.GetMediaSourceFileName(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item)), ""))
+		reaper.DeleteTrackMediaItem(reaper.GetMediaItemTrack(item), item)
 	end
 	close_console()
 end

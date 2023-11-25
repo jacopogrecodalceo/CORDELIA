@@ -172,7 +172,7 @@ function get_freqs_by_tuning(track)
 			log('You need to commit the tuning system')
 			return
 		end
-		table.insert(freqs_by_tuning, freq)
+		freqs_by_tuning[i] = freq
 	end
 	return freqs_by_tuning
 end
@@ -225,9 +225,9 @@ end
 
 function get_notes_from_item(info, item)
 
-	local function apply_dynamic_change(value, info)
-		if info then
-			local expr = load("return " .. value .. info)
+	local function apply_dynamic_change(value, lua_string)
+		if lua_string then
+			local expr = load("return " .. value .. lua_string)
 			if type(expr) == "function" then
 				return expr()
 			end
@@ -272,7 +272,7 @@ end
 
 function get_scores_item(item)
 	local _, code = reaper.GetSetMediaItemInfo_String(item.id, 'P_NOTES', '', false)
-	code = code:gsub('\\bp3\\b', tostring(item.dur))
+	code = code:gsub('p3', tostring(item.dur))
 
 	local score = {
 		onset = item.start_pos,
@@ -496,6 +496,124 @@ end
 -- =================================================================
 -- =================================================================
 
+function store_main(channels, sr, ksmps)
+
+	local play_pos = 0 --reaper.GetPlayPosition()
+	local project_len = reaper.GetProjectLength(0)
+
+	local title, tracks_directory = get_project_info()
+
+	local tracks = get_tracks()
+	tracks = get_tracks_info(tracks)
+
+	local item_index  = 0
+
+	check_for_cordelia_tracks(tracks)
+
+	local instrument_name = '_main'
+	local track_dir = tracks_directory .. '/' .. instrument_name .. '/'
+	create_folder_if_not_exists(track_dir)
+	local track_path = track_dir .. title .. '-' .. instrument_name
+	local score_path = track_path .. '.sco'
+	local orc_cordelia_path = track_path .. '-cordelia.orc'
+	local wav_path = track_path .. '.wav'
+	local cmd_path = track_dir .. '_.command'
+	local score_file = assert(io.open(score_path, 'w'), 'Error opening file')
+	local NOTEs = {}
+	local SCOREs = {}
+	for _, parent_track in pairs(tracks) do
+		for _, track in pairs(parent_track.tracks) do
+			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
+				local item = get_item_info(track.id, j)
+
+				-- ITEM INFO
+				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
+
+				if item_type == 'MIDI' then
+					local info = get_track_name_info(track.name)
+					info.freqs_by_tuning = get_freqs_by_tuning(track.id)
+
+					local item_notes = get_notes_from_item(info, item)
+
+					for _, note in pairs(item_notes) do
+						note.instrument_name = instrument_name
+						table.insert(NOTEs, note)
+					end
+				elseif item_type == 'SCORE' then
+					item.index = item_index
+					local score = get_scores_item(item)
+					score.instrument_name = instrument_name
+					table.insert(SCOREs, score)
+					item_index = item_index + 1
+				end
+			end
+
+			table.sort(NOTEs, sort_by_onset)
+			table.sort(SCOREs, sort_by_onset)
+
+			for _, note in pairs(NOTEs) do
+				if note.onset >= play_pos then
+					local csound_string = 'eva_midi ' .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
+					score_file:write(csound_string .. '\n\n')  -- Write the text to the file
+				end
+			end
+
+			for _, score in pairs(SCOREs) do
+				if score.onset >= play_pos then
+					score.instrument_num = tostring(score.index + 300)
+
+					if score.instrument_name == 'cordelia' then
+						local csound_parts = {
+							'instr ' .. score.instrument_num,
+							score.code,
+							'endin',
+							'schedule ' .. score.onset .. ', ' .. score.duration
+						}
+						local csound_string = table.concat(csound_parts, '\n\n')
+						--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
+
+						score_file:write(csound_string)  -- Write the text to the file
+						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
+
+					else
+						local csound_string = insert_after_pattern(score.code, "%.%w+%(",
+							'sched_onset=' .. score.onset .. ', ' ..
+							'sched_dur=' .. score.dur .. ', ' ..
+							score.instrument_name .. ', '
+						)
+
+						score_file:write(csound_string)  -- Write the text to the file
+						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
+
+					end
+				end
+			end
+		end
+	end
+	score_file:write('\n\nevent_i "e", 0, ' .. project_len + 5)
+	score_file:close()
+
+	local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
+	os.execute(execute_cordelia)
+
+	local execute_csound = 'csound' 		.. ' ' ..
+							'-3' .. ' ' ..
+							'--orc ' 		.. '"' .. orc_cordelia_path .. '"' .. ' ' ..
+							'--nchnls=' 	.. channels .. ' ' ..
+							'--sample-rate=' .. sr .. ' ' ..
+							'--ksmps=' 		.. ksmps .. ' ' ..
+							'--output='		.. '"' .. wav_path .. '"'
+
+	local cmd_file = assert(io.open(cmd_path, 'w'), 'Error opening file')
+	cmd_file:write(execute_csound)
+	cmd_file:close()
+
+end
+
+-- =================================================================
+-- =================================================================
+-- =================================================================
+
 function safety_play(play_pos)
 	if play_pos - PLAY_POS_LAST > 1 then
 		reaper.CSurf_OnStop()
@@ -522,49 +640,51 @@ function sort_by_onset(a, b)
 	return a.onset < b.onset
 end
 
-function on_play(play_pos)
-	if STATE then
-		PLAY_POS_LAST = reaper.GetPlayPosition()
-		get_items()
 
-		table.sort(NOTEs, sort_by_onset)
-		table.sort(SCOREs, sort_by_onset)
-
-		if #NOTEs > 15000 then
-			reaper.CSurf_OnStop()
-			log('Items are more than 150000')
-		end
-		remove_at_play(play_pos)
-		send_to_cordelia('schedule "heart", 0, -1')
-
-		STATE = false
-	end
-end
-
-function on_stop()
-	if not STATE then
-		send_to_cordelia('turnoff2_i "heart", 0, 0')
-
-		if next(SCOREs_off) ~= nil then
-			for _, score in pairs(SCOREs_off) do
-				send_to_cordelia('turnoff2_i ' .. score.instrument_num .. ', 0, 0')
-			end
-		end
-
-		NOTEs = {}
-		SCOREs = {}
-		SCOREs_off = {}
-
-		STATE = true
-
-	end
-end
 
 -- =================================================================
 -- =================================================================
 -- =================================================================
 
 function cordelia_realtime(play_pos)
+
+	local function on_play(play_pos)
+		if STATE then
+			PLAY_POS_LAST = reaper.GetPlayPosition()
+			get_items()
+
+			table.sort(NOTEs, sort_by_onset)
+			table.sort(SCOREs, sort_by_onset)
+
+			if #NOTEs > 35000 then
+				reaper.CSurf_OnStop()
+				log('Items are more than 35000')
+			end
+			remove_at_play(play_pos)
+			send_to_cordelia('schedule "heart", 0, -1')
+
+			STATE = false
+		end
+	end
+
+	local function on_stop()
+		if not STATE then
+			send_to_cordelia('turnoff2_i "heart", 0, 0')
+
+			if next(SCOREs_off) ~= nil then
+				for _, score in pairs(SCOREs_off) do
+					send_to_cordelia('turnoff2_i ' .. score.instrument_num .. ', 0, 0')
+				end
+			end
+
+			NOTEs = {}
+			SCOREs = {}
+			SCOREs_off = {}
+
+			STATE = true
+
+		end
+	end
 
 	if reaper.GetPlayState() == 1 then
 

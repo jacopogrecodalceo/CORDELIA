@@ -1,11 +1,4 @@
-	instr wendj
-
-Sinstr		init "wendj"
-idur		init p3
-idyn		init p4
-ienv		init p5
-icps		init p6
-ich			init p7
+	$start_instr(wendj)
 
 ;	gendy kdyn, kdyndist, kdurdist, kadpar, kddpar, kminfreq, kmaxfreq, kdynscl, kdurscl [, initcps] [, knum]
 
@@ -50,9 +43,8 @@ ainstr3_out		*= cosseg(1, idur/(3+gauss(.25)), 0)
 ;		MIX
 aout		= ainstr1_out + (ainstr2_out*.65) + (ainstr3_out*1.35)
 
-;		ENVELOPE
-$dur_var(10)
-
+		;		ENVELOPE
+		$dur_var(10)
 		$end_instr
 
 	

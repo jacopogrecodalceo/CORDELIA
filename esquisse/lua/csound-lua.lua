@@ -7,13 +7,13 @@ ksmps=32
 nchnls=2
 0dbfs=1
 instr 1
-aout vco2 0.5, 440
+aout vco2 .5, 440
 outs aout, aout
 endin
 ]]
 
 -- Defining our Csound SCO code
-sco = "i1 0 1"
+sco = "i1 0 10"
 
 local c = luaCsnd6.Csound()
 c:SetOption("-odac")  -- Using SetOption() to configure Csound

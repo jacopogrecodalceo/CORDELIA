@@ -69,7 +69,8 @@ class Tuning():
 			#log(float(base_frequency) * decimal)
 
 			# store the data in the tuning_table object
-			freq = round(float(base_frequency) * decimal, 5)
+			# freq = round(float(base_frequency) * decimal, 5)
+			freq = float(base_frequency) * decimal
 			self.freq.append(freq)
 			self.midi.append(i)
 			
@@ -85,7 +86,7 @@ class Tuning():
 				nearest_note_name = MIDI_NAME_FREQ['note_name'][index_nearest]
 			
 			if nearest_note_name.startswith('C4'):
-				nearest_note_name += '[***]'
+				nearest_note_name = '*C4*'
 
 			freq_edo12 = MIDI_NAME_FREQ['freq'][index_nearest]
 			ratio_freq = freq / freq_edo12
@@ -136,7 +137,7 @@ def get_tuning(track_name):
 				tuning = Tuning(SCALA_JSON[scala_name]['path'])
 				return tuning, base_freq
 			except:
-				log(f'WARNING: Invalid scala name for "{scala_name}"')
+				log(f'WARNING: Invalid scala name for {scala_name}')
 
 	edo12_path = '/Users/j/Documents/PROJECTs/CORDELIA/_SCALA/_current/edo/_edo12.scl'
 	tuning = Tuning(edo12_path)
@@ -177,6 +178,7 @@ def main():
 			# 		f.write(f'{str(each)} {tuning.edo12diff[each]},\t\t\t\t\t{tuning.freq[each]}\n')
 
 			RPR_Undo_BeginBlock()
+			
 			for i in range(len(tuning.freq)):
 				#index = abs(i-base_midi_note)%len(tuning.scala_data)
 				index = (i - base_midi_note) % len(tuning.scala_data)
