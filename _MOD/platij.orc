@@ -26,3 +26,4 @@ aout	= ain*(1-kmix) + arev*kmix
 	xout aout
 	endop
 ;END OPCODE
+

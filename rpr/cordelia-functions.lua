@@ -96,7 +96,10 @@ function get_tracks()
 				if track_depth == 1 then
 					break
 				end
-				table.insert(tracks, sub_track)
+
+				if reaper.GetMediaTrackInfo_Value(sub_track, 'B_MUTE') ~= 1 then
+					table.insert(tracks, sub_track)
+				end
 				j = j + 1
 			end
 			i = j - 1
@@ -360,7 +363,7 @@ function get_tracks_info(tracks)
 	return parent_tracks
 end
 
-function check_for_cordelia_tracks(tracks)
+function check_cordelia_tracks(tracks)
 	for _, parent_track in pairs(tracks) do
 		if parent_track.name == 'cordelia' then
 			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
@@ -383,7 +386,7 @@ function store_tracks(channels, sr, ksmps)
 
 	local item_index  = 0
 
-	check_for_cordelia_tracks(tracks)
+	check_cordelia_tracks(tracks)
 
 	for _, parent_track in pairs(tracks) do
 
@@ -476,6 +479,7 @@ function store_tracks(channels, sr, ksmps)
 		local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
 		os.execute(execute_cordelia)
 
+
 		local execute_csound = 'csound' 		.. ' ' ..
 								'-3' .. ' ' ..
 								'--orc ' 		.. '"' .. orc_cordelia_path .. '"' .. ' ' ..
@@ -488,8 +492,12 @@ function store_tracks(channels, sr, ksmps)
 		cmd_file:write(execute_csound)
 		cmd_file:close()
 	end
-	local main_command = 'find ' .. tracks_directory .. ' -type f -name "*.command" -print | parallel sh && afplay ' .. CORDELIA_SON
-	io.popen(main_command)
+	local main_command = 'find ' .. tracks_directory .. ' -type f -name \'*.command\' -print | parallel sh && afplay ' .. CORDELIA_SON
+	--io.popen(main_command)
+	--os.execute('open -a Terminal.app "' .. main_command .. '" &')
+	local osa_command = "osascript -e 'tell application \"Terminal\" to do script \"find " .. tracks_directory .. " -type f -name \\\"*.command\\\" -print | parallel --jobs 10 sh && exit\"'"
+	os.execute(osa_command)
+
 end
 
 -- =================================================================
@@ -508,7 +516,7 @@ function store_main(channels, sr, ksmps)
 
 	local item_index  = 0
 
-	check_for_cordelia_tracks(tracks)
+	check_cordelia_tracks(tracks)
 
 	local instrument_name = '_main'
 	local track_dir = tracks_directory .. '/' .. instrument_name .. '/'
@@ -710,7 +718,7 @@ function cordelia_realtime(play_pos)
 		index = 1
 		while index <= #SCOREs do
 			local score = SCOREs[index]
-			if score.onset <= play_pos then
+			if math.abs(score.onset - play_pos) <= epsilon then
 				score.instrument_num = tostring(score.index + 300)
 
 				if score.instrument_name == '@cordelia' then
@@ -729,6 +737,7 @@ function cordelia_realtime(play_pos)
 
 				else
 					local csound_string = insert_after_pattern(score.code, "%.%w+%(", 'num=' .. score.instrument_num .. ', ' .. score.instrument_name .. ', ')
+					--local csound_string = 'cordelia_item(' .. 'num=' .. score.instrument_num .. ', ' .. score.code .. ')'
 
 					send_to_cordelia(csound_string)
 

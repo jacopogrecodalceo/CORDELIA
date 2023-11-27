@@ -1,57 +1,51 @@
 	opcode saf, k, SkO
 Spat, kdiv, krot xin
 
-korgan	chnget "heart"
-kph		= (korgan * kdiv) % (1/16)
+; Concatenate the rhythm into a string
+ilen_string		strlen Spat
+String_raw		init ""
+indx			init 0
+until indx == ilen_string do
+	Spart	strsub Spat, indx, indx+1
 
-klast init -1
-ktick init 0
-kpat_indx init 0
-kend_pat init 1	
-Shex init "0"
+	if strcmp(Spart, "-") == 0 then
+		String_raw strcat String_raw, "10"
 
-if (kph < klast) then
+	elseif strcmp(Spart, "u") == 0 then
+		String_raw strcat String_raw, "1"
 
-	ktick += 1
+	elseif strcmp(Spart, ".") == 0 then
+		String_raw strcat String_raw, "0"
 
-	kstrlen = strlenk(Spat)
+	elseif strcmp(Spart, "x") == 0 then
+		String_raw strcat String_raw, "2"
 
-	if (kstrlen > 0) then
-
-		ktick	+= krot%2
-
-		;4 bits/beats per hex value
-		kpat_len = strlenk(Spat) * 4
-		;get beat within pattern length
-		ktick = ktick % kpat_len
-		;figure which hex value to use from string
-		kpat_indx = int(ktick / 4)
-		kend_pat = kpat_indx + 1
-		;figure out which bit from hex to use
-		kbit_indx = ktick % 4 
-		
-		Shex		strcatk "0x", strsubk(Spat, kpat_indx, kend_pat)
-		;Shex		strcatk "0x", strsubk(Spat, kbeg, kend)
-		
-		;printks Shex, 0
-		;convert individual hex from string to decimal/binary
-		kbeat_pat	strtolk Shex
-		;kbeat_pat = 0
-
-		$hex_print
-
-		;bit shift/mask to check onset from hex's bits
-		kout = (kbeat_pat >> (3 - kbit_indx)) & 1 
-		
 	endif
+	indx += 1
+od
+	;prints String_raw
 
-else
+; Convert the string into an array
+ilen_raw		strlen String_raw
+ipat[]			init ilen_raw
+indx			init 0
+until indx == ilen_raw do
+	Spart		strsub String_raw, indx, indx+1
+	if strcmp(Spart, "0") == 0 then
+		ipat[indx]	= 0
+	elseif strcmp(Spart, "2") == 0 then
+		ipat[indx]	= -1
+	else
+		ipat[indx]	= indx+1
+	endif
+	indx += 1
+od
 
-	kout = 0	
+kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
+kph			= int((kcycle % 1) * ilen_raw) + krot
 
-endif
-
-klast	= kph
+kout		= changed2:k(kph) == 1 ? ipat[kph] : 0
+kout		= kout < 0 ? samphold:k(int(random:k(0, ilen_raw)), abs(kout)) : kout
 
 	xout kout
 	endop

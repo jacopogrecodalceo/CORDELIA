@@ -28,8 +28,8 @@ def make(orc_file, directory, json_file):
 				modules[name] = {
 					'input': input_section,
 					'core': core_section,
-					'opcode': opcode_section,
-					'path': os.path.join(directory, f)	
+					'opcode': opcode_section
+					#'path': os.path.join(directory, f)	
 				}
 
 				""" if opcode_section:

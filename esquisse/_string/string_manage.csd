@@ -4,51 +4,50 @@
 </CsOptions>
 <CsInstruments>
 
-0dbfs=1
-nchnls=2
+gString			init "--u"
 
 	instr 1
 gkph phasor 1/32
 	endin
 
 	instr 2
-String			init "--u"
-ilen_string		strlen String
 
-iraw_pat[]		init ilen_string
+; Concatenate the rhythm into a string
+ilen_string		strlen gString
+String_raw		init ""
 indx			init 0
-internal_indx = 0
 until indx == ilen_string do
-	Spart	strsub String, indx, indx+1
+	Spart	strsub gString, indx, indx+1
 
 	if strcmp(Spart, "-") == 0 then
-		iraw_pat[indx] = 10
+		String_raw strcat String_raw, "10"
+
 	elseif strcmp(Spart, "u") == 0 then
-		iraw_pat[indx] = 1
+		String_raw strcat String_raw, "1"
+
 	elseif strcmp(Spart, "x") == 0 then
 		if random(0, 2) < 1 then
-			iraw_pat[indx] = 10
+			String_raw strcat String_raw, "10"
 		else
-			iraw_pat[indx] = 1
+			String_raw strcat String_raw, "1"
 		endif
 	endif
 	indx += 1
-
 od
-	printarray iraw_pat
+	;prints String_raw
 
-ilen_pat		lenarray iraw_pat
-imain_pat		init ilen_pat
+; Convert the string into an array
+ilen_raw		strlen String_raw
+ipat[]			init ilen_raw
 indx			init 0
-until indx == ilen_pat do
-	if iraw_pat[indx] == 10 then
-		imain_pat
+until indx == ilen_raw do
+	Spart		strsub String_raw, indx, indx+1
+	ipat[indx]	strtod Spart
+	indx += 1
 od
-
-
+	printarray ipat
 
 	endin
-
 
 
 

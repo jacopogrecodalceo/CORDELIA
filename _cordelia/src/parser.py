@@ -8,7 +8,7 @@ from csoundAPI.cs import cordelia_nchnls
 
 from csoundAPI.cs import remember, csound_clear_instrument
 
-from src.lexer import print_tokens, print_token, Token
+from src.lexer import print_tokens, print_token, Token, tokenize
 
 PRINT_TOKENS = False
 
@@ -41,7 +41,6 @@ def extract_csv(string):
 # =================================================================
 
 def verify(tokens):
-
 	for i, token in enumerate(tokens):
 		function_name = f'verify_{token.type.lower()}'
 		func = globals().get(function_name)
@@ -161,13 +160,19 @@ def verify_rhythm(token):
 def verify_routing(token):
 	# Remove the '.'
 	value = token.value[1:]
-	if value in cordelia_json[token.type]:
-		print(f'📩{value} is verified.')
-		cordelia_init_code.append(cordelia_json[token.type][value]['opcode'])
+	if value not in cordelia_given_else:
+		cordelia_given_else.append(value)
+		if value in cordelia_json[token.type]:
+			print(f'📩{value} is verified.')
+			cordelia_init_code.append(cordelia_json[token.type][value]['opcode'])
+			token.value = value
+			return token
+		else:
+			raise ValueError(f'{token.type} with {value} is not found!')
+	else:
 		token.value = value
 		return token
-	else:
-		raise ValueError(f'{token.type} with {value} is not found!')
+
 
 def verify_word(token):
 	value = token.value
@@ -361,6 +366,7 @@ def parse_reaper(tokens):
 				instrument = func(tokens)
 				instrument[0].num = instrument_num
 				return [instrument[0]]
+
 
 @condition({'start': ['RHYTHM'], 'end': ['EMPTYLINE']})
 def parse_rhythmic(tokens):
