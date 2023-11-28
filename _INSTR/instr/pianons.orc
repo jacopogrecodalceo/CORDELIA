@@ -9,6 +9,7 @@ ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf
 
 
 	$start_instr(pianons)
+	$cps_hi_limit(ntof("8C"))
 
 ain		sfplay3m 1, ftom:i(A4), $dyn_var/2048, icps, 0, 1
 
@@ -24,7 +25,7 @@ imode   = 1
 iminfreq = 95
 iprd    = 0.005
   
-amain		harmon ain, icps*2, kmaxvar, icsp, iestfreq, imode, iminfreq, iprd
+amain		harmon ain, icps*2, kmaxvar, icps, iestfreq, imode, iminfreq, iprd
 
 k2		expseg icps/2, p3, icps*int(random:i(2, 8))
 a2		exciter amain, k2, icps, 10, 1.5

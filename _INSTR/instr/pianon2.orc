@@ -8,6 +8,7 @@ ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf
 
 
 	$start_instr(pianon2)
+	$cps_hi_limit(ntof("8C"))
 
 ain		sfplay3m 1, ftom:i(A4), $dyn_var/2048, icps, 0, 1
 

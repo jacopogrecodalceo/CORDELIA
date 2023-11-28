@@ -8,6 +8,7 @@ ipiano   sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf
 	schedule "piano_load", 0, 1
 
 	$start_instr(piano)
+	$cps_hi_limit(ntof("8C"))
 
 ipreindex	init 0
 iflag		init 1

@@ -391,11 +391,11 @@ function store_tracks(channels, sr, ksmps)
 	for _, parent_track in pairs(tracks) do
 
 		local instrument_name = parent_track.name
-
-		local track_dir = tracks_directory .. '/' .. instrument_name:sub(2) .. '_' .. parent_track.index .. '/'
+		local formatted_index = string.format("%02d", parent_track.index)
+		local track_dir = tracks_directory .. '/' .. formatted_index .. '-' .. instrument_name:sub(2) ..  '/'
 		create_folder_if_not_exists(track_dir)
 
-		local track_path = track_dir .. title .. '-' .. instrument_name:sub(2) .. '_' .. parent_track.index
+		local track_path = track_dir .. title .. '-' .. formatted_index .. '-' .. instrument_name:sub(2)
 		local score_path = track_path .. '.sco'
 		local orc_cordelia_path = track_path .. '-cordelia.orc'
 		local wav_path = track_path .. '.wav'

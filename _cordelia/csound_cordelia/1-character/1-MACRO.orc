@@ -7,7 +7,6 @@
 
 #define once(infill)		#once(fillarray($infill))#
 
-
 ; variation selected in each instrument [0 - 1]
 gidyn_var init 1
 #define	dyn_var #(idyn+random:i(-(idyn/10), idyn/10)*gidyn_var)#
@@ -24,7 +23,13 @@ idur		init abs(p3)
 idyn		init p4
 ienv		init p5
 icps		init p6
-ich         init p7
+ich			init p7
+#
+
+#define cps_hi_limit(hi_freq) #
+until icps < $hi_freq do
+	icps	init icps/2
+od
 #
 
 #define start_instr(start_instr_name) #

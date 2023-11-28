@@ -56,8 +56,8 @@
     },
     "moij": {
         "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moog PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_moij, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout\t    moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout        moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     },
     "moijb3": {
         "input": "kk",
@@ -74,15 +74,15 @@
         "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_pitch_chebyshev PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "opcode cordelia_pitch_chebyshev, a, akkk\n\tain, kdiv, kport, kmix xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nitime\t\tinit itime / 2\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kamp \tpitch ain, itime, ilow, ihigh, idbthresh\nkamp\t\t= kamp/pow(2, 16)\nkcps        = cpsoct(koct)\nif kdiv > 0 then\n\tkcycle\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\tvdel_k koct, gkbeats*kdiv, itime*2\nendif\n\nk1\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk2\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk3\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk4\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk5\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\n\naosc1\t\toscili kamp, portk(kcps, kport)\nacheby1\t\tchebyshevpoly  aosc1, 0, k1, k2, k3, k4, k5\n\naosc2\t\toscili kamp, portk(kcps, kport)\nacheby2\t\tchebyshevpoly  aosc2, 0, k5, k4, k3, k2, k1\n\naosc\t\t= (acheby1 + acheby2/2)*kamp\n;aosc\t\texciter aosc, kcps/2, kcps*9, 9, 3\n;aosc\t    dcblock2 aosc\naosc        balance2 aosc, ain\n\naout\t\t= ain*(1-kmix) + aosc*kmix\n\n\txout aout\n\tendop"
     },
+    "pitchebijv": {
+        "input": "kkk",
+        "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_pitch_chebyshev_vco PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_pitch_chebyshev_vco, a, akkk\n\tain, kdiv, kport, kmix xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nitime\t\tinit itime / 2\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kamp \tpitch ain, itime, ilow, ihigh, idbthresh\nkamp\t\t= kamp/pow(2, 16)\nkcps        = cpsoct(koct)\nif kdiv > 0 then\n\tkcycle\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\tvdel_k koct, gkbeats*kdiv, itime*2\nendif\n\nk1\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk2\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk3\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk4\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk5\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\n\naosc1\t\tvco2 kamp, portk(kcps, kport)\nacheby1\t\tchebyshevpoly  aosc1, 0, k1, k2, k3, k4, k5\n\naosc2\t\tvco2 kamp, portk(kcps, kport)\nacheby2\t\tchebyshevpoly  aosc2, 0, k5, k4, k3, k2, k1\n\naosc\t\t= (acheby1 + acheby2/2)*kamp\n;aosc\t\texciter aosc, kcps/2, kcps*9, 9, 3\n;aosc\t    dcblock2 aosc\naosc        balance2 aosc, ain\n\naout\t\t= ain*(1-kmix) + aosc*kmix\n\n\txout aout\n\tendop"
+    },
     "pitchij": {
         "input": "kkk",
         "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_pitch PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "opcode cordelia_pitch, a, akkk\n\tain, kdiv, kport, kmix xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nitime\t\tinit itime / 2\n\nprint itime\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kamp \tpitch ain, itime, ilow, ihigh, idbthresh\nkamp\t\t= kamp/pow(2, 16)\n\nif kdiv > 0 then\n\tkcycle\t\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\t\tvdel_k koct, gkbeats*kdiv, gibeats*2\n\taosc2\t\t\toscili 1, portk(cpsoct(koct2)/2, kport), gitri\nendif\n\n\naosc1\t\toscili 1, portk(cpsoct(koct)/2, kport/2), gitri\naosc\t\t= (aosc1 + aosc2/2)*kamp*4\n\naout\t\t= ain*(1-kmix) + aosc*kmix\n\n\txout aout\n\tendop"
-    },
-    "pitvchebij": {
-        "input": "kkk",
-        "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_pitch_chebyshev_vco PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
-        "opcode": "opcode cordelia_pitch_chebyshev_vco, a, akkk\n\tain, kdiv, kport, kmix xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nitime\t\tinit itime / 2\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kamp \tpitch ain, itime, ilow, ihigh, idbthresh\nkamp\t\t= kamp/pow(2, 16)\nkcps        = cpsoct(koct)\nif kdiv > 0 then\n\tkcycle\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\tvdel_k koct, gkbeats*kdiv, itime*2\nendif\n\nk1\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk2\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk3\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk4\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\nk5\t\t\tjitter 1, gkbeatf/24, gkbeatf/8\n\naosc1\t\tvco2 kamp, portk(kcps, kport)\nacheby1\t\tchebyshevpoly  aosc1, 0, k1, k2, k3, k4, k5\n\naosc2\t\tvco2 kamp, portk(kcps, kport)\nacheby2\t\tchebyshevpoly  aosc2, 0, k5, k4, k3, k2, k1\n\naosc\t\t= (acheby1 + acheby2/2)*kamp\n;aosc\t\texciter aosc, kcps/2, kcps*9, 9, 3\n;aosc\t    dcblock2 aosc\naosc        balance2 aosc, ain\n\naout\t\t= ain*(1-kmix) + aosc*kmix\n\n\txout aout\n\tendop"
     },
     "platij": {
         "input": "k",

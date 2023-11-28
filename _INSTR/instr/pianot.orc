@@ -1,16 +1,13 @@
 	instr piano_load
-
 ipiano	sfload "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/soundfonts/piano.sf2"
 	sfpassign 0, ipiano
 	endin
-
-	
 	schedule "piano_load", 0, 0
 
 
 	$start_instr(pianot)
 
-
+	$cps_hi_limit(ntof("8C"))
 ituning		i gktuning
 
 ilen		tab_i 0, ituning
