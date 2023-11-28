@@ -64,6 +64,8 @@ if changed2(gktuning) == 1 then
 	schedulek "tuning_info", 0, 1
 endif
 
+schedule "heartbeat_print", 0, 0
+
 	endin
 ;	schedule("heart", .5, -1)
 ;	alwayson("heart")
@@ -111,7 +113,6 @@ gibeatf		i gkbeatf
 
 prints("\n--------- i'm 🔥beating --------\n")
 prints " 💛 %.02fbpm: %.02fs // %.02fHz 💛 \n", gipulse, gibeats, gibeatf
-
 
 	turnoff
 

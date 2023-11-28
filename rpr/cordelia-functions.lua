@@ -480,23 +480,30 @@ function store_tracks(channels, sr, ksmps)
 		os.execute(execute_cordelia)
 
 
-		local execute_csound = 'csound' 		.. ' ' ..
+		local cmd_string = 'csound' 		.. ' ' ..
 								'-3' .. ' ' ..
+								'--0dbfs=1' .. ' ' ..
 								'--orc ' 		.. '"' .. orc_cordelia_path .. '"' .. ' ' ..
 								'--nchnls=' 	.. channels .. ' ' ..
 								'--sample-rate=' .. sr .. ' ' ..
 								'--ksmps=' 		.. ksmps .. ' ' ..
 								'--output='		.. '"' .. wav_path .. '"'
 
+		cmd_string = cmd_string .. '\n' .. 'afplay "' .. CORDELIA_SON .. '"'
+		cmd_string = cmd_string .. '\n' .. 'osascript -e \'tell application "Terminal" to close\''
+
 		local cmd_file = assert(io.open(cmd_path, 'w'), 'Error opening file')
-		cmd_file:write(execute_csound)
+		cmd_file:write(cmd_string)
 		cmd_file:close()
+		local script = 'sh \\\"' .. cmd_path .. '\\\";exit'
+		local osa_command = "osascript -e 'tell application \"Terminal\" to do script \"" .. script .. "\"'"
+		os.execute(osa_command)
 	end
-	local main_command = 'find ' .. tracks_directory .. ' -type f -name \'*.command\' -print | parallel sh && afplay ' .. CORDELIA_SON
+	--local main_command = 'find ' .. tracks_directory .. ' -type f -name \'*.command\' -print | parallel sh && afplay ' .. CORDELIA_SON
 	--io.popen(main_command)
 	--os.execute('open -a Terminal.app "' .. main_command .. '" &')
-	local osa_command = "osascript -e 'tell application \"Terminal\" to do script \"find " .. tracks_directory .. " -type f -name \\\"*.command\\\" -print | parallel --jobs 10 sh && exit\"'"
-	os.execute(osa_command)
+	--local osa_command = "osascript -e 'tell application \"Terminal\" to do script \"find " .. tracks_directory .. " -type f -name \\\"*.command\\\" -print | parallel --jobs 10 sh && exit\"'"
+	--os.execute(osa_command)
 
 end
 
@@ -654,9 +661,9 @@ end
 -- =================================================================
 -- =================================================================
 
-function cordelia_realtime(play_pos)
+function cordelia_realtime()
 	local epsilon = .015
-	local play_pos =reaper.GetPlayPosition()-epsilon
+	local play_pos = reaper.GetPlayPosition()-epsilon
 
 	local function on_play(play_pos)
 		if STATE then
@@ -706,7 +713,7 @@ function cordelia_realtime(play_pos)
 		local index = 1
 		while index <= #NOTEs do
 			local note = NOTEs[index]
-			if math.abs(note.onset - play_pos) <= epsilon then
+			if note.onset <= play_pos then
 				local csound_string = 'eva_midi ' .. note.instrument_name .. ', 0, ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
 				send_to_cordelia(csound_string)
 				table.remove(NOTEs, index)
@@ -718,7 +725,7 @@ function cordelia_realtime(play_pos)
 		index = 1
 		while index <= #SCOREs do
 			local score = SCOREs[index]
-			if math.abs(score.onset - play_pos) <= epsilon then
+			if score.onset <= play_pos then
 				score.instrument_num = tostring(score.index + 300)
 
 				if score.instrument_name == '@cordelia' then

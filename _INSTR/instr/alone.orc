@@ -34,7 +34,7 @@ if ich == 1 then
 
 endif
 
-	
+	endin
 
 
 
@@ -58,7 +58,8 @@ aout		moogladder2 avco, gkalone_cps+(gkalone_cps*portk(gkalone_env*64, 5$ms)), .
 aout		phaser1 aout, gkalone_cps/1000, 9, .95
 aout		balance2 aout, avco
 
-	$CHNMIX
+	$channel_mix
+	endin
 	
 
 indx	init 0

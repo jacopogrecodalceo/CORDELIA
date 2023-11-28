@@ -1994,6 +1994,14 @@
         ],
         "global_var": []
     },
+    "beboiv": {
+        "type": "hybrid",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/beboiv.orc",
+        "required": [
+            "bois"
+        ],
+        "global_var": []
+    },
     "beboo": {
         "type": "hybrid",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/hybrid/beboo.orc",

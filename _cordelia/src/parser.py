@@ -164,7 +164,9 @@ def verify_routing(token):
 		cordelia_given_else.append(value)
 		if value in cordelia_json[token.type]:
 			print(f'📩{value} is verified.')
-			cordelia_init_code.append(cordelia_json[token.type][value]['opcode'])
+			opcode = cordelia_json[token.type][value]['opcode']
+			if opcode:
+				cordelia_init_code.append(opcode)
 			token.value = value
 			return token
 		else:

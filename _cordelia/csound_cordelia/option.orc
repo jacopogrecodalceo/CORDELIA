@@ -1,6 +1,6 @@
 --sample-rate=48000
 --ksmps=64	;leave it at 64 for real-time
---nchnls_i=2
+;--nchnls_i=2
 --nchnls=2
 --0dbfs=1
 ;A4		=	438	;only for ancient music	
