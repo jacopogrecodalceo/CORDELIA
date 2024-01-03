@@ -1,4 +1,5 @@
 	$start_instr(corpia)
+	$cps_hi_limit(ntof("8C")) ;limit cps to the last note of the piano
 
 idyn	init idyn/3
 

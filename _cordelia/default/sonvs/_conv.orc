@@ -12,7 +12,8 @@ Sinstr		init "---NAME---"
 idur		divz p3, i(gk---NAME---_dur), 1
 idyn		init p4
 ienv		init p5
-icps		init p6 % i(gkdiv)
+icps		init p6
+icps_op		init icps % i(gkdiv)
 ich			init p7
 
 isonvs		i gk---NAME---_sonvs
@@ -31,19 +32,19 @@ index		init (isonvs*gi---NAME---_ch)+imod
 itab_sonvs	init gi---NAME---_list[index]
 itab_dur	init ftlen(itab_sonvs)/sr
 
-if icps < 1 then
+if icps_op < 1 then
 
-	if icps == 0 then
-		icps = .8
+	if icps_op == 0 then
+		icps_op = .8
 	endif
 	
 	ifreq		init 1/itab_dur
 	aphasor		phasor ifreq
-	aphasor		= (aphasor+(i(gkbeatn)/dec_to_int(icps)))%1
+	aphasor		= (aphasor+(i(gkbeatn)/dec_to_int(icps_op)))%1
 
 else
 
-	idiv		init icps%i(gkdiv)
+	idiv		init icps_op%i(gkdiv)
 	ioff		i gk---NAME---_off
 
 	if ioff!=0 then
@@ -59,16 +60,27 @@ aout		table3 aphasor, itab_sonvs, 1
 
 ienvvar		init idur/25
 
-if ienv < 1 then
+if ienv > 0 && ienv < 1 then
 	aout	*= cosseg:a(0, ienv, 1, idur-(ienv*2), 1, ienv, 0)
 else
 	aout	*= envgen(idur-random:i(0, ienvvar), ienv)
 endif
 
-aout_last	= aout * $dyn_var
-iwin	init 2^int(random:i(8, 14))
-aout    cross2 aout_last, mpulse($dyn_var, idur/int(random:i(16, 32))), iwin, 2, gihanning, 1
-aout	balance2 aout, aout_last
+aout_mix	= aout * $dyn_var
+isize		init 2^int(random:i(10, 14)) ;2^10=1024, 2^13=8192
+ioverlap	init 2
+iwin		init gihanning
+kmix		init 1
+
+until icps < idur/16 do
+	icps /= 2
+od
+
+asource		mpulse 1, icps
+
+across		cross2 aout_mix, asource, isize, ioverlap, iwin, kmix
+
+aout		= across;balance2 across, aout_mix
 
 	$channel_mix
 

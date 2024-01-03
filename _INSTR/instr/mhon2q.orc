@@ -10,7 +10,7 @@ istart		init i(gkmhon2q_start)
 
 schedule Sinstr, istart, idur, idyn, ienv, icps, ich
 
-gimhon2q_choose	= gimhon2_choose%(nchnls*i(gkmhon2_ch))
+gimhon2q_choose	= gimhon2q_choose%(nchnls*i(gkmhon2q_ch))
 
 if	gimhon2q_choose == 1 then
 	gkmhon2q_cps	= icps
@@ -20,8 +20,7 @@ else
 endif
 
 	turnoff
-
-	
+	endin
 
 	instr mhon2q_instr
 	$params(mhon2q)
@@ -33,9 +32,9 @@ aout		= a1 + (a2/3)
 
 ifact		init 16
 idyn_fact	init 8
-iq		init $dyn_var
+iq			init $dyn_var
 
-amoog_freq	cosseg i(gkmhon_cps)*(ifact)*($dyn_var*idyn_fact), idur/6, icps*ifact*($dyn_var*idyn_fact)
+amoog_freq	cosseg i(gkmhon2q_cps)*(ifact)*($dyn_var*idyn_fact), idur/6, icps*ifact*($dyn_var*idyn_fact)
 amoog_freq	limit amoog_freq, 25, 20$k
 
 aq		cosseg iq, idur, iq*2

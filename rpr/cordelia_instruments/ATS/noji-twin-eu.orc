@@ -95,7 +95,6 @@ a_sig_r			= a_carrier_r * adyn
 a_filter_r		bqrez	a_sig_r, afreq+(afreq*(16*adyn)), .75
 aout			balance2 a_filter_r, a_sig_r
 
-
 ; ============
 ; *** aOUT ***
 ; ============

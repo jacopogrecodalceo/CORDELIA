@@ -44,7 +44,6 @@ else
 	if ioff!=0 then
 		ioff		random 0, ioff
 	endif
-
 	kcycle		= (chnget:k("heart") * divz(gkdiv, idiv, 1))+ioff
 	kread		= kcycle % 1
 

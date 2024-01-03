@@ -47,12 +47,13 @@ idur		init p3
 idyn		init p4
 ienv		init p5
 icps		init p6
-ich		init p7
+ich			init p7
 
 ionset		i gkeuarm_onset
 ipulse		i gkeuarm_pulse
 
 euarm_sched(Sinstr, idur, idyn, ienv, icps, ich, ionset, ipulse)
+	endin
 
 	
 
@@ -72,8 +73,7 @@ ipanfreq	init icps/250
 
 aout		oscil3 ($dyn_var/(ipulse/6))/(iharm/3), icps + randomi:k(-ipanfreq, ipanfreq, 1/idur), gitri
 
-$dur_var(10)
-
+	$dur_var(10)
 	$end_instr
 
 	

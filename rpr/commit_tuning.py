@@ -1,6 +1,5 @@
-import json
-import math
-import re
+import json, math, re, os, json, subprocess
+
 from pathlib import Path
 
 CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIA'
@@ -178,7 +177,7 @@ def main():
 			# 		f.write(f'{str(each)} {tuning.edo12diff[each]},\t\t\t\t\t{tuning.freq[each]}\n')
 
 			RPR_Undo_BeginBlock()
-			
+
 			for i in range(len(tuning.freq)):
 				#index = abs(i-base_midi_note)%len(tuning.scala_data)
 				index = (i - base_midi_note) % len(tuning.scala_data)
@@ -188,8 +187,86 @@ def main():
 
 				string = f'{formatted_index}|{scala_data}|{tuning.edo12diff[i]}\t\t\t\t\t{tuning.freq[i]}'
 				retval = RPR_SetTrackMIDINoteNameEx(0, track_id, int(i), -1, string)
-
+			
 			RPR_Undo_EndBlock('Insert tuning', 0)
+
+			def increment_first_numeric(input_string):
+				# Find the first numeric part in the string
+				match = re.search(r'\d+', input_string)
+
+				if match:
+					# Increment the first numeric part by 1
+					incremented_numeric = str(int(match.group()) + 1)
+
+					# Replace the first numeric part in the original string
+					input_string = re.sub(r'\d+', incremented_numeric, input_string, 1)
+
+				return input_string
+
+			base_frequency_name_octave = increment_first_numeric(base_frequency_name)
+			
+			notation_dir = os.path.join(CORDELIA_DIR, '_SCALA/notation/')
+			intervals_json = os.path.join(notation_dir, '_intervals.json')
+			with open(intervals_json, 'r') as json_file:
+				intervals = json.load(json_file)
+
+			lilypond_output_path = os.path.join(notation_dir, f'{tuning.name}.ly')
+			pdf_output_path = os.path.join(notation_dir, f'{tuning.name}.pdf')
+			lilypond_init_path = os.path.join(notation_dir, '_init.ly')
+			lilyponds = []
+			with open(lilypond_init_path, 'r') as f:
+				for i in range(base_midi_note, len(tuning.freq)):
+					if base_frequency_name_octave in tuning.edo12diff[i] and '0.0' in tuning.edo12diff[i]:
+						break
+					index = (i - base_midi_note) % len(tuning.scala_data)
+					formatted_index = str(index).zfill(2)
+					scala_data = '1/1' if index == 0 else tuning.scala_data[index-1][:5]
+					note_name_cent = tuning.edo12diff[i]
+
+					match = re.search(r'\d+', note_name_cent)
+					start_index, end_index = match.span()
+
+					note_name = note_name_cent[:start_index].replace('*', '').replace('#', 'is').replace('b', 'es').lower()
+					cents = note_name_cent[end_index:].replace('[***]', '').replace('*', '')
+					freq = format(float(tuning.freq[i]), '.2f') + 'Hz'
+					desc = intervals.get(scala_data, '') 
+
+					note_name += '4'
+
+					lilypond_string = rf'''
+						{note_name}_"{cents}"^\markup [
+							\column [
+								\line \left-align \box [
+									\fontsize #-3 \rotate #90 [
+											"{desc}"
+										]		
+									]
+								\vspace #.15
+								\line ["{formatted_index}"]
+								\vspace #-.65
+								\line ["{scala_data}"]
+								\vspace #-.65
+								\line ["{freq}"]
+							]
+						]
+					'''
+					lilyponds.append(lilypond_string)
+
+
+			main_replace = '\n'.join(lilyponds).replace('[', '{').replace(']', '}')
+			with open(lilypond_init_path, 'r') as f:
+				main_lilypond = f.read().replace('---MAIN---', main_replace)
+				main_lilypond = main_lilypond.replace('---LENGTH---', str(tuning.length))
+				main_lilypond = main_lilypond.replace('---NAME---', tuning.name.replace('_', ' ').strip().upper())
+				with open(lilypond_output_path, 'w') as f:
+					f.write(main_lilypond)
+		if not os.path.exists(pdf_output_path):
+			command = ['lilypond', '-djob-count=10', '-o',  f'{notation_dir}', f'{lilypond_output_path}']
+			result = subprocess.run(command, capture_output=True, text=True)
+
+			# Check the return code
+			if result.returncode != 0:
+				log(result.stderr)
 
 main()
 

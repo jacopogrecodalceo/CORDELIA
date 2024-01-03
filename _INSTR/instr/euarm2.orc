@@ -53,7 +53,7 @@ ionset		i gkeuarm2_onset
 ipulse		i gkeuarm2_pulse
 
 euarm2_sched(Sinstr, idur, idyn, ienv, icps, ich, ionset, ipulse)
-
+	endin
 	
 
 	instr euarm2_instr

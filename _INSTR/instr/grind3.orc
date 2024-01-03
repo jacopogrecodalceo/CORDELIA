@@ -4,15 +4,15 @@ gkgrind3_p1	init 1
 
 	$dur_var(10)
 
-igrind		i gkgrind_p1
+igrind		i gkgrind3_p1
 
 an		fractalnoise $dyn_var, cosseg(.95, idur, .05)
 ao		oscil3 $dyn_var, lfo(icps/100, 4/idur)+(icps*4), gisaw
 aex		= an + ao
 
-aex		*= envgen((idur/4)-random:i(0, ienvvar), ienv)
+aex		*= envgen(idur/4, ienv)
 
-idynred		init 8-($dyn_var*6)
+idynred		init 64-($dyn_var*6)
 
 af		flanger aex/idynred, expseg:a((divz(idur, igrind, gizero)), idur/(2^igrind), idur*5*igrind)$ms, .65
 

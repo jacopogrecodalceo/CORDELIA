@@ -9,8 +9,17 @@ kpeakdev2		= $dyn_var * cosseg(3, idur, 5) * i1div2pi
 kjitR			jitter cosseg(5, idur, .75), 1.5, 3.5
 
 ;MODULATORS
-aModulator		oscili	kpeakdev*tablei(line(1, idur/2, 0), ienv, 1), icps * 5, gisine
-aModulator2		oscili	kpeakdev2*tablei(line(1, idur/3, 0), ienv, 1), icps * 2, gitri
+if ienv > 0 then
+	istart	init 0
+	iend	init 1
+else
+	istart	init 1
+	iend	init 0
+endif
+ienv_abs	abs ienv
+
+aModulator		oscili	kpeakdev*tablei(line(istart, idur/2, iend), ienv_abs, 1), icps * 5, gisine
+aModulator2		oscili	kpeakdev2*tablei(line(istart, idur/3, iend), ienv_abs, 1), icps * 2, gitri
 
 avib1			= lfo(icps/35, icps/250)*expseg(giexpzero, idur, 1)
 

@@ -226,17 +226,17 @@ function get_items()
 	end
 end
 
-function get_notes_from_item(info, item)
-
-	local function apply_dynamic_change(value, lua_string)
-		if lua_string then
-			local expr = load("return " .. value .. lua_string)
-			if type(expr) == "function" then
-				return expr()
-			end
+function apply_dynamic_change(value, lua_string)
+	if lua_string then
+		local expr = load("return " .. value .. lua_string)
+		if type(expr) == "function" then
+			return expr()
 		end
-		return value
 	end
+	return value
+end
+
+function get_notes_from_item(info, item)
 
 	local notes = {}
 	local _, notes_count, _, _ = reaper.MIDI_CountEvts(item.take)
@@ -489,7 +489,7 @@ function store_tracks(channels, sr, ksmps)
 								'--ksmps=' 		.. ksmps .. ' ' ..
 								'--output='		.. '"' .. wav_path .. '"'
 
-		cmd_string = cmd_string .. '\n' .. 'afplay "' .. CORDELIA_SON .. '"'
+		cmd_string = cmd_string .. '\n' .. 'afplay -v 0.25 "' .. CORDELIA_SON .. '"'
 		cmd_string = cmd_string .. '\n' .. 'osascript -e \'tell application "Terminal" to close\''
 
 		local cmd_file = assert(io.open(cmd_path, 'w'), 'Error opening file')
@@ -656,14 +656,96 @@ function sort_by_onset(a, b)
 end
 
 
+local LAST_NOTE_PLAYED_PITCH = {}
 
+function send_notes_if_selected()
+	local midi_editor = reaper.MIDIEditor_GetActive()
+    if not midi_editor then return end
+
+	-- Get the active take within the MIDI editor
+    local take = reaper.MIDIEditor_GetTake(midi_editor)
+	if not take then return end
+
+	local track = reaper.GetMediaItemTake_Track(take)
+    if not track then return end
+
+	local selected_notes = {}
+	local _, notes_count, _, _ = reaper.MIDI_CountEvts(take)
+	for index_note = 0, notes_count - 1 do
+		local _, is_selected, is_muted, start_ppqpos, end_ppqpos, chan, pitch, vel, _ = reaper.MIDI_GetNote(take, index_note)
+		if is_selected then
+			if #selected_notes > 5 then break end
+			local note = {
+				pitch = pitch,
+				vel = vel,
+				start_ppqpos = start_ppqpos,
+				end_ppqpos = end_ppqpos
+			}
+			table.insert(selected_notes, note)
+		end
+	end
+
+    for _, note in ipairs(selected_notes) do
+		local selected_notes_pitch = note.pitch
+		for _, last_note in ipairs(LAST_NOTE_PLAYED_PITCH) do
+			local last_pitch = last_note.pitch
+			if selected_notes_pitch == last_pitch then
+				return false
+			end
+		end
+    end
+
+	for _, note in ipairs(selected_notes) do
+		local parent = reaper.GetParentTrack(track)
+		local _, instrument_name = reaper.GetSetMediaTrackInfo_String(parent, 'P_NAME', '', false)
+		local _, track_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', '', false)
+		local info = get_track_name_info(track_name)
+
+		local freqs_by_tuning = get_freqs_by_tuning(track)
+
+		if not is_muted then
+			local onset = reaper.MIDI_GetProjTimeFromPPQPos(take, note.start_ppqpos)
+			-- onset = onset < 0 and 0 or onset
+			local end_note = reaper.MIDI_GetProjTimeFromPPQPos(take, note.end_ppqpos)
+
+			local dur = apply_dynamic_change(end_note - onset, info.dur)
+			if dur > 1.5 then dur = 1.5 end
+			if dur > 0 then
+				local dyn = apply_dynamic_change(note.vel / MIDI_CORRECTION, info.dyn)
+
+				while dyn > .25 do
+					dyn = dyn / 2
+				end
+				dyn = dyn / #selected_notes
+
+				local env = info.env
+				local freq = apply_dynamic_change(freqs_by_tuning[note.pitch], info.freq)
+
+				local instrument_num = 95
+
+				local csound_string = insert_after_pattern('.getmeout(1)', "%.%w+%(", 'num=' .. instrument_num .. ', ' .. instrument_name .. ', ')
+				send_to_cordelia(csound_string)
+				csound_string = 'eva_midi ' .. instrument_name .. ', 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
+				send_to_cordelia(csound_string)
+				local mode = 1 -- turnoff only oldest
+				csound_string = 'turnoff_everything ' .. mode .. ', ' .. instrument_num .. ', 1'
+				send_to_cordelia(csound_string)
+				csound_string = 'turnoff_everything ' .. mode .. ', ' .. instrument_num .. ', 1'
+				send_to_cordelia(csound_string)
+				LAST_NOTE_PLAYED_PITCH = {}
+				table.insert(LAST_NOTE_PLAYED_PITCH, note)
+		
+			end
+		end
+	end
+
+end
 -- =================================================================
 -- =================================================================
 -- =================================================================
+local epsilon = .015
 
 function cordelia_realtime()
-	local epsilon = .015
-	local play_pos = reaper.GetPlayPosition()-epsilon
 
 	local function on_play(play_pos)
 		if STATE then
@@ -691,6 +773,11 @@ function cordelia_realtime()
 			if next(SCOREs_off) ~= nil then
 				for _, score in pairs(SCOREs_off) do
 					send_to_cordelia('turnoff2_i ' .. score.instrument_num .. ', 0, 0')
+					
+					local mode = 0 -- turnoff all
+					local csound_string = 'turnoff_everything ' .. mode .. ', ' .. score.instrument_name
+					send_to_cordelia(csound_string)
+
 				end
 			end
 
@@ -704,6 +791,7 @@ function cordelia_realtime()
 	end
 
 	if reaper.GetPlayState() == 1 then
+		local play_pos = reaper.GetPlayPosition()-epsilon
 
 		on_play(play_pos)
 		safety_play(play_pos)
@@ -772,6 +860,7 @@ function cordelia_realtime()
 
 	elseif reaper.GetPlayState() == 0 then
 		on_stop()
+		send_notes_if_selected()
 	end
 
 end

@@ -119,6 +119,7 @@ function glue_selected_items()
 	end
 
 	reaper.PreventUIRefresh(1)
+	local current_cursor_pos = reaper.GetPlayPosition()
 	OUTPUT_POSITION = reaper.GetMediaItemInfo_Value(reaper.GetSelectedMediaItem(0, 0), "D_POSITION")
 	-- Duplicate items
 	reaper.Main_OnCommand(41295, 0)
@@ -138,6 +139,7 @@ function glue_selected_items()
 	GLUED_ITEM_TRACK = reaper.GetMediaItem_Track(glued_item)
 	reaper.DeleteTrackMediaItem(GLUED_ITEM_TRACK, glued_item)
 	reaper.PreventUIRefresh(-1)
+	reaper.SetEditCurPos(current_cursor_pos, true, false )
 
 	return input_file
 

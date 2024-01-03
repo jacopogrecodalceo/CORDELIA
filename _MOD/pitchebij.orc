@@ -19,11 +19,14 @@ kkk
 ilow		init 2
 ihigh		init 15
 itime		init i(gkbeats)
-itime		init itime / 2
+if itime <= 0 then
+	itime = 1/2
+endif
 
-idbthresh	init 9 ; dB threshold
+idbthresh	init 3 ; dB threshold
 koct, kamp 	pitch ain, itime, ilow, ihigh, idbthresh
 kamp		= kamp/pow(2, 16)
+aamp		a kamp
 kcps        = cpsoct(koct)
 if kdiv > 0 then
 	kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
@@ -31,23 +34,23 @@ if kdiv > 0 then
 	koct2		vdel_k koct, gkbeats*kdiv, itime*2
 endif
 
-k1			jitter 1, gkbeatf/24, gkbeatf/8
-k2			jitter 1, gkbeatf/24, gkbeatf/8
-k3			jitter 1, gkbeatf/24, gkbeatf/8
-k4			jitter 1, gkbeatf/24, gkbeatf/8
-k5			jitter 1, gkbeatf/24, gkbeatf/8
+k1			init random:i(-1, 1)
+k2			init random:i(-1, 1)
+k3			init random:i(-1, 1)
+k4			init random:i(-1, 1)
+k5			init random:i(-1, 1)
 
-aosc1		oscili kamp, portk(kcps, kport)
+aosc1		oscili aamp, portk(kcps, kport)
 acheby1		chebyshevpoly  aosc1, 0, k1, k2, k3, k4, k5
 
-aosc2		oscili kamp, portk(kcps, kport)
+aosc2		oscili aamp, portk(kcps, kport)
 acheby2		chebyshevpoly  aosc2, 0, k5, k4, k3, k2, k1
 
-aosc		= (acheby1 + acheby2/2)*kamp
+aosc		= ((acheby1 + acheby2/2)*aamp)
 ;aosc		exciter aosc, kcps/2, kcps*9, 9, 3
 ;aosc	    dcblock2 aosc
-aosc        balance2 aosc, ain
-
+;aosc        balance2 aosc, ain
+aosc2		limit aosc, -.95, .95
 aout		= ain*(1-kmix) + aosc*kmix
 
 	xout aout

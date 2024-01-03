@@ -1,6 +1,6 @@
 	instr orphans2_control
-
 gkorphans2_var lfse 50, 100, gkbeatf/64
+	endin
 
 	
 	schedule("orphans2_control", 0, -1)

@@ -16,12 +16,13 @@ function close_console()
 	if hwnd then reaper.JS_Window_Destroy(hwnd) end  
   end
 
-function get_tuning_list(take)
+  function get_tuning_list(take)
 	local track = reaper.GetMediaItemTake_Track(take)
 	local names, cent_diffs, freqs = {}, {}, {}
 
 	for i = 0, 127 do
 		local note_name = reaper.GetTrackMIDINoteNameEx(0, track, i, 0)
+		if not note_name then return nil end
 		names[i] = string.match(note_name, '|([^%d]+%d+)')
 		cent_diffs[i] = string.match(note_name, '([%+%-]%d+%.%d+c)')
 		freqs[i] = string.match(note_name, '([%d%.]+)$')
@@ -59,8 +60,9 @@ end
 function process_file(file_path, take)
 	local names, cent_diffs, freqs = get_tuning_list(take)
 
-	if names == nil then
+	if not names then
 		log('Warning: forgotten names')
+		return false
 	end
 
 	local first_time = nil
@@ -109,15 +111,22 @@ function process_file(file_path, take)
 	mu.MIDI_CommitWriteTransaction(take)
 
 	file:close()
+	return true
 
 end
 
-function get_selected_audio_item(selected)
+function get_selected_audio_item()
 	local selected_items_count = reaper.CountSelectedMediaItems(0)
 
 	if selected_items_count == 0 then
 		log('No item selected')
 		return
+	end
+
+	for i = 0, selected_items_count-1  do
+		-- GET ITEMS
+		local item = reaper.GetSelectedMediaItem(0, i) -- Get selected item i
+		reaper.SetMediaItemInfo_Value(item, "B_MUTE", 1)
 	end
 
 	reaper.PreventUIRefresh(1)
@@ -184,11 +193,13 @@ function main()
 	if midi_take ~= nil then
 		local temp_file = temp_dir .. '/' .. 'temp.txt'
 		log('Processing.. ' .. temp_file)
-		process_file(temp_file, midi_take)
-		os.remove(reaper.GetMediaSourceFileName(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item)), ""))
-		reaper.DeleteTrackMediaItem(reaper.GetMediaItemTrack(item), item)
+		local result = process_file(temp_file, midi_take)
+		if result then
+			os.remove(reaper.GetMediaSourceFileName(reaper.GetMediaItemTake_Source(reaper.GetActiveTake(item)), ""))
+			reaper.DeleteTrackMediaItem(reaper.GetMediaItemTrack(item), item)
+			close_console()
+		end
 	end
-	close_console()
 end
 
 main()

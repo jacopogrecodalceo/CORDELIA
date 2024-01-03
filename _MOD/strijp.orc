@@ -8,7 +8,7 @@ PARAM_2 init i(gkbeats)/24
 
 PARAM_3 init .5
 
-PARAM_OUT cor_streason_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3
+PARAM_OUT cordelia_streson_p PARAM_IN, PARAM_1, PARAM_2, PARAM_3
 ;END CORE
 ;START INPUT
 kkk
@@ -17,7 +17,7 @@ kkk
 ;START OPCODE
 
 
-	opcode cor_streason_p, a, akkk
+	opcode cordelia_streson_p, a, akkk
 	ain, kfreq, kport, kq xin
 
 kfreq	portk kfreq, kport

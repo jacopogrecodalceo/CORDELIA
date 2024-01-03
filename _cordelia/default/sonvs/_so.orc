@@ -19,8 +19,8 @@ itab_sonvs	init gi---NAME---_list[index]
 ktimewarp			= 0
 kresample			init icps / ---PITCH---		;do not change pitch
 ibeg				init .45		;start at beginning
-kwsize 				= sr / 10
-iwsize				init sr / 10			;window size in samples with
+iwsize				init sr / 8			;window size in samples with
+kwsize 				= iwsize
 irandw				init iwsize * (1/4)				;bandwidth of a random number generator
 itimemode			init 1					;ktimewarp is "time" pointer
 ioverlap			init 8

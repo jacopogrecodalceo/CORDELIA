@@ -19,6 +19,9 @@ kkk
 ilow		init 2
 ihigh		init 15
 itime		init i(gkbeats)
+if itime <= 0 then
+	itime = 1/2
+endif
 itime		init itime / 2
 
 print itime

@@ -27,7 +27,7 @@ aexc1    mode ain, $cordelia_wooden_cps(if1), $cordelia_wooden_q(iq1)
 aexc2    mode ain, $cordelia_wooden_cps(if2), $cordelia_wooden_q(iq2)
 
 aexc    = (aexc1+aexc2)/2
-aexc    limit aexc, 0, 1
+;aexc    limit aexc, 0, 1
 
 ares1   mode aexc,  $cordelia_wooden_cps(kfreq),  $cordelia_wooden_q(scale(kq, 500, 60))
 ares2   mode aexc,  $cordelia_wooden_cps(kfreq*2),  $cordelia_wooden_q(scale(kq, 420, 53))

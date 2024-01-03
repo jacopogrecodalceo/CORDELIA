@@ -1,4 +1,4 @@
-gkmhont_cps	init 20
+gkmhont_cps		init 20
 gimhont_choose	init 0
 gkmhont_start	init 0
 gkmhont_port	init 1

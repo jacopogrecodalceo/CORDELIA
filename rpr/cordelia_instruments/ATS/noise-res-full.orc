@@ -9,13 +9,13 @@ ich			init p5
 ; ============
 ; *** INFO ***
 ; ============
-inump		init 25
-gidur		ATSinfo	Satsfile, 7
+inum_partials		init 25
+gidur				ATSinfo Satsfile, 7
 
 inum		init 25
 
 indx		init 0
-inum		limit inum, 1, inump
+inum		limit inum, 1, inum_partials
 
 until indx > inum do
 	schedule	2, 0, 1, Satsfile, ich, indx
