@@ -477,8 +477,8 @@ function store_tracks(channels, sr, ksmps)
 		score_file:close()
 
 		local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
+		--log(execute_cordelia)
 		os.execute(execute_cordelia)
-
 
 		local cmd_string = 'csound' 		.. ' ' ..
 								'-3' .. ' ' ..
@@ -497,6 +497,7 @@ function store_tracks(channels, sr, ksmps)
 		cmd_file:close()
 		local script = 'sh \\\"' .. cmd_path .. '\\\";exit'
 		local osa_command = "osascript -e 'tell application \"Terminal\" to do script \"" .. script .. "\"'"
+		--log(osa_command)
 		os.execute(osa_command)
 	end
 	--local main_command = 'find ' .. tracks_directory .. ' -type f -name \'*.command\' -print | parallel sh && afplay ' .. CORDELIA_SON

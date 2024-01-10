@@ -1,4 +1,4 @@
--- @description Change volume for item under mouse cursor (mousewheel)
+-- @description jacques - Change volume for item under mouse cursor (mousewheel)
 -- @version 1.02
 -- @author MPL
 -- @website http://forum.cockos.com/showthread.php?t=188335
@@ -13,7 +13,7 @@
     if val == 0 or not is_new_value then return end
     if val > 0 then val = 1 else val = -1 end
     
-    local incr = 0.25 -- dB
+    local incr = .5 -- dB
     
      item = VF_GetItemTakeUnderMouseCursor()
     if not item then return end

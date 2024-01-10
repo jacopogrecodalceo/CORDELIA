@@ -40,6 +40,43 @@ def insert_midi_note(take, time: float, duration: float, pitch: int, velocity: i
 	# Insert the note into the take
 	RPR_MIDI_InsertNote(take, True, False, note["ppq_start"], note["ppq_end"], 0, pitch, velocity, True)
 
+
+def main(file_path):
+	# Get the active MIDI editor
+	midieditor = RPR_MIDIEditor_GetActive()
+
+	# Check if a MIDI editor is open
+	if midieditor != 0:
+		# Get the current take in the MIDI editor
+		take = RPR_MIDIEditor_GetTake(midieditor)
+
+		# Check if the take is valid
+		if take != 0:
+		
+			names, cent_diffs, freqs = get_tuning_list(take)
+			# Create a new MIDI note
+
+			with open(file_path, 'r') as file:
+				
+				first_time = None
+				round_val = 2
+
+				for line in file:
+					for line in file:
+						param = line.strip()
+						name, time, dur, dyn, env, freq = param.split(', ')
+
+						if first_time is None:
+							first_time = time
+
+						#time = float(time) - float(first_time)
+						nearest_value, midi_note_num = find_index_of_nearest(freqs, float(freq))
+
+						insert_midi_note(take, float(time), float(dur), int(midi_note_num), int(float(dyn)*127))
+
+	# Update the MIDI editor display
+	RPR_MIDIEditor_OnCommand(midieditor, RPR_NamedCommandLookup("_BR_ME_REFRESH"))
+
 def main_to_midi(file_path):
 	# Get the active MIDI editor
 	midieditor = RPR_MIDIEditor_GetActive()

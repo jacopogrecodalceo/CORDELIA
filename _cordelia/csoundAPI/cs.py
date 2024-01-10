@@ -47,7 +47,7 @@ def which_rtaudio():
 # Get the list of devices and their details
 def get_devices():
 	if which_rtaudio() != '-+rtaudio=jack':
-		output = subprocess.run(['csound', f'{which_rtaudio()}', '--devices'], capture_output=True, text=True).stderr.strip()
+		output = subprocess.run(['/usr/local/bin/csound', f'{which_rtaudio()}', '--devices'], capture_output=True, text=True).stderr.strip()
 		devices = re.findall(r'adc.*|dac.*', output, flags=re.MULTILINE)
 		return [device for device in devices]
 	return []
@@ -117,7 +117,7 @@ def init_csound():
 			line = line.strip()
 			if line and not line.startswith(';'):
 				OPTIONs.append(line)
-
+	
 	OPTIONs.extend(query_devices())
 
 	for option in OPTIONs:

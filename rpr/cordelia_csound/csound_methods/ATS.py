@@ -1,10 +1,29 @@
+
 import ctcsound
-import sox
-import os, sys
+import os
+import sys
 import subprocess
 import time
 import re
 import concurrent.futures
+import sox
+
+from datetime import datetime
+import logging
+
+# Path to the directory containing the sox executable
+homebrew_directory = '/opt/homebrew/bin'
+
+# Modify the PATH environment variable
+os.environ['PATH'] = f"{homebrew_directory}:{os.environ['PATH']}"
+
+logging.basicConfig(filename='/Users/j/cordelia-script.log', level=logging.DEBUG, filemode='w')
+
+logging.info('Script execution path: %s', os.path.abspath(__file__))
+
+current_date = datetime.now()
+formatted_date = current_date.strftime("%d %B %Y, %H:%M:%S")
+logging.info(formatted_date)
 
 REMOVE_FILEs = True
 
@@ -22,13 +41,13 @@ def run_atsa(command):
 		process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		stdout, stderr = process.communicate()
 		if process.returncode != 0:
-			print(f"An error occurred: {stderr.decode('utf-8')}")
+			logging.error(f"{stderr.decode('utf-8')}")
 		else:
-			print(f'Csound processing {input_file} completed successfully.')
+			logging.info(f'Csound processing {input_file} completed successfully.')
 	except subprocess.CalledProcessError as e:
 		return f"Error running command: {command}\n{e.stderr.strip()}"
 	
-
+ctcsound.csoundInitialize(ctcsound.CSOUNDINIT_NO_ATEXIT | ctcsound.CSOUNDINIT_NO_SIGNAL_HANDLER)
 cs = ctcsound.Csound()
 cs.createMessageBuffer(False)
 
@@ -38,31 +57,32 @@ output_file_wav = sys.argv[3]
 
 basename = os.path.splitext(os.path.basename(input_file_wav))[0]
 
-ksmps = 16
-channels = sox.file_info.channels(input_file_wav)
-sample_rate = sox.file_info.sample_rate(input_file_wav)
+try:
+	channels = sox.file_info.channels(input_file_wav)
+	sample_rate = sox.file_info.sample_rate(input_file_wav)
+except Exception as e:
+	logging.error(e)
 
 #output_tempdir = os.path.dirname(file)
-output_tempdir = '/Users/j/Documents/PROJECTs/_temp'
+output_tempdir = '/Users/j/Documents/temp/'
 
 log_file = output_file_wav + '.log'
-
 
 with open(input_file_orc, 'r') as f:
 	orc_code = f.read()
 	sco_python_code = extract_score_data(orc_code)
 
-print(orc_code)
+logging.info(orc_code)
 
 ats_files = []
 mono_files = []
-
-channels = sox.file_info.channels(input_file_wav)
-
+	
 for i in range(1, channels+1):
 	tfm = sox.Transformer()
 	output_file = os.path.join(output_tempdir, basename + f'-{i}ch.wav')
-	print(f'Writing {i} channel of {basename} to {output_file}')
+	logging.info(f'Writing {i} channel of {basename} to {output_file}')
+	#sox_cmd = f'sox {input_file_wav} {output_file} remix {i}'
+	#subprocess.run(sox_cmd, shell=True)
 	tfm.remix(remix_dictionary={1: [i]}, num_output_channels=1)
 	tfm.build(input_filepath=input_file_wav, output_filepath=output_file)
 	mono_files.append(output_file)
@@ -71,7 +91,7 @@ csound_commands = []
 for f in mono_files:
 	input_file = f
 	output_file = os.path.join(output_tempdir, f'{os.path.splitext(os.path.basename(input_file))[0]}.ats')
-	csound_commands.append(['atsa', input_file, output_file])
+	csound_commands.append(['/usr/local/bin/atsa', input_file, output_file])
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
 	# Using a list comprehension to start all commands concurrently.
@@ -79,11 +99,9 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 	futures = [executor.submit(run_atsa, command) for command in csound_commands]
 
 	# Wait for all the commands to finish and retrieve the results.
-	results = [future.result() for future in concurrent.futures.as_completed(futures)]
-	# Print the results
-	for i, result in enumerate(results, start=1):
-		print(f"Command {i} output: {result}")
-	
+	[future.result() for future in concurrent.futures.as_completed(futures)]
+
+
 for f in os.listdir(output_tempdir):
 	if f.endswith('.ats') and basename in f:
 		ats_files.append('"' + os.path.join(output_tempdir, f) + '"')
@@ -95,19 +113,16 @@ if sco_python_code is not None:
 			ch = int(re.findall(r'(\d+)ch', ats_file)[-1])
 			exec(sco_python_code)
 	except Exception as e:
-		print("Error executing the code:", str(e))
+		logging.error("Error executing the code:", str(e))
 
 score.append('e')
 score = '\n'.join(score)
-print(score)
+logging.info(score)
 
 # Set Csound options
 cs.setOption(f'-o{output_file_wav}')
-#cs.setOption(f'--sample-rate=48000')
 cs.setOption(f'-3')
-#cs.setOption(f'--ksmps={ksmps}')
 cs.setOption(f'--0dbfs=1')
-#cs.setOption(f'--nchnls={channels}')
 
 cs.compileOrc(orc_code)
 cs.readScore(score)
@@ -142,8 +157,10 @@ try:
 		for f in ats_files:
 			os.remove(f.replace('"', ''))
 
-	print("File removed successfully.")
+	logging.info("File removed successfully.")
 except FileNotFoundError:
-	print("File not found.")
+	logging.error("File not found.")
 except Exception as e:
-	print("Error removing the file:", str(e))
+	logging.error("Error removing the file:", str(e))
+
+logging.info('Script end: %s', os.path.abspath(__file__))

@@ -1,36 +1,49 @@
-instr_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/INSTR.json', 'r')
-gen_json = io.open('/Users/j/Documents/PROJECTs/CORDELIA/_cordelia/config/GEN.json', 'r')
+MAIN_CORDELIA_PATH = '/Users/j/Documents/PROJECTs/CORDELIA/'
+REMOVE_FILEs = true
 
+Paths = {
+	general_functions = MAIN_CORDELIA_PATH .. 'rpr/reaper_general_functions.lua',
+	instr_json = MAIN_CORDELIA_PATH .. '_cordelia/config/' .. 'INSTR.json',
+	gen_json = MAIN_CORDELIA_PATH .. '_cordelia/config/' .. 'GEN.json',
+	methods = MAIN_CORDELIA_PATH .. 'rpr/cordelia_csound/csound_methods/',
+	temp = '/Users/j/Documents/temp/'
+}
 
-local temp_dir = '/Users/j/Documents/PROJECTs/_temp/'
+Methods = {
+	ATS = {
+		dir = Paths.methods .. 'ATS',
+		script = Paths.methods .. 'ATS.py'
+	},
+	CS = {
+		dir = Paths.methods .. 'CS',
+		script = Paths.methods .. 'CS.py',
+	},
+	LPC = {
+		dir = Paths.methods .. 'LPC',
+		script = Paths.methods .. 'LPC.py',
+	}
+}
+
+for _, path in pairs(Paths) do
+	if not reaper.file_exists(path) then
+		reaper.ShowConsoleMsg('Warning, an init file is missing')
+	end
+end
+
+dofile(Paths.general_functions)
+
+INSTR_JSON = io.open(Paths.instr_json, 'r')
+GEN_JSON = io.open(Paths.gen_json, 'r')
+
+TEMP_DIRECTORY = Paths.temp
 
 local OUTPUT_LENGTH, OUTPUT_POSITION
 local MAIN_OUTPUT, SELECTED_GLUED_ITEM, GLUED_ITEM_TRACK
 
-cs_option = {
+CSOUND_OPTIONs = {
 	sr = 48,
 	ksmps = 32,
 }
-
-
-function log(string)
-	reaper.ShowConsoleMsg(tostring(string) .. '\n')
-end
-
-function log_table(table, indent)
-    indent = indent or 0
-    local indentStr = string.rep(" ", indent)
-
-    for key, value in pairs(table) do
-        if type(value) == "table" then
-            log(indentStr .. key .. ": {")
-            log_table(value, indent + 4)
-            log(indentStr .. "}")
-        else
-            log(indentStr .. key .. ": " .. tostring(value))
-        end
-    end
-end
 
 function extract_basename(file)
 	-- Remove the directory path from the file_path using the last directory separator "/"
@@ -107,7 +120,7 @@ function get_info_from_items()
 		local input_file = reaper.GetMediaSourceFileName(source, "")
 		table.insert(channels, reaper.GetMediaSourceNumChannels(source))
 	end
-	cs_option.channels = math.max(table.unpack(channels))
+	CSOUND_OPTIONs.channels = math.max(table.unpack(channels))
 end
 
 function glue_selected_items()
@@ -156,7 +169,7 @@ function make_each_mono(input_file)
 	local output_files = {}
 	local basename = input_file:match("([^/\\]-)%.[^./\\]*$")
 	for i = 1, get_channels(input_file) do
-		local output_file = temp_dir .. basename .. '-' .. i .. 'ch.wav'
+		local output_file = TEMP_DIRECTORY .. basename .. '-' .. i .. 'ch.wav'
 		local sox_cmd = 'sox "' .. input_file .. '"' .. ' ' .. '"' .. output_file .. '"' .. ' remix ' .. i
 		local success = os.execute(sox_cmd)
 		if not success then
@@ -171,7 +184,7 @@ end ]]
 --[[ function make_atsa(input_file)
 	local output_files = {}
 	local basename = input_file:match("([^/\\]-)%.[^./\\]*$")
-	local output_file = temp_dir .. basename .. '.ats'
+	local output_file = TEMP_DIRECTORY .. basename .. '.ats'
 	local atsa_cmd = 'atsa "' .. input_file .. '"' .. ' ' .. '"' .. output_file .. '"'
 	local success = os.execute(atsa_cmd)
 	if not success then
@@ -197,8 +210,9 @@ function wait_for_file()
 	if not retval and not status then
 
 		local newtime = os.time()
+		local delta_time = 1.5
 
-		if newtime-lasttime >= 3.5 then
+		if newtime-lasttime >= delta_time then
 			lasttime = newtime
 			--log('Looking for..' .. extract_basename(check_file))
 
@@ -214,7 +228,7 @@ function wait_for_file()
 		reaper.InsertTrackAtIndex(track_index, true) -- Create a new track
 
 		local track = reaper.GetTrack(0, track_index)
-		reaper.SetMediaTrackInfo_Value(track, "I_NCHAN", cs_option.channels)
+		reaper.SetMediaTrackInfo_Value(track, "I_NCHAN", CSOUND_OPTIONs.channels)
 
 		-- Add the WAV file to the track
 		local item = reaper.AddMediaItemToTrack(track)
@@ -230,9 +244,11 @@ function wait_for_file()
 		reaper.SetMediaItemInfo_Value(item, "D_LENGTH", source_length)
 
 		-- Remove files
-		os.remove(SELECTED_GLUED_ITEM)
-		os.remove(check_file)
-		close_console()
+		if REMOVE_FILEs then
+			os.remove(SELECTED_GLUED_ITEM)
+			os.remove(check_file)
+			close_console()
+		end
 
 		close_progress_bar = true
 		status = true
@@ -249,21 +265,6 @@ local csound_code = 'default text'
 
 reaper.ImGui_SetNextWindowSize(ctx, 650, 995, 1)
 reaper.ImGui_Text(ctx, 'Csound instrument')
-
-methods = {
-	ATS = {
-		dir = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/cordelia_instruments/ATS',
-		script = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/exec_csound-ATS.py'
-	},
-	CS = {
-		dir = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/cordelia_instruments/CS',
-		script = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/exec_csound-CS.py'
-	},
-	LPC = {
-		dir = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/cordelia_instruments/LPC',
-		script = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/exec_csound-LPC.py'
-	}
-}
 
 --[[
 CS: {
@@ -298,14 +299,14 @@ function create_popup_list()
 	local group_names = {}
 	local popup_list = {}
 
-	for method, tab in pairs(methods) do
+	for method, tab in pairs(Methods) do
 		table.insert(group_names, method)
 	end
 
 	table.sort(group_names)
 
 	for i, group_name in ipairs(group_names) do
-		local method = methods[group_name]
+		local method = Methods[group_name]
 		local files = find_orc_files_in_directory(method.dir)
 		method.files = files
 		files = convert_table(files)
@@ -334,12 +335,12 @@ local selected_group
 
 function main_context()
 
-	local sr_retval, sr_val = reaper.ImGui_InputText(ctx, 'sample rate', cs_option.sr)
-	if sr_retval then cs_option.sr = sr_val end
-	local ksmps_retval, ksmps_val = reaper.ImGui_InputText(ctx, 'ksmps', cs_option.ksmps)
-	if ksmps_retval then cs_option.ksmps = ksmps_val end
-	local channels_retval, channels_val = reaper.ImGui_InputText(ctx, 'channels', cs_option.channels)
-	if channels_retval then cs_option.channels = channels_val end
+	local sr_retval, sr_val = reaper.ImGui_InputText(ctx, 'sample rate', CSOUND_OPTIONs.sr)
+	if sr_retval then CSOUND_OPTIONs.sr = sr_val end
+	local ksmps_retval, ksmps_val = reaper.ImGui_InputText(ctx, 'ksmps', CSOUND_OPTIONs.ksmps)
+	if ksmps_retval then CSOUND_OPTIONs.ksmps = ksmps_val end
+	local channels_retval, channels_val = reaper.ImGui_InputText(ctx, 'channels', CSOUND_OPTIONs.channels)
+	if channels_retval then CSOUND_OPTIONs.channels = channels_val end
 
 	if reaper.ImGui_Button(ctx, 'Select..') then
 		reaper.ImGui_OpenPopup(ctx, 'Instrument popup')
@@ -360,7 +361,7 @@ function main_context()
 			else
 				if reaper.ImGui_Selectable(ctx, name) then
 					popup.selected_basename = name
-					local path = methods[popup.selected_group].files[name]
+					local path = Methods[popup.selected_group].files[name]
 					csound_code = read_orc(path)
 					selected_group = popup.selected_group
 				end
@@ -375,11 +376,11 @@ function main_context()
 	if retval then csound_code = return_code end
 
 	for word in csound_code:gmatch("%S+") do
-		if instr_json[word] ~= nil then
-			csound_code = '#include "' .. instr_json[word]['path'] .. '"\n' .. csound_code
+		if INSTR_JSON[word] ~= nil then
+			csound_code = '#include "' .. INSTR_JSON[word]['path'] .. '"\n' .. csound_code
 		end
-		if gen_json[word] ~= nil then
-			csound_code = '#include "' .. instr_json[word]['path'] .. '"\n' .. csound_code
+		if GEN_JSON[word] ~= nil then
+			csound_code = '#include "' .. INSTR_JSON[word]['path'] .. '"\n' .. csound_code
 		end
 	end
 
@@ -387,7 +388,7 @@ function main_context()
 	local s_retval = reaper.ImGui_Button(ctx, 'save')
 
 	if s_retval then
-		local retval, path = reaper.JS_Dialog_BrowseForSaveFile('Save me', methods[selected_group].dir, '', '')
+		local retval, path = reaper.JS_Dialog_BrowseForSaveFile('Save me', Methods[selected_group].dir, '', '')
 		local save_to
 		if string.sub(path, -4) == ".orc" then
 			save_to = path
@@ -408,18 +409,20 @@ function main_context()
 
 		local unique_timestamp = generate_unique_timestamp()
 
-		local output_file_orc = temp_dir .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.orc'
+		local output_file_orc = TEMP_DIRECTORY .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.orc'
 		csound_code = string.format("sr\t= %d\nksmps\t= %d\nnchnls\t= %d\n\n\n%s",
-			cs_option.sr * 1000,
-			cs_option.ksmps,
-			cs_option.channels,
+			CSOUND_OPTIONs.sr * 1000,
+			CSOUND_OPTIONs.ksmps,
+			CSOUND_OPTIONs.channels,
 			csound_code
 		)
 
 		write_file(output_file_orc, csound_code)
-		MAIN_OUTPUT = temp_dir .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.wav'
-		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', methods[selected_group].script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
+		MAIN_OUTPUT = TEMP_DIRECTORY .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.wav'
+		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s" "%s" "%s"', Methods[selected_group].script, SELECTED_GLUED_ITEM, output_file_orc, MAIN_OUTPUT)
+		--log(command)
 		reaper.ExecProcess(command, -2)
+		--io.popen(command)
 		--log(command)
 		close_GUI = true
 
@@ -487,6 +490,7 @@ function loop_progress_bar()
 		reaper.ImGui_ProgressBar(ctx, progress_bar.plots.progress, -1, 0, buf)
 
 		reaper.ImGui_End(ctx)
+		reaper.UpdateArrange() -- Update the arrangement (often needed)
 		if close_progress_bar then
 			open = false
 			visible = false

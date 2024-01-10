@@ -3,9 +3,23 @@ import sox
 import os, sys
 import time
 import re
+from datetime import datetime
+import logging
+
+# Path to the directory containing the sox executable
+homebrew_directory = '/opt/homebrew/bin'
+
+# Modify the PATH environment variable
+os.environ['PATH'] = f"{homebrew_directory}:{os.environ['PATH']}"
+
+logging.basicConfig(filename='/Users/j/cordelia-script.log', level=logging.DEBUG, filemode='w')
+
+logging.info('Script execution path: %s', os.path.abspath(__file__))
+current_date = datetime.now()
+formatted_date = current_date.strftime("%d %B %Y, %H:%M:%S")
+logging.info(formatted_date)
 
 REMOVE_FILEs = True
-
 
 def extract_score_data(string):
 	pattern = r'/\*([\s\S]*?)\*/'
@@ -15,6 +29,8 @@ def extract_score_data(string):
 		return matches[0].strip()
 	else:
 		return None
+
+ctcsound.csoundInitialize(ctcsound.CSOUNDINIT_NO_ATEXIT | ctcsound.CSOUNDINIT_NO_SIGNAL_HANDLER)
 
 cs = ctcsound.Csound()
 cs.createMessageBuffer(False)
@@ -29,7 +45,7 @@ channels = sox.file_info.channels(input_file_wav)
 sample_rate = sox.file_info.sample_rate(input_file_wav)
 
 #output_tempdir = os.path.dirname(file)
-output_tempdir = '/Users/j/Documents/PROJECTs/_temp'
+output_tempdir = '/Users/j/Documents/temp/'
 
 log_file = output_file_wav + '.log'
 
@@ -40,7 +56,7 @@ channels = sox.file_info.channels(input_file_wav)
 for i in range(1, channels+1):
 	tfm = sox.Transformer()
 	output_file = os.path.join(output_tempdir, basename + f'-{i}ch.wav')
-	print(f'Writing {i} channel of {basename} to {output_file}')
+	logging.info(f'Writing {i} channel of {basename} to {output_file}')
 	tfm.remix(remix_dictionary={1: [i]}, num_output_channels=1)
 	tfm.build(input_filepath=input_file_wav, output_filepath=output_file)
 	mono_files.append(output_file)
@@ -60,7 +76,7 @@ with open(input_file_orc, 'r') as f:
 
 	sco_python_code = extract_score_data(orc_code)
 
-print(orc_code)
+logging.info(orc_code)
 
 score = []
 if sco_python_code is not None:
@@ -68,11 +84,11 @@ if sco_python_code is not None:
 		for ch in range(channels):
 			exec(sco_python_code)
 	except Exception as e:
-		print("Error executing the code:", str(e))
+		logging.info("Error executing the code:", str(e))
 
 score.append('e')
 score = '\n'.join(score)
-print(score)
+logging.info(score)
 
 # Set Csound options
 cs.setOption(f'-o{output_file_wav}')
@@ -104,7 +120,6 @@ time.sleep(1/8)
 with open(output_file_wav + '--finished', 'w') as f:
 	f.write('I EXIST')
 
-
 try:
 
 	# Remove the file
@@ -113,14 +128,13 @@ try:
 
 	if REMOVE_FILEs:
 		os.remove(input_file_wav)
-
 		for f in mono_files:
 			os.remove(f)
 		for f in lpc_files:
 			os.remove(f.replace('"', ''))
 
-	print("File removed successfully.")
+	logging.info("File removed successfully.")
 except FileNotFoundError:
-	print("File not found.")
+	logging.info("File not found.")
 except Exception as e:
-	print("Error removing the file:", str(e))
+	logging.info("Error removing the file:", str(e))
