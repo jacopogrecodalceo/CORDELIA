@@ -9089,6 +9089,19 @@
             "ginotalo_rel"
         ]
     },
+    "notalo2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/notalo2.orc",
+        "global_var": []
+    },
+    "notalosc": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/notalosc.orc",
+        "global_var": [
+            "gknotalosc_channel_var",
+            "ginotalosc_rel"
+        ]
+    },
     "november": {
         "type": "sonvs",
         "channels": 2,
@@ -9214,6 +9227,13 @@
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/org2.orc",
         "global_var": []
+    },
+    "org3": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/org3.orc",
+        "global_var": [
+            "giorg3_val"
+        ]
     },
     "orgu": {
         "type": "instr",
@@ -9754,6 +9774,11 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianons.orc",
         "global_var": []
     },
+    "pianons2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianons2.orc",
+        "global_var": []
+    },
     "pianot": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/pianot.orc",
@@ -10262,6 +10287,11 @@
             "gksenom_noteon",
             "gksenom_cps"
         ]
+    },
+    "senop": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/senop.orc",
+        "global_var": []
     },
     "senot": {
         "type": "instr",

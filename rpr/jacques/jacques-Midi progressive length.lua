@@ -18,8 +18,7 @@ function main(factor)
 		if take then
 
 			if reaper.MIDI_EnumSelNotes(take, 0) == -1 then
-				reaper.ShowMessageBox("No selected notes.", "Error", 0)
-				return
+				reaper.MIDI_SelectAll(take, true)
 			end
 
 			-- Assuming 'take' and 'track' are defined before this code

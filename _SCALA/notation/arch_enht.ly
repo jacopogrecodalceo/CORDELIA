@@ -58,7 +58,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 	}
 }
 \header {
-	title = \markup {\override #'(font-name . "Longinus") "ARCHYTAS12"}
+	title = \markup {\override #'(font-name . "Longinus") "ARCH ENHT"}
 	tagline = \date
 }
 
@@ -67,10 +67,10 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 		\accidentalStyle forget
 		 {
 			\textLengthOn
-			\time 12/4
+			\time 7/4
 
 			
-						g4_"+0.0c"^\markup {
+						a4_"+0.0c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -82,194 +82,109 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"1/1"}
 								\vspace #-.65
-								\line {"392.00Hz"}
+								\line {"440.00Hz"}
 							}
 						}
 					
 
-						aes4_"-1.9c"^\markup {
+						a4_"+48.77c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"septimal diesis, 1/4-tone"
 										}		
 									}
 								\vspace #.15
 								\line {"01"}
 								\vspace #-.65
-								\line {"98.09"}
+								\line {"36/35"}
 								\vspace #-.65
-								\line {"414.85Hz"}
+								\line {"452.57Hz"}
 							}
 						}
 					
 
-						a4_"+17.54c"^\markup {
+						bes4_"-37.04c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"Archytas' 1/3-tone"
 										}		
 									}
 								\vspace #.15
 								\line {"02"}
 								\vspace #-.65
-								\line {"217.5"}
+								\line {"28/27"}
 								\vspace #-.65
-								\line {"444.48Hz"}
+								\line {"456.30Hz"}
 							}
 						}
 					
 
-						bes4_"+15.64c"^\markup {
+						bes4_"+11.73c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"minor diatonic semitone"
 										}		
 									}
 								\vspace #.15
 								\line {"03"}
 								\vspace #-.65
-								\line {"315.6"}
+								\line {"16/15"}
 								\vspace #-.65
-								\line {"470.39Hz"}
+								\line {"469.33Hz"}
 							}
 						}
 					
 
-						b4_"-6.87c"^\markup {
+						cis4_"+35.08c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"septimal major third, BP third"
 										}		
 									}
 								\vspace #.15
 								\line {"04"}
 								\vspace #-.65
-								\line {"393.1"}
+								\line {"9/7"}
 								\vspace #-.65
-								\line {"491.93Hz"}
+								\line {"565.71Hz"}
 							}
 						}
 					
 
-						c4_"-8.77c"^\markup {
+						d4_"-1.96c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"perfect fourth"
 										}		
 									}
 								\vspace #.15
 								\line {"05"}
 								\vspace #-.65
-								\line {"491.2"}
+								\line {"4/3"}
 								\vspace #-.65
-								\line {"520.61Hz"}
+								\line {"586.67Hz"}
 							}
 						}
 					
 
-						cis4_"+10.67c"^\markup {
+						aes4_"+37.04c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"septimal major seventh"
 										}		
 									}
 								\vspace #.15
 								\line {"06"}
 								\vspace #-.65
-								\line {"610.6"}
+								\line {"27/14"}
 								\vspace #-.65
-								\line {"557.79Hz"}
-							}
-						}
-					
-
-						d4_"+8.77c"^\markup {
-							\column {
-								\line \left-align \box {
-									\fontsize #-3 \rotate #90 {
-											""
-										}		
-									}
-								\vspace #.15
-								\line {"07"}
-								\vspace #-.65
-								\line {"708.7"}
-								\vspace #-.65
-								\line {"590.31Hz"}
-							}
-						}
-					
-
-						ees4_"+6.87c"^\markup {
-							\column {
-								\line \left-align \box {
-									\fontsize #-3 \rotate #90 {
-											""
-										}		
-									}
-								\vspace #.15
-								\line {"08"}
-								\vspace #-.65
-								\line {"806.8"}
-								\vspace #-.65
-								\line {"624.73Hz"}
-							}
-						}
-					
-
-						e4_"+26.31c"^\markup {
-							\column {
-								\line \left-align \box {
-									\fontsize #-3 \rotate #90 {
-											""
-										}		
-									}
-								\vspace #.15
-								\line {"09"}
-								\vspace #-.65
-								\line {"926.3"}
-								\vspace #-.65
-								\line {"669.35Hz"}
-							}
-						}
-					
-
-						f4_"-17.54c"^\markup {
-							\column {
-								\line \left-align \box {
-									\fontsize #-3 \rotate #90 {
-											""
-										}		
-									}
-								\vspace #.15
-								\line {"10"}
-								\vspace #-.65
-								\line {"982.4"}
-								\vspace #-.65
-								\line {"691.41Hz"}
-							}
-						}
-					
-
-						fis4_"+1.9c"^\markup {
-							\column {
-								\line \left-align \box {
-									\fontsize #-3 \rotate #90 {
-											""
-										}		
-									}
-								\vspace #.15
-								\line {"11"}
-								\vspace #-.65
-								\line {"1101."}
-								\vspace #-.65
-								\line {"740.80Hz"}
+								\line {"848.57Hz"}
 							}
 						}
 					

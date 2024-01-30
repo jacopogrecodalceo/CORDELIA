@@ -6,7 +6,7 @@ ipole_order	init 32
 ; ============
 indx init 0
 until indx == lenarray(gSfiles) do
-	ires system_i 1, sprintf("lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_order, filesr(gSfiles[indx]), gSfiles[indx], gSfiles[indx])
+	ires system_i 1, sprintf("/usr/local/bin/lpanal -p %i -s %i \"%s\" \"%s.lpc\"", ipole_order, filesr(gSfiles[indx]), gSfiles[indx], gSfiles[indx])
 	indx += 1
 od
 

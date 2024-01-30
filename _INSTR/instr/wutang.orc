@@ -12,21 +12,21 @@ kcx2		cosseg	idyn, idur, ival*idyn
 krx1		expseg	idyn, idur/2, ival
 krx2		cosseg	ival*idyn, idur, idyn
 
-;		FOND
+; FOND
 asig		wterrain    $dyn_var, icps+(lfo:k(gkwutang_vib, random:i(3, 5))), kcx1, kcx2, krx1, krx2, gitri, gisine
 
-;		HARMs
+; HARMs
 ifact		init 3
-ah1		wterrain    $dyn_var, (kcps*3), kcx1/ifact, kcx2/ifact, krx1/ifact, krx2/ifact, gisaw, gisquare
+ah1			wterrain    $dyn_var, (kcps*3), kcx1/ifact, kcx2/ifact, krx1/ifact, krx2/ifact, gisaw, gisquare
 
 kdyn		= abs(lfo($dyn_var, cosseg(icps/85, idur, 1/idur)))
-ah2		wterrain    kdyn, (icps*4), kcx1/ifact, kcx2/ifact, krx1/ifact, krx2/ifact, gisaw, gisquare
+ah2			wterrain    kdyn, (icps*4), kcx1/ifact, kcx2/ifact, krx1/ifact, krx2/ifact, gisaw, gisquare
 
 aharms		= ah1 + ah2
 
 aharms		*= cosseg:k(1, idur/2, idyn/4, idur/2, 1)
 
-;		FILTRE
+; FILTRE
 aharms		moogladder2 aharms, 7500+((13.5$k)*idyn), limit(kcx1, 0, .95)
 
 aout		= asig + aharms

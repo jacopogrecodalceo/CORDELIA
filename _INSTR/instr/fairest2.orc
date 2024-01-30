@@ -15,12 +15,18 @@ asqu1	oscil3	1/12, kcps/2 + random:i(-1, 1), gisquare
 
 aharm1	oscil3	1/8, kcps*6/2 + random:i(-1, 1), gisquare
 
-
 aout	= atri1 + asin1 + asqu1 + aharm1
 aout	/= 4
 
 aout	distort aout, expseg:k(random:i(.85, .15), idur, .05), gitri
-aout	moogladder aout, icps + expseg:k(icps*8 + random:i(-15, 15), idur, 0.05), expseg:k(.5, idur*9/10, random:i(.895, .65), idur/10, .25)
+
+icps_moog init icps*8
+
+until icps_moog < 15$k do
+	icps_moog /= 2
+od
+
+aout	moogladder aout, icps + expseg:k(icps_moog + random:i(-15, 15), idur, 0.05), expseg:k(.5, idur*9/10, random:i(.895, .65), idur/10, .25)
 aout	K35_hpf aout, 25, 7.5
 
 aout	*= idyn + (lfo:a(ivib, kvibfreq + random:i(-.15, .15)) * expsega(.0005, idur, 1))

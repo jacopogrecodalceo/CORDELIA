@@ -123,13 +123,14 @@ function get_tracks()
 	return tracks
 end
 
-function get_item_info(track, j)
-	local id = reaper.GetTrackMediaItem(track, j)
+function get_item_info(track, index_per_track)
+	local id = reaper.GetTrackMediaItem(track, index_per_track)
 	local item = {
 		id = id,
 		take = reaper.GetMediaItemTake(id, 0),
 		start_pos = reaper.GetMediaItemInfo_Value(id, 'D_POSITION'),
-		dur = reaper.GetMediaItemInfo_Value(id, 'D_LENGTH')
+		dur = reaper.GetMediaItemInfo_Value(id, 'D_LENGTH'),
+		is_muted = reaper.GetMediaItemInfo_Value(id, 'B_MUTE') == 1
 	}
 
 	item.end_pos = item.start_pos + item.dur
@@ -202,9 +203,9 @@ function get_items()
 				local item = get_item_info(track, j)
 
 				-- ITEM INFO
-				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
+				local item_type = not item.is_muted and (item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE') or nil
 
-				if item_type == 'MIDI' then
+				if not item.is_muted and item_type == 'MIDI' then
 					local info = get_track_name_info(track_name)
 					info.freqs_by_tuning = get_freqs_by_tuning(track)
 
@@ -214,7 +215,7 @@ function get_items()
 						note.instrument_name = instrument_name
 						table.insert(NOTEs, note)
 					end
-				elseif item_type == 'SCORE' then
+				elseif not item.is_muted and item_type == 'SCORE' then
 					item.index = item_index
 					local score = get_scores_item(item)
 					score.instrument_name = instrument_name
@@ -303,6 +304,7 @@ function create_folder_if_not_exists(dir_path)
 
     os.execute(command)
 end
+
 function get_project_info()
 
 	local project_path = reaper.GetProjectPath() .. '/'
@@ -363,7 +365,7 @@ function get_tracks_info(tracks)
 	return parent_tracks
 end
 
-function check_cordelia_tracks(tracks)
+--[[ function check_cordelia_tracks(tracks)
 	for _, parent_track in pairs(tracks) do
 		if parent_track.name == 'cordelia' then
 			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
@@ -373,7 +375,8 @@ function check_cordelia_tracks(tracks)
 		end
 	end
 end
-
+ ]]
+ 
 function store_tracks(channels, sr, ksmps)
 
 	local play_pos = 0 --reaper.GetPlayPosition()
@@ -386,7 +389,7 @@ function store_tracks(channels, sr, ksmps)
 
 	local item_index  = 0
 
-	check_cordelia_tracks(tracks)
+	--check_cordelia_tracks(tracks)
 
 	for _, parent_track in pairs(tracks) do
 
@@ -411,7 +414,7 @@ function store_tracks(channels, sr, ksmps)
 				local item = get_item_info(track.id, j)
 
 				-- ITEM INFO
-				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
+				local item_type = not item.is_muted and (item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE') or nil
 
 				if item_type == 'MIDI' then
 					local info = get_track_name_info(track.name)
@@ -487,6 +490,8 @@ function store_tracks(channels, sr, ksmps)
 								'--nchnls=' 	.. channels .. ' ' ..
 								'--sample-rate=' .. sr .. ' ' ..
 								'--ksmps=' 		.. ksmps .. ' ' ..
+								'-+id_artist=' .. '"' .. "jacopo greco d'alceo" ..'"' .. ' ' ..
+								'-+id_title=' .. '"' ..  instrument_name:sub(2) .. '"' .. ' ' ..
 								'--output='		.. '"' .. wav_path .. '"'
 
 		cmd_string = cmd_string .. '\n' .. 'afplay -v 0.25 "' .. CORDELIA_SON .. '"'
@@ -511,120 +516,6 @@ end
 -- =================================================================
 -- =================================================================
 -- =================================================================
-
-function store_main(channels, sr, ksmps)
-
-	local play_pos = 0 --reaper.GetPlayPosition()
-	local project_len = reaper.GetProjectLength(0)
-
-	local title, tracks_directory = get_project_info()
-
-	local tracks = get_tracks()
-	tracks = get_tracks_info(tracks)
-
-	local item_index  = 0
-
-	check_cordelia_tracks(tracks)
-
-	local instrument_name = '_main'
-	local track_dir = tracks_directory .. '/' .. instrument_name .. '/'
-	create_folder_if_not_exists(track_dir)
-	local track_path = track_dir .. title .. '-' .. instrument_name
-	local score_path = track_path .. '.sco'
-	local orc_cordelia_path = track_path .. '-cordelia.orc'
-	local wav_path = track_path .. '.wav'
-	local cmd_path = track_dir .. '_.command'
-	local score_file = assert(io.open(score_path, 'w'), 'Error opening file')
-	local NOTEs = {}
-	local SCOREs = {}
-	for _, parent_track in pairs(tracks) do
-		for _, track in pairs(parent_track.tracks) do
-			for j = 0, reaper.GetTrackNumMediaItems(track.id)-1 do
-				local item = get_item_info(track.id, j)
-
-				-- ITEM INFO
-				local item_type = item.take and reaper.TakeIsMIDI(item.take) and 'MIDI' or 'SCORE'
-
-				if item_type == 'MIDI' then
-					local info = get_track_name_info(track.name)
-					info.freqs_by_tuning = get_freqs_by_tuning(track.id)
-
-					local item_notes = get_notes_from_item(info, item)
-
-					for _, note in pairs(item_notes) do
-						note.instrument_name = instrument_name
-						table.insert(NOTEs, note)
-					end
-				elseif item_type == 'SCORE' then
-					item.index = item_index
-					local score = get_scores_item(item)
-					score.instrument_name = instrument_name
-					table.insert(SCOREs, score)
-					item_index = item_index + 1
-				end
-			end
-
-			table.sort(NOTEs, sort_by_onset)
-			table.sort(SCOREs, sort_by_onset)
-
-			for _, note in pairs(NOTEs) do
-				if note.onset >= play_pos then
-					local csound_string = 'eva_midi ' .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
-					score_file:write(csound_string .. '\n\n')  -- Write the text to the file
-				end
-			end
-
-			for _, score in pairs(SCOREs) do
-				if score.onset >= play_pos then
-					score.instrument_num = tostring(score.index + 300)
-
-					if score.instrument_name == 'cordelia' then
-						local csound_parts = {
-							'instr ' .. score.instrument_num,
-							score.code,
-							'endin',
-							'schedule ' .. score.onset .. ', ' .. score.duration
-						}
-						local csound_string = table.concat(csound_parts, '\n\n')
-						--csound_string = csound_string .. '\nschedule ' .. score.instrument_num .. ', 0, -1'
-
-						score_file:write(csound_string)  -- Write the text to the file
-						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
-
-					else
-						local csound_string = insert_after_pattern(score.code, "%.%w+%(",
-							'sched_onset=' .. score.onset .. ', ' ..
-							'sched_dur=' .. score.dur .. ', ' ..
-							score.instrument_name .. ', '
-						)
-
-						score_file:write(csound_string)  -- Write the text to the file
-						score_file:write('\n;' .. string.rep('*', 32) .. '\n')
-
-					end
-				end
-			end
-		end
-	end
-	score_file:write('\n\nevent_i "e", 0, ' .. project_len + 5)
-	score_file:close()
-
-	local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
-	os.execute(execute_cordelia)
-
-	local execute_csound = 'csound' 		.. ' ' ..
-							'-3' .. ' ' ..
-							'--orc ' 		.. '"' .. orc_cordelia_path .. '"' .. ' ' ..
-							'--nchnls=' 	.. channels .. ' ' ..
-							'--sample-rate=' .. sr .. ' ' ..
-							'--ksmps=' 		.. ksmps .. ' ' ..
-							'--output='		.. '"' .. wav_path .. '"'
-
-	local cmd_file = assert(io.open(cmd_path, 'w'), 'Error opening file')
-	cmd_file:write(execute_csound)
-	cmd_file:close()
-
-end
 
 -- =================================================================
 -- =================================================================

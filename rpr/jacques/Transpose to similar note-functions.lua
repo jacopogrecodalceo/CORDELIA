@@ -32,25 +32,25 @@ function log(e, indent)
 end
 
 function extract_freq_from_name(str)
-    local result = ''
-    local has_decimal = false
-    for i = #str, 1, -1 do
-        local char = str:sub(i, i)
-        if char == '.' then
-            if not has_decimal then
-                result = char .. result
-                has_decimal = true
-            else
-                break
-            end
-        elseif tonumber(char) then
-            result = char .. result
-        else
-            break
-        end
-    end
+	local result = ''
+	local has_decimal = false
+	for i = #str, 1, -1 do
+		local char = str:sub(i, i)
+		if char == '.' then
+			if not has_decimal then
+				result = char .. result
+				has_decimal = true
+			else
+				break
+			end
+		elseif tonumber(char) then
+			result = char .. result
+		else
+			break
+		end
+	end
 
-    return result
+	return result
 end
 
 function get_tuning_list(track)
@@ -84,7 +84,7 @@ function get_selected_notes(take)
 
 	local retval, notes_count, ccs, sysex = reaper.MIDI_CountEvts(take)
 	local notes = {}
-    for i = notes_count, 1, -1  do
+	for i = notes_count, 1, -1  do
 		local note = {}
 		note.retval, note.sel, note.muted, note.startppqpos, note.endppqpos, note.chan, note.pitch, note.vel = reaper.MIDI_GetNote(take, i-1)
 

@@ -263,6 +263,7 @@ end
 local ctx = reaper.ImGui_CreateContext('Cordelia offline')
 local csound_code = 'default text'
 
+
 reaper.ImGui_SetNextWindowSize(ctx, 650, 995, 1)
 reaper.ImGui_Text(ctx, 'Csound instrument')
 
@@ -432,10 +433,40 @@ function main_context()
 
 end
 
+theme_colors = {
+	Border = 0xBFAF00FF,  -- Dark Pastel Yellow
+	Button = 0xCDCD00FF,  -- Dark Pastel Yellow
+	ButtonActive = 0xB5A200FF,  -- Dark Pastel Yellow
+	ButtonHovered = 0xD6D600FF,  -- Dark Pastel Yellow
+	FrameBg = 0xCDCD00FF,  -- Dark Pastel Yellow
+	FrameBgHovered = 0xE6E600FF,  -- Dark Pastel Yellow
+	Header = 0xB5A200FF,  -- Dark Pastel Yellow
+	HeaderActive = 0x8C7A0087,  -- Dim Dark Pastel Yellow
+	HeaderHovered = 0xB5A200FF,  -- Dark Pastel Yellow
+	ResizeGrip = 0xB5A200FF,  -- Dark Pastel Yellow
+	ResizeGripActive = 0x8C7A0087,  -- Dim Dark Pastel Yellow
+	ResizeGripHovered = 0xB5A200FF,  -- Dark Pastel Yellow
+	TextSelectedBg = 0x8C7A0087,  -- Dim Dark Pastel Yellow
+	TitleBg = 0xBFAF00FF,  -- Dark Pastel Yellow
+	TitleBgActive = 0x000000FF,  -- Black
+	WindowBg = 0xBFAF00FF,  -- Dark Pastel Yellow
+}
+function set_theme()
+	for k, color in pairs( theme_colors ) do
+		local color_str = reaper.GetExtState( "XR_ImGui_Col", k )
+		if color_str ~= "" then
+			color = tonumber( color_str, 16 )
+		end
+		reaper.ImGui_PushStyleColor(ctx, reaper[ "ImGui_Col_" .. k ](), color )
+	end
+end
+
 
 function defer_GUI()
 
+
 	local visible, keep_GUI_open = reaper.ImGui_Begin(ctx, 'Cordelia offline', true)
+
 
 	if visible then
 
@@ -460,13 +491,11 @@ else
 	log('No item selected')
 end
 
-
-
 local progress_bar = {}
 local lasttime_pbar = os.time()
 if not progress_bar.plots then
 	progress_bar.plots = {
-	  progress     = 0.0
+	  progress = 0.0
 	}
 end
 

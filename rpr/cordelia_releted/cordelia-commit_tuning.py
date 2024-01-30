@@ -3,11 +3,15 @@ import json, math, re, os, json, subprocess
 from pathlib import Path
 
 CORDELIA_DIR = '/Users/j/Documents/PROJECTs/CORDELIA'
+homebrew_directory = '/opt/homebrew/bin'
+
+# Modify the PATH environment variable
+os.environ['PATH'] = f"{homebrew_directory}:{os.environ['PATH']}"
 
 with open(f'{CORDELIA_DIR}/_cordelia/config/SCALA.json') as f:
 	SCALA_JSON = json.load(f)
 
-with open(f'{CORDELIA_DIR}/rpr/midi_name_freq.json') as f:
+with open(f'{CORDELIA_DIR}/rpr/cordelia_releted/midi_name_freq.json') as f:
 	MIDI_NAME_FREQ = json.load(f)
 
 def log(string):

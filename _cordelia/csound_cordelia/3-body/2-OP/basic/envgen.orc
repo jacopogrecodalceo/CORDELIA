@@ -8,6 +8,11 @@ gisotrap		ftgen	0, 0, gienvdur, 7, 0, gisotrap_ramp, 1, gisotrap_seg, 1, gisotra
 	
 ifenvmod	init	floor(iftenv)-iftenv
 iftenvreal	abs	floor(iftenv)
+
+if ftexists(iftenvreal) == 0 || iftenvreal == 0 then
+	iftenvreal init gisotrap
+endif
+
 idur_env init gienvdur-1
 imax init 1
 

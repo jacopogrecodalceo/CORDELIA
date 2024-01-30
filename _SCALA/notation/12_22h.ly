@@ -58,7 +58,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 	}
 }
 \header {
-	title = \markup {\override #'(font-name . "Longinus") "ARCHYTAS12"}
+	title = \markup {\override #'(font-name . "Longinus") "12 22H"}
 	tagline = \date
 }
 
@@ -70,7 +70,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 			\time 12/4
 
 			
-						g4_"+0.0c"^\markup {
+						a4_"+0.0c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -82,12 +82,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"1/1"}
 								\vspace #-.65
-								\line {"392.00Hz"}
+								\line {"440.00Hz"}
 							}
 						}
 					
 
-						aes4_"-1.9c"^\markup {
+						bes4_"+9.09c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -97,14 +97,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"01"}
 								\vspace #-.65
-								\line {"98.09"}
+								\line {"109.0"}
 								\vspace #-.65
-								\line {"414.85Hz"}
+								\line {"468.62Hz"}
 							}
 						}
 					
 
-						a4_"+17.54c"^\markup {
+						b4_"+18.18c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -114,14 +114,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"02"}
 								\vspace #-.65
-								\line {"217.5"}
+								\line {"218.1"}
 								\vspace #-.65
-								\line {"444.48Hz"}
+								\line {"499.10Hz"}
 							}
 						}
 					
 
-						bes4_"+15.64c"^\markup {
+						c4_"+27.27c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -131,14 +131,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"03"}
 								\vspace #-.65
-								\line {"315.6"}
+								\line {"327.2"}
 								\vspace #-.65
-								\line {"470.39Hz"}
+								\line {"531.56Hz"}
 							}
 						}
 					
 
-						b4_"-6.87c"^\markup {
+						cis4_"+36.36c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -148,14 +148,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"04"}
 								\vspace #-.65
-								\line {"393.1"}
+								\line {"436.3"}
 								\vspace #-.65
-								\line {"491.93Hz"}
+								\line {"566.13Hz"}
 							}
 						}
 					
 
-						c4_"-8.77c"^\markup {
+						d4_"-9.09c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -165,14 +165,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"05"}
 								\vspace #-.65
-								\line {"491.2"}
+								\line {"490.9"}
 								\vspace #-.65
-								\line {"520.61Hz"}
+								\line {"584.25Hz"}
 							}
 						}
 					
 
-						cis4_"+10.67c"^\markup {
+						ees4_"+-0.0c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -182,14 +182,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"06"}
 								\vspace #-.65
-								\line {"610.6"}
+								\line {"600.0"}
 								\vspace #-.65
-								\line {"557.79Hz"}
+								\line {"622.25Hz"}
 							}
 						}
 					
 
-						d4_"+8.77c"^\markup {
+						e4_"+9.09c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -199,14 +199,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"07"}
 								\vspace #-.65
-								\line {"708.7"}
+								\line {"709.0"}
 								\vspace #-.65
-								\line {"590.31Hz"}
+								\line {"662.73Hz"}
 							}
 						}
 					
 
-						ees4_"+6.87c"^\markup {
+						f4_"+18.18c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -216,14 +216,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"08"}
 								\vspace #-.65
-								\line {"806.8"}
+								\line {"818.1"}
 								\vspace #-.65
-								\line {"624.73Hz"}
+								\line {"705.83Hz"}
 							}
 						}
 					
 
-						e4_"+26.31c"^\markup {
+						fis4_"+27.27c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -233,14 +233,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"09"}
 								\vspace #-.65
-								\line {"926.3"}
+								\line {"927.2"}
 								\vspace #-.65
-								\line {"669.35Hz"}
+								\line {"751.74Hz"}
 							}
 						}
 					
 
-						f4_"-17.54c"^\markup {
+						g4_"+36.36c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -250,14 +250,14 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"10"}
 								\vspace #-.65
-								\line {"982.4"}
+								\line {"1036."}
 								\vspace #-.65
-								\line {"691.41Hz"}
+								\line {"800.63Hz"}
 							}
 						}
 					
 
-						fis4_"+1.9c"^\markup {
+						aes4_"+45.46c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -267,9 +267,9 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"11"}
 								\vspace #-.65
-								\line {"1101."}
+								\line {"1145."}
 								\vspace #-.65
-								\line {"740.80Hz"}
+								\line {"852.71Hz"}
 							}
 						}
 					

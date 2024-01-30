@@ -7,7 +7,7 @@ ksmps=32
 nchnls=2
 0dbfs=1
 instr 1
-aout vco2 .5, 440
+aout oscili .05, 340
 outs aout, aout
 endin
 ]]
@@ -18,7 +18,6 @@ sco = "i1 0 10"
 local c = luaCsnd6.Csound()
 c:SetOption("-odac")  -- Using SetOption() to configure Csound
 c:SetOption("-+rtaudio=PortAudio")  -- Using SetOption() to configure Csound
-                      -- Note: use only one commandline flag at a time
 
 c:CompileOrc(orc)     -- Compile the Csound Orchestra string
 c:ReadScore(sco)      -- Compile the Csound SCO String
