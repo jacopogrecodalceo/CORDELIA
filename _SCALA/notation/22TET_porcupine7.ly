@@ -58,7 +58,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 	}
 }
 \header {
-	title = \markup {\override #'(font-name . "Longinus") "OLYMPOS"}
+	title = \markup {\override #'(font-name . "Longinus") "22TET PORCUPINE7"}
 	tagline = \date
 }
 
@@ -67,10 +67,10 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 		\accidentalStyle forget
 		 {
 			\textLengthOn
-			\time 5/4
+			\time 7/4
 
 			
-						g4_"+0.0c"^\markup {
+						a4_"+0.0c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -82,75 +82,109 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"1/1"}
 								\vspace #-.65
-								\line {"392.00Hz"}
+								\line {"440.00Hz"}
 							}
 						}
 					
 
-						aes4_"+11.73c"^\markup {
+						b4_"-36.36c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"minor diatonic semitone"
+											""
 										}		
 									}
 								\vspace #.15
 								\line {"01"}
 								\vspace #-.65
-								\line {"16/15"}
+								\line {"163.6"}
 								\vspace #-.65
-								\line {"418.13Hz"}
+								\line {"483.62Hz"}
 							}
 						}
 					
 
-						c4_"-1.96c"^\markup {
+						c4_"+27.27c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"perfect fourth"
+											""
 										}		
 									}
 								\vspace #.15
 								\line {"02"}
 								\vspace #-.65
-								\line {"4/3"}
+								\line {"327.2"}
 								\vspace #-.65
-								\line {"522.66Hz"}
+								\line {"531.56Hz"}
 							}
 						}
 					
 
-						cis4_"+9.78c"^\markup {
+						d4_"-9.09c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"2nd tritone"
+											""
 										}		
 									}
 								\vspace #.15
 								\line {"03"}
 								\vspace #-.65
-								\line {"64/45"}
+								\line {"490.9"}
 								\vspace #-.65
-								\line {"557.50Hz"}
+								\line {"584.25Hz"}
 							}
 						}
 					
 
-						f4_"-3.91c"^\markup {
+						e4_"+9.09c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"Pythagorean minor seventh"
+											""
 										}		
 									}
 								\vspace #.15
 								\line {"04"}
 								\vspace #-.65
-								\line {"16/9"}
+								\line {"709.0"}
 								\vspace #-.65
-								\line {"696.88Hz"}
+								\line {"662.73Hz"}
+							}
+						}
+					
+
+						fis4_"-27.27c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											""
+										}		
+									}
+								\vspace #.15
+								\line {"05"}
+								\vspace #-.65
+								\line {"872.7"}
+								\vspace #-.65
+								\line {"728.42Hz"}
+							}
+						}
+					
+
+						g4_"+36.36c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											""
+										}		
+									}
+								\vspace #.15
+								\line {"06"}
+								\vspace #-.65
+								\line {"1036."}
+								\vspace #-.65
+								\line {"800.63Hz"}
 							}
 						}
 					

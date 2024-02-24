@@ -159,10 +159,15 @@ def main():
 			log(f'WARNING: {tuning.name} length is not the same as the values!\nWritten length is {tuning.length} and calculated {len(tuning.scala_data)}')
 
 		#retval, title, num_inputs, captions_csv, retvals_csv, retvals_csv_sz = RPR_GetUserInputs('Base frequency', 1, 'Insert base frequency', 'a4', 128)
-		base_frequency_name = base_freq.capitalize()
+		
+		if base_freq[0].isalpha():
+			base_frequency_name = base_freq.capitalize()
 
-		base_midi_note = MIDI_NAME_FREQ['note_name'].index(base_frequency_name)
-		base_frequency = MIDI_NAME_FREQ['freq'][base_midi_note]
+			base_midi_note = MIDI_NAME_FREQ['note_name'].index(base_frequency_name)
+			base_frequency = MIDI_NAME_FREQ['freq'][base_midi_note]
+		else:
+			base_frequency = float(eval(base_freq))
+			base_midi_note = min(range(len(MIDI_NAME_FREQ['freq'])), key=lambda i: abs(MIDI_NAME_FREQ['freq'][i] - base_frequency))
 
 		if retval:
 			

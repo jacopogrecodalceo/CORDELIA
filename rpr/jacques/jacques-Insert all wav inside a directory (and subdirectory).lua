@@ -49,6 +49,7 @@ end
 
 folder = dialog()
 files = look_for_wav(folder)
+if #files > 35 then files = {} end
 
 function main()
 
@@ -56,8 +57,9 @@ function main()
 
 	-- LOOP THROUGH SELECTED ITEMS
 	
-	add_each_as_a_track(files)
-
+	if #files > 1 then
+		add_each_as_a_track(files)
+	end
 	reaper.Undo_EndBlock("Offset selected media items source positions by snap offset length", -1) -- End of the undo block. Leave it at the bottom of your main function.
 
 end
