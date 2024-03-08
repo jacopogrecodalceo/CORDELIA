@@ -1,7 +1,7 @@
 ;a sweet sound with a tiny, harsh attack
 
 gkaaron2_mod	init 1 ;mod parameter for aaron2 instr
-gkaaron2_indx	init 3 ;index parameter for aaron2 instr
+gkaaron2_indx	init 5 ;index parameter for aaron2 instr
 gkaaron2_detune	init 0 ;detune parameter for aaron2 instr
 
 giaaron2_atk		init .0125
@@ -54,7 +54,7 @@ ipanfreq	init random:i(-.95, .95)
 
 aout	repluck random:i(.015, .35), idyn, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25),  gitri)
 
-aout	*= cosseg(0, giaaron2_atk, 1, irel, 0)
+aout	*= cosseg:a(0, giaaron2_atk, 1, irel, 0)
 aout	dcblock2 aout
 
 	$channel_mix
@@ -79,7 +79,7 @@ ipanfreq	= random:i(-.95, .95)
 
 aout	repluck random:i(.015, .35), $dyn_var, icps + random:i(-ipanfreq, ipanfreq), randomh:k(.25, .95, random:i(.05, .15)), random:i(.05, .65), oscil3:a(1, random:i(.05, .25), gisine)
 
-aout	*= cosseg(0, giaaron2_atk, 1, idur/5, 0)
+aout	*= cosseg:a(0, giaaron2_atk, 1, idur/5, 0)
 aout	dcblock2 aout
 
 	$channel_mix
@@ -111,7 +111,7 @@ aout	balance arout, af
 
 aout	*= amp
 
-aout	*= cosseg(0, giaaron2_atk, idyn, idur, 0)
+aout	*= cosseg:a(0, giaaron2_atk, idyn, idur, 0)
 aout	dcblock2 aout
 
 	$channel_mix
