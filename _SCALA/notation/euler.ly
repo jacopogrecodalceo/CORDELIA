@@ -58,7 +58,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 	}
 }
 \header {
-	title = \markup {\override #'(font-name . "Longinus") "ARCH ENHT5"}
+	title = \markup {\override #'(font-name . "Longinus") "EULER"}
 	tagline = \date
 }
 
@@ -67,7 +67,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 		\accidentalStyle forget
 		 {
 			\textLengthOn
-			\time 7/4
+			\time 12/4
 
 			
 						a4_"+0.0c"^\markup {
@@ -87,70 +87,70 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 						}
 					
 
-						a4_"+14.19c"^\markup {
+						bes4_"-29.33c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"classic chromatic semitone, minor chroma"
 										}		
 									}
 								\vspace #.15
 								\line {"01"}
 								\vspace #-.65
-								\line {"245/2"}
+								\line {"25/24"}
 								\vspace #-.65
-								\line {"443.62Hz"}
+								\line {"458.33Hz"}
 							}
 						}
 					
 
-						bes4_"-37.04c"^\markup {
+						b4_"+3.91c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"Archytas' 1/3-tone"
+											"major whole tone"
 										}		
 									}
 								\vspace #.15
 								\line {"02"}
 								\vspace #-.65
-								\line {"28/27"}
+								\line {"9/8"}
 								\vspace #-.65
-								\line {"456.30Hz"}
+								\line {"495.00Hz"}
 							}
 						}
 					
 
-						bes4_"+11.73c"^\markup {
+						c4_"-25.42c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"minor diatonic semitone"
+											"classic augmented second"
 										}		
 									}
 								\vspace #.15
 								\line {"03"}
 								\vspace #-.65
-								\line {"16/15"}
+								\line {"75/64"}
 								\vspace #-.65
-								\line {"469.33Hz"}
+								\line {"515.62Hz"}
 							}
 						}
 					
 
-						cis4_"+49.28c"^\markup {
+						cis4_"-13.69c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"septimal semi-diminished fourth, 9/4-tone"
+											"major third"
 										}		
 									}
 								\vspace #.15
 								\line {"04"}
 								\vspace #-.65
-								\line {"35/27"}
+								\line {"5/4"}
 								\vspace #-.65
-								\line {"570.37Hz"}
+								\line {"550.00Hz"}
 							}
 						}
 					
@@ -172,19 +172,104 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 						}
 					
 
-						a4_"-48.77c"^\markup {
+						ees4_"-9.78c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											"septimal semi-diminished octave"
+											"diatonic tritone"
 										}		
 									}
 								\vspace #.15
 								\line {"06"}
 								\vspace #-.65
-								\line {"35/18"}
+								\line {"45/32"}
 								\vspace #-.65
-								\line {"855.56Hz"}
+								\line {"618.75Hz"}
+							}
+						}
+					
+
+						e4_"+1.96c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"perfect fifth"
+										}		
+									}
+								\vspace #.15
+								\line {"07"}
+								\vspace #-.65
+								\line {"3/2"}
+								\vspace #-.65
+								\line {"660.00Hz"}
+							}
+						}
+					
+
+						f4_"-27.37c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"classic augmented fifth"
+										}		
+									}
+								\vspace #.15
+								\line {"08"}
+								\vspace #-.65
+								\line {"25/16"}
+								\vspace #-.65
+								\line {"687.50Hz"}
+							}
+						}
+					
+
+						fis4_"-15.64c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"major sixth, BP sixth"
+										}		
+									}
+								\vspace #.15
+								\line {"09"}
+								\vspace #-.65
+								\line {"5/3"}
+								\vspace #-.65
+								\line {"733.33Hz"}
+							}
+						}
+					
+
+						g4_"-23.46c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											""
+										}		
+									}
+								\vspace #.15
+								\line {"10"}
+								\vspace #-.65
+								\line {"225/1"}
+								\vspace #-.65
+								\line {"773.44Hz"}
+							}
+						}
+					
+
+						aes4_"-11.73c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"classic major seventh"
+										}		
+									}
+								\vspace #.15
+								\line {"11"}
+								\vspace #-.65
+								\line {"15/8"}
+								\vspace #-.65
+								\line {"825.00Hz"}
 							}
 						}
 					

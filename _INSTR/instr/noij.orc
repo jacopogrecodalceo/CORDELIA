@@ -29,7 +29,7 @@ aSigR			= aCarrierR * $dyn_var
 
 aFilterR		bqrez	aSigR, icps+(icps*(16*$dyn_var)), .75
 aout			balance2 aFilterR, aSigR
-
+aout			dcblock2 aout
 	$dur_var(10)
 	$end_instr
 

@@ -17,6 +17,7 @@ kvrate	= gkbeatf*ival[cosseg(0, idur, ilen-1)]
 kvdpth	cosseg 0, idur, .075
 
 aout	fmb3 $dyn_var, icps, kc1, kc2, kvdpth, kvrate
+aout	dcblock2 aout
 aout /= 2
 	$dur_var(10)
 	$end_instr

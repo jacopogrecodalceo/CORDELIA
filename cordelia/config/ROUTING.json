@@ -49,6 +49,11 @@
         "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tcordelia_flanger PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "opcode cordelia_flanger, a, akk\n    ain, ktime, kfb xin\n\naout       flanger ain, a(portk(ktime, gkbeats/24)), portk(kfb, .025), 15\n\n    xout aout\n    endop"
     },
+    "flij": {
+        "input": "kkk",
+        "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_flanger_mix PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_flanger_mix, a, akkk\n    ain, ktime, kfb, kmix xin\n\nadel       flanger ain, a(ktime), kfb, 15\naout\t    = ain*(1-kmix) + adel*kmix\n\n    xout aout\n    endop"
+    },
     "folij": {
         "input": "Sk",
         "core": "PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich",

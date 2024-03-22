@@ -4,7 +4,7 @@ import pprint
 from constants.var import cordelia_instr_start_num
 from constants.var import cordelia_json
 
-from utils.debug import line_profile_it
+#from utils.debug import line_profile_it
 
 names_last = {}
 routing_json = cordelia_json['ROUTING']

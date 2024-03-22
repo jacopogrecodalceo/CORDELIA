@@ -24,7 +24,7 @@ arev3		vcomb abel/4, idur*(1+k(envgen(idur, ienv)*4)), 1/(icps*9/8), idur
 aout		= abel + arev1/12 + arev2/9 + arev3/7
 
 aout		*= idyn_fact
-
+aout		dcblock2 aout
 	$channel_mix
 	endin
 

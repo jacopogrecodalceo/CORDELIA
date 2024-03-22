@@ -70,7 +70,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 			\time 7/4
 
 			
-						g4_"+0.0c"^\markup {
+						a4_"+0.0c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -82,12 +82,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"1/1"}
 								\vspace #-.65
-								\line {"392.00Hz"}
+								\line {"440.00Hz"}
 							}
 						}
 					
 
-						a4_"-17.6c"^\markup {
+						b4_"-17.6c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -99,12 +99,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"10/9"}
 								\vspace #-.65
-								\line {"435.55Hz"}
+								\line {"488.89Hz"}
 							}
 						}
 					
 
-						bes4_"+15.64c"^\markup {
+						c4_"+15.64c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -116,12 +116,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"6/5"}
 								\vspace #-.65
-								\line {"470.39Hz"}
+								\line {"528.00Hz"}
 							}
 						}
 					
 
-						c4_"-1.96c"^\markup {
+						d4_"-1.96c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -133,12 +133,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"4/3"}
 								\vspace #-.65
-								\line {"522.66Hz"}
+								\line {"586.67Hz"}
 							}
 						}
 					
 
-						d4_"+1.95c"^\markup {
+						e4_"+1.96c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -150,12 +150,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"3/2"}
 								\vspace #-.65
-								\line {"587.99Hz"}
+								\line {"660.00Hz"}
 							}
 						}
 					
 
-						e4_"-15.64c"^\markup {
+						fis4_"-15.64c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -167,12 +167,12 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"5/3"}
 								\vspace #-.65
-								\line {"653.33Hz"}
+								\line {"733.33Hz"}
 							}
 						}
 					
 
-						f4_"+17.6c"^\markup {
+						g4_"+17.6c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -184,7 +184,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #-.65
 								\line {"9/5"}
 								\vspace #-.65
-								\line {"705.59Hz"}
+								\line {"792.00Hz"}
 							}
 						}
 					

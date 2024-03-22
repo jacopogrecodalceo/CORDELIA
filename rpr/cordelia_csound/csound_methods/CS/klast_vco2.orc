@@ -71,7 +71,7 @@ if kf0 != kf_temp then
 endif
 kf_temp = kf0
 
-kn_harm = sr/(kf0*4)
+kn_harm = sr/2
 
 a1      buzz 0dbfs, portk(kf0, abs(jitter(kport, 1/12, 1))), kn_harm, -1
 a2      vco2 4*(krms*kerr), kf0_last

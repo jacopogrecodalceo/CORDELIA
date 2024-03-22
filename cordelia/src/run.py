@@ -3,7 +3,7 @@ from constants.var import cordelia_init_code, cordelia_compile
 from constants.var import memories
 
 from src import init, lexer, parser, interpreter
-from utils.debug import line_profile_it
+#from utils.debug import line_profile_it
 
 PRINT_MESSAGE = True
 

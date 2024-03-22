@@ -479,7 +479,7 @@ function store_tracks(channels, sr, ksmps)
 		score_file:write('\n\nevent_i "e", 0, ' .. project_len + 5)
 		score_file:close()
 
-		local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3 cordelia.py -s "' .. score_path .. '"'
+		local execute_cordelia = 'cd ' .. CORDELIA_PATH .. ' && ' .. '/opt/homebrew/bin/python3.11 cordelia.py -s "' .. score_path .. '"'
 		--log(execute_cordelia)
 		os.execute(execute_cordelia)
 
