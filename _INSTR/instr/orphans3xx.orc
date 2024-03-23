@@ -34,10 +34,10 @@ aosc		/= 3
 acheby		chebyshevpoly  aosc, k0, k1*idyn, k2, k3, k4, k5*idyn, k6
 
 ; avoid clicks, scale final amplitude, and output
-ideclick_atk	init .005
+ideclick_atk	init .05
 adeclick		linseg 0, ideclick_atk, 1, idur - (ideclick_atk*2), 1, ideclick_atk, 0
 
-aout		dcblock2 acheby*idyn_factor*adeclick
+aout		dcblock2 acheby*idyn_factor*adeclick;+aosc*(1-adeclick)
 
 	$dur_var(5)
 	$end_instr
