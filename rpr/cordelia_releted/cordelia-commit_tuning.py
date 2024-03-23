@@ -8,7 +8,7 @@ homebrew_directory = '/opt/homebrew/bin'
 # Modify the PATH environment variable
 os.environ['PATH'] = f"{homebrew_directory}:{os.environ['PATH']}"
 
-with open(f'{CORDELIA_DIR}/_cordelia/config/SCALA.json') as f:
+with open(f'{CORDELIA_DIR}/cordelia/config/SCALA.json') as f:
 	SCALA_JSON = json.load(f)
 
 with open(f'{CORDELIA_DIR}/rpr/cordelia_releted/midi_name_freq.json') as f:

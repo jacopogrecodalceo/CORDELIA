@@ -7,6 +7,10 @@ read commit
 # Navigate to the folder you want to push
 cd $(dirname "$0")
 
+cp -r "/Users/j/.local/share/nvim/site/pack/csound/start/cordelia" ./vim-config
+
+cp "/Users/j/.config/nvim/init.vim" ./vim-config
+
 # Add all files in the folder to the Git repository
 git add .
 

@@ -1,6 +1,6 @@
 
 CORDELIA_SON = '/Users/j/Documents/script/OOT_Get_Heart.wav'
-CORDELIA_PATH = '/Users/j/Documents/PROJECTs/CORDELIA/_cordelia'
+CORDELIA_PATH = '/Users/j/Documents/PROJECTs/CORDELIA/cordelia'
 
 function log(e, indent)
 	if type(e) == 'table' then

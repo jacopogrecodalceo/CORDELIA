@@ -158,7 +158,7 @@ function get_selected_audio_item()
 		local source_end = source_start + reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
 		local command = string.format('python3 "%s" "%s" %f %f', librosa_script, file, source_start, source_end) ]]
 
-		local command = string.format('/opt/homebrew/bin/python3 "%s" "%s"', librosa_script, file)
+		local command = string.format('/opt/homebrew/bin/python3.11 "%s" "%s"', librosa_script, file)
 		log(command)
 		os.execute(command)
 
