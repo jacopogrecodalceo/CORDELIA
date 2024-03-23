@@ -1,7 +1,7 @@
-" Csound REPL functionality
+" Cordelia inspired by Steven Yi
 " https://github.com/kunstmusik/csound-vim-repl
-" Language: csound
-" Maintainer: Steven Yi <stevenyi@gmail.com>
+" Language: Cordelia
+" Maintainer: jacopo greco d'alceo
 " License: MIT
 " Version: 1.0 
 

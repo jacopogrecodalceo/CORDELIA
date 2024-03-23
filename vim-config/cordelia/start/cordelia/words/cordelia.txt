@@ -1347,6 +1347,7 @@ sqrt
 squinewave
 sr
 statevar
+Stept
 stix
 strcat
 strcatk
