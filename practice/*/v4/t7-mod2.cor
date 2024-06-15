@@ -1,0 +1,30 @@
+
+
+
+gkpulse = 110;*pump(4, fill(.5, 1, .25, 2))
+
+gktuning = scala.ptolemy_diat
+
+eu: 8, 8, 2
+	@cascadexp
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
+	mf
+	tig.a(5)
+	c3-8.16: classicr
+	e4-8.12: eclassicr
+
+eu: 8, 8, 2
+	@bd808
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
+	mf
+	tig.a(5)
+	90
+
+eu: 8, 8, 2
+	@cascadexp
+	sn+(1-tablei((chnget:k("heart")*24)%1, classicr, 1))
+	mf
+	tig.a(5)
+	g4-8.12: cat
+
+

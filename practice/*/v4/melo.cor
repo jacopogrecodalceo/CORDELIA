@@ -1,0 +1,18 @@
+
+gkpulse = 90+pump(8, fill(-45, 0, -10, 0))
+
+gktuning pump 8, fill(scala.edo7, scala.edo13, scala.edo23)
+
+eujo: 8, 8, 16
+	@fuji
+	wn*once(2, 1, 1)
+	accent(3, f)
+	cat.a(5)
+	a2: 0 4 7 3
+
+eujo: 8, 8, 16
+	@org
+	wn*once(2, 1, 1)
+	accent(3, pp)
+	cat.a(5)
+	c3: 0 4 7 3

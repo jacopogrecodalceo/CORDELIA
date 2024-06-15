@@ -1,0 +1,40 @@
+
+
+
+
+
+gkpulse = 90
+
+gktuning = scala.edo7
+
+eu: 14, 16, 16
+	@piantos;.shij(qn, .5, 1)
+	wn;*random:k(1, 4), qn
+	ff, pp
+	classic.a(5)
+	stept(c3, ionian, pump(16, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+
+
+
+
+
+
+
+
+gkpulse = 90+jitter(10, .005, .025)
+
+gktuning = pump(3, fill(scala.edo7, scala.edo8, scala.edo9, scala.edo10))
+
+eu: 9, 16, 4
+	@piantos;.shij(qn, .5, 1)
+	qn, sn ;*random:k(1, 4), qn
+	mf
+	classic.a(5)
+	stept(f3, ionian, pump(16, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+	stept(a3, ionian, pump(16, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+
+
+
+

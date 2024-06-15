@@ -1,0 +1,17 @@
+
+
+gkpulse = 140;*pump(4, fill(.5, 1, .25, 2))
+
+gktuning pump 16, fill(scala.edo12, scala.edo7)
+
+
+eu: 3, 8, 32
+	@careless4.strij(ntof(c3)*pump(32, fill(.5, 1, 2)), .85)
+	bs*32
+	mp
+	spina
+	c1-8.2: classic
+	c3-8.24: classic
+	e4-8.24: classicr
+
+

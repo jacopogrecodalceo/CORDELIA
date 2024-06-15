@@ -1,0 +1,14 @@
+
+@gkpulse = 135
+
+eujo: 7, 16, 8
+	@fairest3
+	gkbeats*$once(4, .5, .5)
+	accent(3)
+	giclassic$atk(5)
+	cpstun($once(1, 2), int(64+pump(16, fillarray(1, 1, 2, 3))), gitetraj)
+	cpstun($once(1, 2), int(64+1+pump(16, fillarray(1, 1, 2, 3))), gitetraj)
+	cpstun($once(1, 2), int(64+2+pump(16, fillarray(1, 1, 2, 3))), gitetraj)
+	cpstun($once(1, 2), int(64+3+pump(16, fillarray(1, 1, 2, 3))), gitetraj)
+
+

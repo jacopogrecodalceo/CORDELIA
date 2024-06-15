@@ -1,0 +1,23 @@
+
+
+
+gkpulse	= 55*2
+
+gktuning = scala.edo31hex
+
+gkvar	= portk(pump(8, fill(2, 4, .25, 3)), sn)
+
+eu: 6, 16, 8
+	@rhod;.shij(sn, .5, gkvar, 0>5in8m/10);.cutij(pump(16, fill(8, 4, 12, 32)))
+	wn
+	mf
+	rome.a(5)
+	stept(c2, pentamin, random:k(0, 5))
+
+eu: 9, 16, 8, 2
+	r2@algo_so;.shij(sn, .5, gkvar, 0>5in8m/10);.cutij(pump(16, fill(8, 4, 12, 32)))
+	qn
+	f
+	rome.a(5)
+	stept(c2, pentamin, random:k(0, 5))
+

@@ -1,0 +1,36 @@
+
+
+
+gkpulse almost 75
+
+gkgain = 1
+
+gktuning pump 24, fill(scala.pto_diat, scala.edo13)
+
+eu: 4, 16, 8
+	@burd.combij(hn*lfh(3), 1/pump(32, fill(8, 4, 3, 9)), .05*lfh(48))
+	each(wn, hn)
+	each(p, 0)
+	each(merc, niob, 3)
+	g2-4.9: macb
+	bb2-1.12: macb
+
+eu: 16, 16, 2
+	@ixland@arm1
+	each(wn, sn)
+	each(mf, 0)
+	each(hade, classic)
+	b3-8.8: macb
+
+@dead3.tapij(sn, .5, 1): pump(16, fill(16, .96)), 0
+
+gkdead3_dur = 4
+
+@elwind: .2, 0
+
+eu: 3, 16, 4
+	@betweenmore
+	each(wn, 0)
+	0
+	each(hade, classic)
+	a3-8.23: macb

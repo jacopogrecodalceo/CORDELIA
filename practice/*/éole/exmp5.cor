@@ -1,0 +1,22 @@
+
+
+eujo: 11, 16, 16
+	@corpia.moogj(portk(cpstun($once(1, 2), 69+pump(4, fillarray(0, 1, 2, 7))-12, gi11_10ET), gkbeats/8), .85).moogj(portk(cpstun($once(1, 2), 14+69+pump(6, fillarray(0, 1, 2, 7)), gi11_10ET), gkbeats/3), .85)
+	gkbeats
+	accent(4, $fff)*cunt(0, 128, 1)
+	giclassic$atk(5)
+	cpstun($once(1, 2), 69+pump(4, fillarray(0, 1, 2)), gi11_10ET)
+	cpstun($once(1, 2), 69+pump(4, fillarray(random:k(1, 9)), 0), gi11_10ET)
+	cpstun($once(1, 2), 66+pump(4, fillarray(0, 1)), gi11_10ET)
+	cpstun($once(1, 2), 68+pump(4, fillarray(0, random:k(1, 9))), gi11_10ET)
+
+eujo: 11, 16, 16
+	@fairest3.moogj(portk(cpstun($once(1, 2), 69+pump(3, fillarray(0, 1, 2, 7)), gi11_10ET), gkbeats/8), .85).moogj(portk(cpstun($once(1, 2), 69+pump(8, fillarray(0, 1, 2, 7)), gi11_10ET), gkbeats/3)-12, .85)
+	gkbeats
+	accent(4, $f)*cunt(0, 128, 1)
+	$once(giclassic, gilikearev, gilikearev)$atk(5)
+	cpstun($once(1, 2), 69+pump(4, fillarray(0, 1, 2)), gi11_10ET)
+	cpstun($once(1, 2), 69+pump(4, fillarray(random:k(1, 9)), 0), gi11_10ET)
+	cpstun($once(1, 2), 66+pump(4, fillarray(0, 1)), gi11_10ET)
+	cpstun($once(1, 2), 68+pump(4, fillarray(0, random:k(1, 9))), gi11_10ET)
+

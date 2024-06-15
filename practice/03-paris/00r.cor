@@ -1,0 +1,15 @@
+
+;cordelia_tape: t/region/1, t/play
+
+gkpulse = 110/4
+
+gktuning = scala.pto_diat
+
+eu: 4, 16, 8
+	@mhont@repuck.moij(ntof(c4)*pump(32, fill(.25, 1, 3, 3/2)), .75)
+	wn
+	p
+	bea
+	c3-2.16: bea
+
+

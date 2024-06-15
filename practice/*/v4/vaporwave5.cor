@@ -1,0 +1,40 @@
+
+gkpulse	= 120
+
+gktuning = scala.pto_diat
+
+gkmod1 pump 1, fill(0, 0, 2, -1)
+
+eu: 8, 16, 2
+	@orphans3.moij(portk(mtof(ntom(b5)+pump(24, fillarray(0, 0, 2, 3, 7, 9))), lfh(1)*bs/3), .5)
+	qn
+	fff
+	likearev.a(15)
+	cpstun_render(ntom(b3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(1, 1, 2)
+	cpstun_render(ntom(d3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(.25, .5, 1)
+	cpstun_render(ntom(f#3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(.25, .5, 1)
+
+@orp: 4, p
+
+gkorp_dur = 1
+
+gkmod2 = 7
+
+eu: 8, 16, 64
+	@wutang.abij(bf)
+	wn*0
+	pppp
+	classic
+	cpstun_render(ntom(b3)+pump(4, fillarray(0, 0, 2, 3))+gkmod2, gktuning)*once(1, 1, 2)
+	cpstun_render(ntom(d3)+pump(4, fillarray(0, 0, 2, 3))+gkmod2, gktuning)*once(.25, .5, 1)
+	cpstun_render(ntom(f#3)+pump(4, fillarray(0, 0, 2, 3))+gkmod2, gktuning)*once(.25, .5, 1)
+
+
+eu: 8, 16, 2
+	@noij.moij(portk(mtof(ntom(b5)+pump(24, fillarray(0, 0, 2, 3, 7, 9))), lfh(1)*bs/3), .5+.45*in8m)
+	wn
+	ff
+	likearev.a(15)
+	cpstun_render(ntom(b3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(1, 1, 2)
+	cpstun_render(ntom(d3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(.25, .5, 1)
+	cpstun_render(ntom(f#3)+pump(4, fillarray(0, 0, 2, 3))+gkmod1, gktuning)*once(.25, .5, 1)

@@ -1,0 +1,20 @@
+
+gkgain = .75
+
+gkpulse almost 95
+
+eujo: 16-(gkp1*15), 16, 32
+	@sunij.getmeout(portk(gkp2, .005))
+	.5*(1-gkp1)+gkbeats/11
+	accent(4, $ff)
+	giclassic$atk(5)
+	2*80+gkp1*ntof("5G")
+	80+gkp1*ntof("5G")
+
+eujo: 16, 16, 32, .125
+	@mhon.getmeout(portk(gkp2, .005))
+	gkbeats/11
+	accent(4, $ff)
+	giclassic$atk(5)
+	80+gkp1*ntof("5G")
+

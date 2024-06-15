@@ -1,0 +1,28 @@
+
+gkpulse = 90
+
+gktuning = scala.edo7
+
+eu: 14, 32, 8
+	@fairest3
+	each(wn, qn, 3)
+	each(mf, mp)
+	iago.a(5)
+	c4-8.21: nere
+	bb4-9.19: nere
+
+eu: 14, 32, 8, 1
+	@piano
+	each(wn, qn)
+	each(mf, mp)
+	iago.a(5)
+	d4-8.21: nere
+	a4-9.18: nere
+
+eu: 14, 32, 8, 2
+	@pucky
+	each(wn, qn, 2)
+	each(mf, p)
+	iago.a(5)
+	c4-8.19: nere
+	g4-9.15: nere

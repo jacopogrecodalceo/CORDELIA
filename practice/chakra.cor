@@ -1,0 +1,22 @@
+
+
+
+gkpulse = 40
+
+gkfreq = pump(4, fill(396, 417, 528, 639, 741, 852, 963))
+
+saf: "xx", 16
+	@orphans3xx
+	wn*random:i(8, 12)
+	p
+	bea
+	gkfreq
+
+
+saf: "xx", 12
+	@org2
+	wn*random:i(8, 12)
+	mf
+	bea
+	gkfreq/4
+

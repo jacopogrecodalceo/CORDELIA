@@ -1,0 +1,16 @@
+
+
+gkpulse = 155/2
+
+gktuning = scala.euler_diat
+
+eu: 11, pump(16, fill(16, 24)), 4
+	@mhon.flanij(sn, .5)
+	each(wn*2, en, 2)
+	each(mp, 0, 2)
+	classic
+	c3-2.12: classic
+	f3-2.12: classic
+	g3: 1, 4, 5
+
+

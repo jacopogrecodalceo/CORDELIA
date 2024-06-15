@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+gkpulse = 95;/pump(16, fill(4, 2, 1, 8))
+
+gktuning = scala.edo31hex
+
+saf: "-u-x", 3
+	@click.skl(ntof(g3)*pump(48, fill(.25, 4, .25, 3, 3/2)), .5)
+	wn, sn
+	f, pp, 2
+	iago.a(5)
+	stept(a3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+
+saf: "-x-x", 4
+	@pwm;.skl(ntof(g3)*pump(48, fill(.25, 4, .25, 3, 3/2)), .85)
+	hn, qn
+	f, mp, 3
+	iago.a(5)
+	stept(a3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+	stept(bb3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+	stept(g3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+
+
+@partch_inspi.moij(ntof(g2), .85): .64, f
+

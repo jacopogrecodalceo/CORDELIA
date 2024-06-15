@@ -1,0 +1,21 @@
+@gkpulse = 75
+
+eujo: 11, 16, 2*int(randomh:k(1, 5, gkbeatf/12))
+	@puck
+	gkbeats*random:k(4, 12)
+	random:k($fff, $mp)
+	giclassic$atk(random:k(1, 95))
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)
+
+
+eujo: 11, 16, 2*int(randomh:k(1, 5, gkbeatf/12)), .25
+	@orphans3
+	gkbeats*random:k(4, 12)
+	random:k($ff, $mp)
+	giclassic$atk(random:k(1, 95))
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)*2
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)
+	cpstun($once(1, 2), stepm("2B", giminor, random:k(1, 12)), giweingarten)
+

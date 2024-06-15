@@ -1,0 +1,14 @@
+
+gkpulse almost 95
+
+gktuning = gidudon_aulos 
+
+eujo: 8, 8, 32
+	@sfpiano@orphans3
+	gkbeats*$once(.25, .25, 4)
+	accent(3, $f)*cunt(0, 128, 1)
+	gilikearev$atk(5)
+	stept("4Bb", gidorian, pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))))*$once(.25, .5, 1)
+
+
+

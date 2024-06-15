@@ -1,0 +1,22 @@
+
+
+
+
+gkpulse = 110
+
+gktuning = scala.pto_diat
+
+@arm1.cutij(pump(16, fill(16, 8, 4))): 64, mp
+
+gkarm1_dur = 4
+
+eu: 4, 16, 8
+	@burd.tapij(bs, .5, .5)
+	each(wn, hn)
+	each(p, pppp)
+	zeus
+	a3-1.9: ares
+	e3-2.9: ares
+	g3-3.9: ares
+
+

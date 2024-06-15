@@ -1,0 +1,16 @@
+gkpulse = 120
+
+gktuning = gi11_10ET
+
+jex: "1515", 4
+	@noij.flingj(gkbeatms/3, lfh(5))
+	gkbeats/$once(2, 4, 8, 1, .25)
+	accent(3, $ff)
+	gieclassic$atk(5)
+	stept("4C", giminor, $once(5, 1, 2, 5, 1, 2, 1, 2))
+	stept("4C", giminor, 3+$once(7, 1, 2, 5, 1, 2, 1, 6))
+	stept("4C", giminor, 4+$once(7, 1, 2, 5, 1, 2, 1, 6))
+	stept("2C", giminor, 2+pump(4, fillarray(1, 1, 2, 4)))
+
+
+

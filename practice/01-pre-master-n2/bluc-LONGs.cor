@@ -1,0 +1,65 @@
+
+gkpulse	= 35
+
+gkvar pump 1, fill(0, -2, -4, 2)
+
+
+gkd random 3, 5
+
+eu: 2, 4, 5
+	@aaron
+	gkbeats*gkd
+	f
+	mac
+	stept(a4, gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept(d5, giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+
+eu: 2, 4, 5.15
+	@click
+	gkbeats*gkd
+	p
+	kazan
+	stept(a4, gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept(d5, giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+
+eu: 2, 4, 5
+	@fim
+	gkbeats*gkd
+	f
+	mac
+	stept("2A", gipentamin, pump(16, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("3A", gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("3D", giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+
+eu: 2, 4, 5
+	@cascade
+	gkbeats*gkd
+	fff
+	bea
+	stept("5D", gipentamin, pump(16, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("6A", gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("4D", giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+eu: 2, 4, 48
+	@witches
+	gkbeats*gkd*2
+	p
+	-hader
+	stept("2D", gipentamin, pump(16, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("2A", gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("3D", giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+eu: 2, 4, 5.15
+	@fim
+	gkbeats*gkd
+	f
+	classic.a(5)
+	stept("0D", gipentamin, pump(16, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("2A", gipentamin, pump(32, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
+	stept("1D", giminor3, pump(32, fillarray(1, 2, 7, 1, 3, 7, -2, 2)+gkvar))
+
+
+

@@ -1,0 +1,15 @@
+gkpulse	almost 95
+
+eu: 3, 16, 12, "heart"
+	@sufij2@valle.abj(lfh(6))
+	gkbeats*8
+	$f
+	$once(giclassic, gieclassic, gired)$atk(5)
+	step("4B", giminor3, once(fillarray(0, 1, random:k(4, 10), 7, 2)))
+
+eu: 3, 16, 16, "heart", 3
+	@sufij@planche.abj(lfh(6))
+	gkbeats
+	$f
+	$once(giclassic, gieclassic, gired)$atk(5)
+	step("4B", giminor3, once(fillarray(0, 1, random:k(4, 10), 7, 2)))

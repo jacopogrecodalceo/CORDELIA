@@ -1,0 +1,29 @@
+
+
+
+gkpulse = 75;-go(0, 60, 100)
+
+gktuning pump 1, fill(scala.pyt12, scala.edo31hex)
+
+eu: 6, 8, 8
+	@pianon@noij.skl(portk(stept(b4, gilocrian, pump(24, fill(2, 12, 5, 15))), .5), .025)
+	qn*once(8, 4, 1, 0, 4)
+	ff
+	eclassic
+	stept(b2, gilocrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept(b2, gilocrian, 2+pump(22, fill(2, 3, 4, 0))+pump(12, fill(7, 5/2, -1)))*once(.75, 1, 2)
+	stept(b2, gilocrian, pump(26, fill(2, 3, 4, 0))+pump(56, fill(7, 5/2, -1)))*once(.25, 1, 2)
+
+gkgamelf_sonvs = 0
+
+eu: 16, 16, 8
+	@bebois@gamelf.skh(ntof(b2)*(1+3*lfh(2)), .65)
+	wn
+	mf
+	mac.a(5)
+	stept(b3, gilocrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept(b3, gilocrian, 2+pump(22, fill(2, 3, 4, 0))+pump(12, fill(7, 5/2, -1)))*once(.75, 1, 2)
+
+
+
+

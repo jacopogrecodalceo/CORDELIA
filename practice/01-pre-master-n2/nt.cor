@@ -1,0 +1,14 @@
+
+
+
+gkpulse = 75
+
+gktuning = scala.edo17
+
+eu: 32, 32, 32
+	@ixland
+	wn
+	each(f, mf)
+	mac
+	a4: pump(2, fill(0, 2, 0, 1)), pump(4, fill(7, 6, 8)), 11
+	e3: pump(2, fill(0, 2, 0, 1)), pump(4, fill(7, 6, 8)), 1

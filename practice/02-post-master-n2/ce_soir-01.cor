@@ -1,0 +1,21 @@
+
+
+
+
+
+gkpulse = 125
+
+gkgain = 1
+
+eu: 4, 8, 8
+	@knee.rinij(9, giasquare).cutij(3)
+	wn
+	fff
+	iago.a(5)
+	bb3: pump(8, fill(0, 2, 7))
+	d4: pump(8, fill(0, 2))
+
+
+@alina.cutij(8): 32, fff
+
+@orp: 8, ff

@@ -1,0 +1,22 @@
+gkpulse = 75
+
+eujo: 9, 9, 8
+	@ixland
+	gkbeats
+	accent(9, $mf)
+	kazan
+	cpstun(random:k(1, 2), pump(3, fillarray(0, 0, 1, 2))+ntom("3E"), scala.vitry)
+
+eujo: 13, 13, 8
+	@ixland
+	gkbeats
+	accent(13, $ff)
+	kazan
+	cpstun(random:k(1, 2), pump(4, fillarray(0, 3, 2, 5))+2+ntom("3F"), scala.vitry)
+
+eujo: 15, 15, 8
+	@ixland
+	gkbeats*$once(4, 0, 0)
+	accent(15, $ff)
+	kazan
+	cpstun(random:k(1, 2), pump(8, fillarray(0, 3, 2, 5))+ntom("3G"), scala.vitry)

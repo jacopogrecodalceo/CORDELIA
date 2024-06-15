@@ -1,0 +1,20 @@
+gkpulse almost 95
+
+eujo: 9, 16, 16
+	@careless@gesto1
+	gkbeats
+	accent(3, $fff)
+	gilikearev$atk(5)
+	cedonoi(gicsc1, 53+pump(32, fillarray(0, 3, $once(9, 11, 12, 7), 2)))*$once(.25, .5, 1)
+	cedonoi(gicsc1, 50+pump(4, fillarray(0, 3, 9, 2)))
+
+
+eujo: 2, 16, 16
+	+kch pump 4, fillarray(53, 53, 49, 55) 
+	@bebois
+	gkbeats*4
+	accent(3, $f)
+	gilikearev$atk(5)
+	cedonoi(gicsc1, kch+pump(32, fillarray(0, 3, 9, 2)))*1/16
+	cedonoi(gicsc1, 50+pump(2, fillarray(0, 3, 9, 2)))*1/16
+

@@ -1,0 +1,34 @@
+
+
+gkpulse = 125;-go(0, 60, 100)
+
+gktuning pump 2, fillarray(gi12_22h, giedo13)
+
+gkgain = go(.25, 95, 1)
+
+eu: 8, 8, 8, "heart"
+	r8@fairest3
+	gkbeats*5
+	accent(3, $fff)
+	gieclassic
+	stept("2B", gidorian, 3+pump(18, fillarray(2, 3, 4, 0))+pump(11, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("2B", gidorian, 3+pump(15, fillarray(2, 3, 4, 0))+pump(22, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+	stept("2B", gidorian, 5+pump(21, fillarray(2, 3, 4, 0))+pump(8, fillarray(7, 5/2, -1)))*$once(.75, 1, 2)
+
+eu: 3, 8, 24, "heart"
+	r8@bass
+	gkbeats
+	accent(3, $ff)
+	gieclassic$atk(5)
+	stept("3B", gidorian, pump(21, fillarray(2, 3, 4, 0))+pump(8, fillarray(7, 5/2, -1)))*$once(.75, 1, 1)
+
+amen(4, $fff)
+
+convj("amen", "fairest3")
+
+eu: 5, 8, 8, "heart"
+	@bd808
+	gkbeats*4
+	accent(3, $ff)
+	gieclassic$atk(5)
+	95

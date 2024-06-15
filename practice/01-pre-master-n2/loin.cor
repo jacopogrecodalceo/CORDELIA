@@ -1,0 +1,16 @@
+
+
+
+
+gkpulse = 155/2
+
+gktuning pump 8, fill(scala.edo23, scala.edo13)
+
+eu: 3, 8, 8
+	@alone.revij(bs, .5, 1)
+	each(wn, sn)
+	p
+	rosa
+	c3-2.12: atno
+
+

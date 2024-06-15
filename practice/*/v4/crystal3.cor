@@ -1,0 +1,16 @@
+
+
+gkpulse = 125
+
+gktuning pump 8, fill(scala.edo12, scala.undet)
+
+eujo: 5, 8, 8
+	-k1 lfh 1
+	@noij@sunij
+	qn+k1*1.5
+	accent(3, ff)
+	once(kazan, tig, tig)
+	a4: 0 1 5
+	bb4: 2 0 1 5
+
+

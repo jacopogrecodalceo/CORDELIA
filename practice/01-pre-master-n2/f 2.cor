@@ -1,0 +1,17 @@
+
+
+
+
+
+gkpulse = 130
+
+gktuning pump 8, fillarray(scala.partch_greek, scala.edo13)
+
+eu: 4, 16, 64
+	@mhont.moij(ntof(d5), .5+lfh(6)*.25)
+	wn*0
+	p
+	nere
+	d4: 0
+
+

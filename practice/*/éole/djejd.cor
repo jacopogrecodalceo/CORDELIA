@@ -1,0 +1,15 @@
+
+
+
+gkpulse = 125;-go(0, 60, 100)
+
+gktuning pump 2, fillarray(gi12_22h, giedo13)
+
+bleu(pump(8, fillarray(4, 8, 6, 12)), $fff)
+
+bleu(pump(16, fillarray(8, 6, 12, 16, 8)), $f)
+
+getmeout("bleu")
+
+getmeout("ninfa")
+

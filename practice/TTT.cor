@@ -1,0 +1,13 @@
+
+
+gkpulse	= 75
+
+eu: 2, 16, 8
+	@rhod
+	wn*2
+	fff
+	classic
+	stept(a4, pentamin, 1)
+
+
+

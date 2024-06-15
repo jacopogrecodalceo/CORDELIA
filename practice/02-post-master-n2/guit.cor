@@ -1,0 +1,36 @@
+
+
+
+
+
+
+
+
+gkpulse = 130
+
+gktuning = scala.edo12
+
+eu: 8, 16, 8
+	@in2@in1.strij(ntof(b3)+(ntof(b3)*4-ntof(b3))*jitter(1, gkbeatf/8, gkbeatf), .5).cutij(pump(16, fill(8, 4, 1, 4))).flanij(qn*lfh(1), .85).cutij(pump(4, fill(8, 4, 1, 4)))
+	wn
+	1
+	iago
+	1
+
+
+eu: 8, 16, 8
+	@in2@in1
+	wn*lfh(8)
+	1
+	bea
+	1
+
+eu: 6, 16, 16
+	@seno@knee
+	wn*in1m
+	mf
+	classic
+	stept(c#3, giwhole, pump(4, fill(0, -1, -2, -1)))
+
+
+

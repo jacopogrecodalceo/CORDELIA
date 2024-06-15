@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DS file for Kontakt 6 instrument Kawai Felt Piano -->
+<DecentSampler pluginVersion="1">
+  <groups seqMode="true_random">
+    <group name="RR1" volume="3.0dB" tuning="0.0" ampVelTrack="1" seqPosition="1" attack="0.005">
+      <sample path="Samples/Felt Piano m A6 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="105" start="72000" end="462024" loNote="99" hiNote="112" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B-1 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="23" start="72000" end="1371170" loNote="17" hiNote="23" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B0 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="35" start="72000" end="1273438" loNote="31" hiNote="35" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B1 RR1.wav" volume="-3.9999997615814dB" tuning="0.00" rootNote="47" start="72000" end="1287276" loNote="43" hiNote="47" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B2 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="59" start="72000" end="1088746" loNote="55" hiNote="59" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B3 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="71" start="72000" end="823506" loNote="67" hiNote="71" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="83" start="72000" end="560056" loNote="79" hiNote="83" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D2 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="50" start="72000" end="1283772" loNote="48" hiNote="50" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D3 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="62" start="72000" end="1062094" loNote="60" hiNote="62" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="74" start="72000" end="817822" loNote="72" hiNote="74" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D5 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="86" start="72000" end="582760" loNote="84" hiNote="86" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D6 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="98" start="72000" end="516308" loNote="91" hiNote="98" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#0 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="30" start="72000" end="1356406" loNote="24" hiNote="30" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#1 RR1.wav" volume="-2.0000002384186dB" tuning="0.00" rootNote="42" start="72000" end="1153148" loNote="36" hiNote="42" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#2 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="54" start="72000" end="1061366" loNote="51" hiNote="54" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#3 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="66" start="72000" end="948908" loNote="63" hiNote="66" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="78" start="72000" end="615728" loNote="75" hiNote="78" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#5 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="90" start="72000" end="392516" loNote="87" hiNote="90" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano p A6 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="105" start="72000" end="345002" loNote="99" hiNote="112" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B-1 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="23" start="69894" end="928998" loNote="17" hiNote="23" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B0 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="35" start="70713" end="1180942" loNote="31" hiNote="35" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B1 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="47" start="49973" end="1141198" loNote="43" hiNote="47" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B2 RR1.wav" volume="1.9999960660934dB" tuning="0.00" rootNote="59" start="71927" end="1011742" loNote="55" hiNote="59" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B3 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="71" start="71753" end="795422" loNote="67" hiNote="71" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="83" start="72000" end="567014" loNote="79" hiNote="83" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D1 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="38" start="71024" end="1058914" loNote="36" hiNote="38" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D2 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="50" start="71861" end="925162" loNote="48" hiNote="50" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D3 RR1.wav" volume="0.99999982118607dB" tuning="0.00" rootNote="62" start="72000" end="890782" loNote="60" hiNote="62" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="74" start="72000" end="777418" loNote="72" hiNote="74" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D5 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="86" start="72000" end="413434" loNote="84" hiNote="86" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D6 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="98" start="72000" end="412718" loNote="91" hiNote="98" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#0 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="30" start="71605" end="1118130" loNote="24" hiNote="30" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#1 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="42" start="71714" end="1316126" loNote="39" hiNote="42" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#2 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="54" start="71849" end="1288238" loNote="51" hiNote="54" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#3 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="66" start="72000" end="800580" loNote="63" hiNote="66" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#4 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="78" start="72000" end="652042" loNote="75" hiNote="78" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#5 RR1.wav" volume="0.0dB" tuning="0.00" rootNote="90" start="72000" end="343940" loNote="87" hiNote="90" loVel="1" hiVel="65" />
+    </group>
+    <group name="RR2" volume="3.0dB" tuning="0.0" ampVelTrack="1" seqPosition="2" attack="0.005">
+      <sample path="Samples/Felt Piano m A6 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="105" start="72000" end="501036" loNote="99" hiNote="112" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B-1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="23" start="72000" end="1296494" loNote="13" hiNote="23" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B0 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="35" start="72675" end="1407612" loNote="31" hiNote="35" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="47" start="72000" end="1334212" loNote="43" hiNote="47" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B2 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="59" start="72000" end="1156242" loNote="55" hiNote="59" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B3 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="71" start="72000" end="1061596" loNote="67" hiNote="71" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m B4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="83" start="72000" end="510084" loNote="79" hiNote="83" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="38" start="72000" end="1326160" loNote="36" hiNote="38" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D2 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="50" start="72000" end="1169396" loNote="48" hiNote="50" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D3 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="62" start="72000" end="1238046" loNote="60" hiNote="62" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="74" start="72000" end="921722" loNote="72" hiNote="74" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D5 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="86" start="72000" end="569708" loNote="84" hiNote="86" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m D6 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="98" start="72000" end="456424" loNote="91" hiNote="98" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#0 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="30" start="72000" end="1206486" loNote="24" hiNote="30" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#1 RR2.wav" volume="-2.0000002384186dB" tuning="0.00" rootNote="42" start="72000" end="1293408" loNote="39" hiNote="42" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#2 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="54" start="72000" end="1368338" loNote="51" hiNote="54" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#3 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="66" start="72000" end="960602" loNote="63" hiNote="66" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="78" start="72000" end="769178" loNote="75" hiNote="78" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano m F#5 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="90" start="72000" end="476960" loNote="87" hiNote="90" loVel="66" hiVel="127" />
+      <sample path="Samples/Felt Piano p A6 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="105" start="72000" end="409096" loNote="99" hiNote="112" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B-1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="23" start="72000" end="990392" loNote="13" hiNote="23" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B0 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="35" start="72000" end="1073582" loNote="31" hiNote="35" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="47" start="72000" end="1044044" loNote="43" hiNote="47" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B2 RR2.wav" volume="4.9999995231628dB" tuning="0.00" rootNote="59" start="71624" end="895194" loNote="55" hiNote="59" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B3 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="71" start="71688" end="739710" loNote="67" hiNote="71" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p B4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="83" start="72000" end="400692" loNote="79" hiNote="83" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="38" start="72000" end="912654" loNote="36" hiNote="38" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D2 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="50" start="62325" end="897024" loNote="48" hiNote="50" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D3 RR2.wav" volume="0.99999982118607dB" tuning="0.00" rootNote="62" start="71818" end="992894" loNote="60" hiNote="62" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="74" start="72000" end="741250" loNote="72" hiNote="74" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D5 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="86" start="72000" end="349888" loNote="84" hiNote="86" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p D6 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="98" start="72000" end="399408" loNote="91" hiNote="98" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#0 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="30" start="72000" end="848258" loNote="24" hiNote="30" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#1 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="42" start="72000" end="1134822" loNote="39" hiNote="42" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#2 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="54" start="72000" end="1097866" loNote="51" hiNote="54" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#3 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="66" start="72000" end="938620" loNote="63" hiNote="66" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#4 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="78" start="72000" end="570094" loNote="75" hiNote="78" loVel="1" hiVel="65" />
+      <sample path="Samples/Felt Piano p F#5 RR2.wav" volume="0.0dB" tuning="0.00" rootNote="90" start="72000" end="351884" loNote="87" hiNote="90" loVel="1" hiVel="65" />
+    </group>
+    <group name="release" volume="-4.2354221343994dB" tuning="0.0" ampVelTrack="1" trigger="release">
+      <sample path="Samples/Felt Piano Release A6.wav" volume="0.0dB" tuning="0.00" rootNote="105" start="70647" end="268608" loNote="99" hiNote="112" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B-1.wav" volume="0.0dB" tuning="0.00" rootNote="23" start="70647" end="288698" loNote="7" hiNote="23" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B0.wav" volume="0.0dB" tuning="0.00" rootNote="35" start="70647" end="240960" loNote="31" hiNote="35" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B1.wav" volume="0.0dB" tuning="0.00" rootNote="47" start="70647" end="239626" loNote="43" hiNote="47" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B2.wav" volume="0.0dB" tuning="0.00" rootNote="59" start="70647" end="244032" loNote="55" hiNote="59" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B3.wav" volume="0.0dB" tuning="0.00" rootNote="71" start="70647" end="187712" loNote="67" hiNote="71" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release B4.wav" volume="0.0dB" tuning="0.00" rootNote="83" start="70647" end="259392" loNote="79" hiNote="83" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D1.wav" volume="0.0dB" tuning="0.00" rootNote="38" start="70647" end="207872" loNote="36" hiNote="38" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D2.wav" volume="0.0dB" tuning="0.00" rootNote="50" start="70647" end="226926" loNote="48" hiNote="50" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D3.wav" volume="0.0dB" tuning="0.00" rootNote="62" start="70647" end="265770" loNote="60" hiNote="62" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D4.wav" volume="0.0dB" tuning="0.00" rootNote="74" start="73967" end="243008" loNote="72" hiNote="74" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D5.wav" volume="0.0dB" tuning="0.00" rootNote="86" start="70647" end="256320" loNote="84" hiNote="86" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release D6.wav" volume="0.0dB" tuning="0.00" rootNote="98" start="70647" end="195904" loNote="91" hiNote="98" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#0.wav" volume="0.0dB" tuning="0.00" rootNote="30" start="70647" end="261830" loNote="24" hiNote="30" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#1.wav" volume="0.0dB" tuning="0.00" rootNote="42" start="70647" end="245056" loNote="39" hiNote="42" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#2.wav" volume="0.0dB" tuning="0.00" rootNote="54" start="70647" end="244310" loNote="51" hiNote="54" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#3.wav" volume="0.0dB" tuning="0.00" rootNote="66" start="70647" end="208192" loNote="63" hiNote="66" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#4.wav" volume="0.0dB" tuning="0.00" rootNote="78" start="71487" end="246080" loNote="75" hiNote="78" loVel="1" hiVel="127" />
+      <sample path="Samples/Felt Piano Release F#5.wav" volume="0.0dB" tuning="0.00" rootNote="90" start="70647" end="243008" loNote="87" hiNote="90" loVel="1" hiVel="127" />
+    </group>
+  </groups>
+  <effects>
+    <effect type="lowpass_4pl" frequency="22000.0"/>
+    <effect type="reverb" wetLevel="0" roomSize="0.85" damping="0.2"/>
+  </effects>
+  
+  <ui bgImage="Images/bg_kawai.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+    <tab name="main">
+        <labeled-knob x="65" y="80" label="tone" type="float" minValue="220" maxValue="22000" value="22000" textColor="FFFFFFFF"
+            textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+            </labeled-knob>
+            
+          <labeled-knob x="210" y="80" label="reverb" type="float" minValue="0.0" maxValue="1" value="0.0" textColor="FFFFFFFF"
+            textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+            </labeled-knob>
+      
+      <labeled-knob x="350" y="80" label="notes volume" type="float" minValue="0" maxValue="1" value="1" textColor="FFFFFFFF"
+            textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="amp" level="group" position="0" parameter="AMP_VOLUME" translation="linear" translationOutputMin="0" translationOutputMax="1.0"/>
+        <binding type="amp" level="group" position="1" parameter="AMP_VOLUME" translation="linear" translationOutputMin="0" translationOutputMax="1.0"/>
+      </labeled-knob>
+      
+      
+     <labeled-knob x="495" y="80" label="rt volume" type="float" minValue="0" maxValue="1" value="0.305" textColor="FFFFFFFF"
+            textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="amp" level="group" position="2" parameter="AMP_VOLUME" translation="linear" translationOutputMin="0" translationOutputMax="1.0"/>
+      </labeled-knob>
+      
+      <labeled-knob x="640" y="80" label="note release" type="float" minValue="0.0" maxValue="5.0" value="1" textColor="FFFFFFFF"
+            textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="amp" level="group" position="0" parameter="ENV_RELEASE" />
+        <binding type="amp" level="group" position="1" parameter="ENV_RELEASE" />
+            </labeled-knob>
+            
+
+            
+            
+    </tab>
+  </ui>
+        <midi>
+    <cc number="1">
+      <binding level="ui" type="labeled_knob" position="0" parameter="value" translation="table" translationTable="0,200;30,355;60,850;90,4950;128,22000"   translationOutputMin="300" translationOutputMax="22000"/>
+    </cc>
+  </midi>
+</DecentSampler>

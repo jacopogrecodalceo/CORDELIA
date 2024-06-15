@@ -1,0 +1,16 @@
+gkpulse	= 75
+
+eu: 5, 16, 64
+	@fim
+	bs
+	mf
+	eclassic.a(5)
+	pump(10, fillarray(110, 140))*once(1, 9/8, 6/5, 3/2, 8/5)
+
+eu: 5, 16, 32
+	@bee
+	gkbeats*2
+	f
+	eclassic
+	pump(10, fillarray(110, 140))*once(1, 9/8, 6/5, 3/2, 8/5)/2
+

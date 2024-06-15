@@ -1,0 +1,67 @@
+set_tempo(175)
+set_root(69)
+
+; --- Chord
+
+giOct[] init 4
+giDeg[] init 4
+giNote[] init 4
+
+seed 0
+
+indx init 0
+until indx == 4 do
+  inum = random(-1, 1)
+  giOct[indx] init inum
+  printf "giOct[%d] = %f\n", indx + 1, indx, inum
+  indx += 1
+od
+
+indx = 0
+until indx == 4 do
+  inum = random(0, 12)
+  giDeg[indx] init int(inum)
+  printf "giDeg[%d] = %f\n", indx + 1, indx, inum
+  indx += 1
+od
+  
+indx = 0
+until indx == 4 do
+  inum = random(0, 12)
+  giNote[indx] init int(inum)
+  printf "giNote[%d] = %f\n", indx + 1, indx, inum
+  indx += 1
+od
+
+;---
+  
+instr Sine
+  alfo = 1 + oscili(random(.0025, .015), random(.25, 3.5))
+  
+  asig = oscili(1, p4 * alfo)
+  asig += oscili(1, p4 * 3 * alfo)
+  asig *= expon(p5, p3, .00025)
+  
+  apan = oscili(1, random(.05, .25))
+  a1, a2 pan2 asig, apan
+  
+  out(a1, a2)
+endin
+
+instr Chord
+  indx = 0
+  until indx == 4 do
+    schedule("Sine", 0, 5, in_scale(giOct[indx], giDeg[indx] + p5), ampdbfs(-24))
+   	indx += 1
+  od
+endin
+
+instr Go
+  schedule("Chord", 0, 0)
+  
+  if(p4 <= 2) then
+    schedule(p1, 1, 3, p4 + 1, giNote[p4])
+  endif
+endin
+
+schedule("Go", 0, 0)

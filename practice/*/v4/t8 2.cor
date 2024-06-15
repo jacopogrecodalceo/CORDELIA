@@ -1,0 +1,22 @@
+
+
+gkpulse = 110;*pump(4, fill(.5, 1, .25, 2))
+
+gktuning pump 2, fill(scala.sept_min_penta, scala.ptolemy_diat)
+
+eu: 7, 8, 8
+	@ixland
+	wn*once(1, .5)
+	accent(4, f)
+	tig.a(5)
+	e4-2.8: once(classicr, eclassic)
+	a4-4.8: once(classicr, eclassic)
+
+eu: 8, 8, 12
+	@burd
+	wn
+	accent(4, fff)
+	classic.a(5)
+	g3-8.8: eau
+
+

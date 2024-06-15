@@ -1,0 +1,53 @@
+{
+	"command": "gkpulse = 95"
+}
+{
+	"instr": {
+		"addendum_inside": [
+			"Snote = "3F""
+		],
+		"addendum_outside": "",
+		"dur": "gkbeats*32",
+		"dyn": "$f",
+		"env": "gikazan",
+		"freq": [
+			"cpstun(random:k(1, 2), ntom(Snote)+5, givitry)",
+			"cpstun(random:k(1, 2), ntom(Snote), givitry)"
+		],
+		"name": "flou",
+		"opcode": {
+			"name": "jex",
+			"params": ""10", 2"
+		},
+		"space": ""
+	},
+	"route": {
+		"name": [],
+		"params": []
+	}
+}
+{
+	"instr": {
+		"addendum_inside": [
+			"Snote = "4G""
+		],
+		"addendum_outside": "",
+		"dur": "gkbeats*32",
+		"dyn": "$pp",
+		"env": "gikazan",
+		"freq": [
+			"cpstun(random:k(1, 2), ntom(Snote)+2, givitry)",
+			"cpstun(random:k(1, 2), ntom(Snote), givitry)"
+		],
+		"name": "orphans4",
+		"opcode": {
+			"name": "jex",
+			"params": ""10", 2"
+		},
+		"space": ""
+	},
+	"route": {
+		"name": [],
+		"params": []
+	}
+}

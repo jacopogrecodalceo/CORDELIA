@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecentSampler minVersion="1.0">
+  <ui bgImage="resources/manthey.jpg" width="812" height="375" layoutMode="relative"
+      bgMode="top_left">
+    <tab name="main">
+      <labeled-knob x="35" y="14" width="80" textSize="14" textColor="FFFFFFFF" 
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA" 
+                    label="Attack" type="float" minValue="0.0" maxValue="4.0" value="0.005" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_ATTACK" />
+      </labeled-knob>
+      <labeled-knob x="115" y="14" width="80" textSize="14" textColor="FFFFFFFF" 
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA" 
+                    label="Release" type="float" minValue="0.0" maxValue="20.0" value="0.44" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_RELEASE" />
+      </labeled-knob>
+        <labeled-knob x="195" y="14" width="80" textSize="14" textColor="FFFFFFFF"
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA"
+                    label="Tone" type="float" minValue="0" maxValue="1" value="0.76">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"
+                 translation="table" 
+                 translationTable="0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000"/>
+      </labeled-knob>
+      <labeled-knob x="275" y="14" width="80" textSize="14" textColor="FFFFFFFF" 
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA" 
+                    label="Chorus" type="float" minValue="0.0" maxValue="0.5" value="0" >
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX" />
+      </labeled-knob>
+    
+      <labeled-knob x="355" y="14" width="80" textSize="14" textColor="FFFFFFFF"
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA"
+                    label="Echo" type="float" minValue="0" maxValue="1" value="0">
+        <binding type="effect" level="instrument" position="2"
+                 parameter="FX_WET_LEVEL" translation="linear" 
+                 translationOutputMin="0" translationOutputMax="1" />
+      </labeled-knob>
+       <labeled-knob x="378" y="40" width="35" textSize="16" textColor="FFFFFFFF"
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA"
+                    label="" type="float" minValue="0" maxValue="1" value="0.5">
+        <binding type="effect" level="instrument" position="2"
+                 parameter="FX_DELAY_TIME" translation="linear" 
+                 translationOutputMin="0" translationOutputMax="1" />
+      </labeled-knob>
+      <labeled-knob x="435" y="14" width="80" textSize="14" textColor="FFFFFFFF" 
+                    trackForegroundColor="EEEEEEEE" trackBackgroundColor="AAAAAAAA" 
+                    label="Reverb" type="percent" minValue="0" maxValue="100" 
+                    textColor="FF000000" value="6">
+        <binding type="effect" level="instrument" position="3" 
+                 parameter="FX_REVERB_WET_LEVEL" translation="linear" 
+                 translationOutputMin="0" translationOutputMax="1" />
+      </labeled-knob>
+    </tab>
+  </ui>
+
+  <groups seqMode="round_robin" attack="0.000" decay="20" sustain="1.0" release="0.440">
+
+
+
+
+      <group loVel="0" hiVel="52" volume="9dB">
+        <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="1" path="samples/25_pp1.wav"/>
+        <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="1" path="samples/30_pp1.wav"/>
+        <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="1" path="samples/35_pp1.wav"/>
+        <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="1" path="samples/40_pp1.wav"/>
+        <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="1" path="samples/45_pp1.wav"/>
+        <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="1" path="samples/50_pp1.wav"/>
+        <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="1" path="samples/55_pp1.wav"/>
+        <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="1" path="samples/60_pp1.wav"/>
+        <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="1" path="samples/65_pp1.wav"/>
+        <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="1" path="samples/70_pp1.wav"/>
+        <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="1" path="samples/75_pp1.wav"/>
+        <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="1" path="samples/80_pp1.wav"/>
+        <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="1" path="samples/85_pp1.wav"/>
+        <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="1" path="samples/90_pp1.wav"/>
+        <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="1" path="samples/95_pp1.wav"/>
+        <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="1" path="samples/100_pp1.wav"/>
+        <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="1" path="samples/105_pp1.wav"/>
+
+        <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="2" path="samples/25_pp1.wav"/>
+        <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="2" path="samples/30_pp1.wav"/>
+        <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="2" path="samples/35_pp1.wav"/>
+        <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="2" path="samples/40_pp1.wav"/>
+        <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="2" path="samples/45_pp1.wav"/>
+        <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="2" path="samples/50_pp1.wav"/>
+        <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="2" path="samples/55_pp1.wav"/>
+        <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="2" path="samples/60_pp2.wav"/>
+        <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="2" path="samples/65_pp1.wav"/>
+        <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="2" path="samples/70_pp1.wav"/>
+        <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="2" path="samples/75_pp1.wav"/>
+        <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="2" path="samples/80_pp1.wav"/>
+        <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="2" path="samples/85_pp1.wav"/>
+        <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="2" path="samples/90_pp1.wav"/>
+        <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="2" path="samples/95_pp1.wav"/>
+        <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="2" path="samples/100_pp1.wav"/>
+        <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="2" path="samples/105_pp1.wav"/>
+      </group>
+
+      <group loVel="53" hiVel="85" volume="5dB">
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="1" path="samples/25_p1.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="1" path="samples/30_p1.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="1" path="samples/35_p1.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="1" path="samples/40_p1.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="1" path="samples/45_p1.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="1" path="samples/50_p1.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="1" path="samples/55_p1.wav"/>
+      <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="1" path="samples/60_p1.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="1" path="samples/65_p1.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="1" path="samples/70_p1.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="1" path="samples/75_p1.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="1" path="samples/80_p1.wav"/>
+      <sample tuning="0.00" loNote="81" hiNote="85" rootNote="85" seqPosition="1" path="samples/85_p1.wav"/>
+      <sample tuning="0.00" loNote="86" hiNote="90" rootNote="90" seqPosition="1" path="samples/90_p1.wav"/>
+      <sample tuning="0.00" loNote="91" hiNote="95" rootNote="95" seqPosition="1" path="samples/95_p1.wav"/>
+      <sample tuning="0.00" loNote="96" hiNote="100" rootNote="100" seqPosition="1" path="samples/100_p1.wav"/>
+      <sample tuning="0.00" loNote="101" hiNote="105" rootNote="105" seqPosition="1" path="samples/105_p1.wav"/>
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="2" path="samples/25_p2.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="2" path="samples/30_p2.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="2" path="samples/35_p2.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="2" path="samples/40_p2.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="2" path="samples/45_p2.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="2" path="samples/50_p2.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="2" path="samples/55_p2.wav"/>
+      <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="2" path="samples/60_p2.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="2" path="samples/65_p2.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="2" path="samples/70_p2.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="2" path="samples/75_p2.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="2" path="samples/80_p2.wav"/>
+      <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="2" path="samples/85_p2.wav"/>
+      <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="2" path="samples/90_p2.wav"/>
+      <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="2" path="samples/95_p2.wav"/>
+      <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="2" path="samples/100_p2.wav"/>
+      <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="2" path="samples/105_p2.wav"/>
+ 
+    </group>
+     <group loVel="86" hiVel="116" volume="2dB">
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="1" path="samples/25_mf1.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="1" path="samples/30_mf1.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="1" path="samples/35_mf1.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="1" path="samples/40_mf1.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="1" path="samples/45_mf1.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="1" path="samples/50_mf1.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="1" path="samples/55_mf1.wav"/>
+      <sample tuning="0.13" loNote="56" hiNote="60" rootNote="60" seqPosition="1" path="samples/60_mf1.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="1" path="samples/65_mf1.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="1" path="samples/70_mf1.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="1" path="samples/75_mf1.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="1" path="samples/80_mf1.wav"/>
+      <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="1" path="samples/85_mf1.wav"/>
+      <sample tuning="-0.1" loNote="86" hiNote="90" rootNote="90" seqPosition="1" path="samples/90_mf1.wav"/>
+      <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="1" path="samples/95_mf1.wav"/>
+      <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="1" path="samples/100_mf1.wav"/>
+      <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="1" path="samples/105_mf1.wav"/>
+
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="2" path="samples/25_mf2.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="2" path="samples/30_mf2.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="2" path="samples/35_mf2.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="2" path="samples/40_mf2.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="2" path="samples/45_mf2.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="2" path="samples/50_mf2.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="2" path="samples/55_mf2.wav"/>
+      <sample tuning="0.13" loNote="56" hiNote="60" rootNote="60" seqPosition="2" path="samples/60_mf2.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="2" path="samples/65_mf2.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="2" path="samples/70_mf2.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="2" path="samples/75_mf2.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="2" path="samples/80_mf2.wav"/>
+      <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="2" path="samples/85_mf2.wav"/>
+      <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="2" path="samples/90_mf2.wav"/>
+      <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="2" path="samples/95_mf2.wav"/>
+      <sample tuning="-0.16"  loNote="96" hiNote="100" rootNote="100" seqPosition="2" path="samples/100_mf2.wav"/>
+      <sample tuning="-0.16"  loNote="101" hiNote="105" rootNote="105" seqPosition="2" path="samples/105_mf2.wav"/>
+    </group> 
+  
+  
+    <group loVel="117" hiVel="127" volume="2dB">
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="1" path="samples/25_f1.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="1" path="samples/30_f1.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="1" path="samples/35_f1.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="1" path="samples/40_f1.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="1" path="samples/45_f1.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="1" path="samples/50_f1.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="1" path="samples/55_f1.wav"/>
+      <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="1" path="samples/60_f1.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="1" path="samples/65_f1.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="1" path="samples/70_f1.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="1" path="samples/75_f1.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="1" path="samples/80_f1.wav"/>
+      <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="1" path="samples/85_f1.wav"/>
+      <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="1" path="samples/90_f1.wav"/>
+      <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="1" path="samples/95_f1.wav"/>
+      <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="1" path="samples/100_f1.wav"/>
+      <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="1" path="samples/105_f1.wav"/>
+
+      <sample tuning="0.00" loNote="21" hiNote="25" rootNote="25" seqPosition="2" path="samples/25_f2.wav"/>
+      <sample tuning="-0.20" loNote="26" hiNote="30" rootNote="30" seqPosition="2" path="samples/30_f2.wav"/>
+      <sample tuning="-0.20" loNote="31" hiNote="35" rootNote="35" seqPosition="2" path="samples/35_f2.wav"/>
+      <sample tuning="-0.15" loNote="36" hiNote="40" rootNote="40" seqPosition="2" path="samples/40_f2.wav"/>
+      <sample tuning="-0.10" loNote="41" hiNote="45" rootNote="45" seqPosition="2" path="samples/45_f2.wav"/>
+      <sample tuning="-0.05" loNote="46" hiNote="50" rootNote="50" seqPosition="2" path="samples/50_f2.wav"/>
+      <sample tuning="0.00" loNote="51" hiNote="55" rootNote="55" seqPosition="2" path="samples/55_f2.wav"/>
+      <sample tuning="0.12" loNote="56" hiNote="60" rootNote="60" seqPosition="2" path="samples/60_f2.wav"/>
+      <sample tuning="0.02" loNote="61" hiNote="65" rootNote="65" seqPosition="2" path="samples/65_f2.wav"/>
+      <sample tuning="-0.05" loNote="66" hiNote="70" rootNote="70" seqPosition="2" path="samples/70_f2.wav"/>
+      <sample tuning="-0.05" loNote="71" hiNote="75" rootNote="75" seqPosition="2" path="samples/75_f2.wav"/>
+      <sample tuning="-0.03" loNote="76" hiNote="80" rootNote="80" seqPosition="2" path="samples/80_f2.wav"/>
+      <sample tuning="-0.05" loNote="81" hiNote="85" rootNote="85" seqPosition="2" path="samples/85_f2.wav"/>
+      <sample tuning="-0.1"  loNote="86" hiNote="90" rootNote="90" seqPosition="2" path="samples/90_f2.wav"/>
+      <sample tuning="-0.07" loNote="91" hiNote="95" rootNote="95" seqPosition="2" path="samples/95_f2.wav"/>
+      <sample tuning="-0.16" loNote="96" hiNote="100" rootNote="100" seqPosition="2" path="samples/100_f2.wav"/>
+      <sample tuning="-0.16" loNote="101" hiNote="105" rootNote="105" seqPosition="2" path="samples/105_f2.wav"/>
+    </group>
+
+     <group loVel="0" hiVel="127" decay="1" sustain="0" release="1" volume="1dB">
+      <sample trigger="release" loNote="21" hiNote="25" rootNote="25" path="samples/25_r1.wav"/>
+      <sample trigger="release" loNote="26" hiNote="30" rootNote="30" path="samples/30_r1.wav"/>
+      <sample trigger="release" loNote="31" hiNote="35" rootNote="35" path="samples/35_r1.wav"/>
+      <sample trigger="release" loNote="36" hiNote="40" rootNote="40" path="samples/40_r1.wav"/>
+      <sample trigger="release" loNote="41" hiNote="45" rootNote="45" path="samples/45_r1.wav"/>
+      <sample trigger="release" loNote="46" hiNote="50" rootNote="50" path="samples/50_r1.wav"/>
+      <sample trigger="release" loNote="51" hiNote="55" rootNote="55" path="samples/55_r1.wav"/>
+      <sample trigger="release" loNote="56" hiNote="60" rootNote="60" path="samples/60_r1.wav"/>
+      <sample trigger="release" loNote="61" hiNote="65" rootNote="65" path="samples/65_r1.wav"/>
+      <sample trigger="release" loNote="66" hiNote="70" rootNote="70" path="samples/70_r1.wav"/>
+      <sample trigger="release" loNote="71" hiNote="75" rootNote="75" path="samples/75_r1.wav"/>
+      <sample trigger="release" loNote="76" hiNote="80" rootNote="80" path="samples/80_r1.wav"/>
+      <sample trigger="release" loNote="81" hiNote="85" rootNote="85" path="samples/85_r1.wav"/>
+      <sample trigger="release" loNote="86" hiNote="90" rootNote="90" path="samples/90_r1.wav"/>
+      <sample trigger="release" loNote="91" hiNote="95" rootNote="95" path="samples/95_r1.wav"/>
+      <sample trigger="release" loNote="96" hiNote="100" rootNote="100" path="samples/100_r1.wav"/>
+      <sample trigger="release" loNote="101" hiNote="105" rootNote="105" path="samples/105_r1.wav"/>
+    </group>
+
+  </groups>
+  <effects>
+    <effect type="lowpass" frequency="22000.0"/>
+    <effect type="chorus"  mix="0.0" modDepth="0.9" modRate="0.06" />
+    <effect type="delay" delayTime="0.5" stereoOffset="0.01" feedback="0.2" wetLevel="0.0"/>
+    <effect type="reverb" roomSize="0.3" damping="0.4" wetLevel="0.06"/>
+  </effects>
+  <midi>
+    <!-- This causes MIDI CC 1 to control the 4th knob (cutoff) -->
+    <cc number="1">
+      <binding level="ui" type="control" parameter="VALUE" position="3" 
+               translation="linear" translationOutputMin="0" 
+               translationOutputMax="1" />
+    </cc>
+  </midi>
+</DecentSampler>

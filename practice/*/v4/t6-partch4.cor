@@ -1,0 +1,33 @@
+
+
+
+gkpulse = 70
+
+gktuning = scala.partch_greek
+
+gkmhon_port = 1+lfh(1)*2
+
+eu: 8, 16, 16
+	@mhon
+	wn
+	accent(4, mf)
+	tig
+	c2-16.9: kazan
+
+eu: 8, 16, 8
+	-k1 lfh 1
+	@bass
+	qn
+	accent(4, f)
+	tig
+	c1-16.5: kazan
+
+eu: 5, 8, 4
+	-k1 lfh 1
+	@wutang
+	wn*4
+	accent(4, fff)
+	spina
+	c1-2.5: kazan
+	c2-4.5: kazan
+	c3-6.12: kazan

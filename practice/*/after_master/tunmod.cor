@@ -1,0 +1,24 @@
+
+@gkpulse = 125
+
+@gktuning pump 8, fillarray(giedo12, gi1110r2_12, giweingarten, giarch_ptol2)
+
+eu: 7, 12, 16, "heart"
+	+kdyn = abs(lfo($f, 1/pump(4, fillarray(4, 2))))
+	+kch = pump(1, fillarray(0, -2, 0, 5))
+	@fairest3
+	gkbeats*$once(5, 1, 3, 1, 1)
+	accent(5)
+	gieclassic$atk(5)
+	stept("4D", gimajor, pump(8, fillarray(1, 3, 2, 3)))
+	stept("4D", gimajor, pump(2, fillarray(3, 2, 5, 4, 3, 2, 5, 7)) + kch)
+
+eu: 4, 16, 4, "heart"
+	+kdyn = abs(lfo($f, 1/pump(4, fillarray(4, 2))))
+	+kch = pump(1, fillarray(0, -2, 0, 5))
+	@aaron
+	gkbeats*8
+	accent(5)
+	gieclassic$atk(5)
+	stept("5D", gimajor, pump(8, fillarray(1, 3, 2, 3)))
+	stept("5D", gimajor, pump(2, fillarray(3, 2, 5, 4, 3, 2, 5, 7)) + kch)

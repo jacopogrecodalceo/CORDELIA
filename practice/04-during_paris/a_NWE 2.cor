@@ -1,0 +1,17 @@
+
+
+
+
+
+gkpulse = 95;/pump(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+eu: 11, 16, 2
+	@notalo.skl(ntof(g3)*pump(48, fill(.25, 4, .25, 3, 3/2)), .5)
+	wn*2, sn
+	p
+	iago.a(5)
+	stept(a3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+
+

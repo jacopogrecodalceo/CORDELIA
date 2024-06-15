@@ -1,0 +1,30 @@
+
+
+gkpulse = 70
+
+gktuning = scala.partch_greek
+
+gkmhon_port = 1+lfh(1)
+
+eu: 8, 8, 32
+	@mhon
+	en
+	accent(4, fff)
+	tig
+	c1-12.15: classicr
+
+eu: 9, 16, 32
+	-k1 lfh 1
+	@mhon
+	sn*(1+k1*bs*4)*once(1, 1, 1, 1, 1, 1, 1, 1, 12)
+	accent(4, f)
+	tig
+	e4-16.11: classicr
+	g4-16.13: classicr
+	a4-16.13: classicr
+	c5-16.15: classicr
+	e5-16.24: classicr
+
+
+
+

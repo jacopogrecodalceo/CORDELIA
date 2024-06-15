@@ -1,0 +1,15 @@
+
+eu: 3, 8, 16
+	@puck.flingj(gkbeatms)
+	gkbeats*once(1, 8, 2, 1)
+	fff
+	once(giclassic, gilikearev)
+	step("5B", giminor, pump(8, fillarray(1, 3, 2, 5)))*once(.25, .5, 1)
+
+eu: 3, 8, 16
+   @aaron.flingj(gkbeatms/24)
+   gkbeats*once(1, 8, 2, 1)
+   fff
+   once(giclassic, gilikearev)
+   step("5B", giminor, pump(8, fillarray(1, 3, 2, 5)))*once(.25, .5, 1)
+

@@ -1,0 +1,21 @@
+
+
+
+
+gkpulse = 95
+
+gktuning = scala.pto_diat
+
+
+gkamor_dur = 1
+
+@dead2.moij(ntof(b4), .95): 8, p
+
+
+
+
+@caiu.convij(dead2, 1): 8, f
+
+
+
+

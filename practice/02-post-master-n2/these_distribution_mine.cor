@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+gkpulse = 130
+
+gktuning = scala.pto_diat
+
+eu: 8, 16, 16
+	@in2.tapij(qn, .5, 1).cutij(int(1+abs(jitter:k(1, gkbeatf/8, gkbeatf)*12)))
+	wn
+	fff
+	classic
+	1
+
+@orp: 8, pp

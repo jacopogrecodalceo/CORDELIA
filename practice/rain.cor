@@ -1,0 +1,25 @@
+
+
+gkpulse = 40
+
+eu: 16, 16, 4
+	@puck.flanij(sn, .5).shij(qn)
+	wn, qn
+	f, mp
+	classic
+	step("4C", ionian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+eu: 3, 16, 8
+	@witches
+	wn*0
+	f, p
+	classic
+	step("3G", ionian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+eu: 9, 16, 16
+	@arm1gen
+	wn
+	mf
+	classic
+	step("3C", ionian, pump(16, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+

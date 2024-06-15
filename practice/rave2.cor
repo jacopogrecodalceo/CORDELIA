@@ -1,0 +1,22 @@
+gkpulse = 105*pump(2, fillarray(1, 1/4, 1, 1/3, 1/4, 1))
+
+
+eu: 8, 8, 2
+	@noij@ghosts_couleurs.flanij(wn, lfh(24)*.5, lfh(32, giasquare)*lfh(1)).strij(mtof(68+12), .15)
+	wn, sn
+	p, f;*cunt(0, 128*2, 1)
+	kazan.a(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(.5, 1, 2)
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(1, .25, 3)
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(.25, .5, 1)
+
+eu: 8, 8, 2, 1;pump(1, fillarray(32, 4, 2, 32))
+	@arm1chaos.flanij(qn, lfh(24)*.5, lfh(32.25, giasquare))
+	qn;/$once(2, 2, 4)/2
+	f
+	rome.a(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(.5, 1, 2)/4
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(1, .25, 3)/4
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), scala.euler_enh);*$once(.25, .5, 1)/4
+
+

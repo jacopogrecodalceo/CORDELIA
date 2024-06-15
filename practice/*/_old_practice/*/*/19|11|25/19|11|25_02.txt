@@ -1,0 +1,61 @@
+set_tempo(175)
+set_root(69)
+
+gkOct[] init 4
+gkDeg[] init 4
+
+instr Sine
+  alfo	=	1 + oscili(random(.0025, .015), random(.25, 3.5))
+  
+  asig	=	oscili(1, p4 * alfo)
+  asig	+=	oscili(1, p4 * 3 * alfo)
+  asig	*=	expon(p5, p3, .00025)
+  
+  out(asig, asig)
+endin
+
+instr OctaveDeg
+  kindx = 0
+  until kindx == 4 do
+  knum = rand(1)
+  gkOct[kindx] = knum
+  printf "gkOct[%d] = %f\n", kindx + 1, kindx, knum
+  kindx += 1
+  od
+
+
+  kindx = 0
+  until kindx == 4 do	
+  knum random 0, 12
+  gkDeg[kindx] = int(knum)
+  printf "gkDeg[%d] = %f\n", kindx + 1, kindx, knum
+  kindx += 1
+  od
+
+  kindx = 0
+  until kindx == 4 do
+  printf "gk: %f %f\n", kindx + 1, gkOct[kindx], gkDeg[kindx]
+  kindx += 1
+  od
+
+  turnoff
+endin
+
+instr Chord
+  kindx = 0
+  until kindx == 4 do
+    schedule("Sine", 0, 5, in_scale(gkOct[kindx], gkDeg[kindx]), ampdbfs(-24))
+  od
+endin
+
+instr Go
+  schedule("Chord", 0, 0)
+  
+  if(p4 <= 2) then
+    schedule(p1, 1, 3, p4 + 1)
+  endif
+endin
+
+schedule("Go", 0, 0)
+
+schedule("Sine", 0, 5, in_scale(.25, 2), ampdbfs(-24))

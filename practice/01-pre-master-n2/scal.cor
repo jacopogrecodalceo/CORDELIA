@@ -1,0 +1,14 @@
+
+
+
+gkpulse = 75
+
+gktuning = scala.edo31hex
+
+eu: 16, 32, 4
+	@piano
+	qn
+	each(mp, p)
+	classic.a(5)
+	cpstun_render(ntom(a3)+pump(16, genarray_i(0, ftlen(i(gktuning)))), gktuning)
+

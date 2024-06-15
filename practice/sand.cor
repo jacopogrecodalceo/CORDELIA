@@ -1,0 +1,30 @@
+
+
+
+gkpulse = 80
+
+eu: 14, 16, 8
+	@sand_so@ghosts_couleurs.delij2(sn*pump(8, fill(3, 6, 9)), .5).shij(qn)
+	wn, qn
+	f
+	iago.a(5)
+	step(c4, ionian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+eu: 14, 16, 8
+	r9@ixland.flanij(sn*pump(8, fill(3, 6, 9)), .5, 1);.shij(qn)
+	wn, qn
+	pppp
+	iago.a(5)
+	step(c4, ionian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+@sand_sew.cutij(12): pump(16, fill(8, 4, 12, 16)), mf*lfh(4)
+
+eu: 16, 16, 8
+	@witches;.flanij(sn, .5).shij(qn)
+	wn, hn
+	pp, pppp/5
+	bea
+	step(c4, ionian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+@orp.cutij(2).moij(95*pump(16, fill(1, 1, 1, 4+16*lfh(4)))): 4, fff
+

@@ -1,0 +1,23 @@
+
+
+
+gkpulse = 95+35
+
+gktuning = scala.undet
+
+eu: 16, pump(8, fill(16, 24)), 8
+	@calin
+	each(wn*2, sn)
+	each(ff, mf)
+	mac
+	e3-4.18: classic
+
+eu: 5, 16, 4, pump(8, fill(0, 1))
+	@bd808
+	each(wn, hn)
+	ff
+	mac
+	90
+
+
+

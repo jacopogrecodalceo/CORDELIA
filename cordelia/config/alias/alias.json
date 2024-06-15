@@ -1,0 +1,35 @@
+{
+
+    "fill": "fillarray",
+
+    "beats": "gkbeats",
+    "bs": "gkbeats",
+    "beatms": "gkbeatms",
+    "bms": "gkbeatms",
+
+    "wn": "gkbeats*4",
+    "tn": "gkbeats*3",
+    "hn": "gkbeats*2",
+    "qn": "gkbeats",
+    "en": "gkbeats/2",
+    "sn": "gkbeats/4",
+
+    "beatf": "gkbeatf",
+    "bf": "gkbeatf",
+    "wf": "gkbeatf*4",
+    "hf": "gkbeatf*2",
+    "qf": "gkbeatf",
+    "ef": "gkbeatf/2",
+    "sf": "gkbeatf/4",
+
+    "fff": "(ampdb(-3)*i(gkdyn))",
+    "ff": "(ampdb(-6)*i(gkdyn))",
+    "f": "(ampdb(-9)*i(gkdyn))",
+    "mf": "(ampdb(-11)*i(gkdyn))",
+    "mp": "(ampdb(-14)*i(gkdyn))",
+    "pppp": "(ampdb(-31)*i(gkdyn))",
+    "ppp": "(ampdb(-27)*i(gkdyn))",
+    "pp": "(ampdb(-23)*i(gkdyn))",
+    "p": "(ampdb(-19)*i(gkdyn))"
+
+}

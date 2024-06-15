@@ -1,0 +1,22 @@
+@gkpulse = 125;-go(0, 60, 100)
+
+eu: 3, 8, 4, "heart"
+	@calin
+	gkbeats*0
+	accent(3, $f)
+	giclassic
+	step("4B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, .5, 1)
+
+eu: 6, 8, 8, "heart"
+	r2@repuck.flingj(gkbeatms/12, .85)
+	gkbeats*$once(2, 4, 2)
+	accent(3, $fff)
+	gieclassic
+	step("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)
+
+eu: 6, 8, 16, "heart", 3
+	@algo2.flingj(gkbeatms/8, .95)
+	gkbeats/2
+	accent(3, $mp)
+	gieclassic
+	step("3B", gidorian, pump(26, fillarray(2, 3, 4, 0))+pump(56, fillarray(7, 5/2, -1)))*$once(.25, 1, 2)

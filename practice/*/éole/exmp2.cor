@@ -1,0 +1,25 @@
+gktuning = gi11_10ET;gi12_22h, giedo13
+
+jex: "10", 1
+	@aaron
+	gkbeats*12
+	$mf
+	giclassic
+	cpstun($once(1, 2), 69+$once(0, 1), gi11_10ET)
+
+
+
+jex: "10", 1
+	@trans.flingj(gkbeatms*5, .75)
+	gkbeats*12
+	$fff
+	gispina
+	cpstun($once(1, 2), 69+$once(0, 1)-12, gi11_10ET)
+
+
+jex: "10", 1
+	@alone.convj("aaron")
+	gkbeats*12
+	$f
+	gispina
+	cpstun($once(1, 2), 69+$once(0, 1)-12, gi11_10ET)

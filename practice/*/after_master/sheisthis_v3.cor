@@ -1,0 +1,11 @@
+@gkpulse almost 110
+
+@gkwitches_ndx = gizero+lfh(1.5)*75
+
+eujo: 4, 8, 4
+	@witches.ringhj3(pump(12, fillarray(3, 5, 7, 1.5)))
+	gkbeats*4
+	accenth(4, $p)
+	$once(gired, gigrembo)
+	step("1B", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+	step("2F#", gidorian, pump(1.5, fillarray(7, 5/2, -1)))

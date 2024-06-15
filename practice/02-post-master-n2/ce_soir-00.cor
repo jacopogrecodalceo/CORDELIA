@@ -1,0 +1,23 @@
+
+
+
+
+gkpulse = 70
+
+gktuning = scala.edo31hex
+
+eu: 3, 8, 8
+	@mhon2.tapij(qn, .5, 1)
+	wn
+	mf
+	bea
+	ntof(g2)
+
+eu: 3, 16, 32
+	@kneet.duij(mhon2, 1)
+	wn*5
+	mp
+	bea
+	g2-3.15: bea
+
+

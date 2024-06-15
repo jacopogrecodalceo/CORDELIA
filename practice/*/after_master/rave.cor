@@ -1,0 +1,9 @@
+@gkpulse almost 155
+
+eujo: 8, 8, 32
+	r8@mhon.flingj(gkbeatms, .95)
+	gkbeats/4
+	accent(3, $ff)*cunt(0, 128, 1)
+	gikazan$atk(5)
+	step("4Bb", gidorian, pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))))*$once(.25, .5, 1)
+

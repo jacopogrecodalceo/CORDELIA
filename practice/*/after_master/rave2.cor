@@ -1,0 +1,23 @@
+@gkpulse = 105/pump(32, fillarray(1, 1/4, 1, 1/3, 1/4, 1))
+
+@;Euler's Old Enharmonic, From Tentamen Novae Theoriae Musicae                    
+
+eujo: 8, 8, pump(1, fillarray(32, 4, 2, 32))
+	@mhon.flingj(gkbeatms*4, lfh(24)*.5, lfh(32, giasquare)*lfh(1)).stringj(mtof(68+12), .15)
+	gkbeats/$once(2, 2, 4)
+	accent(3, $ff)*cunt(0, 128*2, 1)
+	gikazan$atk(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(.5, 1, 2)
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(1, .25, 3)
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(.25, .5, 1)
+
+eujo: 8, 8, pump(1, fillarray(32, 4, 2, 32))
+	@bass.flingj(gkbeatms, lfh(24)*.5, lfh(32.25, giasquare))
+	gkbeats/$once(2, 2, 4)/2
+	accent(3, $ff)*cunt(0, 512*2, 1)
+	gilikearev$atk(5)
+	cpstun(1, 75+pump(2, fillarray(2, -4, -3, 0))+pump(24, fillarray(1, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(.5, 1, 2)/4
+	cpstun(1, 72+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(1, .25, 3)/4
+	cpstun(1, 68+pump(2, fillarray(0, 2, -4, -3))+pump(32, fillarray(1, 2, 4, pump(4, fillarray(5, 7, 8, 9)))), gieuler_enh)*$once(.25, .5, 1)/4
+
+

@@ -1,0 +1,27 @@
+
+
+
+
+
+gkpulse = 125*pump(16, fill(1, .5, .75, 1));-go(0, 60, 100)
+
+gktuning = pump(1, fill(scala.pyt12, scala.edo31hex))
+
+eu: 8, 16, gkbeatn%4
+	out4m@ixland.convij(repuck)
+	wn*2, qn, 2
+	f, p
+	classic.a(5)
+	stept("3E", locrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("4E", locrian, 2+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+
+hex: "a0230ab", 4+gkbeatn%4
+	.05@repuck
+	wn*2, qn
+	f, p, 2
+	classic.a(5)
+	stept("2E", locrian, pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("3E", locrian, 3+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+	stept("4E", locrian, 2+pump(21, fill(2, 3, 4, 0))+pump(6, fill(7, 5/2, -1)))
+
+

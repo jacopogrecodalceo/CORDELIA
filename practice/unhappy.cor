@@ -1,0 +1,26 @@
+
+
+
+
+gkpulse = 90
+
+gktuning = scala.edo31hex
+
+@lear: pump(2, fill(.9, .8, .12)), ff
+
+@unhappy: .8, p
+
+gkunhappy_dur = 4
+
+gklear_dur = 2
+
+eu: 9, 16, 12
+	@cascade.shij(qn, .5, 1)
+	wn*random:k(1, 4), qn
+	mp, ff
+	-bea
+	step(c4, ionian, pump(16, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+
+@orp: 4, p
+

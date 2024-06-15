@@ -1,0 +1,38 @@
+@gkpulse almost 125
+
+jex: "85858589", 8
+	@bass
+	gkbeats	
+	accenth(4, $fff)
+	giclassic$atk(5)
+	step("1B", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+
+eu: 5, 8, 8, "heart", 1
+	@kick
+	gkbeats*2	
+	accenth(4, $fff)
+	giclassic$atk(5)
+	step("2F#", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+
+eujo: 4, 8, 4
+	@between
+	gkbeats
+	accenth(4, $fff)
+	$once(gired, gigrembo)
+	step("2B", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+	step("2F#", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+
+jex: "85858589", 12
+	@click
+	gkbeats	
+	accenth(4, $ppp)
+	giclassic$atk(5)
+	step("2B", gidorian, pump(12, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))
+
+jex: "85858589", 24
+	@repuck
+	gkbeats*$once(1, 2, .5, .25)	
+	accenth(4, $f)
+	giclassic$atk(5)
+	step("4B", gidorian, pump(16, fillarray(2, 3, 4, 0))+pump(6, fillarray(7, 5/2, -1)))
+	step("2B", gidorian, pump(12, fillarray(2, 3, 4, 0))+pump(12, fillarray(7, 5/2, -1)))

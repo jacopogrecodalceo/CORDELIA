@@ -1,0 +1,19 @@
+@gkpulse almost 110
+
+@gkvar = 2*lfh(1)*gkbeats
+
+eujo: 5, 8, 4
+	@metal@repuck.flingj(pump(pump(6, fillarray(12, 24, 32, 8)), gkvar+fillarray(3, 5, 7, 1.5)))
+	gkvar*$once(12, 8, 4, 16)
+	accenth(3, $f)
+	$once(gired, gigrembo, gieclassic$atk(5))
+	step("3B", gidorian, pump(6, fillarray(7, 5/2, -1)))
+	step("4D", gidorian, pump(1.5, fillarray(7, 5/2, -1)))
+
+eujo: 5, 8, 4
+	@ixland.flingj3(pump(pump(6, fillarray(12, 24, 32, 8)), gkvar+fillarray(3, 5, 7, 1.5)))
+	gkvar*$once(12, 8, 0, 16)
+	accenth(3, $p)
+	$once(gired, gigrembo, gieclassic$atk(5))
+	step("5B", gidorian, pump(6, fillarray(7, 5/2, -1)))
+	step("5D", gidorian, pump(1.5, fillarray(7, 5/2, -1)))

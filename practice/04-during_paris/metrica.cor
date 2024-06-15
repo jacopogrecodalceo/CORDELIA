@@ -1,0 +1,24 @@
+
+
+
+
+
+
+gkpulse = 95;/pump(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+saf: "-u-x", 4
+	@click;.skl(ntof(g3)*pump(48, fill(.25, 4, .25, 3, 3/2)), .5)
+	wn, sn
+	p
+	iago.a(5)
+	stept(a3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+
+saf: "-x-xx", 8
+	@click;.skl(ntof(g3)*pump(48, fill(.25, 4, .25, 3, 3/2)), .5)
+	wn, sn
+	p
+	iago.a(5)
+	stept(e3, locrian, pump(64, fill(1, 1, 13, -4, 9)))
+

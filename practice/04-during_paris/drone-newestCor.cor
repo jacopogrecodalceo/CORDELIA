@@ -1,0 +1,14 @@
+gkpulse = 110
+
+eu: 5, 8, 32
+	@mhon.decij(8)
+	wn*8
+	mp
+	spina
+	stept("5F", dorian, 3+each(1, 3, -3, 5))
+	stept("2F", dorian, each(1, 3, -3, 5))
+
+@ciel.convij(mhon): pump(8, fill(8, 4, 8, 16)), mf
+
+
+

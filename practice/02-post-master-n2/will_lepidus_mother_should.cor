@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+
+
+gkpulse = 110
+
+gktuning = scala.pto_diat
+
+
+eu: 4, 16, 32
+	@kneet
+	wn*0
+	ff
+	mac
+	c3-1.15: bea
+
+eu: 4, 16, 4
+	@mhont@repuck.moij(500*pump(64, fill(.25, 4, .25, 3, 3/2)), .85)
+	each(wn*2, wn)
+	ff
+	iago.a(5)
+	c4-2.16: bea
+
+@dead3: 8, f
+
+eu: 4, 8, 8
+	@bd808
+	wn
+	ff
+	mac
+	ntof(g2)
+

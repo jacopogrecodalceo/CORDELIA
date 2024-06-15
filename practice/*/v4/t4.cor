@@ -1,0 +1,21 @@
+
+gkpulse = 120-go(0, 45, 50)
+
+gktuning = scala.vitry
+
+eu: 5, 8, 2
+	@mhon.flingj(bms, .75*lfh(1), 1/12).getmeout(1/8)
+	gkbeats*32
+	accent(5, 2)
+	spina
+	f3: 1 5 -5 7
+	g3: 1 3 -7 9
+
+eu: 5, 8, 2, 4
+	@mhon2.flingj(bms, .75*lfh(1), 1/4).getmeout(1)
+	gkbeats*32*once(1, 0, 0)
+	accent(5, fff)
+	cat
+	f4: 1 5 -5 7
+	g4: 1 3 -7 9
+

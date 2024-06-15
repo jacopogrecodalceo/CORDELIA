@@ -1,0 +1,27 @@
+
+
+
+gkpulse = 95;/pump(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+;@bois2: .16, p
+
+eu: 5, 16, 16
+	@bois2.skl(ntof(g3)*pump(12, fill(.25, 4, .25, 3, 3/2)), .5)
+	wn*0
+	ff
+	iago.a(5)
+	stept(b3, locrian, 1)
+
+
+eu: 3, 4, 24
+	@cascade.flanij(wn);.wooden()
+	wn*0
+	pppp
+	-bea
+	stept(a3, locrian, 0)
+
+;@elpark: .96, p
+
+

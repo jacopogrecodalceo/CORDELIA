@@ -1,0 +1,17 @@
+gkpulse = 110
+
+gkdyn = 1
+
+eujo: 5, 8, 2
+	@mhon
+	gkbeats*24
+	accent(5, $pp)
+	gispina
+	stept("5F", gidorian, 3+$once(1, 3, -3, 5))
+	stept("2F", gidorian, $once(1, 3, -3, 5))
+
+ciel(8, $mf)
+
+convj("ciel", "mhon", .5)
+
+

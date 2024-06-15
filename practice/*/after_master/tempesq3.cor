@@ -1,0 +1,18 @@
+@gkpulse = 75
+
+eujo: 11, 16, 4
+	@orphans3
+	gkbeats*4
+	$ff
+	giclassic$atk(5)
+	cpstun($once(1, 2), 4+int(69+pump(16, fillarray(2, 1, -4, 1))), gi11_10ET)
+	cpstun($once(1, 2), int(69+pump(4, fillarray(2, 1, -4, 1))), gi11_10ET)
+
+jex: "5140000051200000", 4
+	@ixland
+	gkbeats*4
+	$mf
+	giclassic$atk(5)
+	cpstun($once(1, 2), 69+random:k(0, 6), gi11_10ET)
+	cpstun($once(1, 2), 69+4++random:k(0, 6), gi11_10ET)
+

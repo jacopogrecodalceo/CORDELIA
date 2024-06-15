@@ -1,0 +1,51 @@
+set_tempo(95)
+
+instr StJacques
+  seed 0
+
+  alfo = 1 + oscili(random(.0025, .015), random(.25, 3.5))
+    
+  asig =  oscili(p5, p4 * alfo)
+  asig += oscili(p5, p4 * 3 * alfo)
+  asig += oscili(p5/24, p4 * 9 * alfo)
+  asig += oscili(p5/32, p4 * 11 * alfo)
+
+  asig *= mxadsr(.0135, .025, .35, p6)
+  
+  out(asig, asig)
+endin
+
+instr P1
+  if (phsm(1) == 0) then
+    go_tempo(95, 1)
+  endif
+  
+  if (phsm(2) == 0) then
+    set_scale("min")
+    set_root(59)
+  elseif (phsm(2) == .25) then
+    set_scale("maj")
+    set_root(62) 
+  endif
+  
+  hexplay("abd",
+      "StJacques", p3,
+      in_scale(-1, (p4 % 8 == 0 ? 0 : (p4 % 7 * 3))),
+      fade_in(1, 64) * ampdbfs(-16),
+      random(.05, .15))
+  
+  if (phs(4) == .5) then
+    hexplay("abdabe",
+      "StJacques", p3,
+      in_scale(0, (p4 % 4 == 0 ? 0 : int(random(0, 12)))),
+      fade_in(2, 24) * ampdbfs(-32),
+      random(2.5, 7.5))
+  endif
+  
+  hexplay("a97b",
+      "StJacques", p3,
+      in_scale(-2, (p4 % 3 * 2)),
+      fade_in(3, 32) * ampdbfs(-12),
+      random(.25, .5))
+
+endin

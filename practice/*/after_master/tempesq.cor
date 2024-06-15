@@ -1,0 +1,25 @@
+@gkpulse = 95
+
+eujo: 16, 16, 8
+	+#define the_temp #jedo12#
+	+#define add #_degs#
+	+istart init 57
+	+itemp init gi$the_temp
+	+itemp_len init gi$the_temp$add
+	@puck
+	gkbeats
+	$f
+	giclassic
+	cpstun(1, once(genarray_i(istart, istart+itemp_len)), itemp)
+
+eujo: 16, 16, 8
+	+#define the_temp #jedo12#
+	+#define add #_degs#
+	+istart init 57
+	+itemp init gi$the_temp
+	+itemp_len init gi$the_temp$add
+	@puck
+	gkbeats
+	$f
+	giclassic
+	cpstun(1, once(genarray_i(istart, istart+itemp_len)), itemp)

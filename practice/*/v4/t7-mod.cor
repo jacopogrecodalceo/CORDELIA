@@ -1,0 +1,19 @@
+
+
+gkpulse = 140*pump(4, fill(.5, 1, .25, 2))
+
+gktuning pump 16, fill(scala.edo12, scala.edo7)
+
+gkmhon_port = 1+lfh(1)
+
+eu: 5, 8, 2
+	-k1 tablei (chnget:k("heart")*24)%1, classicr, 1
+	@mhon@alone.flingj(bms*lfh(24, classicr), .15)
+	k1*2
+	accent(4, f)
+	tig.a(5)
+	c1-8.2: classic
+	c3-8.24: classic
+	e4-8.24: classicr
+
+

@@ -1,0 +1,132 @@
+{
+  "abij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/abij.orc",
+    "how_many_p": 1
+  },
+  "combij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/combij.orc",
+    "how_many_p": 3
+  },
+  "convij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/convij.orc",
+    "how_many_p": 2
+  },
+  "cutij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/cutij.orc",
+    "how_many_p": 1
+  },
+  "decij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/decij.orc",
+    "how_many_p": 2
+  },
+  "delij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/delij.orc",
+    "how_many_p": 2
+  },
+  "duij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/duij.orc",
+    "how_many_p": 2
+  },
+  "flanij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/flanij.orc",
+    "how_many_p": 2
+  },
+  "folij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/folij.orc",
+    "how_many_p": 1
+  },
+  "getmeout": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/getmeout.orc",
+    "how_many_p": 1
+  },
+  "glass": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/glass.orc",
+    "how_many_p": 2
+  },
+  "moij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moij.orc",
+    "how_many_p": 2
+  },
+  "moijb3": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/moijb3.orc",
+    "how_many_p": 2
+  },
+  "pconvij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/pconvij.orc",
+    "how_many_p": 2
+  },
+  "platij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/platij.orc",
+    "how_many_p": 1
+  },
+  "revij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/revij.orc",
+    "how_many_p": 3
+  },
+  "rinij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/rinij.orc",
+    "how_many_p": 2
+  },
+  "skh": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skh.orc",
+    "how_many_p": 2
+  },
+  "skl": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/skl.orc",
+    "how_many_p": 2
+  },
+  "sklb": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/sklb.orc",
+    "how_many_p": 2
+  },
+  "sklb3": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/sklb3.orc",
+    "how_many_p": 2
+  },
+  "solij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/solij.orc",
+    "how_many_p": 2
+  },
+  "strij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strij.orc",
+    "how_many_p": 2
+  },
+  "strijp": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/strijp.orc",
+    "how_many_p": 3
+  },
+  "tapij": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/tapij.orc",
+    "how_many_p": 3
+  },
+  "wooden": {
+    "core": "",
+    "path": "/Users/j/Documents/PROJECTs/CORDELIA/_MOD/wooden.orc",
+    "how_many_p": 2
+  }
+}

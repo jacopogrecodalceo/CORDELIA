@@ -1,0 +1,23 @@
+
+
+
+gkpulse = 155
+
+gktuning pump 8, fill(scala.partch_greek, scala.edo13)
+
+eu: 8, 16, 4
+	@algo.strij(ntof(b4), .95)
+	each(qn, sn)
+	each(ff, mf)
+	iago
+	.96
+
+@algo2.tapij(hn*lfh(32), .5, lfh(3)): pump(16, fill(.24, 8)), p
+
+
+@bois.tapij(hn*lfh(32), .5, lfh(3)): pump(16, fill(.48, 8)), mp
+
+
+@arm1.moij(ntof(b3), .25): .8, p
+
+

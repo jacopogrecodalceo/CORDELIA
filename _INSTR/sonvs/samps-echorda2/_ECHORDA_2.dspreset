@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecentSampler pluginVersion="1">
+  <ui bgImage="ECHORDA2 bck.png" width="812" height="375" layoutMode="relative" bgMode="top_left">
+    <tab name="main">
+    
+	<labeled-knob x="160" y="40" label="hz" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900"  type="float" minValue="60" maxValue="20000" value="20000">
+         <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+	</labeled-knob>
+
+	<labeled-knob x="190" y="40" label="Q" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="float" minValue="0" maxValue="2" value="0.3">
+         <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_RESONANCE"/>
+	</labeled-knob>
+
+	<labeled-knob x="640" y="40" label="time" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="percent" minValue="0" maxValue="1" value="1">
+	 <binding type="effect" level="instrument" position="1" parameter="FX_DELAY_TIME"/>
+	</labeled-knob>
+
+	<labeled-knob x="670" y="40" label="off" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="percent" minValue="0" maxValue="1" value="0.01">
+	 <binding type="effect" level="instrument" position="1" parameter="FX_STEREO_OFFSET"/>
+	</labeled-knob>
+
+	<labeled-knob x="700" y="40" label="delay" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="percent" minValue="0" maxValue="1" value="0">
+	 <binding type="effect" level="instrument" position="1" parameter="FX_WET_LEVEL"/>
+	</labeled-knob>
+      
+	<labeled-knob x="760" y="40" label="verb" width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="percent" minValue="0" maxValue="100" value="0">
+	 <binding type="effect" level="instrument" position="2" parameter="FX_REVERB_WET_LEVEL" factor="0.01"/>
+	</labeled-knob>
+      
+	<labeled-knob x="10" y="40" label="A"  width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="float" minValue="0.0" maxValue="2.0" value="0.002">
+	  <binding type="amp" level="instrument" position="2" parameter="ENV_ATTACK" />
+	</labeled-knob>
+		
+	<labeled-knob x="40" y="40" label="D"  width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="float" minValue="0.0" maxValue="2.0" value="0.0">
+	 <binding type="amp" level="instrument" position="2" parameter="ENV_DECAY" />
+	</labeled-knob>
+		
+	<labeled-knob x="70" y="40" label="S"  width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="float" minValue="0.0" maxValue="9.0" value="9.0">
+	 <binding type="amp" level="instrument" position="2" parameter="ENV_SUSTAIN" />
+	</labeled-knob>
+		
+	<labeled-knob x="100" y="40" label="R"  width="50" style="linear_vertical" textColor="FFFFFFFF" trackForegroundColor="E6FF9900" type="float" minValue="0.0" maxValue="20.0" value="20.0">
+	 <binding type="amp" level="instrument" position="2" parameter="ENV_RELEASE" />
+	</labeled-knob>
+
+
+
+    </tab>
+    <keyboard>
+            <color loNote="72" hiNote="92" color="FFdc3d31" />
+            <color loNote="98" hiNote="98" color="FFf4da40" />
+  </keyboard>
+  </ui>
+
+
+
+
+  <groups seqMode="random" volume="1dB">
+    <group name="PIANO 1" loVel="01" hiVel="127" volume="1dB">
+      <sample hiNote="72" loNote="72" rootNote="72" path="Samples/ECHORDA2_09_A-1.wav" seqPosition="1"/>
+      <sample hiNote="73" loNote="73" rootNote="73" path="Samples/ECHORDA2_12_C0.wav" seqPosition="1"/>
+      <sample hiNote="74" loNote="74" rootNote="74" path="Samples/ECHORDA2_14_D0.wav" seqPosition="1"/>
+      <sample hiNote="75" loNote="75" rootNote="75" path="Samples/ECHORDA2_16_E0.wav" seqPosition="1"/>
+      <sample hiNote="76" loNote="76" rootNote="76" path="Samples/ECHORDA2_19_G0.wav" seqPosition="1"/>
+      <sample hiNote="77" loNote="77" rootNote="77" path="Samples/ECHORDA2_21_A0.wav" seqPosition="1"/>
+      <sample hiNote="78" loNote="78" rootNote="78" path="Samples/ECHORDA2_24_C1.wav" seqPosition="1"/>
+      <sample hiNote="79" loNote="79" rootNote="79" path="Samples/ECHORDA2_26_D1.wav" seqPosition="1"/>
+      <sample hiNote="80" loNote="80" rootNote="80" path="Samples/ECHORDA2_28_E1.wav" seqPosition="1"/>
+      <sample hiNote="81" loNote="81" rootNote="81" path="Samples/ECHORDA2_31_G1.wav" seqPosition="1"/>
+      <sample hiNote="82" loNote="82" rootNote="82" path="Samples/ECHORDA2_33_A1.wav" seqPosition="1"/>
+      <sample hiNote="83" loNote="83" rootNote="83" path="Samples/ECHORDA2_36_C2.wav" seqPosition="1"/>
+      <sample hiNote="84" loNote="84" rootNote="84" path="Samples/ECHORDA2_43_G2.wav" seqPosition="1"/>
+      <sample hiNote="85" loNote="85" rootNote="85" path="Samples/ECHORDA2_57_A3.wav" seqPosition="1"/>
+      <sample hiNote="86" loNote="86" rootNote="86" path="Samples/ECHORDA2_60_C4.wav" seqPosition="1"/>
+      <sample hiNote="87" loNote="87" rootNote="87" path="Samples/ECHORDA2_62_D4.wav" seqPosition="1"/>
+      <sample hiNote="88" loNote="88" rootNote="88" path="Samples/ECHORDA2_64_E4.wav" seqPosition="1"/>
+      <sample hiNote="89" loNote="89" rootNote="89" path="Samples/ECHORDA2_67_G4.wav" seqPosition="1"/>
+      <sample hiNote="90" loNote="90" rootNote="90" path="Samples/ECHORDA2_69_A4.wav" seqPosition="1"/>
+      <sample hiNote="91" loNote="91" rootNote="91" path="Samples/ECHORDA2_72_C5.wav" seqPosition="1"/>
+      <sample hiNote="98" loNote="98" rootNote="98" path="Samples/ECHORDA2_108_C8.wav" seqPosition="1" volume="10dB"/>
+
+    </group>
+    
+    </groups>
+
+  <effects>
+    <effect type="lowpass_4pl" frequency="20000.0"/>
+    <effect type="delay" delayTime="10.0" stereoOffset="0.01" feedback="0.2" wetLevel="0"/>
+    <effect type="reverb" wetLevel="0" roomSize="0.85" damping="O.2"/>
+  </effects>
+
+</DecentSampler>

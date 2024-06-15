@@ -1,0 +1,37 @@
+@gkpulse almost 95
+
+eujo: 4, 16, 4
+	+#define the_temp #Ancient_Greek_Ptolemy_Diatonic_Ditoniaion#
+	+#define add #_degs#
+	+istart init 69
+	+itemp init gi$the_temp
+	+itemp_len init gi$the_temp$add
+	@fairest3
+	gkbeats*24
+	$p
+	gigrembo
+	cpstun(1, once(genarray_i(istart, istart+itemp_len)), itemp)
+
+eujo: 4, 16, 4, .125
+	+#define the_temp #Ancient_Greek_Ptolemy_Diatonic_Ditoniaion#
+	+#define add #_degs#
+	+istart init 71
+	+itemp init gi$the_temp
+	+itemp_len init gi$the_temp$add
+	@fairest3
+	gkbeats*24
+	$p
+	gikazan
+	cpstun(1, once(genarray_i(istart, istart+itemp_len)), itemp)
+
+eujo: 4, 16, 4, .25
+	+#define the_temp #Ancient_Greek_Ptolemy_Diatonic_Ditoniaion#
+	+#define add #_degs#
+	+istart init 72
+	+itemp init gi$the_temp
+	+itemp_len init gi$the_temp$add
+	@orphans3
+	gkbeats*24
+	$f
+	gired
+	cpstun(1, once(genarray_i(istart, istart+itemp_len)), itemp)

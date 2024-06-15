@@ -1,0 +1,28 @@
+
+
+
+gkpulse = 155/2
+
+gktuning pump 8, fill(scala.partch_greek, scala.edo13)
+
+
+eu: 3, 8, 8
+	@mhont.revij(bs, .15, 1)
+	wn*8
+	pp
+	spina
+	c3-2.12: ares
+	eb3-2.12: ares
+	g4-2.12: ares
+
+
+
+eu: 5, 12, 8
+	@mhont2
+	wn*4
+	pppp/2
+	pan
+	c4-9.12: ares
+
+
+

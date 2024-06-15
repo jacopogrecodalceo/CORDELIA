@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cordelia"
+version = "0.1.0"
+description = "Csound Extension"
+authors = ["jacopogrecodalceo <jacopo.grecodalceo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+librosa = "^0.10.1"
+numpy = "^1.26.4"
+ctcsound = "^6.17.1"
+python-osc = "^1.8.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

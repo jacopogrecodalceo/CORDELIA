@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+cordelia_murmur: t/play
+
+gkpulse = 110/pump(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+eu: 4, 16, 4
+	@mhont@repuck.moij(ntof(b3)*pump(32, fill(.25, 4, .25, 3, 3/2)), .85)
+	each(wn*2, wn)
+	p
+	iago.a(5)
+	c4-2.16: bea
+
+@drum.convij(mhont, 1): 8, pp
+
