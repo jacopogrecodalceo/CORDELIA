@@ -79,7 +79,8 @@ $start_instr(echor2)
 	aouts[] diskin Spath, iratio, iskiptime/1000*(1-idyn)
 
 	aout = aouts[ich-1]
-	idyn_scaled = .75 + idyn * (1 - .75)
-	aout moogladder2 aout*idyn_scaled, limit(15$k-((1-idyn)*14.5$k)+icps, 50, 15$k), random:i(0, 1/9)
+	idyn_base = .5
+	idyn_scaled = idyn_base + idyn * (1 - idyn_base)
+	aout moogladder2 aout*idyn_scaled, limit(15$k-((1-idyn)*14.5$k)+icps*idyn, 50, 15$k), random:i(0, 1/9)
 	$dur_var(10)
 $end_instr

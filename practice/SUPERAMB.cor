@@ -1,0 +1,28 @@
+
+
+
+gkpulse = 80
+
+
+gktuning = scala.edo8
+
+eu: 14, 16, 4
+	@fpiano.delij(qn*pump(4, fill(1, 1, 3, .5, .25))).shij(qn)
+	wn, qn, 1
+	f, pp
+	hader.a(5)
+	stept(c4, dorian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+	stept(c4, dorian, 7+pump(64, fillarray(1, 3, 5, 8)) + pump(3, fillarray(0, -2, 1, -5)))
+	stept(c4, dorian, 4+pump(64, fillarray(1, 3, 5, 8)) + pump(3, fillarray(0, -2, 1, -5)))
+
+eu: 5, 16, 12
+	r4@ghosts_couleurs;fpiano.delij(qn*pump(4, fill(1, 1, 3, .5, .25))).shij(qn)
+	wn*3
+	ppp
+	bea
+	stept(c4, dorian, pump(64, fillarray(1, 3, 5, 8)) + pump(2, fillarray(0, -2, 1, -5)))
+
+
+;@unhappy.convij(fpiano): .12, f
+
+

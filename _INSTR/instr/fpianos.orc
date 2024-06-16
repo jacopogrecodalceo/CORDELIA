@@ -79,8 +79,8 @@ endif
 
 	; RELEASE
 	;================================================================
-	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpianos_path, Snote_name
-	schedule "fpianos_release", p3, filelen(Spath_release), Spath_release, ich
+	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpiano_path, Snote_name
+	schedule "fpianos_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
 	;================================================================
 
 	iskiptime random 1490, 1497
@@ -97,11 +97,17 @@ $end_instr
 
 instr fpianos_release
 	Sinstr init "fpianos"
-	idur init p3
 	Spath init p4
-	ich init p5
-	aenv cosseg 1, p3-.005, 1, .005, 0
-	aouts[] diskin Spath, 1
+        ilen filelen Spath
+        if p3 > ilen then
+                p3 init ilen
+        endif
+	idur init p3
+        idyn init p5
+	ich init p6
+	aenv cosseg idyn, p3-.005, idyn, .005, 0
+        iskiptime random 1480, 1495
+	aouts[] diskin Spath, 1, iskiptime/1000
 	aout = aouts[ich-1]*aenv
 	$channel_mix
 endin

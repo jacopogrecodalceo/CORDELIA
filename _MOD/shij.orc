@@ -41,7 +41,7 @@ atrans      pvsynth fftscale
 
 ; delay the feedback to let it build up over time
 afb         vdelay3 atrans, a(ktime*1000), imaxdel
-aout         =  ain*(1-kwet) + adel*(1-kfb/6)/2
+aout         =  ain*(1-kwet) + adel*(1-kfb/4)/2
 
     xout aout
 

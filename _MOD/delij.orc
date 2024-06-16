@@ -25,7 +25,7 @@ adel_tap    deltap kdel_time
 adel_out    limit adel_tap, -1, 1
 
 if instances > 1 then
-    adel_out += cordelia_delay_array(adel_out, kdel_time + .15, kfb, instances-1)
+    adel_out += cordelia_delay_array(adel_out, random:i(-1/12, 1/12) + kdel_time + .15*instances, kfb/instances, instances-1)/4
 endif
 
 adel_out    limit adel_out, -1, 1

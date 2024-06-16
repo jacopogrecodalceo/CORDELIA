@@ -1,0 +1,27 @@
+
+
+
+
+
+
+gkpulse = 90+jitter(15, 1/30, 1/15)
+
+gktuning = scala.candescent
+
+eu: 14, 16, 4
+	@mrhodes@fpiano;.shij(qn, .5, 1)
+	wn;*random:k(1, 8), qn
+	mf, pp
+	pump(32, fill(classic.a(5), -bea))
+	stept(c1, dorian, random:k(0, 48))
+
+saf: "uu", 16
+	@witches.revijd(qn)
+	wn*4
+	pppp
+	bea
+	stept(c2, dorian, random:k(0, 5))
+
+@mass: .96, f
+
+
