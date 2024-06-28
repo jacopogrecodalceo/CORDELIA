@@ -1,34 +1,27 @@
 import os
-import json
 
-midi_json_path = '/Users/j/Documents/PROJECTs/CORDELIA/rpr/cordelia_releted/midi_name_freq.json'
+wav_dir_path = '/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-kawai_felt'
 
-
-with open(midi_json_path, 'r') as file:
-    midi_data = json.load(file)
-
-script_path = os.path.dirname(os.path.abspath(__file__))
-
-
-wav_files = [f for f in os.listdir(script_path) if f.endswith('.aif')]
-
+wav_files = [f for f in os.listdir(wav_dir_path) if f.endswith('.wav')]
+    
 if_statements = []
+
+categories = [
+	'Release',
+	'p',
+	'm',
+	'f'
+]
 
 note_nums_extracted = []
 for f in wav_files:
-	#mRhodes_V3_f_A#3
-	note_name_split = f.split('_')
-	note_name = note_name_split[-1].split('.')[0]
-	if note_name_split[-2] == 'f':
-		midi_num = midi_data['note_name'].index(note_name.replace('D#', 'Eb').replace('A#', 'Bb').replace('G#', 'Ab'))
-		note_nums_extracted.append((note_name, int(midi_num)))
-
-#/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-mrhodes/mRhodes_V3_f_A#3.aif
-for note_name, note_num in note_nums_extracted:
-	for dyn in ['p', 'f']:
-		local_name = f'mRhodes_V3_{dyn}_{note_name}.aif'
-		if local_name not in wav_files:
-			raise ValueError(f'{local_name} not in {wav_files}')
+	if 'Release' not in f:
+		#Felt_Piano_f_B-1_RR1.wav
+		note_name_split = f.split('_')
+		note_name = note_name_split[-2]
+		if note_name_split[-3] == 'f' and 'RR1' in note_name_split[-1]:
+			midi_num = midi_data['note_name'].index(note_name)
+			note_nums_extracted.append((note_name, int(midi_num)))
 
 sorted_note_nums_extracted = sorted(note_nums_extracted, key=lambda x: x[1])
 

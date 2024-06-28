@@ -4,12 +4,12 @@ gkpulse	= 75
 
 gktuning = scala.edo31hex
 
-gkvar	= portk(pump(24, fill(.5, 2, 4, .25, 3)), .05)
+gkvar	= portk(pump(4, fill(.5, 2, 4, .25, 3)), .05)
 
 eu: 2, 16, 16
-	r4@witchesv.shij(1/64*lfh(8), gkvar, gkvar, .5)
+	@witchesv.shij(1/64*lfh(8), gkvar, gkvar, .5).revijd(qn*gkvar)
 	wn*4
-	pp
+	mf
 	zeus
 	stept(c1, pentamin, pump(16, fillarray(0, 2, 4, 0, 3, 4, -2, 2)+gkvar+1))
 

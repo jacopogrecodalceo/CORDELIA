@@ -35,7 +35,7 @@ kfreq, kamp		ATSread kread, Satsfile, ipartial
 ; ============
 ; *** CORE ***
 ; ============
-ain 		oscili iamp*a(kamp), a(kfreq)*ifreq
+ain 		oscili iamp*a(kamp), a(kfreq * 1+abs(jitter:k(4, 13/p3, 20/p3))*abs(jitter:k(4, 13/p3, 20/p3)))
 ibeatf		init 1/4
 #define jit #random:i(-1, 1)#
 

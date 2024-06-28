@@ -60,7 +60,7 @@ def verify_scala(token):
 			token.value = 'gi' + value
 			return token
 		else:
-			raise ValueError(f'{token.type} with {value} is not found!')
+			print(f'Error: {token.type} with {value} is not found!')
 	else:
 		token.value = 'gi' + value
 		return token

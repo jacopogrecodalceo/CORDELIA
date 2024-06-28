@@ -1,106 +1,61 @@
 
-#define bbij_if_condition(freq) #if abs(jitter:k(1, 7/p3, 5/p3))>$freq && changed2(kchange) == 1 then#
+gkrj_bd[]	fillarray 2, 0, 0, 0, 	1, 0, 0, 0, 	1, 0, 0, 0, 	1, 0, 0, 0
+gkrj_sn[]	fillarray 0, 0, 0, 0, 	1, 0, 0, 0, 	0, 0, 0, 0, 	1, 0, 0
+gkrj_ride[]	fillarray 2, 1, 1, 1, 	2, 1, 1, 1, 	2, 1, 1, 1, 	2, 1, 1
 
 
-$start_instr(bbij)
+$start_instr(rj)
+	idiv			init icps%i(gkdiv)
+	kdiv_bar		init -1
+	ksubdiv 		init -1
 
-	icps init (p6 % i(gkdiv))/8
 
-	idiv		init icps%i(gkdiv)
-	kcycle		= chnget:k("heart") * divz(gkdiv, idiv, 1)
-	kchange		= floor(kcycle)
+	; divide the main 64 quarter notes into a subdivision of 8 quarter notes
+	; so from 0 to 1 now the cycle is from 0 to (64 / 8) = 8
+	; representing the 8 bars
+	kcycle			chnget "heart"
+	kdiv_bar		= kcycle * divz(gkdiv, idiv, 1)
 
-	if (gkbeatn % 4) == 0 then
-		kboost_dur random 1, 2 
-	endif
 
-	ituning		i gktuning
-	ilen		tab_i 0, ituning
-	ioff		init 4
-	itun_len	init ilen - ioff
+	; in order to get each quarter notes subdivision of 32
+	; get the modulo 1 of the cycle and then multiply by 8
+	ksubdiv	= (kdiv_bar % 1) * idiv
 
-	$bbij_if_condition(.15)
+	; 4 for 16th, 8 for 32th..
+	;k16th	= floor( (ksubdiv % 1) * 4 ) + 4 * floor( (gkHEART * gkdiv) )
+	k16th	= floor( (ksubdiv % 1) * idiv ) + idiv * floor( (kcycle * gkdiv) )
+	if changed2(k16th) == 1 then
+		;kplus = random:k(0, 1) > .35 ? int(random:k(0, 2)) : 0
 
-		gkfixed_style_kick_1[] fillarray nstrnum("bbij_kick"), 0, idur/2, idyn, ich, \
-										75, 145, \
-										.25, .15, \
-										.75, 3, \
-										.15, .15, .15,
-										.5, 10, 8
-/* 
-		; Initialize k-variables
-		idur    random idur/2, idur                 ; Duration
-		kdyn	random idyn/2, idyn               ; Amplitude
-		klof    random 75, 95           ; High frequency
-		khif    random 125, 135         ; High frequency
-		kdec    random 1/64, 1/32      ; Decay
-		ktens    random 1/64, 1/32      ; Decay
-		khit    random .75, 1      ; Accent
-		kq      random 3, 4             ; Pitch Bend Q (oscillation)
-		kod     random 1/64, 1/32      ; Amplitude of overtones
-		koc     random 1/64, 1/32      ; Amplitude of overtones
-		kof     random 1/64, 1/32      ; Amplitude of overtones
-		ksus    random 1/4, 1/2      ; Sustain
-		kqf     random 10, 15           ; FM resonance frequency
-		klpf    random 8, 12            ; Amp low pass frequency
- */		
- 		schedulek gkfixed_style_kick_1
+		kdyn_bd = gkrj_bd[k16th%lenarray(gkrj_bd)]
+		if kdyn_bd >= 1 then
 
-	endif
+			kfixed_style_bd[] 	fillarray nstrnum("rj_bd"), 0, \
+									kdyn_bd/4, kdyn_bd/3, ich, \
+									35, 125, \
+									.25, .15, \
+									.75, 3, \
+									.15*kdyn_bd/2, .15*kdyn_bd/5, .15, \
+									.5, 10, 8
 
-	$bbij_if_condition(.5)
-		;       Sta	Dur	Amp	Pitch	Pan	    Fc	Q	OTAmp	OTFqc	OTQ	Mix
-		;i24	0.0	.25	30000	8.00	.5	5333	40	0.5	1.5	0.2	.2
-		idur    random idur/2, idur                 ; Duration
-		kdyn	random idyn/2, idyn               ; Amplitude
-		kfqc    = random:k(5000, 6000)*tab:k((abs(jitter:k(1, gibeatf/8, gibeatf))*(itun_len+1))+ioff, ituning); p5              ; Pitch
-		kfco    random 7000, 9000              ; resonance Fco
-		kq      random 20, 40              ; Q
-		kotv    random .15, 1/2              ; Overtone volume
-		kotf    =    kfco * random:i(.5, 1)      ; Fco * OTFqc
-		kotq    =    kq * random:i(1/12, .5)        ; Q * OTQ
-		kmix    random .3, .1
+			schedulek kfixed_style_bd
 
-		schedulek "bbij_cym", 0, idur*kboost_dur, kdyn, ich, kfqc, kfco, kq, kotv, kotf, kotq, kmix
-		if random:k(0, 1)>.5 then
-			schedulek "bbij_cym", random:k(0, idur), idur*kboost_dur, kdyn, ich, kfqc, kfco, kq, kotv, kotf, kotq, kmix
-			schedulek "bbij_cym", random:k(0, idur), idur*kboost_dur, kdyn, ich, kfqc, kfco, kq, kotv, kotf, kotq, kmix
-			schedulek "bbij_cym", random:k(0, idur), idur*kboost_dur, kdyn, ich, kfqc, kfco, kq, kotv, kotf, kotq, kmix
-		endif
-	endif
-
-	$bbij_if_condition(.75)
-		;i34	0.0	.5	30000	7.00	.5	.7	1	1	1	1	1.5	.1
-		idur    random idur/4, idur/2                 ; Duration
-		kdyn	random idyn/2, idyn              ; Amplitude
-		kfqc    = random:k(200, 400)*tab:k((abs(jitter:k(1, gibeatf/8, gibeatf))*(itun_len+1))+ioff, ituning)      ; Pitch to frequency
-		krez    random 0, .25              ; Tone
-		kspdec  random 0, 1              ; Spring decay
-		kspton  random 0, 1             ; Spring tone
-		kspmix  random 1/9, 1             ; Spring mix
-		kspq    random 1/4, 2             ; Spring Q
-		kpbnd   random 1, 2             ; Pitch bend
-		kpbtm   random 1/32, 1/8 	; Pitch bend time
-
-		schedulek "bbij_sna", 0, idur*kboost_dur, kdyn, ich, kfqc, krez, kspdec, kspton, kspmix, kspq, kpbnd, kpbtm
-		if random:k(0, 1)>.5 then
-			schedulek "bbij_sna", random:k(0, idur), idur*kboost_dur, kdyn, ich, kfqc, krez, kspdec, kspton, kspmix, kspq, kpbnd, kpbtm
 		endif
 	endif
 
 endin
 
-instr bbij_kick
-$params(bbij)
+instr rj_bd
 
+	Sinstr 	init 	"rj"
 	idur    init    p3      ; Duration
 	idyn    init    p4      ; Amplitude
 	ich     init    p5      ; Channel	
-	ilof    init    p6      ; High frequency
+	ilof    init    p6      ; Low frequency
 	ihif    init    p7      ; High frequency
 	idec    init    p8      ; Decay
 	itens   init    p9      ; Tension
-	ihit    init    p10      ; Accent
+	ihit    init    p10     ; Accent
 	iq      init    p11     ; Pitch Bend Q (oscillation)
 	iod     init    p12     ; Amplitude of overtones
 	ioc     init    p13     ; Control of overtone amplitudes
@@ -117,24 +72,24 @@ $params(bbij)
 	adyn    expseg  1, idur, isus                          ; Exp amp envelope
 	adyn2   butlp   adyn, ilpf                             ; Low pass version
 	adyn3   =       (adyn * ihit + adyn2 * (1 - ihit))     ; Mix the two envelopes for different attacks
-	adclk   linseg  0, .002, 1, idur - .004, 1, .002, 0    ; Declick envelope
+	adclk   cosseg  0, .002, 1, idur - .004, 1, .002, 0    ; Declick envelope
 
-	asig    oscil   1, afqc3, gisine                            ; Simple sine oscillator
+	asig    oscil3   1, afqc3, gisine                            ; Simple sine oscillator
 
 	ioc1    =       1 + ioc                                ; Overtone control for base fqc*2
 	ioc2    =       1 + ioc * 2                            ; ditto fqc*3
 	ioc3    =       1 + ioc * 3                            ; ditto fqc*5
 
-	asig2a  oscil   1, afqc3 * 2, gisine, .25                   ; Sine oscillator 2
+	asig2a  oscil3   1, afqc3 * 2, gisine, .25                   ; Sine oscillator 2
 	asigo   =       asig2a + .95                           ; Scale for the tanh
 	asig2b  =       -tanh((asig2a + .95) * ioc1) + 1       ; Create a squarish envelope for the overtones
 	asig2c  =       (asig2a * asig2b) * adyn3 ^ ioc1       ; This makes pulses of sine waves
 
-	asig3a  oscil   1, afqc3 * (1 + iof * 2), gisine, .25       ; Sine oscillator 3
+	asig3a  oscil3   1, afqc3 * (1 + iof * 2), gisine, .25       ; Sine oscillator 3
 	asig3b  =       -tanh(asigo * ioc2) + 1                ; Squarish envelope pulses
 	asig3c  =       (asig3a * asig3b) * adyn3 ^ ioc2       ; Adjust the magnitude with ioc2
 
-	asig5a  oscil   1, afqc3 * (1 + iof * 4), gisine, .25       ; Sine oscillator 5
+	asig5a  oscil3   1, afqc3 * (1 + iof * 4), gisine, .25       ; Sine oscillator 5
 	asig5b  =       -tanh(asigo * ioc2) + 1                ; Squarish envelope pulses
 	asig5c  =       (asig5a * asig5b) * adyn3 ^ ioc3       ; Adjust the magnitude
 
@@ -142,10 +97,10 @@ $params(bbij)
 	aout    =       (asig * adyn3 + (asig2c + asig3c + asig5c) * iod) * adclk * idyn
 
 	$channel_mix
-	endin
+endin
 
-instr bbij_cym
-$params(bbij)
+instr rj_ride
+	$params(rj)
 
 	idur    init    p3              ; Duration
 	idyn    init    p4              ; Amplitude
@@ -188,8 +143,8 @@ $params(bbij)
 	$channel_mix
 endin
 
-instr bbij_sna
-$params(bbij)
+instr rj_sn
+	$params(rj)
 
 	idur    init    p3      ; Duration
 	idyn    init    p4      ; Amplitude

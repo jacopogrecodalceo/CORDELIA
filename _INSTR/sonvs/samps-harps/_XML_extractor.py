@@ -10,7 +10,7 @@ with open(midi_json_path, 'r') as file:
 script_path = os.path.dirname(os.path.abspath(__file__))
 
 
-wav_files = [f for f in os.listdir(script_path) if f.endswith('.aif')]
+wav_files = [f for f in os.listdir(script_path) if f.endswith('.wav')]
 
 if_statements = []
 

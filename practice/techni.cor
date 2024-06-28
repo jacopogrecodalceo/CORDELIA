@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+gkpulse = 90;+jitter(15, 1/30, 1/15)
+
+gktuning = scala.candescent
+
+
+@ry: .96, p
+
+@ry.pitchij(qn): 8, ff
+
+@amen.cutij(32, pump(24, fill(0, 1, .5))).delij(sn): 4, f
+
+gkamen_dur = 4
+
+@dead1: 4, fff
+

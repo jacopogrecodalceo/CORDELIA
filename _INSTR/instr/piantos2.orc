@@ -45,12 +45,12 @@ $start_instr(piantos2)
 
 	Spath sprintf "%s/%i_%s.wav", gSpiantos2_path, iresult, Sdyn
 
-	Spath_release sprintf "%s/%i_%s.wav", gSpiantos2_path, iresult, "r1"
-	schedule "piantos2_release", p3, filelen(Spath_release), Spath_release, ich
+	; RELEASE
+	;================================================================
+	Spath_release sprintf "%s/%i_%s.wav", gSpiantos_path, iresult, "r1"
+	schedule "piantos2_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
+	;================================================================
 
-	;isr_correction init filesr(Spath) / sr
-
-	;aenv cosseg 1, p3-.5, 1, .5, 0
 	aouts[] diskin Spath, iratio;*isr_correction
 
 	indx init 1
@@ -91,10 +91,15 @@ $end_instr
 
 instr piantos2_release
 	Sinstr init "piantos2"
-	idur init p3
 	Spath init p4
-	ich init p5
-	aenv cosseg 1, p3-.005, 1, .005, 0
+	ilen filelen Spath
+	if p3 > ilen then
+		p3 init ilen
+	endif
+	idur init p3
+	idyn init p5
+	ich init p6
+	aenv cosseg idyn, p3-.005, idyn, .005, 0
 	aouts[] diskin Spath, 1
 	aout = aouts[ich-1]*aenv
 	$channel_mix

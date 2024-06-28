@@ -79,7 +79,7 @@ endif
 
 	; RELEASE
 	;================================================================
-	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpiano_path, Snote_name
+	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpianos_path, Snote_name
 	schedule "fpianos_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
 	;================================================================
 

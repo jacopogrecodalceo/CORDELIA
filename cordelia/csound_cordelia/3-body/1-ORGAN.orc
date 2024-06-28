@@ -4,7 +4,6 @@ gktuning init giedo12
 gktuning_len init tab_i(0, i(gktuning))
 gScsound_score init ""
 
-
 gSmouth[]		init ginchnls
 
 indx		init 0

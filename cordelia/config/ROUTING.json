@@ -37,7 +37,7 @@
     "delij": {
         "input": "kk",
         "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    cordelia_delay_array PARAM_IN, PARAM_1, PARAM_2, 4",
-        "opcode": "opcode cordelia_delay_array, a, akki\n    \n    setksmps 1\n    adel_in, kdel_time, kfb, instances xin\n\nidel_buf    init 10\n\nadel_dump   delayr idel_buf\nadel_tap    deltap kdel_time\n            delayw adel_in + (adel_tap * kfb)\n\nadel_out    limit adel_tap, -1, 1\n\nif instances > 1 then\n    adel_out += cordelia_delay_array(adel_out, random:i(-1/12, 1/12) + kdel_time + .15*instances, kfb/instances, instances-1)/4\nendif\n\nadel_out    limit adel_out, -1, 1\n    \n    xout adel_out\n    \n    endop"
+        "opcode": "opcode cordelia_delay_array, a, akki\n    setksmps 1\n    adel_in, kdel_time, kfb, instances xin\n\nadel_in     init 0\nadel_tap    init 0\n\nidel_buf    init 10\n\nadel_dump   delayr idel_buf\nadel_tap    deltap kdel_time\n            delayw adel_in + (adel_tap * kfb)\n\nadel_out    = adel_tap;, -1, 1\n\nif instances > 1 then\n    adel_out += cordelia_delay_array(adel_out, random:i(-1/12, 1/12) + kdel_time + .15*instances, kfb/instances, instances-1)/4\nendif\n\n    \n    xout adel_out\n    \n    endop"
     },
     "duij": {
         "input": "Sk",
@@ -61,8 +61,13 @@
     },
     "folij": {
         "input": "Sk",
-        "core": "PARAM_OUT cordelia_follow PARAM_IN, PARAM_1, ich",
-        "opcode": "opcode cordelia_follow, a, aSi\n    ain, String, ich xin\n\nadest\tchnget sprintf(\"%s_%i\", String, ich)\n\naenv    follow adest, i(gkbeats)/32\naout    balance2 ain, aenv/2\n\n    xout aout\n    endop"
+        "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow PARAM_IN, PARAM_1, PARAM_2, ich",
+        "opcode": "opcode cordelia_follow, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\n/* adest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        balance ain, aenv */\n\nkthresh     init 0\nklo_knee    init 48\nkhi_knee    init 60\nkratio      init 5.5\nkatk        init .005\nkrel        init .05\nilookahead  init 50/1000\n\naout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
+    },
+    "folij2": {
+        "input": "Sk",
+        "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow2 PARAM_IN, PARAM_1, PARAM_2, ich",
+        "opcode": "opcode cordelia_follow2, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\nadest\t    chnget sprintf(\"%s_%i\", String, ich)\n\nadest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 1500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        = ain*(1-aenv)\n\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
     },
     "getmeout": {
         "input": "k",
@@ -188,5 +193,10 @@
         "input": "kk",
         "core": "PARAM_1    init 1\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden3 PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "#define cordelia_wooden3_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#\n#define cordelia_wooden3_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#\n\n\topcode cordelia_wooden3, a, akk\n\tain, kfreq, kq xin\n\nif1\t\tinit 1000\nif2\t\tinit 3000\n\niq1\t\tinit 12\niq2\t\tinit 8\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit ksmps/sr\nif itime <= 0 then\n\titime = 1/2\nendif\nidbthresh\tinit 3 ; dB threshold\n\nkoct, kamp\tpitch ain, itime, ilow, ihigh, idbthresh\n\naexc1\t\tmode ain, $cordelia_wooden3_cps(if1), $cordelia_wooden3_q(iq1)\naexc2\t\tmode ain, $cordelia_wooden3_cps(if2), $cordelia_wooden3_q(iq2)\n\naexc\t\t= (aexc1+aexc2)/2\n\nkmain_freq\tportk limit(cpsoct(koct), 20, 20$k), itime\nkfreq1\t\tlimit kmain_freq*kfreq, 20, 20$k\nkfreq2\t\tlimit kmain_freq*kfreq*2, 20, 20$k\n\nares1\t\tmode aexc, $cordelia_wooden3_cps(kfreq1), $cordelia_wooden3_q(scale(kq, 50, 60))\nares2\t\tmode aexc, $cordelia_wooden3_cps(kfreq2), $cordelia_wooden3_q(scale(kq, 42, 53))\n\namode\t\t= (a(kamp)/8192)*(ares1+ares2)/4096\naout\t\t= amode\n\n\txout aout\n\tendop"
+    },
+    "zd": {
+        "input": "kk",
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_zdf_ladder PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_zdf_ladder, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout        moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, .5+kq*15\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     }
 }

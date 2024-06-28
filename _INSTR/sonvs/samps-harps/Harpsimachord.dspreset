@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecentSampler minVersion="1.0.0">
+  <effects>
+    <effect type="reverb" roomSize=".7" wetLevel="0.0" />
+  </effects>
+  <!-- ui width="812" height="375" -->
+  <ui bgImage="Photos/BackgroundWide.jpg" width="812" height="375" layoutMode="relative" bgMode="top_left">
+    <tab name="main">
+
+
+      <label x="570" y="50" width="80" height="30" textSize="18" textColor="FFFFFFFF" text="Reverb" />
+
+      <control x="555" y="70" parameterName="Reverb" type="float" minValue="0" maxValue="1" textColor="FF000000" value="0.0">
+        <binding type="effect" level="instrument" position="0" parameter="FX_REVERB_WET_LEVEL" translation="linear" translationOutputMin="0" translationOutputMax="1.0"  />
+      </control>
+
+      <label x="675" y="50" width="80" height="30" textSize="18" textColor="FFFFFFFF" text="Room Size"/>
+
+      <control x="660" y="70" parameterName="Reverb" type="float" minValue="0" maxValue="1" textColor="FF000000" value="0.5">
+        <binding type="effect" level="instrument" position="0" parameter="FX_REVERB_ROOM_SIZE" translation="linear" translationOutputMin="0" translationOutputMax="1.0"  />
+      </control>
+
+      <label x="10" y="110" width="150" height="30" hAlign="left" textSize="18" textColor="FFFFFFFF" text="Manual and Registration"/>
+
+      <menu x="10" y="140"  width="160" height="30" requireSelection="true" placeholderText="Choose..." value="1">
+        <option name="Lower">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Lower" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Upper">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Upper" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Nasat">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Nasat" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Nasat2">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Nasat2" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Lower+4'">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Lower+4'" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Lower+Upper+4">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Lower+Upper+4'" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+        </option>
+        <option name="Lower Buff">
+           <binding type="control" level="ui" position="3" parameter="TEXT" translation="fixed_value" translationValue="Lower Buff Stop" />
+           <binding type="general" level="group" position="0" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="1" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="2" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="3" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="4" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="5" parameter="ENABLED" translation="fixed_value" translationValue="false" />
+           <binding type="general" level="group" position="6" parameter="ENABLED" translation="fixed_value" translationValue="true" />
+        </option>
+    </menu>
+    </tab>
+  </ui>
+  <groups>
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Lower/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Lower/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Lower/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Lower/47.wav" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Lower/48.wav" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Lower/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower/65.wav" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Lower/66.wav" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Lower/67.wav" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Lower/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Lower/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Lower/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Lower/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Lower/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Lower/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Lower/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Lower/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Lower/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Lower/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Lower/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower/Releases/44.wav" trigger="release" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Lower/Releases/45.wav" trigger="release" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Lower/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Lower/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Lower/Releases/48.wav" trigger="release" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Lower/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Lower/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Lower/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Lower/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Lower/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Lower/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Lower/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Lower/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Lower/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Lower/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Lower/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Lower/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Lower/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+
+      </group>
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Upper/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Upper/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Upper/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Upper/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Upper/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Upper/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Upper/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Upper/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Upper/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Upper/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Upper/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Upper/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Upper/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Upper/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Upper/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Upper/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Upper/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Upper/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Upper/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Upper/47.wav" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Upper/48.wav" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Upper/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Upper/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Upper/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Upper/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Upper/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Upper/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Upper/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Upper/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Upper/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Upper/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Upper/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Upper/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Upper/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Upper/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Upper/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Upper/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Upper/65.wav" rootNote="65" loNote="65" hiNote="65" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Upper/66.wav" rootNote="66" loNote="66" hiNote="66" / -->
+        <sample path="SamplesNR/Upper/67.wav" rootNote="67" loNote="66" hiNote="67" />
+        <sample path="SamplesNR/Upper/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Upper/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Upper/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Upper/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Upper/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Upper/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Upper/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Upper/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Upper/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Upper/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# on out of tune -->
+        <!-- sample path="SamplesNR/Upper/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Upper/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Upper/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Upper/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Upper/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Upper/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Upper/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Upper/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Upper/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Upper/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Upper/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Upper/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Upper/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Upper/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Upper/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Upper/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Upper/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Upper/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Upper/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Upper/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Upper/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Upper/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Upper/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Upper/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Upper/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Upper/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Upper/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Upper/Releases/44.wav" trigger="release" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Upper/Releases/45.wav" trigger="release" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Upper/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Upper/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Upper/Releases/48.wav" trigger="release" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Upper/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Upper/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Upper/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Upper/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Upper/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Upper/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Upper/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Upper/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Upper/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Upper/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Upper/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Upper/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Upper/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Upper/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Upper/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Upper/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Upper/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Upper/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Upper/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Upper/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Upper/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Upper/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Upper/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Upper/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Upper/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Upper/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Upper/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Upper/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Upper/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Upper/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Upper/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Upper/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Upper/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Upper/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Upper/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Upper/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Upper/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Upper/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Upper/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Upper/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+      </group>
+
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Nasat/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Nasat/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Nasat/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Nasat/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Nasat/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Nasat/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Nasat/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Nasat/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Nasat/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Nasat/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Nasat/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Nasat/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Nasat/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Nasat/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Nasat/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Nasat/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Nasat/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Nasat/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Nasat/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Nasat/47.wav" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Nasat/48.wav" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Nasat/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Nasat/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Nasat/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Nasat/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Nasat/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Nasat/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Nasat/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Nasat/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Nasat/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Nasat/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Nasat/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Nasat/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Nasat/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Nasat/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Nasat/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Nasat/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Nasat/65.wav" rootNote="65" loNote="65" hiNote="65" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Nasat/66.wav" rootNote="66" loNote="66" hiNote="66" / -->
+        <sample path="SamplesNR/Nasat/67.wav" rootNote="67" loNote="66" hiNote="67" />
+        <sample path="SamplesNR/Nasat/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Nasat/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Nasat/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Nasat/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Nasat/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Nasat/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Nasat/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Nasat/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Nasat/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Nasat/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Nasat/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Nasat/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Nasat/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Nasat/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Nasat/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Nasat/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Nasat/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Nasat/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Nasat/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Nasat/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Nasat/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Nasat/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Nasat/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Nasat/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Nasat/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Nasat/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Nasat/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Nasat/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Nasat/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Nasat/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Nasat/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Nasat/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Nasat/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Nasat/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Nasat/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Nasat/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Nasat/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Nasat/Releases/44.wav" trigger="release" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Nasat/Releases/45.wav" trigger="release" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Nasat/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Nasat/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Nasat/Releases/48.wav" trigger="release" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Nasat/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Nasat/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Nasat/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Nasat/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Nasat/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Nasat/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Nasat/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Nasat/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Nasat/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Nasat/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Nasat/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Nasat/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Nasat/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Nasat/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Nasat/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Nasat/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Nasat/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Nasat/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Nasat/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Nasat/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Nasat/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Nasat/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Nasat/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Nasat/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Nasat/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Nasat/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Nasat/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Nasat/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Nasat/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Nasat/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Nasat/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Nasat/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Nasat/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Nasat/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Nasat/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Nasat/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Nasat/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Nasat/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Nasat/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Nasat/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+      </group>
+
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Nasat2/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Nasat2/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Nasat2/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Nasat2/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Nasat2/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Nasat2/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Nasat2/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Nasat2/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Nasat2/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Nasat2/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Nasat2/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Nasat2/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Nasat2/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Nasat2/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Nasat2/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Nasat2/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Nasat2/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Nasat2/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Nasat2/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Nasat2/47.wav" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Nasat2/48.wav" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Nasat2/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Nasat2/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Nasat2/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Nasat2/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Nasat2/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Nasat2/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Nasat2/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Nasat2/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Nasat2/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Nasat2/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Nasat2/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Nasat2/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Nasat2/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Nasat2/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Nasat2/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Nasat2/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Nasat2/65.wav" rootNote="65" loNote="65" hiNote="65" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Nasat2/66.wav" rootNote="66" loNote="66" hiNote="66" / -->
+        <sample path="SamplesNR/Nasat2/67.wav" rootNote="67" loNote="66" hiNote="67" />
+        <sample path="SamplesNR/Nasat2/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Nasat2/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Nasat2/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Nasat2/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Nasat2/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Nasat2/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Nasat2/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Nasat2/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Nasat2/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Nasat2/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Nasat2/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Nasat2/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Nasat2/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Nasat2/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Nasat2/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Nasat2/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Nasat2/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Nasat2/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Nasat2/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Nasat2/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Nasat2/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Nasat2/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Nasat2/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Nasat2/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Nasat2/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Nasat2/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Nasat2/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Nasat2/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Nasat2/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Nasat2/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Nasat2/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Nasat2/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Nasat2/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Nasat2/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Nasat2/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Nasat2/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Nasat2/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Nasat2/Releases/44.wav" trigger="release" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Nasat2/Releases/45.wav" trigger="release" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Nasat2/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Nasat2/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Nasat2/Releases/48.wav" trigger="release" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Nasat2/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Nasat2/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Nasat2/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Nasat2/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Nasat2/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Nasat2/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Nasat2/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Nasat2/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Nasat2/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Nasat2/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Nasat2/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Nasat2/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Nasat2/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Nasat2/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Nasat2/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Nasat2/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Nasat2/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Nasat2/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Nasat2/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Nasat2/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Nasat2/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Nasat2/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Nasat2/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Nasat2/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Nasat2/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Nasat2/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Nasat2/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Nasat2/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Nasat2/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Nasat2/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Nasat2/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Nasat2/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Nasat2/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Nasat2/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Nasat2/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Nasat2/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Nasat2/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Nasat2/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Nasat2/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Nasat2/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+      </group>
+
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Lower+4/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower+4/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower+4/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower+4/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower+4/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower+4/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower+4/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower+4/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower+4/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower+4/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower+4/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower+4/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower+4/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower+4/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower+4/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower+4/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower+4/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Lower+4/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Lower+4/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <!-- sample 48 has broken 4' string -->
+        <!-- sample path="SamplesNR/Lower+4/47.wav" rootNote="47" loNote="47" hiNote="47" -->
+        <sample path="SamplesNR/Lower+4/48.wav" rootNote="48" loNote="47" hiNote="48" />
+        <sample path="SamplesNR/Lower+4/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower+4/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower+4/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower+4/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower+4/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower+4/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower+4/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower+4/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower+4/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower+4/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower+4/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower+4/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower+4/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower+4/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower+4/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower+4/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower+4/65.wav" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Lower+4/66.wav" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Lower+4/67.wav" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Lower+4/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower+4/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower+4/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower+4/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower+4/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower+4/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Lower+4/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Lower+4/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Lower+4/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Lower+4/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Lower+4/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Lower+4/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Lower+4/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Lower+4/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Lower+4/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower+4/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower+4/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower+4/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower+4/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower+4/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower+4/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Lower+4/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower+4/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower+4/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower+4/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower+4/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower+4/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower+4/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower+4/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower+4/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower+4/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower+4/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower+4/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower+4/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower+4/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower+4/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower+4/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower+4/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <!-- sample 48 has broken 4' string -->
+        <!-- sample path="SamplesNR/Lower+4/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" -->
+        <sample path="SamplesNR/Lower+4/Releases/48.wav" trigger="release" rootNote="48" loNote="47" hiNote="48" />
+        <sample path="SamplesNR/Lower+4/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower+4/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower+4/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower+4/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower+4/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower+4/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower+4/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower+4/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower+4/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower+4/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower+4/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower+4/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower+4/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower+4/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower+4/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower+4/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower+4/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Lower+4/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Lower+4/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Lower+4/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower+4/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower+4/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower+4/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower+4/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower+4/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Lower+4/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Lower+4/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Lower+4/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Lower+4/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Lower+4/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Lower+4/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Lower+4/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Lower+4/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Lower+4/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower+4/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower+4/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower+4/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower+4/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower+4/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower+4/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+      </group>
+
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Lower+Upper+4/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower+Upper+4/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower+Upper+4/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower+Upper+4/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower+Upper+4/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower+Upper+4/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower+Upper+4/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower+Upper+4/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower+Upper+4/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower+Upper+4/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower+Upper+4/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower+Upper+4/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower+Upper+4/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower+Upper+4/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower+Upper+4/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower+Upper+4/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower+Upper+4/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Lower+Upper+4/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Lower+Upper+4/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <!-- sample 48 has broken 4' string -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/47.wav" rootNote="47" loNote="47" hiNote="47" -->
+        <sample path="SamplesNR/Lower+Upper+4/48.wav" rootNote="48" loNote="47" hiNote="48" />
+        <sample path="SamplesNR/Lower+Upper+4/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower+Upper+4/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower+Upper+4/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower+Upper+4/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower+Upper+4/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower+Upper+4/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower+Upper+4/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower+Upper+4/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower+Upper+4/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower+Upper+4/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower+Upper+4/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower+Upper+4/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower+Upper+4/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower+Upper+4/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower+Upper+4/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower+Upper+4/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower+Upper+4/65.wav" rootNote="65" loNote="65" hiNote="65" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/66.wav" rootNote="66" loNote="66" hiNote="66" / -->
+        <sample path="SamplesNR/Lower+Upper+4/67.wav" rootNote="67" loNote="66" hiNote="67" />
+        <sample path="SamplesNR/Lower+Upper+4/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower+Upper+4/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower+Upper+4/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower+Upper+4/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower+Upper+4/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower+Upper+4/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Lower+Upper+4/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Lower+Upper+4/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Lower+Upper+4/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Lower+Upper+4/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower+Upper+4/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower+Upper+4/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower+Upper+4/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower+Upper+4/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower+Upper+4/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower+Upper+4/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Lower+Upper+4/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <!-- sample 48 has broken 4' string -->
+        <!-- sample path="SamplesNR/Lower+Upper+4/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" -->
+        <sample path="SamplesNR/Lower+Upper+4/Releases/48.wav" trigger="release" rootNote="48" loNote="47" hiNote="48" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Lower+Upper+4/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+      </group>
+
+      <group ampVelTrack="0">
+        <sample path="SamplesNR/Buff/28.wav" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Buff/29.wav" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Buff/30.wav" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Buff/31.wav" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Buff/32.wav" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Buff/33.wav" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Buff/34.wav" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Buff/35.wav" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Buff/36.wav" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Buff/37.wav" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Buff/38.wav" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Buff/39.wav" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Buff/40.wav" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Buff/41.wav" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Buff/42.wav" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Buff/43.wav" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Buff/44.wav" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Buff/45.wav" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Buff/46.wav" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Buff/47.wav" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Buff/48.wav" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Buff/49.wav" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Buff/50.wav" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Buff/51.wav" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Buff/52.wav" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Buff/53.wav" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Buff/54.wav" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Buff/55.wav" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Buff/56.wav" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Buff/57.wav" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Buff/58.wav" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Buff/59.wav" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Buff/60.wav" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Buff/61.wav" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Buff/62.wav" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Buff/63.wav" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Buff/64.wav" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Buff/65.wav" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Buff/66.wav" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Buff/67.wav" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Buff/68.wav" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Buff/69.wav" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Buff/70.wav" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Buff/71.wav" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Buff/72.wav" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Buff/73.wav" rootNote="73" loNote="73" hiNote="73" />
+	<!-- D is out of tune -->
+        <!-- sample path="SamplesNR/Buff/74.wav" rootNote="74" loNote="74" hiNote="74" / -->
+        <!-- sample path="SamplesNR/Buff/75.wav" rootNote="75" loNote="74" hiNote="75" / -->
+        <sample path="SamplesNR/Buff/76.wav" rootNote="76" loNote="74" hiNote="76" />
+        <sample path="SamplesNR/Buff/77.wav" rootNote="77" loNote="77" hiNote="77" />
+	<!-- F# is out of tune -->
+        <!-- sample path="SamplesNR/Buff/78.wav" rootNote="78" loNote="78" hiNote="78" / -->
+        <!-- sample path="SamplesNR/Buff/79.wav" rootNote="79" loNote="78" hiNote="79" / -->
+        <!-- sample path="SamplesNR/Buff/80.wav" rootNote="80" loNote="80" hiNote="80" / -->
+        <sample path="SamplesNR/Buff/81.wav" rootNote="81" loNote="78" hiNote="81" />
+        <sample path="SamplesNR/Buff/82.wav" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Buff/83.wav" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Buff/84.wav" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Buff/85.wav" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Buff/86.wav" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Buff/87.wav" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Buff/88.wav" rootNote="88" loNote="88" hiNote="89" />
+  
+        <sample path="SamplesNR/Buff/Releases/28.wav" trigger="release" rootNote="28" loNote="28" hiNote="28" />
+        <sample path="SamplesNR/Buff/Releases/29.wav" trigger="release" rootNote="29" loNote="29" hiNote="29" />
+        <sample path="SamplesNR/Buff/Releases/30.wav" trigger="release" rootNote="30" loNote="30" hiNote="30" />
+        <sample path="SamplesNR/Buff/Releases/31.wav" trigger="release" rootNote="31" loNote="31" hiNote="31" />
+        <sample path="SamplesNR/Buff/Releases/32.wav" trigger="release" rootNote="32" loNote="32" hiNote="32" />
+        <sample path="SamplesNR/Buff/Releases/33.wav" trigger="release" rootNote="33" loNote="33" hiNote="33" />
+        <sample path="SamplesNR/Buff/Releases/34.wav" trigger="release" rootNote="34" loNote="34" hiNote="34" />
+        <sample path="SamplesNR/Buff/Releases/35.wav" trigger="release" rootNote="35" loNote="35" hiNote="35" />
+        <sample path="SamplesNR/Buff/Releases/36.wav" trigger="release" rootNote="36" loNote="36" hiNote="36" />
+        <sample path="SamplesNR/Buff/Releases/37.wav" trigger="release" rootNote="37" loNote="37" hiNote="37" />
+        <sample path="SamplesNR/Buff/Releases/38.wav" trigger="release" rootNote="38" loNote="38" hiNote="38" />
+        <sample path="SamplesNR/Buff/Releases/39.wav" trigger="release" rootNote="39" loNote="39" hiNote="39" />
+        <sample path="SamplesNR/Buff/Releases/40.wav" trigger="release" rootNote="40" loNote="40" hiNote="40" />
+        <sample path="SamplesNR/Buff/Releases/41.wav" trigger="release" rootNote="41" loNote="41" hiNote="41" />
+        <sample path="SamplesNR/Buff/Releases/42.wav" trigger="release" rootNote="42" loNote="42" hiNote="42" />
+        <sample path="SamplesNR/Buff/Releases/43.wav" trigger="release" rootNote="43" loNote="43" hiNote="43" />
+        <sample path="SamplesNR/Buff/Releases/44.wav" trigger="release" rootNote="44" loNote="44" hiNote="44" />
+        <sample path="SamplesNR/Buff/Releases/45.wav" trigger="release" rootNote="45" loNote="45" hiNote="45" />
+        <sample path="SamplesNR/Buff/Releases/46.wav" trigger="release" rootNote="46" loNote="46" hiNote="46" />
+        <sample path="SamplesNR/Buff/Releases/47.wav" trigger="release" rootNote="47" loNote="47" hiNote="47" />
+        <sample path="SamplesNR/Buff/Releases/48.wav" trigger="release" rootNote="48" loNote="48" hiNote="48" />
+        <sample path="SamplesNR/Buff/Releases/49.wav" trigger="release" rootNote="49" loNote="49" hiNote="49" />
+        <sample path="SamplesNR/Buff/Releases/50.wav" trigger="release" rootNote="50" loNote="50" hiNote="50" />
+        <sample path="SamplesNR/Buff/Releases/51.wav" trigger="release" rootNote="51" loNote="51" hiNote="51" />
+        <sample path="SamplesNR/Buff/Releases/52.wav" trigger="release" rootNote="52" loNote="52" hiNote="52" />
+        <sample path="SamplesNR/Buff/Releases/53.wav" trigger="release" rootNote="53" loNote="53" hiNote="53" />
+        <sample path="SamplesNR/Buff/Releases/54.wav" trigger="release" rootNote="54" loNote="54" hiNote="54" />
+        <sample path="SamplesNR/Buff/Releases/55.wav" trigger="release" rootNote="55" loNote="55" hiNote="55" />
+        <sample path="SamplesNR/Buff/Releases/56.wav" trigger="release" rootNote="56" loNote="56" hiNote="56" />
+        <sample path="SamplesNR/Buff/Releases/57.wav" trigger="release" rootNote="57" loNote="57" hiNote="57" />
+        <sample path="SamplesNR/Buff/Releases/58.wav" trigger="release" rootNote="58" loNote="58" hiNote="58" />
+        <sample path="SamplesNR/Buff/Releases/59.wav" trigger="release" rootNote="59" loNote="59" hiNote="59" />
+        <sample path="SamplesNR/Buff/Releases/60.wav" trigger="release" rootNote="60" loNote="60" hiNote="60" />
+        <sample path="SamplesNR/Buff/Releases/61.wav" trigger="release" rootNote="61" loNote="61" hiNote="61" />
+        <sample path="SamplesNR/Buff/Releases/62.wav" trigger="release" rootNote="62" loNote="62" hiNote="62" />
+        <sample path="SamplesNR/Buff/Releases/63.wav" trigger="release" rootNote="63" loNote="63" hiNote="63" />
+        <sample path="SamplesNR/Buff/Releases/64.wav" trigger="release" rootNote="64" loNote="64" hiNote="64" />
+        <sample path="SamplesNR/Buff/Releases/65.wav" trigger="release" rootNote="65" loNote="65" hiNote="65" />
+        <sample path="SamplesNR/Buff/Releases/66.wav" trigger="release" rootNote="66" loNote="66" hiNote="66" />
+        <sample path="SamplesNR/Buff/Releases/67.wav" trigger="release" rootNote="67" loNote="67" hiNote="67" />
+        <sample path="SamplesNR/Buff/Releases/68.wav" trigger="release" rootNote="68" loNote="68" hiNote="68" />
+        <sample path="SamplesNR/Buff/Releases/69.wav" trigger="release" rootNote="69" loNote="69" hiNote="69" />
+        <sample path="SamplesNR/Buff/Releases/70.wav" trigger="release" rootNote="70" loNote="70" hiNote="70" />
+        <sample path="SamplesNR/Buff/Releases/71.wav" trigger="release" rootNote="71" loNote="71" hiNote="71" />
+        <sample path="SamplesNR/Buff/Releases/72.wav" trigger="release" rootNote="72" loNote="72" hiNote="72" />
+        <sample path="SamplesNR/Buff/Releases/73.wav" trigger="release" rootNote="73" loNote="73" hiNote="73" />
+        <sample path="SamplesNR/Buff/Releases/74.wav" trigger="release" rootNote="74" loNote="74" hiNote="74" />
+        <sample path="SamplesNR/Buff/Releases/75.wav" trigger="release" rootNote="75" loNote="75" hiNote="75" />
+        <sample path="SamplesNR/Buff/Releases/76.wav" trigger="release" rootNote="76" loNote="76" hiNote="76" />
+        <sample path="SamplesNR/Buff/Releases/77.wav" trigger="release" rootNote="77" loNote="77" hiNote="77" />
+        <sample path="SamplesNR/Buff/Releases/78.wav" trigger="release" rootNote="78" loNote="78" hiNote="78" />
+        <sample path="SamplesNR/Buff/Releases/79.wav" trigger="release" rootNote="79" loNote="79" hiNote="79" />
+        <sample path="SamplesNR/Buff/Releases/80.wav" trigger="release" rootNote="80" loNote="80" hiNote="80" />
+        <sample path="SamplesNR/Buff/Releases/81.wav" trigger="release" rootNote="81" loNote="81" hiNote="81" />
+        <sample path="SamplesNR/Buff/Releases/82.wav" trigger="release" rootNote="82" loNote="82" hiNote="82" />
+        <sample path="SamplesNR/Buff/Releases/83.wav" trigger="release" rootNote="83" loNote="83" hiNote="83" />
+        <sample path="SamplesNR/Buff/Releases/84.wav" trigger="release" rootNote="84" loNote="84" hiNote="84" />
+        <sample path="SamplesNR/Buff/Releases/85.wav" trigger="release" rootNote="85" loNote="85" hiNote="85" />
+        <sample path="SamplesNR/Buff/Releases/86.wav" trigger="release" rootNote="86" loNote="86" hiNote="86" />
+        <sample path="SamplesNR/Buff/Releases/87.wav" trigger="release" rootNote="87" loNote="87" hiNote="87" />
+        <sample path="SamplesNR/Buff/Releases/88.wav" trigger="release" rootNote="88" loNote="88" hiNote="89" />
+    </group>
+  </groups>
+</DecentSampler>

@@ -43,29 +43,39 @@ $start_instr(pianto)
 
     iratio = icps / icps_note
 
-	Spath sprintf "%s/%i_%s.wav", gSpianto_path, iresult, Sdyn
-
+	; RELEASE
+	;================================================================
 	Spath_release sprintf "%s/%i_%s.wav", gSpianto_path, iresult, "r1"
-	schedule "pianto_release", p3, filelen(Spath_release), Spath_release, ich
+	schedule "pianto_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
+	;================================================================
 
-	;isr_correction init filesr(Spath) / sr
+	Spath sprintf "%s/%i_%s.wav", gSpianto_path, iresult, Sdyn
+	aouts[] diskin Spath, iratio
 
-	;aenv cosseg 1, p3-.5, 1, .5, 0
-	aouts[] diskin Spath, iratio;*isr_correction
+	/*
+	aoscil_1 oscili idyn, icps
+	aoscil_2 oscili idyn*cosseg(0, p3/2, 1, p3/2, 0), icps*2
+	aoscil_3 oscili idyn*cosseg(0, p3*3/2, 1, p3/3, 0), icps*3
 
-	;aplus oscili idyn/2, icps
+	aout = aouts[ich-1]+aoscil_1+aoscil_2+aoscil_3;*aenv
+	*/
 
-	aout = aouts[ich-1];*aenv
+	aout = aouts[ich-1]
 
 	$dur_var(10)
 	$end_instr
 
 instr pianto_release
 	Sinstr init "pianto"
-	idur init p3
 	Spath init p4
-	ich init p5
-	aenv cosseg 1, p3-.005, 1, .005, 0
+	ilen filelen Spath
+	if p3 > ilen then
+		p3 init ilen
+	endif
+	idur init p3
+	idyn init p5
+	ich init p6
+	aenv cosseg idyn, p3-.005, idyn, .005, 0
 	aouts[] diskin Spath, 1
 	aout = aouts[ich-1]*aenv
 	$channel_mix
