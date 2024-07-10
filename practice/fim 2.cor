@@ -1,0 +1,20 @@
+
+gkpulse = 60
+
+eu: 5, 16, 16
+	@fpiano.flanij(oscili:k(sn, gkbeatf/48, polo), lfh(9));.shij(qn)
+	wn*2
+	f
+	bea
+	step(c3, locrian, random:k(0, 9))
+	step(c2, locrian, random:k(0, 9))
+	step(c1, locrian, random:k(0, 9))
+
+eu: 4, 16, 32
+	@witchesv.flanij(oscili:k(1/9, gkbeatf/24, bea), lfh(24)).shij(qn)
+	wn*2
+	p
+	rome.a(5)
+	step(c2, locrian, random:k(0, 9))
+
+

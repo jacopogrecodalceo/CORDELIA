@@ -35,6 +35,8 @@ apost_out		= ahigh+alow */
 ;alow	rezzy aout, ifreq_low, kq
 ;alow	diode_ladder aout, ifreq_low, kq , 1, $M_LOG2E
 
+aout dcblock aout
+
 	outch gioffch+ich+1, aout
 
 ;garecorder[ich] = aout

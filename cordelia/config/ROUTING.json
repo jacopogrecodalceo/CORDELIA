@@ -39,6 +39,11 @@
         "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\n\nPARAM_OUT    cordelia_delay_array PARAM_IN, PARAM_1, PARAM_2, 4",
         "opcode": "opcode cordelia_delay_array, a, akki\n    setksmps 1\n    adel_in, kdel_time, kfb, instances xin\n\nadel_in     init 0\nadel_tap    init 0\n\nidel_buf    init 10\n\nadel_dump   delayr idel_buf\nadel_tap    deltap kdel_time\n            delayw adel_in + (adel_tap * kfb)\n\nadel_out    = adel_tap;, -1, 1\n\nif instances > 1 then\n    adel_out += cordelia_delay_array(adel_out, random:i(-1/12, 1/12) + kdel_time + .15*instances, kfb/instances, instances-1)/4\nendif\n\n    \n    xout adel_out\n    \n    endop"
     },
+    "delij2": {
+        "input": "kkk",
+        "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\nPARAM_3 init .5\n\nPARAM_OUT    cordelia_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_delay, a, akkk\n    ain, ktime, kfb, kwet xin\n\n    adel init 0\n    adel vdelayx    kwet*(ain+adel*kfb),    a(samphold:k(ktime, changed2:k(gkbeatn))),           10,         4096\n    \n    aout = ain*(1-kwet) + adel\n\n    xout aout\nendop"
+    },
     "duij": {
         "input": "Sk",
         "core": "PARAM_2\tinit 1\n\nPARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2",
@@ -62,7 +67,7 @@
     "folij": {
         "input": "Sk",
         "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow PARAM_IN, PARAM_1, PARAM_2, ich",
-        "opcode": "opcode cordelia_follow, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\n/* adest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        balance ain, aenv */\n\nkthresh     init 0\nklo_knee    init 48\nkhi_knee    init 60\nkratio      init 5.5\nkatk        init .005\nkrel        init .05\nilookahead  init 50/1000\n\naout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_follow, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\n/* adest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        balance ain, aenv */\n\nkthresh     init 0\nklo_knee    init 48\nkhi_knee    init 60\nkratio      init 5.5\nkatk        init .015\nkrel        init .05\nilookahead  init 50/1000\n\naout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
     },
     "folij2": {
         "input": "Sk",
@@ -88,6 +93,11 @@
         "input": "kk",
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moijb3 PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "gkcordelia_moijb3_port init 5$ms\ngkcordelia_moijb3_freq1 init 3\ngkcordelia_moijb3_freq2 init 4\ngkcordelia_moijb3_freq3 init 5\n\n    opcode cordelia_moijb3, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\n\nkfreq1  limit kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na1      moogladder2 ain, portk(kfreq1, gkcordelia_moijb3_port), kq\n\na0      init 0\nkfreq2  limit gkcordelia_moijb3_freq1*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na2      spf a0, a0, ain, portk(kfreq2, gkcordelia_moijb3_port), 2-(kq*2)\n\nkfreq3  limit gkcordelia_moijb3_freq2*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na3      spf a0, a0, ain, portk(kfreq3, gkcordelia_moijb3_port), 2-(kq*2)\n\nkfreq4  limit gkcordelia_moijb3_freq3*kfreq + jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 20, 20$k\na4      spf a0, a0, ain, portk(kfreq4, gkcordelia_moijb3_port), 2-(kq*2)\n\naout    = a1 + a2 + a3 + a4\n\naout\tbalance2 aout, ain\n\n    xout aout\n    endop"
+    },
+    "moijp": {
+        "input": "kk",
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2_port PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_moogladder2_port, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout        moogladder2 ain, portk(kfreq, gkbeats/12)+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     },
     "pconvij": {
         "input": "kk",

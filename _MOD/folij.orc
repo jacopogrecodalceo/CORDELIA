@@ -26,7 +26,7 @@ kthresh     init 0
 klo_knee    init 48
 khi_knee    init 60
 kratio      init 5.5
-katk        init .005
+katk        init .015
 krel        init .05
 ilookahead  init 50/1000
 

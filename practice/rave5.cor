@@ -1,0 +1,20 @@
+
+
+
+
+
+gkpulse = 125;-timeh(16);-go(0, 60, 100)
+
+gktuning = scala.edo31hex
+
+
+eu: 5, 8, 2
+	@uj@noijs.moij(20$k-(20$k-ntof(b2))*lfh(4)).delij(sn, .5).shij(qn);.convij(pianto)
+	hn, sn
+	mf
+	bea
+	stept(b1, locrian, pump(32, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+
+@r909t: 4, f
+
+

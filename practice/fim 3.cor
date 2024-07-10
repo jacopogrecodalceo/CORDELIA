@@ -1,0 +1,27 @@
+
+
+
+
+gkpulse = 125;-go(0, 60, 100)
+
+gktuning = scala.edo31hex
+
+
+
+eu: 8, 8, 2
+	@uj3;.convij(pianto)
+	sn
+	mf
+	eclassic.a(5)
+	stept(b1, locrian, pump(32, fillarray(2, random:k(0, 9), 2, 3, 4, 5)))
+
+
+eu: 5, 8, 2
+	@noijs.flanij(sn*lfh(2, zeus)).delij(sn*in4m);.convij(pianto)
+	wn, sn
+	f
+	rome.a(5)
+	stept(b3, locrian, pump(32, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+
+
+

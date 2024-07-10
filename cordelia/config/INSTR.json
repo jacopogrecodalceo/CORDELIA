@@ -10833,6 +10833,16 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/noij.orc",
         "global_var": []
     },
+    "noijs": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/noijs.orc",
+        "global_var": []
+    },
+    "noijs2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/noijs2.orc",
+        "global_var": []
+    },
     "noijt": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/noijt.orc",
@@ -11546,6 +11556,18 @@
         "global_var": [
             "gkorphans3x_vib"
         ]
+    },
+    "orphans3xs": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/orphans3xs.orc",
+        "global_var": [
+            "gkorphans3xs_vib"
+        ]
+    },
+    "orphans3xv": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/orphans3xv.orc",
+        "global_var": []
     },
     "orphans3xx": {
         "type": "instr",
@@ -12737,6 +12759,11 @@
             "gkr909t_snare_rimshot",
             "gkr909t_tom_high"
         ]
+    },
+    "r909t2": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/r909t2.orc",
+        "global_var": []
     },
     "reg": {
         "type": "sonvs",
@@ -17276,6 +17303,69 @@
         "pitch": "137.90788126152881",
         "orc": "./default/sonvs/_sy.orc"
     },
+    "sif": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_.orc"
+    },
+    "sif_bu": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_bu.orc"
+    },
+    "sif_conv": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_conv.orc"
+    },
+    "sif_lpc": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_lpc.orc"
+    },
+    "sif_noi": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_noi.orc"
+    },
+    "sif_so": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_so.orc"
+    },
+    "sif_sy": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav"
+        ],
+        "pitch": "1689.683915596031",
+        "orc": "./default/sonvs/_sy.orc"
+    },
     "simki": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/simki.orc",
@@ -19901,6 +19991,16 @@
             "giuj3_ft",
             "giuj3_morf"
         ]
+    },
+    "ujs": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ujs.orc",
+        "global_var": []
+    },
+    "ujsweet": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ujsweet.orc",
+        "global_var": []
     },
     "unhappy": {
         "type": "sonvs",

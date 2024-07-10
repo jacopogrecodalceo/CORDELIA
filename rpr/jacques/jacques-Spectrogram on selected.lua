@@ -1,4 +1,4 @@
-SCRIPT_PATH = '/opt/homebrew/bin/python3 /Users/j/Documents/CLI/cordelia-ghost/cordelia-ghost.py'
+SCRIPT_PATH = '/opt/homebrew/bin/python3.11 /Users/j/Documents/CLI/cordelia-ghost/cordelia-ghost.py'
 
 local function get_selected_items()
 	-- Get the number of selected items
@@ -29,6 +29,9 @@ end
 local function main(directory, color, flags)
 	local selected_items = get_selected_items()
 
+	local command_path = directory .. '/run_ghosts.sh'
+	local command = io.open(command_path, 'w')
+	command:write('#!/bin/bash\n')
 	for _, item in ipairs(selected_items) do
 		local filename, onset, duration = get_info_item(item)
 		local cmd = SCRIPT_PATH .. ' "' .. filename .. '"'
@@ -44,11 +47,17 @@ local function main(directory, color, flags)
 		if flags then
 			cmd = cmd .. ' ' .. flags
 		end
-		
+		cmd = cmd .. '\n'
 		--reaper.ShowConsoleMsg(cmd)
-		_ = reaper.ExecProcess(cmd, -2)
-
+		command:write(cmd)
 	end
+
+	command:close()
+	-- Make the script executable
+	os.execute("chmod +x " .. command_path)
+
+	-- Open a new terminal window and execute the script
+	os.execute("open -a Terminal " .. command_path)
 end
 
 local function split_csv(csv)
@@ -59,7 +68,8 @@ local function split_csv(csv)
     return values
 end
 
-local retval, retvals_csv = reaper.GetUserInputs('Make spectrogram', 3, 'directory,color,flags' .. ',extrawidth=100', '/Users/j/Documents/temp,None,,', 512)
+local project_directory = reaper.GetProjectPath()
+local retval, retvals_csv = reaper.GetUserInputs('Make spectrogram', 3, 'directory,color,flags' .. ',extrawidth=100', project_directory .. ',None,,', 512)
 
 if retval then
 
@@ -72,4 +82,5 @@ if retval then
     main(directory, color, flags)
 
 end
+
 

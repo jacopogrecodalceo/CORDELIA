@@ -1,0 +1,24 @@
+
+gkpulse = 120;-timeh(2)
+
+eu: 11, 16, 4
+	@harps@pianto;.delij(sn*3)
+	wn*4, gkbeats*lfh(3)
+	f;*lfh(2)
+	rome.a(5)
+	step(c3, locrian, random:k(0, 19))
+	step(c2, locrian, random:k(0, 19))
+
+
+eu: 16, 16, 3
+	@uj3.delij(sn*3)
+	sn;+gkbeats*lfh(3)
+	fff*lfh(2)
+	rome.a(5)
+	step(c3, locrian, random:k(0, 19))
+	step(c2, locrian, random:k(0, 19))
+
+@dead2: 8, fff
+
+@r909t: 4, fff
+

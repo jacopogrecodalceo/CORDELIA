@@ -47,7 +47,7 @@ $start_instr(piantos2)
 
 	; RELEASE
 	;================================================================
-	Spath_release sprintf "%s/%i_%s.wav", gSpiantos_path, iresult, "r1"
+	Spath_release sprintf "%s/%i_%s.wav", gSpiantos2_path, iresult, "r1"
 	schedule "piantos2_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
 	;================================================================
 
@@ -69,7 +69,7 @@ $start_instr(piantos2)
 		indx += 1
 	od
 
-	aout = aouts[ich-1]
+	aout = aouts[ich-1]*$dyn_var
 
 	$dur_var(10)
 	$end_instr

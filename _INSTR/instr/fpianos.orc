@@ -4,7 +4,7 @@ gSfpianos_path init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-kaw
 $start_instr(fpianos)
 
 	; IF RANGE DYN
-		if 			idyn < ampdbfs(-23) then
+		if idyn < ampdbfs(-23) then
 			Sdyn init "p"
 		elseif		idyn < ampdbfs(-11) then
 			Sdyn init "m"
@@ -90,7 +90,7 @@ endif
 	aoscil_2 oscili idyn*cosseg(0, p3/2, 1, p3/2, 0), icps*2
 	aoscil_3 oscili idyn*cosseg(0, p3*3/2, 1, p3/3, 0), icps*3
 
-	aout = (aouts[ich-1]+aoscil_1+aoscil_2+aoscil_3)/2;*aenv
+	aout = (aouts[ich-1]+aoscil_1+aoscil_2+aoscil_3)/2*$dyn_var
 
 	$dur_var(10)
 $end_instr

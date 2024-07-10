@@ -1,13 +1,39 @@
 
-instr uj
-	$params(uj_instr)
-	inum init nstrnum(Sinstr)+ich/100
-	schedule inum, 0, -(idur+.05), idyn, ienv, icps, ich
-	turnoff
+gSlpanal_path   init "/usr/local/bin/lpanal"
+giTHRESHOLD		init -24
+giPOLE_ORDER	init 24
+
+indx init 0
+until indx == lenarray(gSfiles) do
+	ires system_i 1, sprintf("%s -p %i -s %i \"%s\" \"%s.lpc\"", gSlpanal_path, giPOLE_ORDER, filesr(gSfiles[indx]), gSfiles[indx], gSfiles[indx])
+	indx += 1
+od
+
+instr 1
+
+	indx        init p4
+	ich         init indx + 1 
+	Slpcanal    sprintf "%s.lpc", gSfiles[indx]
+
+	idur        filelen gSfiles[indx]
+	p3          init idur
+	kread       linseg 0, idur, idur
+	krmsr, krmso, kerr, kcps lpread kread, Slpcanal
+
+	kdyn = krmsr/1024
+
+	if kdyn > ampdbfs(giTHRESHOLD) then
+		schedulek 2 + ich/10, 0, -random:k(2, 5), kdyn, kcps, ich
+	endif
+
 endin
 
-instr uj_instr
-	$params(uj)
+instr 2
+
+	idur	abs p3
+	kdyn	init p4
+	kcps	init p5
+	ich		init p6
 
 	itie	tival
 	iport	init idur/24
@@ -27,13 +53,13 @@ instr uj_instr
 		idyn_last init idyn
 
 	SKIP_INIT:
-	if (itie == 0 && p3 < 0) then
+	if itie == 0 then
 		;prints "TIED: INITIAL NOTE\n"
 		aenv	cosseg 0, iatk, idyn
 		kcps	init icps
 		kvib	cosseg 0, idur, 1
 
-	elseif (p3 < 0 && itie == 1) then
+	elseif itie == 1 then
 		;prints "TIED: MIDDLE NOTE\n"
 		aenv	cosseg idyn_last, iport, idyn
 		kcps	cosseg icps_last, iport, icps
@@ -71,6 +97,18 @@ instr uj_instr
 
 	aout *= aenv
 
-	$dur_var(10)
-	$channel_mix
+		outch ich, aout
+
 endin
+
+;---SCORE---
+/* 
+for i in range(1):
+	code = [
+		'i1',
+		0,			# p2: when
+		1,			# p3: dur
+		ch          # p4
+	]
+	score.append(' '.join(map(str, code)))
+*/

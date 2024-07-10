@@ -60,7 +60,7 @@ $start_instr(pianto)
 	aout = aouts[ich-1]+aoscil_1+aoscil_2+aoscil_3;*aenv
 	*/
 
-	aout = aouts[ich-1]
+	aout = aouts[ich-1]*$dyn_var
 
 	$dur_var(10)
 	$end_instr

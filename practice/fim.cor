@@ -1,0 +1,18 @@
+
+gkpulse = 60
+
+eu: 4, 16, 32
+	@careless.flanij(oscili:k(1/6, gkbeatf/32, lear), lfh(16));.shij(qn)
+	wn*4
+	f
+	hader.a(5)
+	step(c3, locrian, random:k(0, 9))
+
+eu: 4, 16, 32
+	@witches.flanij(oscili:k(1/6, gkbeatf/24, lear), lfh(24)).shij(qn)
+	wn*2
+	pppp
+	hader.a(5)
+	step(c1, locrian, random:k(0, 9))
+
+

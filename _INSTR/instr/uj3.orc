@@ -70,8 +70,9 @@ instr uj3_instr
 
 					;kamp, kcps, kx, ky, krx, kry, krot, ktab0, ktab1, km1, km2, kn1, kn2, kn3, ka, kb, kperiod
 	aout	wterrain2 1, kcps, 0.5, 0.5, 0.75, 0.35, portk(idyn, iport*2, idyn_last), gisine, giuj3_morf, random:i(0, 8), 5+jitter:k(1, 1/idur, .5/idur)
-	aout	K35_lpf aout, portk(20$k-((1-idyn)*15.5$k), iport*2, 20$k-((1-idyn_last)*15.5$k)), 5+jitter:k(1, 1/idur, .5/idur), 1, 1+idyn, itie
-	aout 	*= aenv
+	;print 15$k-((1-idyn)*15$k)
+	aout	K35_lpf aout, portk(15$k-((1-idyn)*15$k), iport*2, 15$k-((1-idyn_last)*15$k)), 5+jitter:k(1, 1/idur, .5/idur), 1, 1+idyn, itie
+	aout 	*= aenv/2
 
 	$dur_var(10)
 	$channel_mix
