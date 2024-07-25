@@ -1,0 +1,32 @@
+
+
+gkpulse = 90
+
+gk1	= pump(2, fillarray(0, -5))
+
+gkarr[]	= fillarray(1, 3, 2, 7, 1, 2, 2, 7)
+
+eu: 8, 9, 4
+	@fim
+	qn
+	ff
+	classic.a(5)
+	step("3G", whole, pump(4, gkarr), gk1)
+	step("3E", kumoi, pump(2, gkarr), gk1)
+
+eu: 4, 9, 1
+	@fim
+	qn
+	mf, ppp, 3
+	classic
+	step("3G", giwhole, pump(8, gkarr), gk1)
+	step("3E", gikumoi, pump(4, gkarr)+3, gk1)
+
+
+eu: 4, 9, 3
+	@mrhodes
+	hn
+	f, p, 3
+	classic
+	step("2G", giwhole, pump(4, gkarr), gk1)
+	step("3E", gikumoi, pump(2, gkarr), gk1)

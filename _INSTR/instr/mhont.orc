@@ -24,8 +24,6 @@ endif
 	turnoff
 	endin
 
-	
-
 	instr mhont_instr
 	$params(mhont)
 

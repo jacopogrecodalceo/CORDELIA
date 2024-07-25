@@ -1,19 +1,13 @@
 ; N.B. Path without the last slash / !!!
-gSfpiano_path init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-kawai_felt"
+gSfpianos2_path init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-kawai_felt"
 
-massign 0, "fpiano"
+massign 0, "fpianos2"
 
 
-$start_instr(fpiano)
+$start_instr(fpianos2)
 
 	; IF RANGE DYN
-		if 			idyn < ampdbfs(-23) then
-			Sdyn init "p"
-		elseif		idyn < ampdbfs(-11) then
-			Sdyn init "m"
-		else
-			Sdyn init "f"
-		endif
+	Sdyn init "p"
 
     inote = 69 + 12 * log2(icps / A4)
 
@@ -78,24 +72,28 @@ $start_instr(fpiano)
 	iratio = icps / irootnote2cps
 	;Felt Piano m A6 RR1.wav
 	;Felt Piano Release D5.wav
-	Spath sprintf "%s/Felt_Piano_%s_%s_RR%i.wav", gSfpiano_path, Sdyn, Snote_name, int(random:i(1, 3))
+	Spath sprintf "%s/Felt_Piano_%s_%s_RR%i.wav", gSfpianos2_path, Sdyn, Snote_name, int(random:i(1, 3))
 
 	; RELEASE
 	;================================================================
-	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpiano_path, Snote_name
-	schedule "fpiano_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
+	Spath_release sprintf "%s/Felt_Piano_Release_%s.wav", gSfpianos2_path, Snote_name
+	schedule "fpianos2_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
 	;================================================================
 
 	iskiptime random 1490, 1497
 	aouts[] diskin Spath, iratio, iskiptime/1000
 
-	aout = aouts[ich-1]*$dyn_var*6
+	aout 	= aouts[ich-1]
+	aout 	moogladder2 aout, limit(20$k-((1-$dyn_var)*20$k)+icps, 50, 20$k), random:i(0, 1/9)
+	aout	*= $dyn_var * 4
+
+	aout	*= pow(1.55, octcps(icps))
 
 	$dur_var(10)
 $end_instr
 
-instr fpiano_release
-	Sinstr init "fpiano"
+instr fpianos2_release
+	Sinstr init "fpianos2"
 	Spath init p4
 	ilen filelen Spath
 	if p3 > ilen then

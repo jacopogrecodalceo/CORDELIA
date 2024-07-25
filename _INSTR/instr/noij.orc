@@ -10,11 +10,11 @@ kjitR			jitter cosseg(5, idur, .75), 1.5, 3.5
 
 ;MODULATORS
 if ienv > 0 then
-	istart	init 0
-	iend	init 1
-else
 	istart	init 1
 	iend	init 0
+else
+	istart	init 0
+	iend	init 1
 endif
 ienv_abs	abs ienv
 

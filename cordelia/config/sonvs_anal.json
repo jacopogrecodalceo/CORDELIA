@@ -475,5 +475,20 @@
     },
     "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sif.wav": {
         "pitch": "1689.683915596031"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/sil.wav": {
+        "pitch": "41.23526871132675"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/slown.wav": {
+        "pitch": "87.21263357712508"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/bleh.wav": {
+        "pitch": "60.2261806394236"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/dimanche.wav": {
+        "pitch": "46.70244848611645"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/fragment_s.wav": {
+        "pitch": "58.11990899520614"
     }
 }

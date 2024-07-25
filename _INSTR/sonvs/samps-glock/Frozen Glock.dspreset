@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DS file for Kontakt 6 instrument Frozen Glock // Converted by Frederic Poirier-->
+<DecentSampler pluginVersion="1">
+
+<groups>
+<group volume="6.0dB" ampVelTrack="1" name="RR1" seqMode="round_robin" seqPosition="1" tags="notes" loopEnabled="false">
+<sample path="Samples/DK Glock_Natural_G#4_L1_RR1.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196859" loopStart="6000" loopEnd="196859" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L1_RR1.wav"  rootNote="92" loNote="90" hiNote="108" loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197130" loopStart="6000" loopEnd="197130" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L1_RR1.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196048" loopStart="6000" loopEnd="196048" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L1_RR1.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198173" loopStart="6000" loopEnd="198173" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L1_RR1.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="1" hiVel="91"   tuning="0.0" volume="17.0dB" pan="0"   start="6000" end="199396" loopStart="6000" loopEnd="199396" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L1_RR1.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="195525" loopStart="6000" loopEnd="195525" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L1_RR1.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198560" loopStart="6000" loopEnd="198560" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L1_RR1.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197812" loopStart="6000" loopEnd="197812" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L1_RR1.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="1" hiVel="91"   tuning="0.0" volume="15.0dB" pan="0"   start="6000" end="198444" loopStart="6000" loopEnd="198444" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L1_RR1.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198317" loopStart="6000" loopEnd="198317" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L2_RR1.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198101" loopStart="6000" loopEnd="198101" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L2_RR1.wav"  rootNote="92" loNote="90" hiNote="108" loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198787" loopStart="6000" loopEnd="198787" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#4_L2_RR1.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196889" loopStart="6000" loopEnd="196889" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L2_RR1.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198700" loopStart="6000" loopEnd="198700" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L2_RR1.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="200042" loopStart="6000" loopEnd="200042" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L2_RR1.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196631" loopStart="6000" loopEnd="196631" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L2_RR1.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="92" hiVel="127" tuning="0.0" volume="3.0dB" pan="0"    start="6000" end="199564" loopStart="6000" loopEnd="199564" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L2_RR1.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="195876" loopStart="6000" loopEnd="195876" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L2_RR1.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197536" loopStart="6000" loopEnd="197536" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L2_RR1.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197177" loopStart="6000" loopEnd="197177" loopCrossfade="0" />
+</group>
+<group volume="6.0dB" ampVelTrack="1" name="RR2" seqMode="round_robin" seqPosition="2" tags="notes" loopEnabled="false">
+<sample path="Samples/DK Glock_Natural_G#4_L1_RR2.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196859" loopStart="6000" loopEnd="196859" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L1_RR2.wav"  rootNote="92" loNote="90" hiNote="108" loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197130" loopStart="6000" loopEnd="197130" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L1_RR2.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196048" loopStart="6000" loopEnd="196048" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L1_RR2.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198173" loopStart="6000" loopEnd="198173" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L1_RR2.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="1" hiVel="91"   tuning="0.0" volume="17.0dB" pan="0"   start="6000" end="199396" loopStart="6000" loopEnd="199396" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L1_RR2.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="195525" loopStart="6000" loopEnd="195525" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L1_RR2.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198560" loopStart="6000" loopEnd="198560" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L1_RR2.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197812" loopStart="6000" loopEnd="197812" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L1_RR2.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="1" hiVel="91"   tuning="0.0" volume="15.0dB" pan="0"   start="6000" end="198444" loopStart="6000" loopEnd="198444" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L1_RR2.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198317" loopStart="6000" loopEnd="198317" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L2_RR2.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198101" loopStart="6000" loopEnd="198101" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L2_RR2.wav"  rootNote="92" loNote="90" hiNote="108" loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198787" loopStart="6000" loopEnd="198787" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#4_L2_RR2.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196889" loopStart="6000" loopEnd="196889" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L2_RR2.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198700" loopStart="6000" loopEnd="198700" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L2_RR2.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="200042" loopStart="6000" loopEnd="200042" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L2_RR2.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196631" loopStart="6000" loopEnd="196631" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L2_RR2.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="92" hiVel="127" tuning="0.0" volume="3.0dB" pan="0"    start="6000" end="199564" loopStart="6000" loopEnd="199564" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L2_RR2.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="195876" loopStart="6000" loopEnd="195876" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L2_RR2.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197536" loopStart="6000" loopEnd="197536" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L2_RR2.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197177" loopStart="6000" loopEnd="197177" loopCrossfade="0" />
+</group>
+<group volume="6.0dB" ampVelTrack="1" name="RR3" seqMode="round_robin" seqPosition="3" tags="notes" loopEnabled="false">
+<sample path="Samples/DK Glock_Natural_G#4_L1_RR3.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196859" loopStart="6000" loopEnd="196859" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L1_RR3.wav"  rootNote="92" loNote="90" hiNote="108" loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197130" loopStart="6000" loopEnd="197130" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L1_RR3.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196048" loopStart="6000" loopEnd="196048" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L1_RR3.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198173" loopStart="6000" loopEnd="198173" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L1_RR3.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="1" hiVel="91"   tuning="0.0" volume="17.0dB" pan="0"   start="6000" end="199396" loopStart="6000" loopEnd="199396" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L1_RR3.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="195525" loopStart="6000" loopEnd="195525" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L1_RR3.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198560" loopStart="6000" loopEnd="198560" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L1_RR3.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197812" loopStart="6000" loopEnd="197812" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L1_RR3.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="1" hiVel="91"   tuning="0.0" volume="15.0dB" pan="0"   start="6000" end="198444" loopStart="6000" loopEnd="198444" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L1_RR3.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198317" loopStart="6000" loopEnd="198317" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L2_RR3.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198101" loopStart="6000" loopEnd="198101" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L2_RR3.wav"  rootNote="92" loNote="90" hiNote="108" loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198787" loopStart="6000" loopEnd="198787" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#4_L2_RR3.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196889" loopStart="6000" loopEnd="196889" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L2_RR3.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198700" loopStart="6000" loopEnd="198700" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L2_RR3.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="200042" loopStart="6000" loopEnd="200042" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L2_RR3.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196631" loopStart="6000" loopEnd="196631" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L2_RR3.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="92" hiVel="127" tuning="0.0" volume="3.0dB" pan="0"    start="6000" end="199564" loopStart="6000" loopEnd="199564" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L2_RR3.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="195876" loopStart="6000" loopEnd="195876" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L2_RR3.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197536" loopStart="6000" loopEnd="197536" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L2_RR3.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197177" loopStart="6000" loopEnd="197177" loopCrossfade="0" />
+</group>
+<group volume="6.0dB" ampVelTrack="1" name="RR4" seqMode="round_robin" seqPosition="4" tags="notes" loopEnabled="false">
+<sample path="Samples/DK Glock_Natural_G#4_L1_RR4.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196859" loopStart="6000" loopEnd="196859" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L1_RR4.wav"  rootNote="92" loNote="90" hiNote="108" loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197130" loopStart="6000" loopEnd="197130" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L1_RR4.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="196048" loopStart="6000" loopEnd="196048" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L1_RR4.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198173" loopStart="6000" loopEnd="198173" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L1_RR4.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="1" hiVel="91"   tuning="0.0" volume="17.0dB" pan="0"   start="6000" end="199396" loopStart="6000" loopEnd="199396" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L1_RR4.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="195525" loopStart="6000" loopEnd="195525" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L1_RR4.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198560" loopStart="6000" loopEnd="198560" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L1_RR4.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="197812" loopStart="6000" loopEnd="197812" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L1_RR4.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="1" hiVel="91"   tuning="0.0" volume="15.0dB" pan="0"   start="6000" end="198444" loopStart="6000" loopEnd="198444" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L1_RR4.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="1" hiVel="91"   tuning="0.0" volume="12.0dB" pan="0"   start="6000" end="198317" loopStart="6000" loopEnd="198317" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B3_L2_RR4.wav"   rootNote="71" loNote="69" hiNote="71"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198101" loopStart="6000" loopEnd="198101" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#5_L2_RR4.wav"  rootNote="92" loNote="90" hiNote="108" loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198787" loopStart="6000" loopEnd="198787" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#4_L2_RR4.wav"  rootNote="80" loNote="78" hiNote="80"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196889" loopStart="6000" loopEnd="196889" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_G#3_L2_RR4.wav"  rootNote="68" loNote="66" hiNote="68"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="198700" loopStart="6000" loopEnd="198700" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F5_L2_RR4.wav"   rootNote="89" loNote="87" hiNote="89"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="200042" loopStart="6000" loopEnd="200042" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F4_L2_RR4.wav"   rootNote="77" loNote="75" hiNote="77"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="196631" loopStart="6000" loopEnd="196631" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_F3_L2_RR4.wav"   rootNote="65" loNote="24" hiNote="65"  loVel="92" hiVel="127" tuning="0.0" volume="3.0dB" pan="0"    start="6000" end="199564" loopStart="6000" loopEnd="199564" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D5_L2_RR4.wav"   rootNote="86" loNote="84" hiNote="86"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="195876" loopStart="6000" loopEnd="195876" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_D4_L2_RR4.wav"   rootNote="74" loNote="72" hiNote="74"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197536" loopStart="6000" loopEnd="197536" loopCrossfade="0" />
+<sample path="Samples/DK Glock_Natural_B4_L2_RR4.wav"   rootNote="83" loNote="81" hiNote="83"  loVel="92" hiVel="127" tuning="0.0" volume="-2.0dB" pan="0"   start="6000" end="197177" loopStart="6000" loopEnd="197177" loopCrossfade="0" />
+</group>
+<group volume="6.0dB" ampVelTrack="1" name="FX" loopCrossfadeMode="equal_power" tags="fx" attack="0.8">
+<sample path="Samples/DK_padResampled_D7.wav" rootNote="110" loNote="99" hiNote="108" loVel="1" hiVel="127" tuning="0.0" volume="0.0dB" pan="0" loopEnabled="true" start="0" end="1056000" loopStart="134507" loopEnd="739841" loopCrossfade="9999" />
+<sample path="Samples/DK_padResampledSoft_D6.wav" rootNote="98" loNote="87" hiNote="98" loVel="1" hiVel="127" tuning="0.0" volume="0.0dB" pan="0" loopEnabled="true" start="0" end="1056000" loopStart="49245" loopEnd="362538" loopCrossfade="9999" />
+<sample path="Samples/DK_padResampledSoft_D5.wav" rootNote="86" loNote="75" hiNote="86" loVel="1" hiVel="127" tuning="0.0" volume="0.0dB" pan="0" loopEnabled="true" start="0" end="1056000" loopStart="79318" loopEnd="591664" loopCrossfade="9999" />
+<sample path="Samples/DK_padResampledSoft_D4.wav" rootNote="74" loNote="53" hiNote="74" loVel="1" hiVel="127" tuning="0.0" volume="0.0dB" pan="0" loopEnabled="true" start="0" end="1056000" loopStart="84425" loopEnd="278861" loopCrossfade="9999" />
+
+</group>
+<group volume="1.0dB" ampVelTrack="1" name="Low FX" loopCrossfadeMode="equal_power" trigger="attack" tags="fx" attack="0.005" release="0.130">
+<sample path="Samples/DK Glock_Bass_B3_resampled.wav" rootNote="59" loNote="24" hiNote="72" loVel="1" hiVel="127" tuning="0.0" volume="0.0dB" pan="0" loopEnabled="false" start="0" end="480000" loopStart="0" loopEnd="480000" loopCrossfade="0" />
+</group>
+</groups>
+
+
+  <ui bgImage="Resources/bg_frozenglock.png" width="812" height="375" layoutMode="relative" bgColor="FF000000"
+      bgMode="top_left">
+    <tab name="main">
+    
+       	<control x="20" y="75" parameterName="glock" style="linear_vertical" type="float" minValue="0" maxValue="1" value="1"
+       	width="80" height="125" trackForegroundColor="FFFFFFFF" trackBackgroundColor="FF808080" showLabel="true" textColor="FFFFFFFF" textSize="14">
+    	<binding type="amp" level="tag" identifier="notes" parameter="AMP_VOLUME" />
+		</control>
+		
+       	<control x="80" y="75" parameterName="fx" style="linear_vertical" type="float" minValue="0" maxValue="1" value="0.2"
+       	width="80" height="125" trackForegroundColor="FFFFFFFF" trackBackgroundColor="FF808080" showLabel="true" textColor="FFFFFFFF" textSize="14">
+    	<binding type="amp" level="tag" identifier="fx" parameter="AMP_VOLUME" />
+		</control>
+    
+      	<labeled-knob x="211" y="80" label="tone" type="float" minValue="60" maxValue="22000" value="22000" textColor="FFFFFFFF"
+      	textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+		</labeled-knob>
+      
+		<labeled-knob x="346" y="80" label="reverb" type="float" minValue="0.0" maxValue="1" value="0.15" textColor="FFFFFFFF"
+		textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+		</labeled-knob>
+      
+		<labeled-knob x="482" y="80" label="glock release" type="float" minValue="0.0" maxValue="8.0" value="4.0" textColor="FFFFFFFF"
+		textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="amp" level="group" position="0" parameter="ENV_RELEASE" />
+        <binding type="amp" level="group" position="1" parameter="ENV_RELEASE" />
+        <binding type="amp" level="group" position="2" parameter="ENV_RELEASE" />
+        <binding type="amp" level="group" position="3" parameter="ENV_RELEASE" />
+		</labeled-knob>
+		
+		<labeled-knob x="617" y="80" label="fx release" type="float" minValue="0.0" maxValue="8.0" value="3.35" textColor="FFFFFFFF"
+		textSize="16" width="120" height="120" trackForegroundColor="E63D99F4" trackBackgroundColor="80808080">
+        <binding type="amp" level="group" position="4" parameter="ENV_RELEASE" />
+		</labeled-knob>
+      
+    </tab>
+  </ui>
+
+  <effects>
+    <effect type="lowpass_4pl" frequency="22000.0"/>
+    <effect type="reverb" wetLevel="0" roomSize="0.85" damping="O.2"/>
+  </effects>
+  
+</DecentSampler>

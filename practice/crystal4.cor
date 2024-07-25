@@ -1,0 +1,18 @@
+
+
+
+
+gkpulse = 90;-timeh(16);-go(0, 60, 100)
+
+ly: "4|r1|8", 8
+	@sallen2@pwm;.shij(qn*pump(16, fill(.25, .25, .5, 1, 2, .25, 4)), 2, 0);.moij(20$k-(20$k-ntof(b2))*lfh(4)).delij(sn, .5).shij(qn);.convij(pianto)
+	wn*2
+	f
+	iago.a(5)
+	stept(b3, minor3, pump(8, fill(1, -2, 3, 1, 0, -4, 0)))
+	stept(b3, minor3, 5+pump(3, fill(1, -2, 3, 1, 0, -4, 0)))
+	stept(b3, minor3, 5+pump(2, fill(1, -2, 3, 1, 0, -4, 0)))
+
+@orp: 8, mp
+
+

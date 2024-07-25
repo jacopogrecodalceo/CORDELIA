@@ -32,10 +32,10 @@ if kdiv > 0 then
 	kcycle			= chnget:k("heart") * divz(gkdiv, kdiv, 1)
 	koct			samphold koct, changed2(int(kcycle))
 	koct2			vdel_k koct, gkbeats*kdiv, gibeats*2
-	aosc2			oscili 1, portk(cpsoct(koct2)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri
+	aosc2			oscil3 1, portk(cpsoct(koct2)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri
 endif
 
-aosc1		oscili 1, portk(cpsoct(koct)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri
+aosc1		oscil3 1, portk(cpsoct(koct)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri
 aosc		= (aosc1 + aosc2/2)*portk(kdyn, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf)))*4
 
 aout		= ain*(1-kwet) + aosc*kwet

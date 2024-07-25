@@ -54,7 +54,7 @@ instr noijs_instr
 
 	ktime timeinsts
 	if ktime > idur then
-		turnoff2 p1, 4, 1
+		turnoff2 p1, 0, 1
 	endif
 
 	irel_time init idur/6
@@ -67,7 +67,7 @@ instr noijs_instr
 			icps_rel /= 2
 		od
 
-		aenv	= table3:a(linseg:a(indx, ilast, gienvdur-1), ienv)*idyn
+		aenv	= table3:a(linseg:a(indx, irel_time, gienvdur-1), ienv)*idyn
 		kcps	cosseg icps_last, irel_time, icps_rel
 	endif
 

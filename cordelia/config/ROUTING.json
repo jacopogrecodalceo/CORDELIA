@@ -4,6 +4,11 @@
         "core": "PARAM_1    init i(gkbeatf)\n\nPARAM_OUT absolute_dist PARAM_IN, PARAM_1",
         "opcode": "opcode absolute_dist, a, ak\n    ain, kp1 xin\n\nsetksmps 1\n\nafx     balance2 abs(ain), ain\namod\tabs lfo:a(1, kp1/2)\n\nafx\t*= (1-amod)\nain\t*= amod\n\naout\t= afx + ain\n\n    xout aout\n    endop"
     },
+    "chebij": {
+        "input": "k",
+        "core": "PARAM_1    init 64\n\nPARAM_OUT cordelia_chebyshev PARAM_IN, PARAM_1",
+        "opcode": "opcode cordelia_chebyshev, a, ak\n    ain, kfreq xin\n\nk0      jitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk1\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk2\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk3\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk4\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk5\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\nk6\t\tjitter 1, gkbeatf/kfreq, gkbeatf/kfreq/2\n\naout        chebyshevpoly  ain, k0, k1, k2, k3, k4, k5, k6\naout        chebyshevpoly  aout, k6, k5, k4, k3, k2, k1, k0\n\naout        balance aout, ain\n\n    xout aout\n    endop"
+    },
     "combij": {
         "input": "kkk",
         "core": ";krvt\t= ktime\n;klpt\t= kfb*(imaxlpt/1000)\n\nPARAM_1 init i(gkbeats)\nPARAM_2 init .5\nPARAM_3 init .5\n\nPARAM_OUT\tvcomb_balance PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
@@ -84,6 +89,11 @@
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_glass PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "#define cordelia_glass_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#\n#define cordelia_glass_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#\n\n    opcode cordelia_glass, a, akk\n    ain, kfreq, kq xin\n\nif1     init 80\nif2     init 188\n\niq1     init 8\niq2     init 3\n\naexc1    mode ain, $cordelia_glass_cps(if1), $cordelia_glass_q(iq1)\naexc2    mode ain, $cordelia_glass_cps(if2), $cordelia_glass_q(iq2)\n\naexc    = (aexc1+aexc2)/2\naexc    limit aexc, 0, 1\n\nares1   mode aexc,  $cordelia_glass_cps(kfreq),  $cordelia_glass_q(scale(kq, 500, 60))\nares2   mode aexc,  $cordelia_glass_cps(kfreq*2),  $cordelia_glass_q(scale(kq, 420, 53))\n\naout    = (ares1+ares2)/2\n\naout    balance2 aout, ain\nadel    flanger aout, a(1/$cordelia_glass_cps), kq/12\n\naout    = aout + adel/8\n\n    xout aout\n    endop"
     },
+    "guitar": {
+        "input": "kk",
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_guitar PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "#define cordelia_guitar_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/24, gkbeatf/8))#\n#define cordelia_guitar_bw(bw) #$bw+jitter:k(1, gkbeatf/24, gkbeatf/8)#\n\n    opcode cordelia_guitar, a, akk\n    ain, kfreq, kq xin\n\na1    resonz ain, $cordelia_guitar_cps(ntof(\"2E\")), $cordelia_guitar_bw(10)\na2    resonz ain, $cordelia_guitar_cps(ntof(\"2B\")), $cordelia_guitar_bw(10)\na3    resonz ain, $cordelia_guitar_cps(ntof(\"2G\")), $cordelia_guitar_bw(10)\na4    resonz ain, $cordelia_guitar_cps(ntof(\"3D\")), $cordelia_guitar_bw(10)\na5    resonz ain, $cordelia_guitar_cps(ntof(\"3A\")), $cordelia_guitar_bw(10)\na6    resonz ain, $cordelia_guitar_cps(ntof(\"3E\")), $cordelia_guitar_bw(10)\n\naout    sum a1, a2, a3, a4, a5, a6\naout    balance aout, ain\n    xout (ain+aout+reverb(aout, .25))/2\n    endop"
+    },
     "moij": {
         "input": "kk",
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
@@ -117,7 +127,7 @@
     "pitchij": {
         "input": "kkk",
         "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init .5\n\nPARAM_OUT\tcordelia_pitch PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
-        "opcode": "opcode cordelia_pitch, a, akkk\n\tain, kdiv, kport, kwet xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nif itime <= 0 then\n\titime = 1/2\nendif\nitime\t\tinit itime / 2\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kdyn \tpitch ain, itime, ilow, ihigh, idbthresh\nkdyn\t\t= kdyn/pow(2, 16)\n\nif kdiv > 0 then\n\tkcycle\t\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\t\tvdel_k koct, gkbeats*kdiv, gibeats*2\n\taosc2\t\t\toscili 1, portk(cpsoct(koct2)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri\nendif\n\naosc1\t\toscili 1, portk(cpsoct(koct)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri\naosc\t\t= (aosc1 + aosc2/2)*portk(kdyn, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf)))*4\n\naout\t\t= ain*(1-kwet) + aosc*kwet\n\n\txout aout\n\tendop"
+        "opcode": "opcode cordelia_pitch, a, akkk\n\tain, kdiv, kport, kwet xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nif itime <= 0 then\n\titime = 1/2\nendif\nitime\t\tinit itime / 2\n\nidbthresh\tinit 9 ; dB threshold\nkoct, kdyn \tpitch ain, itime, ilow, ihigh, idbthresh\nkdyn\t\t= kdyn/pow(2, 16)\n\nif kdiv > 0 then\n\tkcycle\t\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\t\tsamphold koct, changed2(int(kcycle))\n\tkoct2\t\t\tvdel_k koct, gkbeats*kdiv, gibeats*2\n\taosc2\t\t\toscil3 1, portk(cpsoct(koct2)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri\nendif\n\naosc1\t\toscil3 1, portk(cpsoct(koct)/2, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf))), gitri\naosc\t\t= (aosc1 + aosc2/2)*portk(kdyn, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf)))*4\n\naout\t\t= ain*(1-kwet) + aosc*kwet\n\n\txout aout\n\tendop"
     },
     "platij": {
         "input": "k",
@@ -147,7 +157,12 @@
     "skh": {
         "input": "kk",
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_skh, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\naout\tskf ain, kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf), 1+(kq*3), 1\naout\tbalance2 aout, ain\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_skh, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\naout\tskf ain, a(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf)), 1+(kq*3), 1\n;aout\tbalance aout, ain\n\n    xout aout\n    endop"
+    },
+    "skhp": {
+        "input": "kk",
+        "core": "PARAM_1    init 2\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skhp PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_skhp, a, akk\n    ain, kfreq, kq xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nidbthresh\tinit 9 ; dB threshold\n\nkoct, kdyn \tpitch ain, itime/32, ilow, ihigh, idbthresh\n\nifreq_var\tinit 5\naout\tskf ain, a(portk(cpsoct(koct), .005)*kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf)), 1+(kq*3), 1\n;aout\tbalance aout, ain\n\n    xout aout\n    endop"
     },
     "skl": {
         "input": "kk",

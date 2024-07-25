@@ -1,5 +1,5 @@
 import pprint
-
+import abjad
 from constants.var import *
 
 from constants.var import cordelia_json
@@ -20,6 +20,41 @@ def extract_keyword_from_list(list_params, keyword):
 			return list_params, extracted
 	return list_params, None
 
+def ly_rhythm(line):
+	line = line.replace('"', '')
+	events = []
+	for n in line.split('|'):
+		if not n.startswith('r'):
+			events.append(f'a{n}')
+		else:
+			events.append(n)
+
+	parser = abjad.parsers.reduced.ReducedLyParser()
+	container = parser(' '.join(events))
+
+	min_dur = max([n.written_duration.pair[1] for n in container])
+	print(min_dur)
+
+	first_line = []
+	for n in container:
+		dur = n.written_duration
+		if isinstance(n, abjad.Note):
+			num = dur/abjad.Duration((1, min_dur))
+			first_line.append(int(num))
+		else:
+			num = dur/abjad.Duration((1, min_dur))
+			for n in range(int(num)):
+				first_line.append(0)
+
+	second_line = []
+	for n in first_line:
+		if n > 0:
+			second_line.append(n)
+			for n in range(n-1):
+				second_line.append(0)
+		else:
+			second_line.append(n)
+	return ','.join(str(item) for item in second_line)
 
 def extract_csv(string):
 	elements = []
@@ -396,9 +431,14 @@ def parse_rhythmic(tokens):
 		freq_sequence, tokens = extract_sequence(tokens, start=['NEWLINE'], end=['NEWLINE'], include_start=False)
 		freqs.append(''.join(freq_sequence))
 
+	rhythm_name = rhythm_sequence[0]
+	rhythm_params = extract_csv(''.join(rhythm_sequence[1:]))
+
+	if rhythm_name == 'ly':
+		rhythm_params[0] = f'fillarray({ly_rhythm(rhythm_params[0])})'
 	for name in names:
 		instrument = Instrument(
-			rhythm={'name': rhythm_sequence[0], 'params': extract_csv(''.join(rhythm_sequence[1:]))},
+			rhythm={'name': rhythm_name, 'params': rhythm_params},
 			space=''.join(space_sequence) if space_sequence else '0',
 			name=name,
 			routing= routings if routings else [{'name': 'getmeout', 'params': '1'}],

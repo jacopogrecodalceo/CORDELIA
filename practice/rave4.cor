@@ -9,11 +9,10 @@ gktuning = scala.pto_diat
 
 eu: 5, 8, 2
 	@noijs2;.flanij(sn*lfh(2, zeus)).delij(sn*in4m);.convij(pianto)
-	qn, sn
-	mf
+	qn, sn*lfh(1)
+	ff
 	rome.a(5)
-	stept(b2, locrian, pump(32, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
-
+	stept(b2, locrian, pump(31, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
 
 @r909h: 4, fff
 

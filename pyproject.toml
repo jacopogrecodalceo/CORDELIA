@@ -7,11 +7,12 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 librosa = "^0.10.1"
 numpy = "^1.26.4"
 ctcsound = "^6.17.1"
 python-osc = "^1.8.3"
+abjad = "^3.19"
 
 
 [build-system]
