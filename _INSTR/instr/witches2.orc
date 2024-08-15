@@ -23,7 +23,7 @@ idetune = i(gkwitches2_detune)
 	schedule Sinstr, random:i(p3/3, (p3/3)*2),			p3, idyn/16,	ienv, 	(icps*11)+(idetune*3),	indx, ich
 
 	turnoff
-
+endin
 	
 
 	instr witches2_instr
@@ -41,7 +41,7 @@ amod 	a gkwitches2_mod
 kndx	= expseg:k(.05, idur, indx)*gkwitches2_ndx
 
 aout	foscili $dyn_var, icps, kcar, amod+randomi:a(-.0015, .0015, 1/idur, 2, 0), kndx+randomi:k(-.05, .05, 1/idur), gisine
-
+aout	/= 7
 ;	ENVELOPE
 $dur_var(10)
 

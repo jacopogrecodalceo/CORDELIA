@@ -21,6 +21,14 @@ Methods = {
 	LPC = {
 		dir = Paths.methods .. 'LPC',
 		script = Paths.methods .. 'LPC.py',
+	},
+	PVS = {
+		dir = Paths.methods .. 'PVS',
+		script = Paths.methods .. 'PVS.py',
+	},
+	PVSrt = {
+		dir = Paths.methods .. 'PVSrt',
+		script = Paths.methods .. 'PVSrt.py',
 	}
 }
 
@@ -42,7 +50,7 @@ local MAIN_OUTPUT, SELECTED_GLUED_ITEM, GLUED_ITEM_TRACK
 
 CSOUND_OPTIONs = {
 	sr = 48,
-	ksmps = 32,
+	ksmps = 64,
 }
 
 function extract_basename(file)
@@ -378,6 +386,7 @@ function main_context()
 
 	for word in csound_code:gmatch("%S+") do
 		if INSTR_JSON[word] ~= nil then
+			reaper.ShowConsoleMsg(word)
 			csound_code = '#include "' .. INSTR_JSON[word]['path'] .. '"\n' .. csound_code
 		end
 		if GEN_JSON[word] ~= nil then

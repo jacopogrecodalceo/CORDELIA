@@ -45,6 +45,7 @@ amod 	a gkwitchesvr_mod
 kndx	= expseg:k(1.05, idur, 1+indx)-1
 
 aout	foscili $dyn_var, icps+jitter:k(.05, 1/idur, 4/idur), kcar, amod+a(jitter:k(.0015, 1/idur, 4/idur)), kndx+jitter:k(.05, 1/idur, 4/idur), gisine
+aout	/= 7
 
 if iring > 0 then
 	aout	*= oscili:a(1, iring)

@@ -2,7 +2,7 @@
 gSmusic_box_path init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-music_box"
 gimusic_box_index init 0
 
-gimusic_max_num_for_recharge init 48
+gimusic_max_num_for_recharge init 96
 gimusic_max_num_for_comingback init 0
 
 instr music_box

@@ -85,9 +85,10 @@ $start_instr(fpianos2)
 
 	aout 	= aouts[ich-1]
 	aout 	moogladder2 aout, limit(20$k-((1-$dyn_var)*20$k)+icps, 50, 20$k), random:i(0, 1/9)
-	aout	*= $dyn_var * 4
+	aout	*= $dyn_var * 12
 
-	aout	*= pow(1.55, octcps(icps))
+;	aout	*= pow(1.55, octcps(icps))
+	aout	/= pow(1.55, octcps(icps))
 
 	$dur_var(10)
 $end_instr

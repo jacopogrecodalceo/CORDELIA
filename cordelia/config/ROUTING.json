@@ -134,6 +134,11 @@
         "core": ";space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1",
         "opcode": "giplate_rev_tabexcite\tftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545\ngiplate_rev_tabouts\t\tftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545\n\n\topcode plate_rev, a, ak\n\tain, kmix xin\n\nitime\tinit i(gkbeats)*8 \n\narev\tplaterev giplate_rev_tabexcite, giplate_rev_tabouts, 0, .095, .75, itime, .0015, ain\naout\t= ain*(1-kmix) + arev*kmix\n\n\txout aout\n\tendop"
     },
+    "resij": {
+        "input": "kk",
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_res PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_res, a, akk\n    ain, kfreq, kq xin\n\nilen_array      init 96\niband_high      ntof \"5B\"\n\nktuning         = gktuning\n\nkfreqs[]\tinit ilen_array\nif changed2(ktuning) == 1 then\n    klen_tuning\t\ttablekt 0, gktuning\n    kroot_tuning\ttablekt 2, gktuning\n\n    kndx\t\t= 0\n    kfreq_indx\t= 0\n    koct\t\t= 1\n    until kfreq_indx >= iband_high || kndx == ilen_array do\n        if kndx % klen_tuning == 0 then\n            koct += 1\n        endif\n\n        kfreqs[kndx]\t= koct*kroot_tuning * tablekt:k(4+(kndx % klen_tuning), ktuning)\n        kfreq_indx\t\t= kfreqs[kndx]\n        kndx += 1\n    od\nendif\n\nkbws[]\t\t\t= kfreqs / kq * 128\nabands_as[] \tpoly ilen_array, \"butterbp\", ain, kfreqs, kbws\naout \t\t\tsumarray abands_as; /pow(2, 12)\n\n    xout aout\n    endop"
+    },
     "revij": {
         "input": "kkk",
         "core": "PARAM_1 init i(gkbeats) ;space\nPARAM_2 init .5 ;high freq\nPARAM_3 init .5 ;mix\n\nPARAM_OUT reverb_1 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",

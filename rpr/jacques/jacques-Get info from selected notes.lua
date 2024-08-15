@@ -84,7 +84,7 @@ local function main()
 			'---'
 	end
 
-	reaper.ShowMessageBox(msg, 'Selected notes info', 0)
+	reaper.ShowConsoleMsg(msg)
 
 end
 

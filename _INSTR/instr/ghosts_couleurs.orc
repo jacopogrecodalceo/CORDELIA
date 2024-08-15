@@ -59,7 +59,7 @@ k5		init random:i(-1, 1)
 k6		init random:i(-1, 1)
 
 aosc		= a1 + a2 + a3
-aosc		/= 3
+aosc		/= 6
 
 acheby		chebyshevpoly  aosc, k0, k1*idyn, k2, k3, k4, k5*idyn, k6
 

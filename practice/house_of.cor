@@ -1,0 +1,39 @@
+
+
+
+gkpulse = 130
+
+gk1	= pump(2, fillarray(0, -5))
+
+gkarr[]	= fillarray(1, 3, 2, 7, 1, 2, 2, 7)
+
+eu: pump(4, fill(11, 14)), 16, 4
+	@sywave
+	wn, en
+	f, mp
+	hader.a(5)
+	step(g3, whole, pump(8, gkarr), gk1)
+	step(e3, kumoi, pump(4, gkarr)+3, gk1)
+	step(b1, kumoi, pump(24, gkarr), gk1)
+
+eu: 11, 16, 4, 2
+	@esynth2
+	qn
+	fff*lfh(1)
+	hader.a(5)
+	step(g4, whole, pump(8, gkarr), gk1)
+	step(e4, kumoi, pump(4, gkarr)+3, gk1)
+	step(b4, kumoi, pump(24, gkarr), gk1)
+
+
+eu: 11, 16, 4, 2
+	@fim@esynth.delij(sn)
+	0, qn*lfh(16)
+	f*lfh(1)
+	hader.a(5)
+	step(g4, whole, pump(8, gkarr), gk1)
+	step(e4, kumoi, pump(4, gkarr)+3, gk1)
+	step(b4, kumoi, pump(24, gkarr), gk1)
+
+@orp: 4, mf
+
