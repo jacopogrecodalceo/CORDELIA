@@ -100,7 +100,6 @@ aosc2		oscili 1, portk(kcps2, kport)
 aosc2		*= kamp2
 
 aout		= (aosc1 + aosc2/2)/2
-
 		outch ich, aout
 
 		endin

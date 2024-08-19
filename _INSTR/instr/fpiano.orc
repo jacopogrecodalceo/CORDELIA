@@ -89,7 +89,7 @@ $start_instr(fpiano)
 	iskiptime random 1490, 1497
 	aouts[] diskin Spath, iratio, iskiptime/1000
 
-	aout = aouts[ich-1]*$dyn_var*12
+	aout = aouts[ich-1]*$dyn_var*6
 
 	$dur_var(10)
 $end_instr

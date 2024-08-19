@@ -25,6 +25,9 @@
 	+ Initial Release
  --]]
 
+local SCRIPT_NAME = debug.getinfo(1, 'S').source:sub(2):gsub('-jacques', '')
+
+
 local function split_csv(csv)
 	local values = {}
 	for value in csv:gmatch('[^,]+') do
@@ -88,7 +91,7 @@ local function main(subdivision) -- local (i, j, item, take, track)
 		reaper.DeleteTrackMediaItem(old_selected_item.track, old_selected_item.id)
 	end
 
-	reaper.Undo_EndBlock('Create windowed', -1) -- End of the undo block. Leave it at the bottom of your main function.
+	reaper.Undo_EndBlock(SCRIPT_NAME, -1) -- End of the undo block. Leave it at the bottom of your main function.
 
 end
 
@@ -195,7 +198,7 @@ end]]
 --SaveSelectedItems(init_sel_items)
 --SaveSelectedTracks(init_sel_tracks)
 
-local retval, retvals_csv = reaper.GetUserInputs('Create windowed', 1, 'Subdivision:', '8', 512)
+local retval, retvals_csv = reaper.GetUserInputs(SCRIPT_NAME, 1, 'Subdivision:', '8', 512)
 if retval then
 	local values = split_csv(retvals_csv)
 	local subdivision = table.unpack(values)

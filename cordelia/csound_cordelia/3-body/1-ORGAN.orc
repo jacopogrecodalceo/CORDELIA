@@ -1,5 +1,7 @@
 giedo12					ftgen 0, 0, 0, -2, 12, 2/1, A4, 69, 1, 1.0594630943592953, 1.122462048309373, 1.189207115002721, 1.2599210498948732, 1.3348398541700344, 1.4142135623730951, 1.4983070768766815, 1.5874010519681994, 1.681792830507429, 1.7817974362806785, 1.8877486253633868, 2/1
 
+gkswing	init 0
+
 gktuning init giedo12
 gktuning_len init tab_i(0, i(gktuning))
 gScsound_score init ""
@@ -54,6 +56,12 @@ if kph < klast_c then
 endif
 
 klast_c	= kph
+
+kswing = (kph*gkdiv)%1
+if gkswing > 0 && kswing > .5 then
+	kph = (.5 + (kph - .5) * (1 - gkswing/gkdiv))%1
+	aph = (.5 + (aph - .5) * (1 - gkswing/gkdiv))%1
+endif
 
 	chnset	kph, "heart"
 	chnset	aph, "heart_a"

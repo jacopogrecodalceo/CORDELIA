@@ -10,6 +10,8 @@ until indx == ich do
 od
 
 giasine		ftgen 0, 0, 16384, 9, .5, 1, 0
+giramp			init 128
+gisotrap		ftgen	0, 0, 8192, 7, 0, giramp, 1, 8192-(giramp*2), 1, giramp, 0
 
 		instr 1
 ; ============
@@ -92,6 +94,7 @@ aosc2		oscili 1, portk(kcps2, kport)
 aosc2		*= kamp2
 
 aout		= (aosc1 + aosc2/2)/2
+aout		*= table3:a(phasor(1/itime), gisotrap, 1)
 
 		outch ich, aout
 
