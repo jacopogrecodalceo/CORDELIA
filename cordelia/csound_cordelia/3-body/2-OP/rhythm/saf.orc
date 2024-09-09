@@ -42,7 +42,7 @@ until indx == ilen_raw do
 od
 
 kcycle		= chnget:k("heart") * divz(gkdiv, kdiv, 1)
-kph			= int((kcycle % 1) * ilen_raw) + krot
+kph			= (int((kcycle % 1) * ilen_raw) + krot) % ilen_raw
 
 kout		= changed2:k(kph) == 1 ? ipat[kph] : 0
 kout		= kout < 0 ? samphold:k(int(random:k(0, ilen_raw)), abs(kout)) : kout

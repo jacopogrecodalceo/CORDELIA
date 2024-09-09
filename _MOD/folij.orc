@@ -31,8 +31,8 @@ krel        init .05
 ilookahead  init 50/1000
 
 aout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead
+;aout        *= 6-follow2(aduck, .005, gkbeats/4)
 aout        = ain*(1-kwet) + aout*kwet
-
     xout aout
     endop
 ;END OPCODE

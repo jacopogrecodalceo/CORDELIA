@@ -436,6 +436,8 @@ def parse_rhythmic(tokens):
 
 	if rhythm_name == 'ly':
 		rhythm_params[0] = f'fillarray({ly_rhythm(rhythm_params[0])})'
+	elif rhythm_name == 'ft':
+		rhythm_name = "ft_rhythm"
 	for name in names:
 		instrument = Instrument(
 			rhythm={'name': rhythm_name, 'params': rhythm_params},

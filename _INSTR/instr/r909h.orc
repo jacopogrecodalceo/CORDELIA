@@ -67,7 +67,7 @@ gSr909h_cym_ride[] 			fillarray \
 #define if_r909h(array'dyn) #
 kdyn_$array = gkr909h_$array[k16th%lenarray(gkr909h_$array)]
 if kdyn_$array >= 1 then
-	if gkr909h_stopper < 3.5 then
+	if gkr909h_stopper < 3.95 then
 		schedulek "r909h_instrument", 0, 1, idyn*kdyn_$array/$dyn, ich, gSr909h_$array[random:k(0, lenarray(gSr909h_$array))], gkr909h_ratio
 	endif
 
@@ -137,7 +137,7 @@ instr r909h_instrument
 	idur 	init p3
 
 	aout	diskin Spath, iratio+random:i(-.05, .05)
-	aout	*= cosseg(0, .005, 1, p3-.01, 1, .005, 0)*idyn
+	aout	*= cosseg(0, .005, 1, .01, 1, .01, .35, p3-.03, .15, .005, 0)*idyn
 	;aout	chebyshevpoly aout, 0, 1/12, -1/12, 1/32, -1/32, -1/2
 	;aout	flanger aout/2, cosseg:a(0, idur, idur/random:i(950, 1050)), cosseg:k(random:i(1, 0), idur, 0)
 	;aout 	limit aout/2, -.95, 95

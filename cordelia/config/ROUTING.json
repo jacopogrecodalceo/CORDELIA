@@ -72,12 +72,22 @@
     "folij": {
         "input": "Sk",
         "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow PARAM_IN, PARAM_1, PARAM_2, ich",
-        "opcode": "opcode cordelia_follow, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\n/* adest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        balance ain, aenv */\n\nkthresh     init 0\nklo_knee    init 48\nkhi_knee    init 60\nkratio      init 5.5\nkatk        init .015\nkrel        init .05\nilookahead  init 50/1000\n\naout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_follow, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\n/* adest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        balance ain, aenv */\n\nkthresh     init 0\nklo_knee    init 48\nkhi_knee    init 60\nkratio      init 5.5\nkatk        init .015\nkrel        init .05\nilookahead  init 50/1000\n\naout        compress ain, aduck, kthresh, klo_knee, khi_knee, kratio, katk, krel, ilookahead\n;aout        *= 6-follow2(aduck, .005, gkbeats/4)\naout        = ain*(1-kwet) + aout*kwet\n    xout aout\n    endop"
     },
     "folij2": {
         "input": "Sk",
         "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow2 PARAM_IN, PARAM_1, PARAM_2, ich",
         "opcode": "opcode cordelia_follow2, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\nadest\t    chnget sprintf(\"%s_%i\", String, ich)\n\nadest       *= .75\t\t;reduce volume a bit\nadest       tone    adest, 1500     ;smooth estimated envelope\n;adest       moogladder2 adest, 500, .95\n;aenv        follow2 adest, .005, .01\naenv        follow adest, .005;, .01\naout        = ain*(1-aenv)\n\naout        = ain*(1-kwet) + aout*kwet\n\n    xout aout\n    endop"
+    },
+    "folij3": {
+        "input": "Sk",
+        "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow3 PARAM_IN, PARAM_1, PARAM_2, ich",
+        "opcode": "opcode cordelia_follow3, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\n\naout        = ain*(1-follow2(aduck, .005, gkbeats/4))\naout        = ain*(1-kwet) + aout*kwet\n    xout aout\n    endop"
+    },
+    "folijd": {
+        "input": "Sk",
+        "core": "PARAM_2 init 1\n\nPARAM_OUT cordelia_follow_drum PARAM_IN, PARAM_1, PARAM_2, ich",
+        "opcode": "opcode cordelia_follow_drum, a, aSki\n    ;setksmps 1\n    ain, String, kwet, ich xin\n\naduck\t    chnget sprintf(\"%s_%i\", String, ich)\naduck       moogladder2 aduck, 195, .5\n\nif rms(aduck) > .5 && metro:k(60) ==  1 then\n    ktrig = 1\nelse\n    ktrig = 0\nendif\n\naout         = ain*triglinseg:a(ktrig, 1, .005, 0, .095, 1)\n;aout        *= 6-follow2(aduck, .005, gkbeats/4)\naout        = ain*(1-kwet) + aout*kwet\n    xout aout\n    endop"
     },
     "getmeout": {
         "input": "k",

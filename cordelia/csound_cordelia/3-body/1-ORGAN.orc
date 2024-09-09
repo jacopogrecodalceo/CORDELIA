@@ -57,11 +57,11 @@ endif
 
 klast_c	= kph
 
-kswing = (kph*gkdiv)%1
+/* kswing = (kph*gkdiv)%1
 if gkswing > 0 && kswing > .5 then
-	kph = (.5 + (kph - .5) * (1 - gkswing/gkdiv))%1
-	aph = (.5 + (aph - .5) * (1 - gkswing/gkdiv))%1
-endif
+	kph = (.5 + (kph - .5) * (1 - gkswing))%1
+	aph = (.5 + (aph - .5) * (1 - gkswing))%1
+endif */
 
 	chnset	kph, "heart"
 	chnset	aph, "heart_a"
@@ -119,6 +119,7 @@ gipulse		i gkpulse
 gibeats		i gkbeats 
 gibeatms	i gkbeatms 
 gibeatf		i gkbeatf
+itun		i gktuning
 
 prints("\n--------- i'm 🔥beating --------\n")
 prints " 💛 %.02fbpm: %.02fs // %.02fHz 💛 \n", gipulse, gibeats, gibeatf

@@ -8,7 +8,7 @@ if $kcps > 0 && $kcps < 20000 then
 	if kch == 0 then
 		kch = 1
 		until kch > ginchnls do
-			schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch
+			schedulek Sinstr, konset, kdur, kamp, kenv, $kcps, kch
 			kch += 1
 		od
 		kch = 0
@@ -23,7 +23,7 @@ if $kcps > 0 && $kcps < 20000 then
 		kch = kch_jit
 	else
 		kch_i = ((kch-1)%ginchnls)+1
-		schedulek Sinstr, 0, kdur, kamp, kenv, $kcps, kch_i
+		schedulek Sinstr, konset, kdur, kamp, kenv, $kcps, kch_i
 	endif
 endif
 #
@@ -44,6 +44,12 @@ printk2 kcps5
 */
 
 if	kdur > giminnote && kamp > 0 then
+
+	if (chnget:k("heart")*gkdiv)%1 < .5 then
+		konset = 0
+	else
+		konset = gkswing*gkbeats/4
+	endif
 
 	;LIMIT kdur TO gimax_note
 	if kdur > gimaxnote then
