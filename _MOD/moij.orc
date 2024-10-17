@@ -1,5 +1,5 @@
 ;START CORE
-PARAM_1    init 500
+PARAM_1    init ntof("4B")
 PARAM_2    init .5
 
 PARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2
