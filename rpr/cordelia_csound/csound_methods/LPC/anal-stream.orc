@@ -1,15 +1,10 @@
-
-iPOLE_FILTER    init 0      ;generate a pole filter file - WARNING, more dangerous
-
-iPOLE_ORD       init 24     ;max 50
-iHOPSIZE        init 250    ;max 500
-iLOWEST_FREQ    init 20
-iHIGHEST_FREQ   init 15000
-;-p     npoles, number of poles for analysis. The default is 34, the maximum 50.
-;-h     hopsize -- hop size (in samples) between frames of analysis. This determines the number of frames per second (srate / hopsize) in the output control file. The analysis framesize is hopsize * 2 samples. The default is 200, the maximum 500.
-;-Q     maxcps, highest frequency (in Hz) of pitch tracking. The narrower the pitch range, the more accurate the pitch estimate. The defaults are -P70, -Q200.
+iPOLE_ORD       init 24     ; npoles, number of poles for analysis. The default is 34, the maximum 50.
+iHOPSIZE        init 250    ; hopsize -- hop size (in samples) between frames of analysis. This determines the number of frames per second (srate / hopsize) in the output control file. The analysis framesize is hopsize * 2 samples. The default is 200, the maximum 500.
+iLOWEST_FREQ    init 20     ; lowest frequency (in Hz) of pitch tracking. -P0 means no pitch tracking 
+iHIGHEST_FREQ   init 15000   ; maxcps, highest frequency (in Hz) of pitch tracking. The narrower the pitch range, the more accurate the pitch estimate. The defaults are -P70, -Q200.
 
 indx init 0
+iPOLE_FILTER    init 1      ; generate a pole filter file - if not, WARNING, more dangerous
 until indx == lenarray(gSfiles) do
     if iPOLE_FILTER == 0 then
         ires system_i 1, sprintf("/usr/local/bin/lpanal -s%i -p%i -h%i -P%i -Q%i \"%s\" \"%s.lpc\"", \
@@ -21,9 +16,7 @@ until indx == lenarray(gSfiles) do
     indx += 1
 od
 
-gihanning       ftgen   0, 0, 8192, 20, 2
 gisaw			ftgen	0, 0, 8192, 7, 1, 8192, -1
-gisine			ftgen	0, 0, 8192, 10, 1
 
     instr 1
 
@@ -36,11 +29,13 @@ p3          init idur
 kread       linseg 0, idur, idur
 
 krmsr, krmso, kerr, kcps lpread kread, Slpcanal
+; krmsr -- root-mean-square (rms) of the residual of analysis
+; krmso -- rms of the original signal
+; kerr  -- the normalized error signal
+; kcps  -- pitch in Hz
 
-;krmso       /= pow(2, 23)
-
-aosc         buzz krmso, kcps, int(sr/2/kcps), gisaw    ;max harmonics without aliasing
-aout         lpreson aosc                               ;pole file not supported!!
+aosc         buzz krmso, kcps, int(sr/2/kcps), gisaw    ; max harmonics without aliasing
+aout         lpreson aosc                               ; pole file not supported!!
 
 aenv         diskin gSfiles[indx]
 

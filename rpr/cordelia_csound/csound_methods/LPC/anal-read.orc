@@ -1,15 +1,10 @@
-
-iPOLE_FILTER    init 1      ;generate a pole filter file - WARNING, more dangerous
-
-iPOLE_ORD       init 24     ;max 50
-iHOPSIZE        init 250    ;max 500
-iLOWEST_FREQ    init 20
-iHIGHEST_FREQ   init 15000
-;-p     npoles, number of poles for analysis. The default is 34, the maximum 50.
-;-h     hopsize -- hop size (in samples) between frames of analysis. This determines the number of frames per second (srate / hopsize) in the output control file. The analysis framesize is hopsize * 2 samples. The default is 200, the maximum 500.
-;-Q     maxcps, highest frequency (in Hz) of pitch tracking. The narrower the pitch range, the more accurate the pitch estimate. The defaults are -P70, -Q200.
+iPOLE_ORD       init 24     ; npoles, number of poles for analysis. The default is 34, the maximum 50.
+iHOPSIZE        init 250    ; hopsize -- hop size (in samples) between frames of analysis. This determines the number of frames per second (srate / hopsize) in the output control file. The analysis framesize is hopsize * 2 samples. The default is 200, the maximum 500.
+iLOWEST_FREQ    init 20     ; lowest frequency (in Hz) of pitch tracking. -P0 means no pitch tracking 
+iHIGHEST_FREQ   init 15000   ; maxcps, highest frequency (in Hz) of pitch tracking. The narrower the pitch range, the more accurate the pitch estimate. The defaults are -P70, -Q200.
 
 indx init 0
+iPOLE_FILTER    init 1      ;generate a pole filter file - WARNING, more dangerous
 until indx == lenarray(gSfiles) do
     if iPOLE_FILTER == 0 then
         ires system_i 1, sprintf("/usr/local/bin/lpanal -s%i -p%i -h%i -P%i -Q%i \"%s\" \"%s.lpc\"", \

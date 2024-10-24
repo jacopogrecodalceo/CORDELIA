@@ -121,7 +121,6 @@ with open(output_file_wav + '--finished', 'w') as f:
 	f.write('I EXIST')
 
 try:
-
 	# Remove the file
 	with open(input_file_orc, 'w') as f:
 		f.write(orc_code)
@@ -129,9 +128,17 @@ try:
 	if REMOVE_FILEs:
 		os.remove(input_file_wav)
 		for f in mono_files:
-			os.remove(f)
+			file_path = f
+			if os.path.exists(file_path):
+				os.remove(file_path)
+			else:
+				logging.info(f"File {file_path} does not exist.")
 		for f in lpc_files:
-			os.remove(f.replace('"', ''))
+			file_path = f.replace('"', '')
+			if os.path.exists(file_path):
+				os.remove(file_path)
+			else:
+				logging.info(f"File {file_path} does not exist.")
 
 	logging.info("File removed successfully.")
 except FileNotFoundError:
