@@ -8,7 +8,7 @@ a1	vco2 1, icps, 4, .5+$sywave2_jit  ; Sawtooth wave
 a2	vco2 1, icps*(1+$sywave2_jit), 4, .5+$sywave2_jit  ; Slightly detuned sawtooth wave
 a3	vco2 1, icps*(1-$sywave2_jit), 4, .5+$sywave2_jit  ; Another detuned sawtooth wave
 
-aosc	= (a1 + a2 + a3) / 3
+aosc	= idyn * (a1 + a2 + a3) / 3
 
 ; FILTER SECTION
 ; Low-pass filter to smooth the sound
@@ -39,6 +39,6 @@ aout			*= 2
 
 kfilter_dyn		limit 20$k-((linseg:k(0, idur, 1-$dyn_var))*9.5$k)+icps, 20, 20$k
 aout 			moogladder2 aout, kfilter_dyn, random:i(0, 1/9)
-
+aout			*= 8
 	$dur_var(10)
 	$end_instr

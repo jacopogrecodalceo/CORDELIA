@@ -9,16 +9,22 @@ if changed2(kdiv_get) == 1 then
 endif
 
 kheart chnget "heart"
+kcycle = kheart * divz(gkdiv, kdiv, 1)
 
 kvar_last init -1
-kvar	= (kheart * gkdiv / 8) % 1
-if (kheart > .5) then
-	if (kvar < kvar_last) && (random:k(0, 1) > .75) then
+kvar	= kcycle % 1
+
+if kcycle < (kdiv - 1) then
+	if (kvar < kvar_last) && (random:k(0, 1) > .5) then
 		konset = konset_get + floor(random:k(-3, 3))
+		while konset > kpulses do
+			konset = konset_get + floor(random:k(-3, 3))
+		od
 	endif
 else
 	konset = konset_get
 endif
+	printks2 "\nEU ONSET IS CHANGED: %i\n", konset
 
 kvar_last	= kvar
 
@@ -26,7 +32,6 @@ if konset != 0 && kpulses != 0 && kdiv != 0 then
 
 	krot		= krot % kpulses
 
-	kcycle		= kheart * divz(gkdiv, kdiv, 1)
 	kph			= (int((kcycle % 1) * kpulses) + krot) % kpulses
 	keu_val		= int((konset / kpulses) * kph)
 
