@@ -12,7 +12,7 @@ aph		= aph_init
 	alwayson("clock_sender")
 
 
-	massign 0, nstrnum("midi_input")
+/* 	massign 0, nstrnum("midi_input")
 
 	instr midi_input
 
@@ -22,6 +22,6 @@ icps	cpstmid i(gktuning)
 	turnoff
 
 	endin
-
+ */
 
 

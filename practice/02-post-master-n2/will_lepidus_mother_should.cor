@@ -3,35 +3,28 @@
 
 
 
-
-
-
-
 gkpulse = 110
 
 gktuning = scala.pto_diat
 
 
+gkgain = .15
+
 eu: 4, 16, 32
 	@kneet
 	wn*0
-	ff
+	pp
 	mac
-	c3-1.15: bea
+	stept(c4, whole, pump(8, fill(1, 2, 3)))
 
 eu: 4, 16, 4
 	@mhont@repuck.moij(500*pump(64, fill(.25, 4, .25, 3, 3/2)), .85)
-	each(wn*2, wn)
-	ff
+	wn*2, wn
+	pp
 	iago.a(5)
-	c4-2.16: bea
+	stept(c4, whole, pump(8, fill(1, 2, 3)))
 
 @dead3: 8, f
 
-eu: 4, 8, 8
-	@bd808
-	wn
-	ff
-	mac
-	ntof(g2)
+
 

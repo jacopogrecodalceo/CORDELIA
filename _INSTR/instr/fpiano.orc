@@ -3,7 +3,6 @@ gSfpiano_path init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/samps-kawa
 
 massign 0, "fpiano"
 
-
 $start_instr(fpiano)
 
 	; IF RANGE DYN
@@ -86,27 +85,38 @@ $start_instr(fpiano)
 	schedule "fpiano_release", random:i(.125, .135), idur*2, Spath_release, idyn, ich
 	;================================================================
 
-	iskiptime random 1490, 1497
-	aouts[] diskin Spath, iratio, iskiptime/1000
 
-	aout = aouts[ich-1]*$dyn_var*6
+	iskiptime random 1490, 1497
+	ains[] diskin Spath, iratio, iskiptime/1000
+
+	ifactor_dyn init 4
+	$sample_instr_out
+	aout = ain
 
 	$dur_var(10)
 $end_instr
 
 instr fpiano_release
-	Sinstr init "fpiano"
-	Spath init p4
-	ilen filelen Spath
-	if p3 > ilen then
+
+	Sinstr 	init "fpiano"
+	Spath 	init p4
+	idur 	init p3
+	idyn 	init p5
+	ich 	init p6
+
+	ilen 	filelen Spath
+	if idur > ilen then
 		p3 init ilen
+		idur 	init p3
 	endif
-	idur init p3
-	idyn init p5
-	ich init p6
-	aenv cosseg idyn, p3-.005, idyn, .005, 0
-	iskiptime random 1480, 1495
-	aouts[] diskin Spath, 1, iskiptime/1000
-	aout = aouts[ich-1]*aenv
+
+	iskiptime	random 1480, 1495
+
+	iatk		init .005
+	aenv 		cosseg idyn, idur-iatk, idyn, iatk, 0
+	ains[]		diskin Spath, 1, iskiptime/1000
+	ifactor_dyn init 1
+	$sample_instr_out
+	aout = ain
 	$channel_mix
 endin

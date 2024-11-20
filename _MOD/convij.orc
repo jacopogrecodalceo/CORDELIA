@@ -16,7 +16,7 @@ Skk
     opcode cordelia_cross, a, aSikk
     ain, String, ich, kdyn, kmix xin
 
-adest	chnget sprintf("%s_%i", String, ich)
+adest	    chnget sprintf("%s_%i", String, ich)
 
 across      cross2 ain*kdyn, adest, 4096, 2, gihanning, kmix
 

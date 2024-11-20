@@ -47,6 +47,15 @@ od
 #
 
 
+#define sample_instr_out #
+indx			init ich - 1
+ifile_nchnls	filenchnls Spath
+ilimit			max ifile_nchnls, ginchnls
+ifile_ch   		init (indx % (ifile_nchnls <= ginchnls ? ifile_nchnls : ginchnls)) + 1
+
+ain = ains[ifile_ch-1]*$dyn_var*ifactor_dyn
+#
+
 ;-----------------------------|
 ;-------------EVA-------------|
 ;-----------------------------|

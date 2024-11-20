@@ -84,13 +84,17 @@ endif
 	;================================================================
 
 	iskiptime random 1490, 1497
-	aouts[] diskin Spath, iratio, iskiptime/1000
+	ains[] diskin Spath, iratio, iskiptime/1000
+
+	ifactor_dyn init 4
+	$sample_instr_out
+        aout = ain
 
 	aoscil_1 oscili idyn, icps
 	aoscil_2 oscili idyn*cosseg(0, p3/2, 1, p3/2, 0), icps*2
 	aoscil_3 oscili idyn*cosseg(0, p3*3/2, 1, p3/3, 0), icps*3
 
-	aout = (aouts[ich-1]+aoscil_1+aoscil_2+aoscil_3)/2*$dyn_var
+	aout = (ain+aoscil_1+aoscil_2+aoscil_3)/2*$dyn_var
 
 	$dur_var(10)
 $end_instr

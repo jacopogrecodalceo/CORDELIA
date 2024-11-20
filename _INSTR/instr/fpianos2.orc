@@ -81,9 +81,13 @@ $start_instr(fpianos2)
 	;================================================================
 
 	iskiptime random 1490, 1497
-	aouts[] diskin Spath, iratio, iskiptime/1000
+	ains[] diskin Spath, iratio, iskiptime/1000
 
-	aout 	= aouts[ich-1]
+
+	ifactor_dyn init 4
+	$sample_instr_out
+	aout = ain
+
 	aout 	moogladder2 aout, limit(20$k-((1-$dyn_var)*20$k)+icps, 50, 20$k), random:i(0, 1/9)
 
 	aout	*= $dyn_var * 48

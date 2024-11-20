@@ -110,8 +110,6 @@ giaudrum_kick_2_ft		ftgen 0, 0, giaudrum_kick_2_dur, -16, \
 instr audrum_kick_2
 	Sinstr init "audrum"
 
-	;setksmps 1
-
 	idyn		init p4
 	ich			init p5
 	aenv		table3 linseg:a(0, p3, giaudrum_kick_2_dur), giaudrum_kick_2_ft
@@ -143,7 +141,6 @@ giaudrum_kick_3_ft_freq	ftgen 0, 0, giaudrum_kick_3_dur, -16, \
 instr audrum_kick_3
 	Sinstr init "audrum"
 
-	;setksmps 1
 	idyn		init p4
 	ich			init p5
 	Sjit_instr	sprintf "audrum_jit_%i", ich
@@ -172,7 +169,6 @@ endin
 
 instr audrum_hh_1
 	Sinstr init "audrum"
-	;setksmps 1
 
 	idyn		init p4
 	ich			init p5

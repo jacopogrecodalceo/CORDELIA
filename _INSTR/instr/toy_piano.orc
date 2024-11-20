@@ -74,9 +74,12 @@ $start_instr(toy_piano)
 	schedule "toy_piano_release", 0, idur*2, Spath_release, idyn/4, ich
 	;================================================================
 
-	aouts[] diskin Spath, iratio
+	ains[] diskin Spath, iratio
 	
-	aout = aouts[ich-1]
+	ifactor_dyn init 1
+	$sample_instr_out
+	aout = ain
+
 	idyn_base = .35
 	idyn_scaled = idyn_base + idyn * (1 - idyn_base)
 	aout moogladder2 aout*idyn_scaled, limit(15$k-((1-idyn)*11.5$k)+icps*idyn, 50, 15$k), random:i(0, 1/9)
@@ -95,7 +98,11 @@ instr toy_piano_release
 	ich init p6
 
 	aenv cosseg idyn, p3-.005, idyn, .005, 0
-	aouts[] diskin Spath, 1
-	aout = aouts[ich-1]*aenv
+	ains[] diskin Spath, 1
+
+	ifactor_dyn init 1
+	$sample_instr_out
+	aout = ain*aenv
+
 	$channel_mix
 endin

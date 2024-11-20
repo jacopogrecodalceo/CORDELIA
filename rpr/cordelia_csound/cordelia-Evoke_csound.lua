@@ -270,7 +270,7 @@ end
 
 local ctx = reaper.ImGui_CreateContext('Cordelia offline')
 local csound_code = 'default text'
-
+local method_selected
 
 reaper.ImGui_SetNextWindowSize(ctx, 650, 995, 1)
 reaper.ImGui_Text(ctx, 'Csound instrument')
@@ -371,6 +371,7 @@ function main_context()
 				if reaper.ImGui_Selectable(ctx, name) then
 					popup.selected_basename = name
 					local path = Methods[popup.selected_group].files[name]
+					method_selected = Methods[popup.selected_group]
 					csound_code = read_orc(path)
 					selected_group = popup.selected_group
 				end
@@ -426,6 +427,16 @@ function main_context()
 			CSOUND_OPTIONs.channels,
 			csound_code
 		)
+
+		-- INCLUDE MACROs IF THERE'S A FILE NAMED
+		if method_selected then
+			local MACROs_path = method_selected.dir .. '/_MACROs.orc'
+			if reaper.file_exists(MACROs_path) then
+				local file = io.open(MACROs_path, 'r')
+				csound_code = file:read('*a') .. '\n' .. csound_code
+				file:close()
+			end
+		end
 
 		write_file(output_file_orc, csound_code)
 		MAIN_OUTPUT = TEMP_DIRECTORY .. basename .. '-' .. popup.selected_basename .. unique_timestamp .. '.wav'

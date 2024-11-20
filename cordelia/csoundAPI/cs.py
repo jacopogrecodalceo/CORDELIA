@@ -4,6 +4,7 @@ import re, os
 
 from constants.var import cordelia_date, cordelia_given_instr
 from constants.path import cordelia_score
+from src.read_config import Main_config
 
 def remember(instrument_name):
 
@@ -74,7 +75,7 @@ def process_line(line, converter, devices, options):
 def query_devices():
 	devices = get_devices()
 	if not devices:
-		raise ValueError('No devices')
+		print('Warning, no devices used - PROBABLY JACK USED?')
 
 	options = []
 
@@ -103,12 +104,6 @@ def query_devices():
 
 	return options if options else ['-odac', 'iadc']
 
-#######################################
-# INIT CSOUND OPTIONs
-#######################################
-ctcsound.csoundInitialize(ctcsound.CSOUNDINIT_NO_ATEXIT | ctcsound.CSOUNDINIT_NO_SIGNAL_HANDLER)
-csound_cordelia = ctcsound.Csound()
-
 def init_csound():
 	OPTIONs = []
 
@@ -119,20 +114,14 @@ def init_csound():
 				OPTIONs.append(line)
 	
 	OPTIONs.extend(query_devices())
+	OPTIONs.append(f'--nchnls={CORDELIA_CONFIG.nchnls}')
 
 	for option in OPTIONs:
 		csound_cordelia.setOption(option)
 		print(option)
 
-	# csound_cordelia.setOption(f'--midioutfile={CORDELIA_OUT_MID}')
-	# csound_cordelia.setOption(f'--omacro:SCO_NAME="{CORDELIA_OUT_SCO}"')
-
-	#######################################
-	# CSOUND SETTINGS
-	#######################################
-	# csound_cordelia.setOption('-n')
-
 	SETTINGs = []
+	SETTINGs.append(f'ginchnls init {CORDELIA_CONFIG.csound_audio_array_count}')
 	with open('./csound_cordelia/setting.orc') as f:
 		SETTINGs.append(f.read())
 
@@ -140,11 +129,21 @@ def init_csound():
 		SETTINGs.append(f.read())
 
 	csound_cordelia.compileOrcAsync('\n'.join(SETTINGs))
+	print('\n'.join(SETTINGs))
+#######################################
+# INIT CSOUND OPTIONs
+#######################################
+ctcsound.csoundInitialize(ctcsound.CSOUNDINIT_NO_ATEXIT | ctcsound.CSOUNDINIT_NO_SIGNAL_HANDLER)
+csound_cordelia = ctcsound.Csound()
+
+CORDELIA_CONFIG = Main_config()
 
 init_csound()
 
-cordelia_nchnls = csound_cordelia.nchnls()
+cordelia_nchnls = CORDELIA_CONFIG.csound_audio_array_count
 print(f'Cordelia has {cordelia_nchnls} channels\n')
+
+
 
 cordelia_sr = int(csound_cordelia.sr())
 print(f'Cordelia has a sample rate of {cordelia_sr}\n')

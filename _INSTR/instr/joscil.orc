@@ -21,8 +21,9 @@ $start_instr(joscil)
 
 	ains[] diskin Spath, iratio, random:i(0, .005)
 
-	ain = ains[ich-1];*$dyn_var*6
-
+	ifactor_dyn init 1
+	$sample_instr_out
+	
 	; ADD A CODA (generally samps are short)
 	ilen init filelen(Spath)/iratio
 	acoda init 0

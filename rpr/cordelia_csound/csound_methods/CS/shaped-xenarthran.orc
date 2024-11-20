@@ -1,8 +1,8 @@
 gihanning 	ftgen 0, 0, 8192, 20, 2
 
 giSPEED				init 1 		; [idur*ispeed]
-giGRAIN_dur			init 100	; in ms
-giGRAIN_jit 		init giGRAIN_dur / 4
+giGRAIN_dur			init 1000	; in ms
+giGRAIN_jit 		init giGRAIN_dur / 1.5
 giGRAIN_window		init gihanning
 
 ; ============================================
@@ -23,7 +23,7 @@ idur			init p3
 gadur			= giGRAIN_dur + a(jitter:k(giGRAIN_jit, 1/idur, 3/idur))
 gadur			/= 1000
 ; ============================================
-gastart			phasor 1/idur
+gastart			phasor 1/idur / 64
 	endin
 
 ; ============================================
@@ -39,7 +39,7 @@ iphase				divz ivoice_num, ivoices_count, 0
 ; ============
 ; *** VARs ***
 ; ============
-ijitter_samps	init 128
+ijitter_samps	init 1024
 ; ============
 p3				init giFILE_dur*giSPEED
 idur			init p3
@@ -68,7 +68,7 @@ aout			/= ivoices_count
 
 ;---SCORE---
 /*
-voices = 24
+voices = 96
 instr_1 = f'i 1 0 -1 {voices}'
 if instr_1 not in score:
 	score.append(instr_1)
