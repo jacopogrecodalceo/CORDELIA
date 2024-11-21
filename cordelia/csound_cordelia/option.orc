@@ -3,7 +3,7 @@
 --nchnls=2
 --0dbfs=1
 ;--nchnls_i=2
-;-iadc
+-iadc
 ;A4		=	438	; only for ancient music	
 --limiter
 ;--port=10000

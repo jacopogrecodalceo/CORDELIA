@@ -4,15 +4,25 @@ import re
 import sox
 import librosa
 import numpy as np
+from pathlib import Path
+'''
+This script make principally the .JSON for the instrument
+'''
 
 HARD_RESET = False
 HARD_RESET_with_anal = False
 
-suffix = ['_so', '_sy', '_lpc', '_conv']
+
+class Input_file:
+    def __init__(self, path):
+        self.path = path
+        self.name = Path(path).stem
+        self.extension = Path(path).suffix[1:]
+        self.dir = Path(path).parent
+
 audio_extensions = ['.flac', '.wav']
 
 default_sonvs_dir = './default/sonvs'
-default_sonvs = {}
 default_sonvs = {}
 for file_name in os.listdir(default_sonvs_dir):
 	if file_name.endswith('.orc'):

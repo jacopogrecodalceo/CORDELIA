@@ -1,0 +1,40 @@
+
+
+
+
+
+
+gkpulse = 40
+
+gktuning = scala.edo13
+
+gkgain = 1
+
+; add pp, ppp
+; change instr to uj and uj2
+
+eu: 5, 16, 16
+	@pwm.getmeout(0)
+	wn*4+?
+	ff
+	bea
+	ji(pumpf(3, fill(c1, d1, f#1, bb1)), pump(16, {2, 4, 2, 2}))
+	ji(pumpf(2, fill(c2, d2, f#2, bb2)), pump(14, {9, 13, 14, 15}))*4
+
+
+eu: 14, 16, 2
+	@uj3.rinij(2, giasquare).delij(sn*3)
+	wn+?
+	0
+	hader
+	ji(pumpf(32, fill(c2, d2, f#2, bb2))*4, pump(64, {2, 4, 2, 2}))*8
+
+
+
+eu: 4, 8, 4
+	r4@in1.vocij3(pwm, 3, 1);.delij(sn*3)
+	wn*4
+	f
+	bea
+	4
+

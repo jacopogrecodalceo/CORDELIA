@@ -3,27 +3,25 @@ gkpulse = 80
 
 gktuning = scala.pyt12
 
-gkgain = 1
-
 eu: 5, 16, 16
-	r4@sand_shn.revijd()
+	;r4@sand_shn.revijd()
 	wn*0
 	p
 	bea
 	stept(c4, 8+pump(8, fill(0, 3, 2, 2, 0)))
 
 
-@valle.convij(sand_shn): .9, p
+;@valle.convij(sand_shn): .9, p
 
 
 eu: 5, 16, 16
-	;l4@esynth2.vocij2(in1, 128)
+	l4@esynth2.vocij2(in1, 128)
 	wn*4
-	pp
+	pppp
 	bea
 	stept(c2, 8+pump(8, fill(0, 3, 2, 2, 0)))
 
-@dimanche_bb: 16, p
+;@dimanche_bb: 16, p
 
 ;gkpulse = 125*.15;*randomh:k(.15, 1, gkbeatf*2)
 

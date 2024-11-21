@@ -26357,6 +26357,141 @@
         "pitch": "78.84289603217252",
         "orc": "./default/sonvs/_sy.orc"
     },
+    "nuvole": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_.orc"
+    },
+    "nuvole_bb": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_bb.orc"
+    },
+    "nuvole_bu": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_bu.orc"
+    },
+    "nuvole_conv": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_conv.orc"
+    },
+    "nuvole_lpc": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_lpc.orc"
+    },
+    "nuvole_noi": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_noi.orc"
+    },
+    "nuvole_shn": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_shn.orc"
+    },
+    "nuvole_sho": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_sho.orc"
+    },
+    "nuvole_shp": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_shp.orc"
+    },
+    "nuvole_shr": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_shr.orc"
+    },
+    "nuvole_shv": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_shv.orc"
+    },
+    "nuvole_so": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_so.orc"
+    },
+    "nuvole_so2": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_so2.orc"
+    },
+    "nuvole_st": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_st.orc"
+    },
+    "nuvole_sy": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nuvole.wav"
+        ],
+        "pitch": "47.77156830393165",
+        "orc": "./default/sonvs/_sy.orc"
+    },
     "ocean": {
         "type": "sonvs",
         "channels": 2,

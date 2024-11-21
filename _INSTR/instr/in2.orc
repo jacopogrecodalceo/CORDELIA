@@ -1,6 +1,7 @@
 
 	$start_instr(in2)
 aout	inch 2
+aout	butterhp aout, 20
 aout	*= idyn
 
 

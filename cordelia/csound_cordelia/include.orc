@@ -30,6 +30,7 @@
 #include "./csound_cordelia/3-body/2-OP/freq/fc.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/fc3.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/fch.orc"
+#include "./csound_cordelia/3-body/2-OP/freq/ji.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/misha.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/step.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/stepc.orc"

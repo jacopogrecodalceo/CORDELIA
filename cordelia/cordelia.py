@@ -31,7 +31,12 @@ def process_messages():
 		if direction == 'CORDELIA':
 			memories = True
 			print('CORDELIA:\n')
-			csound_cordelia.compileOrcAsync(handler_cordelia(code))
+			try:
+				# Your original code
+				csound_cordelia.compileOrcAsync(handler_cordelia(code))
+			except Exception as e:
+				# Print the exception without stopping the program
+				print("An error occurred:", e)
 		
 		elif direction == 'REAPER':
 			print('REAPER:\n')
