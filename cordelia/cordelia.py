@@ -4,6 +4,9 @@ import os, sys
 from threading import Thread
 import argparse
 #import pdb; pdb.set_trace()
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
 
 import utils.udp as udp 
 
@@ -13,6 +16,21 @@ from constants.var import cordelia_init_code, memories
 from csoundAPI.cs import csound_cordelia, init_csound
 
 message_queue = queue.Queue()
+console = Console()
+
+def show_error(e):
+    # Fancy error message with a panel and styled text
+    error_text = Text.assemble(
+        ("ERROR: ", "bold red on white"),
+        (str(e), "bold white on red")
+    )
+    panel = Panel(
+        error_text,
+        title="[bold red]!!! CRITICAL ERROR !!![/bold red]",
+        border_style="bold red",
+        expand=False,
+    )
+    console.print(panel)
 
 def process_args():
 	parser = argparse.ArgumentParser(description='CORDELIA SCORE')
@@ -36,7 +54,7 @@ def process_messages():
 				csound_cordelia.compileOrcAsync(handler_cordelia(code))
 			except Exception as e:
 				# Print the exception without stopping the program
-				print("An error occurred:", e)
+				show_error(e)
 		
 		elif direction == 'REAPER':
 			print('REAPER:\n')

@@ -88,7 +88,7 @@ endif
 
 	iskiptime random 340, 345
 	aout diskin Spath, iratio, iskiptime/1000
-
+        aout *= $dyn_var
 
 	$dur_var(10)
 $end_instr

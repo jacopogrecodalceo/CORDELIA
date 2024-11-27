@@ -22601,6 +22601,146 @@
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/lucas.orc",
         "global_var": []
     },
+    "lune": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/lune.orc",
+        "global_var": []
+    },
+    "lunefoglie": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_.orc"
+    },
+    "lunefoglie_bb": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_bb.orc"
+    },
+    "lunefoglie_bu": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_bu.orc"
+    },
+    "lunefoglie_conv": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_conv.orc"
+    },
+    "lunefoglie_lpc": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_lpc.orc"
+    },
+    "lunefoglie_noi": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_noi.orc"
+    },
+    "lunefoglie_shn": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_shn.orc"
+    },
+    "lunefoglie_sho": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_sho.orc"
+    },
+    "lunefoglie_shp": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_shp.orc"
+    },
+    "lunefoglie_shr": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_shr.orc"
+    },
+    "lunefoglie_shv": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_shv.orc"
+    },
+    "lunefoglie_so": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_so.orc"
+    },
+    "lunefoglie_so2": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_so2.orc"
+    },
+    "lunefoglie_st": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_st.orc"
+    },
+    "lunefoglie_sy": {
+        "type": "sonvs",
+        "channels": 2,
+        "path": [
+            "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lunefoglie.wav"
+        ],
+        "pitch": "53.85579046507424",
+        "orc": "./default/sonvs/_sy.orc"
+    },
     "luv": {
         "type": "instr",
         "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/luv.orc",
@@ -29509,6 +29649,11 @@
             "gkrj_sn",
             "girj_len"
         ]
+    },
+    "room": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/room.orc",
+        "global_var": []
     },
     "ry": {
         "type": "sonvs",
@@ -54275,6 +54420,16 @@
         "pitch": "440",
         "orc": "./default/sonvs/_sy.orc"
     },
+    "tart": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/tart.orc",
+        "global_var": []
+    },
+    "tartn": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/tartn.orc",
+        "global_var": []
+    },
     "tension": {
         "type": "sonvs",
         "channels": 2,
@@ -55652,6 +55807,11 @@
             "giuj3_ft",
             "giuj3_morf"
         ]
+    },
+    "ujlun": {
+        "type": "instr",
+        "path": "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/instr/ujlun.orc",
+        "global_var": []
     },
     "ujs": {
         "type": "instr",

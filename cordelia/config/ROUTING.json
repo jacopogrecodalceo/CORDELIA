@@ -96,7 +96,7 @@
     },
     "getmeout": {
         "input": "k",
-        "core": "PARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*PARAM_1",
+        "core": "PARAM_1\t\tinit 1\n\nPARAM_OUT\t= PARAM_IN*portk(PARAM_1, .005)",
         "opcode": null
     },
     "glass": {

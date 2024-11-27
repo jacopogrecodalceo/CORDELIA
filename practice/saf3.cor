@@ -1,0 +1,50 @@
+
+
+gkpulse = 80+jitter:k(2.5+15, 1/32, 1/8);+randomh:k(-30, 10, 1/16)
+
+gktuning = pump(3, fill(scala.prearchytas12, scala.pyt12))
+
+saf: "-u", 8
+	@tartn@synthi.flanij(oscili:k(gkbeatf, 1/32, bea), lfh(16)*.25).shij(qn)
+	wn*2
+	mf
+	hader
+	stept(c4, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+saf: "-u", 8
+	@tart;.flanij(oscili:k(gkbeatf, 1/32, bea), lfh(16)*.25).shij(qn)
+	wn*2
+	ff
+	hader.a(5)
+	stept(c2, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+saf: "-u", 3, 1
+	@fpiano;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn
+	p
+	hader.a(5)
+	stept(c4, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+saf: "--", 2
+	@plumk;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn
+	p
+	hader.a(5)
+	stept(c1, locrian, pump(1, fill(0, -2)))
+
+eu: 9, 16, 4
+	@mrhodes.delij(qn);.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn*4, wn
+	mf, mp
+	hader.a(5)
+	stept(c5, locrian, pump(1, fill(0, -2)))
+	stept(c5, locrian, pump(3, fill(3, -2))+pump(2, fill(0, -2)))
+
+eu: 8, 16, 3
+	@org2.getmeout(lfh(4)).delij(sn*3);.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	qn
+	pp
+	hader.a(5)
+	stept(c3, locrian, pump(48, {7, 0, -7})+pump(1, fill(0, -2)))
+
+
