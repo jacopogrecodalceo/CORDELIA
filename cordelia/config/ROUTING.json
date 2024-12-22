@@ -109,6 +109,11 @@
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_guitar PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "#define cordelia_guitar_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/24, gkbeatf/8))#\n#define cordelia_guitar_bw(bw) #$bw+jitter:k(1, gkbeatf/24, gkbeatf/8)#\n\n    opcode cordelia_guitar, a, akk\n    ain, kfreq, kq xin\n\na1    resonz ain, $cordelia_guitar_cps(ntof(\"2E\")), $cordelia_guitar_bw(10)\na2    resonz ain, $cordelia_guitar_cps(ntof(\"2B\")), $cordelia_guitar_bw(10)\na3    resonz ain, $cordelia_guitar_cps(ntof(\"2G\")), $cordelia_guitar_bw(10)\na4    resonz ain, $cordelia_guitar_cps(ntof(\"3D\")), $cordelia_guitar_bw(10)\na5    resonz ain, $cordelia_guitar_cps(ntof(\"3A\")), $cordelia_guitar_bw(10)\na6    resonz ain, $cordelia_guitar_cps(ntof(\"3E\")), $cordelia_guitar_bw(10)\n\naout    sum a1, a2, a3, a4, a5, a6\naout    balance aout, ain\n    xout (ain+aout+reverb(aout, .25))/2\n    endop"
     },
+    "megadistij": {
+        "input": "kk",
+        "core": "PARAM_1    init 16\nPARAM_2    init sr\n\nPARAM_OUT cordelia_mega_dist PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_mega_dist, a, akk\t;UDO Sample rate / Bit depth reducer\n\tain, kbit, ksrate xin\n\nacheby\t\tchebyshevpoly  ain, random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1)\napoly\t\tpolynomial acheby, floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2))\naout\t\t= apoly\n\t\t\txout     a0ut\n\n\tendop"
+    },
     "moij": {
         "input": "kk",
         "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",

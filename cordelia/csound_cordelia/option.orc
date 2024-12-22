@@ -1,6 +1,6 @@
 --sample-rate=48000
 --ksmps=64	;leave it at 64 for real-time
---nchnls=2
+--nchnls=6
 --0dbfs=1
 ;--nchnls_i=2
 ;-iadc
