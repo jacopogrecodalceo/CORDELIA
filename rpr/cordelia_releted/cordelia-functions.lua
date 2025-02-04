@@ -243,6 +243,7 @@ function get_notes_from_item(info, item)
 	local _, notes_count, _, _ = reaper.MIDI_CountEvts(item.take)
 	for index_note = 0, notes_count - 1 do
 		local _, _, is_muted, start_ppqpos, end_ppqpos, chan, pitch, vel, _ = reaper.MIDI_GetNote(item.take, index_note)
+		-- Lua: retval, selected, muted, ppqpos, chanmsg, chan, msg2, msg3 = reaper.MIDI_GetCC(MediaItem_Take take, integer ccidx)
 
 		if not is_muted then
 			local onset = reaper.MIDI_GetProjTimeFromPPQPos(item.take, start_ppqpos)

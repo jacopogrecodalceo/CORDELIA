@@ -1,5 +1,5 @@
 
-;ginchnls	init nchnls		;e.g. click track
+ginchnls	init nchnls		;e.g. click track
 gioffch		init 0		;e.g. I want to go out in 3, 4
 
 gimainclock_ch      init 7

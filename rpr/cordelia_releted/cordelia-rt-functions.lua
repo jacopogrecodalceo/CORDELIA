@@ -181,8 +181,16 @@ local function process_midi_item(item)
 						end
 					end
 
-					local score = 'eva_midi ' .. table.concat(convert_table_to_strings(event), ', ')
-
+					local score
+					if chan == 0 then
+						local opcode = 'eva_midi' .. ' '
+						score = opcode  .. table.concat(convert_table_to_strings(event), ', ')
+					else
+						local opcode = 'eva_midi_ch' .. ' '
+						score = opcode .. table.concat(convert_table_to_strings(event), ', ') .. ', ' .. chan
+						--reaper.ShowConsoleMsg(score)
+					end
+					--reaper.ShowConsoleMsg(score)
 					table.insert(item.events, score)
 				end
 			end
@@ -373,6 +381,7 @@ function send_notes_if_selected()
 		local _, is_selected, is_muted, start_ppqpos, end_ppqpos, chan, pitch, vel, _ = reaper.MIDI_GetNote(take, index_note)
 		if is_selected and not is_muted then
 			local note = {
+				chan = chan,
 				pitch = pitch,
 				vel = vel,
 				onset = reaper.MIDI_GetProjTimeFromPPQPos(take, start_ppqpos)
@@ -475,7 +484,9 @@ function send_notes_if_selected()
 			table.insert(LAST_NOTE_PLAYED_PITCH, note)	
 			return
 		else
-			local string = 'eva_midi ' .. instrument_name .. ', 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
+
+			local opcode = 'eva_midi'
+			local string = opcode .. ' ' .. instrument_name .. ', 0, ' .. dur .. ', ' .. dyn .. ', ' .. env .. ', ' .. freq
 			send_to_cordelia(string)
 			-- Check if the function was recently activated
 			if last_activation_time == nil or current_time - last_activation_time >= cooldown_period then

@@ -50,13 +50,13 @@ def compare_instruments_last(instruments):
 			instr_last[i] = None
 
 def add_to_compile(instruments, instrument_res):
-	
+	legal_opcodes = ('eva_midi', 'eva_midi_ch')
 	# Update instruments that are still present
 	for instrument in instruments:
-		if instrument.code and not instrument.code.startswith('eva_midi'):
+		if instrument.code and not instrument.code.startswith(legal_opcodes):
 			instrument.status = 'alive'
 			cordelia_compile.append(instrument)
-		elif instrument.code.startswith('eva_midi'):
+		elif instrument.code.startswith(legal_opcodes):
 			instrument_res.append(instrument.code)
 
 # =================================================================
