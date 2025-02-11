@@ -29,9 +29,10 @@ $start_instr(harps)
 	schedule "harps_release", 0, idur, Spath_release, 1, ich
 	;================================================================
 
-	aouts[] diskin Spath, iratio
-
-	aout = aouts[ich-1]*idyn
+	ains[] diskin Spath, iratio
+	ifactor_dyn init 12
+	$sample_instr_out
+	aout = ain
 
 	;aout moogladder2 aout*idyn_scaled, limit(15$k-((1-idyn)*7.5$k)+icps*idyn, 50, 15$k), random:i(0, 1/9)
 
@@ -39,7 +40,8 @@ $start_instr(harps)
 $end_instr
 
 instr harps_release
-	Sinstr init "harps"
+
+	Sinstr 	init "harps"
 	Spath init p4
 	ilen filelen Spath
 	if p3 > ilen then
@@ -48,8 +50,11 @@ instr harps_release
 	idur init p3
 	idyn init p5
 	ich init p6
-	aenv cosseg idyn, p3-.005, idyn, .005, 0
-	aouts[] diskin Spath, 1
-	aout = aouts[ich-1]*aenv*3
+	aenv cosseg 0, .05, 1, idur-.05*2, 1, .05, 0
+	ains[] diskin Spath, 1;, iskiptime/1000
+	ifactor_dyn init 1
+	$sample_instr_out
+	aout = ain
 	$channel_mix
+	
 endin

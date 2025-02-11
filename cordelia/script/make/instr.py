@@ -1,7 +1,8 @@
 import json
 import os
 import re
-import sox
+import soundfile as sf
+
 import librosa
 import numpy as np
 from pathlib import Path
@@ -98,6 +99,9 @@ def sonvs_anal(directory):
 		json.dump(anals, f, indent=4)
 	return anals
 		
+def get_audio_channels(file_path):
+	with sf.SoundFile(file_path) as f:
+		return f.channels
 
 def process_sonvs(directory, json_file):
 
@@ -115,10 +119,12 @@ def process_sonvs(directory, json_file):
 
 				if extension in audio_extensions and basename not in json_file:
 					print(f'{basename} is added.')
-					
+
+
+
 					json_file[basename] = {
 						'type': 'sonvs',
-						'channels': sox.file_info.channels(file_path),
+						'channels': get_audio_channels(file_path),
 						'path': [file_path],
 						'pitch': anals_json[file_path]['pitch'],
 						'orc': default_sonvs[variant]
@@ -140,7 +146,7 @@ def process_sonvs(directory, json_file):
 						basename += variant		
 					json_file[basename] = {
 						'type': 'dir_sonvs',
-						'channels': sox.file_info.channels(audio_files[0]),
+						'channels': get_audio_channels(audio_files[0]),
 						'path': audio_files,
 						'pitch': "440",
 						'orc': default_sonvs[variant]

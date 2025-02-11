@@ -124,11 +124,65 @@ local function add_other_files()
 
 end
 
+local function list_files(path)
+    local handle
+    if package.config:sub(1, 1) == '\\' then
+        -- Windows
+        handle = io.popen('dir "' .. path .. '" /b')
+    else
+        -- Unix-based (Linux, macOS)
+        handle = io.popen('ls "' .. path .. '"')
+    end
+
+    local files = {}
+    -- Read the command output
+    if handle then
+        for file in handle:lines() do
+            table.insert(files, file)
+        end
+        handle:close()
+    else
+        error("Failed to list directory contents")
+    end
+
+    return files
+end
+
+local function is_directory(path)
+    local file = io.open(path, "r")
+    if file then
+        file:close()
+        local success, _, code = os.rename(path, path)
+        return success or code == 21  -- 21 is the error code for "Is a directory" on Unix
+    end
+    return false
+end
+
 local function copy_files()
+
+	local destination_directory
+	local files = list_files(PROJECT_DIR)
+	local found = false
+	for _, file in ipairs(files) do
+		if string.find(file, 'sonvs', 1, true) ~= nil then
+			destination_directory = PROJECT_DIR .. '/' .. file
+			found = true
+			break -- Exit the loop if a match is found
+		end
+	end
+
+	if not found then
+		destination_directory = PROJECT_DIR
+	end
+
+	if not is_directory(destination_directory) then
+		return false, 'WARNING, ' .. destination_directory .. ' is not a directory.'
+	end
+
 	for _, temp_basename in pairs(TEMP_SOURCEs) do
 
 		local original_path = TEMP_DIR .. temp_basename
-		local destination_path = PROJECT_DIR .. '/' .. temp_basename
+		local destination_path = destination_directory .. '/' .. temp_basename
 
 		-- Open the source file in read mode
 		local source_file = io.open(original_path, "rb")

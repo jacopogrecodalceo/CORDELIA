@@ -266,7 +266,8 @@ function get_notes_from_item(info, item)
 						dur = dur,
 						dyn = dyn,
 						env = env,
-						freq = freq
+						freq = freq,
+						chan = chan,
 					})
 				end
 			end
@@ -441,7 +442,15 @@ function store_tracks(channels, sr, ksmps)
 
 			for _, note in pairs(NOTEs) do
 				if note.onset >= play_pos then
-					local csound_string = 'eva_midi ' .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
+
+					local csound_string
+					if note.chan == 0 then
+						local opcode = 'eva_midi' .. ' '
+						csound_string = opcode .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq
+					else
+						local opcode = 'eva_midi_ch' .. ' '
+						csound_string = opcode .. note.instrument_name .. ', ' .. note.onset .. ', ' .. note.dur .. ', ' .. note.dyn .. ', ' .. note.env .. ', ' .. note.freq .. ', ' .. note.chan
+					end
 					score_file:write(csound_string .. '\n\n')  -- Write the text to the file
 				end
 			end

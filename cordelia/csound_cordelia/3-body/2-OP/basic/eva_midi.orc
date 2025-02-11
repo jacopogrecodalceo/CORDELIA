@@ -32,7 +32,7 @@ if	idur > giminnote && iamp > 0 && icps < 19500 then
 				ilocal_ch += 1
 			od
 		else
-			schedule	nstrnum(Sinstr), iwhen, idur, iamp, ienv, icps, ich
+			schedule	nstrnum(Sinstr), iwhen, idur, iamp, ienv, icps, ((ich - 1) % ginchnls) + 1
 		endif
 	endif
 
