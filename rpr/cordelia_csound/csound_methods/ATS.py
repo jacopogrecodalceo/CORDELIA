@@ -1,4 +1,3 @@
-
 import ctcsound
 import os
 import sys
@@ -6,10 +5,12 @@ import subprocess
 import time
 import re
 import concurrent.futures
-import sox
+import soundfile as sf
 
 from datetime import datetime
 import logging
+
+from _func import *
 
 # Path to the directory containing the sox executable
 homebrew_directory = '/opt/homebrew/bin'
@@ -57,12 +58,6 @@ output_file_wav = sys.argv[3]
 
 basename = os.path.splitext(os.path.basename(input_file_wav))[0]
 
-try:
-	channels = sox.file_info.channels(input_file_wav)
-	sample_rate = sox.file_info.sample_rate(input_file_wav)
-except Exception as e:
-	logging.error(e)
-
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/temp/'
 
@@ -75,17 +70,7 @@ with open(input_file_orc, 'r') as f:
 logging.info(orc_code)
 
 ats_files = []
-mono_files = []
-	
-for i in range(1, channels+1):
-	tfm = sox.Transformer()
-	output_file = os.path.join(output_tempdir, basename + f'-{i}ch.wav')
-	logging.info(f'Writing {i} channel of {basename} to {output_file}')
-	#sox_cmd = f'sox {input_file_wav} {output_file} remix {i}'
-	#subprocess.run(sox_cmd, shell=True)
-	tfm.remix(remix_dictionary={1: [i]}, num_output_channels=1)
-	tfm.build(input_filepath=input_file_wav, output_filepath=output_file)
-	mono_files.append(output_file)
+mono_files = create_mono_files(input_file_wav, basename, output_tempdir)
 
 csound_commands = []
 for f in mono_files:

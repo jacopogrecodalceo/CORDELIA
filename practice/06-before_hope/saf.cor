@@ -1,0 +1,52 @@
+
+
+
+
+gkpulse = 80+jitter:k(2.5, 1/32, 1/8);+randomh:k(-30, 10, 1/16)
+
+gktuning = pump(3, fill(scala.prearchytas12, scala.pyt12))
+
+; TROCHEE STYLE
+
+saf: "-u", 2
+	@fpiano;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn
+	p
+	hader.a(5)
+	stept(c2, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+
+saf: "-u", 3, 1
+	;@fpiano;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn
+	p
+	hader.a(5)
+	stept(c4, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+saf: "-u", 4, 1
+	;@fpiano;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn*2
+	pp
+	hader.a(5)
+	stept(c3, locrian, pump(8, fill(1, 3, 5, 4, 2, 9)))
+
+
+saf: "--", 2
+	;@plumk;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	wn
+	fff
+	hader.a(5)
+	stept(c2, locrian, -2)
+
+
+;gkswing =  1/(
+
+saf: "--", 1
+	;@sywave;.folij3(r909t2);@synthi;.flanij(oscili:k(1/6, 1/32, lear), lfh(16));.shij(qn)
+	qn
+	mf
+	hader.a(5)
+	stept(c2, locrian, 0)
+
+
+

@@ -12,7 +12,7 @@
 
 ;-D
 ;MIDI is HERE
--Ma
+;-Ma
 ;-M0
 ;-+msg_color=1
 ;--messagelevel=99

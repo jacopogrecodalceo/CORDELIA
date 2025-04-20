@@ -126,6 +126,8 @@ giloki_mecha	init 1
 		imax_RR	init 4
 	elseif strcmp(Snote_name, "Eb3") == 0 then
 		imax_RR	init 4
+	elseif strcmp(Snote_name, "Eb2") == 0 then
+		imax_RR	init 4
 	elseif strcmp(Snote_name, "Gb2") == 0 then
 		imax_RR	init 4
 	elseif strcmp(Snote_name, "Gb1") == 0 then

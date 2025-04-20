@@ -1,0 +1,23 @@
+
+
+gkpulse = 60+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+gktuning = scala.edo31hex
+
+eu: 4, 16, 8
+	@careless@synthi.flanij(oscili:k(1/24, 1/64, lear), lfh(16)*.85);.shij(qn)
+	wn*3+?
+	p
+	hader.a(5)
+	stept(c2, locrian, random:k(0, 24))
+
+
+eu: 7, 16, 4
+	@bebois.flanij(oscili:k(1/2, 1/64, lear), lfh(16)*.95).convij(careless);.shij(qn)
+	qn+?
+	f
+	hader.a(5)
+	stept(c4, locrian, random:k(0, 12))
+
+
+

@@ -1,0 +1,52 @@
+
+gkpulse = 80
+
+gktuning = scala.pyt12
+
+eu: 5, 16, 16
+	;r4@sand_sho;.revijd()
+	wn*0
+	p
+	bea
+	stept(c4, 8+pump(8, fill(0, 3, 2, 2, 0)))
+
+
+;@valle.convij(sand_sho): .9, p
+
+
+eu: 5, 16, 16
+	l4@esynth2wave;.vocij3(valle, 1, 1)
+	wn*0
+	mp
+	bea
+	stept(c2, 8+pump(8, fill(0, 3, 2, 2, 0)))
+
+;@dimanche_bb: 16, p
+
+;gkpulse = 125*.15;*randomh:k(.15, 1, gkbeatf*2)
+
+
+;gktuning = scala.edo31hex
+
+eu: 5, 8, 4
+	;@sallen2.flanij(wn*randomh:k(0, 1, gkbeatf)).flanij(.05*randomh:k(0, 1, gkbeatf))
+	wn*random:k(.05, 4)
+	pp
+	pump(32, fill(zeus, lear, bea, rome))
+	stept(b1, locrian, pump(32, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+	stept(b2, locrian, pump(3, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+	stept(b3, locrian, pump(19, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+
+eu: 5, 8, 8
+	;@fpianos2;.flanij(wn*randomh:k(0, 1, gkbeatf)).flanij(.05*randomh:k(0, 1, gkbeatf))
+	wn*4;*random:k(.05, 2)
+	f
+	rome.a(5)
+	stept(b1, locrian, pump(32, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+	stept(b2, locrian, pump(3, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+	stept(b3, locrian, pump(19, fillarray(2, random:k(0, 19), 2, 3, random:k(0, 19))))
+
+
+
+
+

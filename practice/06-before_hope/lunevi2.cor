@@ -1,0 +1,36 @@
+
+
+
+
+
+
+gkpulse = 110
+
+gktuning = scala.edo13
+
+; add pp, ppp
+; change instr to uj and uj2
+
+eu: 7, 16, 4
+	@uj3.shij(sn*pump(8, fill(1, 3)));.rinij(2, giasquare).delij(sn*3)
+	hn+?
+	pppp*in4m
+	hader.a(5)
+	stept(f5, 8+pump(16, fill(0, 1, random:k(1, 9), random:k(1, 9))));*pow(2, int(random:k(0, 4)))
+
+;@r909t2.convij(uj3): 32, 0;*ex1m
+
+eu: 7, 16, 16
+	5@fpiano.flanij(qn*?, .5).solij(hn);.shij(sn*pump(8, fill(1, 3)))
+	wn
+	p
+	hader.a(5)
+	stept(f1, 5+pump(16, fill(0, 1, random:k(1, 9), random:k(1, 9))));*pow(2, int(random:k(0, 4)))
+
+
+eu: 7, 16, 8
+	;r4@sand_sew_sho;.flanij(hn*?, .5).solij(hn);.shij(sn*pump(8, fill(1, 3)))
+	wn
+	0
+	bea
+	stept(f4, 5+pump(16, fill(0, 1, random:k(1, 9), random:k(1, 9))));*pow(2, int(random:k(0, 4)))

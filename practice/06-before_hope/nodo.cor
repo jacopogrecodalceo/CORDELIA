@@ -1,0 +1,29 @@
+
+
+
+
+gkpulse = 80;+jitter:k(10, 1/32, 1/4);+randomh:k(-50, 10, 1/16)
+
+gktuning = scala.edolin12
+
+gkspectr_dur = lfh(4)
+
+gkspectr_onset = 0
+
+gkspectr_swing = .25*lfh(6)
+
+@spectr.moij(ntof(c5)*pump(32, fill(1, 1, 2, 3, 4, 1, 2, 8))): 2, f
+
+eu: 3, 8, 8
+	@concat23_sho;.decij(6+4*lfh(8))
+	hn, qn
+	fff*3
+	zeus.a(5)
+	stept(c4, dorian, random:k(0, 9))
+	stept(c2, dorian, random:k(0, 9))
+
+@concat23.skh(800*pump(8, fill(2, 5, 8, 2))): 8, 1
+
+
+
+

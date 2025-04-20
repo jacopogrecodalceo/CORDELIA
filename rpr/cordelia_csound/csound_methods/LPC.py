@@ -1,10 +1,11 @@
 import ctcsound
-import sox
 import os, sys
 import time
 import re
 from datetime import datetime
 import logging
+import soundfile as sf
+from _func import *
 
 # Path to the directory containing the sox executable
 homebrew_directory = '/opt/homebrew/bin'
@@ -41,8 +42,8 @@ output_file_wav = sys.argv[3]
 
 basename = os.path.splitext(os.path.basename(input_file_wav))[0]
 
-channels = sox.file_info.channels(input_file_wav)
-sample_rate = sox.file_info.sample_rate(input_file_wav)
+with sf.SoundFile(input_file_wav) as f:
+    channels = f.channels
 
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/temp/'
@@ -50,16 +51,7 @@ output_tempdir = '/Users/j/Documents/temp/'
 log_file = output_file_wav + '.log'
 
 lpc_files = []
-mono_files = []
-
-channels = sox.file_info.channels(input_file_wav)
-for i in range(1, channels+1):
-	tfm = sox.Transformer()
-	output_file = os.path.join(output_tempdir, basename + f'-{i}ch.wav')
-	logging.info(f'Writing {i} channel of {basename} to {output_file}')
-	tfm.remix(remix_dictionary={1: [i]}, num_output_channels=1)
-	tfm.build(input_filepath=input_file_wav, output_filepath=output_file)
-	mono_files.append(output_file)
+mono_files = create_mono_files(input_file_wav, basename, output_tempdir)
 
 for f in mono_files:
 	lpc_files.append(f + '.lpc')

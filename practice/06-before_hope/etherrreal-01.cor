@@ -1,0 +1,24 @@
+
+gkpulse	= 105
+
+eu: 8, 16, 8
+	@burd.flanij(lfse(.005, .015, gkbeatf/9), .5)
+	qn+lfh(12)
+	pp*lfh(8)
+	bea
+	step("1Ab", whole, pump(48, fillarray(1, 2, 7, 1, 3, 7)))
+	step("3Eb", whole, pump(12, fillarray(1, 2, 7, 1, 3, 7)))
+	step("3Ab", pentamin, pump(48, fillarray(1, 2, 7, 1, 3, 7)))
+
+eu: 3, 16, 32
+	@aaron.folij(r909t2).flanij(lfse(.005, .015, gkbeatf/24), .5)
+	gkbeats*12
+	mf
+	bea
+	step("3C", whole, pump(48, fillarray(1, 2, 7, 1, 3, 7)))
+	step("5F", whole, pump(12, fillarray(1, 2, 7, 1, 3, 7)))
+	step("4G", pentamin, pump(48, fillarray(1, 2, 7, 1, 3, 7)))
+
+@r909t2: 2, f
+
+

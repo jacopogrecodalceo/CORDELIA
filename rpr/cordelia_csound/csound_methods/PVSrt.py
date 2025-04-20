@@ -1,8 +1,8 @@
 import ctcsound
-import sox
 import os, sys
 import time
 import re
+import soundfile as sf
 
 from datetime import datetime
 import logging
@@ -41,14 +41,15 @@ output_file_wav = sys.argv[3]
 basename = os.path.splitext(os.path.basename(input_file_wav))[0]
 
 ksmps = 16
-channels = sox.file_info.channels(input_file_wav)
-sample_rate = sox.file_info.sample_rate(input_file_wav)
+with sf.SoundFile(input_file_wav) as f:
+    channels = f.channels
 
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/temp/'
 log_file = output_file_wav + '.log'
 
-channels = sox.file_info.channels(input_file_wav)
+with sf.SoundFile(input_file_wav) as f:
+    channels = f.channels
 
 orc_code = f'gSfile init "{input_file_wav}"\n'
 

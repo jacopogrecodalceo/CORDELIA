@@ -1,243 +1,184 @@
 <CsoundSynthesizer>
 <CsOptions>
-	; ============
-	; *** INs ***
-	; ============
-	;--input=adc
-	;--nchnls_i=1
+; ============
+; *** INs ***
+; ============
+;--input=adc
+;--nchnls_i=1
 
-	; ============
-	; *** OUTs ***
-	; ============
-	-odac
-	--nchnls=2
+; ============
+; *** OUTs ***
+; ============
+-odac
+--nchnls=2
 
-	; ============
-	; *** RT ***
-	; ============
-	;-+rtaudio=auhal
+; ============
+; *** RT ***
+; ============
+;-+rtaudio=auhal
 
-	; ============
-	; *** KSMPs ***
-	; ============
-	--ksmps=64
+; ============
+; *** KSMPs ***
+; ============
+--ksmps=64
 
-	; ============
-	; *** BUFs ***
-	; ============
-	;--iobufsamps=64
-	;--hardwarebufsamps=256
+; ============
+; *** BUFs ***
+; ============
+;--iobufsamps=64
+;--hardwarebufsamps=256
 
-	; ============
-	; *** SR ***
-	; ============
-	--sample-rate=48000
+; ============
+; *** SR ***
+; ============
+--sample-rate=48000
 
-	; ============
-	; *** OPTs ***
-	; ============
-	--0dbfs=1
-	--format=24bit
-	;--limiter
-	;-Ma
+; ============
+; *** OPTs ***
+; ============
+--0dbfs=1
+--format=24bit
+;--limiter
+;-Ma
 
-	; ============
-	; *** ENVs ***
-	; ============
-	;--env:SSDIR+=./sonvs/
+; ============
+; *** ENVs ***
+; ============
+;--env:SSDIR+=./sonvs/
 
-	; ============
-	; *** MSGs ***
-	; ============
-	--m-amps=1
-	--m-range=1
-	--m-warnings=0
-	--m-dB=1
-	--m-colours=1
-	--m-benchmarks=0
+; ============
+; *** MSGs ***
+; ============
+--m-amps=1
+--m-range=1
+--m-warnings=0
+--m-dB=1
+--m-colours=1
+--m-benchmarks=0
 
-	; ============
-	; *** INFO ***
-	; ============
-	-+id_artist="jacopo greco d'alceo"
+; ============
+; *** INFO ***
+; ============
+-+id_artist="jacopo greco d'alceo"
 </CsOptions>
 <CsInstruments>
 
 ;gSfile init "/Users/j/Desktop/cor241126-1556/cor241126-1556-mouth.wav"
-gSfile init "/Users/j/Documents/RESEARCH/lilypond-abjad/JI-chord_progression/241115-1343-nuvole.wav"
-;gSfile init "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/arm2.wav"
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-gkPERIOD	init 96			; reduce if percussive !
-giSIZE      init 8192
-giORD       init 96         ; also the number of coefficients computed, typical lp orders may range from about 30 to 100 coefficients, but larger values can also be used.
-gkFLAG      init 1          ; compute flag, non-zero values switch on linear prediction analysis replacing filter coefficients, zero switch it off, keeping current filter coefficients.
+gSfile init "/Users/j/Documents/PROJECTs/Musée du Luxembourg/session/cremisi-jeu/_reaper_render/cremisi-250210.wav"
 
-giHP_DYN	init 1/2
-giNOI_WET	init 1/384		; dusty vintage
-giDEL_MAX	init 1			; that's a flanger, longer value make it a reverb
-giJIT_SAMPs	init 4096*8
-giSPEED     init 1          ; [idur*ispeed]
-giPITCH_MIN	init 30
-giPITCH_MAX	init ntof("5B") ; ~1975Hz
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-giasine			ftgen	0, 0, 8192, 9, .5, 1, 0
-giasquare		ftgen	0, 0, 8192, 7, 1, 8192/2, 1, 0, 0, 8192/2
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-ichs	filenchnls gSfile
-ich		init 1
-until ich > nchnls do
-	itab ftgen ich, 0, 0, 1, gSfile, 0, 0, (ich-1%ichs)+1
-	ich += 1
+giSPEED	init 1 ; [idur*ispeed]
+
+
+; ============================================
+; FNs
+; ============================================
+giFILE_nchnls	filenchnls gSfile
+indx            init 0
+ilimit			max giFILE_nchnls, nchnls
+until indx == ilimit do
+    ifn     = indx + 1
+    ich     = (indx % (giFILE_nchnls <= nchnls ? giFILE_nchnls : nchnls)) + 1
+    itab    ftgen ifn, 0, 0, 1, gSfile, 0, 0, ich
+    prints  "FN NUMBER: %i with CHANNEL: %i\n", ifn, ich
+    indx   += 1
 od
 giFILE_sr           ftsr 1
 giFILE_samp         ftlen 1
 giFILE_dur          init giFILE_samp / giFILE_sr
 
-giINSTR_dur			init giFILE_dur*giSPEED
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-garead				init 0
-gkcps_array[]		init nchnls
-gkrms_array[]		init nchnls
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
 
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+gifn_len	init 8192
+gisine		ftgen	0, 0, gifn_len, 10, 1
+gisquare	ftgen	0, 0, gifn_len, 7, 1, gifn_len/2, 1, 0, -1, gifn_len/2, -1
+gitri		ftgen	0, 0, gifn_len, 7, 0, gifn_len/4, 1, gifn_len/2, -1, gifn_len/4, 0
+gisaw		ftgen	0, 0, gifn_len, 7, 1, gifn_len, -1
 
-    instr 1
+gimorf		ftgen 	0, 0, gifn_len, 10, 1
 
+	opcode morphing, i, kiiooo
+	kndx, ift1, ift2, ift3, ift4, ift5 xin
+
+ifno		init gisine
+
+iftmorf1	abs	floor(ift1)
+iftmorf2	abs	floor(ift2)
+iftmorf3	abs	floor(ift3)
+iftmorf4	abs	floor(ift4)
+iftmorf5	abs	floor(ift5)
+
+ifact		init .995
+
+if	ift3==0 then
+	ifno	ftgenonce 0, 0, 2, -2, iftmorf1, iftmorf2
+		ftmorf kndx*ifact, ifno, gimorf
+elseif	ift3>0&&ift4==0 then
+	ifno	ftgenonce 0, 0, 3, -2, iftmorf1, iftmorf2, iftmorf3
+		ftmorf kndx*(ifact+1), ifno, gimorf
+elseif	ift4>0&&ift5==0 then
+	ifno	ftgenonce 0, 0, 4, -2, iftmorf1, iftmorf2, iftmorf3, iftmorf4
+		ftmorf kndx*(ifact+2), ifno, gimorf
+elseif	ift5>0 then
+	ifno	ftgenonce 0, 0, 5, -2, iftmorf1, iftmorf2, iftmorf3, iftmorf4, iftmorf5
+		ftmorf kndx*(ifact+3), ifno, gimorf
+endif
+
+	xout gimorf
+	endop
+
+		instr 1
 ; ============
 ; *** INIT ***
 ; ============
 ifn			init p4
-ich         init p4
+ich			init p4
+ilen_file	init ftlen(ifn)/ftsr(ifn)
 
 ; ============
 ; *** VARs ***
 ; ============
-p3			init giINSTR_dur
+p3			init ilen_file*giSPEED
 idur		init p3
 ; ============
 
 ; ============
 ; *** READ ***
 ; ============
-;aread		cosseg 0, idur, giFILE_samp
-ain			table garead, ifn
-kcps, krms	pitchamdf ain, giPITCH_MIN, giPITCH_MAX
+atime		phasor 1/idur
+ain			table3 atime, ifn, 1
 
-gkcps_array[ich-1] = kcps
-gkrms_array[ich-1] = krms
+; ============
+; *** MORPH ***
+; ============
+kmorph_indx		linseg 0, p3, 1
+imorph_ft1		init morphing(kmorph_indx, gisine, gisquare, gisine)
+imorph_ft2		init morphing(kmorph_indx, gisaw, gitri, gisaw)
 
-    endin
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+; ============
+; *** TRSHIFT ***
+; ============
 
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+ipv_size		init 4096
+ipv_hop			init ipv_size/2
+ipv_win			init 1 ; O: Hamming, 1: Hanning
+ffr, fph		pvsifd	ain, ipv_size, ipv_hop, ipv_win
 
-	instr CONTROL
+fsig			partials ffr, fph, .00125, 1, 5, ipv_size
 
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; gaREAD
-; ────────────────────────────────────────────────────────────────────────────────────────────
-garead		linseg 0, giINSTR_dur, giFILE_samp
-garead		+= a(jitter(giJIT_SAMPs, 1/giINSTR_dur, 32/giINSTR_dur))
-garead		= abs(garead%giFILE_samp)
+kfreq, kamp		pvspitch ffr, .0125
 
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; gkCPS ARRAY
-; ────────────────────────────────────────────────────────────────────────────────────────────
-kcps_val	minarray gkcps_array
-if kcps_val <= 0 then
-	kcps_val maxarray gkcps_array
-endif
-gkcps = kcps_val
+f1				trshift fsig, kfreq*2;12+jitter(6, 1/p3, 2/p3)
+f2				trshift fsig, kfreq/3;12+jitter(6, 1/p3, 2/p3)
 
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; gkRMS ARRAY
-; ────────────────────────────────────────────────────────────────────────────────────────────
-krms_val	minarray gkrms_array
-if krms_val <= 0 then
-	krms_val maxarray gkrms_array
-endif
+kpitch			init 1
+a1				tradsyn f1, 1, kpitch, ipv_size, imorph_ft1
+a2				tradsyn f2, 1, kpitch, ipv_size, imorph_ft2
 
-; Smooth envelope (longer window)
-kenv 		tonek krms_val, 5    
+aout			sum a1, a2
 
-; Transient detection
-ktransient 	= max(krms_val - kenv, 0)   
+		outch ich, aout / 2
 
-; Non-linear scaling to suppress sustain
-gkrms = ktransient * (1 - kenv)  ; Suppress sustain based on smoothed RMS
+		endin
 
-	endin
-	schedule "CONTROL", 0, -1
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-
-    instr 3
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; INIT
-; ────────────────────────────────────────────────────────────────────────────────────────────
-ifn			init p4
-ich         init p4
-
-p3			init giINSTR_dur
-idur		init p3
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; TABLE READ
-; ────────────────────────────────────────────────────────────────────────────────────────────
-ain			table garead, ifn
-ain_hp		K35_hpf ain, 9500+jitter(3500, 1/idur, 3/idur), 4.5+jitter(1.5, 1/idur, 3/idur), 1, 1.5+jitter(.5, 1/idur, 3/idur)
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; CARRIER
-; ────────────────────────────────────────────────────────────────────────────────────────────
-kn_harm 	divz sr / 2, gkcps, 0
-acar      	buzz 0dbfs, gkcps, int(kn_harm), -1
-acar_hp		K35_hpf acar, 9500+jitter:k(3500, 1/idur, 3/idur), 4.5+jitter:k(1.5, 1/idur, 3/idur), 1, 1.5+jitter:k(.5, 1/idur, 3/idur)
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; CORE
-; ────────────────────────────────────────────────────────────────────────────────────────────
-alpc        lpcfilter ain+ain_hp*giHP_DYN, acar+acar_hp*giHP_DYN, gkFLAG, gkPERIOD, giSIZE, giORD
-alpc_hp		K35_hpf alpc, 9500+jitter(3500, 1/idur, 3/idur), 4.5+jitter(1.5, 1/idur, 3/idur), 1, 1.5+jitter(.5, 1/idur, 3/idur)
-asum		sum alpc, alpc_hp*giHP_DYN
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; FLANGER-DELAY
-; ────────────────────────────────────────────────────────────────────────────────────────────
-ideltime	init idur / 8
-until ideltime < giDEL_MAX do
-	ideltime /= 3
-od
-kfb			= k(1-follow2(asum, .005, .125))*(.5+jitter(.45, 1/idur, 3/idur))
-adel		flanger alpc_hp, ideltime+a(jitter(ideltime/32, 1/idur, 3/idur)), kfb
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; NOISE
-; ────────────────────────────────────────────────────────────────────────────────────────────
-anoi1			fractalnoise gkrms, 1
-
-kdust_density	= 3+jitter(1.5, 1/idur, 1); average number of impulses per second
-anoi2			dust2 1, kdust_density
-anoi2			chebyshevpoly  anoi2, random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1), random:i(0, 1)
-anoi2			polynomial anoi2, floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2)), floor(random:i(0, 2))
-anoi2			K35_hpf anoi2, 9500+jitter(3500, 1/idur, 3/idur), 5.5+jitter(1, 1/idur, 3/idur), 1, 1.5+jitter(.5, 1/idur, 3/idur)
-
-anoi_out		sum anoi1, anoi2
-
-anoi_del		flanger anoi_out, ideltime/64+a(jitter(ideltime/128, 1/idur, 3/idur)), kfb
-anoi			sum anoi_out, anoi_del
-;anoi_lpc        lpcfilter ain_hp, anoi+anoi_del, gkFLAG, gkPERIOD, giSIZE, giORD
-
-; ────────────────────────────────────────────────────────────────────────────────────────────
-; OUT
-; ────────────────────────────────────────────────────────────────────────────────────────────
-aout		sum asum, adel, anoi*giNOI_WET*linseg(0, idur/8, 1)
-    outch ich, aout/2
-
-    endin
-; ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
 
 ;---SCORE---
 /* 
@@ -249,25 +190,13 @@ for i in range(1):
 		ch			# p4
 	]
 	score.append(' '.join(map(str, code)))
-
-for i in range(1):
-	code = [
-		'i3',
-		0,			# p2: when
-		1,			# p3: dur
-		ch			# p4
-	]
-	score.append(' '.join(map(str, code)))
 */
-
 
 </CsInstruments>
 
 <CsScore>
 i 1 0 1 1
 i 1 0 1 2
-i 3 0 1 1
-i 3 0 1 2
 e
 </CsScore>
 
