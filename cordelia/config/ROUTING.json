@@ -117,7 +117,12 @@
     "moij": {
         "input": "kk",
         "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout        moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\nkfreq       limit kfreq, 20, 20$k\naout        moogladder2 ain, kfreq, kq\n\n\nkdyn_comp   pow (kfreq / sr / 2), -0.45\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+    },
+    "moij_old": {
+        "input": "kk",
+        "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2_old PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_moogladder2_old, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\nkfreq       limit kfreq, 20, 20$k\naout        moogladder2 ain, kfreq, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     },
     "moijb3": {
         "input": "kk",
@@ -128,6 +133,11 @@
         "input": "kk",
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2_port PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "opcode cordelia_moogladder2_port, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\naout        moogladder2 ain, portk(kfreq, gkbeats/12)+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq\naout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+    },
+    "monster": {
+        "input": "k",
+        "core": "/*\na variation of decimator, i'm not very proud of it..\n*/\nPARAM_1    init 16\n\nPARAM_OUT cordelia_monster PARAM_IN, PARAM_1",
+        "opcode": "opcode cordelia_monster, a, ak\t;UDO Sample rate / Bit depth reducer\n\n\tsetksmps   1\n\n\tain, kbit xin\n\nkbits\t\t=        2^kbit                ;bit depth (1 to 16)\nkin\t\t\tdownsamp ain                   ;convert to kr\n\n;kin\t\t\tabs kin ; cut low dynamic\nkin\t\t\ttan kin\nkin\t\t\t= 1 / (1 + sin(-kin))\n\nkin\t\t\t= (kin+0dbfs)           ;add DC to avoid (-)\nkin\t\t\t= kin*(kbits/(0dbfs*2)) ;scale signal level\nkin\t\t\t= ceil(kin)     ;quantise\n;kin\t\t\t= cos(kin * $M_PI)\n\naout\t\tupsamp   kin                   ;convert to sr\naout\t\t=        aout*(2/kbits)-0dbfs  ;rescale and remove DC\n\t\t\txout    aout / 12\n\n\tendop"
     },
     "pconvij": {
         "input": "kk",

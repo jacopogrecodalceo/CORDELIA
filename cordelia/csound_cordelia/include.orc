@@ -23,6 +23,7 @@
 #include "./csound_cordelia/3-body/2-OP/basic/eva_sonvs.orc"
 #include "./csound_cordelia/3-body/2-OP/basic/getmeout.orc"
 #include "./csound_cordelia/3-body/2-OP/basic/start.orc"
+#include "./csound_cordelia/3-body/2-OP/basic/tie_status.orc"
 #include "./csound_cordelia/3-body/2-OP/basic/turnoff_everything.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/cedonoi.orc"
 #include "./csound_cordelia/3-body/2-OP/freq/cpstun_render.orc"

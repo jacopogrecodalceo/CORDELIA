@@ -1,6 +1,7 @@
 gizero			init ksmps / sr		;i variable better than write zero? because it's between samples
 gkzero			init ksmps / sr		;k variable better than write zero? because it's between samples
 
+giNYQUIST           init sr / 2         ; nyquist constant
 
 giexpzero		init .00015		;a zero value for expseg
 

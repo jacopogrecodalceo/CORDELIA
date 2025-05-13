@@ -14,8 +14,18 @@ kk
     ain, kfreq, kq xin
 
 kfreq_var   = (kfreq*11/10)-kfreq
-aout        moogladder2 ain, kfreq+jitter(1, gkbeatf/8, gkbeatf)*kfreq_var, kq
-aout	    balance2 aout, ain
+kfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var
+
+; safe limit
+kfreq       limit kfreq, 20, 20$k
+
+; core
+aout        moogladder2 ain, kfreq, kq
+
+
+kdyn_comp   pow (kfreq / giNYQUIST), -0.35
+aout        *= kdyn_comp
+;aout	    balance2 aout, ain
 
     xout aout
     endop
