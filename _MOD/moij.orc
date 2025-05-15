@@ -23,7 +23,7 @@ kfreq       limit kfreq, 20, 20$k
 aout        moogladder2 ain, kfreq, kq
 
 
-kdyn_comp   pow (kfreq / giNYQUIST), -0.35
+kdyn_comp   pow (kfreq / giNYQUIST), -0.15
 aout        *= kdyn_comp
 ;aout	    balance2 aout, ain
 

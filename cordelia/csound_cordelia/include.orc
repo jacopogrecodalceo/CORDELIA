@@ -60,6 +60,7 @@
 #include "./csound_cordelia/3-body/2-OP/util/op_modulator.orc"
 #include "./csound_cordelia/3-body/2-OP/util/op_ramp.orc"
 #include "./csound_cordelia/3-body/2-OP/util/pump.orc"
+#include "./csound_cordelia/3-body/2-OP/util/pumpx.orc"
 #include "./csound_cordelia/3-body/2-OP/util/rprtab.orc"
 #include "./csound_cordelia/3-body/2-OP/util/schedulech.orc"
 #include "./csound_cordelia/3-body/2-OP/util/tabj.orc"

@@ -117,7 +117,7 @@
     "moij": {
         "input": "kk",
         "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\nkfreq       limit kfreq, 20, 20$k\naout        moogladder2 ain, kfreq, kq\n\n\nkdyn_comp   pow (kfreq / sr / 2), -0.45\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\n\n; safe limit\nkfreq       limit kfreq, 20, 20$k\n\n; core\naout        moogladder2 ain, kfreq, kq\n\n\nkdyn_comp   pow (kfreq / giNYQUIST), -0.35\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     },
     "moij_old": {
         "input": "kk",

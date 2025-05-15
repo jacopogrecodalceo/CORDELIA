@@ -1,0 +1,22 @@
+
+
+
+gkpulse = 90;+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+gktuning = pump(32, fill(scala.12_22h, scala.edo7))
+
+
+eu: 5, 16, 2
+	.05@algo_fi.decij(pumpx(32, fill(8, 8, 8, 4, 8, 2))).flanij(oscili:k(2, 1/32, lear), lfh(16)*.5, .5).shij(qn)
+	wn, sn
+	fff
+	hader.a(5)
+	stept(c2, locrian, pumpx(32, fill(0, 1, 3, 2, 8, 3, 4)))
+
+
+@r909t2: pumpx(24, fill(2, 3, 2, 4)), fff
+
+@r909t: pumpx(6, fill(2, 3, 2, 4)/2), f
+
+
+

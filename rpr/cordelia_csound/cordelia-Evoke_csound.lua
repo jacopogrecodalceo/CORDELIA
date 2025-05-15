@@ -520,6 +520,8 @@ if not progress_bar.plots then
 end
 
 function loop_progress_bar()
+	 --ctx = reaper.ImGui_CreateContext('Progress Bar')
+
 	reaper.ImGui_SetNextWindowSize(ctx, 300, 60, 1)
 
 	local visible, open = reaper.ImGui_Begin(ctx, 'Loading..', true)
