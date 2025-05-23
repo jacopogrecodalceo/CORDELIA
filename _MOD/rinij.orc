@@ -17,6 +17,12 @@ kk
 	opcode cordelia_ringmod, a, akk
 	ain, kdiv, ktab xin
 
+kexists ftexists ktab
+if kexists != 1 then
+	ktab = giasine
+	printks "WARNING ***RINIJ*** PARAM_2 IS TAB\n", 1/2
+endif
+
 kphase		= kdiv - floor(kdiv)
 andx		= ((chnget:a("heart_a")*kdiv*gkdiv)+kphase)%1
 

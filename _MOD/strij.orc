@@ -30,7 +30,7 @@ aout	= aguid + astr1 + astr2
 aout	/= 3
 
 aout	phaser1 aout, kfreq, 12, kq
-	
+aout	butterhp aout, 20
 	xout aout
 	endop
 ;END OPCODE

@@ -59,6 +59,11 @@
         "core": "PARAM_2\tinit 1\n\nPARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2",
         "opcode": "gkcordelia_duck_atk init 5$ms\ngkcordelia_duck_rel init 75$ms\n\n    opcode cordelia_duck, a, aSik\n    ain, Sinstr, ich, kmix xin\n\naenv    follow2 chnget:a(sprintf(\"%s_%i\", Sinstr, ich)), gkcordelia_duck_atk, gkcordelia_duck_rel\nafol\t= ain * (1-aenv)\n\naout\t= afol*kmix + ain*(1-kmix)\n\n    xout aout\n    endop"
     },
+    "dustij": {
+        "input": "k",
+        "core": "PARAM_1 init .5\n\nPARAM_OUT cordelia_reverb_dust PARAM_IN, PARAM_1",
+        "opcode": "opcode cordelia_reverb_dust, a, ak\n\tain, kwet xin\n\n\t\tkwet limit kwet, 0, 1\n\n\t\timaxdur init i(gkbeats)\n\t\timaxdur init imaxdur*8\n\n\t\twhile imaxdur < .5 do\n\t\t\timaxdur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\t\taenv_delay\tinit 0\n\n\t\taenv_pre\tfollow ain, (ksmps/sr)*8\n\t\taenv_delay\tvdelay3 aenv_pre+aenv_delay*(.75+jitter(.25, 1/32, 1/3)), 1/$M_PI, imaxdur\n\t\t\t\t\t\n\t\taenv sum aenv_pre, aenv_delay\n\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\t\ta_, a_, aband svfilter adust, randomh:k(6500, 11500, gkbeatf+gkbeatf*k(aenv_delay)), 5\n\n\t\t;asum\t= ain * aband/2\n\t\taconv\tcross2 ain, aband, 1024, 2, gihanning, 1\n\t\taconv\t*= 4\n\n\t\taout =  ain*(1-kwet) + aconv*kwet;*(1-kfb/4)\n\n\txout aout\nendop"
+    },
     "flanij": {
         "input": "kkk",
         "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_flanger PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
@@ -117,7 +122,7 @@
     "moij": {
         "input": "kk",
         "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\n\n; safe limit\nkfreq       limit kfreq, 20, 20$k\n\n; core\naout        moogladder2 ain, kfreq, kq\n\n\nkdyn_comp   pow (kfreq / giNYQUIST), -0.35\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_moogladder2, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\n\n; safe limit\nkfreq       limit kfreq, 20, 17.5$k\n\n; core\naout        moogladder2 ain, kfreq, kq\n\nkdyn_comp   pow (kfreq / giNYQUIST), -0.15\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
     },
     "moij_old": {
         "input": "kk",
@@ -177,12 +182,17 @@
     "revijd": {
         "input": "kkk",
         "core": "PARAM_1 init i(gkbeats) ;space\nPARAM_2 init .5 ;high freq\nPARAM_3 init .5 ;mix\n\nPARAM_OUT cordelia_reverb_dust PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_reverb_dust, a, akkk\n\tain, ktime, khigh_freq, kwet xin\n\n\t\timaxdur init i(gkbeats)\n\t\timaxdur init imaxdur*8\n\n\t\twhile imaxdur < .5 do\n\t\t\timaxdur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\n\t\taenv\tfollow ain, ksmps/sr\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\t\ta_, a_, aband svfilter adust, randomh(5000, 9000, gkbeatf+gkbeatf*k(aenv)), 0\n\n\t\tarev\tnreverb (aband/8+ain)*kwet, ktime, 1-khigh_freq\n\n\t\tilen_samps = imaxdur * sr\n\t\tibuf ftgentmp 0, 0, ilen_samps, -2, 0\n\n\t\tandx = phasor(1/ktime)*a(ktime*sr)\n\t\ttablew arev, andx, ibuf\n\n\t\tadist = a(abs(jitter:k(1, .25/ktime, 1/ktime))*ktime*sr)\n\t\taout1 table vdelay(andx, ktime*1000, imaxdur), ibuf\n\t\taout2 table vdelay(adist, ktime*1000, imaxdur), ibuf\n\t\t;aout *= table3:a(delay((phasor:a(1/ktime)), 1/sr*ksmps*4), gihamming, 1)\n\t\t;arev_last\tnreverb aout, ktime*2, 1-khigh_freq\n\t\t;aout =  ain*(1-kwet) + kwet*(aout1 + aout2)/3;*(1-kfb/4)\n\t\taout =  ain*(1-kwet) + kwet*(aout1 + aout2);*(1-kfb/4)\n\n\txout aout\nendop"
+    },
+    "revijd2": {
+        "input": "kkk",
+        "core": "PARAM_1 init i(gkbeats) ;space\nPARAM_2 init .5 ;high freq\nPARAM_3 init .5 ;mix\n\nPARAM_OUT cordelia_reverb_dust PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "opcode cordelia_reverb_dust, a, akkk\n\tain, ktime, khigh_freq, kwet xin\n\n\t\timaxdur init i(gkbeats)\n\t\timaxdur init imaxdur*8\n\n\t\twhile imaxdur < .5 do\n\t\t\timaxdur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\n\t\taenv\tfollow ain, 1/ksmps\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\t\ta_, a_, aband svfilter adust, randomh(5000, 9000, gkbeatf+gkbeatf*k(aenv)), 0\n\n\t\tarev\tnreverb (aband/8+ain)*kwet, ktime, 1-khigh_freq\n\n\t\tilen_samps = imaxdur * sr\n\t\tibuf ftgentmp 0, 0, ilen_samps, -2, 0\n\n\t\tandx = phasor(1/ktime)*a(ktime*sr)\n\t\ttablew arev, andx, ibuf\n\n\t\tadist = a(abs(jitter:k(1, .25/ktime, 1/ktime))*ktime*sr)\n\t\taout1 table vdelay(andx, ktime*1000, imaxdur), ibuf\n\t\taout2 table vdelay(adist, ktime*1000, imaxdur), ibuf\n\t\t;aout *= table3:a(delay((phasor:a(1/ktime)), 1/sr*ksmps*4), gihamming, 1)\n\t\t;arev_last\tnreverb aout, ktime*2, 1-khigh_freq\n\t\taout =  ain*(1-kwet) + (aout1 + aout2)/3;*(1-kfb/4)\n\n\txout aout\nendop"
     },
     "rinij": {
         "input": "kk",
         "core": ";division\nPARAM_1 init 4\n\n;gen\nPARAM_2 init giasine\n\nPARAM_OUT cordelia_ringmod PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_ringmod, a, akk\n\tain, kdiv, ktab xin\n\nkphase\t\t= kdiv - floor(kdiv)\nandx\t\t= ((chnget:a(\"heart_a\")*kdiv*gkdiv)+kphase)%1\n\nkwarp\tinit 0; if greater than 1, use sin (x / kwarp) / x function for sinc interpolation, instead of the default sin (x) / x. This is useful to avoid aliasing when transposing up (kwarp should be set to the transpose factor in this case, e.g. 2.0 for one octave), however it makes rendering up to twice as slow. Also, iwsize should be at least kwarp * 8. This feature is experimental, and may be optimized both in terms of speed and quality in new versions.\niwsize\tinit 4*16; This parameter controls the type of interpolation to be used:\nimode\tinit 1\nioff\tinit 0\niwrap\tinit 1 ;wraparound index flag. The default value is 0.\n\naring\t\ttablexkt andx, ktab, kwarp, iwsize, imode, ioff , iwrap\n\naout\t\t= ain * aring\n\n\txout aout\n\tendop"
+        "opcode": "opcode cordelia_ringmod, a, akk\n\tain, kdiv, ktab xin\n\nkexists ftexists ktab\nif kexists != 1 then\n\tktab = giasine\n\tprintks \"WARNING ***RINIJ*** PARAM_2 IS TAB\\n\", 1/2\nendif\n\nkphase\t\t= kdiv - floor(kdiv)\nandx\t\t= ((chnget:a(\"heart_a\")*kdiv*gkdiv)+kphase)%1\n\nkwarp\tinit 0; if greater than 1, use sin (x / kwarp) / x function for sinc interpolation, instead of the default sin (x) / x. This is useful to avoid aliasing when transposing up (kwarp should be set to the transpose factor in this case, e.g. 2.0 for one octave), however it makes rendering up to twice as slow. Also, iwsize should be at least kwarp * 8. This feature is experimental, and may be optimized both in terms of speed and quality in new versions.\niwsize\tinit 4*16; This parameter controls the type of interpolation to be used:\nimode\tinit 1\nioff\tinit 0\niwrap\tinit 1 ;wraparound index flag. The default value is 0.\n\naring\t\ttablexkt andx, ktab, kwarp, iwsize, imode, ioff , iwrap\n\naout\t\t= ain * aring\n\n\txout aout\n\tendop"
     },
     "sendch": {
         "input": "kk",
@@ -227,7 +237,7 @@
     "strij": {
         "input": "kk",
         "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cor_streason, a, akk\n\tain, kfreq, kq xin\n\nkfreq += oscili:k(.5, gkbeatf/64)\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, kq\n\t\n\txout aout\n\tendop"
+        "opcode": "opcode cor_streason, a, akk\n\tain, kfreq, kq xin\n\nkfreq += oscili:k(.5, gkbeatf/64)\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, kq\naout\tbutterhp aout, 20\n\txout aout\n\tendop"
     },
     "strijp": {
         "input": "kkk",

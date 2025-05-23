@@ -1,0 +1,13 @@
+
+gkpulse = 110/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+eu: 4, 16, 4
+	@mhont@repuck.moij(ntof(b3)*pump(32, fill(.25, 4, .25, 3, 3/2)), .85)
+	wn*2, wn
+	mf
+	iago.a(5)
+	stept(c4, pump(32, fill(-11, -7, -4, 2, 5, 8, 14, 5, 12, 4, 3, -2)))
+
+@drum.convij(mhont, 4): 8, pp

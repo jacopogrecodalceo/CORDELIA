@@ -1,10 +1,10 @@
-import ctcsound
 import os, sys
 import time
 import re
 import soundfile as sf
 from datetime import datetime
 import logging
+import subprocess
 
 # Path to the directory containing the sox executable
 homebrew_directory = '/opt/homebrew/bin'
@@ -29,10 +29,6 @@ def extract_score_data(string):
 	else:
 		return None
 
-ctcsound.csoundInitialize(ctcsound.CSOUNDINIT_NO_ATEXIT | ctcsound.CSOUNDINIT_NO_SIGNAL_HANDLER)
-cs = ctcsound.Csound()
-cs.createMessageBuffer(False)
-
 input_file_wav = sys.argv[1]
 input_file_orc = sys.argv[2]
 output_file_wav = sys.argv[3]
@@ -44,6 +40,8 @@ with sf.SoundFile(input_file_wav) as f:
 
 #output_tempdir = os.path.dirname(file)
 output_tempdir = '/Users/j/Documents/temp/'
+csound_sco_path = os.path.join(output_tempdir, f'{basename}.sco')
+csound_orc_path = os.path.join(output_tempdir, f'{basename}-processed.orc')
 log_file = output_file_wav + '.log'
 
 orc_code = f'gSfile init "{input_file_wav}"\n'
@@ -65,32 +63,37 @@ if sco_python_code is not None:
 		logging.info("Error executing the code:", str(e))
 
 score.append('e')
-score = '\n'.join(score)
-logging.info(score)
 
-# Set Csound options
-cs.setOption(f'-o{output_file_wav}')
-#cs.setOption(f'--sample-rate=48000')
-cs.setOption(f'-3')
-#cs.setOption(f'--ksmps={ksmps}')
-cs.setOption(f'--0dbfs=1')
-#cs.setOption(f'--nchnls={channels}')
+with open(csound_sco_path, 'w') as f:
+	f.write('\n'.join(score))
+with open(csound_orc_path, 'w') as f:
+	f.write(orc_code)
 
-cs.compileOrc(orc_code)
-cs.readScore(score)
+#csound [flags] [orchname] [scorename]
 
-cs.start()
-with open(log_file, 'a') as f:
-	while cs.performKsmps() == 0:
-		string = cs.firstMessage()
-		# Set the custom performance callback
-		if string:
-			f.write(string)
-		cs.popFirstMessage()
+CSOUND_FLAGs = [
+	f'-o{output_file_wav}',
+	'--format=24bit',
+	'--0dbfs=1',
+]
 
-cs.cleanup()
-cs.destroyMessageBuffer()
-del cs
+csound_command = [
+    '/usr/local/bin/csound',
+    *CSOUND_FLAGs,
+    csound_orc_path,
+    csound_sco_path,
+]
+
+# Use subprocess to launch the command and wait until it completes
+try:
+    result = subprocess.run(csound_command, check=True, capture_output=True, text=True)
+    logging.info('Csound finished successfully')
+    if result.stdout:
+        logging.debug(f'Csound output: {result.stdout}')
+except subprocess.CalledProcessError as e:
+    logging.error(f'Csound failed with error: {e.stderr}')
+except FileNotFoundError:
+    logging.error('Csound command not found. Is Csound installed and in your PATH?')
 
 time.sleep(1/8)
 

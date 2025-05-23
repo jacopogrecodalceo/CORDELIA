@@ -1,0 +1,14 @@
+
+
+gkpulse = 110/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+eu: 5, 16, 2
+	@mhont;.moij(ntof(b3)*pump(32, fill(.25, 4, 1, 3, 3/2)), .85)
+	wn*4, sn
+	fff
+	ropy
+	stept(c4, pump(32, fill(-11, -7, -4, 2, 5, 8, 14, 5, 12, 4, 3, -2)))
+	stept(c4, 5+pump(32, fill(-11, -7, -4, 2, 5, 8, 14, 5, 12, 4, 3, -2)))
+

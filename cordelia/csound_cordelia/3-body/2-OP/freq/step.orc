@@ -171,13 +171,14 @@ endif
 
 
 	opcode stept, k, SkOO	;classic step to use scales from Sroot using iscale output kdegree NB the last parameter is kshiftroot to shift root and scale easy NBB if step = 0 then rest
-
 	Sroot, kdegree, kshiftroot, ktuning xin 
+
 
 iscaleroot		ntom Sroot
 kscaleroot		= iscaleroot + kshiftroot
-
+itrig			init 1
 ktrig			changed2 kdegree
+ktrig			+= itrig
 
 if ktuning == 0 then
 	ktuning = gktuning
@@ -190,3 +191,6 @@ kres	= cpstun(ktrig, int(kscaleroot + kdegree), ktuning)
 	xout kres
 
 	endop
+
+
+

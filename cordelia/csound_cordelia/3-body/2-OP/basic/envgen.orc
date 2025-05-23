@@ -1,4 +1,4 @@
-gisotrap_ramp		init sr * 15$ms
+gisotrap_ramp		init 32 ; in samps
 gisotrap_seg		init gienvdur-(gisotrap_ramp*2)
 ;-----------------------
 gisotrap		ftgen	0, 0, gienvdur, 7, 0, gisotrap_ramp, 1, gisotrap_seg, 1, gisotrap_ramp, 0
@@ -8,9 +8,11 @@ gisotrap		ftgen	0, 0, gienvdur, 7, 0, gisotrap_ramp, 1, gisotrap_seg, 1, gisotra
 	
 ifenvmod	init	floor(iftenv)-iftenv
 iftenvreal	abs	floor(iftenv)
+iexists 	ftexists iftenvreal
 
-if ftexists(iftenvreal) == 0 || iftenvreal == 0 then
-	iftenvreal init gisotrap
+if iexists != 1 || iftenvreal == 0 then
+	iftenvreal = gisotrap
+	printks "WARNING ENVGEN DOESN'T EXIST\n", 1/2
 endif
 
 idur_env init gienvdur-1

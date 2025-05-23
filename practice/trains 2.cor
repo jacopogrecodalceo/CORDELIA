@@ -1,0 +1,18 @@
+
+
+
+gkpulse = 90;/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.12_22h
+
+eu: 9, 16, 4
+	@ance@arm2_fi.strij(ntof(d4)*pumpx(16>8in8m, fill(1, 1, 3, 1/2, 1/3, 4))).tapij(sn*pumpx(16, fill(1/4, 1, 1/8, 2))).flanij(sn*pumpx(32, fill(1, 2, 1, 3)))
+	wn, 0;, sn
+	ff
+	iago.a(5)
+	stept(d2, dorian, pumpx(32, fill(0, ?*-9, ?*4, ?*-3)))
+	stept(d3, dorian, 2+pumpx(32, fill(0, ?*-9, ?*4, ?*-3)))
+
+;@dead3.moij(ntof(a5)*pumpx(24, fill(1, 1, 3, 1/2, 1/3, 4))): 8, 1
+
+

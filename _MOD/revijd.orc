@@ -25,7 +25,7 @@ opcode cordelia_reverb_dust, a, akkk
 
 		arev	init 0
 
-		aenv	follow ain, 1/ksmps
+		aenv	follow ain, ksmps/sr
 		adust	dust2 1, gkbeatf*256*k(aenv)
 		a_, a_, aband svfilter adust, randomh(5000, 9000, gkbeatf+gkbeatf*k(aenv)), 0
 
@@ -42,7 +42,8 @@ opcode cordelia_reverb_dust, a, akkk
 		aout2 table vdelay(adist, ktime*1000, imaxdur), ibuf
 		;aout *= table3:a(delay((phasor:a(1/ktime)), 1/sr*ksmps*4), gihamming, 1)
 		;arev_last	nreverb aout, ktime*2, 1-khigh_freq
-		aout =  ain*(1-kwet) + (aout1 + aout2)/3;*(1-kfb/4)
+		;aout =  ain*(1-kwet) + kwet*(aout1 + aout2)/3;*(1-kfb/4)
+		aout =  ain*(1-kwet) + kwet*(aout1 + aout2);*(1-kfb/4)
 
 	xout aout
 endop
