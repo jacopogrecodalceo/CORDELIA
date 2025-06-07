@@ -143,7 +143,8 @@ init_csound()
 cordelia_nchnls = CORDELIA_CONFIG.csound_audio_array_count
 print(f'Cordelia has {cordelia_nchnls} channels\n')
 
-
-
 cordelia_sr = int(csound_cordelia.sr())
 print(f'Cordelia has a sample rate of {cordelia_sr}\n')
+
+cordelia_ksmps = int(csound_cordelia.ksmps())
+print(f'Cordelia has {cordelia_ksmps} ksmps\n')

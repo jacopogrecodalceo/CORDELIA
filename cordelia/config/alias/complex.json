@@ -2,6 +2,7 @@
     "(\\W)\\?(\\W|$)": "\\1abs(jitter:k(1, gkbeatf/8, gkbeatf))\\2",
 
     "{(.*)}": "fillarray(\\1)",
+    "[(.*)]": "fillarray(\\1)",
 
     "(\\w+)\\.a(\\(.*\\))": "\\1$atk\\2",
 

@@ -36,7 +36,7 @@ opcode cordelia_reverb_dust, a, ak
 
 		;asum	= ain * aband/2
 		aconv	cross2 ain, aband, 1024, 2, gihanning, 1
-		aconv	*= 4
+		aconv	*= 3
 
 		aout =  ain*(1-kwet) + aconv*kwet;*(1-kfb/4)
 

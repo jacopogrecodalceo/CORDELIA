@@ -1,0 +1,20 @@
+
+
+
+gkpulse = 90+randomh:k(-30, 10, 1/16)
+
+gktuning = pump(32, fill(scala.12_22h, scala.edo7))
+
+
+
+eu: 3, 16, 4
+	@mhont2.flanij(oscili:k(2, 1/23, lear), lfh(16)*.5, .5)
+	wn*3
+	mf
+	bea
+	stept(c1, locrian, 2+pumpx(32, fill(0, 1, 3, 2, 8, 3, 4)))
+
+
+
+
+

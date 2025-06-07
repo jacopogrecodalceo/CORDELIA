@@ -1,6 +1,6 @@
 channels:
   audio:
-    count: 4
+    count: 2
     mapping:
       1: 1
       2: 2

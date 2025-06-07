@@ -1,7 +1,8 @@
+import numpy as np
 import queue
 from pathlib import Path
 import os, sys
-from threading import Thread
+import threading
 import argparse
 #import pdb; pdb.set_trace()
 from rich.console import Console
@@ -75,8 +76,37 @@ def csound_perf_homemade(cs):
 	cs.perform()
 	cs.cleanup()
 
+def csound_perf_homemade_GUI(cs, ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps):
+	cs.start()
+
+	while cs.performKsmps() == 0:
+		spout = cs.spout()
+		samples = np.array(spout, dtype=np.float32).reshape(-1, cordelia_nchnls)
+		with lock:
+			ring_buffer[:-cordelia_ksmps] = ring_buffer[cordelia_ksmps:]
+			ring_buffer[-cordelia_ksmps:] = samples
+
+	cs.cleanup()
+
+def start_gui(ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps):
+	from gui.waveform import WaveformViewer
+
+	viewer = WaveformViewer(
+		n_channels=cordelia_nchnls,
+		sample_rate=cordelia_sr,
+		waveform_history=cordelia_sr*3,
+		ring_buffer=ring_buffer,
+		lock=lock,
+	)
+	print("GUI START!")
+	viewer.run()	
+
+
 def start_jack_connection(ip='169.0.0.1', n_in=4, n_outs=12):
 	os.system(f'jackd -r -d net -a {ip} -C{n_in} -P{n_outs}')
+
+exit_event = threading.Event()
+
 
 def main():
 	args = process_args()
@@ -92,18 +122,30 @@ def main():
 		udp.open_ports()
 		print(csound_cordelia.csound())
 
+
+		from csoundAPI.cs import cordelia_sr, cordelia_nchnls, cordelia_ksmps
+		ring_buffer = np.zeros((cordelia_sr, cordelia_nchnls), dtype=np.float32)
+		lock = threading.Lock()
+
 		# Create and start the thread for listening to messages
 		threads = [
 			#Thread(target=start_jack_connection, daemon=True) if args.jack else None, 
-			Thread(target=process_messages, daemon=True), 
-			Thread(target=udp.listen, daemon=True, args=(message_queue,)),
-			Thread(target=csound_perf_homemade, args=(csound_cordelia,))
+			threading.Thread(target=process_messages, daemon=True), 
+			threading.Thread(target=udp.listen, daemon=True, args=(message_queue,)),
+			#threading.Thread(target=csound_perf_homemade_GUI, args=(csound_cordelia, ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps,)),
+			threading.Thread(target=csound_perf_homemade, args=(csound_cordelia,)),
 			]
 
 		# Process the received messages in the main thread
 		for t in threads:
 			if t:
 				t.start()
+
+
+		#start_gui(ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps)
+
+		sys.exit(0)
+
 	else:
 		input_name = Path(input_score).stem
 		input_ext = Path(input_score).suffix[1:]

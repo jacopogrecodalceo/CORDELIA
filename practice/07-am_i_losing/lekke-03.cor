@@ -1,0 +1,31 @@
+
+
+
+
+
+gkpulse = 90;+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+gktuning = pump(32, fill(scala.12_22h, scala.edo7))
+
+
+eu: 8, 16, 2
+	@six2_fi@six_fi;.decij(pumpx(32, fill(8, 8, 8, 4, 8, 2))).flanij(oscili:k(1/32, 1/32, lear), lfh(16)*.5, .5)
+	hn, sn, pumpx(24, fill(1, 2, 3));, qn
+	fff
+	hader.a(5)
+	stept(c3, locrian, pumpx(32, fill(0, 12, 3, 32, 28, -3, -34)))
+
+eu: 6, 16, 4
+	@slown_so;.decij(pumpx(32, fill(8, 8, 8, 4, 8, 2))).flanij(oscili:k(1/32, 1/32, lear), lfh(16)*.5, .5)
+	hn, sn, pumpx(24, fill(1, 2, 3));, qn
+	fff
+	hader.a(5)
+	stept(c3, locrian, pumpx(32, fill(0, 12, 3, 32, 28, -3, -34)))
+
+
+@r909t2: pumpx(24, fill(2, 3, 2, 4)), ff
+
+@r909t: pumpx(6, fill(2, 3, 2, 4)), fff
+
+
+

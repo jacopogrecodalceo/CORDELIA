@@ -62,12 +62,12 @@
     "dustij": {
         "input": "k",
         "core": "PARAM_1 init .5\n\nPARAM_OUT cordelia_reverb_dust PARAM_IN, PARAM_1",
-        "opcode": "opcode cordelia_reverb_dust, a, ak\n\tain, kwet xin\n\n\t\tkwet limit kwet, 0, 1\n\n\t\timaxdur init i(gkbeats)\n\t\timaxdur init imaxdur*8\n\n\t\twhile imaxdur < .5 do\n\t\t\timaxdur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\t\taenv_delay\tinit 0\n\n\t\taenv_pre\tfollow ain, (ksmps/sr)*8\n\t\taenv_delay\tvdelay3 aenv_pre+aenv_delay*(.75+jitter(.25, 1/32, 1/3)), 1/$M_PI, imaxdur\n\t\t\t\t\t\n\t\taenv sum aenv_pre, aenv_delay\n\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\t\ta_, a_, aband svfilter adust, randomh:k(6500, 11500, gkbeatf+gkbeatf*k(aenv_delay)), 5\n\n\t\t;asum\t= ain * aband/2\n\t\taconv\tcross2 ain, aband, 1024, 2, gihanning, 1\n\t\taconv\t*= 4\n\n\t\taout =  ain*(1-kwet) + aconv*kwet;*(1-kfb/4)\n\n\txout aout\nendop"
+        "opcode": "opcode cordelia_reverb_dust, a, ak\n\tain, kwet xin\n\n\t\tkwet limit kwet, 0, 1\n\n\t\timaxdur init i(gkbeats)\n\t\timaxdur init imaxdur*8\n\n\t\twhile imaxdur < .5 do\n\t\t\timaxdur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\t\taenv_delay\tinit 0\n\n\t\taenv_pre\tfollow ain, (ksmps/sr)*8\n\t\taenv_delay\tvdelay3 aenv_pre+aenv_delay*(.75+jitter(.25, 1/32, 1/3)), 1/$M_PI, imaxdur\n\t\t\t\t\t\n\t\taenv sum aenv_pre, aenv_delay\n\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\t\ta_, a_, aband svfilter adust, randomh:k(6500, 11500, gkbeatf+gkbeatf*k(aenv_delay)), 5\n\n\t\t;asum\t= ain * aband/2\n\t\taconv\tcross2 ain, aband, 1024, 2, gihanning, 1\n\t\taconv\t*= 3\n\n\t\taout =  ain*(1-kwet) + aconv*kwet;*(1-kfb/4)\n\n\txout aout\nendop"
     },
     "flanij": {
         "input": "kkk",
         "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_flanger PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
-        "opcode": "opcode cordelia_flanger, a, akkk\n    ain, ktime, kfb, kwet xin\n\nadel        flanger ain*kwet, a(ktime), kfb, 15\n\naout         =  ain*(1-kwet) + adel\n\n    xout aout\n    endop"
+        "opcode": "opcode cordelia_flanger, a, akkk\n    ain, ktime, kfb, kwet xin\n\n; imax_delay(optional) -- maximum delay in seconds (needed for inital memory allocation)\nimax_delay init 5\n\n\nadel        flanger ain*kwet, a(ktime), kfb, imax_delay\n\naout         =  ain*(1-kwet) + adel ; kwet is already in the delay\n\n    xout aout\n    endop"
     },
     "flanijp": {
         "input": "kk",
@@ -148,6 +148,11 @@
         "input": "kk",
         "core": "PARAM_1\tinit 1\nPARAM_2\tinit 1\n\nPARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich",
         "opcode": "opcode cordelia_pconvolve, a, aiki\n    ain, ir, kmix, ich xin\n\nSFiles[]        directory \"/Users/j/Documents/PROJECTs/CORDELIA/_setting/_IR\", \".wav\"\n\ninchnls         filenchnls SFiles[ir]\n;inchnls         init 2\n\nichnl_array     init (ich%inchnls)+1\n\naconv           pconvolve ain, SFiles[ir], 0, ichnl_array\n\naout            = aconv*kmix + ain*(1-kmix)\n\n    xout aout\n\n    endop"
+    },
+    "phij": {
+        "input": "kkk",
+        "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\nPARAM_3    init .5\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_moogladder2, a, akkk\n    ain, kfreq, kfb, kwet xin\n\niord    init 18\nimode   init 1\nisep    init 1/$M_PI\n\naout    phaser2 ain, kfreq, .5+jitter(.25, 1/32, 1/3), iord, imode, isep, kfb\n\n\n    xout aout\n    endop"
     },
     "pitchebij": {
         "input": "kkkk",

@@ -16,9 +16,13 @@ kkk
     opcode cordelia_flanger, a, akkk
     ain, ktime, kfb, kwet xin
 
-adel        flanger ain*kwet, a(ktime), kfb, 15
+; imax_delay(optional) -- maximum delay in seconds (needed for inital memory allocation)
+imax_delay init 5
 
-aout         =  ain*(1-kwet) + adel
+
+adel        flanger ain*kwet, a(ktime), kfb, imax_delay
+
+aout         =  ain*(1-kwet) + adel ; kwet is already in the delay
 
     xout aout
     endop

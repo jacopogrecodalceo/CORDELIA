@@ -1,0 +1,24 @@
+
+
+
+gkpulse = 60;+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+gktuning = scala.edo7
+
+
+eu: 2, 16, 2
+	.5@dirty_fi.decij(8).flanij(oscili:k(1, 1/64, lear), lfh(16)*.5, .15);.convij(careless);.shij(qn)
+	sn
+	ff
+	hader.a(5)
+	stept(c2, locrian, pump(32, fill(0, 1, 3, 2, 8, 3, 4)))
+
+
+
+eu: 2, 16, 2, 1
+	@uj3@noij.flanij(oscili:k(1, 1/64, lear), lfh(16)*.5);.convij(careless);.shij(qn)
+	sn/2, 0
+	fff
+	hader.a(5)
+	stept(c2, locrian, pump(32, fill(0, 1, 3, 2, 8, 3, 4)))
+
