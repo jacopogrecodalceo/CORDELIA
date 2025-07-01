@@ -1,25 +1,7 @@
 # Journal intime
 
-## [Unreleased] - 2024-10-24
-### Added
-- vocoder style LPC preset
-
-### Changed
-- 
-### Deprecated
-- 
-
-### Removed
-- 
-
-### Fixed
-- 
-
-### Security
-
-## [Unreleased] - 2024-10-24
-### Added
-- vocoder style LPC preset
-
-### Changed
-- _eu_ rhythmic opcode updated with variation
+# 2025|07|08
+today i create a serieis of opcode vaporwave inspired - they start with a "v".
+put at the end (in the MOUTH) a tape variable to cruchy the style if u want.
+thinking about changing MOUTH to SOUL. i think ill do it soon.
+maybe put a wow also at the end?

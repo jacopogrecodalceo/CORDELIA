@@ -10,6 +10,9 @@ od
 
 ;garecorder[]	init ginchnls
 
+gksoul_tape_drive = 2.5
+gksoul_tape_wet = 1/9
+
 ;-----------------------------------------
 	instr 900; MOUTH
 
@@ -19,7 +22,6 @@ ich	init p4
 ain	chnget gSmouth[ich]
 
 aout	= ain*gkgain
-
 
 /* ihfreq			init ntof("3B")	; ~264Hz
 khq				= 1.95+jitter:k(.405, gkbeatf/48, gkbeatf)
@@ -34,6 +36,10 @@ apost_out		= ahigh+alow */
 
 ;alow	rezzy aout, ifreq_low, kq
 ;alow	diode_ladder aout, ifreq_low, kq , 1, $M_LOG2E
+
+asat		tanh gksoul_tape_drive * aout
+asat 		tone asat, 9500
+aout		= (1 - gksoul_tape_wet) * aout + gksoul_tape_wet * asat
 
 ;aout dcblock aout
 aout	butterhp aout, 20

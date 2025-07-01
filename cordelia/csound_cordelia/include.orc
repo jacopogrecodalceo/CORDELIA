@@ -41,6 +41,7 @@
 #include "./csound_cordelia/3-body/2-OP/rhythm/jex.orc"
 #include "./csound_cordelia/3-body/2-OP/rhythm/ly.orc"
 #include "./csound_cordelia/3-body/2-OP/rhythm/saf.orc"
+#include "./csound_cordelia/3-body/2-OP/semi_instr/reamur.orc"
 #include "./csound_cordelia/3-body/2-OP/util/accent.orc"
 #include "./csound_cordelia/3-body/2-OP/util/accenth.orc"
 #include "./csound_cordelia/3-body/2-OP/util/almost.orc"

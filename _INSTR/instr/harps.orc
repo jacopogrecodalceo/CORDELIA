@@ -14,11 +14,15 @@ $start_instr(harps)
 	elseif inote > 88 then
 		irootnote init 88
 	else
-		irootnote init inote
+		irootnote int inote
 	endif
 
 	irootnote2cps = A4 * pow(2, (irootnote - 69) / 12)
 	iratio = icps / irootnote2cps
+	print irootnote2cps
+	print iratio
+	print icps
+	print irootnote
 	;Felt Piano m A6 RR1.wav
 	;Felt Piano Release D5.wav
 	Spath sprintf "%s/%i.wav", Sharps_path, irootnote

@@ -144,6 +144,11 @@
         "core": "/*\na variation of decimator, i'm not very proud of it..\n*/\nPARAM_1    init 16\n\nPARAM_OUT cordelia_monster PARAM_IN, PARAM_1",
         "opcode": "opcode cordelia_monster, a, ak\t;UDO Sample rate / Bit depth reducer\n\n\tsetksmps   1\n\n\tain, kbit xin\n\nkbits\t\t=        2^kbit                ;bit depth (1 to 16)\nkin\t\t\tdownsamp ain                   ;convert to kr\n\n;kin\t\t\tabs kin ; cut low dynamic\nkin\t\t\ttan kin\nkin\t\t\t= 1 / (1 + sin(-kin))\n\nkin\t\t\t= (kin+0dbfs)           ;add DC to avoid (-)\nkin\t\t\t= kin*(kbits/(0dbfs*2)) ;scale signal level\nkin\t\t\t= ceil(kin)     ;quantise\n;kin\t\t\t= cos(kin * $M_PI)\n\naout\t\tupsamp   kin                   ;convert to sr\naout\t\t=        aout*(2/kbits)-0dbfs  ;rescale and remove DC\n\t\t\txout    aout / 12\n\n\tendop"
     },
+    "otij": {
+        "input": "kkk",
+        "core": "PARAM_1    init ntof(\"3B\")\nPARAM_2    init .35\nPARAM_3    init .5\n\nPARAM_OUT cordelia_OTT_comp PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_OTT_comp, a, akkk\n\tain, kfreq_high, kthresh, kwet xin\n\n\t;setksmps 512\n\nifreq_low\t\tinit 95\n\n;=== SPLIT INTO 3 BANDS ===;\nalow        \tbutlp ain, ifreq_low\napre_mid       \tbuthp ain, ifreq_low\namid        \tbutlp apre_mid, kfreq_high\nahigh       \tbuthp ain, kfreq_high\n\n;=== COMPRESSOR SETTINGS ===;\n\nkl_thresh   = kthresh * 3\nkm_thresh   = kthresh / 2\nkh_thresh   = kthresh * 2\n\nkup_ratio   = 3\nkdown_ratio = 9\n\n;\t=== ENVELOPES ===;\n\nkl_env\t\trms alow\nkm_env\t\trms amid\nkh_env\t\trms ahigh\n\n;      === LOW BAND GAIN ===;\nkl_gain     = (kl_env > kl_thresh) ? (kl_thresh + (kl_env - kl_thresh) / kdown_ratio) / kl_env \\\n\t\t\t\t\t\t\t\t   : (kl_env < kl_thresh) ? (kl_thresh - (kl_thresh - kl_env) / kup_ratio) / kl_env : 1\nalow_comp   = alow * kl_gain\n\n;\t=== MID BAND GAIN ===;\nkm_gain     = (km_env > km_thresh) ? (km_thresh + (km_env - km_thresh) / kdown_ratio) / km_env \\\n\t\t\t\t\t\t\t\t   : (km_env < km_thresh) ? (km_thresh - (km_thresh - km_env) / kup_ratio) / km_env : 1\namid_comp   = amid * km_gain\n\n;\t=== HIGH BAND GAIN ===;\nkh_gain     = (kh_env > kh_thresh) ? (kh_thresh + (kh_env - kh_thresh) / kdown_ratio) / kh_env \\\n\t\t\t\t\t\t\t\t   : (kh_env < kh_thresh) ? (kh_thresh - (kh_thresh - kh_env) / kup_ratio) / kh_env : 1\nahigh_comp  = ahigh * kh_gain\n\n;\t=== RECOMBINE BANDS ===\nacomp       = alow_comp + amid_comp + ahigh_comp\nacomp\t\t/= 12\n\n;   === DRY/WET MIX ===\naout        = (ain * (1 - kwet)) + (acomp * kwet)\n\n\txout aout\n\tendop"
+    },
     "pconvij": {
         "input": "kk",
         "core": "PARAM_1\tinit 1\nPARAM_2\tinit 1\n\nPARAM_OUT    cordelia_pconvolve PARAM_IN, i(PARAM_1), PARAM_2, ich",
@@ -210,9 +215,9 @@
         "opcode": "opcode cordelia_shimmer_reverb, a, akkkk\n    ain, ktime, kfb, kratio, kwet xin\n\n; Author: Steven Yi\nimaxdel     init 15000\n\n; pre-delay\nadel        vdelay3 ain*kwet, a(ktime*1000), imaxdel\n\nafb         init 0\n\nadel        = adel + (afb * a(kfb))\n\n; important, or signal bias grows rapidly\nadel        dcblock2 adel\nadel        tanh adel\n\na_          = 0\nadel, a_    reverbsc adel, a_, limit(kfb*2, 0, .95), sr / 3\n\nifftsize    init 4096 \nioverlap    init ifftsize / 4 \niwinsize    init ifftsize \niwinshape   init 1 ; von-Hann window \n\nfftin       pvsanal adel, ifftsize, ioverlap, iwinsize, iwinshape \nfftscale    pvscale fftin, kratio, 0, 1\natrans      pvsynth fftscale\n\n; delay the feedback to let it build up over time\nafb         vdelay3 atrans, a(ktime*1000), imaxdel\naout         =  ain*(1-kwet) + adel*(1-kfb/4)/2\n\n    xout aout\n\n    endop"
     },
     "skh": {
-        "input": "kk",
-        "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_skh, a, akk\n    ain, kfreq, kq xin\n\nifreq_var\tinit 5\naout\tskf ain, a(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf)), 1+(kq*3), 1\n;aout\tbalance aout, ain\n\n    xout aout\n    endop"
+        "input": "kkk",
+        "core": "PARAM_1    init 500\nPARAM_2    init .5\nPARAM_3    init .5\n\nPARAM_OUT cordelia_skh PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_skh, a, akkk\n    ain, kfreq, kq, kwet xin\n\nifreq_var\tinit 5\naskh\tskf ain*kwet, a(kfreq+jitter:k(ifreq_var, gkbeatf/8, gkbeatf)), 1+(kq*3), 1\n;aout\tbalance aout, ain\n\naout         =  ain*(1-kwet) + askh ; kwet is already in the delay\n\n\n    xout aout\n    endop"
     },
     "skhp": {
         "input": "kk",
@@ -254,10 +259,35 @@
         "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init i(gkbeats)/24\n\nPARAM_3 init .5\n\nPARAM_OUT cordelia_streson_p2 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "opcode cordelia_streson_p2, a, akkk\n\tain, kfreq, kport, kq xin\n\n#define cordelia_streson_p2_q #limit(kq+jitter:k(kq/3, gkbeatf/16, gkbeatf), .05, .95)#\n\nkfreq\tportk kfreq, kport\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, $cordelia_streson_p2_q\n\nastr1\tstreson ain, kfreq, $cordelia_streson_p2_q\nastr2\tstreson ain, kfreq*3/2, $cordelia_streson_p2_q\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, $cordelia_streson_p2_q\n\t\n\txout aout\n\tendop"
     },
+    "tape": {
+        "input": "kk",
+        "core": "PARAM_1    init 3.5 ; drive factor (increase for more distortion)\nPARAM_2    init .65\n\nPARAM_OUT cordelia_moogladder2 PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "; === TAPE SATURATION UDO ===\nopcode tape_saturation, a, akk\n    ain, kdrive, kwet xin\n\n    ; nonlinear soft clipper (arctangent shaping)\n    asat = tanh(kdrive * ain)\n\n    aout = (1 - kwet) * ain + kwet * asat\n\n    ; slight lowpass for analog feel\n    aout tone aout, 8000\n\n    xout aout\nendop"
+    },
     "tapij": {
         "input": "kkk",
         "core": "PARAM_1\t\tinit i(gkbeats)\nPARAM_2\t\tinit .5\nPARAM_3\t\tinit .5\n\nPARAM_OUT\tcordelia_tapij PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "; Original research and code by Jon Downing  as in paper\n; Real-time digital modeling of the Roland Space Echo by Jon Downing, Christian Terjesen (ECE 472 - Audio Signal Processing, May 2016)\n;\n; Reimplemented in Csound by Anton Kholomiov\n\n; Error function approximation ~ 2% accuracy\nopcode ErrorFunApprox, a, a\n  aIn xin\n  kCoeff init ( (3.1415926535 ^ 0.5) * log(2) )\n  xout tanh(kCoeff * aIn)\nendop\n\n; Bandpass Chebyshev Type I filter\nopcode bandpassCheby1, a, akkii\n  aIn, kLowFreq, kHighFreq, iOrder, iRipple xin\n\n  aHigh clfilt aIn,   kLowFreq,  1, iOrder, 1, iRipple\n  aLow  clfilt aHigh, kHighFreq, 0, iOrder, 1, iRipple\n\n  xout aLow\nendop\n\n; Function to read from tape.\n;\n; tapeRead aIn, kDelay, kRandomSpread\n;\n; The function is used in the same manner as deltapi\n; first init the delay buffer and the use tapeRead.\n;\n; aIn - input signal\n; kDelay - delay time\n; kRandomSpread - [0, Inf] - the random spread of reading from the tape\n;    the higher the worser the quality of the tape.\nopcode tapeRead, a, akk\n  aIn, kDelay, kRandomSpread xin\n  iTauUp = 1.07\n  iTauDown = 1.89\n  aPrevDelay init 0.06\n  kOldDelay  init 0.06\n  kLambda init 0.5\n\n  kDelChange changed2 kDelay\n  if (kDelChange == 1) then\n    if (kOldDelay < kDelay) then\n      kLambda = exp(-1/(iTauUp*sr))\n    else\n      kLambda = exp(-1/(iTauDown*sr))\n    endif\n  endif\n\n  anoise noise kRandomSpread, 0\n  anoise = 3*(7.5 - aPrevDelay*(10^-3))*(10^-7)*anoise\n  anoiseMod butterlp anoise, 0.25  ; (0.5 / sr) * giNyquistFreq\n  aActualDelay = (1 - kLambda) * kDelay + kLambda * aPrevDelay + anoiseMod\n  aPrevDelay = aActualDelay\n                                         ; measured\n  aDelaySamps = aActualDelay * sr\n  aReadSr = floor(aDelaySamps)          ; in samples\n  aLastSr = aReadSr + 1                 ; in samples\n  aReadIndex = aReadSr / sr             ; in seconds\n  aLastIndex = aLastSr / sr             ; in seconds\n  aFrac = aDelaySamps - aReadSr\n  aFracScale = (1 - aFrac) * (1 + aFrac)\n\n  aReadSample deltapi aReadIndex\n  aLastSample deltapi aLastIndex\n\n  aEcho ErrorFunApprox (aLastSample + aFracScale * (aReadSample - aLastSample))\n\n  kOldDelay = kDelay\n  xout aEcho\nendop\n\n; function to write to tape\n;\n; tapeWrite aIn, aOut, kFbGain\n;\n; It should be though of as delayw for magnetic tape.\n;\n; aIn - input signal\n; aOut - output signal\n; kFbGain - gain of feedback [0, 2]\nopcode tapeWrite, 0, aak\n  aIn, aOut, kFbGain xin\n  iOrder    = 2\n  iRippleDb = 6\n  aProc bandpassCheby1 aOut * kFbGain, 95, 3000, iOrder, iRippleDb\n  delayw aIn + aProc * kFbGain\nendop\n\n; Simple tape delay effect with tone-color.\n;\n; aIn - input signal\n; kDelay - delay time\n; kEchoGain - gain for the echo\n; kFbGain - feedback gain\n; kTone - color of the low-pass filter (frequency for the filter)\n; kRandomSpread - radius of noisy reading from the tape [0.5, Inf] - relates to \"tape age\".\n;   smaller - the better tape is\nopcode TapeEcho1, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho tapeRead aIn, kDelay, kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode TapeEcho3, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho1 tapeRead aIn, kDelay, kRandomSpread\n  aEcho2 tapeRead aIn, (kDelay * 2), kRandomSpread\n  aEcho3 tapeRead aIn, (kDelay * 4), kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho1 + 0.5 * kEchoGain * aEcho2 + 0.25 * kEchoGain * aEcho3\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\nopcode TapeEcho4, a, akkkkk\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread xin\n\n  aDummy delayr 16\n  aEcho1 tapeRead aIn, kDelay, kRandomSpread\n  aEcho2 tapeRead aIn, (kDelay * 2), kRandomSpread\n  aEcho3 tapeRead aIn, (kDelay * 4), kRandomSpread\n  aEcho4 tapeRead aIn, (kDelay * 8), kRandomSpread\n  aOut  = aIn + kEchoGain * aEcho1 + 0.5 * kEchoGain * aEcho2 + 0.25 * kEchoGain * aEcho3  + 0.2 * kEchoGain * aEcho4\n\n  aOut tone aOut, kTone\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode tapeReadBatch, a, akkii\n  aIn, kDelay, kRandomSpread, iSize, iStart xin\n\n  if iStart <= iSize then\n    acall tapeReadBatch aIn, kDelay, kRandomSpread, iSize, iStart + 1\n  else\n    acall = 0\n  endif\n\n  iScale = iStart\n  aEcho tapeRead aIn, kDelay * iScale, kRandomSpread\n  xout acall + aEcho / iScale\nendop\n\nopcode TapeEchoN, a, akkkkki\n  aIn, kDelay, kEchoGain, kFbGain, kTone, kRandomSpread, iSize xin\n  aDummy delayr (16 * iSize)\n  aEcho tapeReadBatch aIn, kDelay, kRandomSpread, iSize, 1\n  aOut = aIn + kEchoGain * aEcho\n  tapeWrite aIn, aOut, kFbGain\n  xout aOut\nendop\n\n\nopcode  cordelia_tapij, a, akkk\nain, ktime, kfb, kmix xin\n\nkdel  = ktime\nkvar\tjitter .25, gkbeatf/8, gkbeatf\n\nadel\tTapeEchoN ain, kdel, kfb, .95, 0, .75 + kvar, 10\naout\t= ain*(1-kmix) + adel*kmix\n\n  xout aout\n\n    endop"
+    },
+    "vbp": {
+        "input": "kkk",
+        "core": "PARAM_1     init 200\nPARAM_2     init 6500\nPARAM_3     init .5\n\nPARAM_OUT cordelia_vapor_bandpass PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_bandpass, a, akkk\n\tain, klow, khigh, kwet xin\n\nalow  \ttone ain*kwet, klow\nahigh \tbuthp ain*kwet, khigh\n\naout\t= ain * (1-kwet) + (alow - ahigh)\n\n    xout aout \n\tendop"
+    },
+    "vbp2": {
+        "input": "kkk",
+        "core": "PARAM_1     init 200\nPARAM_2     init 6500\nPARAM_3     init .5\n\nPARAM_OUT cordelia_vapor_bandpass2 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_bandpass2, a, akkk\n\tain, klow, khigh, kwet xin\n\nalow  \ttone ain*kwet, klow\nahigh \tbuthp ain*kwet, khigh\n\naout\t= ain * (1-kwet) + (ahigh - alow)\n\n    xout aout \n\tendop"
+    },
+    "vcorus": {
+        "input": "kkk",
+        "core": "PARAM_1     init 35\nPARAM_2     init .35\nPARAM_3     init 1\n\nPARAM_OUT cordelia_vapor_chorus PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_chorus, a, akkk\n\tain, kdel, kfb, kwet xin\n\nidel_max\tinit 1/3\nidepth \t\tinit .0075\nirate\t\tinit .25\n\naout\tinit 0\namod\toscili idepth, irate+jitter(.05, 1/8, 1/32)\n\n;ares vdelay3 asig, adel, imaxdel [, iskip]\naout\tvdelay3 ain+aout*kfb, kdel/1000 + amod, idel_max\n\n\txout aout\n\tendop"
+    },
+    "vdel": {
+        "input": "kkk",
+        "core": "PARAM_1     init .35\nPARAM_2     init .5\nPARAM_3     init .5\n\nPARAM_OUT cordelia_vapor_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_delay, a, akkk\n\tain, kdel, kfb, kwet xin\n\napre\t\tdelayr .35\nadel    \tdeltap .35\naout \t\t= ain + apre\n\n\tdelayw ain + adel * kfb * kwet\n\n\txout ain*(1-kwet)+aout\n\tendop"
     },
     "vocij": {
         "input": "Skkkk",
@@ -274,6 +304,21 @@
         "core": "; PARAM_1 String\nPARAM_2\tinit 1\nPARAM_3\tinit .5\n\n\nPARAM_OUT cordelia_vocoder_pvsvoc PARAM_IN, PARAM_1, PARAM_2, PARAM_3, ich",
         "opcode": "opcode cordelia_vocoder_pvsvoc, a, aSkki\nain, Sinstr, kdyn, kwet, ich xin\n\nacarrier   chnget sprintf(\"%s_%i\", Sinstr, ich)\n\n;ain, ifftsize, ioverlap, iwinsize, iwintype\nifft_size   init 4096\nioverlap    init ifft_size / 4\niwin_size   init ifft_size\niwin        init 1\n\nfsig pvsanal ain, ifft_size, ioverlap, iwin_size, iwin   ;analyse in signal\nfexc pvsanal acarrier, ifft_size, ioverlap, iwin_size, iwin   ;analyse excitation signal\n\n; fsig, fexc, kdepth, kgain\nftps pvsvoc fsig, fexc, 1, 1            ;cross it\naout pvsynth ftps                       ;synthesise it\n\n;aout    *= kdyn\naout\t    = aout*kwet*kdyn + ain*(1-kwet)\n\nxout aout\n    endop"
     },
+    "vrev": {
+        "input": "kkk",
+        "core": "PARAM_1     init 9500\nPARAM_2     init .35\nPARAM_3     init .5\n\nPARAM_OUT cordelia_vapor_reverb PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_reverb, a, akkk\n\tain, kfreq_cutoff, kfblvl, kwet xin\n\n\na1, a2 reverbsc ain*kwet, K35_hpf(ain, kfreq_cutoff, .65, 1, 1.5), kfblvl, kfreq_cutoff\n\naout\t= ain*(1-kwet) + a1 + a2\n\n\txout aout\n\tendop"
+    },
+    "vrev2": {
+        "input": "kkk",
+        "core": "PARAM_1     init 9500\nPARAM_2     init .35\nPARAM_3     init .5\n\nPARAM_OUT cordelia_vapor_reverb2 PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_vapor_reverb2, a, akkk\n\tain, kfreq_cutoff, kfblvl, kwet xin\n\n\na1, a2 reverbsc ain*kwet, K35_hpf(ain, kfreq_cutoff, .75+jitter(.15, gkbeatf/8, gkbeatf/32), 1, 2.5+jitter(1, gkbeatf/8, gkbeatf/32)), kfblvl, kfreq_cutoff\n\naout\t= ain*(1-kwet) + a1 + a2\n\n\txout aout\n\tendop"
+    },
+    "vtape": {
+        "input": "kkk",
+        "core": "PARAM_1     init 2.5\nPARAM_2     init 7500\nPARAM_3     init 1\n\nPARAM_OUT cordelia_tape_saturation PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
+        "opcode": "opcode cordelia_tape_saturation, a, akkk\n\tain, kdrive, kcutoff, kwet xin\n\nasat \t= tanh(kdrive * ain * kwet)\nasat \ttone asat, kcutoff\naout \t= ain * (1-kwet) + asat\n\n\txout aout\n\tendop"
+    },
     "wooden": {
         "input": "kk",
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden PARAM_IN, PARAM_1, PARAM_2",
@@ -288,6 +333,11 @@
         "input": "kk",
         "core": "PARAM_1    init 1\nPARAM_2    init .5\n\nPARAM_OUT cordelia_wooden3 PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "#define cordelia_wooden3_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/8, gkbeatf))#\n#define cordelia_wooden3_q(main_freq) #$main_freq+jitter:k(1, gkbeatf/8, gkbeatf)#\n\n\topcode cordelia_wooden3, a, akk\n\tain, kfreq, kq xin\n\nif1\t\tinit 1000\nif2\t\tinit 3000\n\niq1\t\tinit 12\niq2\t\tinit 8\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit ksmps/sr\nif itime <= 0 then\n\titime = 1/2\nendif\nidbthresh\tinit 3 ; dB threshold\n\nkoct, kamp\tpitch ain, itime, ilow, ihigh, idbthresh\n\naexc1\t\tmode ain, $cordelia_wooden3_cps(if1), $cordelia_wooden3_q(iq1)\naexc2\t\tmode ain, $cordelia_wooden3_cps(if2), $cordelia_wooden3_q(iq2)\n\naexc\t\t= (aexc1+aexc2)/2\n\nkmain_freq\tportk limit(cpsoct(koct), 20, 20$k), itime\nkfreq1\t\tlimit kmain_freq*kfreq, 20, 20$k\nkfreq2\t\tlimit kmain_freq*kfreq*2, 20, 20$k\n\nares1\t\tmode aexc, $cordelia_wooden3_cps(kfreq1), $cordelia_wooden3_q(scale(kq, 50, 60))\nares2\t\tmode aexc, $cordelia_wooden3_cps(kfreq2), $cordelia_wooden3_q(scale(kq, 42, 53))\n\namode\t\t= (a(kamp)/8192)*(ares1+ares2)/4096\naout\t\t= amode\n\n\txout aout\n\tendop"
+    },
+    "wow": {
+        "input": "kk",
+        "core": "PARAM_1     init 1\nPARAM_2     init 1\n\nPARAM_OUT cordelia_wow_flutter PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_wow_flutter, a, akk\n\tain, kfactor, kwet xin\n\nimax_del\tinit 15\n\n; subtle wow/flutter LFO\nidepth1\t\tinit 3.5\t\t\t\t\t\nirate1 \t\tinit 1/10\namod1 \t\toscili idepth1+jitter(1, 1/8, 1/32), irate1\n\nidepth2\t\tinit 1.5\t\t\t\t\t\nirate2 \t\tinit 1/7\namod2 \t\toscili idepth2+jitter(.5, 1/8, 1/32), irate2\n\namod \t\t= amod1 + amod2\n\nawow vdelay ain*kwet, .015 + amod*a(kfactor), imax_del\n\naout\t\t= ain*(1-kwet)+ awow\n\n\txout aout\n\tendop"
     },
     "zd": {
         "input": "kk",
