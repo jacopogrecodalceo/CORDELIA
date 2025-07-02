@@ -29,6 +29,11 @@
         "core": "PARAM_2\tinit 1\n\nPARAM_OUT cordelia_cross8192 PARAM_IN, PARAM_1, ich, PARAM_2",
         "opcode": "opcode cordelia_cross8192, a, aSik\n    ain, String, ich, kmix xin\n\nadest\tchnget sprintf(\"%s_%i\", String, ich)\n\nacross      cross2 ain, adest, 8192, 4, gihanning, kmix\n;abalanced   balance2 across, ain\n\naout\t    = ain*(1-kmix) + across*kmix\n\n    xout aout\n    endop"
     },
+    "crispij": {
+        "input": "kk",
+        "core": "PARAM_1    init 3\nPARAM_2    init 3\n\nPARAM_OUT cordelia_crispy PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_crispy, a, akk\n    ain, kratio_l, kratio_h xin\n\nidt                 init ksmps / sr\n\nalow, ahigh, aband  svfilter  ain, ntof(\"2B\"), .75\narms_low            follow alow, idt\nkrms_low            k arms_low\nalpf\t\t        K35_lpf ain, ntof(\"2B\"), 5+krms_low, 1.25, 1+krms_low*kratio_l\n\narms_high           follow ahigh, idt\nkrms_high           k arms_high\nahpf\t\t        K35_hpf ain, ntof(\"2B\"), 5+krms_high*2, 1.125, 1+krms_high*kratio_h\n\n\nk0\t\tinit random:i(-1, 1)\nk1\t\tinit random:i(-1, 1)\nk2\t\tinit random:i(-1, 1)\nk3\t\tinit random:i(-1, 1)\nk4\t\tinit random:i(-1, 1)\nk5\t\tinit random:i(-1, 1)\nk6\t\tinit random:i(-1, 1)\nk7\t\tinit random:i(-1, 1)\n\n;=======================================================================\n;let's add a delay on the high\nahpf_delx\t\t\tinit 0\nkfreq_samphold      = 1.5+krms_high*35\n\nkdel_t\t\tsamphold gkbeats/3, metro(kfreq_samphold)\n/* kdel_t\t\t\tinit 0\nif kdel_t_temp > 1/12 then\n\tkdel_t = kdel_t_temp\nendif */\nkfeedback \t= .15 + oscil3(.75+jitter(.05, 1, 3), kfreq_samphold, giasquare)\n\nahpf_delx\t\tvdelayx ahpf+ahpf_delx*(1-kfeedback), a(kdel_t), 5, 4096\n;=======================================================================\n        \n\nacheby\t\tchebyshevpoly  (alpf/kratio_l+ahpf/kratio_h+(ahpf_delx/(kratio_h*3)))/4, k0, k1, k2, k3, k4, k5, k6, k7\naout        = ain/(kratio_l+kratio_h)+acheby*linsegr(0, .95, 1, 1, 0)*(kratio_l+kratio_h)/8\n\n    xout aout\n    endop"
+    },
     "cutij": {
         "input": "kk",
         "core": "PARAM_1\t\tinit 8\nPARAM_2\t\tinit .5\n\nPARAM_OUT\tjcut PARAM_IN, PARAM_1, 1, PARAM_2",

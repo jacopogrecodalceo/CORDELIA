@@ -2,7 +2,6 @@
 ; *** WINDOWS ***
 ; ============
 gihanning		ftgen 0, 0, 8192, 20, 2
-gihanning		ftgen 0, 0, 8192, 20, 2
 
 ; ============
 ; *** TABs ***
