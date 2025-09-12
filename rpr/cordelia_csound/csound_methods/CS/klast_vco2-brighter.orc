@@ -22,15 +22,6 @@ idur    init ftlen(ich)/sr
 ; ============
 ; *** INIT ***
 ; ============
-/*
-The fundamental analysis parameters are input frame size and filter order.
-Longer input frames will produce a more accurate result in terms of frequency resolution,
-but will also involve more computation. 
-This is due to the computation of the autocorrelation function, which is then used in the coefficient computation. 
-This part is more efficient and depends only on the linear prediction order,
-which is also the number of coefficients computed.
-Typical lp orders may range from about 30 to 100 coefficients, but larger values can also be used.
- */
 
 ispeed	init 1
 isize	init 8192

@@ -2,6 +2,8 @@
 ;BlackHole 16ch
 ;Zoom
 ;Model 12
+Bathys --nchnls=2 --limiter
+okayo
 JACQUES
 XR
 UMC
@@ -11,6 +13,7 @@ M-Track
 SQ
 RME 
 Fireface
+playback
 JBL --nchnls=2 --limiter
 External Headphones --nchnls=2 --limiter
 MacBook Pro --nchnls=2 --limiter

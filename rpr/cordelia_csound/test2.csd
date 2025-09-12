@@ -20,7 +20,7 @@
 ; ============
 ; *** KSMPs ***
 ; ============
---ksmps=64
+--ksmps=1024
 
 ; ============
 ; *** BUFs ***
@@ -67,76 +67,77 @@
 gSfile init "/Users/j/Documents/PROJECTs/mélanines/version/03-rosso_cremisi.wav"
 
 ; ============
-; Create as many GENs as channels
+; *** WINDOWS ***
 ; ============
-ich			filenchnls gSfile
-indx		init 1
-until indx > ich do
-	itab ftgen indx, 0, 0, 1, gSfile, 0, 0, indx
-	print indx
+gihanning		ftgen 0, 0, 8192, 20, 2
+
+; ============
+; *** TABs ***
+; ============
+ich     filenchnls gSfile
+indx    init 0
+until indx == ich do
+	inum init indx + 1
+	itab ftgen inum, 0, 0, 1, gSfile, 0, 0, inum
 	indx += 1
 od
 
-gifn_len	init 8192
-gisquare	ftgen	0, 0, gifn_len, 7, 1, gifn_len/2, 1, 0, -1, gifn_len/2, -1
+	instr 1
 
-		instr 1
+ich     init p4
+idur    init ftlen(ich)/sr
+
 ; ============
 ; *** INIT ***
 ; ============
-ifn			init p4
-ich			init p4
-ilen_file	init ftlen(ifn)/ftsr(ifn)
+/*
+The fundamental analysis parameters are input frame size and filter order.
+Longer input frames will produce a more accurate result in terms of frequency resolution,
+but will also involve more computation. 
+This is due to the computation of the autocorrelation function, which is then used in the coefficient computation. 
+This part is more efficient and depends only on the linear prediction order,
+which is also the number of coefficients computed.
+Typical lp orders may range from about 30 to 100 coefficients, but larger values can also be used.
+ */
 
-; ============
-; *** VARs ***
-; ============
-ispeed 		init 1 ; [idur*ispeed]
-kport		= 0
-; ============
-p3			init ilen_file*ispeed
-idur		init p3
-; ============
+ispeed	init 1
+isize	init 8192
+iord	init isize/2
 
-; ============
-; *** READ ***
-; ============
-atime		phasor 1/idur
-ain			table3 atime, ifn, 1
+p3		init idur*ispeed
 
-kcps, krms pitchamdf ain, 35, 2500
+kport   abs jitter(1/12, 1/12, 1)
+kspeed  = 1/ispeed
 
-kfreq_samphold = 1.5+krms*35
+kread   init 0
+kcfs[], krms, kerr, kf lpcanal kread, 1, ich, isize, iord, gihanning
 
-;===================
-kord 		init 425
-;===================
-;kfeedback 	init .95
-kfeedback 	= .15 + abs(oscil3(.75+jitter(.05, 1, 3), kfreq_samphold/2, gisquare))
-anotch		phaser1 ain, samphold:k(kcps, metro(kfreq_samphold)), kord, kfeedback
-anotch		= (ain / 12 - anotch) / 2
+kf			init 0
+kf_temp		init 0
+kf_last		init 0
 
-adelx			init 0
-kdel_t_temp		= 1/samphold:k(kcps, metro(kfreq_samphold))*16
-kdel_t			init 0
-if kdel_t_temp > 1/12 then
-	kdel_t = kdel_t_temp
+if kf != kf_temp then
+	kf_last = kf_temp
 endif
+kf_temp = kf
 
-while kdel_t > 5 do
-	kdel_t /= 2
-od
+kn_harm = sr/2/kf
 
-adelx		vdelayx anotch+adelx*(1-kfeedback), a(kdel_t), 5, 4096
+a1      buzz 0dbfs, portk(kf, kport), kn_harm, -1
+a2      vco2 4*(krms*kerr), kf_last
 
-asum		sum anotch, adelx / 8
+asum	sum a1, a2
+aout	allpole asum*krms*kerr, kcfs
 
-aout		butterhp asum, 20
+kread      += ksmps*kspeed  
 
-		outch ich, aout
+if kread > ftlen(ich) then
+	kread = 0
+endif 
 
-		endin
+	outch ich, aout
 
+	endin
 
 ;---SCORE---
 /* 
@@ -149,7 +150,6 @@ for i in range(1):
 	]
 	score.append(' '.join(map(str, code)))
 */
-
 
 </CsInstruments>
 

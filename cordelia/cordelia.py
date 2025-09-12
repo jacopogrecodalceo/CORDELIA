@@ -102,8 +102,10 @@ def start_gui(ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps):
 	viewer.run()	
 
 
-def start_jack_connection(ip='169.0.0.1', n_in=4, n_outs=12):
-	os.system(f'jackd -r -d net -a {ip} -C{n_in} -P{n_outs}')
+def start_jack_connection(ip='169.0.0.1', n_in=2, n_outs=2):
+	ip_mailly = '192.168.57.1'
+	ip = ip_mailly
+	#os.system(f'jackd -r -d net -a {ip} -C{n_in} -P{n_outs}')
 
 exit_event = threading.Event()
 
@@ -113,9 +115,12 @@ def main():
 	input_score = args.score
 
 	if args.jack:
+		print('ARGs.JACK')
 		csound_cordelia.setOption('-+rtaudio=jack')
-		csound_cordelia.setOption('--nchnls_i=4')
-		csound_cordelia.setOption('--nchnls=10')
+		csound_cordelia.setOption('-iadc')
+		csound_cordelia.setOption('-odac')
+		csound_cordelia.setOption('--nchnls=2')
+		csound_cordelia.setOption('--nchnls_i=2')
 
 	if not input_score:
 

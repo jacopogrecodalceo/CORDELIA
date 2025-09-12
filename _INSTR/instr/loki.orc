@@ -147,13 +147,12 @@ giloki_mecha	init 1
 
 
 	;index_RR_central		init 1 + (floor(icps*idyn*2) % (imax_RR))
-
 	;S_RR_central			sprintf "RR%i", index_RR_central
 	S_RR_central			sprintf "RR%i", floor(random(1, imax_RR))
 	Spath_central			sprintf "%s/FP_%s_%s_%s_%s.wav", gSloki_path, "C", Snote_name, Sdyn, S_RR_central
 	aout_central			diskin Spath_central, iratio;, iskiptime/1000
 	aout					sum aout_lateral/8, aout_central/8
-	;prints sprintf("%s\n", Spath_lateral)
+	
 	;FP_RKey_C4_31-60_RR1
 	; RELEASE
 	;================================================================

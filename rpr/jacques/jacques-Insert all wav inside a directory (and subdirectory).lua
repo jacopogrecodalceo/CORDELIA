@@ -23,17 +23,21 @@ function add_each_as_a_track(file_list)
 			local name = string.match(path, "^.+/(.+)$") -- Extract the file name from the path
 			name = string.gsub(name, "%..+$", "") -- Remove the file extension
 
+			 -- Create a new track
 			local track_index = reaper.GetNumTracks()
-			reaper.InsertTrackAtIndex(track_index, true) -- Create a new track
+			reaper.InsertTrackAtIndex(track_index, true)
 
+			 -- Set the track name
 			local track = reaper.GetTrack(0, track_index)
 			local instr_name = name:match('[^%-]+$')
-			reaper.GetSetMediaTrackInfo_String(track, "P_NAME", instr_name, true) -- Set the track name
+			reaper.GetSetMediaTrackInfo_String(track, "P_NAME", instr_name, true)
 			
 			-- Add the WAV file to the track
 			local item = reaper.AddMediaItemToTrack(track)
 			local take = reaper.AddTakeToMediaItem(item)
 			local src = reaper.PCM_Source_CreateFromFile(path)
+
+
 			reaper.SetMediaItemTake_Source(take, src)
 			reaper.PCM_Source_BuildPeaks(src, 0)
 
@@ -41,6 +45,12 @@ function add_each_as_a_track(file_list)
 			reaper.SetMediaItemInfo_Value(item, "D_POSITION", reaper.GetCursorPosition())
 			-- Adjust the item length to match the WAV file length
 			local source_length = reaper.GetMediaSourceLength(reaper.GetMediaItemTake_Source(take))
+			-- Set the track number of channel to the item channels
+			local channels = reaper.GetMediaSourceNumChannels(src)
+			if channels > 2 then
+				reaper.SetMediaTrackInfo_Value(track, "I_NCHAN", channels)
+			end
+
 			reaper.SetMediaItemInfo_Value(item, "D_LENGTH", source_length)
 
 	end

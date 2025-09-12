@@ -126,6 +126,7 @@ end
 function get_item_info(track, index_per_track)
 	local id = reaper.GetTrackMediaItem(track, index_per_track)
 	local item = {
+		track = track,
 		id = id,
 		take = reaper.GetMediaItemTake(id, 0),
 		start_pos = reaper.GetMediaItemInfo_Value(id, 'D_POSITION'),
@@ -258,6 +259,13 @@ function get_notes_from_item(info, item)
 				if dur > 0 then
 					local dyn = apply_dynamic_change(vel / MIDI_CORRECTION, info.dyn)
 					local env = info.env
+
+					local envelope_value_env = get_envelope_value(item.track, onset, "env.a(x) / Cordelia's dummy plugin")
+					if envelope_value_env then
+						envelope_value_env = math.floor(envelope_value_env)
+						env = env:gsub("%(%d+%)", "("..envelope_value_env..")")
+					end
+
 					local freq = apply_dynamic_change(info.freqs_by_tuning[pitch], info.freq)
 
 					table.insert(notes, {
@@ -557,8 +565,25 @@ function sort_by_onset(a, b)
 	return a.onset < b.onset
 end
 
-
 local LAST_NOTE_PLAYED_PITCH = {}
+
+function get_envelope_value(track, time, target_name)
+    if not track then return nil end
+
+    local env_count = reaper.CountTrackEnvelopes(track)
+    if env_count == 0 then return nil end
+
+    for i = 0, env_count-1 do
+        local env = reaper.GetTrackEnvelope(track, i)
+        local retval, env_name = reaper.GetEnvelopeName(env, "")
+        if retval and env_name == target_name then
+            local ok, value = reaper.Envelope_Evaluate(env, time, 0, 0)
+            if ok then return value end
+        end
+    end
+    
+    return nil -- not found
+end
 
 function send_notes_if_selected()
 	local midi_editor = reaper.MIDIEditor_GetActive()
@@ -621,6 +646,7 @@ function send_notes_if_selected()
 				dyn = dyn / #selected_notes
 
 				local env = info.env
+
 				local freq = apply_dynamic_change(freqs_by_tuning[note.pitch], info.freq)
 
 				local instrument_num = 95

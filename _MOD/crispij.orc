@@ -26,14 +26,14 @@ krms_high           k arms_high
 ahpf		        K35_hpf ain, ntof("2B"), 5+krms_high*2, 1.125, 1+krms_high*kratio_h
 
 
-k0		init random:i(-1, 1)
-k1		init random:i(-1, 1)
-k2		init random:i(-1, 1)
-k3		init random:i(-1, 1)
-k4		init random:i(-1, 1)
-k5		init random:i(-1, 1)
-k6		init random:i(-1, 1)
-k7		init random:i(-1, 1)
+k0		init -.75
+k1		init .45
+k2		init .125
+k3		init -1/12
+k4		init .645
+k5		init -.245
+k6		init .025
+k7		init -.87535
 
 ;=======================================================================
 ;let's add a delay on the high

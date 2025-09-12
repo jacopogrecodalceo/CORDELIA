@@ -138,6 +138,26 @@ end
 -- =================================================================
 -- =================================================================
 
+local function get_envelope_value(track, time, target_name)
+    if not track then return nil end
+    
+    local env_count = reaper.CountTrackEnvelopes(track)
+    if env_count == 0 then return nil end
+
+
+    for i = 0, env_count-1 do
+        local env = reaper.GetTrackEnvelope(track, i)
+        local retval, env_name = reaper.GetEnvelopeName(env, "")
+        if retval and env_name == target_name then
+            local ok, value = reaper.Envelope_Evaluate(env, time, 0, 0)
+            if ok then return value end
+        end
+    end
+    
+    return nil -- not found
+end
+
+
 local function process_midi_item(item)
 
 	item = get_freqs_on_track(item)
@@ -148,8 +168,12 @@ local function process_midi_item(item)
 	for index_note = 0, notes_count - 1 do
 		local _, _, is_muted, start_ppqpos, end_ppqpos, chan, pitch, vel, _ = reaper.MIDI_GetNote(item.take, index_note)
 
+		
 		if not is_muted then
 			local onset = reaper.MIDI_GetProjTimeFromPPQPos(item.take, start_ppqpos)
+
+			-- get a particular envelope for the note
+			local envelope_value_env = get_envelope_value(item.track, onset, "env.a(x) / Cordelia's dummy plugin")
 
 			if onset <= item.end_pos and onset >= item.start_pos and onset >= PLAY_POS then
 
@@ -163,7 +187,13 @@ local function process_midi_item(item)
 
 				if dur > 0 then
 					local dyn = exec_lua_string(vel / MIDI_CORRECTION, item.global.dyn)
+
 					local env = item.global.env
+					if envelope_value_env then
+						envelope_value_env = math.floor(envelope_value_env)
+						env = env:gsub("%(%d+%)", "("..envelope_value_env..")")
+					end
+
 					local freq = exec_lua_string(item.freqs_by_tuning[pitch], item.global.freq)
 
 					local event = {
@@ -298,8 +328,8 @@ function get_items(tracks)
 			_, instrument_name = reaper.GetSetMediaTrackInfo_String(track, 'P_NAME', '', false)
 			if not instrument_name then
 				raise_error("No instrument name")
-			elseif not string.match(instrument_name, '@') then
-				raise_error("No '@' in instrument name")
+			--elseif not string.match(instrument_name, '@') then
+				--raise_error("No '@' in instrument name")
 			end
 		end	
 
@@ -450,10 +480,10 @@ function send_notes_if_selected()
 	local freqs_by_tuning = {}
 	for i = 0, 127 do
 		local freq = reaper.GetTrackMIDINoteNameEx(0, track, i, 0)
-		freq = string.match(freq, 'c%s+(.*)')
 		if not freq then
 			raise_error('Commit tuning system first')
 		end
+		freq = string.match(freq, 'c%s+(.*)')
 		freqs_by_tuning[i] = freq
 	end
 
