@@ -65,12 +65,30 @@ function insert_after_pattern(input, pattern, insertion)
 end
 
 local function exec_lua_string(value, lua_string)
-	if lua_string then
+	if not lua_string then
+		return value
+	end
+
+	-- trim leading/trailing spaces
+	lua_string = lua_string:match("^%s*(.-)%s*$")
+
+	if lua_string:sub(1, 1) == "=" then
+		-- assignment-like: evaluate only the right-hand side
+		local rhs = lua_string:match("^=%s*(.+)$")
+		if rhs then
+			local expr = load("return " .. rhs)
+			if expr then
+				return expr()
+			end
+		end
+	else
+		-- arithmetic continuation
 		local expr = load("return " .. value .. lua_string)
-		if type(expr) == "function" then
+		if expr then
 			return expr()
 		end
 	end
+
 	return value
 end
 

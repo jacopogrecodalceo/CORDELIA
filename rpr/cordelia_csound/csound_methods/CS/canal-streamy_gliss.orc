@@ -9,8 +9,8 @@ giSPEED     init 1          ; [idur*ispeed]
 ichs	filenchnls gSfile
 ich		init 1
 until ich > nchnls do
-	itab ftgen ich, 0, 0, 1, gSfile, 0, 0, (ich-1%ichs)+1
-	ich += 1
+	itab 	ftgen ich, 0, 0, 1, gSfile, 0, 0, (ich-1%ichs)+1
+	ich 	+= 1
 od
 
 gihanning       ftgen   0, 0, 8192, 20, 2
