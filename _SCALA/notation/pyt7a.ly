@@ -58,7 +58,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 	}
 }
 \header {
-	title = \markup {\override #'(font-name . "Longinus") "EDO7"}
+	title = \markup {\override #'(font-name . "Longinus") "PYT7A"}
 	tagline = \date
 }
 
@@ -67,7 +67,7 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 		\accidentalStyle forget
 		 {
 			\textLengthOn
-			\time 7/4
+			\time 12/4
 
 			
 						a4_"+0.0c"^\markup {
@@ -87,41 +87,41 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 						}
 					
 
-						b4_"-28.57c"^\markup {
+						bes4_"+4.95c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"17th harmonic"
 										}		
 									}
 								\vspace #.15
 								\line {"01"}
 								\vspace #-.65
-								\line {"171.4"}
+								\line {"17/16"}
 								\vspace #-.65
-								\line {"485.80Hz"}
+								\line {"467.50Hz"}
 							}
 						}
 					
 
-						c4_"+42.86c"^\markup {
+						b4_"+3.91c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"major whole tone"
 										}		
 									}
 								\vspace #.15
 								\line {"02"}
 								\vspace #-.65
-								\line {"342.8"}
+								\line {"9/8"}
 								\vspace #-.65
-								\line {"536.37Hz"}
+								\line {"495.00Hz"}
 							}
 						}
 					
 
-						d4_"+14.28c"^\markup {
+						c4_"+8.87c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -131,48 +131,82 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 								\vspace #.15
 								\line {"03"}
 								\vspace #-.65
-								\line {"514.2"}
+								\line {"153/1"}
 								\vspace #-.65
-								\line {"592.20Hz"}
+								\line {"525.94Hz"}
 							}
 						}
 					
 
-						e4_"-14.29c"^\markup {
+						cis4_"+7.82c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"Pythagorean major third"
 										}		
 									}
 								\vspace #.15
 								\line {"04"}
 								\vspace #-.65
-								\line {"685.7"}
+								\line {"81/64"}
 								\vspace #-.65
-								\line {"653.84Hz"}
+								\line {"556.88Hz"}
 							}
 						}
 					
 
-						fis4_"-42.86c"^\markup {
+						d4_"-1.96c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
-											""
+											"perfect fourth"
 										}		
 									}
 								\vspace #.15
 								\line {"05"}
 								\vspace #-.65
-								\line {"857.1"}
+								\line {"4/3"}
 								\vspace #-.65
-								\line {"721.90Hz"}
+								\line {"586.67Hz"}
 							}
 						}
 					
 
-						g4_"+28.57c"^\markup {
+						ees4_"+3.0c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"2nd septendecimal tritone"
+										}		
+									}
+								\vspace #.15
+								\line {"06"}
+								\vspace #-.65
+								\line {"17/12"}
+								\vspace #-.65
+								\line {"623.33Hz"}
+							}
+						}
+					
+
+						e4_"+1.96c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"perfect fifth"
+										}		
+									}
+								\vspace #.15
+								\line {"07"}
+								\vspace #-.65
+								\line {"3/2"}
+								\vspace #-.65
+								\line {"660.00Hz"}
+							}
+						}
+					
+
+						f4_"+6.91c"^\markup {
 							\column {
 								\line \left-align \box {
 									\fontsize #-3 \rotate #90 {
@@ -180,11 +214,62 @@ date = #(strftime "%d-%m-%Y" (localtime (current-time)))
 										}		
 									}
 								\vspace #.15
-								\line {"06"}
+								\line {"08"}
 								\vspace #-.65
-								\line {"1028."}
+								\line {"51/32"}
 								\vspace #-.65
-								\line {"797.04Hz"}
+								\line {"701.25Hz"}
+							}
+						}
+					
+
+						fis4_"+5.86c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											"Pythagorean major sixth"
+										}		
+									}
+								\vspace #.15
+								\line {"09"}
+								\vspace #-.65
+								\line {"27/16"}
+								\vspace #-.65
+								\line {"742.50Hz"}
+							}
+						}
+					
+
+						g4_"+10.82c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											""
+										}		
+									}
+								\vspace #.15
+								\line {"10"}
+								\vspace #-.65
+								\line {"459/2"}
+								\vspace #-.65
+								\line {"788.91Hz"}
+							}
+						}
+					
+
+						aes4_"+9.78c"^\markup {
+							\column {
+								\line \left-align \box {
+									\fontsize #-3 \rotate #90 {
+											""
+										}		
+									}
+								\vspace #.15
+								\line {"11"}
+								\vspace #-.65
+								\line {"243/1"}
+								\vspace #-.65
+								\line {"835.31Hz"}
 							}
 						}
 					
