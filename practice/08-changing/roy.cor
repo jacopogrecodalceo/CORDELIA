@@ -1,0 +1,24 @@
+
+
+
+
+gkpulse = 90;/pumpx(16, fill(4, 2, 1, 8))
+
+
+
+
+
+eu: 9, 16, 8
+	@orphans3xx;.flanij(qn*oscili:k(1, 1/23, lear), .95, .15)
+	wn
+	mf
+	bea
+	stept(ab1, 0)
+
+eu: 9, 16, 8
+	@orphans3xx;.flanij(qn*oscili:k(1, 1/23, lear), .95, .15)
+	wn
+	p
+	bea
+	stept(ab3, 0)
+

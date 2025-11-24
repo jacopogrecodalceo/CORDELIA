@@ -1,0 +1,19 @@
+
+
+
+gkpulse = 110;/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.12_22h
+
+
+@nuvole_ry.moij(500+pumpx(24, fill(1000, 5, 2555, 2222))): 64, 1
+
+@amen_ry: 8, f
+
+eu: 9, 16, 4
+	@noij@uj2.flanij(qn*oscili:k(1, 1/23, lear), .95, .25)
+	0, sn/pump(32, fill(.2, 1, 2, 1))
+	1
+	hader.a(5)
+	stept(a4, -1)
+

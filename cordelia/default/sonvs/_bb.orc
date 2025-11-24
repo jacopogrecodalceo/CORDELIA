@@ -11,8 +11,8 @@ gk---NAME---_ran			init 1
 
 instr ---NAME---_jitter
 
-	gk---NAME---_jit		samphold jitter:k(.5, gkbeatf/4, gkbeatf/8), changed2:k(int(chnget:k("heart") * 64))
-	gk---NAME---_ran		samphold pow(int(random:k(2, 4)), int(random:k(1, 4))), changed2:k(int(chnget:k("heart") * 64))
+	gk---NAME---_jit		samphold jitter:k(.005, gkbeatf/16, gkbeatf/32), changed2:k(int(chnget:k("heart") * 64))
+	gk---NAME---_ran		samphold pow(int(random:k(1, 4)), int(random:k(1, 2))), changed2:k(int(chnget:k("heart") * 64))
 	if active:k("---NAME---") == 0 then
 		if timeinstk() > 1 then
 			turnoff

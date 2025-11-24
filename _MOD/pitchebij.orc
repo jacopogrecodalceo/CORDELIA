@@ -3,7 +3,7 @@
 PARAM_1		init 0
 PARAM_2		init gibeats/48
 PARAM_3     init 1
-PARAM_4     init .5
+PARAM_4     init .25
 
 PARAM_OUT	cordelia_pitch_chebyshev PARAM_IN, PARAM_1, PARAM_2, PARAM_3, PARAM_4
 ;END CORE

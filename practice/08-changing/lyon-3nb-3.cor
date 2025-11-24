@@ -1,0 +1,33 @@
+
+
+
+
+
+gkpulse = 60;/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.12_22h
+
+eu: 14, 16, 4
+	@pwm;.tapij(qn*pumpx(6, fill(1/4, 1, 1/8, 2))).flanij(qn*pumpx(3, fill(1, 2, 1, 3))).wow()
+	sn
+	fff
+	hader.a(5)
+	stept(d4, dorian, pumpx(24, fill(0, ?*-9, ?*4, ?*-3)))
+	stept(a4, dorian, pumpx(24, fill(0, ?*-9, ?*4, ?*-3)))
+
+eu: 8, 16, 7, 1
+	@sywave2;.moij(ntof(b4)*pumpx(12, fill(1, 1, 3, 1/2, 1/3, 2))).tapij(qn*pumpx(6, fill(1/4, 1, 1/8, 2))).flanij(qn*pumpx(3, fill(1, 2, 1, 3))).wow()
+	sn
+	ff
+	hader.a(5)
+	stept(a2, dorian, pumpx(24, fill(0, ?*-9, ?*4, ?*-3)))
+
+
+@r909h: 5, fff
+
+
+
+@r909t2: 3, fff
+
+
+

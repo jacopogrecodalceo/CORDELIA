@@ -1,0 +1,38 @@
+
+
+
+gkpulse = 130;/pumpx(16, fill(4, 2, 1, 8))
+
+gktuning = scala.pto_diat
+
+
+eu: 6, 16, 4
+	@wutang.vbp().vcorus().vrev().vdel().wow().vtape()
+	sn
+	ff
+	hader.a(5)
+	stept(c4, pumpx(32, fill(0, 3, 5)))
+
+
+eu: 9, 16, 4
+	@vbell.vbp().vcorus().vrev().vdel().wow().vtape()
+	qn*0
+	fff
+	hader.a(5)
+	stept(c4, pumpx(32, fill(0, -2, 4)))
+
+
+eu: 4, 16, 3
+	@dix;.vbp().vcorus().vrev().vdel().wow().vtape()
+	wn*0
+	f
+	hader.a(5)
+	stept(c3, pumpx(32, fill(0, 1, 3)))
+
+
+@r909t2: 2, 1
+
+
+@r909h: 2, f
+
+

@@ -27,8 +27,10 @@
 -+id_artist="jacopo greco d'alceo"
 
 ;suggested https://csound-floss-dev.firebaseapp.com/how-to/hardware#realtime-audio-issues-and-errors
-;-b 16284
-;-B 16284
+;flag defaults: csound -s -otest -b1024 -B4096 -m0
+/* -b 2048
+-B 8192 */
+;--realtime
 
 ;--realtime
 -+rtaudio=pa_cb

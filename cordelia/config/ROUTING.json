@@ -124,6 +124,16 @@
         "core": "PARAM_1    init 500\nPARAM_2    init .5\n\nPARAM_OUT cordelia_guitar PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "#define cordelia_guitar_cps(main_freq) #$main_freq+(cent(25)*jitter:k(1, gkbeatf/24, gkbeatf/8))#\n#define cordelia_guitar_bw(bw) #$bw+jitter:k(1, gkbeatf/24, gkbeatf/8)#\n\n    opcode cordelia_guitar, a, akk\n    ain, kfreq, kq xin\n\na1    resonz ain, $cordelia_guitar_cps(ntof(\"2E\")), $cordelia_guitar_bw(10)\na2    resonz ain, $cordelia_guitar_cps(ntof(\"2B\")), $cordelia_guitar_bw(10)\na3    resonz ain, $cordelia_guitar_cps(ntof(\"2G\")), $cordelia_guitar_bw(10)\na4    resonz ain, $cordelia_guitar_cps(ntof(\"3D\")), $cordelia_guitar_bw(10)\na5    resonz ain, $cordelia_guitar_cps(ntof(\"3A\")), $cordelia_guitar_bw(10)\na6    resonz ain, $cordelia_guitar_cps(ntof(\"3E\")), $cordelia_guitar_bw(10)\n\naout    sum a1, a2, a3, a4, a5, a6\naout    balance aout, ain\n    xout (ain+aout+reverb(aout, .25))/2\n    endop"
     },
+    "irpno": {
+        "input": "ki",
+        "core": "PARAM_1    init .5\nPARAM_2    init 4096\n\nPARAM_OUT cordelia_piano_ir PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gScordelia_piano_irs[]      fillarray \"/Users/j/Documents/RESEARCH/IR-SYNTHESIS/piano-body-harmonic-ch1.wav\",  \"/Users/j/Documents/RESEARCH/IR-SYNTHESIS/piano-body-harmonic-ch2.wav\"\ngicordelia_piano_irs_len    lenarray gScordelia_piano_irs\n\n    opcode cordelia_piano_ir, a, aki\n    ain, kwet, ipartitionsize xin\n\nidel            init (ksmps < ipartitionsize ? ipartitionsize + ksmps : ipartitionsize)/sr   ; latency of pconvolve opcode\n\nkcount  init    idel*kr\n\n; SELECT THE FILE BASED ON CHANNELs\nich init 0\nuntil ich > ginchnls do\n    Sir = gScordelia_piano_irs[ich%gicordelia_piano_irs_len]\n    prints Sir\n    ich += 1\nod\n\n; since we are using a soundin [instead of in] we can do a kind of \"look ahead\"\n; without output, creating zero-latency  by looping during one k-pass\nloop:\n    aconv \tpconvolve kwet*ain/48, Sir, ipartitionsize\n\n    ain\t\tdelay  (1-kwet)*ain, idel  ; Delay dry signal, to align it with\n\n    kcount = kcount - 1\n if kcount > 0 kgoto loop\n    aout =  ain + aconv\n\n\n    xout aout\n    endop"
+    },
+    "irvln": {
+        "input": "ki",
+        "core": "PARAM_1    init .5\nPARAM_2    init 4096\n\nPARAM_OUT cordelia_piano_ir PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gScordelia_piano_irs[]      fillarray \"/Users/j/Documents/RESEARCH/IR-SYNTHESIS/best-violin/violin-body-ir-ch1.wav\", \"/Users/j/Documents/RESEARCH/IR-SYNTHESIS/best-violin/violin-body-ir-ch2.wav\"\ngicordelia_piano_irs_len    lenarray gScordelia_piano_irs\n\n    opcode cordelia_piano_ir, a, aki\n    ain, kwet, ipartitionsize xin\n\nidel            init (ksmps < ipartitionsize ? ipartitionsize + ksmps : ipartitionsize)/sr   ; latency of pconvolve opcode\n\nkcount  init    idel*kr\n\n; SELECT THE FILE BASED ON CHANNELs\nich init 0\nuntil ich > ginchnls do\n    Sir = gScordelia_piano_irs[ich%gicordelia_piano_irs_len]\n    prints Sir\n    ich += 1\nod\n\n; since we are using a soundin [instead of in] we can do a kind of \"look ahead\"\n; without output, creating zero-latency  by looping during one k-pass\nloop:\n    aconv \tpconvolve kwet*ain/48, Sir, ipartitionsize\n\n    ain\t\tdelay  (1-kwet)*ain, idel  ; Delay dry signal, to align it with\n\n    kcount = kcount - 1\n if kcount > 0 kgoto loop\n    aout =  ain + aconv\n\n\n    xout aout\n    endop"
+    },
     "megadistij": {
         "input": "kk",
         "core": "PARAM_1    init 16\nPARAM_2    init sr\n\nPARAM_OUT cordelia_mega_dist PARAM_IN, PARAM_1, PARAM_2",
@@ -159,6 +169,11 @@
         "core": "PARAM_1    init 35\nPARAM_2    init 0\n\nPARAM_OUT cordelia_notch PARAM_IN, PARAM_1, PARAM_2",
         "opcode": "opcode cordelia_notch, a, akk\n    ain, kratio, k_ xin\n\nkcps, krms pitchamdf ain, 35, 2500\n\nkfreq_samphold = 1.5+krms*kratio\n\n;===================\nkord \t\tinit 125\n;===================\n;kfeedback \tinit .95\nkfeedback \t= .15 + oscil3(.75+jitter(.05, 1, 3), kfreq_samphold/2, giasquare)\nanotch\t\tphaser1 ain, samphold:k(kcps, metro(kfreq_samphold)), kord, kfeedback\nanotch\t\t= (ain / 12 - anotch) / 2\n\nadelx\t\t\tinit 0\nkdel_t_temp\t\t= 1/samphold:k(kcps, metro(kfreq_samphold))*16\nkdel_t\t\t\tinit 0\nif kdel_t_temp > 1/12 then\n\tkdel_t = kdel_t_temp\nendif\n\nwhile kdel_t > 5 do\n\tkdel_t /= 2\nod\n\nadelx\t\tvdelayx anotch+adelx*(1-kfeedback), a(kdel_t), 5, 4096\n\nasum\t\tsum anotch, adelx / 8\n\naout\t\tbutterhp asum, 20\n\n    xout aout\n    endop"
     },
+    "notch2": {
+        "input": "kk",
+        "core": "PARAM_1    init 35\nPARAM_2    init 0\n\nPARAM_OUT cordelia_notch PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_notch, a, akk\n    ain, kratio, k_ xin\n\nkcps, krms pitchamdf ain, 35, 2500\n\nkfreq_samphold = 1.5+krms*kratio\n\n;===================\nkord \t\tinit 45\n;===================\n;kfeedback \tinit .95\nkfeedback \t= .15 + oscil3(.75+jitter(.05, 1, 3), kfreq_samphold/2, giasquare)\nanotch\t\tphaser1 ain, samphold:k(kcps, metro(kfreq_samphold)), kord, kfeedback\nanotch\t\t= (ain / 12 - anotch) / 2\n\nadelx\t\t\tinit 0\nkdel_t_temp\t\t= 1/samphold:k(kcps, metro(kfreq_samphold))*16\nkdel_t\t\t\tinit 0\nif kdel_t_temp > 1/12 then\n\tkdel_t = kdel_t_temp\nendif\n\nwhile kdel_t > 5 do\n\tkdel_t /= 2\nod\n\nadelx\t\tvdelayx anotch+adelx*(1-kfeedback), a(kdel_t), 5, 4096\n\nasum\t\tsum anotch, adelx / 8\n\naout\t\tbutterhp asum, 20\n\n    xout aout\n    endop"
+    },
     "otij": {
         "input": "kkk",
         "core": "PARAM_1    init ntof(\"3B\")\nPARAM_2    init .35\nPARAM_3    init .5\n\nPARAM_OUT cordelia_OTT_comp PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
@@ -176,7 +191,7 @@
     },
     "pitchebij": {
         "input": "kkkk",
-        "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init 1\nPARAM_4     init .5\n\nPARAM_OUT\tcordelia_pitch_chebyshev PARAM_IN, PARAM_1, PARAM_2, PARAM_3, PARAM_4",
+        "core": "PARAM_1\t\tinit 0\nPARAM_2\t\tinit gibeats/48\nPARAM_3     init 1\nPARAM_4     init .25\n\nPARAM_OUT\tcordelia_pitch_chebyshev PARAM_IN, PARAM_1, PARAM_2, PARAM_3, PARAM_4",
         "opcode": "opcode cordelia_pitch_chebyshev, a, akkkk\n\tain, kdiv, kport, kratio, kwet xin\n\nilow\t\tinit 2\nihigh\t\tinit 15\nitime\t\tinit i(gkbeats)\nif itime <= 0 then\n\titime = 1/2\nendif\n\nidbthresh\tinit 3 ; dB threshold\nkoct, kdyn \tpitch ain, itime, ilow, ihigh, idbthresh\nkdyn\t\t= kdyn/pow(2, 16)\nif kdiv > 0 then\n\tkcycle\t\t= chnget:k(\"heart\") * divz(gkdiv, kdiv, 1)\n\tkoct\t\tsamphold koct, changed2(int(kcycle))\nendif\nkcps        = cpsoct(koct)\nkoct2\t\tvdel_k koct, gkbeats*kdiv, itime*2\nkcps2        = cpsoct(koct2)\n\nk1\t\t\tinit random(-1, 1)\nk2\t\t\tinit random(-1, 1)\nk3\t\t\tinit random(-1, 1)\nk4\t\t\tinit random(-1, 1)\nk5\t\t\tinit random(-1, 1)\n\naosc1\t\toscili 1, portk(kcps*kratio, kport)\nacheby1\t\tchebyshevpoly  aosc1, 0, k1, k2, k3, k4, k5\n\naosc2\t\toscili 1, portk(kcps2*kratio, kport)\nacheby2\t\tchebyshevpoly  aosc2, 0, k5, k4, k3, k2, k1\n\naosc\t\t= (acheby1 + acheby2/2)*portk(kdyn, kport/(1+jitter:k(.5, gkbeatf/8, gkbeatf)))\n;aosc\t\texciter aosc, kcps/2, kcps*9, 9, 3\n;aosc\t    dcblock2 aosc\n;aosc        balance2 aosc, ain\naosc2\t\tlimit aosc, -.95, .95\naout\t\t= ain*(1-kwet) + aosc*kwet\n\n\txout aout\n\tendop"
     },
     "pitchebijv": {
@@ -193,6 +208,11 @@
         "input": "k",
         "core": ";space\nPARAM_1 init 1\n\nPARAM_OUT plate_rev PARAM_IN, PARAM_1",
         "opcode": "giplate_rev_tabexcite\tftgen 0, 0, 0, -2, .35, .3875, .392575, .325, .85715, .78545\ngiplate_rev_tabouts\t\tftgen 0, 0, 0, -2, .25, .675, 1.50975, .25, .75, .51545\n\n\topcode plate_rev, a, ak\n\tain, kmix xin\n\nitime\tinit i(gkbeats)*8 \n\narev\tplaterev giplate_rev_tabexcite, giplate_rev_tabouts, 0, .095, .75, itime, .0015, ain\naout\t= ain*(1-kmix) + arev*kmix\n\n\txout aout\n\tendop"
+    },
+    "radio": {
+        "input": "k",
+        "core": "PARAM_1 init 1\n\nPARAM_OUT cordelia_radio PARAM_IN, PARAM_1",
+        "opcode": "#define cordelia_radio_low_freq_jit#jitter(500, 1/32, 1/8)#\n#define cordelia_radio_high_freq_jit#jitter(1500, 1/32, 1/8)#\n\nopcode cordelia_radio, a, ak\n\tain, kwet xin\n\n\t\tkwet limit kwet, 0, 1\n\n\t\timax_dur init i(gkbeats)\n\t\timax_dur init imax_dur*8\n\n\t\twhile imax_dur < .5 do\n\t\t\timax_dur *= 2\n\t\tod\n\n\t\tarev\tinit 0\n\t\taenv_delay\tinit 0\n\n\t\taenv_pre\tfollow ain, (ksmps/sr)*8\n\t\taenv_delay\tvdelay3 aenv_pre+aenv_delay*(.75+jitter(.25, 1/32, 1/3)), 1/$M_PI, imax_dur\n\t\t\t\t\t\n\t\taenv \tsum aenv_pre, aenv_delay\n\n\t\tadust\tdust2 1, gkbeatf*256*k(aenv)\n\n\t\t; SVFILTER FREQUENCIEs BOUNDARIEs\n\t\tklow_freq\t\t= 6500 + $cordelia_radio_low_freq_jit\n\t\tkhigh_freq\t\t= 11500 + $cordelia_radio_high_freq_jit\n\n\t\ta_, a_, aband svfilter adust, randomh:k(klow_freq, khigh_freq, gkbeatf+gkbeatf*k(aenv_delay)), 5\n\n\t\t;asum\t= ain * aband/2\n\t\taconv\tcross2 ain, aband, 1024, 2, gihanning, 1\n\t\taconv\t*= 3\n\n\t\t; 2nd OUTPUT\n\t\t; SVFILTER FREQUENCIEs BOUNDARIEs\n\n\t\t; subtle wow/flutter LFO\n\t\tidepth1\t\tinit 3.5\t\t\t\t\t\n\t\tirate1 \t\tinit 1/10\n\t\tamod1 \t\toscili idepth1+jitter(1, 1/8, 1/32), irate1, giasine\n\n\t\tidepth2\t\tinit 1.5\n\t\tirate2 \t\tinit 1/7\n\t\tamod2 \t\toscili idepth2+jitter(.5, 1/8, 1/32), irate2, giasine\n\n\t\tamod \t\t= amod1 + amod2\n\n\t\tawow\t\tinit 0\n\t\tawow\t\tvdelay aconv+awow*.15, 15 + amod*10, 1000\n\n\t\tawow2\t\tinit 0\n\t\tawow2\t\tvdelay ain+awow2*.15, 5 + amod*10, 1000\n\n\n\t\tklow_freq2\t\t= 6500 + $cordelia_radio_low_freq_jit\n\t\tkhigh_freq2\t\t= 9500 + $cordelia_radio_high_freq_jit\n\n\t\ta_, a_, aband2 svfilter awow2+awow, randomh:k(klow_freq2, khigh_freq2, gkbeatf+gkbeatf*k(aenv_delay)), 5+jitter(2, 1/8, 1/32)\n\n\t\taout =  ain*(1-kwet) + aband2*kwet;*(1-kfb/4)\n\n\txout aout\nendop"
     },
     "resij": {
         "input": "kk",
@@ -261,8 +281,8 @@
     },
     "strij": {
         "input": "kk",
-        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cor_streason PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cor_streason, a, akk\n\tain, kfreq, kq xin\n\nkfreq += oscili:k(.5, gkbeatf/64)\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout, kfreq, 12, kq\naout\tbutterhp aout, 20\n\txout aout\n\tendop"
+        "core": ";division\nPARAM_1 init ntof(\"4B\")\n\n;gen\nPARAM_2 init .5\n\nPARAM_OUT cordelia_streson PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "gicordelia_streson_limit init .95\ngicordelia_streson_thr init .75\ngicordelia_streson_range init gicordelia_streson_limit - gicordelia_streson_thr\n\n\topcode cordelia_streson, a, akk\n\tain, kfreq, kq xin\n\n; light, shallow compensation on resonance\n; or it can explode..\nkq      limit kq, 0, gicordelia_streson_limit\nkratio  = max(kq - gicordelia_streson_thr, 0) / gicordelia_streson_range\nkdyn    = 1 - (kratio * gicordelia_streson_range)\n\nkfreq += oscili:k(.5, gkbeatf/64)\n\naguid\twguide1 ain, 1/kfreq, kfreq/2, kq\n\nastr1\tstreson ain, kfreq, kq\nastr2\tstreson ain, kfreq*1.25, kq\n\naout\t= aguid + astr1 + astr2\naout\t/= 3\n\naout\tphaser1 aout*kdyn, kfreq, 12, kq\naout\tbutterhp aout, 20\n\txout aout\n\tendop"
     },
     "strijp": {
         "input": "kkk",
@@ -351,8 +371,13 @@
     },
     "wow": {
         "input": "kk",
-        "core": "PARAM_1     init 1\nPARAM_2     init 1\n\nPARAM_OUT cordelia_wow_flutter PARAM_IN, PARAM_1, PARAM_2",
-        "opcode": "opcode cordelia_wow_flutter, a, akk\n\tain, kfactor, kwet xin\n\nimax_del\tinit 15\n\n; subtle wow/flutter LFO\nidepth1\t\tinit 3.5\t\t\t\t\t\nirate1 \t\tinit 1/10\namod1 \t\toscili idepth1+jitter(1, 1/8, 1/32), irate1\n\nidepth2\t\tinit 1.5\t\t\t\t\t\nirate2 \t\tinit 1/7\namod2 \t\toscili idepth2+jitter(.5, 1/8, 1/32), irate2\n\namod \t\t= amod1 + amod2\n\nawow vdelay ain*kwet, .015 + amod*a(kfactor), imax_del\n\naout\t\t= ain*(1-kwet)+ awow\n\n\txout aout\n\tendop"
+        "core": "PARAM_1     init 1\nPARAM_2     init 1\n\nPARAM_OUT cordelia_wow PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_wow, a, akk\n\tain, kfactor, kwet xin\n\nimax_del\tinit 3500\n\n; subtle wow/flutter LFO\nidepth1\t\tinit 3.5\nirate1 \t\tinit 1/10\namod1 \t\toscili idepth1+jitter(1, 1/8, 1/32), irate1\n\nidepth2\t\tinit 1.5\t\t\t\t\t\nirate2 \t\tinit 1/7\namod2 \t\toscili idepth2+jitter(.5, 1/8, 1/32), irate2\n\namod \t\t= amod1 + amod2\n\nawow \t\tvdelay ain*kwet, 15 + amod*a(kfactor)*10, imax_del\n\naout\t\t= ain*(1-kwet)+ awow\n\n\txout aout\n\tendop"
+    },
+    "wow2": {
+        "input": "kk",
+        "core": "PARAM_1     init 1\nPARAM_2     init 1\n\nPARAM_OUT cordelia_wow2 PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_wow2, a, akk\n\tain, kfactor, kwet xin\n\nimax_del\tinit 15\n\n; subtle wow/flutter LFO\nidepth1\t\tinit 3.5\t\t\t\t\t\nirate1 \t\tinit 1/10\namod1 \t\toscili idepth1+jitter(1, 1/8, 1/32), irate1\n\nidepth2\t\tinit 1.5\t\t\t\t\t\nirate2 \t\tinit 1/7\namod2 \t\toscili idepth2+jitter(.5, 1/8, 1/32), irate2\n\namod \t\t= amod1 + amod2\n\nawow vdelay ain*kwet, .015 + amod*a(kfactor), imax_del\n\naout\t\t= ain*(1-kwet)+ awow\n\n\txout aout\n\tendop"
     },
     "zd": {
         "input": "kk",

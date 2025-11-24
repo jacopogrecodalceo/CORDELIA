@@ -102,7 +102,7 @@ def query_devices():
 					if match_found:
 						break 
 
-	return options if options else ['-odac', 'iadc']
+	return options if options else ['-odac', '-iadc']
 
 def init_csound():
 	OPTIONs = []
@@ -116,6 +116,7 @@ def init_csound():
 	OPTIONs.extend(query_devices())
 	OPTIONs.append(f'--nchnls={CORDELIA_CONFIG.nchnls}')
 
+	print('···last options:')
 	for option in OPTIONs:
 		csound_cordelia.setOption(option)
 		print(option)

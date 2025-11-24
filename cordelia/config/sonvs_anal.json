@@ -248,6 +248,15 @@
     "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/shaku.wav": {
         "pitch": "603.0257772822608"
     },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/noinput.wav": {
+        "pitch": "603.0257772822608"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/violaf.wav": {
+        "pitch": "603.0257772822608"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/proud.wav": {
+        "pitch": "603.0257772822608"
+    },
     "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/maison.wav": {
         "pitch": "959.7610792514669"
     },
@@ -583,5 +592,17 @@
     },
     "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/nanana.wav": {
         "pitch": "229.07484396360096"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/match.wav": {
+        "pitch": "350.2902060820018"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/luciep.wav": {
+        "pitch": "28.29819916146026"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/lucieb.wav": {
+        "pitch": "61.77801618051445"
+    },
+    "/Users/j/Documents/PROJECTs/CORDELIA/_INSTR/sonvs/luciei.wav": {
+        "pitch": "60.8184170609937"
     }
 }
