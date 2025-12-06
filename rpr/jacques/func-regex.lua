@@ -1,3 +1,5 @@
+regex = {}
+
 function replace_dots(str)
     local values = {}
     for value in str:gmatch("[^.]+") do
@@ -8,3 +10,5 @@ function replace_dots(str)
     end
     return values
 end
+
+return regex

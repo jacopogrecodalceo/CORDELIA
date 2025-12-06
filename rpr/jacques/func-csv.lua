@@ -1,4 +1,6 @@
-function get_csv(input_table)
+csv = {}
+
+function csv.get(input_table)
     local keys = {}
     local values = {}
     for _, tab in ipairs(input_table) do
@@ -12,10 +14,12 @@ function get_csv(input_table)
     return keys_csv, values_csv
 end
 
-function split_csv(csv)
+function csv.split(string)
 	local values = {}
-	for value in csv:gmatch("[^,]+") do
+	for value in string:gmatch("[^,]+") do
 		table.insert(values, value)
 	end
 	return values
 end
+
+return csv

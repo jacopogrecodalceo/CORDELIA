@@ -3,7 +3,7 @@
 ;Zoom
 ;Model 12
 ;--iobufsamps=2048 --hardwarebufsamps=8192 --limiter
-Bathys --nchnls=2
+Bathys --nchnls=2 --limiter
 ;BT4
 okayo
 JACQUES

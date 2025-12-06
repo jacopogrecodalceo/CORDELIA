@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+gkpulse = 90;+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+gktuning = pumpx(32, fill(scala.pto_diat, scala.12_22h, scala.pyt12))
+
+
+eu: 5, 8, 8
+	@concat17_con.strij(stept(f2, dorian, pumpx(64, fill(1, 2, -23, 14))), lfh(32));.pitchij(8, 2);.wow()
+	sn
+	1
+	hader.a(5)
+	stept(a3, dorian, pumpx(4, fill(1, 2, -23, 14)))
+
+
+eu: 5, 8, 8, 2
+	@lokir;.strij(stept(f4, dorian, pumpx(64, fill(1, 2, -23, 14))), lfh(32));.pitchij(8, 2);.wow()
+	wn
+	f
+	hader.a(5)
+	stept(f2, dorian, pumpx(64, fill(1, 2, -23, 14)))*pow(2, int(random:k(0, 3)))
+
+
+
+
+

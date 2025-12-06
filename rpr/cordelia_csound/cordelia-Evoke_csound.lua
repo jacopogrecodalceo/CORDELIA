@@ -62,7 +62,22 @@ function extract_basename(file)
 end
 
 function generate_unique_timestamp()
-    local timestamp = os.date("%y%m%d_%H%M%S")
+	local jacques_year = 1989
+	local jacques_month = 10
+	local jacques_day = 11
+	-- get current day and month
+	local current_day = tonumber(os.date("%d"))
+	local current_month = tonumber(os.date("%m"))
+	local current_year = tonumber(os.date("%Y"))
+	
+	-- calculate age
+	local age = current_year - jacques_year
+	if current_month < jacques_month or (current_month == jacques_month and current_day < jacques_day) then
+		age = age - 1
+	end
+
+
+    local timestamp = os.date(age .. "%m%d_%H%M%S")
     return timestamp
 end
 

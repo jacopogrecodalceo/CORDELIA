@@ -64,6 +64,11 @@
         "core": "PARAM_1 init i(gkbeats)\nPARAM_2\tinit .5\nPARAM_3 init .5\n\nPARAM_OUT    cordelia_delay PARAM_IN, PARAM_1, PARAM_2, PARAM_3",
         "opcode": "opcode cordelia_delay, a, akkk\n    ain, ktime, kfb, kwet xin\n\n    adel init 0\n    adel vdelayx    kwet*(ain+adel*kfb),    a(samphold:k(ktime, changed2:k(gkbeatn))),           10,         4096\n    \n    aout = ain*(1-kwet) + adel\n\n    xout aout\nendop"
     },
+    "dio": {
+        "input": "kk",
+        "core": "PARAM_1    init ntof(\"4B\")\nPARAM_2    init .5\n\nPARAM_OUT cordelia_diode_ladder PARAM_IN, PARAM_1, PARAM_2",
+        "opcode": "opcode cordelia_diode_ladder, a, akk\n    ain, kfreq, kq xin\n\nkfreq_var   = (kfreq*11/10)-kfreq\nkfreq       = kfreq + jitter(1, gkbeatf/8, gkbeatf)*kfreq_var\n\n; safe limit\nkfreq       limit kfreq, 20, 17.5$k\n\n; core\nisaturation init 1.25\ninlp        init 1\naout        diode_ladder ain, kfreq, kq*17, inlp, isaturation\n\nkdyn_comp   pow (kfreq / giNYQUIST), -0.15\naout        *= kdyn_comp\n;aout\t    balance2 aout, ain\n\n    xout aout\n    endop"
+    },
     "duij": {
         "input": "Sk",
         "core": "PARAM_2\tinit 1\n\nPARAM_OUT    cordelia_duck PARAM_IN, PARAM_1, ich, PARAM_2",
