@@ -42,6 +42,7 @@ end
 local input_table = {
 	{name="divisions", value=24},
 	{name="jitter", value=1/48},
+	{name="new track?", value=1},
 }
 
 local function main()
@@ -56,6 +57,7 @@ local function main()
 	local extratone_info = {
 		divisions = useful.eval(values[1]),
 		jitter = useful.eval(values[2]),
+		is_new_track = useful.eval(values[3]),
 	}
 
 	reaper.Undo_BeginBlock()
@@ -71,7 +73,11 @@ local function main()
 	if (extratone_info.duration < .005 * 2) and input.ask_to_continue("Extra item duration is: " .. extratone_info.duration .. "s, continue?", "Confirmation") then return end
 	if extratone_info.duration >= item_info.duration then useful.error("Division duration is >= item's") end
 	-- create new track
-	extratone_info.track = track.create_new_under_item(item_)
+	if extratone_info.is_new_track == 1 then
+		extratone_info.track = track.create_new_under_item(item_)
+	else
+		extratone_info.track = track.get_track_under_item(item_)
+	end
 	track.set_name(extratone_info.track, "XTRTN-" .. extratone_info.divisions .. '-' .. string.format("%.2f", extratone_info.jitter) .. '-' .. path.get_file_name(item_info.path))
 
 	-- main function

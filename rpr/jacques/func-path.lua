@@ -32,7 +32,7 @@ function path.generate_unique_timestamp()
 	end
 
 
-    local timestamp = os.date(age .. "%m%d_%H%M%S")
+    local timestamp = os.date(age .. "%m%d-%H%M%S")
     return timestamp
 end
 
