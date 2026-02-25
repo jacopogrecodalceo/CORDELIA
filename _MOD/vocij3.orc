@@ -1,7 +1,3 @@
-; name_used:
-; name_internal_opcode:
-; chosen_inputs:
-
 ;START CORE
 
 ; PARAM_1 String

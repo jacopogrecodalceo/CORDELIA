@@ -30,7 +30,7 @@ $start_instr(harps)
 	; RELEASE
 	;================================================================
 	Spath_release sprintf "%s/Releases/%i.wav", Sharps_path, irootnote
-	schedule "harps_release", 0, idur, Spath_release, 1, ich
+	schedule "harps_release", idur, idur, Spath_release, 1, ich
 	;================================================================
 
 	ains[] diskin Spath, iratio

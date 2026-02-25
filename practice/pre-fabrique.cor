@@ -1,0 +1,34 @@
+
+
+
+
+gkpulse = 90;+jitter:k(20, 1/32, 1/4)+randomh:k(-30, 10, 1/16)
+
+eu: 14, 16, 4
+	@fragment_saka.strij(stept(f4, dorian, pumpx(64, fill(1, 2, -23, 14))), lfh(32)).pitchij(8, 2).wow()
+	sn, hn
+	ff, p
+	hader.a(5)
+	stept(f3, dorian, pumpx(2, fill(1, 9, 4)))
+
+eu: 14, 16, 4, 2
+	@fragment_s_saka@pwm.strij(stept(f4, dorian, pumpx(64, fill(1, 2, -23, 14))), lfh(32));.pitchij(8, 2).wow()
+	sn
+	ff, p
+	hader.a(5)
+	stept(f3, dorian, pumpx(2, fill(1, 9, 4)))
+
+@elair: .96, p
+
+@orp_ry.cutij(8): 8, p
+
+
+@dead144_ry.cutij(12): 8, f
+
+
+@r909h: 4, f
+
+
+@r909t: 2, ff
+
+

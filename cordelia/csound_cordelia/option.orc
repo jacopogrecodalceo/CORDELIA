@@ -5,7 +5,7 @@
 ;--nchnls_i=2
 ;-iadc
 ;A4		=	438	; only for ancient music	
---limiter
+;--limiter
 ;--port=10000
 ;--format=float
 -3
@@ -24,7 +24,7 @@
 --m-colours=1
 --m-benchmarks=0
 ;-m0d ; Remove all messages
--+id_artist="jacopo greco d'alceo"
+-+id_artist=jacopo greco d'alceo
 
 ;suggested https://csound-floss-dev.firebaseapp.com/how-to/hardware#realtime-audio-issues-and-errors
 ;flag defaults: csound -s -otest -b1024 -B4096 -m0
