@@ -1,5 +1,8 @@
 import pprint
 import abjad
+
+import importlib.util
+import sys
 from constants.var import *
 
 from constants.var import cordelia_json
@@ -11,6 +14,22 @@ from csoundAPI.cs import remember, csound_clear_instrument
 from src.lexer import print_tokens, print_token, Token, tokenize
 
 PRINT_TOKENS = False
+
+
+def load_scripted_instrument(instr_name, file_path):
+	spec = importlib.util.spec_from_file_location('temp_instrument_module', file_path)
+	module = importlib.util.module_from_spec(spec)
+	sys.modules['temp_instrument_module'] = module  # register it first
+	spec.loader.exec_module(module)
+	
+	func = getattr(module, 'cordelia_main')
+	result = func(instr_name)
+	
+	if result is None:
+		raise ValueError(f"cordelia_main returned None for '{instr_name}'")
+
+	del sys.modules['temp_instrument_module']
+	return result
 
 def extract_keyword_from_list(list_params, keyword):
 	for element in list_params:
@@ -106,6 +125,10 @@ def verify_instr(token):
 		with open(instr_json['path']) as f:
 			cordelia_init_code.append(f.read())
 
+	def include_scripted_instr(instr_name, instr_path):
+		instrument_forged = load_scripted_instrument(instr_name, instr_path)
+		cordelia_init_code.append(instrument_forged)
+
 	def include_hybrid(instr_json):
 		required_instr = instr_json['required']
 		for i in required_instr:
@@ -172,7 +195,27 @@ def verify_instr(token):
 	# Remove '@'
 	value = token.value[1:]
 	if value not in cordelia_given_instr:
-		cordelia_given_instr.append(value)
+		cordelia_given_instr.append(value.replace('-', '_'))
+
+		# try for scripted_instr
+		if value[-1].isdigit() or '-' in value:
+			# generally if there's a dash or a number it means 
+			# it will be a scripted instrument
+			instr_name_in_json = value.split('-')[0]
+			instr_name_in_json = ''.join(ch for ch in instr_name_in_json if not ch.isdigit())
+			if instr_name_in_json in cordelia_json[token.type]:
+				instr_json = cordelia_json['INSTR'][instr_name_in_json]
+				if instr_json['type'] == 'scripted_instr':
+					valid_instrument_name = value.replace('-', '_')
+					print(f'📩{valid_instrument_name} is verified.')
+					include_scripted_instr(value, instr_json['path'])
+
+					create_instr_setting(valid_instrument_name)
+
+					token.value = valid_instrument_name
+					return token
+
+
 		if value in cordelia_json[token.type]:
 			print(f'📩{value} is verified.')
 			send_instr(value)

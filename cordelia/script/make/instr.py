@@ -51,6 +51,15 @@ def process_instr(directory, json_file):
 						'path': file_path,
 						'global_var': extract_global_vars(file_path, basename)
 					}
+			elif extension == '.py':
+				file_path = os.path.join(root, file)
+
+				if basename not in json_file:
+					json_file[basename] = {
+						'type': 'scripted_instr',
+						'path': file_path,
+						'extension': extension
+					}				
 
 def process_hybrid(directory, json_file):
 	# Processing 'hybrid' type files

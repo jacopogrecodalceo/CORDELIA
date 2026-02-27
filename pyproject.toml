@@ -16,6 +16,7 @@ abjad = "^3.19"
 pyyaml = "^6.0.2"
 rich = "^13.9.4"
 dearpygui = "^2.0.0"
+rapidfuzz = "^3.14.3"
 
 
 [build-system]

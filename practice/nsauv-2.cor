@@ -1,0 +1,31 @@
+
+
+gkpulse = 90
+
+gktuning = scala.edo19
+
+@elair_ry: 8, p
+
+eu: 11, 16, 12
+	@as_say2;.wow()
+	wn
+	ff
+	rome.a(5)
+	stept(f2, pumpx(7, fill(1, 2, 3, 12)))
+	stept(a2, pumpx(1, fill(1, 2, 3, 12)))
+
+
+eu: 11, 16, 4, 2
+	@mhon2.wow()
+	sn*in2m
+	fff
+	likearev.a(5)
+	stept(f2, pumpx(7, fill(1, 2, 3, 12)))
+
+
+@dead141: 8, pp
+
+@crys_ry: 8, fff
+
+
+
