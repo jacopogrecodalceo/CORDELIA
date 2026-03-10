@@ -75,7 +75,7 @@ instr music_box_instrument
 
 	aouts[] diskin Spath, iratio
 	
-	aout = aouts[ich-1]
+	aout = aouts[ich-1]*idyn
 	idyn_base = .35
 	idyn_scaled = idyn_base + idyn * (1 - idyn_base)
 	aout moogladder2 aout*idyn_scaled, limit(15$k-((1-idyn)*7.5$k)+icps*idyn, 50, 15$k), random:i(0, 1/9)
