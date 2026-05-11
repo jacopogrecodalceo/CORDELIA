@@ -71,9 +71,62 @@ def process_messages():
 			print('CSOUND:\n')
 			csound_cordelia.compileOrcAsync(code)
 
+
+# ---------------------------------------------------------------------------- #
+#                                    serial                                    #
+# ---------------------------------------------------------------------------- #
+import serial
+from serial.tools import list_ports
+
+def list_serial_ports(string="O_C"):
+	ports = list_ports.comports()
+	if not ports:
+		print("No serial ports found")
+		return None
+	
+	print("Available ports:")
+	for port in ports:
+		print(f"  {port.device} - {port.description}")
+	
+	for port in ports:
+		if string.lower() in port.description.lower():
+			print(f"Found: {port.device} - {port.description}")
+			return port.device
+	
+	return None
+
+def send_value(ser, channel, val):
+	try:
+		val = 0 if val < .125 else 65535#int(max(0, min(65535, val*65535)))  # Clamp to 0-65535
+		msb = (val >> 8) & 0xFF
+		lsb = val & 0xFF
+		packet = bytes([channel, msb, lsb])
+		ser.write(packet)
+		
+	except serial.SerialException as e:
+		print(f"Serial error: {e}")
+
 def csound_perf_homemade(cs):
 	cs.start()
+	""" port = list_serial_ports()
+	if port:
+		ser = serial.Serial(port, 460800)
+	
+	skip_count = 0
+	skip_interval = 32  # Send every 4th k-cycle (adjust 2-8)
+	
+	while cs.performKsmps() == 0:
+		value, _ = cs.controlChannel("oc")
+		
+		if port:
+			send_value(ser, 0, value)
+		
+		skip_count += 1
+	
+	if port:
+		ser.close() """
 	cs.perform()
+	
 	cs.cleanup()
 
 def csound_perf_homemade_GUI(cs, ring_buffer, lock, cordelia_sr, cordelia_nchnls, cordelia_ksmps):

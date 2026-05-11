@@ -27,4 +27,8 @@ function useful.error(string)
     reaper.ShowMessageBox(string, "Error", 0)
 end
 
+function useful.log(string)
+    reaper.ShowConsoleMsg(string)
+end
+
 return useful

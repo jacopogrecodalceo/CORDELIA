@@ -44,4 +44,12 @@ function path.get_file_name(file)
 	return file_name
 end
 
+function path.get_basename(file)
+	-- Remove the directory path from the file_path using the last directory separator "/"
+	local file_name = file:match(".*/(.+)")
+	-- Remove the extension from the basename
+	file_name = file_name:match("(.+)%..+")
+	return file_name
+end
+
 return path

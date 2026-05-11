@@ -17,6 +17,7 @@ pyyaml = "^6.0.2"
 rich = "^13.9.4"
 dearpygui = "^2.0.0"
 rapidfuzz = "^3.14.3"
+pyserial = "^3.5"
 
 
 [build-system]

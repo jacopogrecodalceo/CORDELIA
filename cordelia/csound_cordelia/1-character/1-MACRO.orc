@@ -7,6 +7,11 @@
 
 #define once(infill)		#once(fillarray($infill))#
 
+; Global serial port handle
+/* gicordelia_serial_handle init -1
+gicordelia_serial_dac_max init 65535
+gicordelia_serial_baudrate init 9600 */
+
 ; variation selected in each instrument [0 - 1]
 gidyn_var init 1
 #define	dyn_var #(idyn+random:i(-(idyn/10), idyn/10)*gidyn_var)#

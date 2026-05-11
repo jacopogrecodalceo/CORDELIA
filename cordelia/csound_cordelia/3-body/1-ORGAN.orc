@@ -129,3 +129,17 @@ prints " 💛 %.02fbpm: %.02fs // %.02fHz 💛 \n", gipulse, gibeats, gibeatf
 	endin
 
 
+/* 
+	instr cordelia_serial_handler
+; Open serial port (e.g., "/dev/ttyUSB0" on Linux, "COM3" on Windows)
+gicordelia_serial_handle serialBegin "/dev/cu.usbmodemornament_crime1", gicordelia_serial_baudrate
+
+if gicordelia_serial_handle < 0 then
+	prints "Serial port failed to open\n"
+	turnoff
+endif
+
+prints "Serial port opened\n"
+	endin
+	schedule "cordelia_serial_handler", 0, -1
+ */

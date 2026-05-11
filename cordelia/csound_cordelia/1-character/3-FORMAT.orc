@@ -16,6 +16,13 @@ endif
 
 if kascii == iesc && kpress == 1 then
 	printks "\n🌊 GOOOOODBYE! 🌊\n", 1
+
+   /* if gicordelia_serial_handle >= 0 then
+      serialFlush gicordelia_serial_handle
+      serialEnd gicordelia_serial_handle
+      prints "Serial port closed\n"
+   endif */
+
 	event "e", 0, 25$ms
 	turnoff
 endif
