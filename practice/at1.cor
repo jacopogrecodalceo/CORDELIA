@@ -1,0 +1,13 @@
+
+
+
+
+eu: 8, 8, 4; rhythm
+	@orphans3xx ; name
+	qn ; durée
+	mf ; dyn
+	classic.a(5) ; enveloppe
+	300 ; Hz
+
+
+

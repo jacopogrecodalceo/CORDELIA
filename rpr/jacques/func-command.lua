@@ -16,8 +16,10 @@ function command.exec_in_terminal(command_string, exit)
     -- Execute and capture the result
     local success, status, rc = os.execute(osa_command)
     if not success then
-			reaper.ShowMessageBox(string.format("Command failed with exit code: %d", rc), "Error", 0)
+			reaper.ShowMessageBox(string.format("Command failed with exit code: %d\n%s", rc, osa_command), "Error", 0)
+			return success, status, rc
     end
+
     return success, status, rc
 end
 

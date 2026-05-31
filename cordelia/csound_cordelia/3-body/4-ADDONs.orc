@@ -9,7 +9,7 @@ aph		= aph_init
 		outch giquarterclock_ch, (aph*64)%1
 
 	endin
-	alwayson("clock_sender")
+	;alwayson("clock_sender")
 
 
 /* 	massign 0, nstrnum("midi_input")

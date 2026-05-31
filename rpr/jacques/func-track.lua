@@ -24,7 +24,7 @@ function track.get_track_under_item(item_, free_mode)
         reaper.UpdateTimeline()
     end
 
-    return reaper.GetTrack(0, track_index)
+    return reaper.GetTrack(0, track_index-1)
 end
 
 

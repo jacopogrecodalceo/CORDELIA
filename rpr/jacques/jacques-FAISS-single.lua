@@ -1,21 +1,21 @@
 function load_modules(dir)
-    local i = 0
-    while true do
-        local file_name = reaper.EnumerateFiles(dir, i)
-        if not file_name then break end
+	 local i = 0
+	 while true do
+		  local file_name = reaper.EnumerateFiles(dir, i)
+		  if not file_name then break end
 
-        local mod_name = file_name:match("^func%-(.+)%.lua$")
-        if mod_name then
-            local file_path = dir .. file_name
-            local ok, mod = pcall(dofile, file_path)
-            if ok and type(mod) == "table" then
-                -- assign module to global variable with the same name as the file suffix
-                _G[mod_name] = mod
-            end
-        end
+		  local mod_name = file_name:match("^func%-(.+)%.lua$")
+		  if mod_name then
+				local file_path = dir .. file_name
+				local ok, mod = pcall(dofile, file_path)
+				if ok and type(mod) == "table" then
+					 -- assign module to global variable with the same name as the file suffix
+					 _G[mod_name] = mod
+				end
+		  end
 
-        i = i + 1
-    end
+		  i = i + 1
+	 end
 end
 
 local script_path = debug.getinfo(1,'S').source:sub(2):match("(.*/)")
@@ -66,30 +66,30 @@ local function make_command_string(info)
 end
 
 local function wait_for_file(info, callback)
-    local start_time = reaper.time_precise()
+	 local start_time = reaper.time_precise()
 
-    local function poll()
-        local now = reaper.time_precise()
+	 local function poll()
+		  local now = reaper.time_precise()
 
-        -- timeout
-        if now - start_time > TIMEOUT_SEC then
-            reaper.ShowMessageBox("Timeout: file not found within "..TIMEOUT_SEC.."s\n", "Error", 0)
-            --reaper.ShowMessageBox(info.command, "Error", 0)
-            return
-        end
+		  -- timeout
+		  if now - start_time > TIMEOUT_SEC then
+				reaper.ShowMessageBox("Timeout: file not found within "..TIMEOUT_SEC.."s\n", "Error", 0)
+				--reaper.ShowMessageBox(info.command, "Error", 0)
+				return
+		  end
 
-        -- check file existence
-        if reaper.file_exists(info.output_log) then
-            callback()
+		  -- check file existence
+		  if reaper.file_exists(info.output_log) then
+				callback()
 			os.remove(info.path)
-            return
-        end
+				return
+		  end
 
-        -- schedule next poll without busy-wait
-        reaper.defer(poll)
-    end
+		  -- schedule next poll without busy-wait
+		  reaper.defer(poll)
+	 end
 
-    poll()
+	 poll()
 end
 
 local function add_new_item(info)
@@ -105,14 +105,14 @@ local function add_new_item(info)
 end
 
 local function main()
-    local selected_items = items.get_selected()
+	local selected_items = items.get_selected()
 	if #selected_items < 1 then useful.error('No item selected') return end
 
 	local first_onset = reaper.GetMediaItemInfo_Value(selected_items[1], "D_POSITION")
 
 	reaper.Undo_BeginBlock()
 	local glued_item = items.glue()
-    local info = item.get_info(glued_item)
+	local info = item.get_info(glued_item)
 	info.onset = first_onset
 	if not info then useful.error('Error in getting info from glued item') return end
 
@@ -120,18 +120,19 @@ local function main()
 	local new_empty_item = item.create_emtpy(new_track, info.onset, info.duration)
 	info.new_item = new_empty_item
 
-    local command_string = make_command_string(info)
+	local command_string = make_command_string(info)
 	--reaper.ShowConsoleMsg(command_string)
-    command.exec_in_terminal(command_string, true)
+	local success, _, _ = command.exec_in_terminal(command_string, true)
 	item.remove(glued_item)
 
 	reaper.Undo_EndBlock(script_name .. '-1', -1)
 
-    -- wait for the output log to exist before adding track
-    wait_for_file(info, function()
-        add_new_item(info)
-    end)
-
+	-- wait for the output log to exist before adding track
+	if success then
+		wait_for_file(info, function()
+			add_new_item(info)
+		end)
+	end
 end
 
 

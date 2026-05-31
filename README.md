@@ -1,14 +1,38 @@
 # ＣＯＲＤＥＬＩＡ 
-_a method, a tender affection_
+_a method, a tender affection — an organic environment_
+
 jacopo greco d'alceo
+
+## *CORDELIA*'s PRINCIPLEs
+
+- always start with a blank empty page
+- everyparameters has consequences and reaction to all others 
+- change, always change. Progression is better than static thinking
+- live coding ≠ cuelist
+- recompose, do not repeat
+- make it organic (and ecologic): code your own choices inside algorithm
+- *viscosity* is everything: everything must be interchangeable. everything must exist at the same time as a parameter. In this direction algorithm becomes *idea* or a *motif* not *pattern*
+- thinking language outside sound synthesis, it is like [this](https://en.wikipedia.org/wiki/Mind%E2%80%93body_problem).
+- **poetry**, please do not forgot poetry. When audience reads they must sing in their head.
+- linear acceleration/deceleration and all other boredom stuff are **banished**, *to speak that word*.
+
+What _Cordelia_ is not: a language to make «some» music.
+
+Live coding to become emancipated cannot repeat itself, it must look in these directions.
+
+​	reflections come from a *three naughti bois* conversation.
+
+---
 
 **Introduction**
 
-Throughout my studies as a composer, I have become increasingly engaged with the relationship between electroacoustic composition and dance, particularly with choreography as a form of composition. This focus led me to explore alternative approaches for generating and structuring electroacoustic sound. Live coding attracted my interest. Because of its flexibility, responsiveness, and capacity for real-time transformation, it allows to fill the gap between composition and performance. Yet I found existing live coding languages insufficient for the artistic precision I sought. This dissatisfaction prompted me to develop my own environment, which rapidly became both personally resonant and artistically effective. *Cordelia* now functions as an instrument and an environment for composing, organising, and listening to sound as an active, continuous process.
+Throughout my studies as a composer, I have become increasingly engaged with the relationship between electroacoustic composition and dance, particularly with **choreography as a form of composition**.
+
+This focus led me to explore alternative approaches for generating and structuring electroacoustic sound. Live coding attracted my interest. Because of its flexibility, responsiveness, and capacity for real-time transformation, it allows to fill the gap between composition and performance. Yet I found existing live coding languages insufficient for the artistic precision I sought. This dissatisfaction prompted me to develop my own environment, which rapidly became both personally resonant and artistically effective. *Cordelia* now functions as an instrument and an environment for composing, organising, and listening to sound as an active, continuous process.
 
 **What is Cordelia**
 
-*Cordelia* is an original, open-source compositional environment that integrates three interconnected domains: written composition, live performance, and musical representation. It enables the creation of rendered music through a horizontal timeline workflow inside a DAW such as Reaper, it supports real-time performance through live coding and finally it interfaces with notation systems such as LilyPond for high-quality score generation.
+*Cordelia* is an original, open-source compositional environment that integrates three interconnected domains: **written composition**, **live performance**, and **musical representation**. It enables the creation of rendered music through a horizontal timeline workflow inside a DAW such as Reaper, it supports real-time performance through live coding and finally it interfaces with notation systems such as LilyPond for high-quality score generation.
 
 This triad, i.e. composition, performance, and representation, forms the core of *Cordelia*’s design and distinguishes it from conventional live coding tools.
 

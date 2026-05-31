@@ -1,0 +1,22 @@
+
+gkpulse = 90
+
+gktuning = scala.edo19
+
+
+eu: 11, 16, 12
+	r24@as_i_say-caw.wow()
+	wn
+	0
+	rome.a(5)
+	stept(f2, pumpx(7, fill(1, 2, 3, 12)))
+	stept(a2, pumpx(1, fill(1, 2, 3, 12)))
+
+
+eu: 3, 4, 32
+	r24@witches;.vdel()
+	wn*4
+	mf
+	hader.a(5)
+	stept(d2, dorian, ?*12)
+

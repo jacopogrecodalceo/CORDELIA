@@ -11,6 +11,6 @@ channels:
   control:
     count: 0
     mapping:
-      7: 7
-      8: 8
+      7: 32
+      8: 33
   
