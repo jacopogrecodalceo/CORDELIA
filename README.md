@@ -1,20 +1,22 @@
 # ＣＯＲＤＥＬＩＡ 
-_a method, a tender affection — an organic environment_
+_a method, a tender organic affection_
 
 jacopo greco d'alceo
 
 ## *CORDELIA*'s PRINCIPLEs
 
 - always start with a blank empty page
-- everyparameters has consequences and reaction to all others 
-- change, always change. Progression is better than static thinking
+- **each parameter** has **consequences** and **reaction** on all others 
+- **change**, always change even if you are certain. *Progression* is better than *static thinking*
+- play _Cordelia_ as the last thing you will ever do in your life. Have *fun*, be *generous*
 - live coding ≠ cuelist
-- recompose, do not repeat
-- make it organic (and ecologic): code your own choices inside algorithm
+- **recompose**, do not repeat
+- *repeat*. Yep, but only if it is important, otherwise _thou art a boil, a plague-sore, an embossed carbuncle, in my corrupted blood_
+- make it **organic** (and ecologic): code your own choices inside algorithm
 - *viscosity* is everything: everything must be interchangeable. everything must exist at the same time as a parameter. In this direction algorithm becomes *idea* or a *motif* not *pattern*
-- thinking language outside sound synthesis, it is like [this](https://en.wikipedia.org/wiki/Mind%E2%80%93body_problem).
-- **poetry**, please do not forgot poetry. When audience reads they must sing in their head.
-- linear acceleration/deceleration and all other boredom stuff are **banished**, *to speak that word*.
+- if you are thinking language outside sound synthesis, it is like [this](https://en.wikipedia.org/wiki/Mind%E2%80%93body_problem).
+- **poetry**, please do not forget poetry. Audience read: they must sing and sing loudly in their head.
+- linear acceleration/deceleration, random and all other boredom stuff are **banished**, *to speak that word*.
 
 What _Cordelia_ is not: a language to make «some» music.
 
